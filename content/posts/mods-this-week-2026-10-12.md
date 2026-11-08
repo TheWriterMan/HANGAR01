@@ -70,7 +70,7 @@ Skyward's G5000 business jet, already out for MSFS 2024, now has a native MSFS 2
 :::meta
 FSReborn
 MSFS 2024
-update for owners
+Update for owners
 :::
 
 ![The new manual failures page on the Phenom 300E tablet](/images/news/mods-this-week-2026-10-12/05-fsreborn-phenom-300e-v1-030.webp 'Image: [FSReborn](https://thresholdx.net/fsreborn-updates-phenom-300e-to-v1-030-adds-cpdlc-new-failures/)')
@@ -134,7 +134,7 @@ This replaces the sim's generic forests with the tree species that actually grow
 :::meta
 SayIntentions.AI
 MSFS and X-Plane 12
-included in the subscription
+Included in the subscription
 :::
 
 ![Live Maps V2 on three tablets, with an airport diagram in the middle](/images/news/mods-this-week-2026-10-12/10-sayintentions-ai-live-maps-v2.webp 'Image: [SayIntentions.AI](https://sayintentions.ai/blog?p=live-maps-v2)')
@@ -146,7 +146,7 @@ The [rebuilt map](https://sayintentions.ai/blog?p=live-maps-v2) shows airport di
 :::meta
 BeyondATC
 MSFS
-early-access update for owners
+Early-access update for owners
 :::
 
 ![An airliner flight deck with the BeyondATC logo](/images/news/mods-this-week-2026-10-12/11-beyondatc-1-8-22.webp 'Image: [BeyondATC](https://msfsaddons.com/2026/10/07/beyond-atc-gets-updated-with-faster-airport-loading-and-smoother-traffic/)')
@@ -158,7 +158,7 @@ BeyondATC no longer needs a separate helper to talk to the sim, so [airports loa
 :::meta
 Navigraph
 Navigraph Charts
-subscription
+Subscription
 :::
 
 ![A Rogers Data VFR chart of North Africa in Navigraph Charts](/images/news/mods-this-week-2026-10-12/12-navigraph-rogers-data-vfr.webp 'Image: [Navigraph](https://thresholdx.net/navigraph-with-rogers-data-vfr-expansion-new-chart-features/)')
@@ -172,7 +172,7 @@ Rogers Data VFR charts now [cover parts of North Africa and the Middle East](htt
 :::meta
 iniBuilds
 MSFS 2024
-update for owners on the Marketplace
+Update for owners on the Marketplace
 :::
 
 ![The iniBuilds A380 at a gate, seen from the front](/images/news/mods-this-week-2026-10-12/13-inibuilds-a380-v1-0-3.webp 'Image: [iniBuilds](https://forum.inibuilds.com/topic/41568-inibuilds-a380-airliner-for-microsoft-flight-simulator-2024-v1023-released/)')
@@ -188,7 +188,8 @@ Our [A380 checklist](/aircraft/a380) is written for the FlyByWire A380X. The flo
 :::meta
 NaughtyPickle
 MSFS 2024
-free on flightsim.to, needs the Fenix A319, A320 or A321
+Free on flightsim.to
+Needs: Fenix A319, A320 or A321
 :::
 
 ![TechLog's MEL window, deciding whether a defect is fixed now or deferred](/images/news/mods-this-week-2026-10-12/14-fenix-techlog.webp 'Image: [the TechLog developer](https://msfsaddons.com/2026/10/09/this-free-add-on-brings-the-state-saving-fenix-a320-owners-have-been-asking-for/)')

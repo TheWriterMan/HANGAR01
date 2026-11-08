@@ -71,6 +71,8 @@ export interface BlogPostSummary {
   imageCredit?: string;
   /** Frontmatter `imageCreditUrl`: the photo's source page, linked from the credit. */
   imageCreditUrl?: string;
+  /** Frontmatter `bannerStyle: card`: the banner is a drawn card, so it shows at full strength without the photo fade. */
+  bannerStyle?: 'photo' | 'card';
 }
 
 export interface BlogPost extends BlogPostSummary {

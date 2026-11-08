@@ -25,6 +25,8 @@ description: Interactive checklists for flight simulation
 
 There are almost 4,000 checklist items on the site, and I'm sure some of them are still wrong. Now you can fix them yourself.
 
+![The C172 checklist on GitHub: the file content/checklists/c172.json open beside the repo's file tree, its first item the parking brake, SET](/images/news/hangar01-is-open-source/github-c172.webp)
+
 ## Report a mistake
 
 Found a wrong item? Hit **Report Inaccuracy** on the checklist page. You still don't need an account.

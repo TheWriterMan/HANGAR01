@@ -58,8 +58,18 @@ export interface MarkdownBlock {
   src?: string;
   /** An image's caption, from the Markdown title: ![alt](src "caption"). */
   caption?: string;
+  /** A `##` or `###` heading's anchor, unique within the post. */
+  id?: string;
   lines: string[];
 }
+
+const headingSlug = (text: string) =>
+  text
+    .replace(/\[(.*?)\]\(.*?\)/g, '$1')
+    .replace(/[*`]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 
 /**
  * Parses markdown inline styles: **bold**, *italic*, `code`, and [text](url).
@@ -129,6 +139,7 @@ const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)(?:\s+(["'])(.*?)\3)?\)$/;
 export function parseMarkdown(markdown: string): MarkdownBlock[] {
   const lines = markdown.split(/\r?\n/);
   const blocks: MarkdownBlock[] = [];
+  const usedIds = new Map<string, number>();
 
   let i = 0;
   while (i < lines.length) {
@@ -203,9 +214,17 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
       if (match) {
         const level = match[1].length;
         const text = match[2].trim();
+        let id: string | undefined;
+        if (level === 2 || level === 3) {
+          const base = headingSlug(text) || 'section';
+          const n = usedIds.get(base) ?? 0;
+          usedIds.set(base, n + 1);
+          id = n ? `${base}-${n + 1}` : base;
+        }
         blocks.push({
           type: 'heading',
           level,
+          id,
           lines: [text],
         });
         i++;
@@ -328,7 +347,8 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
               return (
                 <h2
                   key={index}
-                  className="type-heading text-primary mt-10 mb-5 border-b border-border pb-2"
+                  id={block.id}
+                  className="type-heading text-primary mt-10 mb-5 border-b border-border pb-2 scroll-mt-20"
                 >
                   {headingText}
                 </h2>
@@ -336,7 +356,11 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
             }
             if (block.level === 3) {
               return (
-                <h3 key={index} className="type-subheading text-primary mt-8 mb-4">
+                <h3
+                  key={index}
+                  id={block.id}
+                  className="type-subheading text-primary mt-8 mb-4 scroll-mt-20"
+                >
                   {headingText}
                 </h3>
               );
@@ -436,24 +460,41 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
               </figure>
             );
           case 'meta': {
-            const labels = ['By', 'Sim', 'Price'];
+            // Lines are positional (maker, sim, price) unless written `Label: value`.
+            // Only the maker and labelled lines show a label; sim and price read on their own.
+            const facts = block.lines.map((line, i) => {
+              const labelled = line.trim().match(/^([A-Z][A-Za-z ]{1,15}):\s+(.+)$/);
+              if (labelled) return { label: labelled[1], value: labelled[2], kind: 'labelled' };
+              const kind = ['by', 'sim', 'price'][i] ?? 'other';
+              return { label: kind === 'by' ? 'By' : '', value: line.trim(), kind };
+            });
+            const inline = facts.filter((f) => f.kind !== 'labelled');
+            const labelled = facts.filter((f) => f.kind === 'labelled');
             return (
-              <dl
-                key={index}
-                className="not-prose -mt-2 mb-5 grid grid-cols-1 sm:grid-cols-[auto_auto_1fr] border border-border bg-surface"
-              >
-                {block.lines.map((line, i) => (
-                  <div
-                    key={i}
-                    className="px-3 py-2 border-b sm:border-b-0 sm:border-r last:border-0 border-border"
-                  >
-                    <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">
-                      {labels[i] ?? ''}
-                    </dt>
-                    <dd className="text-sm text-primary">{parseInlineStyles(line.trim())}</dd>
-                  </div>
+              <div key={index} className="not-prose -mt-2 mb-6 text-sm leading-relaxed">
+                <p className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
+                  {inline.map((f, i) => (
+                    <React.Fragment key={i}>
+                      <span
+                        className={
+                          f.kind === 'price'
+                            ? 'font-medium text-accent'
+                            : 'font-medium text-primary'
+                        }
+                      >
+                        {f.label && <span className="font-normal text-muted">{f.label} </span>}
+                        {parseInlineStyles(f.value)}
+                      </span>
+                    </React.Fragment>
+                  ))}
+                </p>
+                {labelled.map((f, i) => (
+                  <p key={i} className="mt-1">
+                    <span className="text-muted">{f.label} </span>
+                    <span className="font-medium text-primary">{parseInlineStyles(f.value)}</span>
+                  </p>
                 ))}
-              </dl>
+              </div>
             );
           }
           case 'link-card': {
