@@ -17,13 +17,13 @@ Ten days after release, the iniBuilds A380 has its first update. Version 1.0.1 i
 
 There are no new features. The changelog is a long list of systems and artwork fixes, plus one addition worth deciding on before your next flight: optional WASM crash reporting.
 
-![The iniBuilds A380 in Emirates colours on the runway](/images/news/inibuilds-a380-v1-0-1-update/01-a380-exterior-emirates.webp "Image: [iniBuilds, via FSNews](https://fsnews.eu/inibuilds-releases-airbus-a380-airliner-for-msfs-2024/)")
+![The iniBuilds A380 in Emirates colours on the runway](/images/news/inibuilds-a380-v1-0-1-update/01-a380-exterior-emirates.webp 'Image: [iniBuilds, via FSNews](https://fsnews.eu/inibuilds-releases-airbus-a380-airliner-for-msfs-2024/)')
 
 ## What the crash reporter does
 
 After updating, the aircraft asks whether you want to turn it on. If you do, a diagnostic log goes to iniBuilds whenever the aircraft's WASM module crashes. You don't have to file anything yourself.
 
-![The crash reporting page on the A380's MCDU, with Decline and Accept](/images/news/inibuilds-a380-v1-0-1-update/03-a380-crash-reporting-prompt.webp "Image: [iniBuilds, via MSFS Addons](https://msfsaddons.com/2026/09/23/inibuilds-a380-v1-0-1-arrives-a-week-after-launch-with-go-around-fixes-and-opt-in-crash-reporting/)")
+![The crash reporting page on the A380's MCDU, with Decline and Accept](/images/news/inibuilds-a380-v1-0-1-update/03-a380-crash-reporting-prompt.webp 'Image: [iniBuilds, via MSFS Addons](https://msfsaddons.com/2026/09/23/inibuilds-a380-v1-0-1-arrives-a-week-after-launch-with-go-around-fixes-and-opt-in-crash-reporting/)')
 
 iniBuilds says the logs carry no personal data, can't be tied to you or to a specific session, and are encrypted before they leave your machine. The point is to find the common causes of WASM crashes, which on a study-level airliner usually means losing the flight.
 
@@ -35,7 +35,7 @@ It's off unless you turn it on. If you've had a crash on long-haul legs, turning
 
 The release build already covered most of what A380 fans asked for: both engine options (Trent 900 and GP7200), a custom EFB, weather radar, failures grouped by ATA chapter, a vertical situation display, brake-to-vacate, and pop-out displays for a second monitor. It also works with GSX and iniBuilds' own multi-jetway system.
 
-![The A380 flight deck with the custom EFB on the left](/images/news/inibuilds-a380-v1-0-1-update/02-a380-flight-deck-efb.webp "Image: [iniBuilds, via FSNews](https://fsnews.eu/inibuilds-releases-airbus-a380-airliner-for-msfs-2024/)")
+![The A380 flight deck with the custom EFB on the left](/images/news/inibuilds-a380-v1-0-1-update/02-a380-flight-deck-efb.webp 'Image: [iniBuilds, via FSNews](https://fsnews.eu/inibuilds-releases-airbus-a380-airliner-for-msfs-2024/)')
 
 It sells through the in-sim Marketplace for €64.23 at launch, with the iniBuilds store to follow. The full 1.0.1 notes are on the iniBuilds blog, and [FSElite](https://fselite.net/content/inibuilds-update-a380-to-v1-0-1/) and [FSNews](https://fsnews.eu/inibuilds-releases-airbus-a380-airliner-for-msfs-2024/) have more on the update and the launch.
 

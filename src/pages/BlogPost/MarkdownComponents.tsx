@@ -121,7 +121,7 @@ function parseInlineStyles(text: string): React.ReactNode[] {
   });
 }
 
-const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)(?:\s+"(.*?)")?\)$/;
+const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)(?:\s+(["'])(.*?)\3)?\)$/;
 
 /**
  * Splits raw markdown into structural blocks.
@@ -267,7 +267,7 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
     // Images: `![alt](src)` alone on a line
     const image = line.trim().match(IMAGE_LINE);
     if (image) {
-      blocks.push({ type: 'image', src: image[2], caption: image[3], lines: [image[1]] });
+      blocks.push({ type: 'image', src: image[2], caption: image[4], lines: [image[1]] });
       i++;
       continue;
     }
