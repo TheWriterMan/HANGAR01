@@ -8,3 +8,13 @@ try {
 } catch {
   /* storage unavailable — stay on the default dark theme */
 }
+
+// A closed announcement stays hidden before first paint (AnnouncementBanner.tsx).
+try {
+  var closedAnnouncement = localStorage.getItem('hangar01-announcement-dismissed');
+  if (closedAnnouncement) {
+    document.documentElement.setAttribute('data-announcement-dismissed', closedAnnouncement);
+  }
+} catch {
+  /* storage unavailable — the banner shows */
+}
