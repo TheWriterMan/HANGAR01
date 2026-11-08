@@ -511,8 +511,17 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
                 href={block.src}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group my-8 block border border-border bg-surface no-underline hover:border-accent transition-colors duration-base"
+                className="group not-prose my-8 flex items-center gap-4 sm:gap-6 border border-border bg-surface p-4 sm:p-5 no-underline hover:border-accent transition-colors duration-base"
               >
+                <span className="min-w-0 flex-1">
+                  <span className="block font-mono text-xs text-muted">{host}</span>
+                  <span className="block text-primary font-semibold mt-1 group-hover:text-accent break-words">
+                    {meta.title || block.src}
+                  </span>
+                  {meta.description && (
+                    <span className="block text-muted text-sm mt-1">{meta.description}</span>
+                  )}
+                </span>
                 {meta.image && (
                   <img
                     src={meta.image}
@@ -521,18 +530,9 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
                     decoding="async"
                     width={1200}
                     height={600}
-                    className="block w-full h-auto border-b border-border"
+                    className="block shrink-0 w-24 sm:w-40 h-auto border border-border"
                   />
                 )}
-                <span className="block px-4 py-3">
-                  <span className="block font-mono text-xs text-muted">{host}</span>
-                  <span className="block text-primary font-semibold mt-1 group-hover:text-accent">
-                    {meta.title || block.src}
-                  </span>
-                  {meta.description && (
-                    <span className="block text-muted text-sm mt-1">{meta.description}</span>
-                  )}
-                </span>
               </a>
             );
           }

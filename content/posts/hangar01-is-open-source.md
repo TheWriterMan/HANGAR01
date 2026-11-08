@@ -5,11 +5,10 @@ slug: 'hangar01-is-open-source'
 date: '2026-11-08T12:00:00.000Z'
 category: 'News'
 status: 'draft'
-timage: '/images/news/mods-this-week-2026-10-12/news-night-landing.webp'
-bannerImage: '/images/news/mods-this-week-2026-10-12/news-night-landing.webp'
-imageAltText: 'Long exposure of an airliner landing at night, its lights drawn into one streak down to the runway'
-imageCredit: 'Photo: John Murphy, CC BY-SA 2.0, via Wikimedia Commons'
-imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:ATL_RWY_27L_Landing_(13205517103).jpg'
+timage: '/images/news/hangar01-is-open-source/banner.webp'
+bannerImage: '/images/news/hangar01-is-open-source/banner.webp'
+bannerStyle: 'card'
+imageAltText: 'The GitHub mark beside TheWriterMan / HANGAR01 on a black ground with a green and purple glow'
 tags: []
 ---
 
@@ -55,6 +54,8 @@ I turn your CSV into a checklist and credit you on GitHub when it's added.
 If you're already at home on GitHub, skip the Sheet. Each checklist is one JSON file in `content/checklists/`, so most fixes are a one-file pull request.
 
 The [contributing guide](https://github.com/TheWriterMan/HANGAR01/blob/main/CONTRIBUTING.md) lists the checks to run first. The [checklist guide](https://github.com/TheWriterMan/HANGAR01/blob/main/docs/checklist-guide.md) explains the format and which items belong in Quick, Normal and Full.
+
+![HANGAR01's commits drawn as a GitHub contribution graph: 356 commits from January to 8 November 2026](/images/news/hangar01-is-open-source/commit-graph.webp)
 
 ## Licenses
 
