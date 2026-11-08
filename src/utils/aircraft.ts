@@ -1,5 +1,5 @@
 import { ChecklistPhase } from '../types';
-import { countItems, filterChecklist } from './checklist';
+import { countItems, filterChecklist } from './checklist.js';
 
 /**
  * Formats an aircraft's full display name (manufacturer + model + suffix).
