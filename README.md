@@ -128,7 +128,7 @@ To report a security problem, see [SECURITY.md](SECURITY.md).
 ## License
 
 - **Code:** MIT. See [LICENSE](LICENSE).
-- **Content** (checklists in `content/checklists/`, posts in `content/posts/`): CC BY 4.0. See [content/LICENSE.md](content/LICENSE.md).
+- **Content** (checklists in `content/checklists/`, posts in `content/posts/`): CC BY-NC 4.0, so no commercial use without permission. See [content/LICENSE.md](content/LICENSE.md).
 - Aircraft images (in `public/images/aircraft/`) and add-on names belong to their owners and aren't covered by either license. Fonts in `public/fonts/` keep their own licenses.
 
 HANGAR01 is for flight simulation only. Never use these checklists for real-world flight.

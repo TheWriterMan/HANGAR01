@@ -3,11 +3,12 @@
 Copyright (c) 2026 Prakhar Singh
 
 The checklists in `content/checklists/` and the posts in `content/posts/` are licensed under the
-[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
-(CC BY 4.0).
+[Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/)
+(CC BY-NC 4.0).
 
-You may share and adapt them for any purpose, including commercially, as long as you credit
-HANGAR01 (<https://hangar01.space>), link to the license and say if you changed them.
+You may share and adapt them for non-commercial purposes, as long as you credit HANGAR01
+(<https://hangar01.space>), link to the license and say if you changed them. Selling them, or using
+them in a paid product, needs written permission.
 
 The code in this repository is licensed separately under the MIT License (see `LICENSE` in the
 repository root). Aircraft images in `public/images/aircraft/`, add-on names and trademarks belong to
