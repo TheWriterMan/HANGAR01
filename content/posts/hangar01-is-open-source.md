@@ -17,6 +17,12 @@ In the [first post](/news/hangar01-v1-is-live), I said keeping the checklists ac
 
 Everything that runs this site is now public at [github.com/TheWriterMan/HANGAR01](https://github.com/TheWriterMan/HANGAR01): the code, the checklists and every post (this one included).
 
+:::link https://github.com/TheWriterMan/HANGAR01
+image: https://opengraph.githubassets.com/1/TheWriterMan/HANGAR01
+title: TheWriterMan/HANGAR01
+description: Interactive checklists for flight simulation
+:::
+
 There are almost 4,000 checklist items on the site, and I'm sure some of them are still wrong. Now you can fix them yourself.
 
 ## Report a mistake

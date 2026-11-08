@@ -47,7 +47,8 @@ export interface MarkdownBlock {
     | 'callout'
     | 'checklist'
     | 'code-block'
-    | 'image';
+    | 'image'
+    | 'link-card';
   level?: number;
   tone?: string;
   title?: string;
@@ -162,6 +163,15 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
         i++;
       }
       i++; // Skip closing :::
+      // `:::link <url>` embeds a link preview card; its lines are `image:`, `title:` and `description:`
+      if (tone.startsWith('link ')) {
+        blocks.push({
+          type: 'link-card',
+          src: tone.slice('link '.length).trim(),
+          lines: calloutLines,
+        });
+        continue;
+      }
       // `:::checklist Title` embeds an interactive mini checklist
       if (tone.startsWith('checklist')) {
         blocks.push({
@@ -412,6 +422,45 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
                 />
               </figure>
             );
+          case 'link-card': {
+            const meta = Object.fromEntries(
+              block.lines
+                .map((l) => l.match(/^\s*(\w+):\s*(.*)$/))
+                .filter((m): m is RegExpMatchArray => m !== null)
+                .map((m) => [m[1], m[2].trim()]),
+            );
+            const host = block.src ? new URL(block.src).hostname.replace(/^www\./, '') : '';
+            return (
+              <a
+                key={index}
+                href={block.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group my-8 block border border-border bg-surface no-underline hover:border-accent transition-colors duration-base"
+              >
+                {meta.image && (
+                  <img
+                    src={meta.image}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={600}
+                    className="block w-full h-auto border-b border-border"
+                  />
+                )}
+                <span className="block px-4 py-3">
+                  <span className="block font-mono text-xs text-muted">{host}</span>
+                  <span className="block text-primary font-semibold mt-1 group-hover:text-accent">
+                    {meta.title || block.src}
+                  </span>
+                  {meta.description && (
+                    <span className="block text-muted text-sm mt-1">{meta.description}</span>
+                  )}
+                </span>
+              </a>
+            );
+          }
           case 'code-block': {
             const codeContent = block.lines.join('\n');
             return (
