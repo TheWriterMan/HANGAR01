@@ -1,0 +1,771 @@
+{
+  "checklist": [
+    {
+      "title": "Preflight",
+      "id": "preflight",
+      "groups": [
+        {
+          "title": "Power-Up",
+          "items": [
+            {
+              "label": "Parking Brake",
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "tier": "quick"
+            },
+            {
+              "label": "BAT 1 / BAT 2",
+              "action": "On",
+              "id": "bat-1-bat-2",
+              "info": "Overhead Panel. Two independent lithium-ion battery switches. Both ON to bring up the avionics bus and FADEC power.",
+              "tier": "quick"
+            },
+            {
+              "label": "GEN 1 / GEN 2",
+              "action": "On",
+              "id": "gen-1-gen-2",
+              "info": "Overhead Panel. Engine-driven generators. Switch both ON so they come online automatically after engine start.",
+              "tier": "quick"
+            },
+            {
+              "label": "Strobe Lights",
+              "action": "On",
+              "id": "strobe-lights",
+              "info": "Overhead Panel. Required before engine start — warns ramp personnel the aircraft is live.",
+              "tier": "normal"
+            },
+            {
+              "label": "CAS Messages",
+              "action": "Check",
+              "id": "cas-messages-power-up",
+              "info": "PFD. Crew Alerting System panel on the PFD. Review all advisory and caution messages after power-up; clear any that are expected.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Cockpit Setup",
+          "items": [
+            {
+              "label": "FMS Preflight",
+              "action": "Program",
+              "id": "fms-preflight",
+              "info": "Garmin Perspective Touch+ touchscreen. Walk through the FPL page: enter departure/destination, load or build the route, set SID and STAR. Then open PERF for cruise altitude and V-speeds. CAPS PIN must still be in at this point.",
+              "tier": "quick"
+            },
+            {
+              "label": "Altimeters",
+              "action": "Set QNH",
+              "id": "altimeters-preflight",
+              "info": "PFD. Set barometric reference to current field QNH on both PFD baro knobs.",
+              "tier": "normal"
+            },
+            {
+              "label": "Transponder",
+              "action": "Set",
+              "id": "transponder-preflight",
+              "info": "MFD. Enter the assigned squawk code. Leave in STBY until lineup.",
+              "tier": "normal"
+            },
+            {
+              "label": "Passengers",
+              "action": "Brief",
+              "id": "passengers-brief",
+              "info": "Cabin. Brief occupants on seat belts, emergency exits, and CAPS operation before engine start.",
+              "tier": "normal"
+            },
+            {
+              "label": "Seat Belts",
+              "action": "Secured",
+              "id": "seat-belts-preflight",
+              "info": "Cabin. Confirm all occupants are belted before start.",
+              "tier": "full"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Engine Start",
+      "id": "engine-start",
+      "groups": [
+        {
+          "title": "Pre-Start Flow",
+          "items": [
+            {
+              "label": "Thrust Lever",
+              "action": "Idle",
+              "id": "thrust-lever-idle",
+              "info": "Center Pedestal. Confirm the thrust lever is fully aft in the IDLE detent before starting. Introducing power during start causes a hot start.",
+              "tier": "quick"
+            },
+            {
+              "label": "Brakes",
+              "action": "Hold",
+              "id": "brakes-pre-start",
+              "info": "Rudder Pedals. Apply toe brakes to hold the aircraft stationary during start.",
+              "tier": "quick"
+            },
+            {
+              "label": "Engine Knob",
+              "action": "Run",
+              "id": "engine-knob-run",
+              "info": "Center Pedestal. Three-position rotary: OFF / START / RUN. Move to RUN to arm the FADEC for engine start.",
+              "tier": "quick"
+            },
+            {
+              "label": "Fuel Pump",
+              "action": "Check On",
+              "id": "fuel-pump-check",
+              "info": "Overhead Panel. Verify the FUEL PUMP ON CAS advisory is displayed, confirming the electric boost pump is running. The pump arms automatically when BAT switches are ON.",
+              "tier": "quick"
+            },
+            {
+              "label": "Beacon",
+              "action": "On",
+              "id": "beacon",
+              "info": "Overhead Panel. Red anti-collision light on the tail. Required before engine start so ground personnel know the engine is about to spool.",
+              "tier": "quick"
+            }
+          ]
+        },
+        {
+          "title": "Engine Start",
+          "items": [
+            {
+              "label": "Engine Start/Stop",
+              "action": "Press",
+              "id": "engine-start-stop",
+              "info": "Overhead Panel. Momentary button. Press to engage the starter motor. Monitor N2: expect light-off within 8 seconds. At roughly 25% N2 the FADEC should indicate positive N1. Monitor ITT — abort if no light-off by 8 sec or if ITT exceeds limits.",
+              "tier": "quick"
+            },
+            {
+              "label": "Engine Instruments",
+              "action": "Monitor",
+              "id": "engine-instruments-start",
+              "info": "MFD. Watch N1, N2, ITT, and oil pressure as the engine spools. Expect positive N1 indication by 25% N2. ITT must stay within the start limit arc. Oil pressure should enter the green band shortly after stabilization.",
+              "tier": "quick"
+            },
+            {
+              "label": "EIS",
+              "action": "Check Normal",
+              "id": "eis-check",
+              "info": "MFD. Engine Indication System. Once stabilized at idle, all parameters should show green — N1, N2, ITT, oil pressure, fuel flow.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "After Start Flow",
+          "items": [
+            {
+              "label": "Oxygen Master",
+              "action": "On",
+              "id": "oxygen-master",
+              "info": "Overhead Panel. Opens the oxygen supply to the crew masks. Required for flight above 12,500 ft MSL. Set after engine start when normal electrical power is stable.",
+              "tier": "normal"
+            },
+            {
+              "label": "Avionics Init",
+              "action": "Complete",
+              "id": "avionics-init",
+              "info": "PFD / MFD. Allow the Garmin Perspective Touch+ suite to complete initialization. Verify both PFD and MFD show valid data, no red X flags.",
+              "tier": "normal"
+            },
+            {
+              "label": "Bleed Air",
+              "action": "On",
+              "id": "bleed-air-after-start",
+              "info": "Overhead Panel. Leave bleed OFF until the engine has been at idle for at least 2 minutes, then switch ON for pressurization and ECS.",
+              "tier": "normal"
+            },
+            {
+              "label": "ECS Control Panel",
+              "action": "Set",
+              "id": "ecs-control-panel",
+              "info": "Overhead Panel. Environmental Control System. Set cabin temperature and airflow as desired for occupant comfort.",
+              "tier": "full"
+            },
+            {
+              "label": "CAPS Pin",
+              "action": "Remove & Stow",
+              "id": "caps-pin",
+              "info": "Left side of the instrument panel. Remove and stow after engine start. A CAPS PIN CAS advisory clears once removed.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Before Takeoff",
+      "id": "before-takeoff",
+      "groups": [
+        {
+          "title": "Taxi Flow",
+          "items": [
+            {
+              "label": "COM / NAV",
+              "action": "Set",
+              "id": "com-nav",
+              "info": "MFD. Set departure ATIS, clearance delivery, and ground frequencies. Tune NAV/GPS for departure.",
+              "tier": "normal"
+            },
+            {
+              "label": "ATIS",
+              "action": "Obtain",
+              "id": "atis",
+              "info": "COM Radio. Get current weather and NOTAM information before calling for taxi.",
+              "tier": "normal"
+            },
+            {
+              "label": "Altimeters",
+              "action": "Set QNH",
+              "id": "altimeters-taxi",
+              "info": "PFD. Confirm baro setting matches current ATIS. Cross-check both PFD baro knobs.",
+              "tier": "normal"
+            },
+            {
+              "label": "Pitch Trim",
+              "action": "6° Up",
+              "id": "pitch-trim",
+              "info": "Center Pedestal. The SF50 departs at a trim setting of 6 degrees nose-up for normal takeoff weight. Verify on the trim indicator on the MFD.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flaps",
+              "action": "50%",
+              "id": "flaps-taxi",
+              "info": "Overhead Panel flap switch or center pedestal. 50% flap (half extension) is the normal takeoff setting for the SF50. VFE at 50% is 190 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flight Controls",
+              "action": "Free & Correct",
+              "id": "flight-controls",
+              "info": "Sidestick and rudder pedals. Move through full travel and verify correct deflection on the PFD control surface indicators.",
+              "tier": "normal"
+            },
+            {
+              "label": "Brakes",
+              "action": "Check",
+              "id": "brakes-taxi",
+              "info": "Rudder Pedals. Apply briefly during initial taxi roll to confirm normal stopping power.",
+              "tier": "normal"
+            },
+            {
+              "label": "TO/GA Button",
+              "action": "Press",
+              "id": "toga-button",
+              "info": "Glareshield or sidestick. Activates Takeoff/Go-Around mode, sets the flight director to takeoff pitch and arms initial climb guidance.",
+              "tier": "normal"
+            },
+            {
+              "label": "CAS Messages",
+              "action": "Check",
+              "id": "cas-messages-taxi",
+              "info": "PFD. Verify no unexpected advisory or caution messages before takeoff. A TAKEOFF EMER BAT message before lineup is a no-go item.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Lineup",
+          "items": [
+            {
+              "label": "Probe Heat",
+              "action": "On",
+              "id": "probe-heat",
+              "info": "Overhead Panel. Heats pitot and static probes to prevent ice blockage. Switch on before entering the runway.",
+              "tier": "quick"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "On",
+              "id": "landing-lights-lineup",
+              "info": "Overhead Panel. Forward-facing landing lights. ON when entering the runway.",
+              "tier": "normal"
+            },
+            {
+              "label": "Transponder",
+              "action": "TA/RA",
+              "id": "transponder-lineup",
+              "info": "MFD. Switch from STBY to ALT/ON with TCAS in TA/RA mode at runway entry. TA-only is insufficient — RA logic is needed once airborne.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flaps",
+              "action": "Verify 50%",
+              "id": "flaps-lineup",
+              "info": "Overhead Panel. Confirm 50% flap setting has not changed since taxi. VFE 50% is 190 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Pitch Trim",
+              "action": "Verify 6° Up",
+              "id": "pitch-trim-lineup",
+              "info": "MFD trim indicator. Confirm trim setting is unchanged from the taxi check.",
+              "tier": "normal"
+            },
+            {
+              "label": "CAS Messages",
+              "action": "No Takeoff Warning",
+              "id": "cas-no-takeoff-warning",
+              "info": "PFD. The specific check here is confirming no TAKEOFF EMER BAT message is present. Any other caution or advisory should be understood before proceeding.",
+              "tier": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Takeoff",
+      "id": "takeoff",
+      "groups": [
+        {
+          "title": "Takeoff Roll",
+          "items": [
+            {
+              "label": "Brakes",
+              "action": "Hold",
+              "id": "brakes-takeoff-hold",
+              "info": "Rudder Pedals. Hold brakes while advancing the thrust lever to verify engine instruments are normal before releasing.",
+              "tier": "normal"
+            },
+            {
+              "label": "Thrust Lever",
+              "action": "T/O",
+              "id": "thrust-lever-takeoff",
+              "info": "Center Pedestal. Advance to the T/O detent. The FADEC limits thrust automatically — no manual ITT management required. Verify the EIS shows expected N1 and ITT.",
+              "tier": "quick"
+            },
+            {
+              "label": "Engine Instruments",
+              "action": "Check",
+              "id": "engine-instruments-roll",
+              "info": "MFD. Confirm N1, ITT, N2, and oil pressure are all green before releasing brakes.",
+              "tier": "quick"
+            },
+            {
+              "label": "Brakes",
+              "action": "Released",
+              "id": "brakes-release",
+              "info": "Rudder Pedals. Release brakes to begin the roll once instruments confirm normal thrust.",
+              "tier": "quick"
+            },
+            {
+              "label": "Rotate",
+              "action": "At Vr",
+              "id": "rotate",
+              "info": "Sidestick. Rotate at 80–90 KIAS. Pitch to approximately 5 degrees nose-up initially, then follow the flight director. Maximum 7 degrees pitch.",
+              "tier": "quick"
+            },
+            {
+              "label": "Gear",
+              "action": "Up",
+              "id": "gear-up",
+              "info": "Instrument Panel. Retract at positive rate of climb. VLO retract is 150 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flaps",
+              "action": "Up",
+              "id": "flaps-up-takeoff",
+              "info": "Overhead Panel. Retract after clearing obstacles with airspeed above 115 KIAS. VFE 100% is 150 KIAS — do not retract flaps while above that speed.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "After Takeoff / Climb",
+      "id": "after-takeoff-climb",
+      "groups": [
+        {
+          "title": "Initial Climb",
+          "items": [
+            {
+              "label": "Thrust Lever",
+              "action": "MCT",
+              "id": "thrust-lever-mct",
+              "info": "Center Pedestal. After reaching a safe altitude, reduce from T/O to MCT (Maximum Continuous Thrust). T/O thrust is time-limited to 5 minutes. MCT is the maximum un-time-limited power setting for climb.",
+              "tier": "quick"
+            },
+            {
+              "label": "Engine Parameters",
+              "action": "Monitor",
+              "id": "engine-parameters-climb",
+              "info": "MFD. Confirm all engine indications remain in the green arc throughout the climb.",
+              "tier": "normal"
+            },
+            {
+              "label": "Autopilot",
+              "action": "On",
+              "id": "autopilot-climb",
+              "info": "Glareshield AP button. Engage at own discretion once the aircraft is established in the climb with gear and flaps up.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cabin Pressure",
+              "action": "Monitor",
+              "id": "cabin-pressure-climb",
+              "info": "MFD. Verify cabin altitude is climbing at a normal rate and differential pressure is building correctly.",
+              "tier": "normal"
+            },
+            {
+              "label": "Ice Protection",
+              "action": "As Required",
+              "id": "ice-protection-climb",
+              "info": "Overhead Panel. Activate ENGINE IPS and WING/STAB IPS if operating in visible moisture at temperatures at or below +5°C.",
+              "tier": "full"
+            }
+          ]
+        },
+        {
+          "title": "Passing 10,000 ft",
+          "items": [
+            {
+              "label": "Altimeters",
+              "action": "Set Std",
+              "id": "altimeters-std",
+              "info": "PFD baro knobs. Set both to STD (29.92 in Hg / 1013 hPa) when passing transition altitude.",
+              "tier": "quick"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "Off",
+              "id": "landing-lights-climb",
+              "info": "Overhead Panel. Not required above 10,000 ft.",
+              "tier": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cruise",
+      "id": "cruise",
+      "groups": [
+        {
+          "title": "Cruise Monitoring",
+          "items": [
+            {
+              "label": "EIS",
+              "action": "Monitor",
+              "id": "eis-cruise",
+              "info": "MFD. Engine Indication System. Periodically confirm N1, N2, ITT, oil pressure and fuel flow are all stable in the green.",
+              "tier": "normal"
+            },
+            {
+              "label": "Thrust",
+              "action": "MGT / FMS",
+              "id": "thrust-cruise",
+              "info": "Center Pedestal. Set cruise thrust to the target shown by the FMS or FADEC cruise management. Max cruise is 311 KTAS at FL280.",
+              "tier": "normal"
+            },
+            {
+              "label": "Ice Protection",
+              "action": "As Required",
+              "id": "ice-protection-cruise",
+              "info": "Overhead Panel. Enable ENGINE IPS and WING/STAB IPS if in icing conditions. Max operating altitude is 31,000 ft.",
+              "tier": "full"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Descent",
+      "id": "descent",
+      "groups": [
+        {
+          "title": "Descent Prep",
+          "items": [
+            {
+              "label": "Approach Briefing",
+              "action": "Complete",
+              "id": "approach-briefing-descent",
+              "info": "Cockpit. Review the arrival ATIS, approach type, MDA/DH, missed approach procedure, and destination field elevation before starting descent.",
+              "tier": "normal"
+            },
+            {
+              "label": "Landing Field Elevation",
+              "action": "Check",
+              "id": "landing-field-elevation",
+              "info": "MFD. Confirm the destination airport elevation is loaded correctly in the FMS for pressurization scheduling.",
+              "tier": "normal"
+            },
+            {
+              "label": "Minimums",
+              "action": "Set",
+              "id": "minimums",
+              "info": "PFD. Set MDA or DH (decision height) on the PFD for the planned approach.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Descent",
+          "items": [
+            {
+              "label": "Altimeters",
+              "action": "Set QNH",
+              "id": "altimeters-qnh",
+              "info": "PFD baro knobs. Set local QNH when passing transition flight level on descent.",
+              "tier": "quick"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "On",
+              "id": "landing-lights-descent",
+              "info": "Overhead Panel. On below 10,000 ft.",
+              "tier": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Approach",
+      "id": "approach",
+      "groups": [
+        {
+          "title": "Approach Setup",
+          "items": [
+            {
+              "label": "Airspeed",
+              "action": "< 150 KIAS",
+              "id": "airspeed-flap-gate",
+              "info": "PFD. Slow below VLO extend (210 KIAS) before extending gear, and below 150 KIAS before selecting initial flap.",
+              "tier": "normal"
+            },
+            {
+              "label": "Flaps",
+              "action": "50%",
+              "id": "flaps-approach",
+              "info": "Overhead Panel. Set initial 50% flap for the approach. Maximum speed with flaps at 50% is 190 KIAS. Maintain below 140 KIAS before adding full flap.",
+              "tier": "quick"
+            }
+          ]
+        },
+        {
+          "title": "Configuration",
+          "items": [
+            {
+              "label": "Landing Gear",
+              "action": "Down",
+              "id": "landing-gear-down",
+              "info": "Instrument Panel. Extend gear below 210 KIAS. Confirm three green gear-down indications on the MFD.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flaps",
+              "action": "50%–100%",
+              "id": "flaps-final",
+              "info": "Overhead Panel. Select 100% for normal conditions, 50% maximum if there is ice on the airframe. Maximum speed with flaps at 100% is 150 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Cabin Pressure",
+              "action": "0 PSI Diff",
+              "id": "cabin-pressure-approach",
+              "info": "MFD. Verify differential pressure approaching zero on descent to field elevation.",
+              "tier": "normal"
+            },
+            {
+              "label": "Autopilot",
+              "action": "Off",
+              "id": "autopilot-off",
+              "info": "Glareshield AP button. Disconnect before final approach. Exact timing is pilot discretion, but off before short final is standard.",
+              "tier": "quick"
+            },
+            {
+              "label": "Windshield IPS",
+              "action": "Off",
+              "id": "windshield-ips-off",
+              "info": "Overhead Panel. Turn off windshield ice protection before landing to prevent the heated windshield from distorting visibility on short final.",
+              "tier": "normal"
+            },
+            {
+              "label": "Airspeed",
+              "action": "VAPP",
+              "id": "airspeed-vref",
+              "info": "PFD. Target approach speed is VAPP — approximately 97 KIAS (VRef 87 KIAS plus ~10 kt wind correction). Stall speed with flaps is 67 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "Verify On",
+              "id": "landing-lights-approach",
+              "info": "Overhead Panel. Confirm landing lights are illuminated on final approach.",
+              "tier": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Landing",
+      "id": "landing",
+      "groups": [
+        {
+          "title": "Landing",
+          "items": [
+            {
+              "label": "Thrust Lever",
+              "action": "Idle",
+              "id": "thrust-lever-idle-landing",
+              "info": "Center Pedestal. Retard to idle over the threshold for touchdown. The SF50 has no thrust reversers — braking is entirely via wheel brakes.",
+              "tier": "quick"
+            },
+            {
+              "label": "Brakes",
+              "action": "Apply",
+              "id": "brakes-landing",
+              "info": "Rudder Pedals. Apply brakes after mains touch. The SF50 has no thrust reversers or spoilers, so brake early and consistently. Landing ground roll is approximately 1,628 ft.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Shutdown & Secure",
+      "id": "shutdown-secure",
+      "groups": [
+        {
+          "title": "After Landing Flow",
+          "items": [
+            {
+              "label": "Flaps",
+              "action": "Up",
+              "id": "flaps-after-landing",
+              "info": "Overhead Panel. Retract flaps after clearing the runway.",
+              "tier": "quick"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "Off",
+              "id": "landing-lights-off",
+              "info": "Overhead Panel. Off after clearing the active runway.",
+              "tier": "normal"
+            },
+            {
+              "label": "Probe Heat",
+              "action": "Off",
+              "id": "probe-heat-off",
+              "info": "Overhead Panel. No longer required once clear of the runway.",
+              "tier": "normal"
+            },
+            {
+              "label": "Wing / Stab IPS",
+              "action": "Off",
+              "id": "wing-stab-ips-off",
+              "info": "Overhead Panel. Ice protection systems off after landing.",
+              "tier": "normal"
+            },
+            {
+              "label": "Engine IPS",
+              "action": "Off",
+              "id": "engine-ips-off-landing",
+              "info": "Overhead Panel. Engine inlet ice protection off after clearing the runway.",
+              "tier": "normal"
+            },
+            {
+              "label": "Brakes",
+              "action": "Check",
+              "id": "brakes-after-landing",
+              "info": "Rudder Pedals. Check brake temperature on MFD if available. Confirm pedal response is normal before reaching the gate.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Shutdown",
+          "items": [
+            {
+              "label": "Thrust Lever",
+              "action": "Idle",
+              "id": "thrust-lever-idle-shutdown",
+              "info": "Center Pedestal. Allow the engine to run at idle for at least 2 minutes before shutdown.",
+              "tier": "quick"
+            },
+            {
+              "label": "Parking Brake",
+              "action": "Set",
+              "id": "parking-brake-shutdown",
+              "info": "Center Pedestal. Set after the idle cooldown is complete.",
+              "tier": "quick"
+            },
+            {
+              "label": "Engine Knob",
+              "action": "Off",
+              "id": "engine-knob-off",
+              "info": "Center Pedestal. Move the three-position rotary to OFF to close the FADEC fuel metering valve.",
+              "tier": "quick"
+            },
+            {
+              "label": "Engine Start/Stop",
+              "action": "Press",
+              "id": "engine-stop",
+              "info": "Overhead Panel. Press the Engine START/STOP button to complete the shutdown sequence after the Engine Knob is in OFF.",
+              "tier": "quick"
+            }
+          ]
+        },
+        {
+          "title": "Secure",
+          "items": [
+            {
+              "label": "Bleed",
+              "action": "Fresh",
+              "id": "bleed-fresh",
+              "info": "Overhead Panel. Set bleed air to FRESH after engine shutdown for ventilation while passengers deplane.",
+              "tier": "normal"
+            },
+            {
+              "label": "GEN 1 / GEN 2",
+              "action": "Off",
+              "id": "gen-1-gen-2-off",
+              "info": "Overhead Panel. Turn off both generators after engine has spooled down.",
+              "tier": "quick"
+            },
+            {
+              "label": "Lights",
+              "action": "Off",
+              "id": "lights-off",
+              "info": "Overhead Panel. Turn off all external and interior lights — strobe, beacon, landing, navigation, and cabin.",
+              "tier": "normal"
+            },
+            {
+              "label": "Oxygen Master",
+              "action": "Off",
+              "id": "oxygen-master-off",
+              "info": "Overhead Panel. Close the oxygen supply valve after all occupants have deplaned.",
+              "tier": "normal"
+            },
+            {
+              "label": "BAT 1 / BAT 2",
+              "action": "Off",
+              "id": "bat-1-bat-2-off",
+              "info": "Overhead Panel. Master battery switches off last. Powers down the avionics bus and all remaining systems.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "description": "The world's only single-engine personal jet, the Vision Jet makes jet performance accessible to single-pilot operators.",
+  "manufacturer": "Cirrus",
+  "model": "Vision Jet",
+  "slug": "sf50",
+  "status": "active",
+  "suffix": " SF50 G2",
+  "systemsType": "business-jet",
+  "addon": "FlightFX",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

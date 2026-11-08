@@ -1,0 +1,1436 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Deploys wing panels to increase drag and reduce airspeed or increase descent rate.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flap-lever",
+              "info": "Center Pedestal. Commands the extension or retraction of the wing flaps and slats.",
+              "label": "Flap Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-masters",
+              "info": "Center Pedestal. Controls fuel flow and initiates the start or shutdown sequence for both engines.",
+              "label": "Engine Masters",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "label": "Thrust Levers",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Center Pedestal. Scans for and displays precipitation and storm activity ahead of the aircraft.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Instrument Panel. Controls landing gear extension and retraction. Drop the gear at glideslope intercept and verify three green lights.",
+              "label": "Gear",
+              "tier": "normal"
+            }
+          ],
+          "title": "Safety Check"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "battery-1-2-apu",
+              "info": "Overhead Panel. Connects the main and APU batteries. Check that the voltage is above 25.5V before switching ON.",
+              "label": "Battery 1+2+APU",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "external-power",
+              "info": "Overhead Panel. Connects ground electrical power to the aircraft networks when engines and APU are off.",
+              "label": "External Power",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "nav-logo-lights",
+              "info": "Overhead Panel. Illuminates the aircraft's navigation lights and tail logo for visibility.",
+              "label": "Nav & Logo Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "apu-fire-test",
+              "info": "Overhead Panel. Verifies the integrity of the APU fire detection and extinguishing system.",
+              "label": "APU Fire Test",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Starts the Auxiliary Power Unit to provide electrical and pneumatic power on the ground. Turn the APU Master ON, wait 3 seconds for the flap to open, then turn APU Start ON.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "label": "APU Bleed",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power-2",
+              "info": "Overhead Panel. Connects ground electrical power to the aircraft networks when engines and APU are off.",
+              "label": "External Power",
+              "tier": "normal"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "crew-oxygen",
+              "info": "Overhead Panel. Supplies oxygen to the pilots' masks in case of cabin depressurization.",
+              "label": "Crew Oxygen",
+              "tier": "full"
+            },
+            {
+              "action": "NAV",
+              "id": "adirs",
+              "info": "Overhead Panel. Turn IR1, IR2, and IR3 to NAV. Alignment takes about 8 minutes.",
+              "label": "ADIRS",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls all external aircraft lighting. Set Strobes to AUTO, Beacon OFF, Nav ON, and others as required.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the Fasten Seatbelt and No Smoking signs in the cabin.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "emergency-exit-lights",
+              "info": "Overhead Panel. Arms the independent lighting system to illuminate evacuation paths if aircraft power is lost.",
+              "label": "Emergency Exit Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Supplies fuel under pressure from the tanks to the engines.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
+            },
+            {
+              "action": "TEST",
+              "id": "engine-fire-test",
+              "info": "Overhead Panel. Tests the fire warning circuits and extinguishing systems for both engines.",
+              "label": "Engine Fire Test",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "overhead-panel",
+              "info": "Overhead Panel. Verification of overhead switches. Scan from bottom to top, left to right, ensuring no white lights remain.",
+              "label": "Overhead Panel",
+              "tier": "full"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "mcdu-preflight",
+              "info": "MCDU. Entering flight plan and performance data. Fill out INIT A, F-PLN, INIT B, and PERF pages before departure.",
+              "label": "MCDU Preflight",
+              "tier": "quick"
+            }
+          ],
+          "title": "MCDU Preflight"
+        },
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "label": "Altimeters",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "flight-directors",
+              "info": "Glareshield (FCU). Provides visual guidance cues on the PFD to manually fly the programmed trajectory.",
+              "label": "Flight Directors",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK DASHED",
+              "id": "fcu-spd-hdg",
+              "info": "Glareshield (FCU). Sets target speed and heading. Both should show dashes to confirm they are in managed mode.",
+              "label": "FCU SPD/HDG",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "fcu-altitude",
+              "info": "Glareshield (FCU). Sets the target altitude. Set your platform altitude or the last waypoint altitude before the runway, but do not push yet.",
+              "label": "FCU Altitude",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "label": "FMA",
+              "tier": "full"
+            }
+          ],
+          "title": "Glareshield & FCU"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "standby-instruments",
+              "info": "Main Instrument Panel. Standby attitude, altitude, and airspeed — cross-check.",
+              "label": "Standby Instruments",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "anti-skid",
+              "info": "Main Instrument Panel. Maximizes braking efficiency and prevents tire skidding during landing or a rejected takeoff.",
+              "label": "Anti-Skid",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "brake-pressure",
+              "info": "Main Instrument Panel. Displays hydraulic pressure for the wheel brakes. Ensure the accumulator pressure is in the green band.",
+              "label": "Brake Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "tcas",
+              "info": "Center Pedestal. Traffic Collision Avoidance System detects nearby aircraft and provides resolution advisories.",
+              "label": "TCAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Main Panel & Pedestal"
+        }
+      ],
+      "id": "cockpit-preparation",
+      "title": "Cockpit Preparation"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED",
+              "id": "windows",
+              "info": "Cockpit. Verifies that the sliding cockpit windows are closed and securely latched.",
+              "label": "Windows",
+              "tier": "normal"
+            },
+            {
+              "action": "LOCKED",
+              "id": "cockpit-door",
+              "info": "Center Pedestal. Controls the locking mechanism for the reinforced cockpit door.",
+              "label": "Cockpit Door",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY ON",
+              "id": "apu",
+              "info": "Overhead Panel. Starts the Auxiliary Power Unit to provide electrical and pneumatic power on the ground. Turn the APU Master ON, wait 3 seconds for the flap to open, then turn APU Start ON.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY OFF",
+              "id": "external-power",
+              "info": "Overhead Panel. Connects ground electrical power to the aircraft networks when engines and APU are off.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED",
+              "id": "doors",
+              "info": "ECAM. Verifies all passenger and cargo doors are securely closed and locked prior to departure.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "to-speeds-thrust",
+              "info": "MCDU PERF page. Cross-check V1, VR, V2 and FLEX or TOGA thrust setting against calculated takeoff data before calling for start.",
+              "label": "T/O Speeds & Thrust",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Overhead Panel. Red flashing light indicating engines are running or about to start.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "REMOVED",
+              "id": "gear-pins-covers",
+              "info": "Exterior. Confirm ground crew has removed all gear pins, locks, and covers before pushback.",
+              "label": "Gear Pins & Covers",
+              "tier": "full"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        }
+      ],
+      "id": "before-start",
+      "title": "Before Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "START",
+              "id": "pushback",
+              "label": "Pushback",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "IGN/START",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "engine-master-1",
+              "info": "Center Pedestal. Initiates the start sequence for engine 1. Monitor N2, EGT, and fuel flow until stabilized before starting engine 2.",
+              "label": "Engine Master 1",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "engine-master-2",
+              "info": "Center Pedestal. Initiates the start sequence for engine 2. Monitor the engine parameters until stable.",
+              "label": "Engine Master 2",
+              "tier": "quick"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode-2",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Powers the APU electronic control box to prepare for startup.",
+              "label": "APU Master",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "engine-anti-ice",
+              "info": "Overhead Panel. Routes hot bleed air to the engine cowls to prevent ice accumulation.",
+              "label": "Engine Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "wing-anti-ice",
+              "info": "Overhead Panel. Routes hot bleed air to the wing leading edges to prevent ice accumulation.",
+              "label": "Wing Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "MAX",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Set to MAX for takeoff. This arms the RTO (Rejected Takeoff) mode — if the takeoff is aborted with thrust to idle, maximum braking applies automatically.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "flaps",
+              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "ecam-status",
+              "info": "ECAM STS page. Verify no status messages remaining after engine start. Any active items must be addressed before taxi.",
+              "label": "ECAM Status",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ZERO",
+              "id": "rudder-trim",
+              "info": "Center Pedestal. Adjusts the rudder's resting position to counteract yawing forces.",
+              "label": "Rudder Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "ZERO",
+              "id": "aileron-trim",
+              "info": "Center Pedestal. Adjusts the resting position of the ailerons to relieve lateral control pressure.",
+              "label": "Aileron Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "pitch-trim",
+              "info": "Center Pedestal. Adjusts the horizontal stabilizer. Set this according to the calculated THS value from your PERF page.",
+              "label": "Pitch Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Side Stick. Controls the aircraft's pitch and roll. Verify full and free movement on the ECAM F/CTL page.",
+              "label": "Flight Controls",
+              "tier": "quick"
+            }
+          ],
+          "title": "Trim & Controls"
+        },
+        {
+          "items": [
+            {
+              "action": "TAXI",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
+              "label": "RWY Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "strobes",
+              "info": "Overhead Panel. High-intensity flashing white lights at the wingtips used to increase visibility in flight and on the runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "transponder",
+              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Locks wheel brakes. Ensure it is OFF when ground chocks are set.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes",
+              "info": "Rudder Pedals. Controls wheel braking. Disengage the autopilot before turning off the runway if performing an autoland.",
+              "label": "Brakes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "packs",
+              "info": "Overhead Panel. Air conditioning packs provide cabin pressurization and temperature control. Turn ON if they were previously set OFF for takeoff.",
+              "label": "Packs",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "engine-anti-ice",
+              "info": "Overhead Panel. Routes hot bleed air to the engine cowls to prevent ice accumulation.",
+              "label": "Engine Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fcu-panel",
+              "info": "Glareshield (FCU). Primary interface for autopilot inputs. Verify speed, heading, and altitude show dashes for managed modes.",
+              "label": "FCU Panel",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "terrain-on-nd",
+              "info": "Main Instrument Panel. Displays a topographical map on the Navigation Display to aid in terrain clearance.",
+              "label": "Terrain on ND",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY MAX",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Confirm RTO MAX is set before entering the runway.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "weather-radar",
+              "info": "Center Pedestal. Scans for and displays precipitation and storm activity ahead of the aircraft.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "pred-w-s",
+              "info": "Center Pedestal. Activates the predictive windshear system on the weather radar to detect hazardous wind conditions.",
+              "label": "PRED W/S",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "full"
+            },
+            {
+              "action": "ARMED",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK SET",
+              "id": "flaps",
+              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "TA/RA",
+              "id": "tcas",
+              "info": "Center Pedestal. Traffic Collision Avoidance System detects nearby aircraft and provides resolution advisories.",
+              "label": "TCAS",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "t-o-config",
+              "info": "Center Pedestal. Tests aircraft configuration. Press T.O CONFIG and verify the ECAM memo reads TAKEOFF NO BLUE.",
+              "label": "T.O Config",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Overhead Panel. High-intensity flashing white lights at the wingtips used to increase visibility in flight and on the runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
+              "label": "RWY Turnoff Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Final Checks"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "FLEX/TOGA",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Flight Controls. At VR speed, pull back on the stick smoothly to achieve a maximum 8-degree initial pitch.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "label": "Positive Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "Glareshield (FCU). Engages the automated flight control system. Engage at your discretion after a positive climb is established.",
+              "label": "Autopilot",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "gear",
+              "info": "Main Instrument Panel. Controls landing gear extension and retraction. Drop the gear at glideslope intercept and verify three green lights.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "CLIMB",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACT",
+              "id": "flaps",
+              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "DISARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "packs",
+              "info": "Overhead Panel. Air conditioning packs provide cabin pressurization and temperature control. Turn ON if they were previously set OFF for takeoff.",
+              "label": "Packs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "STD",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "terrain-on-nd",
+              "info": "Main Instrument Panel. Displays a topographical map on the Navigation Display to aid in terrain clearance.",
+              "label": "Terrain on ND",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the Fasten Seatbelt and No Smoking signs in the cabin.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            }
+          ],
+          "title": "Climb Flow"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "Overhead Panel. Controls and monitors the cabin altitude and pressure differential.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Prevents or removes ice buildup on critical aircraft surfaces and engine cowls.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "MONITOR",
+              "id": "flight-plan",
+              "info": "MCDU. The programmed route in the flight management system. Check your estimated fuel on board and flight plan progress.",
+              "label": "Flight Plan",
+              "tier": "normal"
+            },
+            {
+              "action": "CROSSCHECK",
+              "id": "top-of-descent",
+              "info": "Navigation Display. The calculated point to start descending. Multiply your altitude to lose in thousands by 3, then add 10 to get the required NM.",
+              "label": "Top of Descent",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OBTAIN",
+              "id": "landing-info",
+              "info": "MCDU. Performance data for arrival. Check the ATIS for the active runway, wind, altimeter, and temperature.",
+              "label": "Landing Info",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "mcdu-approach",
+              "info": "MCDU. Activates approach phase speeds. Verify the STAR and approach in F-PLN, and enter QNH, temperature, wind, and minimums in PERF APPR.",
+              "label": "MCDU Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "ils-frequency",
+              "info": "MCDU. Tunes the Instrument Landing System frequency. Cross-check this on the RAD NAV page.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "fcu-altitude",
+              "info": "Glareshield (FCU). Sets the target altitude. Set your platform altitude or the last waypoint altitude before the runway, but do not push yet.",
+              "label": "FCU Altitude",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "ECAM. Indicates the total amount of fuel on board.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "INITIATE",
+              "id": "descent",
+              "info": "Glareshield (FCU). Push the altitude selector to start a managed descent and monitor your path deviations.",
+              "label": "Descent",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Prevents or removes ice buildup on critical aircraft surfaces and engine cowls.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "full"
+            }
+          ],
+          "title": "Top of Descent"
+        },
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
+              "label": "RWY Turnoff Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the Fasten Seatbelt and No Smoking signs in the cabin.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "terrain-on-nd",
+              "info": "Main Instrument Panel. Displays a topographical map on the Navigation Display to aid in terrain clearance.",
+              "label": "Terrain on ND",
+              "tier": "full"
+            }
+          ],
+          "title": "Passing Transition"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "ls-mode",
+              "info": "Glareshield (FCU). Displays ILS localizer and glideslope deviations. Turn ON for ILS approaches, but leave OFF for RNAV.",
+              "label": "LS Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK QNH",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY SET",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "eng-mode",
+              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "label": "ENG Mode",
+              "tier": "full"
+            },
+            {
+              "action": "CROSSCHECK",
+              "id": "ils-frequency",
+              "info": "MCDU. Tunes the Instrument Landing System frequency. Cross-check this on the RAD NAV page.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "EFIS Panel. Set the decision altitude or minimum descent altitude for the approach. BARO for a standard ILS, RADIO for low-visibility approaches.",
+              "label": "Minimums",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "flaps-1",
+              "info": "Center Pedestal. Initial flap setting for approach. Select this at green dot speed, typically around 15 NM out.",
+              "label": "Flaps 1",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-2",
+              "info": "Center Pedestal. Secondary flap setting. Select this at S-speed, usually upon localizer intercept.",
+              "label": "Flaps 2",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Instrument Panel. Controls landing gear extension and retraction. Drop the gear at glideslope intercept and verify three green lights.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-3",
+              "info": "Center Pedestal. Intermediate flap setting to increase lift and drag as you slow down on approach.",
+              "label": "Flaps 3",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-full",
+              "info": "Center Pedestal. Final landing configuration to provide maximum lift and drag for touchdown.",
+              "label": "Flaps Full",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            },
+            {
+              "action": "NO BLUE",
+              "id": "ecam-memo-landing",
+              "info": "ECAM upper display. LANDING memo should show no blue items — all landing configuration checks complete.",
+              "label": "ECAM Memo",
+              "tier": "normal"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flare",
+              "info": "Flight Controls. Maintain about 4 to 5 degrees nose up during landing. For an autoland, keep hands off until rollout.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "reverse-thrust",
+              "info": "Center Pedestal. Apply full reverse thrust down to 70 knots, then idle reverse until 30 knots.",
+              "label": "Reverse Thrust",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY",
+              "id": "brakes",
+              "info": "Rudder Pedals. Controls wheel braking. Disengage the autopilot before turning off the runway if performing an autoland.",
+              "label": "Brakes",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AUTO",
+              "id": "strobes",
+              "info": "Overhead Panel. High-intensity flashing white lights at the wingtips used to increase visibility in flight and on the runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAXI",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
+              "label": "RWY Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Prevents or removes ice buildup on critical aircraft surfaces and engine cowls.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Starts the Auxiliary Power Unit to provide electrical and pneumatic power on the ground. Turn the APU Master ON, wait 3 seconds for the flap to open, then turn APU Start ON.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ls-mode",
+              "info": "Glareshield (FCU). Displays ILS localizer and glideslope deviations. Turn ON for ILS approaches, but leave OFF for RNAV.",
+              "label": "LS Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "terrain-on-nd",
+              "info": "Main Instrument Panel. Displays a topographical map on the Navigation Display to aid in terrain clearance.",
+              "label": "Terrain on ND",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Center Pedestal. Scans for and displays precipitation and storm activity ahead of the aircraft.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pred-w-s",
+              "info": "Center Pedestal. Activates the predictive windshear system on the weather radar to detect hazardous wind conditions.",
+              "label": "PRED W/S",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "tcas",
+              "info": "Center Pedestal. Traffic Collision Avoidance System detects nearby aircraft and provides resolution advisories.",
+              "label": "TCAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Systems Reset"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Locks wheel brakes. Ensure it is OFF when ground chocks are set.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
+              "label": "RWY Turnoff Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-masters",
+              "info": "Center Pedestal. Controls fuel flow and initiates the start or shutdown sequence for both engines.",
+              "label": "Engine Masters",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the Fasten Seatbelt and No Smoking signs in the cabin.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "beacon",
+              "info": "Overhead Panel. Red flashing light indicating engines are running or about to start.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Prevents or removes ice buildup on critical aircraft surfaces and engine cowls.",
+              "label": "Anti-Ice",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Supplies fuel under pressure from the tanks to the engines.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "transponder",
+              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "parking-brake-2",
+              "info": "Center Pedestal. Locks wheel brakes. Ensure it is OFF when ground chocks are set.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "crew-oxygen",
+              "info": "Overhead Panel. Supplies oxygen to the pilots' masks in case of cabin depressurization.",
+              "label": "Crew Oxygen",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls all external aircraft lighting. Set Strobes to AUTO, Beacon OFF, Nav ON, and others as required.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed-2",
+              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Powers the APU electronic control box to prepare for startup.",
+              "label": "APU Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "emergency-exit-lights",
+              "info": "Overhead Panel. Arms the independent lighting system to illuminate evacuation paths if aircraft power is lost.",
+              "label": "Emergency Exit Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "batteries",
+              "info": "Overhead Panel. Connects the main batteries to the DC network. Turn OFF Battery 1, 2, and the APU battery to fully de-power the aircraft.",
+              "label": "Batteries",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "An advanced wide-body engineered for effortless global travel and WhisperQuiet cabin comfort.",
+  "manufacturer": "Airbus",
+  "model": "A330",
+  "slug": "a330",
+  "status": "active",
+  "suffix": "-900neo",
+  "systemsType": "airliner",
+  "addon": "Headwind",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

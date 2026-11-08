@@ -1,0 +1,828 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set & Check CG",
+              "id": "fuel-payload",
+              "info": "MSFS fuel and payload menu. Max takeoff weight 6,600 lbs, max landing weight 6,300 lbs.",
+              "label": "Fuel / Payload",
+              "tier": "quick"
+            },
+            {
+              "action": "Adjusted",
+              "id": "seats-belts-pedals",
+              "label": "Seats, Belts & Pedals",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            { "action": "On", "id": "battery-master", "label": "Battery Master", "tier": "quick" },
+            {
+              "action": "Ext Supply",
+              "id": "starter-isol-switch",
+              "info": "Only if starting on external power.",
+              "label": "Starter Isol Switch",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "generator-switches",
+              "info": "Turned on after both engines are running.",
+              "label": "Generator Switches",
+              "tier": "normal"
+            },
+            {
+              "action": "Free and On",
+              "id": "fuel-selectors",
+              "info": "Check both selectors move freely. Each is set to its own tank before start.",
+              "label": "Fuel Selectors",
+              "tier": "full"
+            },
+            { "action": "Off", "id": "fuel-pumps-pre", "label": "Fuel Pumps", "tier": "full" },
+            { "action": "Off", "id": "fuel-valves-pre", "label": "Fuel Valves", "tier": "full" },
+            { "action": "Check", "id": "fuel-quantity", "label": "Fuel Quantity", "tier": "quick" }
+          ],
+          "title": "Cockpit Setup"
+        },
+        {
+          "items": [
+            { "action": "Check", "id": "oat-indicator", "label": "OAT Indicator", "tier": "full" },
+            {
+              "action": "Press-to-Test",
+              "id": "warning-lamps",
+              "info": "Cabin heater and door warning lamp, generator low-volt warning, airframe de-icer cycling lamp, main-to-emergency busbar warning and marker beacon lamp.",
+              "label": "Warning Lamps",
+              "tier": "full"
+            },
+            { "action": "Cross Check", "id": "altimeters", "label": "Altimeters", "tier": "full" },
+            { "action": "Check and Set", "id": "timepiece", "label": "Timepiece", "tier": "full" },
+            { "action": "Check", "id": "compasses", "label": "Compasses", "tier": "full" },
+            {
+              "action": "Check",
+              "id": "engine-flight-instruments",
+              "label": "Engine & Flight Inst.",
+              "tier": "full"
+            },
+            {
+              "action": "Check In",
+              "id": "circuit-breakers",
+              "label": "Circuit Breakers",
+              "tier": "full"
+            },
+            {
+              "action": "Full Movement",
+              "id": "flight-controls-pre",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            { "action": "Check Movement", "id": "flaps-pre", "label": "Flaps", "tier": "normal" }
+          ],
+          "title": "Panel Checks"
+        },
+        {
+          "items": [
+            {
+              "action": "Off",
+              "id": "avionics-pre",
+              "label": "Avionics / Radios",
+              "tier": "normal"
+            },
+            { "action": "Closed", "id": "throttles-pre", "label": "Throttles", "tier": "quick" },
+            {
+              "action": "Full Forward",
+              "id": "propeller-controls-pre",
+              "label": "Propeller Controls",
+              "tier": "quick"
+            },
+            { "action": "Full Rich", "id": "mixture-pre", "label": "Mixture", "tier": "quick" },
+            { "action": "Off", "id": "carb-heat-pre", "label": "Carburetor Heat", "tier": "normal" }
+          ],
+          "title": "Engine Controls"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "beacon",
+              "info": "Warns ground crew that the engines are about to start.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "Port Tank",
+              "id": "lh-fuel-selector",
+              "info": "Feeds the LH engine from the port tank.",
+              "label": "LH Fuel Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "STBD Tank",
+              "id": "rh-fuel-selector",
+              "info": "Feeds the RH engine from the starboard tank.",
+              "label": "RH Fuel Selector",
+              "tier": "quick"
+            },
+            { "action": "On", "id": "fuel-pumps", "label": "Fuel Pumps", "tier": "quick" },
+            { "action": "On / Open", "id": "fuel-valves", "label": "Fuel Valves", "tier": "quick" }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Prime",
+              "id": "rh-throttle-prime",
+              "info": "Move the RH throttle through its full range one to four times.",
+              "label": "RH Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "1/10 Open",
+              "id": "rh-throttle-set",
+              "label": "RH Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "left-stbd-magneto",
+              "info": "Left magneto switch for the starboard (RH) engine. On before cranking.",
+              "label": "STBD Left Magneto",
+              "tier": "quick"
+            },
+            {
+              "action": "Select Right",
+              "id": "starter-rh",
+              "info": "Starts the RH engine. The LH engine follows.",
+              "label": "Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "right-stbd-magneto",
+              "info": "Right magneto switch for the starboard (RH) engine. On when the engine fires.",
+              "label": "STBD Right Magneto",
+              "tier": "quick"
+            },
+            {
+              "action": "1,000-1,200 RPM",
+              "id": "rh-throttle-idle",
+              "label": "RH Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "oil-pressure-rh",
+              "info": "Shut the engine down if no oil pressure shows within 30 seconds.",
+              "label": "Oil Pressure",
+              "tier": "quick"
+            }
+          ],
+          "title": "RH Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "Start",
+              "id": "lh-engine-start",
+              "info": "Repeat the RH sequence for the LH engine: prime, throttle 1/10 open, magnetos, starter, 1,000-1,200 RPM, oil pressure within 30 seconds.",
+              "label": "LH Engine Start",
+              "tier": "quick"
+            },
+            {
+              "action": "1,200 RPM",
+              "id": "throttles-idle",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            { "action": "Off", "id": "fuel-pumps-off", "label": "Fuel Pumps", "tier": "normal" },
+            {
+              "action": "Guarded",
+              "id": "starter-switch-guard",
+              "label": "Starter Switch Guard",
+              "tier": "normal"
+            },
+            {
+              "action": "Check Off",
+              "id": "gen-low-volt-warning",
+              "label": "Gen Low-Volt Warning",
+              "tier": "normal"
+            },
+            { "action": "On", "id": "generators", "label": "Generators", "tier": "quick" },
+            {
+              "action": "Check 3-5 inHg",
+              "id": "vacuum-gauge",
+              "label": "Vacuum Gauge",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "oil-pressure-both",
+              "info": "Above minimum on both engines.",
+              "label": "Oil Pressure (Both)",
+              "tier": "normal"
+            }
+          ],
+          "title": "LH Engine & After Start"
+        },
+        {
+          "items": [
+            { "action": "On", "id": "avionics", "label": "Avionics", "tier": "quick" },
+            {
+              "action": "Program",
+              "id": "gps-autopilot",
+              "info": "Set up the avionics, GPS flight plan and autopilot.",
+              "label": "GPS / Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "GPS",
+              "id": "nav-cdi",
+              "info": "Set the CDI to GPS if required.",
+              "label": "NAV / CDI",
+              "tier": "full"
+            },
+            {
+              "action": "Set & Stby",
+              "id": "transponder",
+              "info": "Set the assigned squawk code. Leave in standby until lineup.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            { "action": "Set QNH", "id": "altimeter", "label": "Altimeter", "tier": "quick" },
+            {
+              "action": "As Required",
+              "id": "cabin-heater",
+              "label": "Cabin Heater",
+              "tier": "full"
+            },
+            { "action": "As Required", "id": "de-ice", "label": "De-Ice", "tier": "full" },
+            {
+              "action": "Check",
+              "id": "flight-instruments",
+              "label": "Flight Instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Avionics Setup"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Obtain",
+              "id": "atc-clearance",
+              "info": "As required.",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            { "action": "On", "id": "nav-lights", "label": "Nav Lights", "tier": "normal" },
+            {
+              "action": "Taxi",
+              "id": "landing-taxi-lights",
+              "label": "Landing / Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Release",
+              "id": "parking-brake-taxi",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            { "action": "Check", "id": "brakes", "label": "Brakes", "tier": "normal" },
+            { "action": "Check", "id": "steering", "label": "Steering", "tier": "normal" }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-runup",
+              "label": "Parking Brake",
+              "tier": "full"
+            },
+            {
+              "action": "Full Forward",
+              "id": "propeller-runup",
+              "label": "Propeller Controls",
+              "tier": "full"
+            },
+            { "action": "Full Rich", "id": "mixture-runup", "label": "Mixture", "tier": "full" },
+            {
+              "action": "1,200 RPM",
+              "id": "throttles-runup",
+              "label": "Throttles",
+              "tier": "full"
+            },
+            {
+              "action": "No Dead Cut",
+              "id": "magneto-check",
+              "info": "At 1,200 RPM, test each magneto. No engine may cut out. Then set the RH throttle to 17 inHg manifold pressure and test each magneto again: max drop 175 RPM.",
+              "label": "Magneto Check",
+              "tier": "full"
+            },
+            {
+              "action": "Exercise",
+              "id": "rh-propeller-exercise",
+              "label": "RH Prop Exercise",
+              "tier": "full"
+            },
+            {
+              "action": "Feather Check",
+              "id": "rh-feather-check",
+              "label": "RH Feather Check",
+              "tier": "full"
+            },
+            {
+              "action": "Complete",
+              "id": "lh-propeller-exercise",
+              "info": "Throttles to 1,200 RPM, then repeat the magneto, propeller exercise and feather checks for the LH engine.",
+              "label": "LH Engine Checks",
+              "tier": "full"
+            },
+            {
+              "action": "Check Green",
+              "id": "ammeter-battery",
+              "info": "Battery ammeter 2-5 amps green. Generator ammeter output green. Ammeter selector switch back to BATTERY. Voltmeter 27-29 volts.",
+              "label": "Ammeter / Voltmeter",
+              "tier": "full"
+            }
+          ],
+          "title": "Run-Up"
+        },
+        {
+          "items": [
+            { "action": "Closed", "id": "doors", "label": "Doors", "tier": "normal" },
+            {
+              "action": "Check Set",
+              "id": "altimeter-lineup",
+              "label": "Altimeter",
+              "tier": "normal"
+            },
+            { "action": "On", "id": "transponder-on", "label": "Transponder", "tier": "normal" },
+            {
+              "action": "Landing",
+              "id": "landing-lights",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            { "action": "On", "id": "strobe-lights", "label": "Strobes", "tier": "normal" },
+            {
+              "action": "Full Forward",
+              "id": "propeller-controls-to",
+              "label": "Propeller Controls",
+              "tier": "quick"
+            },
+            {
+              "action": "Full Rich",
+              "id": "mixture-to",
+              "info": "Or as required.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            { "action": "Off", "id": "carb-heat-to", "label": "Carburetor Heat", "tier": "quick" },
+            { "action": "Neutral", "id": "trim-tabs", "label": "Trim Tabs", "tier": "quick" },
+            {
+              "action": "T.O.",
+              "id": "flaps-to",
+              "info": "T.O. for runways shorter than 5,000 ft. On longer runways flaps UP is the alternative: propellers 2,400 RPM, rotate at 65 KIAS, climb at 75 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            { "action": "On", "id": "fuel-pumps-to", "label": "Fuel Pumps", "tier": "quick" },
+            {
+              "action": "Check",
+              "id": "engine-instruments",
+              "label": "Engine Instruments",
+              "tier": "full"
+            },
+            { "action": "On", "id": "pitot-heat", "label": "Pitot Heat", "tier": "normal" },
+            {
+              "action": "Full Movement",
+              "id": "flight-controls-to",
+              "label": "Flight Controls",
+              "tier": "full"
+            },
+            { "action": "Check", "id": "electrics", "label": "Electrics", "tier": "full" },
+            { "action": "Off", "id": "cabin-heater", "label": "Cabin Heater", "tier": "full" },
+            {
+              "action": "Release",
+              "id": "parking-brake-lineup",
+              "label": "Parking Brake",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Full Open",
+              "id": "throttles-takeoff",
+              "info": "Line up and hold the brakes, then set full throttle.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            { "action": "Release", "id": "brakes-release", "label": "Brakes", "tier": "quick" },
+            {
+              "action": "48-55 KIAS",
+              "id": "rotate",
+              "info": "Depends on weight. With flaps T.O., ground roll is about 1,000 ft at sea level.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "65 KIAS",
+              "id": "initial-climb",
+              "label": "Initial Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "Up",
+              "id": "flaps-retract",
+              "info": "At 200 ft AGL.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "95 KIAS",
+              "id": "accelerate",
+              "info": "After the flaps are up.",
+              "label": "Accelerate",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "2,500 RPM",
+              "id": "climb-power",
+              "info": "Normal climb at full throttle. Max continuous climb: 2,700 RPM at full throttle, 65 KIAS.",
+              "label": "Power",
+              "tier": "quick"
+            },
+            { "action": "95 KIAS", "id": "climb-speed", "label": "Climb Speed", "tier": "quick" },
+            {
+              "action": "As Required",
+              "id": "autopilot",
+              "info": "Minimum 1,000 ft AGL.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            { "action": "Check Up", "id": "flaps-climb", "label": "Flaps", "tier": "normal" },
+            {
+              "action": "Off",
+              "id": "fuel-pumps-climb",
+              "info": "At a safe height.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "mixture-climb",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "Std",
+              "id": "altimeter-transition",
+              "info": "At transition altitude. 1013 hPa / 29.92 inHg.",
+              "label": "Altimeter",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "landing-lights-climb",
+              "info": "At 10,000 ft / FL100. Landing lights may stay on as required.",
+              "label": "Landing / Taxi Lights",
+              "tier": "full"
+            }
+          ],
+          "title": "Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "cruise-power",
+              "info": "Power cruise: propellers 2,500 RPM, throttle about 20 inHg manifold pressure. Normal cruise: propellers 2,700 RPM, full throttle.",
+              "label": "Cruise Power",
+              "tier": "quick"
+            },
+            {
+              "action": "Peak EGT",
+              "id": "mixture-cruise",
+              "info": "Lean to peak EGT once cruise power is set.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "carb-heat-climb",
+              "label": "Carburetor Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "cabin-heater",
+              "label": "Cabin Heater",
+              "tier": "full"
+            },
+            { "action": "As Required", "id": "de-ice", "label": "De-Ice", "tier": "full" }
+          ],
+          "title": "Cruise"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "Climb & Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "gps-approach-setup",
+              "info": "Set up the avionics, GPS and autopilot for the arrival.",
+              "label": "GPS / Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "Check Set",
+              "id": "ils-frequency",
+              "info": "Compare with the chart.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "mixture-descent",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "throttle-descent",
+              "info": "Start down about (altitude / 1,000) x 3 + 10 NM from destination. About 500 fpm for passenger comfort. Max 177 KIAS. For a 3° path, sink rate is about 5 x ground speed.",
+              "label": "Throttle / Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "landing-lights-descent",
+              "info": "At 10,000 ft / FL100, as required.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Set QNH",
+              "id": "altimeter-descent",
+              "info": "At transition level.",
+              "label": "Altimeter",
+              "tier": "quick"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Activate",
+              "id": "nav-approach",
+              "info": "At 15 NM to go, activate the approach in the GPS. Set the CDI to VLOC for an ILS if required.",
+              "label": "NAV / Approach",
+              "tier": "normal"
+            },
+            { "action": "On", "id": "fuel-pumps-app", "label": "Fuel Pumps", "tier": "quick" },
+            { "action": "Off", "id": "cabin-heater-app", "label": "Cabin Heater", "tier": "full" },
+            {
+              "action": "Off",
+              "id": "carb-heat-app",
+              "label": "Carburetor Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "Full Rich",
+              "id": "mixture-app",
+              "info": "Or as required.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "Full Forward",
+              "id": "propeller-controls-app",
+              "label": "Propeller Controls",
+              "tier": "quick"
+            },
+            {
+              "action": "Check Set QNH",
+              "id": "altimeter-app",
+              "label": "Altimeter",
+              "tier": "full"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "110 KIAS",
+              "id": "reduce-speed-initial",
+              "info": "At 15-12 NM to go on an ILS. If the autopilot flies the glideslope, slow to 80 KIAS before capture. Visual approach: about 100 KIAS at 8 NM, 1,000 ft AGL on downwind.",
+              "label": "Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "T.O.",
+              "id": "flaps-approach",
+              "info": "At glideslope capture, or on downwind / 6 NM for a visual. With the autopilot on the glideslope, set T.O. at about 100 KIAS. Max 114 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "70 KIAS",
+              "id": "reduce-speed-mid",
+              "info": "At about 6 NM to go.",
+              "label": "Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "Full",
+              "id": "flaps-full",
+              "info": "At 3 NM to go or on base leg. Max 88 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "autopilot-off",
+              "info": "At 3 NM to go.",
+              "label": "Autopilot",
+              "tier": "normal"
+            }
+          ],
+          "title": "Final Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "51-58 KIAS",
+              "id": "final-speed",
+              "info": "Depends on weight. Stall speed with full flaps is 40 KIAS.",
+              "label": "Speed on Final",
+              "tier": "quick"
+            },
+            { "action": "Full Forward", "id": "rpm-check", "label": "RPM", "tier": "quick" },
+            { "action": "Check Set", "id": "flaps-landing", "label": "Flaps", "tier": "normal" },
+            {
+              "action": "Idle",
+              "id": "throttle-threshold",
+              "info": "At the runway threshold with obstacles clear. Flare slowly.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "Mainwheels",
+              "id": "touchdown",
+              "info": "Touch down on the mainwheels first. Landing distance about 1,200 ft at sea level.",
+              "label": "Touchdown",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            { "action": "Retract", "id": "flaps-after", "label": "Flaps", "tier": "normal" },
+            { "action": "Off", "id": "fuel-pumps-after", "label": "Fuel Pumps", "tier": "normal" },
+            {
+              "action": "Off",
+              "id": "de-ice-pitot-after",
+              "label": "De-Ice / Pitot Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "Taxi",
+              "id": "landing-lights-after",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            { "action": "Off", "id": "strobe-after", "label": "Strobes", "tier": "normal" }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-shut",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            { "action": "Off", "id": "avionics-shut", "label": "Avionics", "tier": "quick" },
+            {
+              "action": "1,000 RPM",
+              "id": "throttle-cool",
+              "info": "Wait for temperatures to cool, then do a magneto dead-cut check.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "Cutoff",
+              "id": "mixture-shut",
+              "info": "Both mixtures.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-selectors-shut",
+              "label": "Fuel Selectors",
+              "tier": "normal"
+            },
+            {
+              "action": "Closed",
+              "id": "fuel-valves-shut",
+              "label": "Fuel Valves",
+              "tier": "normal"
+            },
+            { "action": "Off", "id": "magnetos-shut", "label": "Magnetos", "tier": "quick" },
+            { "action": "Off", "id": "generators-shut", "label": "Generators", "tier": "normal" },
+            { "action": "Off", "id": "all-lights-shut", "label": "All Lights", "tier": "normal" },
+            {
+              "action": "Off",
+              "id": "battery-master-shut",
+              "label": "Battery Master",
+              "tier": "quick"
+            }
+          ],
+          "title": "Shutdown & Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Twin-piston, fixed-gear utility aircraft. Takeoff ground roll about 1,000 ft and landing distance about 1,200 ft at sea level, with a 700 NM range.",
+  "isNew": true,
+  "manufacturer": "Britten-Norman",
+  "model": "Islander",
+  "slug": "islander",
+  "status": "active",
+  "suffix": " BN-2",
+  "systemsType": "piston",
+  "addon": "BlackBox Simulations",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

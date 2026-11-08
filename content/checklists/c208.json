@@ -1,0 +1,1113 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "REMOVE",
+              "id": "control-locks",
+              "info": "Control Column. Ensures free and correct movement of the flight controls before flight.",
+              "label": "Control Locks",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Left side panel. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "all-switches",
+              "info": "Various Panels. Ensures no electrical loads are active when turning on the battery, preventing sparks or damage.",
+              "label": "All Switches",
+              "tier": "normal"
+            },
+            {
+              "action": "IN",
+              "id": "circuit-breakers",
+              "info": "Left and Right Side Panels. Verifies all electrical systems have power available and no faults have tripped them.",
+              "label": "Circuit Breakers",
+              "tier": "normal"
+            },
+            {
+              "action": "NORMAL",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Protects the engine from ingesting ice or debris when bypassed, but normal mode provides full power.",
+              "label": "Inertial Separator",
+              "tier": "normal"
+            },
+            {
+              "action": "BOTH ON",
+              "id": "fuel-selectors",
+              "info": "Overhead Panel. Ensures the engine will draw fuel from both wing tanks evenly.",
+              "label": "Fuel Selectors",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "ventilation-ac",
+              "info": "Upper Right Panel. Reduces electrical and bleed air load prior to starting the engine.",
+              "label": "Ventilation/AC",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "bleed-air-heat",
+              "info": "Lower Panel. Reduces engine load and ITT temperatures during the starting sequence.",
+              "label": "Bleed Air Heat",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cockpit Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "NORMAL",
+              "id": "emergency-power-lever",
+              "info": "Center Pedestal. Keeps the engine under normal FCU (Fuel Control Unit) governing instead of manual fuel metering.",
+              "label": "Emergency Power Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "trim-controls",
+              "info": "Center Pedestal. Sets elevator, rudder, and aileron trim to neutral or takeoff positions for safe departure.",
+              "label": "Trim Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-shutoff-knob",
+              "info": "Lower Right Panel. Push in to open the valve, allowing fuel to flow from the tanks to the engine.",
+              "label": "Fuel Shutoff Knob",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Center Console. Prevents radar emissions from injuring ground personnel or draining the battery.",
+              "label": "Weather Radar",
+              "tier": "full"
+            }
+          ],
+          "title": "Pedestal & Controls"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "battery-switch",
+              "info": "Left Panel. Disconnects battery power to save charge while completing the exterior walkaround.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Instrument Panel. Confirms sufficient fuel for the planned flight.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-balance",
+              "info": "Instrument Panel. Ensures fuel weight is evenly distributed between the wings, with a maximum 200 lbs difference.",
+              "label": "Fuel Balance",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL DOWN",
+              "id": "flaps",
+              "info": "Center Console. Lowers the flaps so their tracks and hinges can be inspected during the exterior walkaround.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "pitot-stall-heat",
+              "info": "Left Panel. ON for 30 seconds, then OFF. Confirms the heating elements work to prevent icing in flight.",
+              "label": "Pitot/Stall Heat",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "battery-switch-2",
+              "info": "Left Panel. Disconnects battery power to save charge while completing the exterior walkaround.",
+              "label": "Battery Switch",
+              "tier": "normal"
+            }
+          ],
+          "title": "Power-Up"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "COMPLETE",
+              "id": "preflight-inspection",
+              "info": "Exterior. Ensures all external surfaces, components, and covers are safe and ready for flight.",
+              "label": "Preflight Inspection",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "passenger-briefing",
+              "info": "Cabin.",
+              "label": "Passenger Briefing",
+              "tier": "full"
+            },
+            {
+              "action": "LATCHED",
+              "id": "cabin-doors",
+              "info": "Cabin. Secures the main entry and cargo doors so they do not open in flight.",
+              "label": "Cabin Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Left side panel. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "SECURE",
+              "id": "seats-harnesses",
+              "info": "Cabin. Confirm pilot and passengers secured.",
+              "label": "Seats & Harnesses",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "all-switches",
+              "info": "Various Panels. Verifies equipment is still off before electrical power is introduced.",
+              "label": "All Switches",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "ignition-switch",
+              "info": "Left Panel. Arms the ignition system to fire automatically during the start sequence.",
+              "label": "Ignition Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "IN",
+              "id": "circuit-breakers",
+              "info": "Left and Right Side Panels. Confirms all breakers are set for normal operations.",
+              "label": "Circuit Breakers",
+              "tier": "full"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "BOTH ON",
+              "id": "fuel-selectors",
+              "info": "Overhead Panel. Ensures continuous fuel flow from both wing tanks.",
+              "label": "Fuel Selectors",
+              "tier": "quick"
+            },
+            {
+              "action": "NORMAL",
+              "id": "emergency-power-lever",
+              "info": "Center Pedestal. Must be stowed in normal to prevent uncommanded engine surges.",
+              "label": "Emergency Power Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "power-lever",
+              "info": "Center Pedestal. Sets the fuel control to minimum for a safe, low-temperature engine start.",
+              "label": "Power Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "MAX",
+              "id": "prop-rpm-lever",
+              "info": "Center Pedestal. Full forward. Places the propeller in low pitch for minimum resistance during start.",
+              "label": "Prop RPM Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "fuel-condition-lever",
+              "info": "Center Pedestal. Keeps fuel shut off until the engine compressor reaches sufficient speed.",
+              "label": "Fuel Condition Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-shutoff-knob",
+              "info": "Lower Right Panel. Push in. Ensures the firewall shutoff valve is open.",
+              "label": "Fuel Shutoff Knob",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "battery-switch",
+              "info": "Left Panel. Powers the starter relay and engine instruments.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Console. Retracts flaps to the normal position for engine start and taxi.",
+              "label": "Flaps",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Levers"
+        }
+      ],
+      "id": "before-start",
+      "title": "Before Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Left Panel. Warns ground personnel that the engine is about to start.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "bus-volts",
+              "info": "Left Panel. Verifies the battery has a minimum of 24 volts to ensure a successful start without overheating.",
+              "label": "Bus Volts",
+              "tier": "normal"
+            },
+            {
+              "action": "CLEAR",
+              "id": "propeller-area",
+              "info": "Exterior. Visually confirm no people or equipment are near the prop.",
+              "label": "Propeller Area",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-boost-switch",
+              "info": "Left Panel. Activates the auxiliary fuel boost pump. AUX FUEL PUMP ON light should illuminate, confirming the pump is running.",
+              "label": "Fuel Boost Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "starter-switch",
+              "info": "Left Panel. Disengages the starter motor once the engine is running smoothly.",
+              "label": "Starter Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "LOW IDLE",
+              "id": "fuel-condition-lever",
+              "info": "Center Pedestal. Introduce fuel at Ng 12%. Monitor ITT closely to ensure it does not exceed 1090°C.",
+              "label": "Fuel Condition Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY",
+              "id": "ng-stable-52",
+              "info": "Instrument Panel. Confirms the engine has accelerated to a self-sustaining idle speed.",
+              "label": "Ng Stable 52%",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "starter-switch-2",
+              "info": "Left Panel. Disengages the starter motor once the engine is running smoothly.",
+              "label": "Starter Switch",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "RESET THEN ON",
+              "id": "generator-switch",
+              "info": "Left Panel. Connects the generator to the electrical bus. Verify the GENERATOR OFF light extinguishes.",
+              "label": "Generator Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "generator-amps",
+              "info": "Left Panel. Verify positive load. Confirms the generator is charging the battery and powering the aircraft.",
+              "label": "Generator Amps",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "fuel-boost-switch-2",
+              "info": "Left Panel. Returns the boost switch to normal, deactivating the auxiliary pump. AUX FUEL PUMP ON light should extinguish.",
+              "label": "Fuel Boost Switch",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "avionics-1-2",
+              "info": "Left Panel. Powers up the radios, GPS, and flight displays after engine voltage is stable.",
+              "label": "Avionics 1 & 2",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "cabin-heat-vent",
+              "info": "Upper Right Panel. Adjusts environmental controls for crew and passenger comfort.",
+              "label": "Cabin Heat/Vent",
+              "tier": "full"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Instrument Panel. Sets the local barometric pressure so the altimeter reads the correct field elevation.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "avionics-gps",
+              "info": "Center Console. Programs the flight plan and communication frequencies for departure.",
+              "label": "Avionics/GPS",
+              "tier": "normal"
+            },
+            {
+              "action": "PRESELECT",
+              "id": "autopilot",
+              "info": "Center Console. Sets the initial heading and altitude bugs for the climb.",
+              "label": "Autopilot",
+              "tier": "full"
+            },
+            {
+              "action": "SET & STBY",
+              "id": "transponder",
+              "info": "Center Console. Inputs the assigned squawk code and keeps it on standby until near the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Set to BYPASS on loose surfaces or icing conditions to prevent engine damage.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            }
+          ],
+          "title": "Before Taxi"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Left Panel. Illuminates the taxiway and makes the aircraft more visible.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Lower Left Panel. Frees the wheels so the aircraft can move.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes-steering",
+              "info": "Rudder Pedals. Test during initial roll to ensure directional control and stopping ability.",
+              "label": "Brakes & Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments",
+              "info": "Instrument Panel. Verify airspeed, attitude, and heading indicators respond correctly. Use LOW IDLE and Beta Range for taxi speed control.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Lower Left Panel. Keeps the aircraft stationary during engine run-up and final checks.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "FREE",
+              "id": "flight-controls",
+              "info": "Control Column and Pedals. Check for full and free movement to ensure nothing is binding.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments",
+              "info": "Instrument Panel. Verifies no red X's or flags on the primary displays.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Instrument Panel. Final check that the altimeter is set to the current local pressure.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "BOTH ON",
+              "id": "fuel-selectors",
+              "info": "Overhead Panel. Verifies fuel will feed from both tanks for maximum safety during takeoff.",
+              "label": "Fuel Selectors",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-balance",
+              "info": "Instrument Panel. Ensures tanks are balanced with a maximum 200 lbs difference to prevent rolling tendencies.",
+              "label": "Fuel Balance",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Instrument Panel. Final confirmation of adequate fuel for the flight.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "FULLY ON",
+              "id": "fuel-shutoff-knob",
+              "info": "Lower Right Panel. Double check that it is fully pushed in.",
+              "label": "Fuel Shutoff Knob",
+              "tier": "normal"
+            }
+          ],
+          "title": "Systems Check"
+        },
+        {
+          "items": [
+            {
+              "action": "400 FT-LB",
+              "id": "runup-power",
+              "info": "Center Pedestal. Advance the power lever smoothly to approximately 400 ft-lb torque. Hold at this power for the Inertial Separator check.",
+              "label": "Power Lever",
+              "tier": "full"
+            },
+            {
+              "action": "BYPASS → NORMAL",
+              "id": "inertial-separator-check",
+              "info": "Lower Left Panel. Move to BYPASS and check for a slight torque drop indicating airflow is redirecting. Return to NORMAL. If no response, the system may not be functioning.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "overspeed-governor",
+              "info": "Center Pedestal. Advance power lever further until RPM stops increasing. Verify RPM stabilizes at 1750 ±60 RPM, then retard. The overspeed governor should prevent the propeller from exceeding this limit.",
+              "label": "Overspeed Governor",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "standby-power-check",
+              "info": "Left Panel. Move generator switch to OFF — STBY ELEC PWR ON light should illuminate and bus volts should read approximately 1V below generator voltage. Restore generator to ON and verify STBY ELEC PWR ON light extinguishes.",
+              "label": "Standby Power",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "pitch-trim-check",
+              "info": "Center Pedestal. Check the manual electric pitch trim for correct direction and movement in both nose-up and nose-down directions.",
+              "label": "Pitch Trim",
+              "tier": "full"
+            }
+          ],
+          "title": "Engine Runup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET FOR T/O",
+              "id": "trim",
+              "info": "Center Pedestal. Elevator, aileron, and rudder trims must be in the takeoff band to avoid heavy control forces.",
+              "label": "Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ignition-switch",
+              "info": "Left Panel. Set to ON for wet runways, heavy precipitation, or icing to prevent flameouts.",
+              "label": "Ignition Switch",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Set to BYPASS for icing conditions or FOD-prone runways.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left Panel. Activate pitot, stall, and prop heat if flying into visible moisture near freezing.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Center Console. Normally set to 20 degrees to provide maximum lift for a short ground roll.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "HIGH IDLE",
+              "id": "fuel-condition-lever",
+              "info": "Center Pedestal. Increases idle RPM so the engine responds faster to power lever movements.",
+              "label": "Fuel Condition Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "ON ALT",
+              "id": "transponder",
+              "info": "Center Console. Activates altitude reporting so air traffic control can track the flight.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Left Panel. Increases visibility before entering the active runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Left Panel. Further increases visibility to other aircraft during the takeoff roll.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "1900 RPM",
+              "id": "power-lever",
+              "info": "Center Pedestal. Smoothly advance. Torque increases roughly 10% from 0 to 80 KIAS due to ram air effect.",
+              "label": "Power Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "70-75 KIAS",
+              "id": "rotate",
+              "info": "Control Column. Pull back gently to lift the nose wheel off the runway.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "88-92 KIAS",
+              "id": "climb-speed",
+              "info": "Instrument Panel. Initial climb out speed for obstacle clearance; depends on weight.",
+              "label": "Climb Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "ABOVE 85 KIAS",
+              "id": "flaps-10",
+              "info": "Center Console. Retract one notch of flaps once clear of obstacles and accelerating.",
+              "label": "Flaps 10°",
+              "tier": "quick"
+            },
+            {
+              "action": "UP ABOVE 95 KIAS",
+              "id": "flaps",
+              "info": "Center Console. Fully retract flaps and accelerate to the 110-120 KIAS cruise climb speed.",
+              "label": "Flaps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "VERIFY UP",
+              "id": "flaps",
+              "info": "Center Console. Confirm the indicator shows 0 degrees to avoid overspeeding the flaps.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "info": "Left Panel. No longer needed once airborne.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "landing-lights",
+              "info": "Left Panel. Generally left ON below 10,000 ft to aid in collision avoidance.",
+              "label": "Landing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Typically returned to NORMAL once clear of icing or dirty air to restore engine power.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left Panel. Manage de-icing boots and heat based on outside air temperature and visible moisture.",
+              "label": "Ice Protection",
+              "tier": "full"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "MAX CLIMB TQ",
+              "id": "power",
+              "info": "Center Pedestal. Adjust the power lever to maintain the maximum allowable climb torque without exceeding limits.",
+              "label": "Power",
+              "tier": "quick"
+            },
+            {
+              "action": "1600-1900 RPM",
+              "id": "prop-rpm-lever",
+              "info": "Center Pedestal. Max performance climb uses 1900 RPM, while 1600 RPM reduces cabin noise.",
+              "label": "Prop RPM Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "110-120 KIAS",
+              "id": "climb-speed",
+              "info": "Instrument Panel. Normal cruise climb speed, used up to 12,000 ft for better engine cooling and forward visibility.",
+              "label": "Climb Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "SET STD",
+              "id": "altimeters",
+              "info": "Instrument Panel. Set to 29.92 inHg or 1013 hPa when climbing through the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "cruise-power",
+              "info": "Center Pedestal. Adjust torque and RPM for cruise. Do not exceed ITT, Ng, or TQ limits; optimum cruise is usually 10,000-20,000 ft.",
+              "label": "Cruise Power",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Set to BYPASS if entering clouds with temperatures near freezing.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left Panel. Monitor for ice buildup on the wing struts and activate boots as needed.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-balance",
+              "info": "Instrument Panel. Continue monitoring to ensure a maximum 200 lbs difference between tanks.",
+              "label": "Fuel Balance",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Set to BYPASS for icing conditions or when descending through precipitation.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left Panel. Keep heat on if flying through clouds or rain at low temperatures.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "landing-lights",
+              "info": "Left Panel. Turn ON when descending below 10,000 ft to increase visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "1900 RPM",
+              "id": "prop-rpm-lever",
+              "info": "Center Pedestal. Advance smoothly to provide maximum aerodynamic braking and responsiveness.",
+              "label": "Prop RPM Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "140-160 KIAS",
+              "id": "descent-speed",
+              "info": "Instrument Panel. Maintain 140 KIAS above 16,000 ft, and up to 160 KIAS below 16,000 ft.",
+              "label": "Descent Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Instrument Panel. Adjust to the destination airport's barometric pressure when crossing the transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Left Panel. Ensures the aircraft is highly visible to the control tower and other traffic.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Lower Left Panel. Keep in BYPASS for icing conditions or if the runway is unpaved.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "BOTH ON",
+              "id": "fuel-selectors",
+              "info": "Overhead Panel. Verifies the engine has access to all remaining fuel.",
+              "label": "Fuel Selectors",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-balance",
+              "info": "Instrument Panel. Ensures wing tanks are still within the maximum 200 lbs difference.",
+              "label": "Fuel Balance",
+              "tier": "full"
+            },
+            {
+              "action": "MAX",
+              "id": "prop-rpm-lever",
+              "info": "Center Pedestal. Final check that the propeller is fully forward for maximum thrust or drag.",
+              "label": "Prop RPM Lever",
+              "tier": "quick"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "BELOW 150 KIAS",
+              "id": "flaps-10",
+              "info": "Center Console. First stage of drag configuration for the approach.",
+              "label": "Flaps 10°",
+              "tier": "quick"
+            },
+            {
+              "action": "BELOW 125 KIAS",
+              "id": "flaps-20",
+              "info": "Center Console. Further slows the aircraft and improves forward visibility over the nose.",
+              "label": "Flaps 20°",
+              "tier": "quick"
+            },
+            {
+              "action": "BELOW 100 KIAS",
+              "id": "flaps-full",
+              "info": "Center Console. Final landing configuration. Target 80-90 KIAS on base and final legs.",
+              "label": "Flaps Full",
+              "tier": "quick"
+            }
+          ],
+          "title": "Configuration"
+        },
+        {
+          "items": [
+            {
+              "action": "VERIFY FULL",
+              "id": "flaps",
+              "info": "Center Console. Double check the indicator to ensure maximum lift and drag are established.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY MAX",
+              "id": "prop-rpm-lever-2",
+              "info": "Center Pedestal. Final check that the propeller is fully forward for maximum thrust or drag.",
+              "label": "Prop RPM Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "VREF 71-78 KIAS",
+              "id": "speed",
+              "info": "Instrument Panel. Final approach speed over the runway threshold, which depends on the aircraft's landing weight.",
+              "label": "Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "power-lever",
+              "info": "Center Pedestal. Reduce power at the threshold. Do not use Beta range in flight to avoid severe aerodynamic forces.",
+              "label": "Power Lever",
+              "tier": "quick"
+            }
+          ],
+          "title": "Final Approach"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "strobes",
+              "info": "Left Panel. Prevents blinding other pilots and ground crew while taxiing.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Left Panel. Illuminates the taxiway.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Left Panel. Reduces electrical load and avoids blinding ground personnel.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Console. Retracts flaps to reduce lift and increase weight on the wheels for better braking.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ice-protection",
+              "info": "Left Panel. Prevents heating elements from burning out on the ground and saves electrical power.",
+              "label": "Ice Protection",
+              "tier": "normal"
+            },
+            {
+              "action": "LOW IDLE",
+              "id": "fuel-condition-lever",
+              "info": "Center Pedestal. Reduces engine RPM and taxi speed.",
+              "label": "Fuel Condition Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Center Console. Prevents harmful radiation exposure to ground crews.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Center Console. Takes the transponder off the active air traffic network, though some airports require it left ON.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Lower Left Panel. Secures the aircraft at the parking stand.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "bleed-air-vent-ac",
+              "info": "Various Panels. Removes all environmental electrical and bleed loads prior to engine shutdown.",
+              "label": "Bleed Air/Vent/AC",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "power-lever",
+              "info": "Center Pedestal. Let ITT stabilize for at least 1 minute to allow engine temperatures to cool evenly.",
+              "label": "Power Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "FEATHER",
+              "id": "prop-rpm-lever",
+              "info": "Center Pedestal. Pull fully aft to stop propeller rotation quickly and prevent the blades from acting as a sail in the wind.",
+              "label": "Prop RPM Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "fuel-condition-lever",
+              "info": "Center Pedestal. Shuts off fuel to the engine, causing it to spool down.",
+              "label": "Fuel Condition Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "all-lights",
+              "info": "Left Panel. Turns off all exterior and interior lights to prevent draining the battery.",
+              "label": "All Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-boost-switch",
+              "info": "Left Panel. Secures the auxiliary fuel pump.",
+              "label": "Fuel Boost Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-1-2",
+              "info": "Left Panel. Protects delicate radios and displays from voltage spikes when the battery is turned off.",
+              "label": "Avionics 1 & 2",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "battery-switch",
+              "info": "Left Panel. Completely depowers the aircraft.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            }
+          ],
+          "title": "Shutdown"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "A legendary go-anywhere platform engineered to conquer unpaved strips and remote missions.",
+  "manufacturer": "Cessna",
+  "model": "208B",
+  "slug": "c208",
+  "status": "active",
+  "suffix": " Grand Caravan",
+  "systemsType": "turboprop",
+  "addon": "Black Square",
+  "flightsim": "MSFS",
+  "simDepth": "Study Level"
+}

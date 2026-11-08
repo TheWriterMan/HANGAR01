@@ -1,0 +1,57 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main, dev]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: ./.github/workflows/quality.yml
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Production Deploy (main)
+        id: prod
+        if: github.ref == 'refs/heads/main'
+        run: |
+          RESPONSE=$(curl -sf -X POST "https://api.vercel.com/v13/deployments" \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"hangar01","project":"${{ secrets.VERCEL_PROJECT_ID }}","target":"production","gitSource":{"type":"github","repo":"HANGAR01","ref":"main","org":"TheWriterMan"}}')
+          echo "id=$(echo "$RESPONSE" | jq -r .id)" >> "$GITHUB_OUTPUT"
+
+      # IndexNow should only hear about pages once they're live.
+      - name: Wait for the production deploy
+        if: github.ref == 'refs/heads/main'
+        run: |
+          for i in $(seq 1 60); do
+            STATE=$(curl -sf -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+              "https://api.vercel.com/v13/deployments/${{ steps.prod.outputs.id }}" | jq -r .readyState)
+            echo "readyState: $STATE"
+            case "$STATE" in READY) exit 0 ;; ERROR|CANCELED) exit 1 ;; esac
+            sleep 10
+          done
+          exit 1
+
+      - uses: actions/checkout@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          fetch-depth: 0
+
+      - name: Notify IndexNow of changed pages
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        run: node scripts/indexnow.mjs "${{ github.event.before }}" "${{ github.sha }}"
+
+      - name: Trigger Vercel Preview Deploy (dev)
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          curl -sf -X POST "https://api.vercel.com/v13/deployments" \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"hangar01","project":"${{ secrets.VERCEL_PROJECT_ID }}","gitSource":{"type":"github","repo":"HANGAR01","ref":"dev","org":"TheWriterMan"}}'

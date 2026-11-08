@@ -1,0 +1,700 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Center Pedestal (GTC). Controls the seat belt and no-smoking illumination in the passenger cabin.",
+              "label": "Passenger Signs",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Instrument Panel (MFD). Displays the current total fuel weight onboard to verify it matches the flight profile requirements.",
+              "label": "Fuel Quantity",
+              "tier": "quick"
+            },
+            {
+              "action": "PROGRAM",
+              "id": "fms",
+              "info": "Center Pedestal (GTC). Initializes the flight management system with departure, arrival, route, and performance parameters.",
+              "label": "FMS",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "baro-reference",
+              "info": "Instrument Panel (PFD). Sets the local barometric altimeter pressure reference on the flight displays.",
+              "label": "Baro Reference",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "bugs-pfd-mfd",
+              "info": "Instrument Panel. Verifies that airspeed reference bugs and flight display configurations are correctly selected for departure.",
+              "label": "Bugs / PFD / MFD",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "oxygen-mask",
+              "info": "Side Console. Tests the cockpit crew oxygen supply pressure and integrated microphone communications.",
+              "label": "Oxygen Mask",
+              "tier": "full"
+            },
+            {
+              "action": "CLOSED",
+              "id": "doors",
+              "info": "Instrument Panel (MFD). Confirms via the status synoptic page that the main entry airstair and baggage doors are closed and latched.",
+              "label": "Doors",
+              "tier": "quick"
+            },
+            {
+              "action": "REMOVED",
+              "id": "gear-pins-covers",
+              "info": "Exterior. Confirm ground crew has removed all gear pins and covers before startup.",
+              "label": "Gear Pins & Covers",
+              "tier": "full"
+            }
+          ],
+          "title": "Cockpit Setup"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CUTOFF",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Verify thrust levers are in the CUTOFF position before energizing the aircraft.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "batteries",
+              "info": "Overhead Panel. Connects the main and emergency battery systems to energize the primary electrical buses before starter engagement.",
+              "label": "Batteries",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Overhead Panel. Activates the flashing red anti-collision light to warn ground personnel of an immediate engine start.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "PRESS",
+              "id": "start-button",
+              "info": "Instrument Panel. Activates the starter motor and initiates the automated FADEC engine start sequence.",
+              "label": "Start Button",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "thrust-levers-idle",
+              "info": "Center Pedestal. Move thrust lever to IDLE at approximately 10% N2 to introduce fuel. Monitor ITT — abort if no light-off within 8 seconds or if ITT rises abnormally.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "engine-instruments",
+              "info": "Instrument Panel (MFD). Monitors key parameters including N1, N2, ITT, and fuel flow to verify normal engine light-off.",
+              "label": "Engine Instruments",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "electrical-panel",
+              "info": "Center Pedestal (GTC). Confirms that both generators have automatically come online and bus voltages are normal.",
+              "label": "Electrical Panel",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "bleed-pressurization",
+              "info": "Center Pedestal (GTC). Sets the environmental control systems to automatic and enters the destination field elevation.",
+              "label": "Bleed & Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Center Pedestal (GTC). Controls the engine inlet, wing leading edge, and windshield anti-ice heating elements.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Yoke and Rudder Pedals. Verifies full, free, and unobstructed travel of the ailerons, elevator, and rudder surfaces.",
+              "label": "Flight Controls",
+              "tier": "quick"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Center Pedestal. Sets the flap selector lever to the required takeoff position, typically Flaps 1 or Flaps 2.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "trims",
+              "info": "Yoke and Center Pedestal. Positions the pitch, roll, and yaw trims within their specified takeoff ranges.",
+              "label": "Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas-messages",
+              "info": "Instrument Panel (PFD/MFD). Verifies that the Crew Alerting System is clear of any unexpected warning or caution messages.",
+              "label": "CAS & Messages",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "flight-directors",
+              "info": "Glare Shield. Activates the flight director systems to display the correct takeoff guidance bars on the PFD. Set after engine start once the avionics are fully initialized.",
+              "label": "Flight Directors",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-light",
+              "info": "Overhead Panel. Turns on the nose gear taxi light for forward visibility while maneuvering on the ground.",
+              "label": "Taxi Light",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes-steering",
+              "info": "Rudder Pedals. Tests the primary toe brakes and confirms responsive tracking of the nosewheel steering system.",
+              "label": "Brakes & Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK FOR T/O",
+              "id": "flaps",
+              "info": "Center Pedestal. Double-checks that the flap lever position and display indications match the planned takeoff setting.",
+              "label": "Flaps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK FOR T/O",
+              "id": "trims",
+              "info": "Yoke and Center Pedestal. Final check to ensure pitch, roll, and yaw trims remain properly adjusted for departure.",
+              "label": "Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brakes",
+              "info": "Center Pedestal. Confirms that the speed brake switch is retracted and the tail spoiler surfaces are fully stowed.",
+              "label": "Speed Brakes",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas-messages",
+              "info": "Instrument Panel (PFD/MFD). Performs a final scan of the Crew Alerting System display prior to entering the runway.",
+              "label": "CAS & Messages",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Center Pedestal (GTC). Verifies that passenger signs are active and the cabin is secured for departure.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Activates the strobe and landing lights and turns off the taxi light before taking the active runway.",
+              "label": "Exterior Lights",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "radar-tcas",
+              "info": "Center Pedestal (GTC). Sets the weather radar to operational scanning and the transponder to active traffic monitoring.",
+              "label": "Radar & TCAS",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ignition",
+              "info": "Center Pedestal (GTC). Selects continuous engine ignition if taking off on wet or contaminated runway surfaces.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Center Pedestal (GTC). Confirms the required engine and airframe anti-ice systems are active based on local icing conditions.",
+              "label": "Ice Protection",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Advances the levers smoothly into the takeoff detent to achieve full engine power.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Yoke. Applies smooth aft pressure at rotation speed to establish the initial climb pitch attitude.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "info": "Instrument Panel. Raises the landing gear handle after confirming a positive rate of vertical speed on the instruments.",
+              "label": "Positive Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Retracts the flaps to the up position once clear of obstacles and above the minimum clean airspeed.",
+              "label": "Flaps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "VERIFY UP",
+              "id": "landing-gear",
+              "info": "Instrument Panel (MFD). Verifies that all landing gear have fully retracted and all gear doors are closed.",
+              "label": "Landing Gear",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "flaps",
+              "info": "Instrument Panel (MFD). Confirms on the display that the wing flap surfaces have fully retracted.",
+              "label": "Flaps",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "engine-sync",
+              "info": "Center Pedestal (GTC). Engages the engine synchronizer to match turbine speeds and reduce cabin noise and vibration.",
+              "label": "Engine Sync",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ignition",
+              "info": "Center Pedestal (GTC). Disengages continuous ignition unless convective weather or heavy precipitation requires it.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Center Pedestal (GTC). Monitors outside air temperature and visible moisture to adjust anti-ice settings during the climb.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "altimeters",
+              "info": "Instrument Panel (PFD). Changes the barometric reference to standard pressure when climbing through the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Turns off the landing lights when climbing past 10,000 feet while keeping strobe and recognition lights on.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "passenger-signs",
+              "info": "Center Pedestal (GTC). Turns off the seat belt sign once the aircraft is established in smooth air during the climb.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "altimeters",
+              "info": "Instrument Panel (PFD). Cross-checks the primary altimeter displays to ensure they show the identical standard flight level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-instruments",
+              "info": "Instrument Panel (MFD). Scans engine operating data to verify normal performance and fuel burn rates at cruise altitude.",
+              "label": "Engine Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Instrument Panel (MFD). Monitors fuel remaining and checks tank balancing against flight planning values.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "Instrument Panel (MFD). Verifies that cabin altitude, pressure differential, and outflow valve scheduling are normal.",
+              "label": "Pressurization",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Center Pedestal (GTC). Illuminates the passenger seat belt signs to secure the cabin before leaving cruise altitude.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "landing-data",
+              "info": "Center Pedestal (GTC). Inputs the reference approach airspeeds and planned landing flap settings into the FMS.",
+              "label": "Landing Data",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "pressurization",
+              "info": "Center Pedestal (GTC). Inputs the destination field elevation to schedule automatic cabin depressurization for landing.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Instrument Panel (PFD). Switches the altimeter reference from standard pressure to local station setting when passing the transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "approach-briefing",
+              "info": "Flight Deck. Completes the review of the arrival procedure, approach charts, landing minimums, and taxi routing.",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ignition",
+              "info": "Center Pedestal (GTC). Selects continuous engine ignition if descending through visible precipitation or turbulence.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Center Pedestal (GTC). Activates structural and engine anti-ice systems if icing conditions are anticipated during descent.",
+              "label": "Ice Protection",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent Prep"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "altimeters",
+              "info": "Instrument Panel (PFD). Re-verifies that both the pilot and copilot altimeters are set to the current local barometric pressure.",
+              "label": "Altimeters",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Turns on the landing and recognition lights to maximize aircraft visibility in the terminal environment.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Center Pedestal (GTC). Confirms that the cabin is fully secured and all passenger seat belts are fastened for landing.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brakes",
+              "info": "Center Pedestal. Re-verifies that speed brakes are stowed to ensure normal lift profiles and handling on touchdown.",
+              "label": "Speed Brakes",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas-messages",
+              "info": "Instrument Panel (PFD/MFD). Conducts a final scan of the Crew Alerting System to ensure no active faults exist.",
+              "label": "CAS & Messages",
+              "tier": "full"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "flaps",
+              "info": "Center Pedestal. Selects the final landing flap configuration, typically Flaps 3 or Full, for touchdown.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "landing-gear",
+              "info": "Instrument Panel. Lowers the landing gear handle and verifies three green down-and-locked indicators.",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "SET FOR LANDING",
+              "id": "flaps-2",
+              "info": "Center Pedestal. Selects the final landing flap configuration, typically Flaps 3 or Full, for touchdown.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brakes-2",
+              "info": "Center Pedestal. Re-verifies that speed brakes are stowed to ensure normal lift profiles and handling on touchdown.",
+              "label": "Speed Brakes",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-sync",
+              "info": "Center Pedestal (GTC). Disengages engine speed synchronization to allow independent throttle responses during landing and potential go-around.",
+              "label": "Engine Sync",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "ignition",
+              "info": "Center Pedestal (GTC). Selects continuous engine ignition to safeguard against engine flameout during the final landing phase.",
+              "label": "Ignition",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Center Pedestal (GTC). Verifies that required anti-ice systems are active or adjusted for the runway environment.",
+              "label": "Ice Protection",
+              "tier": "full"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RETRACTED",
+              "id": "speed-brakes",
+              "info": "Center Pedestal. Verifies that the speed brake switch is retracted after completing the landing rollout.",
+              "label": "Speed Brakes",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Retracts the wing flaps fully to the up position to prevent damage from ground debris during taxi.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ignition",
+              "info": "Center Pedestal (GTC). Deactivates continuous engine ignition once safely clear of the landing runway.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "ice-protection",
+              "info": "Center Pedestal (GTC). Turns off all structural and engine anti-ice heating elements after taxiing off the runway.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Turns off all remaining exterior lights after both engines have completely spooled down.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "radar-tcas",
+              "info": "Center Pedestal (GTC). Switches the weather radar and traffic alerting system to standby upon clearing the runway.",
+              "label": "Radar & TCAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Sets the parking brake handle to secure the aircraft once stationed at the parking ramp.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Pulls both levers fully aft into the cutoff gate to shut off fuel and initiate engine shutdown.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "passenger-signs",
+              "info": "Center Pedestal (GTC). Turns off the passenger signs to allow deplaning once the aircraft is safely parked.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights-2",
+              "info": "Overhead Panel. Turns off all remaining exterior lights after both engines have completely spooled down.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "standby-flight-display",
+              "info": "Instrument Panel. Turns off the dedicated power switch for the standby flight instrument display to prevent battery depletion.",
+              "label": "Standby Flight Display",
+              "tier": "full"
+            },
+            {
+              "action": "OPEN",
+              "id": "cabin-door",
+              "info": "Cabin. Open the main entry door to allow passengers to deplane after the aircraft is fully secured.",
+              "label": "Cabin Door",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "batteries",
+              "info": "Overhead Panel. Switches both main battery masters off to completely isolate and de-power the electrical system.",
+              "label": "Batteries",
+              "tier": "quick"
+            }
+          ],
+          "title": "Shutdown"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Instantly distinctive for its over-wing engine mounts, offering maximized cabin space and cutting-edge aerodynamics.",
+  "manufacturer": "Honda",
+  "model": "HondaJet",
+  "slug": "hondajet",
+  "status": "active",
+  "suffix": " HA-420",
+  "systemsType": "business-jet",
+  "addon": "FlightFX",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

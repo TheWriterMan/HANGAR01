@@ -1,0 +1,1093 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Verify set before any other cold-and-dark action.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake-lever",
+              "info": "Center Pedestal. Speed brake lever must be stowed before power-up.",
+              "label": "Speed Brake Lever",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flap-lever",
+              "info": "Center Pedestal. Verify flap lever is in the UP detent.",
+              "label": "Flap Lever",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-masters",
+              "info": "Center Pedestal. All four engine master switches off before powering up.",
+              "label": "Engine Masters",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. All four thrust levers at idle.",
+              "label": "Thrust Levers",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode-selector",
+              "info": "Center Pedestal. Engine mode selector in the NORM position.",
+              "label": "ENG Mode Selector",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "wipers",
+              "info": "Overhead Panel. Both wipers off.",
+              "label": "Wipers",
+              "tier": "full"
+            }
+          ],
+          "title": "Safety Check"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "battery",
+              "info": "Overhead Panel. All four switches: BAT1, BAT2, ESS BAT, APU BAT.",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "external-power",
+              "info": "Overhead Panel. Connect in order 2-3-4-1 if a GPU is available. Skip if you only have the APU.",
+              "label": "External Power",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "info": "Overhead Panel. Red left wingtip, green right wingtip, white tail. On from power-up to shutdown.",
+              "label": "NAV Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. APU Master ON, wait 3 seconds, then APU Start ON. Wait for AVAIL in the start button before using APU bleed or generators.",
+              "label": "APU",
+              "tier": "quick"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "oxygen-crew-supply",
+              "info": "Overhead Panel. Opens the oxygen valve for the crew masks. Set and forget.",
+              "label": "Oxygen Crew Supply",
+              "tier": "full"
+            },
+            {
+              "action": "NAV",
+              "id": "adirs",
+              "info": "Overhead Panel. All three IRs to NAV. The inertial reference system needs several minutes to align — start it early.",
+              "label": "ADIRS",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "strobes",
+              "info": "Overhead Panel. In AUTO the strobes turn on automatically when airborne and off on the ground.",
+              "label": "Strobes",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Seat Belts ON, No Mobile ON.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "emergency-exit-lights",
+              "info": "Overhead Panel. Floor-path lighting that fires automatically if cabin power drops. Close the guard once armed.",
+              "label": "Emergency Exit Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Sends APU pressurised air into the pneumatic duct for air conditioning and later engine start.",
+              "label": "APU Bleed",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power-2",
+              "info": "Overhead Panel. Disconnect in order 1-4-3-2 once APU is supplying power. Only relevant if you connected ground power earlier.",
+              "label": "External Power",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. All pumps from left to right for tanks that have fuel. The A380 has up to 11 fuel tanks across the wings and fuselage.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "radio-panel",
+              "info": "Center Pedestal. VHF1 active for ATC communication.",
+              "label": "Radio Panel",
+              "tier": "full"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atis",
+              "info": "Center Pedestal. Recorded broadcast of weather, runway in use, and field conditions at the departure airport.",
+              "label": "ATIS",
+              "tier": "normal"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atc-clearance",
+              "info": "Center Pedestal. IFR clearance from delivery — SID, initial altitude, squawk code.",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "PROGRAM",
+              "id": "mcdu-preflight",
+              "info": "Center Pedestal. INIT page: enter or import route (FROM/TO, FLT NBR, COST INDEX, CRZ FL). F-PLN: verify waypoints, select departure RWY/SID/TRANS. PERF: after boarding, enter ZFW/ZFWCG/BLOCK from the fuel page, then set V1/VR/V2, FLEX or TOGA, flap config, THS trim, and acceleration altitudes.",
+              "label": "MCDU Preflight",
+              "tier": "quick"
+            }
+          ],
+          "title": "FMS Preflight"
+        },
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Glareshield. Both captain and FO barometric references set to local QNH. Should read field elevation on the ground.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "flight-director",
+              "info": "Glareshield. The green bars on the PFD that command pitch and roll guidance.",
+              "label": "Flight Director",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "fcu-altitude",
+              "info": "Glareshield. Set initial cleared altitude or cruise altitude.",
+              "label": "FCU Altitude",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "transponder",
+              "info": "Center Pedestal. FMS SURV page — enter squawk code from clearance, set to AUTO (stays on ground until airborne).",
+              "label": "Transponder",
+              "tier": "full"
+            }
+          ],
+          "title": "Glareshield & Pedestal"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "VERIFY",
+              "id": "irs-alignment",
+              "info": "Overhead Panel. Confirm all three ADIRS have completed alignment — no amber ALIGN lights remaining.",
+              "label": "IRS Alignment",
+              "tier": "full"
+            },
+            {
+              "action": "CLOSED",
+              "id": "windows",
+              "info": "Main Panel. Both sliding windows closed for pressurization.",
+              "label": "Windows",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY ON",
+              "id": "apu",
+              "info": "Overhead Panel. Confirm APU is running and available for engine start bleed.",
+              "label": "APU",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Overhead Panel. The flashing red anti-collision light on top and bottom of the fuselage. Required before any engine start so ground crew know the engines are about to spool.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Both Seat Belts and No Mobile signs on before pushback.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "pushback-clearance",
+              "info": "Center Pedestal. Ground controller confirms pushback approved and area clear.",
+              "label": "Pushback Clearance",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "IGN/START",
+              "id": "eng-mode-selector",
+              "info": "Center Pedestal. Moves the ignition mode from NORM to IGN/START, which enables the start sequence when you flip the engine masters.",
+              "label": "ENG Mode Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "engine-1-2-masters",
+              "info": "Center Pedestal. Left-side engines first. Flip both master switches ON — the FADEC handles the start sequence automatically. Monitor N2 and EGT on the ECAM.",
+              "label": "Engine 1+2 Masters",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "engine-3-4-masters",
+              "info": "Center Pedestal. Right-side engines after the left pair stabilises at idle. Same automatic start sequence.",
+              "label": "Engine 3+4 Masters",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Set after pushback is complete and tug disconnected.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode-selector-2",
+              "info": "Center Pedestal. Return to NORM after all four engines are stable at idle.",
+              "label": "ENG Mode Selector",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. The engines now supply bleed air — APU bleed no longer needed.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Shut down the APU.",
+              "label": "APU Master",
+              "tier": "normal"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Center Pedestal. Per the MCDU PERF page — typically Config 2 on the A380.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms the spoilers so they deploy automatically on a rejected takeoff or after touchdown.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            },
+            {
+              "action": "ZERO",
+              "id": "rudder-trim",
+              "info": "Center Pedestal. Verify centered. An offset here causes the aircraft to yaw on the takeoff roll.",
+              "label": "Rudder Trim",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "pitch-trim",
+              "info": "Center Pedestal. Match the PFD trim index to the magenta CG% value shown in the lower right corner of the PFD.",
+              "label": "Pitch Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Center Pedestal. Full sidestick deflection in all axes — confirm correct surface movement on ECAM flight controls page.",
+              "label": "Flight Controls",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "TAXI",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Forward-facing light on the nose gear for ground visibility.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Wing-root lights that illuminate taxiway turnoffs. Useful at night.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Release to begin taxi.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "brakes",
+              "info": "Pedals. Check braking and nosewheel steering at low speed. Max 20 kts straight, 5 kts in turns — the A380 is 575 tonnes and the gear is wide.",
+              "label": "Brakes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "packs",
+              "info": "Overhead Panel. Leave ON unless performance-limited.",
+              "label": "Packs",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "engine-anti-ice",
+              "info": "Overhead Panel. Turn on if visible moisture and OAT below 10°C.",
+              "label": "Engine Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "TA/RA",
+              "id": "tcas",
+              "info": "Center Pedestal. FMS SURV page. Full resolution advisory mode — the system can now command CLIMB or DESCEND to avoid traffic.",
+              "label": "TCAS",
+              "tier": "normal"
+            },
+            {
+              "action": "RTO",
+              "id": "autobrake",
+              "info": "Center Pedestal. Arms maximum braking if you abort the takeoff and bring thrust levers back to idle.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY ARMED",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Confirm the speed brake lever shows green ARMED annunciation.",
+              "label": "Ground Spoilers",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY T/O",
+              "id": "flaps",
+              "info": "Center Pedestal. Cross-check the ECAM flap indicator matches the takeoff config set in the MCDU.",
+              "label": "Flaps",
+              "tier": "full"
+            },
+            {
+              "action": "NO BLUE",
+              "id": "t-o-config-test",
+              "info": "Center Pedestal. Press the T.O. CONFIG button — if no blue messages appear on ECAM, the aircraft is correctly configured for takeoff.",
+              "label": "T.O. Config Test",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Overhead Panel. High-intensity flashes on the wingtips. Required when entering the runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Bright forward lights for visibility below 10,000 ft and on the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "nose-lights-2",
+              "info": "Overhead Panel. Brighter setting than taxi for the takeoff roll.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "runway-turnoff-lights-2",
+              "info": "Overhead Panel. Additional forward illumination for the takeoff roll.",
+              "label": "Runway Turnoff Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RELEASED",
+              "id": "brakes",
+              "info": "Pedals.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "FLEX/TOGA",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Advance to about 25% first, then push to FLX/MCT detent (flex takeoff) or TOGA (full thrust). The FADEC sets the target N1.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Sidestick. Start rotation at VR — initially max 10 degrees pitch, then target about 15 degrees. The A380 is long, gentle rotation prevents a tail strike.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "info": "Main Panel. Once the vertical speed is confirmed positive on the PFD.",
+              "label": "Positive Climb",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CLB",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. At FMA \"LVR CLB\" message, pull thrust levers back to the CLB detent.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACT",
+              "id": "flaps",
+              "info": "Center Pedestal. Follow the green speed bugs on the PFD speed tape: at \"F\" select Flaps 1 (if Config 2 takeoff), at \"S\" select Flaps 0.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "landing-gear",
+              "info": "Main Panel. Confirm gear is up and locked — no amber on the gear indicator.",
+              "label": "Landing Gear",
+              "tier": "full"
+            },
+            {
+              "action": "DISARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. No longer needed once airborne and clean.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Off in the air.",
+              "label": "Nose Lights",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Off in the air.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "packs",
+              "info": "Overhead Panel. If turned off for takeoff performance, restore now.",
+              "label": "Packs",
+              "tier": "full"
+            },
+            {
+              "action": "TA/RA",
+              "id": "tcas",
+              "info": "Center Pedestal. Verify still in full TA/RA mode after takeoff.",
+              "label": "TCAS",
+              "tier": "full"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Off above 10,000 ft to save bulb life.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Usually off in smooth air above 10,000 ft.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "STD",
+              "id": "altimeters",
+              "info": "Glareshield. Set standard pressure (1013 hPa / 29.92 inHg) at the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Passing 10,000 ft"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Cycle based on ride conditions and turbulence forecasts.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "ECAM. Verify cabin altitude is tracking correctly — the A380 pressurises to about 5,000 ft cabin altitude at FL430.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "top-of-descent",
+              "info": "Center Pedestal. Rule of thumb: (cruise alt - target alt) / 1000 x 3 + 10 = minimum descent distance in NM. Also visible on the FMS F-PLN page as T/D.",
+              "label": "Top Of Descent",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OBTAIN",
+              "id": "arrival-atis",
+              "info": "Center Pedestal. Pull destination weather and runway info roughly 50 NM before top of descent.",
+              "label": "Arrival ATIS",
+              "tier": "normal"
+            },
+            {
+              "action": "PROGRAM",
+              "id": "fms-approach",
+              "info": "Center Pedestal. F-PLN page: select destination, pick RWY/APPR/STAR/TRANS. Insert the temporary flight plan. PERF APPR tab: enter wind, OAT, QNH, and minimums.",
+              "label": "FMS Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "autobrake",
+              "info": "Center Pedestal. BTV (Brake To Vacate) if desired, or a numeric setting. Match it to runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "ils-frequency",
+              "info": "Center Pedestal. FMS NAV AID page — verify the ILS for the planned runway is tuned.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "PRESELECT",
+              "id": "fcu-altitude",
+              "info": "Glareshield. Set the altitude of the last waypoint before the runway. Do not push yet — that initiates the descent.",
+              "label": "FCU Altitude",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Consider turning seat belts back on if turbulence is expected during descent.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "INITIATE",
+              "id": "descent",
+              "info": "Glareshield. Push the altitude selector knob at top of descent. The aircraft starts a managed descent following the VNAV profile.",
+              "label": "Descent",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs-2",
+              "info": "Overhead Panel. Both signs on below 10,000 ft. Time for the cabin to prepare.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Back on passing 10,000 ft for traffic visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Bright setting below 10,000 ft.",
+              "label": "Nose Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Additional illumination below 10,000 ft.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "ls-mode",
+              "info": "Glareshield. Displays the ILS localiser and glideslope scales on the PFD.",
+              "label": "LS Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Glareshield. Set local pressure passing the transition level. The altimeter now reads height above sea level again.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ARM",
+              "id": "approach-mode",
+              "info": "Glareshield. Press APPR on the FCU. Arms LOC and G/S capture — verify blue armed modes on the FMA.",
+              "label": "Approach Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY ON",
+              "id": "ls-mode",
+              "info": "Glareshield. Confirm localiser and glideslope diamonds are visible on the PFD.",
+              "label": "LS Mode",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY SET",
+              "id": "autobrake",
+              "info": "Center Pedestal. Final check that autobrake is armed for landing.",
+              "label": "Autobrake",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "missed-approach-alt",
+              "info": "Glareshield. Set the go-around altitude in the FCU so the aircraft levels off correctly if you push TOGA.",
+              "label": "Missed Approach Alt",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "flaps-1",
+              "info": "Center Pedestal. Select at green dot speed. First slat extension for deceleration.",
+              "label": "Flaps 1",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-2",
+              "info": "Center Pedestal. Select at \"S\" speed on the PFD tape.",
+              "label": "Flaps 2",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Panel. The A380 has 22 wheels across 5 gear assemblies. Confirm all green on the gear indicator.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-3",
+              "info": "Center Pedestal. Intermediate landing flap step.",
+              "label": "Flaps 3",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-4",
+              "info": "Center Pedestal. Final landing configuration. The A380X uses Config 4 — there is no FULL detent.",
+              "label": "Flaps 4",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms the spoilers to deploy automatically on touchdown.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Retard at 50 ft — pull thrust levers to idle. The aircraft callout \"RETARD\" is your cue.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "ROTATE",
+              "id": "flare",
+              "info": "Sidestick. At 40 ft slowly pitch to about 4-5 degrees nose up. The A380 sits low so the flare is gentle.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "reverse-thrust",
+              "info": "Center Pedestal. Full reverse on all four engines down to about 80 kts, then idle reverse only.",
+              "label": "Reverse Thrust",
+              "tier": "quick"
+            },
+            {
+              "action": "FWD IDLE",
+              "id": "thrust-levers-2",
+              "info": "Center Pedestal. At 40 kts bring thrust levers forward out of reverse to forward idle.",
+              "label": "Thrust Levers",
+              "tier": "full"
+            },
+            {
+              "action": "APPLY",
+              "id": "brakes",
+              "info": "Pedals. Manual braking before the exit disengages autobrake and gives you direct control for the turnoff.",
+              "label": "Brakes",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AUTO",
+              "id": "strobes",
+              "info": "Overhead Panel. Back to AUTO once clear of the runway — they will stay off on the ground.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Off once clear of the active runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAXI",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Dim taxi setting for the taxi-in.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Keep on at night for taxiway visibility, off during day.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Bring the APU back online so it can take over electrics and bleed at the gate.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Stow the speed brake lever.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "flaps",
+              "info": "Center Pedestal. Clean up flaps so ground vehicles do not catch on them.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "tcas",
+              "info": "Center Pedestal. FMS SURV page — TCAS to standby on the ground.",
+              "label": "TCAS",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "ls-mode",
+              "info": "Glareshield. Clear the ILS display from the PFD.",
+              "label": "LS Mode",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Set once parked at the gate.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "nose-lights-2",
+              "info": "Overhead Panel. Off at the gate.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "anti-ice",
+              "info": "Overhead Panel. No longer needed at the gate.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. APU takes over pneumatic supply before engines shut down.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode-selector",
+              "info": "Center Pedestal. Verify in NORM position.",
+              "label": "ENG Mode Selector",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-masters",
+              "info": "Center Pedestal. All four switches OFF. Engines spool down over about a minute.",
+              "label": "Engine Masters",
+              "tier": "quick"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Signs off — passengers can deplane.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "beacon",
+              "info": "Overhead Panel. Off once engines have stopped spinning. Tells ground crew it is safe to approach.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. All fuel pumps off after engine shutdown.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "oxygen-crew-supply",
+              "info": "Overhead Panel. Close the crew oxygen valve.",
+              "label": "Oxygen Crew Supply",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "adirs",
+              "info": "Overhead Panel. All three to OFF.",
+              "label": "ADIRS",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. All remaining exterior lights off.",
+              "label": "Exterior Lights",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed-2",
+              "info": "Overhead Panel. Off before APU shutdown.",
+              "label": "APU Bleed",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Shuts down the APU. External power takes over if connected.",
+              "label": "APU Master",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "battery",
+              "info": "Overhead Panel. All four switches off. Aircraft fully de-powered.",
+              "label": "Battery",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "King of the Air, the double-deck superjumbo is the largest passenger aircraft ever built.",
+  "manufacturer": "Airbus",
+  "model": "A380-800",
+  "slug": "a380",
+  "status": "active",
+  "systemsType": "airliner",
+  "addon": "FlyByWire",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

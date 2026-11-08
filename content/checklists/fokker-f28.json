@@ -1,0 +1,1273 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Main panel. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "gust-lock",
+              "info": "Pedestal. Lever up.",
+              "label": "Gust Lock",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-levers",
+              "info": "Pedestal.",
+              "label": "Throttle Levers",
+              "tier": "full"
+            },
+            {
+              "action": "IN",
+              "id": "lift-dump-lever",
+              "info": "Pedestal, lever at the left throttle. Forward.",
+              "label": "Lift Dump Lever",
+              "tier": "full"
+            },
+            {
+              "action": "IN",
+              "id": "speed-brakes-lever",
+              "info": "Pedestal. Forward.",
+              "label": "Speed Brakes Lever",
+              "tier": "full"
+            },
+            {
+              "action": "SHUT",
+              "id": "hp-fuel-valves-safety",
+              "info": "Pedestal. Both levers aft.",
+              "label": "HP Fuel Valves",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps-lever",
+              "info": "Pedestal.",
+              "label": "Flaps Lever",
+              "tier": "full"
+            },
+            {
+              "action": "GUARDED",
+              "id": "hyd-electric-pumps",
+              "info": "Main panel. Electric hydraulic pump switches off.",
+              "label": "Hyd Electric Pumps",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Main panel.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "DOWN",
+              "id": "landing-gear",
+              "info": "Main panel. Gear lever down.",
+              "label": "Landing Gear",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "starter-master",
+              "info": "Overhead.",
+              "label": "Starter Master",
+              "tier": "full"
+            }
+          ],
+          "title": "Safety Check"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "battery",
+              "info": "Overhead. Check batteries 1 and 2 show at least 24 V first.",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQ",
+              "id": "external-power",
+              "info": "Overhead. Connect the GPU from the F28 EFB Aircraft Page if desired.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "ARMED",
+              "id": "emergency-lights",
+              "info": "Overhead.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "info": "Pedestal, right external lights panel.",
+              "label": "Nav Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "PERFORM",
+              "id": "apu-fire-test",
+              "info": "Pedestal. Hold the APU fire test switch left, verify the warning, then reset.",
+              "label": "APU Fire Test",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead. Main switch ON with Gen 3 and Air at OFF/RESET. Press Start at least 10 sec after Main ON. The Start button lights. Wait for RPM and TGT, then Gen 3 ON (Gen 3 Inop light off) and Air ON.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "AS DES",
+              "id": "interior-lights",
+              "info": "Main panel flood lights on the side panels. Instrument backlighting on the lower main panel. Glareshield and pedestal lighting left of the overhead, overhead lighting right of it.",
+              "label": "Interior Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "bleed-air",
+              "info": "Overhead. AUTO switches to AUTO, MAIN switches ON. Pressure gauge green.",
+              "label": "Bleed Air",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "air-conditioning",
+              "info": "Overhead. Only one master ON, cabin or cockpit. Mode controls AUTO, temperature as desired, override switch guarded.",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "pressurization",
+              "info": "Overhead. Altitude selector to 1,000 ft above the planned cruise altitude. Baro correction STD (29.92/1013). Rate control at 12 o'clock.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "BOTH ON",
+              "id": "radio-masters",
+              "info": "Pedestal.",
+              "label": "Radio Masters",
+              "tier": "normal"
+            },
+            {
+              "action": "PROGRAM",
+              "id": "fms-preflight",
+              "info": "Pedestal. UNS-1: power with PWR DIM, ACCEPT on INIT, check ZFW and fuel on the FUEL page, then build the route on FPL. Add the SID and STAR from MENU, DEPART and ARRIVE, and execute with FPL (LSK5R). GNS: import the plan from the MSFS EFB, check SID and approach, CDI to GPS.",
+              "label": "FMS Preflight",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "transponder",
+              "info": "Pedestal. Set the squawk and leave in STBY.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Systems & Navigation"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "electrical-panel",
+              "info": "Overhead. Gen 1 and 2 ON with Inop lights on. All 6 white bus lights on. TRU 1 and 2 ON. Emergency power, transfer isolate and battery isolate guarded.",
+              "label": "Electrical Panel",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "windshield-heating",
+              "info": "Overhead. Priority switch LH. OFF above 20°C OAT, LOW at or below 20°C, HIGH in icing or fogging.",
+              "label": "Windshield Heating",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "mcp",
+              "info": "Glareshield. FD pitch 10° (12 o'clock), FD mode HDG or VOR/LOC for GPS, heading to the departure runway, course as desired.",
+              "label": "MCP",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "nav-radios",
+              "info": "Glareshield. Radios and DME on, tested and set.",
+              "label": "NAV Radios",
+              "tier": "normal"
+            },
+            {
+              "action": "BOTH OPEN",
+              "id": "fuel-shut-off-valves",
+              "info": "Glareshield.",
+              "label": "Fuel Shut-Off Valves",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "altimeters",
+              "info": "Left and right instrument panels. Local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Left and right instrument panels. DH gauges to 200 and test.",
+              "label": "Minimums",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "altitude-controller",
+              "info": "Left instrument panel. Baro to local QNH, preselect cruise or cleared altitude, V/S 1,500 fpm.",
+              "label": "Altitude Controller",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "thrust-index",
+              "info": "Center instrument panel, inner gauges third from the top. The addon sets the maximum rating for current temperature and altitude. Lower it for a derate per the manual.",
+              "label": "Thrust Index",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "weather-radar-2",
+              "info": "Center instrument panel. STBY or MAP.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "hydraulic-gauges",
+              "info": "Center instrument panel. Normal indications for System 1 (utility) and System 2 (flight control).",
+              "label": "Hydraulic Gauges",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Center instrument panel. Test the gauges and check quantity.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "ALL 8 ON",
+              "id": "hydraulic-switches",
+              "info": "Pedestal. Switches forward, lights on.",
+              "label": "Hydraulic Switches",
+              "tier": "full"
+            },
+            {
+              "action": "OPEN",
+              "id": "cockpit-oxygen",
+              "info": "Right side panel, knob on top of the bottle. Counterclockwise.",
+              "label": "Cockpit Oxygen",
+              "tier": "full"
+            }
+          ],
+          "title": "Preflight Checks"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake-start",
+              "info": "Main panel. Brake and alternate brake hydraulic pressure green. Use the System 1 electric pump (right one) if needed.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity-start",
+              "info": "Center instrument panel.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "ap-fd-settings",
+              "info": "Glareshield and pedestal. Check the altitude controller too.",
+              "label": "AP/FD Settings",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power-off",
+              "info": "Overhead. In the F28 EFB, remove ground power, jetway and chocks, and close and arm the doors.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "anti-collision-lights",
+              "info": "Pedestal. Top and bottom.",
+              "label": "Anti-Collision Lights",
+              "tier": "quick"
+            },
+            {
+              "action": "ALL 4 ON",
+              "id": "booster-pumps",
+              "info": "Pedestal. Left and right FWD and AFT pumps. Center pumps off. Fuel pressure lights go out.",
+              "label": "Booster Pumps",
+              "tier": "quick"
+            },
+            {
+              "action": "NORMAL",
+              "id": "ignition",
+              "info": "Overhead, engines panel. Middle position.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "starter-master",
+              "info": "Overhead, engines panel.",
+              "label": "Starter Master",
+              "tier": "quick"
+            },
+            {
+              "action": "PERFORM",
+              "id": "engine-2-start",
+              "info": "Start selector to 2 (briefly hold right). Starter valve light on, HP and LP rotating. At 15-20% HP RPM, right HP fuel valve to START. Outer igniter lights blink. Watch fuel flow, TGT, oil pressure and temperature rise. At 50% HP RPM, fuel valve to OPEN. Stable idle is about 50% HP and 25% LP.",
+              "label": "Engine 2 Start",
+              "tier": "quick"
+            },
+            {
+              "action": "PERFORM",
+              "id": "engine-1-start",
+              "info": "Same sequence as engine 2, with the selector to 1 and the left HP fuel valve.",
+              "label": "Engine 1 Start",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "warning-panel",
+              "info": "Left and right side panels.",
+              "label": "Warning Panel",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "igniter-lights",
+              "info": "Above the RPM gauges.",
+              "label": "Igniter Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "GUARDED",
+              "id": "hyd-elec-pumps",
+              "info": "Main panel. System 1 and 2 electric pumps. Hydraulic and fuel pressure warning lights all off.",
+              "label": "Hyd Electric Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "starter-master-off",
+              "info": "Overhead, engines panel. Starter valve light off.",
+              "label": "Starter Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF/RESET",
+              "id": "apu-gen-3",
+              "info": "Overhead. Gen 1 and 2 Inop lights off first. APU Air switch OFF too.",
+              "label": "APU Gen 3",
+              "tier": "normal"
+            },
+            {
+              "action": "SHUTDOWN",
+              "id": "apu-shutdown",
+              "info": "Overhead. Hold Stop/OS for 2-3 sec. Main OFF no earlier than 10 sec after RPM reaches zero. On flights under 30 min, leave it running.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "BOTH ON",
+              "id": "air-conditioning",
+              "info": "Overhead. Both main switches. Temperature and mode as desired.",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "DISENGAGE",
+              "id": "gust-lock-taxi",
+              "info": "Pedestal.",
+              "label": "Gust Lock",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Full and free movement.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Pedestal.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake-taxi",
+              "info": "Main panel. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "AUTO",
+              "id": "engine-anti-ice",
+              "info": "Overhead. Engine anti-ice AUTO. Airfoil anti-ice as required.",
+              "label": "Engine Anti-Ice",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "windshield-heat-to",
+              "info": "Overhead. Priority LH. LOW at or below 20°C OAT, HIGH in icing or fogging.",
+              "label": "Windshield Heating",
+              "tier": "full"
+            },
+            {
+              "action": "ALL ON",
+              "id": "pitot-vane-heating",
+              "info": "Overhead.",
+              "label": "Pitot & Vane Heating",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK SET",
+              "id": "ap-fd-alt-lineup",
+              "info": "Glareshield and left instrument panel. Flight director mode, heading and altitude controller.",
+              "label": "AP/FD/Alt Controller",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK SET",
+              "id": "speed-bugs",
+              "info": "Right instrument panel. Click the V1/VR spot on the performance flipchart for the takeoff flap setting. Bugs: 1st white V1/VR, 2nd yellow V2, 3rd white flap retraction, 4th white single-engine climb.",
+              "label": "Speed Bugs",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-takeoff",
+              "info": "Pedestal. Up to 18°.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "stab-trim",
+              "info": "Pedestal. For the correct value, left click the CG% on the F28 EFB Aircraft Page.",
+              "label": "Stab Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "lift-dumper-arm",
+              "info": "Pedestal. Arm button raised.",
+              "label": "Lift Dumper Arm",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "ttc-takeoff",
+              "info": "Pedestal, switches below the throttles. Top Temp Control.",
+              "label": "TTC",
+              "tier": "quick"
+            },
+            {
+              "action": "ALL 4 ON",
+              "id": "booster-pumps-to",
+              "info": "Pedestal. Center pumps and cross-feed off.",
+              "label": "Booster Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "yaw-damper",
+              "info": "Pedestal, autopilot panel.",
+              "label": "Yaw Damper",
+              "tier": "normal"
+            },
+            {
+              "action": "ON + ALT",
+              "id": "transponder-on",
+              "info": "Pedestal. On with altitude reporting.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Pedestal.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "EXTEND + ON",
+              "id": "landing-lights-to",
+              "info": "Pedestal.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Entering Runway"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "40% LP",
+              "id": "throttle-set",
+              "info": "Pedestal. Let the engines stabilize.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "100%",
+              "id": "takeoff-power",
+              "info": "Pedestal. Throttles to the detent, then further to 100% on the engine thrust gauge. Full power matters more than the detent.",
+              "label": "Takeoff Power",
+              "tier": "quick"
+            },
+            {
+              "action": "RELEASE",
+              "id": "brakes-release",
+              "info": "Hold the brakes until cleared, then release.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Rotate at the 1st white bug to 10° pitch.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "gear-up",
+              "info": "Right instrument panel. At positive rate of climb. Then hold at least V2+10 (yellow bug +10), max 200 KIAS and 15° pitch.",
+              "label": "Gear",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        },
+        {
+          "items": [
+            {
+              "action": "UP",
+              "id": "flaps-up",
+              "info": "Pedestal. At 800 ft AGL, lower pitch below 10° to accelerate. Retract at the 3rd speed bug (white).",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "SET CLIMB",
+              "id": "ttc-climb",
+              "info": "Pedestal, switches below the captain's throttles. Once flaps are up, TTC to CLIMB and throttles to the detent. Accelerate to 250 KIAS or the procedure limit.",
+              "label": "TTC",
+              "tier": "quick"
+            }
+          ],
+          "title": "Acceleration Altitude"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "climb-power",
+              "info": "Pedestal. TTC in CLIMB, throttles at the detent.",
+              "label": "Climb Power",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK UP",
+              "id": "gear-check",
+              "info": "Right instrument panel.",
+              "label": "Landing Gear",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK UP",
+              "id": "flaps-check",
+              "info": "Pedestal.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "DISARMED",
+              "id": "lift-dumper-check",
+              "info": "Pedestal. Arm button depressed.",
+              "label": "Lift Dumper",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization-climb",
+              "info": "Overhead.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "anti-ice-climb",
+              "info": "Overhead. Engine and airfoil anti-ice AUTO or as required.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            }
+          ],
+          "title": "After Takeoff"
+        },
+        {
+          "items": [
+            {
+              "action": "SET STD",
+              "id": "altimeter-std",
+              "info": "At transition altitude. Altimeters and altitude controller baro to STD (29.92/1013).",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF + RETRACT",
+              "id": "landing-lights-off",
+              "info": "Pedestal. Landing and taxi lights, passing 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS DES",
+              "id": "pax-signs-climb",
+              "info": "Overhead. Passing 10,000 ft.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            }
+          ],
+          "title": "Climb Transitions"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "cruise-power",
+              "info": "Pedestal. There is no autothrottle, so set cruise speed with the throttles.",
+              "label": "Cruise Power",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "ttc-off",
+              "info": "Pedestal, switches below the throttles.",
+              "label": "TTC",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "alt-hold",
+              "info": "Flight director Alt Hold switch, at cruise altitude. For automatic capture, select ALERT and AUTO on the altitude controller. The autopilot then switches to HT mode.",
+              "label": "Alt Hold",
+              "tier": "normal"
+            },
+            {
+              "action": "MONITOR",
+              "id": "fuel-flow",
+              "info": "Center instrument panel. Check fuel at destination on the UNS-1 PERF page and adjust cruise power if needed.",
+              "label": "Fuel Flow",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization-cruise",
+              "info": "Overhead.",
+              "label": "Pressurization",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "anti-ice-cruise",
+              "info": "Overhead. Engine and airfoil anti-ice AUTO or as required.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "altitude-controller-des",
+              "info": "Left instrument panel. Preselect the platform altitude (minimum altitude at the final fix), or the last waypoint before the runway without charts. Preselect V/S for the profile. Do not engage V/S mode yet.",
+              "label": "Altitude Controller",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "landing-bugs",
+              "info": "Right instrument panel. Use the placard.",
+              "label": "Landing Speed Bugs",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "press-ldg-alt",
+              "info": "Overhead. Altitude selector to landing elevation. Baro selector to destination QNH.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Left and right instrument panels, DH gauges.",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "AS DES",
+              "id": "pax-signs-des",
+              "info": "Overhead.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent Preparation"
+        },
+        {
+          "items": [
+            {
+              "action": "INITIATE",
+              "id": "descent-initiate",
+              "info": "Left instrument panel. At TOD, check altitude and V/S are preselected, then activate V/S and AUTO on the altitude controller. A V/S of about 5 times groundspeed gives a 3° path.",
+              "label": "Descent",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization-des",
+              "info": "Overhead.",
+              "label": "Pressurization",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "anti-ice-des",
+              "info": "Overhead. Engine and airfoil anti-ice AUTO or as required.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters-qnh",
+              "info": "At transition level. Altimeters and altitude controller baro to local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "EXTEND + ON",
+              "id": "landing-lights-app",
+              "info": "Pedestal. At 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights-app",
+              "info": "Pedestal.",
+              "label": "Taxi Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "ttc-approach",
+              "info": "Pedestal, switches below the throttles.",
+              "label": "TTC",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK SET",
+              "id": "ils-freq-course",
+              "info": "Glareshield, NAV radios.",
+              "label": "ILS Freq & Course",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK SET",
+              "id": "speed-bugs-app",
+              "info": "Right instrument panel. VREF on the 1st bug, VREF+10 on the yellow bug.",
+              "label": "Speed Bugs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Approach"
+        },
+        {
+          "items": [
+            {
+              "action": "11°",
+              "id": "flaps-11",
+              "info": "Pedestal. At 20 NM slow to 200 KIAS. At 15 NM set flaps 11°, slow to 160 KIAS and check the ILS signal is in range.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear-down",
+              "info": "Right instrument panel. One dot below the glideslope, latest 3,000 ft AGL. 5 green.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL",
+              "id": "flaps-full",
+              "info": "Pedestal. On the glideslope, latest 2,000 ft AGL, set 25° then FULL. Slow to VREF+10 (yellow bug). Keep HP RPM above 70% until landing is assured.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "lift-dumpers-arm",
+              "info": "Pedestal. Arm button raised.",
+              "label": "Lift Dumpers",
+              "tier": "quick"
+            }
+          ],
+          "title": "Final Approach"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "landing-lights-ldg",
+              "info": "Pedestal.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN 5 GREEN",
+              "id": "gear-confirm",
+              "info": "Right instrument panel.",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL",
+              "id": "flaps-confirm",
+              "info": "Pedestal.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "ARMED",
+              "id": "lift-dumpers-confirm",
+              "info": "Pedestal.",
+              "label": "Lift Dumpers",
+              "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "ttc-confirm",
+              "info": "Pedestal, switches below the throttles.",
+              "label": "TTC",
+              "tier": "full"
+            }
+          ],
+          "title": "Landing Check"
+        },
+        {
+          "items": [
+            {
+              "action": "DISENGAGE",
+              "id": "autopilot-off",
+              "info": "Latest at 200 ft AGL.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "VREF",
+              "id": "speed-100ft",
+              "info": "At 100 ft, slow to VREF (1st bug). Speed brakes FULL.",
+              "label": "Speed at 100 ft",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-idle",
+              "info": "Pedestal. At 50 ft, slowly to idle.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "FLARE",
+              "id": "flare",
+              "info": "At 30 ft, flare slowly to a maximum of about 5° nose up.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY",
+              "id": "lift-dumpers-deploy",
+              "info": "After touchdown, check the lift dumpers are deployed. Brake manually as required.",
+              "label": "Lift Dumpers",
+              "tier": "normal"
+            }
+          ],
+          "title": "Touchdown"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights-ldg",
+              "info": "Pedestal. Off before turning into the gate or stand.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF + RETRACT",
+              "id": "landing-lights-ldg-off",
+              "info": "Pedestal. After vacating the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes-off",
+              "info": "Pedestal. Back on when crossing a runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "speed-brakes-ldg",
+              "info": "Pedestal. Lever forward.",
+              "label": "Speed Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "lift-dump-ldg",
+              "info": "Pedestal. Lever forward.",
+              "label": "Lift Dumpers",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps-ldg",
+              "info": "Pedestal. 25° in icing conditions.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder-stby",
+              "info": "Pedestal.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "yaw-damper-off",
+              "info": "Pedestal, autopilot panel.",
+              "label": "Yaw Damper",
+              "tier": "full"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "gust-lock-ldg",
+              "info": "Pedestal.",
+              "label": "Gust Lock",
+              "tier": "normal"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead. As required, same sequence as preflight. Gen 3 ON.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK ZERO DIFF",
+              "id": "pressurization",
+              "info": "Overhead.",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake-final",
+              "info": "Main panel.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "SHUT",
+              "id": "hp-fuel-valves-shut",
+              "info": "Pedestal. Both levers aft. Check the APU is running with Gen 3 on first.",
+              "label": "HP Fuel Valves",
+              "tier": "quick"
+            },
+            {
+              "action": "ALL OFF",
+              "id": "booster-pumps-off",
+              "info": "Pedestal.",
+              "label": "Booster Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "ALL OFF",
+              "id": "exterior-lights-off",
+              "info": "Pedestal.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pax-signs-off",
+              "info": "Overhead.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "anti-ice-off",
+              "info": "Overhead. Engine and airfoil anti-ice.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "pitot-vane-off",
+              "info": "Overhead.",
+              "label": "Pitot & Vane Heating",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "weather-radar-off",
+              "info": "Center instrument panel.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "transponder-off",
+              "info": "Pedestal.",
+              "label": "Transponder",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "radio-masters-off",
+              "info": "Pedestal.",
+              "label": "Radio Masters",
+              "tier": "normal"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "gust-lock-secure",
+              "info": "Pedestal.",
+              "label": "Gust Lock",
+              "tier": "full"
+            },
+            {
+              "action": "CLOSED",
+              "id": "oxygen-off",
+              "info": "Right side panel, knob on top of the bottle. Clockwise.",
+              "label": "Oxygen",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "windshield-heating",
+              "info": "Overhead.",
+              "label": "Windshield Heating",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "emergency-lights-off",
+              "info": "Overhead. Emergency exit lights.",
+              "label": "Emergency Lights",
+              "tier": "full"
+            },
+            {
+              "action": "BOTH OFF",
+              "id": "air-con-off",
+              "info": "Overhead. Both main switches.",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            },
+            {
+              "action": "SHUTDOWN",
+              "id": "apu-final",
+              "info": "Overhead. Gen 3 OFF/RESET and Air OFF. Hold Stop/OS for 2-3 sec. Main OFF no earlier than 10 sec after RPM reaches zero.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "interior-lights",
+              "info": "Same controls as power-up.",
+              "label": "Interior Lights",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "battery-off",
+              "info": "Overhead.",
+              "label": "Battery",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Just Flight's F28 Fellowship with UNS-1 or GNS avionics. There is no autothrottle, so speed is set by hand with the throttles.",
+  "isNew": true,
+  "manufacturer": "Fokker",
+  "model": "F28",
+  "slug": "fokker-f28",
+  "status": "active",
+  "suffix": " Fellowship",
+  "systemsType": "airliner",
+  "addon": "Just Flight",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

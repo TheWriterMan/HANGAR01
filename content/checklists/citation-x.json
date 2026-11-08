@@ -1,0 +1,1090 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Pedestal, parking brake handle. Pull to set, then check the parking brake indication on EICAS.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Armed",
+              "id": "emergency-lights",
+              "info": "Main panel. Check the EMERG LT switch is armed.",
+              "label": "Emergency Lights",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "stby-power",
+              "info": "Main panel. Standby power. To test it first: hold TEST and check the green light, then ON and check the red light.",
+              "label": "Stby Power",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "batteries",
+              "info": "Main panel. Batt 1 and Batt 2.",
+              "label": "Batteries",
+              "tier": "quick"
+            },
+            {
+              "action": "As Desired",
+              "id": "external-power",
+              "info": "Main panel. Enable the Ground Power Unit on the FFX EFB Ground Services page first. Switch off once the APU is running.",
+              "label": "External Power",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "nav-lights",
+              "info": "Main panel.",
+              "label": "Nav Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "avionics-eicas",
+              "info": "Main panel. Avionics and EICAS switches.",
+              "label": "Avionics + EICAS",
+              "tier": "quick"
+            },
+            {
+              "action": "Align Then NAV",
+              "id": "irs",
+              "info": "Pedestal, IRS controls. Set both to ALIGN, then NAV. Align time can be set in the FFX EFB.",
+              "label": "IRS",
+              "tier": "quick"
+            },
+            {
+              "action": "Start",
+              "id": "apu",
+              "info": "Right wall, APU switches. Starter Disengage NORMAL, APU Master ON, hold APU Test and check the APU warning lights (APU panel and right main panel), APU Generator ON, APU Bleed OFF, check at least 22 V DC, then Start switch to START. Wait for 101% RPM and check APU amps below 300 on the right main panel gauge.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "apu-bleed",
+              "info": "Required for engine start. A cross-bleed start is only for an inoperative APU.",
+              "label": "APU Bleed",
+              "tier": "quick"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "Test",
+              "id": "fuel-crossfeed",
+              "info": "Main panel.",
+              "label": "Fuel Crossfeed",
+              "tier": "full"
+            },
+            {
+              "action": "All Lights Off",
+              "id": "flt-control-shut-offs",
+              "info": "Pedestal. Flight control shut-off switches.",
+              "label": "Flt Control Shut-Offs",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "warning-systems-test",
+              "info": "Turn the rotary test selector to each position and check the annunciations and warnings, then OFF.",
+              "label": "Warning Systems Test",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "cockpit-voice-recorder",
+              "label": "Cockpit Voice Recorder",
+              "tier": "full"
+            },
+            {
+              "action": "Neutral",
+              "id": "aileron-rudder-trim",
+              "label": "Aileron & Rudder Trim",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "oxygen",
+              "info": "Left wall. Test the oxygen mask. Check the oxygen pressure gauges on the main panel.",
+              "label": "Oxygen Mask",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "atis-atc",
+              "info": "Radios. Get ATIS and the ATC clearance.",
+              "label": "ATIS / ATC",
+              "tier": "normal"
+            },
+            {
+              "action": "Program",
+              "id": "fms-preflight",
+              "info": "FMS. POS INIT is mandatory: NAV > IDENT, check database, wait for GPS 1 POS, LOAD. Then the flight plan (NAV > SIMBRIEF > FPLN RECALL, or enter it manually), departure, arrival, PERF INIT (trans alt, cruise alt, SYNC EFB, CONFIRM INIT) and TAKEOFF pages. Load weight and balance via the FFX EFB.",
+              "label": "FMS Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "As Desired",
+              "id": "pfd-mfd",
+              "info": "Weather radar off. Preselect the NAV source (FMS for a GPS flight plan).",
+              "label": "PFD & MFD",
+              "tier": "normal"
+            },
+            {
+              "action": "Set QNH",
+              "id": "baro-ref",
+              "info": "Set local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "fuel-quantity",
+              "info": "EICAS > FUEL HYD page. Check quantity and balance.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "ats",
+              "info": "Main panel, ATS button. Off or armed. ATS can be enabled or disabled in the FFX EFB options.",
+              "label": "ATS",
+              "tier": "full"
+            },
+            {
+              "action": "Closed",
+              "id": "doors",
+              "info": "Doors and windows closed and locked.",
+              "label": "Doors",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cockpit Setup"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Check",
+              "id": "eicas-status",
+              "info": "Check messages, then select the SYS ENG page to monitor the start.",
+              "label": "EICAS",
+              "tier": "normal"
+            },
+            {
+              "action": "Squawk Set",
+              "id": "transponder",
+              "info": "ATC / TCAS. Set the squawk, leave TCAS in STBY.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "v-speeds",
+              "info": "PFD. Set and confirm V-speeds from the FMS takeoff data.",
+              "label": "V-Speeds",
+              "tier": "normal"
+            },
+            {
+              "action": "Closed",
+              "id": "pac-isol-valve",
+              "info": "Main panel. Closed is vertical.",
+              "label": "PAC Isol Valve",
+              "tier": "full"
+            },
+            {
+              "action": "Gnd Rec",
+              "id": "beacon",
+              "info": "Ground Rec/Anti-Coll lights switch. GND REC for start and taxi.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "Pass Safety",
+              "id": "passenger-signs",
+              "info": "PASS SAFETY for engine start. Set SEAT BELTS after start.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "Cutoff",
+              "id": "thrust-levers",
+              "info": "Pedestal. Full aft. If they are not fully aft, set the hardware throttle to IDLE and click the lever with the mouse.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Press",
+              "id": "start-button-r",
+              "info": "Right engine first. Check EICAS start pressure at least 30 PSI and residual ITT at most 200°C, then press the RH engine start button.",
+              "label": "Start Button (R)",
+              "tier": "quick"
+            },
+            {
+              "action": "Idle",
+              "id": "thrust-lever-r",
+              "info": "Pedestal. At 10% N2, click the right lever to IDLE. Verify ignition at about 33% N2 and starter disengage by about 57% N2.",
+              "label": "Thrust Lever (R)",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "engine-instruments-r",
+              "info": "EICAS. Monitor N1, ITT, fuel flow and oil pressure.",
+              "label": "Engine Instruments (R)",
+              "tier": "normal"
+            },
+            {
+              "action": "Press",
+              "id": "start-button-l",
+              "info": "Same as the right engine. Check start pressure and residual ITT first.",
+              "label": "Start Button (L)",
+              "tier": "quick"
+            },
+            {
+              "action": "Idle",
+              "id": "thrust-lever-l",
+              "info": "Pedestal. At 10% N2, click the left lever to IDLE.",
+              "label": "Thrust Lever (L)",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "engine-instruments-l",
+              "info": "EICAS. Monitor N1, ITT, fuel flow and oil pressure.",
+              "label": "Engine Instruments (L)",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "Check",
+              "id": "hydraulic-panel",
+              "info": "Hyd B about 3,000 PSI. Hyd A pressure will fluctuate.",
+              "label": "Hydraulic Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "electrical-panel-post",
+              "info": "MFD SYS ELEC page. Positive volts and amps on the RH and LH buses.",
+              "label": "Electrical Buses",
+              "tier": "normal"
+            },
+            {
+              "action": "Perform",
+              "id": "bleed-air",
+              "info": "EICAS or MFD SYS ENG page, START PRESS. APU bleed OFF, PAC Isol valve closed, both engine bleeds LP/HP and check positive PSI. Then check each engine bleed OFF (zero PSI) and back to LP/HP, with the PAC Isol valve open for the left side. Finish with PAC Isol closed and APU bleed as desired.",
+              "label": "Cross Bleed Check",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "flight-controls",
+              "info": "Yoke and pedals. Free and full movement.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "Uncage",
+              "id": "stby-gyro",
+              "label": "Stby Gyro",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "ice-protection-start",
+              "info": "Main panel, anti-ice switches.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "Norm",
+              "id": "pressurization",
+              "info": "Main panel. Leave all switches in NORM for fully automatic pressurization. Manual mode needs cabin altitude set for cruise and landing.",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "taxi-light",
+              "info": "Pedestal. Max taxi speed 20 to 30 kts, 5 kts in turns.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Release",
+              "id": "parking-brake-taxi",
+              "info": "Pedestal, parking brake handle.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "brakes-steering",
+              "info": "Check braking and steering once moving. Check engine and flight instruments.",
+              "label": "Brakes / Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "thrust-reversers",
+              "info": "Deploy the reversers, set the reverser switch to STOW EMERG, verify UNLOCK and DEPLOY lights off. Stow the reversers and set the switch back to NORM.",
+              "label": "Thrust Reversers",
+              "tier": "full"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "yaw-damper",
+              "info": "FGCP. Meant to stay on all the time.",
+              "label": "Yaw Damper",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "mach-trim",
+              "info": "FGCP. Meant to stay on all the time.",
+              "label": "Mach Trim",
+              "tier": "full"
+            },
+            {
+              "action": "Preselect",
+              "id": "flight-directors",
+              "info": "FGCP. Best to arm only NAV for takeoff, no vertical modes. Set altitude with the knob on the pedestal or the screws on the main panel. Press the TOGA button on the thrust levers for TO mode and check FMA TO|TO.",
+              "label": "FGCP Modes",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "pitot-heat",
+              "info": "Pitot and static heaters, LH and RH.",
+              "label": "Pitot Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "window-heat",
+              "info": "Windshield heaters, LH and RH.",
+              "label": "Window Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "flaps-takeoff",
+              "info": "Pedestal, flap handle. Default 15°. Check flap and slat indication on EICAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Retracted",
+              "id": "speed-brakes-to",
+              "info": "Pedestal. Zero %, handle full forward.",
+              "label": "Speed Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "trims",
+              "info": "Set for takeoff in the green range on EICAS. Use the stab trim table for your CG and flap setting. CG is on the MSFS 2024 aircraft load page.",
+              "label": "Stab Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "TA/RA",
+              "id": "radar-tcas",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "As Desired",
+              "id": "weather-radar",
+              "info": "Pedestal.",
+              "label": "Weather Radar",
+              "tier": "full"
+            }
+          ],
+          "title": "Holding Short"
+        },
+        {
+          "items": [
+            {
+              "action": "Anti-Coll",
+              "id": "beacon",
+              "info": "Ground Rec/Anti-Coll lights switch. Set ANTI-COLL when entering the runway.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "exterior-lights-to",
+              "info": "Pedestal. On when entering the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "eicas-lineup",
+              "info": "No NO TAKEOFF warning.",
+              "label": "EICAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "40% N1",
+              "id": "thrust-levers",
+              "info": "Pedestal. Hold the brakes and set 40% N1.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Release",
+              "id": "brakes",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "TO/MC",
+              "id": "thrust-levers-to",
+              "info": "Pedestal. Advance to the TO/MC detent. If you use ATS, activate it now with the ATS button. TO/MC thrust is limited to 5 minutes.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "At VR",
+              "id": "rotate",
+              "info": "Rotate to about 13° pitch. Maintain at least V2 and follow the FD.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "Up",
+              "id": "gear-up",
+              "info": "Main panel, landing gear handle. At positive rate.",
+              "label": "Gear",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "fgcp-modes",
+              "info": "FGCP. At acceleration altitude, 1,000 ft AGL. LNAV for a GPS flight plan, VNAV + FLC for the climb.",
+              "label": "FGCP Modes",
+              "tier": "normal"
+            },
+            {
+              "action": "As Desired",
+              "id": "autopilot",
+              "info": "FGCP. Engage at your own discretion.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "Up",
+              "id": "flaps-climb",
+              "info": "Pedestal. Lower the nose toward 250 KIAS and retract above 170 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CLB",
+              "id": "thrust-levers",
+              "info": "Pedestal. CLB detent once flaps are up. Activate ATS now if you use it. 250 KIAS below 10,000 ft.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "taxi-lights",
+              "info": "Pedestal.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "engine-sync",
+              "info": "Pedestal.",
+              "label": "Engine Sync",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "apu-climb",
+              "info": "Right wall, APU switches. Shut down before FL310: APU Bleed OFF, Start switch STOP, APU Master OFF.",
+              "label": "APU",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "Off",
+              "id": "exterior-lights-climb",
+              "info": "Pedestal. At 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "cabin-signs-climb",
+              "info": "At 10,000 ft.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            },
+            {
+              "action": "Std",
+              "id": "altimeters-climb",
+              "info": "At transition altitude. 29.92 in / 1013 hPa.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Passing 10,000 ft"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CRU",
+              "id": "thrust-levers",
+              "info": "Pedestal. CRU detent or as required.",
+              "label": "Thrust Levers",
+              "tier": "normal"
+            },
+            {
+              "action": "Monitor",
+              "id": "fuel-quantity-cruise",
+              "info": "EICAS > FUEL HYD page. Quantity and balance. Crossfeed needs the X-Feed control set and the boost pump of the non-feeding tank off.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "pressurization-cruise",
+              "info": "At very high altitude a minimum engine power may be needed to hold cabin pressure.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "Cross-Check",
+              "id": "tod",
+              "info": "FMS PROG page 2/3 shows distance and time to TOD.",
+              "label": "Top of Descent",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "altimeters-cruise",
+              "label": "Altimeters",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "engine-instruments-cruise",
+              "info": "EICAS.",
+              "label": "Engine Instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "landing-data",
+              "info": "FMS. Latest 50 NM before TOD. Confirm runway and weather, set NAV > Approach and PERF > Landing. VREF and VAPP can also be set with the MFD softkeys.",
+              "label": "Landing Data",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "minimums",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "Preselect",
+              "id": "fgcp-altitude",
+              "info": "FGCP. For a VNAV descent, preselect the target altitude (ideally the final fix) and arm no other vertical mode.",
+              "label": "FGCP Altitude",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "pressurization-desc",
+              "info": "Main panel. Leave all switches in NORM for fully automatic pressurization.",
+              "label": "Pressurization",
+              "tier": "full"
+            },
+            {
+              "action": "Complete",
+              "id": "approach-briefing",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "Initiate",
+              "id": "descent",
+              "info": "At TOD. In VNAV the AP should switch to VPATH at TOD. Manage speed with the thrust levers, 0.80 / 300 / 250.",
+              "label": "Descent",
+              "tier": "normal"
+            },
+            {
+              "action": "Set QNH",
+              "id": "altimeters-desc",
+              "info": "At transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set QNH",
+              "id": "altimeters-appr",
+              "info": "At transition level, if it is below FL 100.",
+              "label": "Altimeters",
+              "tier": "full"
+            },
+            {
+              "action": "Norm",
+              "id": "ignition-appr",
+              "info": "Main panel, LH and RH.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-crossfeed",
+              "info": "Main panel.",
+              "label": "Fuel Crossfeed",
+              "tier": "full"
+            },
+            {
+              "action": "Set NAV1",
+              "id": "ils-frequency",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "Seat Belts",
+              "id": "passenger-signs",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "exterior-lights-appr",
+              "info": "Pedestal. At 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "taxi-lights",
+              "info": "Pedestal.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "engine-sync-appr",
+              "info": "Pedestal.",
+              "label": "Engine Sync",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "apu-appr",
+              "info": "Right wall, APU switches. The APU can run in flight up to 31,000 ft.",
+              "label": "APU",
+              "tier": "full"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "Flaps 15",
+              "id": "flaps-appr",
+              "info": "Pedestal. At 12 to 15 NM out, slow to 150 to 160 KIAS and select flaps 15 at 170 KIAS. Max 210 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Arm",
+              "id": "approach-mode",
+              "info": "FGCP, APP button. ILS: verify LOC and GS armed on the FMA. RNAV: verify GP armed. Intercept the localizer first, then the glideslope from below.",
+              "label": "Approach Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "Down",
+              "id": "gear-appr",
+              "info": "Main panel, landing gear handle. Latest 1,500 ft AGL on the glideslope. Check 3 green. Max 210 KIAS.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "Full",
+              "id": "flaps-landing",
+              "info": "Pedestal. Max 180 KIAS. Hold at least VREF + 10 KIAS. Be stable by 1,000 ft (IMC) or 500 ft (VMC).",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "eicas-appr",
+              "label": "EICAS",
+              "tier": "full"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Disengage",
+              "id": "autopilot",
+              "info": "Latest 200 ft AGL. Cross the threshold at VREF.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "Idle",
+              "id": "thrust-levers-ldg",
+              "info": "Pedestal. At 50 ft, slowly to IDLE, or check that ATS retards them.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "5° Pitch",
+              "id": "flare",
+              "info": "At 10 ft.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "100%",
+              "id": "speed-brakes-ldg",
+              "info": "Pedestal. At touchdown.",
+              "label": "Speed Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "thrust-reversers",
+              "info": "Max 70 KIAS.",
+              "label": "Thrust Reversers",
+              "tier": "normal"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Off",
+              "id": "exterior-lights-al",
+              "info": "Pedestal. After vacating the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "taxi-lights",
+              "info": "Pedestal. Max taxi speed 20 to 30 kts, 5 kts in turns.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Gnd Rec",
+              "id": "beacon",
+              "info": "Ground Rec/Anti-Coll lights switch. Set ANTI-COLL when crossing a runway.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "Stowed",
+              "id": "thrust-reversers-al",
+              "label": "Thrust Reversers",
+              "tier": "normal"
+            },
+            {
+              "action": "Retracted",
+              "id": "speed-brakes-al",
+              "info": "Pedestal. Zero %, handle full forward.",
+              "label": "Speed Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "Up",
+              "id": "flaps-al",
+              "info": "Pedestal.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "weather-radar",
+              "info": "Pedestal.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "Stby",
+              "id": "radar-tcas-al",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "pitot-heat",
+              "info": "Pitot and static heaters, LH and RH.",
+              "label": "Pitot Heat",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-shut",
+              "info": "Pedestal, parking brake handle.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "taxi-lights-2",
+              "info": "Pedestal.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "All Off",
+              "id": "anti-ice",
+              "info": "Main panel, anti-ice switches.",
+              "label": "Anti-Ice",
+              "tier": "normal"
+            },
+            {
+              "action": "Cutoff",
+              "id": "thrust-levers",
+              "info": "Pedestal. Once ITT has stabilized, click the levers to CUT-OFF.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "beacon-2",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "Check Zero Diff",
+              "id": "pressurization",
+              "label": "Pressurization",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "cabin-signs-shut",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "Off",
+              "id": "irs",
+              "info": "Pedestal, IRS controls.",
+              "label": "IRS",
+              "tier": "normal"
+            },
+            {
+              "action": "Caged",
+              "id": "stby-gyro",
+              "label": "Stby Gyro",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "stdby-flight-display",
+              "info": "Main panel.",
+              "label": "Stby Power",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "avionics-eicas",
+              "info": "Main panel.",
+              "label": "Avionics + EICAS",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "emergency-lights",
+              "info": "Main panel.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-crossfeed",
+              "info": "Main panel.",
+              "label": "Fuel Crossfeed",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "gravity-x-flow",
+              "info": "Main panel.",
+              "label": "Gravity X-Flow",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "apu-shut",
+              "info": "Right wall, APU switches. APU Bleed OFF, Start switch STOP, APU Master OFF. Can stay running at the gate if desired.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "exterior-lights-shut",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "batteries-shut",
+              "info": "Main panel. Batt 1 and Batt 2.",
+              "label": "Batteries",
+              "tier": "quick"
+            },
+            {
+              "action": "Open",
+              "id": "cabin-door",
+              "info": "Set chocks, covers and GPU as desired on the FFX EFB Ground Services page.",
+              "label": "Cabin Door",
+              "tier": "normal"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Twin-engine Cessna business jet with a 51,000 ft service ceiling and a 36,100 lb max takeoff weight.",
+  "isNew": true,
+  "manufacturer": "Cessna",
+  "model": "Citation X",
+  "slug": "citation-x",
+  "status": "active",
+  "suffix": "",
+  "systemsType": "business-jet",
+  "addon": "FlightFX",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

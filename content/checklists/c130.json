@@ -1,0 +1,774 @@
+{
+  "addon": "Blackbird Simulations",
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "battery",
+              "info": "Electrical Control Panel. BTRY switch. Before switching on, the battery test should read 24 VDC or more on AV and UTIL. HDDs 1 and 2, CNI-MU No. 1 and the gear position lights should illuminate.",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "generators",
+              "info": "Electrical Control Panel. All four GENERATOR switches on.",
+              "label": "Generators",
+              "tier": "quick"
+            },
+            {
+              "action": "Start",
+              "id": "apu",
+              "info": "APU Panel. Check the APU fire handle is in and the APU area is clear. APU control switch to START, then RUN.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "APU",
+              "id": "ext-pwr-apu",
+              "info": "Electrical Control Panel. Select APU once the APU is running. EXT PWR can be used instead if ground power is connected. It can be removed after the first engine is running.",
+              "label": "EXT PWR/APU",
+              "tier": "quick"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "fadec",
+              "info": "FADEC/Propeller Control Panel. FADEC switches unguarded and NORM, PROPELLER CONTROL switches NORMAL, ATCS ON, PROP SYNC ON.",
+              "label": "FADEC/Propeller Panel",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "fire-handles",
+              "info": "Fire/Engine Start Panel. All FIRE handles in, ENGINE START switches at STOP.",
+              "label": "Fire/Engine Start Panel",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "bleed-air-panel",
+              "info": "Bleed Air Panel. L and R ISO VALVE, DIVIDER VALVE and nacelle shutoff switches to AUTO.",
+              "label": "Bleed Air Panel",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "pressurization",
+              "info": "Pressurization Panel. AUTO RATE knob NORM, EMER DEPRESS switch NORM, mode select AUTO. LDG/CONST ALT at or slightly above field elevation.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "ice-protection",
+              "info": "Ice Protection Panel. PROPELLERS OFF, ENG AUTO, WING/EMP AUTO, ANTI-ICE/DE-ICE to DE-ICE, PITOT and NESA HEAT OFF.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "exterior-lights",
+              "info": "Exterior Lighting Panel. NAVIGATION LIGHTS FLASH/BRIGHT, TOP STROBE RED, BOTTOM STROBE WHT, COVERT/FORMATION and LEDGE OFF.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Align",
+              "id": "egis",
+              "info": "CNI-MU. Confirm the navaid database is current, enter the date, verify ALIGN POS and select AUTONAV.",
+              "label": "EGIs",
+              "tier": "normal"
+            },
+            {
+              "action": "Program",
+              "id": "fms-cni-mu-preflight",
+              "info": "CNI-MU. Work through the pages in order: COMM TUNE radios on and frequencies set, NAV TUNE navaids set for departure, IFF (Mode S, C and 3 on, PWR ON STBY), ROUTE/LEGS (origin, destination, alternate, waypoints, then ACTIVATE and EXEC), PERF INIT (weight, climb, cruise, descent) and TOLD INIT (MC INDEX, weight and balance, V SPEEDS).",
+              "label": "CNI-MU Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "amu-setup",
+              "info": "AMU. PFD (MAG/True/Grid, RAD ALT, flight director source), NAV RADAR and digital map (range, center/offset, overlays), NAV SELECT (CDI source, PNTR 1 and 2, SHIP SOLN INAV) and GCAS AND STALL.",
+              "label": "AMU Setup",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "ref-mode-panel",
+              "info": "REF/MODE Panel. HP, RAD ALT and MINS as required, FPA set, BARO SET set, flight director mode as required.",
+              "label": "REF/MODE Panel",
+              "tier": "normal"
+            }
+          ],
+          "title": "Avionics Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "Test",
+              "id": "fire-smoke-detectors",
+              "info": "AMU PREFLIGHT page. Run SMOKE DETECTOR and FIRE DETECTION tests. MASTER WARNING illuminates, the warning tone sounds and the SMOKE, ENG 1-4 FIRE and APU FIRE ACAWS messages display then clear. The fire handles illuminate during the fire test.",
+              "label": "Fire & Smoke Detectors",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "hydraulic-panel",
+              "info": "Hydraulic Panel. ANTI SKID ON, EMER BRAKE SEL to EMER, SUCTION BOOST PUMP switches ON, ENGINE PUMP switches ON, AUX PUMP ON. The aux pump goes off in the before takeoff brake check.",
+              "label": "Hydraulic Panel",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Prevents the aircraft from rolling during prep. With EMER BRAKE SEL at EMER, press the pedals and watch the emergency brake pressure indicator for a pressure drop.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Down",
+              "id": "gear-lever",
+              "info": "Confirm the GEAR lever is down.",
+              "label": "Gear Lever",
+              "tier": "full"
+            }
+          ],
+          "title": "Cockpit Setup"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Tank To Engine",
+              "id": "fuel",
+              "info": "Fuel Management Panel. DUMP switches closed and guarded. CROSS FEED, transfer TO, CROSS SHIP and INTERCONNECT switches closed, transfer FROM switches off. Check fuel quantity and balance are within limits.",
+              "label": "Fuel",
+              "tier": "quick"
+            },
+            {
+              "action": "Open",
+              "id": "apu-bleed-air",
+              "info": "Bleed Air Panel. APU bleed air valve open. It closes again in the before taxi flow.",
+              "label": "APU Bleed Air",
+              "tier": "quick"
+            },
+            {
+              "action": "Uncage",
+              "id": "standby-attitude",
+              "info": "Uncage and set the standby attitude indicator. The power-off flag should clear and the gyro should stay stable.",
+              "label": "Standby Attitude",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "oxygen",
+              "info": "Run the oxygen mask setup and check the LOX quantity, then leave oxygen off.",
+              "label": "Oxygen",
+              "tier": "normal"
+            },
+            {
+              "action": "Gnd Idle",
+              "id": "power-levers-start",
+              "info": "Throttle Quadrant. Power levers at GND IDLE.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Removed",
+              "id": "chocks-gear-pin",
+              "info": "Nose landing gear pin and chocks removed and stowed. The pin is stowed near the galley.",
+              "label": "NLG Pin & Chocks",
+              "tier": "full"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Select",
+              "id": "lsgi",
+              "info": "Throttle Quadrant. LOW SPD GND IDLE buttons. Starting in low speed ground idle warms the engine components gradually.",
+              "label": "LSGI",
+              "tier": "quick"
+            },
+            {
+              "action": "Start",
+              "id": "engine-3-start",
+              "info": "Fire/Engine Start Panel. ENGINE START switch to START until the white box appears, then RUN. Monitor the engine instruments. Stop the start if there is no NG within 10 seconds, or no oil pressure within 15 seconds of NG rotation.",
+              "label": "Engine 3",
+              "tier": "quick"
+            },
+            {
+              "action": "Start",
+              "id": "engines-4-2-1-start",
+              "info": "Fire/Engine Start Panel. Start 4, then 2, then 1 the same way. The normal order is 3, 4, 2, 1.",
+              "label": "Engines 4-2-1",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "engine-system-status",
+              "info": "Engine Status and System Status displays. Check the engine indications and ACAWS messages for all four engines.",
+              "label": "Engine & System Status",
+              "tier": "full"
+            }
+          ],
+          "title": "Engine Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Closed",
+              "id": "apu-bleed-air",
+              "info": "Bleed Air Panel. APU bleed air valve closed before taxi.",
+              "label": "APU Bleed Air",
+              "tier": "normal"
+            },
+            {
+              "action": "Test",
+              "id": "ice-protection-check",
+              "info": "Ice Protection Panel. ENG switch ON for 30 seconds and check ENG A/I ON displays, then AUTO. For the boots, ANTI-ICE/DE-ICE to ANTI-ICE, then back to DE-ICE after 2 seconds. WING/EMP A/I TEST displays and clears after 90 seconds.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "stall-warning-pusher",
+              "info": "AMU GCAS AND STALL page. With the power levers in the ground range, select PUSHER TEST.",
+              "label": "Stall Warning & Pusher",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "afcs",
+              "info": "Engage each autopilot, move the pitch and roll controls, then disconnect with the control wheel button.",
+              "label": "AFCS",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "flight-controls",
+              "info": "Check full travel of the elevator, ailerons and rudder.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "radar",
+              "info": "Radar Panel. Set the mode for departure.",
+              "label": "Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "altimeters-lineup",
+              "info": "REF/MODE Panel BARO SET. Both pilots state the setting, and the pilot also states the standby altimeter setting.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "taxi-lights",
+              "info": "Landing Lights Panel. TAXI LIGHTS and WINGTIP TAXI LIGHTS on before taxi. Check the taxi path is clear. Control taxi speed with LSGI and reverse rather than the brakes.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Before Taxi"
+        },
+        {
+          "items": [
+            {
+              "action": "Check",
+              "id": "brakes",
+              "info": "Hydraulic Panel EMER BRAKE SEL. Check the emergency brakes, select NORMAL, check the normal brakes, then AUX PUMP OFF.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "50%",
+              "id": "flaps-takeoff",
+              "info": "Flaps Lever. Cycle to 0% (rudder boost drops) and 100% (rudder pressure rises), then set 50%. Check for automatic trimming.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "trim",
+              "info": "Aileron and rudder trim zero, elevator trim set for takeoff, ELEV TAB switch NORM.",
+              "label": "Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "instruments",
+              "info": "HUD. Heading tracks correctly, radar altimeter reads between -3 and 1 ft, and the lateral guidance mode is correct for departure.",
+              "label": "Instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Select",
+              "id": "high-speed-ground-idle",
+              "info": "Throttle Quadrant. Ground idle switches to high speed. Can be selected any time after engine start.",
+              "label": "High-Speed Ground Idle",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "exterior-lights",
+              "info": "Exterior Lighting Panel. TOP and BOTTOM STROBE WHT, NAVIGATION LIGHTS STEADY as required.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "pitot-nesa-heat",
+              "info": "Ice Protection Panel. PITOT and NESA HEAT switches on.",
+              "label": "Pitot & NESA Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "Extend & On",
+              "id": "landing-lights-departure",
+              "info": "Landing Lights Panel.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Stop",
+              "id": "apu-off",
+              "info": "Electrical Control Panel EXT PWR/APU switch OFF, then APU Panel APU control switch STOP.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "transponder-iff",
+              "info": "CNI-MU IFF page. On and transmitting. TCAS to TA/RA.",
+              "label": "IFF",
+              "tier": "normal"
+            },
+            {
+              "action": "Test",
+              "id": "prop-overspeed-governor",
+              "info": "AMU PREFLIGHT page, PROP OVRSPD GVNR. Aircraft stationary with all four engines running. Power levers to FLT IDLE, then select engines 1 to 4.",
+              "label": "Prop Overspeed Governor",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Takeoff",
+              "id": "power-levers-takeoff",
+              "info": "Throttle Quadrant. Advance to TAKEOFF. Power is set when within 200 HP of predicted takeoff power, no later than 5 seconds after setting.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Release",
+              "id": "brakes-release-takeoff",
+              "info": "Release once takeoff power is set. A rolling takeoff is allowed if power reaches within 200 HP of predicted within 5 seconds.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "Release",
+              "id": "nosewheel-steering-takeoff",
+              "info": "Steer with the nosewheel first, then change to rudder once it is effective, around 50 to 70 knots and no later than 5 knots before rotation.",
+              "label": "Nosewheel Steering",
+              "tier": "full"
+            },
+            {
+              "action": "At VR",
+              "id": "rotate",
+              "info": "Rotate smoothly to the target pitch attitude and let the aircraft accelerate above VOBS.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "Up",
+              "id": "gear-up",
+              "info": "Gear Lever. Raise with a positive rate of climb. The gear indicator and handle lights go out.",
+              "label": "Gear",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Up",
+              "id": "flaps-up",
+              "info": "Flaps Lever. Under 100,000 lb, raise the flaps passing 135 KIAS. At higher weights, start at 135 KIAS or VOBS + 5 and finish at VOBS + 25. The flap indicator should show up.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Max Continuous",
+              "id": "power-levers-climb",
+              "info": "Throttle Quadrant. Reduce to maximum continuous once the flaps are up.",
+              "label": "Power Levers",
+              "tier": "normal"
+            },
+            {
+              "action": "Retract & Off",
+              "id": "landing-lights-retract",
+              "info": "Landing Lights Panel. Landing lights retracted and off, TAXI LIGHTS off, WINGTIP TAXI LIGHTS as required.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "autopilot",
+              "info": "Engage once the flaps are up and flight director guidance is set. On the REF/MODE Panel, IAS gives speed control and vertical guidance, NAV gives lateral guidance along the flight plan.",
+              "label": "Autopilot",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "Std",
+              "id": "altimeters-std",
+              "info": "REF/MODE Panel BARO SET. Set standard passing the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "cruise-power",
+              "info": "Throttle Quadrant. Set power from the calculated cruise data.",
+              "label": "Cruise Power",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "fuel-balance",
+              "info": "Fuel Management Panel. Keep fuel balance within limits. Use auxiliary and external tank fuel before main tank fuel.",
+              "label": "Fuel Balance",
+              "tier": "normal"
+            }
+          ],
+          "title": "Climb & Cruise"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "pressurization-approach",
+              "info": "Pressurization Panel. Set the mode select switch, AUTO RATE knob and LDG/CONST ALT, then state the settings.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "ref-mode-panel",
+              "info": "REF/MODE Panel. RAD ALT 50 ft below HAT for a precision approach, 250 ft non-precision, 300 ft circling or visual. Set FPA, and MINS to the published minimums.",
+              "label": "REF/MODE Panel",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "cni-mu-approach",
+              "info": "CNI-MU. Update ROUTE/LEGS, enter TOLD INIT from the destination ATIS, check landing speeds and distances, then review MC INDEX, V SPEEDS and INDEX. Enter the published missed approach before starting the approach.",
+              "label": "CNI-MU Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "nav-select",
+              "info": "AMU NAV SELECT page. CDI SOURCE to the approach navaid, PNTR 1 and PNTR 2 as required, COURSE knob set. Set the HDDs, NAV RADAR overlays and digital map for the approach. Both pilots state the CDI source and course.",
+              "label": "NAV Select",
+              "tier": "normal"
+            },
+            {
+              "action": "Complete",
+              "id": "approach-briefing",
+              "info": "Brief once both in-range flows are done, then run the in-range checklist.",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "Flt Idle",
+              "id": "power-levers-descent",
+              "info": "Throttle Quadrant. FLT IDLE with the gear and flaps up.",
+              "label": "Power Levers",
+              "tier": "normal"
+            },
+            {
+              "action": "250 KIAS",
+              "id": "descent-speed",
+              "info": "Descend at maximum lift over drag speed down to 20,000 ft, then hold 250 KIAS below 20,000 ft.",
+              "label": "Descent Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "Set QNH",
+              "id": "altimeters-descent",
+              "info": "REF/MODE Panel BARO SET. Set the local setting passing the transition level. Both pilots state it, and the pilot also states the standby altimeter setting.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "fuel-management",
+              "info": "Fuel Management Panel. Tank-to-engine is the recommended setup for approach and landing. Check fuel quantity and distribution, and turn SPR DRAIN on if required.",
+              "label": "Fuel Management",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "50%",
+              "id": "flaps-50",
+              "info": "Flaps Lever. Select 50% and confirm the indicator reads 50% before the before landing checklist.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Down",
+              "id": "gear-down",
+              "info": "Gear Lever. Confirm three down and centered.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "Extend & On",
+              "id": "landing-lights-approach",
+              "info": "Landing Lights Panel. Landing lights extended and on as required, TAXI LIGHTS on, WINGTIP TAXI LIGHTS as required.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "100%",
+              "id": "flaps-100",
+              "info": "Flaps Lever. 100% is the recommended landing flap and can be selected any time after the turn to final. On a coupled ILS, extend from 50% to 100% before or after glideslope intercept, not at it. Doing it at intercept can overload the elevator servo and disconnect the autopilot.",
+              "label": "Flaps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Configuration"
+        },
+        {
+          "items": [
+            {
+              "action": "Off",
+              "id": "autopilot",
+              "info": "Disconnect before 200 ft AGL on a CAT I ILS (100 ft for CAT II), or before descending below MDA on a non-precision approach. Disconnect the autothrottles no later than crossing the runway threshold.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "Flt Idle",
+              "id": "power-levers-landing",
+              "info": "Throttle Quadrant. FLT IDLE for touchdown. Move below flight idle only with all three gear on the ground and below 145 KTAS.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "reverse",
+              "info": "Throttle Quadrant. Pause at GND IDLE and check for four BETA (B) indications on the HP gauges, then move toward MAX REV. A missing B means a possible directional control problem.",
+              "label": "Reverse",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "brakes-anti-skid",
+              "info": "Apply anti-skid braking once all gear are on the ground. On a long runway, use reverse and light braking to reduce brake wear. Hand the control wheel to the copilot and use nosewheel steering as needed.",
+              "label": "Brakes & Anti-Skid",
+              "tier": "normal"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "ice-protection-after-landing",
+              "info": "Ice Protection Panel. Start the after landing flow below 20 knots. PROPELLERS OFF, ENG AUTO, WING/EMP AUTO, ANTI-ICE/DE-ICE to DE-ICE, PITOT and NESA HEAT OFF.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "Start",
+              "id": "external-power-apu",
+              "info": "APU Panel. APU control switch START, then RUN. Electrical Control Panel EXT PWR/APU switch to APU.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "exterior-lights-after-landing",
+              "info": "Exterior Lighting Panel. BOTTOM STROBE WHT, NAVIGATION LIGHTS FLASH as required.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "flaps-after-landing",
+              "info": "Flaps Lever.",
+              "label": "Flaps",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-shutdown",
+              "info": "Nosewheel centered, then set the parking brake.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Gnd Idle Low",
+              "id": "power-levers-shutdown",
+              "info": "Throttle Quadrant. GND IDLE with low speed ground idle selected.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Stop",
+              "id": "engine-start-switches-stop",
+              "info": "Fire/Engine Start Panel. All four ENGINE START switches to STOP.",
+              "label": "Engine Start Switches",
+              "tier": "quick"
+            },
+            {
+              "action": "Feather",
+              "id": "propeller-control-feather",
+              "info": "FADEC/Propeller Control Panel. PROPELLER CONTROL switches to FEATHER.",
+              "label": "Propeller Control",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "hydraulic-panel-shutdown",
+              "info": "Hydraulic Panel. ENGINE PUMP switches ON, SUCTION BOOST PUMP switches OFF, EMER BRAKE SEL to EMER, AUX PUMP OFF.",
+              "label": "Hydraulic Panel",
+              "tier": "full"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "Caged",
+              "id": "standby-attitude-caged",
+              "info": "Cage the standby attitude indicator.",
+              "label": "Standby Attitude",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "oxygen-off",
+              "info": "Crew oxygen off.",
+              "label": "Oxygen",
+              "tier": "normal"
+            },
+            {
+              "action": "Installed",
+              "id": "chocks",
+              "info": "Wheel chocks installed.",
+              "label": "Chocks",
+              "tier": "full"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Four-engine turboprop transport. One simmer covers the pilot, copilot and crew chief flows, from power-up to shutdown.",
+  "flightsim": "MSFS",
+  "isNew": true,
+  "manufacturer": "Lockheed Martin",
+  "model": "C-130J",
+  "simDepth": "Study Level",
+  "slug": "c130",
+  "status": "active",
+  "suffix": " Super Hercules",
+  "systemsType": "military"
+}

@@ -1,0 +1,1159 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "IN",
+              "id": "circuit-breakers",
+              "info": "Lower left and right subpanels. Pushed in to ensure all electrical circuits are active. Popped breakers are left alone unless essential for flight.",
+              "label": "Circuit Breakers",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle",
+              "info": "Lower center pedestal. Pulled completely back for minimum engine power.",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "mixture",
+              "info": "Lower center pedestal. Pulling fully out starves the engine of fuel — normal shutdown method.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "alternate-static-air",
+              "info": "Lower left subpanel. Used only if the main static port gets blocked, usually by ice. It provides static pressure from inside the unpressurized cabin.",
+              "label": "Alternate Static Air",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "electrical-switches",
+              "info": "Lower left switch panel. Ensure no sudden power draw before turning battery on.",
+              "label": "Electrical Switches",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master",
+              "info": "Lower left switch panel. Off during engine start — protects radios from voltage spikes.",
+              "label": "Avionics Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ignition",
+              "info": "Lower left subpanel. Key in OFF when engine is not running.",
+              "label": "Ignition",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cockpit Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "bat-alt-master",
+              "info": "Lower left switch panel. Disconnects battery and alternator from main buses.",
+              "label": "Bat & Alt Master",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Main instrument panel. Verifying there is enough fuel for the planned flight plus reserves.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "avionics-bus-test",
+              "info": "Lower left switch panel. Checks the cooling fans and voltage drops to ensure the avionics buses are functioning correctly.",
+              "label": "Avionics Bus Test",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "lights",
+              "info": "Lower left switch panel. Verifying exterior bulbs are functioning before departure.",
+              "label": "Lights",
+              "tier": "full"
+            },
+            {
+              "action": "DOWN",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Extending fully during preflight allows inspection of tracks and hinges.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "pitot-heat",
+              "info": "Lower left switch panel. A quick activation during preflight confirms the element gets hot.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "bat-alt-master-2",
+              "info": "Lower left switch panel. Disconnects battery and alternator from main buses.",
+              "label": "Bat & Alt Master",
+              "tier": "normal"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "SET FOR T/O",
+              "id": "elevator-trim",
+              "info": "Center pedestal. Set to takeoff index.",
+              "label": "Elevator Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL IN",
+              "id": "fuel-shutoff-valve",
+              "info": "Center pedestal floor. Must be pushed in to allow fuel to flow to the engine.",
+              "label": "Fuel Shutoff Valve",
+              "tier": "quick"
+            },
+            {
+              "action": "BOTH",
+              "id": "fuel-selector",
+              "info": "Center pedestal floor. Both tanks — prevents fuel imbalance.",
+              "label": "Fuel Selector",
+              "tier": "quick"
+            }
+          ],
+          "title": "Pre-Start Setup"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CLOSED",
+              "id": "doors",
+              "info": "Cabin sides. Securing the latch ensures the doors don't pop open during the takeoff roll.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Pulling the handle sets the hydraulic system to hold the toe brakes down.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "IN",
+              "id": "circuit-breakers",
+              "info": "Lower left and right subpanels. Pushed in to ensure all electrical circuits are active. Popped breakers are left alone unless essential for flight.",
+              "label": "Circuit Breakers",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "electrical-switches",
+              "info": "Lower left switch panel. Ensure no sudden power draw before turning battery on.",
+              "label": "Electrical Switches",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "bat-alt-master",
+              "info": "Lower left switch panel. The battery half provides initial power, while the alternator half allows the engine to charge the system once running.",
+              "label": "Bat & Alt Master",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master",
+              "info": "Lower left switch panel. Off during engine start — protects radios from voltage spikes.",
+              "label": "Avionics Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ignition",
+              "info": "Lower left subpanel. Engaging the starter motor to turn the crankshaft.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "BOTH",
+              "id": "fuel-selector",
+              "info": "Center pedestal floor. Both tanks — prevents fuel imbalance.",
+              "label": "Fuel Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL IN",
+              "id": "fuel-shutoff-valve",
+              "info": "Center pedestal floor. Must be pushed in to allow fuel to flow to the engine.",
+              "label": "Fuel Shutoff Valve",
+              "tier": "full"
+            }
+          ],
+          "title": "Pre-Start"
+        },
+        {
+          "items": [
+            {
+              "action": "HOLD TEST",
+              "id": "stby-battery",
+              "info": "Lower left switch panel. Arms the backup battery to automatically power essential instruments if the main alternator and battery fail.",
+              "label": "STBY Battery",
+              "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "stby-battery-2",
+              "info": "Lower left switch panel. Arms the backup battery to automatically power essential instruments if the main alternator and battery fail.",
+              "label": "STBY Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "pfd-eis",
+              "info": "Main instrument panel. Ensuring the primary engine indicators are displaying normally on the glass panel.",
+              "label": "PFD EIS",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "pfd-volts",
+              "info": "Main instrument panel. Verifying the battery voltage is sufficient to start the engine without external power.",
+              "label": "PFD Volts",
+              "tier": "full"
+            }
+          ],
+          "title": "G1000 Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "bat-alt-master-2",
+              "info": "Lower left switch panel. The battery half provides initial power, while the alternator half allows the engine to charge the system once running.",
+              "label": "Bat & Alt Master",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "nav-light",
+              "info": "Lower left switch panel. Red and green wingtip lights and a white tail light indicate the aircraft's orientation to others.",
+              "label": "Nav Light",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Lower left switch panel. Red flashing beacon — required before engine start.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "OPEN 1/4 INCH",
+              "id": "throttle",
+              "info": "Lower center pedestal. A stable idle speed keeps the engine running smoothly and prevents spark plug fouling.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "mixture",
+              "info": "Lower center pedestal. Full rich for sea level ops.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "priming",
+              "info": "Lower center pedestal. For a cold engine, set the AUX Fuel Pump ON and mixture to FULL RICH for about 5 seconds, then back to CUTOFF, then pump OFF. This primes the fuel lines before cranking.",
+              "label": "Priming",
+              "tier": "full"
+            },
+            {
+              "action": "CLEAR",
+              "id": "propeller-area",
+              "info": "Outside aircraft. Call 'Clear prop!' before starting.",
+              "label": "Propeller Area",
+              "tier": "normal"
+            },
+            {
+              "action": "START",
+              "id": "ignition-2",
+              "info": "Lower left subpanel. Engaging the starter motor to turn the crankshaft.",
+              "label": "Ignition",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture-2",
+              "info": "Lower center pedestal. Full rich for sea level ops.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "oil-pressure",
+              "info": "Main instrument panel. Green means the oil pump is successfully lubricating the engine components.",
+              "label": "Oil Pressure",
+              "tier": "quick"
+            },
+            {
+              "action": "1000 RPM",
+              "id": "throttle-2",
+              "info": "Lower center pedestal. A stable idle speed keeps the engine running smoothly and prevents spark plug fouling.",
+              "label": "Throttle",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "LEAN",
+              "id": "mixture",
+              "info": "Lower center pedestal. Lean slightly at altitude for efficiency.",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "throttle",
+              "info": "Lower center pedestal. Adjusting power as needed to maintain taxi speed or altitude.",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "avionics-master",
+              "info": "Lower left switch panel. Powers radios, GPS, and secondary instruments.",
+              "label": "Avionics Master",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "radios",
+              "info": "Main instrument panel. Tuning communication and navigation frequencies in advance reduces pilot workload.",
+              "label": "Radios",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "internal-lights",
+              "info": "Lower left and right subpanels. Adjusted for visibility and to preserve night vision.",
+              "label": "Internal Lights",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Retract — removes drag.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "cabin-heat",
+              "info": "Lower right subpanel. Uses air heated by the engine exhaust shroud to warm the cabin.",
+              "label": "Cabin Heat",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Main instrument panel. Verifying there is enough fuel for the planned flight plus reserves.",
+              "label": "Fuel Quantity",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "pitot-heat",
+              "info": "Lower left switch panel. Melts ice off the pitot tube to ensure accurate airspeed readings.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "elevator-trim",
+              "info": "Center pedestal. Set to takeoff index.",
+              "label": "Elevator Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "FREE",
+              "id": "flight-controls",
+              "info": "Yoke and pedals. Moving the yoke in a box pattern and pressing the rudder pedals fully verifies nothing is jamming the control cables.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main instrument panel. Setting the local barometric pressure provides the correct altitude above mean sea level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "PRESELECT",
+              "id": "autopilot",
+              "info": "Main instrument panel. Preloading the initial altitude and heading helps manage workload immediately after takeoff.",
+              "label": "Autopilot",
+              "tier": "full"
+            },
+            {
+              "action": "SET & STBY",
+              "id": "transponder",
+              "info": "Main instrument panel. Entering the assigned squawk code before takeoff.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Setup"
+        }
+      ],
+      "id": "before-taxi",
+      "title": "Before Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Lower left switch panel. Illuminates the taxiway directly in front of the nose.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Disengaging the brake to allow the aircraft to move.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes",
+              "info": "Rudder pedals. Pressing the top of the rudder pedals tests the hydraulic toe brakes.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "instruments",
+              "info": "Main instrument panel. During a turn, the turn coordinator should indicate the turn while the inclinometer ball swings outside.",
+              "label": "Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Pulling the handle sets the hydraulic system to hold the toe brakes down.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Main instrument panel. Verifying there is enough fuel for the planned flight plus reserves.",
+              "label": "Fuel Quantity",
+              "tier": "full"
+            },
+            {
+              "action": "BOTH",
+              "id": "fuel-selector",
+              "info": "Center pedestal floor. Both tanks — prevents fuel imbalance.",
+              "label": "Fuel Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture",
+              "info": "Lower center pedestal. Full rich for sea level ops.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "1800 RPM",
+              "id": "throttle",
+              "info": "Lower center pedestal. Pulled completely back for minimum engine power.",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "PERFORM",
+              "id": "magneto-check",
+              "info": "Lower left subpanel. Switch R → BOTH → L → BOTH. Maximum allowable drop: 150 RPM per magneto, 50 RPM difference between left and right. A drop within limits confirms each magneto fires independently.",
+              "label": "Magneto Check",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "vacuum-gauge",
+              "info": "Main instrument panel. Ensures the vacuum pump is providing enough suction to spin the gyroscopic instruments like the attitude indicator.",
+              "label": "Vacuum Gauge",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "amps",
+              "info": "Main instrument panel. A positive charge indicates the alternator is supplying power to the battery and electrical systems.",
+              "label": "Amps",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "annunciations",
+              "info": "Main instrument panel. Verifying no warning or caution alerts are active on the display panel before takeoff.",
+              "label": "Annunciations",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-instruments",
+              "info": "Main instrument panel. Oil pressure, oil temperature, and RPM should all be in the green arcs.",
+              "label": "Engine Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "PERFORM",
+              "id": "full-throttle-runup",
+              "info": "Lower center pedestal. Advance throttle to full and verify 2300–2400 RPM. Above 3000 ft density altitude, lean the mixture first to achieve max RPM. Confirms the engine produces full static power.",
+              "label": "Full Throttle Runup",
+              "tier": "full"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-2",
+              "info": "Lower center pedestal. Pulled completely back for minimum engine power.",
+              "label": "Throttle",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Runup"
+        },
+        {
+          "items": [
+            {
+              "action": "LOCKED",
+              "id": "doors",
+              "info": "Cabin sides. Double checking the latch mechanics.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "FREE",
+              "id": "flight-controls",
+              "info": "Yoke and pedals. Moving the yoke in a box pattern and pressing the rudder pedals fully verifies nothing is jamming the control cables.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "instruments",
+              "info": "Main instrument panel. During a turn, the turn coordinator should indicate the turn while the inclinometer ball swings outside.",
+              "label": "Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "radios",
+              "info": "Main instrument panel. Tuning communication and navigation frequencies in advance reduces pilot workload.",
+              "label": "Radios",
+              "tier": "normal"
+            },
+            {
+              "action": "PRESELECT",
+              "id": "autopilot",
+              "info": "Main instrument panel. Preloading the initial altitude and heading helps manage workload immediately after takeoff.",
+              "label": "Autopilot",
+              "tier": "full"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main instrument panel. Setting the local barometric pressure provides the correct altitude above mean sea level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "elevator-trim",
+              "info": "Center pedestal. Set to takeoff index.",
+              "label": "Elevator Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Usually 0 to 10 degrees, generating extra lift to shorten the takeoff roll.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "pitot-heat",
+              "info": "Lower left switch panel. Melts ice off the pitot tube to ensure accurate airspeed readings.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture-2",
+              "info": "Lower center pedestal. Full rich for sea level ops.",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "cabin-pwr-12v",
+              "info": "Right instrument panel. Disconnecting auxiliary power ensures no unnecessary electrical drain during critical phases.",
+              "label": "Cabin PWR 12V",
+              "tier": "full"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "wx-radar",
+              "info": "Main instrument panel. Checking for nearby precipitation or storms. Most 172s use datalink weather rather than an onboard radar dish.",
+              "label": "WX Radar",
+              "tier": "full"
+            },
+            {
+              "action": "ON + ALT",
+              "id": "transponder",
+              "info": "Main instrument panel. Transmits the aircraft's position and altitude to Air Traffic Control radar.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Lower left switch panel. Highly visible lights used to illuminate the runway and make the aircraft visible to others.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Lower left switch panel. High-intensity flashing lights for sky visibility.",
+              "label": "Strobes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "FULL",
+              "id": "throttle",
+              "info": "Lower center pedestal. Pushed fully in to produce maximum power for takeoff or go-arounds.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "55 KIAS",
+              "id": "rotate",
+              "info": "Flight controls. Pulling back on the yoke increases the angle of attack, lifting the aircraft off the ground.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "60 KIAS",
+              "id": "climb",
+              "info": "Flight instruments. Maintaining Vx (best angle of climb) or Vy (best rate of climb) gets the aircraft away from the ground quickly.",
+              "label": "Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Retract — removes drag.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "75-85 KIAS",
+              "id": "climb-speed",
+              "info": "Flight instruments. A cruise climb speed provides better engine cooling and forward visibility.",
+              "label": "Climb Speed",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "climb-power",
+              "info": "Lower center pedestal. Typically full throttle in a 172, but can be reduced slightly for engine longevity or noise abatement.",
+              "label": "Climb Power",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Retract — removes drag.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-light",
+              "info": "Lower left switch panel. Off when stationary — no airflow to cool the bulb.",
+              "label": "Taxi Light",
+              "tier": "normal"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "landing-lights",
+              "info": "Lower left switch panel. Often left on for visibility to other aircraft in busy airspace.",
+              "label": "Landing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "SET STD",
+              "id": "altimeters",
+              "info": "Main instrument panel. At transition altitude, standard pressure (29.92 inHg or 1013 hPa) is set so all aircraft reference the same pressure level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "cruise-power",
+              "info": "Lower center pedestal. Adjusted using the throttle to reach a desired RPM, usually between 2100 and 2400 for a mix of speed and fuel efficiency.",
+              "label": "Cruise Power",
+              "tier": "quick"
+            },
+            {
+              "action": "LEAN",
+              "id": "mixture",
+              "info": "Lower center pedestal. Lean slightly at altitude for efficiency.",
+              "label": "Mixture",
+              "tier": "quick"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CONFIRM",
+              "id": "approach-data",
+              "info": "Flight instruments. Reviewing frequencies, minimums, and runway info prepares the pilot for a stabilized approach.",
+              "label": "Approach Data",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "gps-approach",
+              "info": "Main instrument panel. Loading the approach procedure in the GPS guides the autopilot and flight director.",
+              "label": "GPS Approach",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "ils-frequency",
+              "info": "Main instrument panel. Tuning the localizer frequency allows the instruments to track the precision approach path.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Main instrument panel. Setting the decision altitude so the pilot knows exactly when to go around if the runway is not visible.",
+              "label": "Minimums",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "INITIATE",
+              "id": "descent",
+              "info": "Flight instruments. Reducing throttle and adjusting pitch to lose altitude while maintaining a safe airspeed.",
+              "label": "Descent",
+              "tier": "quick"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main instrument panel. Setting the local barometric pressure provides the correct altitude above mean sea level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK QNH",
+              "id": "altimeters",
+              "info": "Main instrument panel. Verifying the barometric pressure matches the local setting ensures altitude readings are accurate.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Lower left switch panel. Highly visible lights used to illuminate the runway and make the aircraft visible to others.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture",
+              "info": "Lower center pedestal. Full rich for sea level ops.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "100 KIAS",
+              "id": "flaps-10",
+              "info": "Lower right center pedestal. The first notch of flaps allows for a slower, more stable approach speed.",
+              "label": "Flaps 10",
+              "tier": "quick"
+            },
+            {
+              "action": "80 KIAS",
+              "id": "flaps-20",
+              "info": "Lower right center pedestal. Adds more drag and lift as the aircraft nears the runway.",
+              "label": "Flaps 20",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Maximum flaps provide the steepest descent angle without increasing airspeed.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "Main instrument panel. Manually flying the approach usually begins before reaching minimums, unless performing an autoland (not typically done in a 172).",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "power",
+              "info": "Lower center pedestal. Pulling the throttle fully back to smoothly sink to the runway.",
+              "label": "Power",
+              "tier": "quick"
+            },
+            {
+              "action": "5 DEG PITCH",
+              "id": "flare",
+              "info": "Flight controls. Raising the nose just above the runway bleeds off speed and allows the main wheels to touch down first.",
+              "label": "Flare",
+              "tier": "quick"
+            }
+          ],
+          "title": "Approach"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "FULL",
+              "id": "throttle",
+              "info": "Lower center pedestal. Pushed fully in to produce maximum power for takeoff or go-arounds.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "20 DEG",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Retract — removes drag.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "60 KIAS",
+              "id": "climb",
+              "info": "Flight instruments. Maintaining Vx (best angle of climb) or Vy (best rate of climb) gets the aircraft away from the ground quickly.",
+              "label": "Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps-2",
+              "info": "Lower right center pedestal. Retract — removes drag.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "75-85 KIAS",
+              "id": "climb-speed",
+              "info": "Flight instruments. A cruise climb speed provides better engine cooling and forward visibility.",
+              "label": "Climb Speed",
+              "tier": "quick"
+            }
+          ],
+          "title": "Go-Around"
+        }
+      ],
+      "id": "go-around",
+      "title": "Go-Around"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Lower left switch panel. Turned off — prolong bulb life.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes",
+              "info": "Lower left switch panel. Turned off — strobes off on ground, no blinding other pilots.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-light",
+              "info": "Lower left switch panel. Illuminates the taxiway directly in front of the nose.",
+              "label": "Taxi Light",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Lower right center pedestal. Retract — removes drag.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pitot-heat",
+              "info": "Lower left switch panel. Off on ground — prevents heating element burning out.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Main instrument panel. Kept in standby mode on the ground if not required to transmit altitude by local airport rules.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "wx-radar",
+              "info": "Main instrument panel. Turned off to prevent battery drain or ground interference.",
+              "label": "WX Radar",
+              "tier": "full"
+            },
+            {
+              "action": "LEAN",
+              "id": "mixture",
+              "info": "Lower center pedestal. Lean slightly at altitude for efficiency.",
+              "label": "Mixture",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Pulling the handle sets the hydraulic system to hold the toe brakes down.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle",
+              "info": "Lower center pedestal. Pulled completely back for minimum engine power.",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-light",
+              "info": "Lower left switch panel. Off when stationary — no airflow to cool the bulb.",
+              "label": "Taxi Light",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "electrical-equipment",
+              "info": "Main instrument panel. Turning off unnecessary systems reduces load on battery before shutdown.",
+              "label": "Electrical Equipment",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master",
+              "info": "Lower left switch panel. Off during engine start — protects radios from voltage spikes.",
+              "label": "Avionics Master",
+              "tier": "normal"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "mixture",
+              "info": "Lower center pedestal. Pulling fully out starves the engine of fuel — normal shutdown method.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "ignition",
+              "info": "Lower left subpanel. Key in OFF when engine is not running.",
+              "label": "Ignition",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "all-lights",
+              "info": "Lower left switch panel. Turns off all exterior lighting.",
+              "label": "All Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "bat-alt-master",
+              "info": "Lower left switch panel. Disconnects battery and alternator from main buses.",
+              "label": "Bat & Alt Master",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "stby-battery",
+              "info": "Lower left switch panel. Turned off last to secure the electrical system.",
+              "label": "STBY Battery",
+              "tier": "normal"
+            },
+            {
+              "action": "LOWER WING",
+              "id": "fuel-selector",
+              "info": "Center pedestal floor. Selecting the lower wing tank when parked on an incline prevents fuel from cross-feeding and venting overboard.",
+              "label": "Fuel Selector",
+              "tier": "full"
+            }
+          ],
+          "title": "Shutdown"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "The most produced aircraft in aviation history, celebrated for its legendary reliability and forgiving flight characteristics.",
+  "manufacturer": "Cessna",
+  "model": "172",
+  "slug": "c172",
+  "status": "active",
+  "suffix": " Skyhawk",
+  "systemsType": "piston",
+  "addon": "Microsoft",
+  "flightsim": "MSFS",
+  "simDepth": "Standard",
+  "variant": "It's the version with the G1000 glass cockpit. The version with classic round gauges differs in the avionics steps."
+}

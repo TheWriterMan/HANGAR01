@@ -1,0 +1,29 @@
+name: Checklist error
+description: A wrong, missing or out-of-order item in an existing checklist
+labels: ['report']
+body:
+  - type: input
+    id: aircraft
+    attributes:
+      label: Aircraft
+      description: As named on the site, such as "PMDG Boeing 737NG".
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Phase and item
+      description: Such as "Before Start, Fuel Pumps".
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong, and what it should say
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Add-on and sim version you checked it in
+      placeholder: PMDG 737-800 v3.0.80, MSFS 2024

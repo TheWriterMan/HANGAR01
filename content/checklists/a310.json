@@ -1,0 +1,1642 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Panel. Lowers the landing gear.",
+              "label": "Gear",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Pedestal. Verify thrust levers are at the idle detent before applying power.",
+              "label": "Thrust Levers",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-levers",
+              "info": "Pedestal. Ensure both engine fuel cutoff levers are in the off position to prevent premature fuel flow.",
+              "label": "Fuel Levers",
+              "tier": "full"
+            },
+            {
+              "action": "AGREE",
+              "id": "flap-lever",
+              "info": "Pedestal. The flap lever position must match the indicated flap setting before powering hydraulics to avoid uncommanded movement.",
+              "label": "Flap Lever",
+              "tier": "full"
+            },
+            {
+              "action": "NORM",
+              "id": "eng-mode",
+              "info": "Pedestal. Ignition selector set to NORM. The A or B positions are only used during engine start.",
+              "label": "ENG Mode",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "wipers",
+              "info": "Overhead Panel. Ensure windshield wipers are off to prevent scratching dry glass.",
+              "label": "Wipers",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Pedestal. Switch to ON (1 or 2) to verify the test pattern on the ND, then return to OFF.",
+              "label": "Weather Radar",
+              "tier": "full"
+            }
+          ],
+          "title": "Safety Check"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "batteries",
+              "info": "Overhead Panel. Switch all three batteries (BAT 1, 2, 3) to ON. White lines through the switches indicate they are active.",
+              "label": "Batteries",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "external-power",
+              "info": "Overhead Panel. Disconnect once the APU is supplying electrical power. Skip this step if no GPU is connected.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "info": "Overhead Panel. Set the NAV & LOGO selector to position 1 to make the aircraft visible to others.",
+              "label": "Nav Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "apu-fire-test",
+              "info": "Overhead Panel. Hold the test button to verify the APU fire warning systems are operational.",
+              "label": "APU Fire Test",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "engine-fire-tests",
+              "info": "Overhead Panel. Perform a fire test for each engine to ensure warning lights and bells function correctly.",
+              "label": "Engine Fire Tests",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Turn all fuel pumps on. The crossfeed valve remains in the auto position.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "apu-master",
+              "info": "Overhead Panel. Powers the APU controller and initiates the intake flap opening sequence.",
+              "label": "APU Master",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Press to initiate the APU start sequence. The right ECAM will automatically display the APU page.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "NAV",
+              "id": "adirs-selectors",
+              "info": "Overhead Panel. Move all three selectors to NAV to begin alignment. The FROM/TO must be entered in the MCDU for the alignment to complete.",
+              "label": "ADIRS Selectors",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "crew-oxygen",
+              "info": "Overhead Panel. Turn on the Oxygen LO PR Supply located on the rear overhead panel.",
+              "label": "Crew Oxygen",
+              "tier": "normal"
+            }
+          ],
+          "title": "APU Start"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "galley",
+              "info": "Overhead Panel. Powers the galley systems for cabin service preparation.",
+              "label": "Galley",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "probe-heat",
+              "info": "Overhead Panel. Turn on Captain, Standby, and First Officer probe heating to prevent icing on the sensors.",
+              "label": "Probe Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "window-heat",
+              "info": "Overhead Panel. Activates window heating to prevent fogging and improve bird strike resistance.",
+              "label": "Window Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "ARMED",
+              "id": "emergency-exit-lights",
+              "info": "Overhead Panel. Arm the system so exit lights illuminate automatically during a loss of power.",
+              "label": "Emergency Exit Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "strobes",
+              "info": "Overhead Panel. Set to AUTO so strobes activate automatically when airborne.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Set the No Smoking selector to AUTO; the seatbelt sign will follow this selector's logic.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "overhead-panel",
+              "info": "Overhead Panel. Scan for any white indicator lights. In a normal dark cockpit configuration, none should remain illuminated.",
+              "label": "Overhead Panel",
+              "tier": "full"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Turn on after APU AVAIL illuminates to provide bleed air for engine start. Verify the X FEED selector is in the auto position.",
+              "label": "APU Bleed",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power-2",
+              "info": "Overhead Panel. Disconnect once the APU is supplying electrical power. Skip this step if no GPU is connected.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "internal-lights",
+              "info": "Pedestal. Adjust cockpit and panel lighting knobs on the side panels and pedestal to suit ambient conditions.",
+              "label": "Internal Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "gnd-ctl",
+              "info": "Overhead Panel. Turn on the Flight Recorder ground control switch to ensure CVR and FDR record while on the ground.",
+              "label": "GND CTL",
+              "tier": "full"
+            }
+          ],
+          "title": "After APU Available"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "mcdu-preflight",
+              "info": "Pedestal. Enter flight parameters including FROM/TO, INIT, F-PLN, and TO/APPR data. Use the left LSK to insert and confirm each leg.",
+              "label": "MCDU Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autothrust",
+              "info": "Glareshield. Engage both ATS levers on the eyebrow trim panel. This requires the IRS alignment to be completed.",
+              "label": "Autothrust",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "pitch-trim",
+              "info": "Glareshield. Engage both Pitch Trim levers. This also requires complete IRS alignment.",
+              "label": "Pitch Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "yaw-damper",
+              "info": "Glareshield. Engage both Yaw Damper levers to provide stability augmentation.",
+              "label": "Yaw Damper",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "takeoff-performance",
+              "info": "EFB. Enter mass and balance data to run the takeoff calculation. Standard configuration uses Flaps 15/0.",
+              "label": "Takeoff Performance",
+              "tier": "normal"
+            }
+          ],
+          "title": "MCDU Preflight"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "efis-mode",
+              "info": "Glareshield. Adjust EFIS brightness and select the desired ND mode, such as ROSE NAV or ARC.",
+              "label": "EFIS Mode",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "flight-director",
+              "info": "Glareshield. Turn on the Flight Director and set the brightness selector to the middle position.",
+              "label": "Flight Director",
+              "tier": "normal"
+            },
+            {
+              "action": "NAV",
+              "id": "vor-nav-ils",
+              "info": "Glareshield. Select NAV mode to display flight plan information on the navigation display.",
+              "label": "VOR/NAV/ILS",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Glareshield. Set the DH selector to -5, then OFF if no decision height is required for departure.",
+              "label": "Minimums",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "heading-bug",
+              "info": "Glareshield. Set the expected runway heading on the FCU.",
+              "label": "Heading Bug",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "altitude-selector",
+              "info": "Glareshield. Dial in the initial cleared altitude or cruise flight level.",
+              "label": "Altitude Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "V2",
+              "id": "speed-selector",
+              "info": "Glareshield. Set the SPD/MACH selector to the calculated V2 speed.",
+              "label": "Speed Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "ap-modes",
+              "info": "Glareshield. Preselect PROFILE and NAV modes on the FCU for the initial climb.",
+              "label": "AP Modes",
+              "tier": "normal"
+            }
+          ],
+          "title": "MCP"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "altimeters",
+              "info": "Main Panel. Adjust both altimeters to the local QNH pressure setting.",
+              "label": "Altimeters",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "clock",
+              "info": "Main Panel. Synchronize or verify the clock time for accurate flight logging.",
+              "label": "Clock",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "egpws",
+              "info": "Overhead Panel. Push to test the ground proximity warning system and verify GPWS shows ON after a few seconds.",
+              "label": "EGPWS",
+              "tier": "full"
+            },
+            {
+              "action": "NORM",
+              "id": "anti-skid",
+              "info": "Main Panel. Set the anti-skid system to NORM to ensure maximum braking efficiency during rejected takeoff or landing.",
+              "label": "Anti-Skid",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "land-alt",
+              "info": "Main Panel. Dial in the destination landing elevation on the pressurization panel under the MCP.",
+              "label": "LAND ALT",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "gear-warning-test",
+              "info": "Main Panel. Push the gear warning test button and listen for the audible warning tone.",
+              "label": "Gear Warning Test",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "trp",
+              "info": "Main Panel. Select FLX TO, TOGA, or AUTO on the Thrust Rating Panel. If using FLX TO, input the assumed temperature from the EFB.",
+              "label": "TRP",
+              "tier": "normal"
+            }
+          ],
+          "title": "Main Panel"
+        },
+        {
+          "items": [
+            {
+              "action": "DISARMED",
+              "id": "speed-brake",
+              "info": "Pedestal. Verify the speed brake lever is fully retracted and disarmed.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "takeoff-warning-test",
+              "info": "Pedestal. Advance Throttle 1 to verify the warning tone and Master Warning, then return to idle. Repeat with Throttle 2.",
+              "label": "Takeoff Warning Test",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Pedestal. Set the assigned squawk code and keep the mode in STBY until lining up on the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "ZERO",
+              "id": "rudder-trim",
+              "info": "Pedestal. Verify the rudder trim is centered at zero.",
+              "label": "Rudder Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "weather-radar-2",
+              "info": "Pedestal. Switch to ON (1 or 2) to verify the test pattern on the ND, then return to OFF.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "oxygen-mask",
+              "info": "Side Console. Press the test button to verify oxygen flow and communication capabilities.",
+              "label": "Oxygen Mask",
+              "tier": "full"
+            }
+          ],
+          "title": "Pedestal & Side"
+        }
+      ],
+      "id": "cockpit-preparation",
+      "title": "Cockpit Preparation"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "REMOVED",
+              "id": "ground-connections",
+              "info": "EFB. Remove the GPU, chocks, and any other ground services before pushback.",
+              "label": "Ground Connections",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED",
+              "id": "doors",
+              "info": "Main Panel. Verify on the ECAM that all aircraft doors are closed and secured.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "LOCKED",
+              "id": "cockpit-door",
+              "info": "Pedestal. Secure the cockpit door prior to departure.",
+              "label": "Cockpit Door",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Main Panel. Verify the total fuel on board matches the flight plan requirements.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED",
+              "id": "windows",
+              "info": "Side Console. Ensure both flight deck windows are fully closed and locked.",
+              "label": "Windows",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Overhead Panel. Turn on the beacon light to warn ground personnel that engines are about to start or the aircraft is moving.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "parking-brake",
+              "info": "Pedestal. Ensure the parking brake is set before ground equipment is removed.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "XPDR",
+              "id": "transponder",
+              "info": "Pedestal. Switch to XPDR mode prior to pushback to ensure ATC visibility.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        }
+      ],
+      "id": "before-start",
+      "title": "Before Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "START",
+              "id": "pushback",
+              "info": "EFB. Initiate pushback using the EFB controls.",
+              "label": "Pushback",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "clock",
+              "info": "Main Panel. Start the elapsed timer to monitor the engine start sequence duration.",
+              "label": "Clock",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "eng-mode",
+              "info": "Pedestal. Move the ignition selector to A or B. CONT RELIGHT is only used for turbulence, icing, or heavy precipitation.",
+              "label": "ENG Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "engine-2-start",
+              "info": "Overhead Panel. Press START 2. The switch will display OPEN as the start valve actuates.",
+              "label": "Engine 2 Start",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-lever-2",
+              "info": "Pedestal. Lift Fuel Lever 2 when N2 reaches 20% to introduce fuel and initiate combustion.",
+              "label": "Fuel Lever 2",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "engine-1-start",
+              "info": "Overhead Panel. Press START 1. The switch will display OPEN.",
+              "label": "Engine 1 Start",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-lever-1",
+              "info": "Pedestal. Lift Fuel Lever 1 when N2 reaches 20%.",
+              "label": "Fuel Lever 1",
+              "tier": "quick"
+            },
+            {
+              "action": "MONITOR",
+              "id": "engine-parameters",
+              "info": "Main Panel. Watch N1, N2, EGT, and fuel flow stabilize. The crossfeed system is fully automatic on the A310.",
+              "label": "Engine Parameters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "NORM",
+              "id": "eng-mode",
+              "info": "Pedestal. Return the ignition selector to NORM after both engines have stabilized.",
+              "label": "ENG Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Turn off the APU bleed air since the engines now provide pneumatic pressure.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Shut down the APU to save fuel now that engine generators are online.",
+              "label": "APU Master",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Turn ON if TAT is below 10°C in visible moisture.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "ARMED",
+              "id": "speed-brake",
+              "info": "Pedestal. Pull the speed brake lever up to arm the ground spoilers for a potential rejected takeoff.",
+              "label": "Speed Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps",
+              "info": "Pedestal. Set the flaps for takeoff. Standard configuration is Flaps 15/15.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "pitch-trim",
+              "info": "Pedestal. Adjust the pitch trim wheel to the calculated takeoff CG value from the EFB.",
+              "label": "Pitch Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "ZERO",
+              "id": "rudder-trim",
+              "info": "Pedestal. Confirm the rudder trim remains centered.",
+              "label": "Rudder Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Yoke. Perform full and free control sweeps on all axes while monitoring the ECAM display.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "ecam-status",
+              "info": "Main Panel. Review the ECAM memo to ensure no residual warnings or abnormal system states exist.",
+              "label": "ECAM Status",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "RELEASED",
+              "id": "parking-brake",
+              "info": "Pedestal. Release the parking brake to commence taxi.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "TAXI",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Switch nose lights to TAXI. Use runway turn-off lights if necessary.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes",
+              "info": "Pedestal. Apply brief pedal pressure to verify normal braking during the initial roll. Keep taxi speeds under 30 knots.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fcu-bugs",
+              "info": "Glareshield. Confirm V2, cleared altitude, and runway heading are correctly dialed in.",
+              "label": "FCU Bugs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "fcu-panel",
+              "info": "Glareshield. Verify V2, altitude, and heading are set, and that PROFILE and NAV modes are preselected.",
+              "label": "FCU Panel",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "flight-director",
+              "info": "Glareshield. Confirm both flight directors are active.",
+              "label": "Flight Director",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Main Panel. Look at the Flight Mode Annunciator above the PFD to ensure armed modes correspond to FCU selections.",
+              "label": "FMA",
+              "tier": "full"
+            },
+            {
+              "action": "MAX",
+              "id": "autobrake",
+              "info": "Main Panel. Select MAX autobrake to ensure immediate deceleration in case of a rejected takeoff.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "ARMED",
+              "id": "speed-brake",
+              "info": "Pedestal. Confirm the speed brake lever is pulled up and armed.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flaps",
+              "info": "Pedestal. Double-check that slats and flaps are correctly positioned for takeoff.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "t-o-config",
+              "info": "Pedestal. Press the T.O. Config button to verify no configuration warnings trigger.",
+              "label": "T.O Config",
+              "tier": "full"
+            },
+            {
+              "action": "SECURE",
+              "id": "cabin",
+              "info": "Pedestal. Press the cabin call button to notify flight attendants of impending takeoff.",
+              "label": "Cabin",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Overhead Panel. Turn strobes ON as you enter the active runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Turn on landing lights upon runway entry.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TO",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Move the nose light switch to the TO (takeoff) position.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "wing-lights",
+              "info": "Overhead Panel. Turn wing lights on to enhance aircraft visibility.",
+              "label": "Wing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "brake-fans",
+              "info": "Overhead Panel. Turn on if brake temperatures are high from a long taxi.",
+              "label": "Brake Fans",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "packs",
+              "info": "Overhead Panel. Turn OFF for maximum thrust takeoffs if required by company SOP, otherwise leave ON.",
+              "label": "Packs",
+              "tier": "full"
+            },
+            {
+              "action": "TA/RA",
+              "id": "transponder",
+              "info": "Pedestal. Switch TCAS to TA/RA for traffic alerting during flight.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "weather-radar",
+              "info": "Pedestal. Activate the weather radar for departure weather scanning.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "terrain-on-nd",
+              "info": "Main Panel. Activate the terrain display if departing in mountainous areas.",
+              "label": "Terrain on ND",
+              "tier": "full"
+            }
+          ],
+          "title": "Final Checks"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "HOLD",
+              "id": "brakes",
+              "info": "Pedestal. Apply toe brakes firmly while engines spool up.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "throttles",
+              "info": "Pedestal. Stabilize engines at 40% N1, release brakes, and advance levers or press TO/GA on the glareshield.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Main Panel. Verify the PFD shows THR, SRS, and HDG in green indicating active takeoff modes.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "ROTATE",
+              "id": "rotate",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "gear",
+              "info": "Main Panel. Raise the gear lever once a positive rate of climb is established.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "Glareshield. Engage autopilot 1 or 2 above 400 feet AGL.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autothrust",
+              "info": "Glareshield. Verify or engage autothrust shortly after the autopilot is active.",
+              "label": "Autothrust",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Main Panel. At thrust reduction altitude, verify P.THR, P.CLB, and NAV are active. The FCU SPD/MACH and V/S windows should be dashed.",
+              "label": "FMA",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "trp",
+              "info": "Main Panel. Ensure the Thrust Rating Panel automatically switched to AUTO or CL after the thrust reduction phase.",
+              "label": "TRP",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Pedestal. Retract flaps to 1 above F-speed, and to 0 above S-speed.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "DISARMED",
+              "id": "speed-brake",
+              "info": "Pedestal. Push the speed brake lever down to disarm ground spoilers.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "NEUTRAL",
+              "id": "gear-lever",
+              "info": "Main Panel. Move the gear lever to the middle neutral position once retraction is complete to depressurize the hydraulics.",
+              "label": "Gear Lever",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "packs",
+              "info": "Overhead Panel. Restore pack flow if they were turned off for takeoff.",
+              "label": "Packs",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Ensure APU bleed is off as engines are now supplying cabin air.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Ensure the APU is shut down.",
+              "label": "APU Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Turn off taxi lights as they are no longer needed in flight.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "brake-fans",
+              "info": "Overhead Panel. Turn off brake fans once brakes have cooled.",
+              "label": "Brake Fans",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "Main Panel. Disarm the MAX autobrake setting used for takeoff.",
+              "label": "Autobrake",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "STD",
+              "id": "altimeters",
+              "info": "Main Panel. Pull the altimeter knobs to set standard pressure (29.92 inHg / 1013 hPa) when passing the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Turn off landing lights when climbing past 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign off if smooth above 10,000 ft.",
+              "label": "Seatbelt Sign",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "terrain-on-nd",
+              "info": "Main Panel. Deactivate terrain display to declutter the navigation screen above 10,000 feet.",
+              "label": "Terrain on ND",
+              "tier": "full"
+            }
+          ],
+          "title": "Climb Flow"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "trp",
+              "info": "Main Panel. Verify the Thrust Rating Panel is in AUTO or CR (cruise) mode.",
+              "label": "TRP",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "Overhead Panel. Monitor cabin altitude and differential pressure on the ECAM to ensure proper pressurization.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "MONITOR",
+              "id": "fuel-quantity",
+              "info": "Main Panel. Periodically check fuel burn against the flight plan.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "MONITOR",
+              "id": "flight-plan",
+              "info": "Glareshield. Ensure the aircraft is tracking the active route and sequencing waypoints correctly.",
+              "label": "Flight Plan",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "top-of-descent",
+              "info": "Main Panel. Monitor the distance to the calculated descent point. A standard 3-degree descent requires roughly 3 NM per 1,000 feet of altitude loss.",
+              "label": "Top of Descent",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "mcdu-approach",
+              "info": "Pedestal. Verify the destination, STAR, and approach in the F-PLN page. Enter baro minimums and verify landing speeds on the TO/APPR page.",
+              "label": "MCDU Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "ils-frequency",
+              "info": "Pedestal. Tune the localizer frequency and approach course on the NAV radios.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "land-alt",
+              "info": "Main Panel. Ensure destination field elevation is set on the pressurization panel.",
+              "label": "LAND ALT",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Glareshield. Dial the decision height or baro minimums for the approach. Set 200 feet if no specific minimum is published.",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "autobrake",
+              "info": "Main Panel. Select LO or MED autobrake depending on runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "altitude-selector",
+              "info": "Glareshield. Dial down to the cleared altitude or initial approach fix altitude and pull the knob to arm the descent.",
+              "label": "Altitude Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Main Panel. Ensure sufficient fuel remains for the approach, go-around, and diversion if necessary.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "approach-briefing",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "INITIATE",
+              "id": "descent",
+              "info": "Glareshield. Verify automatic descent in PROFILE mode, or manually select LVL CH if required by ATC.",
+              "label": "Descent",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "eng-mode",
+              "info": "Pedestal. Move to CONT RELIGHT if descending through icing, turbulence, or heavy precipitation.",
+              "label": "ENG Mode",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Activate engine and wing anti-ice if TAT is below 10°C in visible moisture.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON below 10,000 ft.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Turn on landing lights when descending below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Turn on runway turn-off lights for increased visibility below 10,000 feet.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "terrain-on-nd",
+              "info": "Main Panel. Activate the terrain display if descending into mountainous terrain.",
+              "label": "Terrain on ND",
+              "tier": "full"
+            },
+            {
+              "action": "QNH",
+              "id": "altimeters",
+              "info": "Main Panel. Push the altimeter knobs to revert to local QNH when passing the transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Top of Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "VERIFIED",
+              "id": "ils-frequency",
+              "info": "Pedestal. Cross-check that the correct ILS frequency is active and identified.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "ILS",
+              "id": "vor-nav-ils",
+              "info": "Glareshield. Switch the display mode to ILS to view localizer and glideslope deviations.",
+              "label": "VOR/NAV/ILS",
+              "tier": "normal"
+            },
+            {
+              "action": "LVL CH",
+              "id": "altitude-mode",
+              "info": "Glareshield. Select LVL CH about 3,000 feet above the runway to capture the localizer first, then intercept the glideslope from below.",
+              "label": "Altitude Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "approach-mode",
+              "info": "Glareshield. Press the LAND button on the FCU to arm LOC and GS capture prior to the final approach fix.",
+              "label": "Approach Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "2nd-autopilot",
+              "info": "Glareshield. Engage the second autopilot to enable LAND 2 or LAND 3 dual-channel autoland capabilities.",
+              "label": "2nd Autopilot",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Main Panel. Confirm GS and LOC are armed in blue, and switch to active green upon capture.",
+              "label": "FMA",
+              "tier": "full"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "FLAPS 1",
+              "id": "flap-lever",
+              "info": "Pedestal. Select Flaps 15/0 when airspeed drops to the green dot marker.",
+              "label": "Flap Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "FLAPS 2",
+              "id": "flaps-2",
+              "info": "Pedestal. Intermediate flap extension to 15/15 — increases lift and begins slowing the aircraft for approach.",
+              "label": "Flaps 2",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Panel. Lower the landing gear and verify three green lights prior to 1,000 feet AGL.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "ground-spoilers",
+              "info": "Pedestal. Pull the speed brake lever up to arm the spoilers for automatic deployment on touchdown.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            },
+            {
+              "action": "TO",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Set the nose light switch to the TO position for landing.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "FLAPS 3",
+              "id": "flaps-3",
+              "info": "Pedestal. Further extension to 15/20 — more drag and lift for a stabilized final approach.",
+              "label": "Flaps 3",
+              "tier": "normal"
+            },
+            {
+              "action": "FLAPS FULL",
+              "id": "flaps-full",
+              "info": "Pedestal. Select Flaps 30/40 to establish the final landing configuration.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "anti-skid",
+              "info": "Main Panel. Ensure the anti-skid system remains in NORM for landing rollout.",
+              "label": "Anti-Skid",
+              "tier": "normal"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Main Panel. Verify that the LAND mode is latched on the PFD by 200 feet AGL.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Pedestal. Retard thrust levers to idle when the auto-callout sounds at roughly 30 feet.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "reverse",
+              "info": "Pedestal. Pull the reverser levers to apply reverse thrust, reducing to idle reverse as you decelerate through 80 knots.",
+              "label": "Reverse",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "Yoke. Disconnect the autopilot after rollout or prior to minimums for a manual landing.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY",
+              "id": "brakes",
+              "info": "Pedestal. Confirm the autobrake disengages when applying manual brake pressure or dropping below 30 knots.",
+              "label": "Brakes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AUTO",
+              "id": "strobes",
+              "info": "Overhead Panel. Strobes will automatically shut off when exiting the runway if set to AUTO, or turn them OFF manually.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Turn off landing lights once clear of the active runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "TAXI",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Switch nose lights back to the TAXI position.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "wing-lights",
+              "info": "Overhead Panel. Turn off wing lights if they are no longer needed.",
+              "label": "Wing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Pedestal. Retract all flaps and slats for the taxi to the gate.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "DISARM",
+              "id": "ground-spoilers",
+              "info": "Pedestal. Push the speed brake lever down to retract and disarm the ground spoilers.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "brake-fans",
+              "info": "Overhead Panel. Turn on brake fans if heavy braking caused high brake temperatures.",
+              "label": "Brake Fans",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "NORM",
+              "id": "eng-mode",
+              "info": "Pedestal. Return the ignition selector to NORM.",
+              "label": "ENG Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Turn off wing anti-ice, keeping engine anti-ice on only if ground icing conditions persist.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Start the APU to provide electrical power and bleed air at the gate.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Pedestal. Turn off the weather radar to protect ground crew.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "terrain-on-nd",
+              "info": "Main Panel. Turn off the terrain display to declutter screens.",
+              "label": "Terrain on ND",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Pedestal. Switch the transponder to STBY to stop broadcasting airborne signals.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Systems Reset"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Pedestal. Set the parking brake upon reaching the final parking position.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. APU bleed on before engines shut down so pneumatic supply is maintained at the gate.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Turn off all remaining anti-ice systems.",
+              "label": "Anti-Ice",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-levers",
+              "info": "Pedestal. Switch both engine fuel levers to OFF to shut down the engines.",
+              "label": "Fuel Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "STOP",
+              "id": "clock",
+              "info": "Main Panel. Stop the elapsed timer to record final block time.",
+              "label": "Clock",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Turn off taxi lights as the aircraft is parked.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "beacon",
+              "info": "Overhead Panel. Turn off the beacon light once engines have fully spooled down to signal ground crew it is safe to approach.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign OFF.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "Overhead Panel. Verify the cabin differential pressure reads zero before opening doors.",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Turn off all fuel pumps. Leave L INNER 2 on if the APU is going to remain running.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "window-heat",
+              "info": "Overhead Panel. Turn off window heating.",
+              "label": "Window Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "probe-heat",
+              "info": "Overhead Panel. Turn off probe heating to prevent the pitot tubes from overheating on the ground.",
+              "label": "Probe Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "brake-fans",
+              "info": "Overhead Panel. Turn off brake fans once temperatures are within normal ranges.",
+              "label": "Brake Fans",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "crew-oxygen",
+              "info": "Overhead Panel. Secure the crew oxygen supply valve.",
+              "label": "Crew Oxygen",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "external-lights",
+              "info": "Overhead Panel. Turn off the remaining exterior lights like NAV and LOGO.",
+              "label": "External Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autothrust",
+              "info": "Glareshield. Turn off the ATS levers.",
+              "label": "Autothrust",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pitch-trim",
+              "info": "Glareshield. Turn off the Pitch Trim levers.",
+              "label": "Pitch Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "yaw-damper",
+              "info": "Glareshield. Turn off the Yaw Damper levers.",
+              "label": "Yaw Damper",
+              "tier": "normal"
+            }
+          ],
+          "title": "Systems Off"
+        },
+        {
+          "items": [
+            {
+              "action": "DISARM",
+              "id": "emergency-exit-lights",
+              "info": "Overhead Panel. Disarm the exit lights to prevent battery drain while powered down.",
+              "label": "Emergency Exit Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "external-power",
+              "info": "Overhead Panel. Connect and establish external power from the GPU before shutting down the APU.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed-2",
+              "info": "Overhead Panel. Turn off the APU bleed.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-master",
+              "info": "Overhead Panel. Shut down the APU.",
+              "label": "APU Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "adirs-selectors",
+              "info": "Overhead Panel. Turn off all three IRS selectors to power down the navigation systems.",
+              "label": "ADIRS Selectors",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "batteries",
+              "info": "Overhead Panel. Switch all three batteries off. This is the final step to fully de-power the aircraft.",
+              "label": "Batteries",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "The wide-body pioneer that became the Airbus blueprint, blending conventional flight controls with advanced fly-by-wire systems.",
+  "manufacturer": "Airbus",
+  "model": "A310",
+  "slug": "a310",
+  "status": "active",
+  "suffix": "-300",
+  "systemsType": "airliner",
+  "addon": "iniBuilds",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

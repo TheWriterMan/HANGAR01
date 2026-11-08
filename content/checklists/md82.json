@@ -1,0 +1,1199 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "battery",
+              "info": "Overhead Panel. BATT switch ON and LOCKED. Battery voltage at least 25 V.",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "POS",
+              "id": "position-lights",
+              "info": "Glareshield. POS/Strobe switch to POS.",
+              "label": "Position Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "internal-lights",
+              "info": "Center Pedestal.",
+              "label": "Internal Lights",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "external-power",
+              "info": "Overhead Panel. Verify EXT PWR AVAIL light ON and 115 ±3 V, 400 ±10 Hz. L and R EXT PWR bus switches ON, one at a time. Switch them OFF once the APU buses are on.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "Test",
+              "id": "fire-protection",
+              "info": "Main Panel. APU and ENG LOOP selectors (Overhead Panel) all to BOTH. Push both LOOP A and B TEST buttons (mouse wheel). Fire handle lights, MASTER WARNING, APU FIRE and the aural warning come on. Release; all go out.",
+              "label": "Fire Protection",
+              "tier": "full"
+            },
+            {
+              "action": "Start",
+              "id": "apu",
+              "info": "Overhead Panel. Start Pump ON. APU Master to START. APU STARTER ON goes out at 35% RPM, APU OIL PRESS LOW goes out above 95%. APU Master to RUN. APU PWR AVAIL lights ON, EGT 200-400°. L and R APU bus switches ON, one at a time. Right AFT fuel pump ON. Start Pump OFF. APU AIR ON.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "Arm",
+              "id": "emergency-lights",
+              "info": "Overhead Panel. EMER LIGHT NOT ARMED goes out.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "no-smoking-sign",
+              "info": "Overhead Panel.",
+              "label": "No Smoking Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "windshield-anti-ice",
+              "info": "Overhead Panel.",
+              "label": "Windshield Anti-Ice",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "air-conditioning",
+              "info": "Overhead Panel. Pneumatic X-Feed valves (Center Pedestal) both OPEN. Air Condition Supply switches both AUTO, one at a time. Temperature selectors both AUTO (12 o'clock).",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "cabin-pressure",
+              "info": "Cabin Pressure Control Panel. Selector to STBY, then PRIMARY. Click the TRANSFER LOCKOUT light OFF. Set LDG ALT to destination elevation and LDG BARO to destination pressure, or set BARO later before landing.",
+              "label": "Cabin Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "aux-hyd-pump",
+              "info": "Main Panel.",
+              "label": "AUX HYD Pump",
+              "tier": "quick"
+            }
+          ],
+          "title": "Power-Up & Overhead"
+        },
+        {
+          "items": [
+            {
+              "action": "Program",
+              "id": "fmc-preflight",
+              "info": "MCDU. POS INIT: enter position. ROUTE: import via CO ROUTE, or enter origin, destination and waypoints, then ACTIVATE and EXEC. DEP ARR: select the SID. LEGS: close discontinuities. PERF: ZFW, FOB, reserve 2.0, CRZ ALT, cost index 35, TRANS ALT. TAKEOFF: V1, VR and V2 from the EFB takeoff performance page.",
+              "label": "FMC Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "trc-art",
+              "info": "TO FLEX only on dry, clear runways with no anti-ice: ART OFF, set the FLEX temperature. Normal T.O. mode: verify ART AUTO.",
+              "label": "TRC/ART",
+              "tier": "quick"
+            }
+          ],
+          "title": "MCDU Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Captain side. Hydraulic pressure above 1,000 psi. PARKING BRAKE ON light illuminates.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "panel-lighting",
+              "label": "Panel Lighting",
+              "tier": "full"
+            },
+            {
+              "action": "FD",
+              "id": "flight-directors",
+              "info": "Glareshield. Both FD switches to FD. FMA shows HDG HLD and ALT HLD, and FD bars appear on the PFD.",
+              "label": "Flight Directors",
+              "tier": "normal"
+            },
+            {
+              "action": "Test",
+              "id": "autoland-test",
+              "info": "Glareshield. Set both VHF NAV radios to an ILS frequency (for example 109.50). Push the AUTOLAND button. NO AUTOLAND flashes and the FMA reads AUTO LND PRE FLT TEST.",
+              "label": "Autoland Test",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "fgcp-speed",
+              "info": "Glareshield. SPD/MACH readout to 250 KIAS, or as the SID requires.",
+              "label": "FGCP Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "fgcp-heading",
+              "info": "Glareshield. Runway heading, or the first turn heading after takeoff.",
+              "label": "FGCP Heading",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "fgcp-altitude",
+              "info": "Glareshield. Cruise altitude or first cleared altitude. Click the rotary selector to arm, then check the FMA.",
+              "label": "FGCP Altitude",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "nav-radios",
+              "info": "NAV and ADF frequencies for the departure.",
+              "label": "NAV Radios",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "speed-bugs",
+              "info": "From the EFB takeoff performance data. The 1st bug is VR.",
+              "label": "Speed Bugs",
+              "tier": "normal"
+            },
+            {
+              "action": "Uncage",
+              "id": "stby-horizon",
+              "info": "Main Panel. No flag. Less than 3° difference from the ADI.",
+              "label": "STBY Horizon",
+              "tier": "full"
+            },
+            {
+              "action": "Set QNH",
+              "id": "altimeters",
+              "info": "Main Panel.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "clock",
+              "info": "Main Panel.",
+              "label": "Clock",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "fuel-qty-zfw",
+              "info": "Enter ZFW on the fuel quantity gauge.",
+              "label": "Fuel QTY / ZFW",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "gear-down-verify",
+              "info": "Main Panel. Lever DOWN and IN, 3 green.",
+              "label": "Gear Down",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "weather-radar",
+              "info": "Center Pedestal. PWR ON, press TEST and watch the test pattern complete, then PWR OFF.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "Set",
+              "id": "atc-tcas",
+              "info": "Center Pedestal. Set the code and leave in STBY.",
+              "label": "ATC/TCAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Glareshield & Pedestal"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-start",
+              "info": "Captain side.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "stabilizer-trim",
+              "info": "Center Pedestal. Set the takeoff condition trim readouts, then set stabilizer trim.",
+              "label": "Stabilizer Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "flap-to-selector",
+              "info": "Center Pedestal. Set when required.",
+              "label": "Flap T.O. Selector",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "air-cond-supply",
+              "info": "Overhead Panel. Both Air Condition Supply switches OFF. PACK bleed must be off for engine start.",
+              "label": "Air Cond Supply",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Left and right pumps ON. CTR pumps only when the center tanks are not empty.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
+            },
+            {
+              "action": "SYS A or B",
+              "id": "eng-ignition",
+              "label": "ENG Ignition",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "seatbelt-sign",
+              "info": "Overhead Panel.",
+              "label": "Seat Belt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "Deny",
+              "id": "cockpit-door",
+              "label": "Cockpit Door",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "beacon",
+              "info": "Glareshield. Anti-collision light.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "Closed",
+              "id": "doors",
+              "info": "EFB. Close doors and stairs, remove ground equipment. Verify chocks removed.",
+              "label": "Doors & Ground",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Start",
+              "id": "engine-2",
+              "info": "Hold the ENG 2 start switch ON (mouse wheel). At 20% N2, fuel lever ON. At 40% N2, release the start switch.",
+              "label": "Engine 2",
+              "tier": "quick"
+            },
+            {
+              "action": "Start",
+              "id": "engine-1",
+              "info": "Same as engine 2. Fuel lever ON at 20% N2, release the start switch at 40% N2.",
+              "label": "Engine 1",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "apu-shutdown",
+              "info": "Overhead Panel. APU bus switches OFF, APU Air OFF, APU Master OFF.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "Auto",
+              "id": "air-cond-restore",
+              "info": "Overhead Panel. Both Air Condition Supply switches AUTO.",
+              "label": "Air Cond Supply",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "eng-ignition-2",
+              "info": "Or as required.",
+              "label": "ENG Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "pitot-static",
+              "info": "Overhead Panel.",
+              "label": "Pitot/Static Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "High",
+              "id": "eng-hyd-pumps",
+              "info": "Main Panel. Both ENG HYD pump switches.",
+              "label": "ENG HYD Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "Arm",
+              "id": "spoilers-start",
+              "label": "Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "flaps-takeoff",
+              "info": "Takeoff setting from the EFB performance data.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Arm",
+              "id": "autobrake-to",
+              "info": "T.O. setting, if installed.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "flight-controls",
+              "info": "Yoke and rudder pedals. Full movement and free.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "pressurization-chk",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Engine Start & After Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Release",
+              "id": "parking-brake-taxi",
+              "info": "Captain side. Test braking and steering.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "nose-lights",
+              "info": "Glareshield. Nose (taxi) lights.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "instruments-taxi",
+              "info": "Main Panel. Flight and engine instruments, during taxi.",
+              "label": "Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Both",
+              "id": "eng-ignition-to",
+              "label": "ENG Ignition",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "anti-ice-to",
+              "info": "Overhead Panel. ENG and airfoil anti-ice and fuel heaters. Airfoil anti-ice needs the pneumatic X-Feed valves open.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "Verify",
+              "id": "flaps-verify",
+              "info": "Set for takeoff.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "aux-hyd-to",
+              "info": "Main Panel. AUX hydraulic and transfer pumps.",
+              "label": "AUX HYD Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "annunciator-panel",
+              "info": "Overhead annunciator panel (EOAP). Check and consider any lights still on.",
+              "label": "Annunciator Panel",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "terrain-egpws",
+              "label": "Terrain/EGPWS",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "weather-radar",
+              "info": "Center Pedestal.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "TA/RA",
+              "id": "tcas-to",
+              "info": "Center Pedestal.",
+              "label": "ATC/TCAS",
+              "tier": "normal"
+            },
+            {
+              "action": "Arm",
+              "id": "autothrottle",
+              "info": "Glareshield. AUTO THROT switch.",
+              "label": "Autothrottle",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "wing-ldg-lights",
+              "info": "Glareshield.",
+              "label": "Wing LDG Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Both",
+              "id": "strobe-lights",
+              "info": "Glareshield. POS/Strobe switch.",
+              "label": "POS/Strobe Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Verify",
+              "id": "trc-verify",
+              "info": "TRC shows T.O. or TOFLX.",
+              "label": "TRC Mode",
+              "tier": "quick"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "1.4 EPR",
+              "id": "throttle-set",
+              "info": "Set 1.4 EPR, then press TOGA. Check the autothrottle advances the levers and T.O. thrust is set.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "Release",
+              "id": "brakes-release",
+              "info": "Once T.O. thrust is set.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "At VR",
+              "id": "rotate",
+              "info": "Yoke. Rotate at VR (1st speed bug). Pitch 15-20° with takeoff thrust. Hold at least V2+10 to 1,500 ft AGL.",
+              "label": "VR Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "Up",
+              "id": "gear-up",
+              "info": "Main Panel. At positive rate of climb.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "Reduce",
+              "id": "thrust-reduction",
+              "info": "At thrust reduction altitude, lower the nose and reduce to climb power.",
+              "label": "Thrust Reduction",
+              "tier": "normal"
+            }
+          ],
+          "title": "Takeoff Roll & Rotation"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CL",
+              "id": "trc-climb",
+              "info": "Verify or set the TRC CL button.",
+              "label": "TRC",
+              "tier": "quick"
+            },
+            {
+              "action": "Auto",
+              "id": "art-climb",
+              "info": "Verify or set.",
+              "label": "ART",
+              "tier": "normal"
+            },
+            {
+              "action": "Retract",
+              "id": "flaps-retract",
+              "info": "Accelerate at 3,000 ft AGL. Retract flaps at VFlaps and slats at VSlats (3rd and 4th speed bugs), pitch about 10° on the FD bar. Climb at 250 KIAS.",
+              "label": "Flaps/Slats",
+              "tier": "quick"
+            },
+            {
+              "action": "Verify Up",
+              "id": "gear-verify",
+              "label": "Gear",
+              "tier": "full"
+            },
+            {
+              "action": "Disarm",
+              "id": "spoilers-disarm",
+              "label": "Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "Stow",
+              "id": "flap-to-selector",
+              "info": "Center Pedestal.",
+              "label": "Flap T.O. Selector",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "autobrake-off",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "autopilot",
+              "info": "Glareshield. At your discretion above 200 ft. HDG or NAV, VNAV or IAS, autothrottle in EPR LIMIT.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "aux-hyd-climb",
+              "info": "Main Panel. AUX hydraulic and transfer pumps.",
+              "label": "AUX HYD Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "Low",
+              "id": "eng-hyd-climb",
+              "info": "Main Panel. Both ENG HYD pump switches.",
+              "label": "ENG HYD Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "ctr-fuel-pumps",
+              "info": "Overhead Panel. Only with fuel in the center tanks.",
+              "label": "CTR Fuel Pumps",
+              "tier": "full"
+            },
+            {
+              "action": "Std",
+              "id": "altimeters-std",
+              "info": "Main Panel. 1013/29.92 at transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CR",
+              "id": "trc-cruise",
+              "label": "TRC",
+              "tier": "quick"
+            },
+            {
+              "action": "Auto",
+              "id": "art-cruise",
+              "info": "Verify.",
+              "label": "ART",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "cruise-speed",
+              "info": "Glareshield. SPD selector to cruise speed if not using VNAV.",
+              "label": "Cruise Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "anti-ice-cruise",
+              "info": "Overhead Panel. ENG and airfoil anti-ice and fuel heaters.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "passenger-signs",
+              "info": "Overhead Panel.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "pressurization-cr",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "arrival-star",
+              "info": "MCDU. At the latest 30-20 NM before TOD. DEP ARR, INDEX: enter or verify the arrival and STAR, then EXEC.",
+              "label": "Arrival/STAR",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "approach-weight",
+              "info": "MCDU. INIT REF, APPROACH: enter the estimated landing gross weight. Calculate landing data in the EFB.",
+              "label": "Approach Weight",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "speed-bugs-desc",
+              "info": "From the EFB landing performance data.",
+              "label": "Speed Bugs",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "pfd-dh",
+              "info": "Decision height shown on the PFD.",
+              "label": "PFD DH",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "alt-selector-desc",
+              "info": "Glareshield. Select, but do not arm, the descent altitude or 3,000 ft.",
+              "label": "ALT Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "nav-ils",
+              "info": "ILS frequency in both NAV radios.",
+              "label": "NAV 1 & 2 ILS",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "aux-hyd-desc",
+              "info": "Main Panel. AUX hydraulic and transfer pumps.",
+              "label": "AUX HYD Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "High",
+              "id": "eng-hyd-desc",
+              "info": "Main Panel. Both ENG HYD pump switches.",
+              "label": "ENG HYD Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "cabin-press-desc",
+              "info": "Cabin Pressure Control Panel. Verify ON. Set LDG ALT and LDG BARO for the destination.",
+              "label": "Cabin Pressure",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Preparation"
+        },
+        {
+          "items": [
+            {
+              "action": "Initiate",
+              "id": "descent-start",
+              "info": "Glareshield. With VNAV, verify the descent starts at TOD. Otherwise arm the altitude selector and select VS or IAS mode.",
+              "label": "Descent",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "anti-ice-desc",
+              "info": "Overhead Panel. ENG and airfoil anti-ice and fuel heaters.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "ctr-fuel-desc",
+              "info": "Overhead Panel. Also set the fuel crossfeed (Center Pedestal) OFF.",
+              "label": "CTR Fuel Pumps",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "landing-lights-desc",
+              "info": "Glareshield. Passing 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "descent-speed",
+              "info": "Glareshield. SPD selector to descent speed at 10,000 ft if not using VNAV.",
+              "label": "Descent Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "Set QNH",
+              "id": "altimeters-local",
+              "info": "Main Panel. Passing transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Arm",
+              "id": "spoilers-app",
+              "info": "About 25-20 NM out.",
+              "label": "Spoilers",
+              "tier": "quick"
+            },
+            {
+              "action": "GA",
+              "id": "trc-ga",
+              "info": "About 25-20 NM out.",
+              "label": "TRC",
+              "tier": "normal"
+            },
+            {
+              "action": "Verify",
+              "id": "nav-ils-verify",
+              "info": "ILS frequency in both NAV radios.",
+              "label": "NAV 1 & 2 ILS",
+              "tier": "normal"
+            },
+            {
+              "action": "Both",
+              "id": "eng-ignition-app",
+              "label": "ENG Ignition",
+              "tier": "normal"
+            },
+            {
+              "action": "Extend",
+              "id": "slats-extend",
+              "info": "Slow to Vman 0/EXT (2nd speed bug). Extend slats at Vman UP/RET (1st speed bug). About 18-15 NM out, flaps 15 at Vman 0/EXT, then slow to Vman 15/EXT (3rd speed bug).",
+              "label": "Slats/Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Arm",
+              "id": "autoland",
+              "info": "Glareshield. Arm VOR/LOC and capture the localizer first, then the glideslope from below. After GS capture, arm AUTOLAND (LND).",
+              "label": "Autoland",
+              "tier": "normal"
+            },
+            {
+              "action": "Down",
+              "id": "gear-down",
+              "info": "Main Panel. After GS capture. Slow to Vref (4th speed bug). Verify 3 green.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "Full",
+              "id": "flaps-landing",
+              "info": "28 or 40, as desired.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "autobrake-ldg",
+              "info": "Set and ARM.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "nose-lights-app",
+              "info": "Glareshield.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "ga-altitude",
+              "info": "Glareshield. Preselect, but do not arm, the G/A altitude. Set the G/A heading.",
+              "label": "G/A ALT & HDG",
+              "tier": "full"
+            }
+          ],
+          "title": "Approach Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Stable",
+              "id": "stabilized-app",
+              "info": "Fully configured and stable on LOC and GS by 3 NM. At 3 NM the FMA shows SPD | AUT G/A | AUT LND | AUT LND.",
+              "label": "Final Approach",
+              "tier": "quick"
+            },
+            {
+              "action": "Idle",
+              "id": "throttle-idle",
+              "info": "Pull your hardware throttle to IDLE when flying with the autothrottle.",
+              "label": "Hardware Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "Reverse",
+              "id": "reverse-thrust",
+              "info": "After touchdown. Apply reverse thrust down to 80-60 knots.",
+              "label": "Reverse Thrust",
+              "tier": "quick"
+            },
+            {
+              "action": "Apply",
+              "id": "braking",
+              "info": "If not using autobrake.",
+              "label": "Braking",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "nose-lights-ldg",
+              "info": "Glareshield.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "landing-lights-off",
+              "info": "Glareshield.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "POS",
+              "id": "strobe-pos",
+              "info": "Glareshield. POS/Strobe switch.",
+              "label": "POS/Strobe Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "weather-radar-off",
+              "info": "Center Pedestal.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "terrain-off",
+              "label": "Terrain/EGPWS",
+              "tier": "normal"
+            },
+            {
+              "action": "Disarm",
+              "id": "spoilers-off",
+              "label": "Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "15/EXT",
+              "id": "flaps-after-ldg",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "eng-ignition-off",
+              "label": "ENG Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "pitot-heat-off",
+              "info": "Overhead Panel.",
+              "label": "Pitot/Static Heat",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "anti-ice-off",
+              "info": "Overhead Panel. ENG and airfoil anti-ice and fuel heaters.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "windshield-anti-ice",
+              "info": "Overhead Panel. Windshield anti-ice and defog.",
+              "label": "Windshield Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "Start",
+              "id": "apu-landing",
+              "info": "Overhead Panel. If desired.",
+              "label": "APU",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-end",
+              "info": "Captain side.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "nose-lights-off",
+              "info": "Glareshield.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Up",
+              "id": "flaps-up",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "apu-busses",
+              "info": "Overhead Panel. L and R APU bus switches.",
+              "label": "APU Buses",
+              "tier": "normal"
+            },
+            {
+              "action": "Cut-Off",
+              "id": "fuel-levers",
+              "info": "Both ENG fuel shut-off levers.",
+              "label": "Fuel Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Open",
+              "id": "x-feed-valves",
+              "info": "Center Pedestal.",
+              "label": "Pneumatic X-Feed",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "seat-belt-sign",
+              "info": "Overhead Panel.",
+              "label": "Seat Belt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-pumps-off",
+              "info": "Overhead Panel. All pumps except right AFT, which feeds the APU.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "apu-air-end",
+              "info": "Overhead Panel.",
+              "label": "APU Air",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "beacon-off",
+              "info": "Glareshield. Anti-collision light.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "fd-off",
+              "info": "Glareshield. Both FD switches.",
+              "label": "Flight Directors",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "aux-hyd-off",
+              "info": "Main Panel. AUX hydraulic and transfer pumps.",
+              "label": "AUX HYD Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "Unlock",
+              "id": "cockpit-door",
+              "info": "Start deboarding from the EFB.",
+              "label": "Door",
+              "tier": "normal"
+            }
+          ],
+          "title": "Parking & Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "Release",
+              "id": "parking-brake-final",
+              "info": "Captain side. Verify chocks are set first.",
+              "label": "Parking Brake",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "emer-lights-off",
+              "info": "Overhead Panel.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "pos-lights-off",
+              "info": "Glareshield. POS/Strobe switch.",
+              "label": "POS/Strobe Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "internal-lights",
+              "info": "Center Pedestal.",
+              "label": "Internal Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "apu-off",
+              "info": "Overhead Panel. Or leave running if needed.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "battery-off",
+              "info": "Overhead Panel.",
+              "label": "Battery",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Twin-jet airliner flown on EPR, with thrust ratings set on the TRC, automatic reserve thrust (ART) and an autoland-capable flight guidance panel.",
+  "isNew": true,
+  "manufacturer": "McDonnell Douglas",
+  "model": "MD-82",
+  "slug": "md82",
+  "status": "active",
+  "suffix": "",
+  "systemsType": "airliner",
+  "addon": "Leonardo",
+  "flightsim": "MSFS",
+  "simDepth": "Study Level"
+}

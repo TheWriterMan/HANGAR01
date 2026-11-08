@@ -1,0 +1,1013 @@
+{
+  "checklist": [
+    {
+      "title": "Preflight",
+      "id": "preflight",
+      "groups": [
+        {
+          "title": "Cockpit Setup",
+          "items": [
+            {
+              "label": "Parking Brake",
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "tier": "normal"
+            },
+            {
+              "label": "Control Locks",
+              "action": "Remove",
+              "id": "control-locks-remove",
+              "info": "Control column and rudder pedals. Remove the gust lock before any power-up. Leaving it in will jam the flight controls.",
+              "tier": "full"
+            },
+            {
+              "label": "All Switches",
+              "action": "Off",
+              "id": "all-switches",
+              "info": "All panels. Clean electrical state before battery power is applied.",
+              "tier": "full"
+            },
+            {
+              "label": "Circuit Breakers",
+              "action": "In",
+              "id": "circuit-breakers",
+              "info": "Lower panel. All breakers pushed in — no circuits isolated.",
+              "tier": "full"
+            },
+            {
+              "label": "Alternate Air Controls",
+              "action": "Locked In",
+              "id": "alternate-air",
+              "info": "Main panel. Confirms the alternate induction air doors are in the normal (closed) position.",
+              "tier": "full"
+            },
+            {
+              "label": "Landing Gear Switch",
+              "action": "Down",
+              "id": "landing-gear-switch",
+              "info": "Main panel. Handle must match the weight-on-wheels state before power-up.",
+              "tier": "full"
+            },
+            {
+              "label": "Fuel Selectors",
+              "action": "Left & Right Main",
+              "id": "fuel-selectors",
+              "info": "Between the seats. Each engine feeds from its respective main tank.",
+              "tier": "quick"
+            },
+            {
+              "label": "Emergency Crossfeed",
+              "action": "Open",
+              "id": "emergency-crossfeed",
+              "info": "Between the seats. Push down to open. Allows either engine to feed from either tank in an emergency.",
+              "tier": "full"
+            }
+          ]
+        },
+        {
+          "title": "Power-Up",
+          "items": [
+            {
+              "label": "Battery",
+              "action": "On",
+              "id": "battery",
+              "info": "Left panel. Powers the electrical buses so instruments and warning lights come alive.",
+              "tier": "quick"
+            },
+            {
+              "label": "Annunciator Panel",
+              "action": "Test",
+              "id": "annunciator-test",
+              "info": "Main panel. Press and hold the annunciator test button. All warning and caution lights should illuminate, confirming bulbs are functional.",
+              "tier": "full"
+            },
+            {
+              "label": "Fuel Gauges",
+              "action": "Check",
+              "id": "fuel-gauges",
+              "info": "Main panel. Verify operation and quantity on all tanks.",
+              "tier": "normal"
+            },
+            {
+              "label": "Landing Gear Lights",
+              "action": "3 Green",
+              "id": "landing-gear-lights",
+              "info": "Main panel. Three green lights confirm all gear are down and locked.",
+              "tier": "full"
+            },
+            {
+              "label": "NAV Light",
+              "action": "On",
+              "id": "nav-light",
+              "info": "Left panel. Position lights on wingtips and tail.",
+              "tier": "normal"
+            },
+            {
+              "label": "Battery",
+              "action": "Off",
+              "id": "battery-off-preflight",
+              "info": "Left panel. Off after preflight checks are complete — restarted during engine start sequence.",
+              "tier": "full"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Engine Start",
+      "id": "engine-start",
+      "groups": [
+        {
+          "title": "Pre-Start Flow",
+          "items": [
+            {
+              "label": "Fuel Selectors",
+              "action": "Main Tanks",
+              "id": "fuel-selectors-start",
+              "info": "Between the seats. Confirm both on main tanks before start.",
+              "tier": "normal"
+            },
+            {
+              "label": "Prop Synchrophaser",
+              "action": "Off",
+              "id": "prop-synchrophaser-prestart",
+              "info": "Main panel. Must be off before start — only activated in cruise once both engines are running.",
+              "tier": "normal"
+            },
+            {
+              "label": "Throttles",
+              "action": "Open 1 Inch",
+              "id": "throttles-cracked",
+              "info": "Center pedestal. Cracked slightly for the engine to catch without surging.",
+              "tier": "quick"
+            },
+            {
+              "label": "Propellers",
+              "action": "Full Forward",
+              "id": "propellers-prestart",
+              "info": "Center pedestal. Full fine pitch for maximum RPM governing during start.",
+              "tier": "quick"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Full Rich",
+              "id": "mixtures-prestart",
+              "info": "Center pedestal. Full forward for maximum fuel flow during start.",
+              "tier": "quick"
+            },
+            {
+              "label": "Battery",
+              "action": "On",
+              "id": "battery-start",
+              "info": "Left panel. Powers the starter and ignition circuits.",
+              "tier": "quick"
+            },
+            {
+              "label": "Alternators",
+              "action": "Both On",
+              "id": "alternators",
+              "info": "Left panel. Arms both alternators to charge the battery once engines are running.",
+              "tier": "quick"
+            },
+            {
+              "label": "Beacon",
+              "action": "On",
+              "id": "beacon",
+              "info": "Left panel. Red anti-collision light before engine start to warn ground crew.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cowl Flaps",
+              "action": "Open",
+              "id": "cowl-flaps-prestart",
+              "info": "Center pedestal. Open for maximum cooling airflow during ground ops.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Engine Start",
+          "items": [
+            {
+              "label": "Left Magnetos",
+              "action": "On",
+              "id": "left-magnetos",
+              "info": "Left panel. Both left-engine mag switches to BOTH for dual ignition.",
+              "tier": "quick"
+            },
+            {
+              "label": "Left Engine",
+              "action": "Start",
+              "id": "left-engine-start",
+              "info": "Left panel. Hold left starter button until engine fires, then set aux fuel pump to LOW.",
+              "tier": "quick"
+            },
+            {
+              "label": "Right Engine",
+              "action": "Start",
+              "id": "right-engine-start",
+              "info": "Left panel. Hold right starter button until engine fires, then set aux fuel pump to LOW.",
+              "tier": "quick"
+            },
+            {
+              "label": "Throttles",
+              "action": "800-1000 RPM",
+              "id": "throttles-idle",
+              "info": "Center pedestal. Both to idle range. Oil pressure must show within 30 seconds.",
+              "tier": "quick"
+            },
+            {
+              "label": "Oil Pressure",
+              "action": "Check",
+              "id": "oil-pressure",
+              "info": "Main panel. Must indicate within 30 seconds of start. No pressure — shut down immediately.",
+              "tier": "normal"
+            },
+            {
+              "label": "Alternators",
+              "action": "Check Amps",
+              "id": "alternators-check",
+              "info": "Left panel. Confirm both alternators are carrying a positive load after start.",
+              "tier": "full"
+            }
+          ]
+        },
+        {
+          "title": "After Start Flow",
+          "items": [
+            {
+              "label": "Avionics Bus Switch",
+              "action": "On",
+              "id": "avionics-bus",
+              "info": "Left panel. Powers the avionics bus now that voltage is stable.",
+              "tier": "quick"
+            },
+            {
+              "label": "Avionics & GPS",
+              "action": "Set",
+              "id": "avionics-gps",
+              "info": "Main panel. Program frequencies, set GPS flight plan, verify navigation sources.",
+              "tier": "normal"
+            },
+            {
+              "label": "Transponder",
+              "action": "Set & Stby",
+              "id": "transponder-set",
+              "info": "Main panel. Dial in squawk code and leave in standby until ready for departure.",
+              "tier": "normal"
+            },
+            {
+              "label": "Altimeters",
+              "action": "Set QNH",
+              "id": "altimeters-set",
+              "info": "Main panel. Set local pressure from ATIS or tower.",
+              "tier": "quick"
+            },
+            {
+              "label": "Trim Tabs",
+              "action": "Set for Takeoff",
+              "id": "trim-tabs-after-start",
+              "info": "Center pedestal. Elevator set for takeoff, rudder and aileron to neutral.",
+              "tier": "normal"
+            },
+            {
+              "label": "Flaps",
+              "action": "Up",
+              "id": "flaps-up-after-start",
+              "info": "Main panel. Retract from the preflight-check down position.",
+              "tier": "normal"
+            },
+            {
+              "label": "Flight Controls",
+              "action": "Free & Correct",
+              "id": "flight-controls-after-start",
+              "info": "Yoke and pedals. Full deflection in all axes to confirm no restrictions.",
+              "tier": "full"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Before Takeoff",
+      "id": "before-takeoff",
+      "groups": [
+        {
+          "title": "Taxi Flow",
+          "items": [
+            {
+              "label": "Taxi Lights",
+              "action": "On",
+              "id": "taxi-lights",
+              "info": "Left panel. Illuminates the taxiway ahead.",
+              "tier": "normal"
+            },
+            {
+              "label": "Parking Brake",
+              "action": "Release",
+              "id": "parking-brake-taxi",
+              "info": "Center pedestal. Release and begin taxi. Check braking and steering.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Run-Up",
+          "items": [
+            {
+              "label": "Parking Brake",
+              "action": "Set",
+              "id": "parking-brake-runup",
+              "info": "Center pedestal. Hold firmly for run-up power checks.",
+              "tier": "full"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Full Rich",
+              "id": "mixtures-runup",
+              "info": "Center pedestal. Full rich or leaned for field elevation before run-up.",
+              "tier": "full"
+            },
+            {
+              "label": "Propellers",
+              "action": "Full Forward",
+              "id": "propellers-runup",
+              "info": "Center pedestal. Fine pitch for maximum RPM during magneto checks.",
+              "tier": "full"
+            },
+            {
+              "label": "Throttles",
+              "action": "1700 RPM",
+              "id": "throttles-runup",
+              "info": "Center pedestal. Run-up power for magneto and system checks.",
+              "tier": "full"
+            },
+            {
+              "label": "Magnetos",
+              "action": "Check",
+              "id": "magnetos-check",
+              "info": "Left panel. Max 150 RPM drop per mag, max 50 RPM difference between L and R.",
+              "tier": "full"
+            },
+            {
+              "label": "Propellers",
+              "action": "Check",
+              "id": "propellers-feather-check",
+              "info": "Center pedestal. Cycle to feather (1200 RPM), then back to full forward. Confirms governor operation.",
+              "tier": "full"
+            },
+            {
+              "label": "Engine Instruments",
+              "action": "Check Green",
+              "id": "engine-instruments-runup",
+              "info": "Main panel. All indications in the green arcs before returning to 1000 RPM.",
+              "tier": "full"
+            },
+            {
+              "label": "Vacuum System",
+              "action": "Check",
+              "id": "vacuum-system",
+              "info": "Main panel. Verify 4.75–5.25 inHG. Powers the attitude indicator and directional gyro — out of range means gyro instruments may not be reliable.",
+              "tier": "full"
+            },
+            {
+              "label": "HYD FLOW Lights",
+              "action": "Verify Off",
+              "id": "hyd-flow-lights",
+              "info": "Main panel. L & R HYD FLOW warning lights should be extinguished at run-up power, confirming both hydraulic pumps are operating.",
+              "tier": "full"
+            },
+            {
+              "label": "Battery Load",
+              "action": "Zero",
+              "id": "battery-load",
+              "info": "Left panel. Ammeter selector to BATT position. Confirm zero load — the alternators should be carrying the full electrical bus with no remaining draw from the battery.",
+              "tier": "full"
+            }
+          ]
+        },
+        {
+          "title": "Lineup",
+          "items": [
+            {
+              "label": "Fuel Selectors",
+              "action": "Main Tanks",
+              "id": "fuel-selectors-lineup",
+              "info": "Between the seats. Confirm both on main tanks.",
+              "tier": "normal"
+            },
+            {
+              "label": "Flaps",
+              "action": "Up",
+              "id": "flaps-lineup",
+              "info": "Main panel. Normal takeoff is flaps up. Clean configuration provides best climb performance.",
+              "tier": "quick"
+            },
+            {
+              "label": "Trim Tabs",
+              "action": "Set for Takeoff",
+              "id": "trim-tabs-lineup",
+              "info": "Center pedestal. Confirm elevator, rudder, and aileron set.",
+              "tier": "quick"
+            },
+            {
+              "label": "Pressurization",
+              "action": "Set",
+              "id": "pressurization",
+              "info": "Main panel. Switch to PRESSURIZE. Set cabin altitude to 500 ft above field elevation.",
+              "tier": "normal"
+            },
+            {
+              "label": "Aux Fuel Pumps",
+              "action": "Low",
+              "id": "aux-fuel-pumps-lineup",
+              "info": "Center pedestal. Backup fuel pressure for the critical takeoff phase.",
+              "tier": "quick"
+            },
+            {
+              "label": "Pitot Heat",
+              "action": "On",
+              "id": "pitot-heat",
+              "info": "Left panel. Prevents pitot icing that would corrupt airspeed readings.",
+              "tier": "normal"
+            },
+            {
+              "label": "Anti-Ice",
+              "action": "As Required",
+              "id": "anti-ice-lineup",
+              "info": "Left panel. Engine and prop anti-ice on if visible moisture exists below 5°C. The 414AW can reach 30,000 ft and frequently enters icing conditions during climb.",
+              "tier": "normal"
+            },
+            {
+              "label": "Air Conditioning",
+              "action": "Off",
+              "id": "air-conditioning-lineup",
+              "info": "Left panel. Turn off air conditioning for takeoff. The TSIO-520 turbocharger draws from the same power margin — keeping A/C on reduces available climb performance.",
+              "tier": "normal"
+            },
+            {
+              "label": "Transponder",
+              "action": "On",
+              "id": "transponder-on",
+              "info": "Main panel. Active for ATC radar identification at line-up.",
+              "tier": "normal"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "On",
+              "id": "landing-lights-on",
+              "info": "Left panel. Visibility for traffic avoidance during takeoff roll and climb.",
+              "tier": "normal"
+            },
+            {
+              "label": "Strobes",
+              "action": "On",
+              "id": "strobes-on",
+              "info": "Left panel. High-intensity white strobes for traffic visibility on the runway.",
+              "tier": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Takeoff",
+      "id": "takeoff",
+      "groups": [
+        {
+          "title": "Takeoff Roll",
+          "items": [
+            {
+              "label": "Throttles",
+              "action": "Full Power",
+              "id": "throttles-full",
+              "info": "Center pedestal. Stage to 30 inHG MP first, release brakes, then advance to max 41 inHG MP. The TSIO-520 is turbocharged — avoid slamming the throttles.",
+              "tier": "quick"
+            },
+            {
+              "label": "Brakes",
+              "action": "Release",
+              "id": "brakes-release",
+              "info": "Rudder pedals. Release toe brakes and begin the takeoff roll.",
+              "tier": "quick"
+            },
+            {
+              "label": "Rotate",
+              "action": "At Vr",
+              "id": "rotate",
+              "info": "Vr by weight: 86-98 KIAS (flaps up). Rotate slowly and maintain takeoff speed until clear of obstacles.",
+              "tier": "quick"
+            },
+            {
+              "label": "Gear",
+              "action": "Up",
+              "id": "gear-up",
+              "info": "Main panel. Retract at positive rate of climb. Vlo is 177 KIAS.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "After Takeoff / Climb",
+      "id": "after-takeoff-climb",
+      "groups": [
+        {
+          "title": "Initial Climb",
+          "items": [
+            {
+              "label": "Climb Power",
+              "action": "Set",
+              "id": "climb-power",
+              "info": "Center pedestal. Recommended: 31.5 inHG MP, 2450 RPM, 120 KIAS. Adjust RPM first, then manifold pressure.",
+              "tier": "quick"
+            },
+            {
+              "label": "Taxi Lights",
+              "action": "Off",
+              "id": "taxi-lights-off",
+              "info": "Left panel. No longer needed once airborne.",
+              "tier": "normal"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "Off",
+              "id": "landing-lights-off-climb",
+              "info": "Left panel. Off after traffic pattern altitude to reduce heat build-up.",
+              "tier": "normal"
+            },
+            {
+              "label": "Aux Fuel Pumps",
+              "action": "Low",
+              "id": "aux-pumps-climb",
+              "info": "Center pedestal. Keep on LOW during climb as backup fuel pressure.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cowl Flaps",
+              "action": "As Required",
+              "id": "cowl-flaps-climb",
+              "info": "Center pedestal. Open as needed to keep CHT in the green during climb.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cabin Altitude",
+              "action": "Set Cruise Alt",
+              "id": "cabin-altitude-climb",
+              "info": "Main panel. Dial in the planned cruise altitude for the pressurization controller.",
+              "tier": "normal"
+            },
+            {
+              "label": "Yaw Damper",
+              "action": "On",
+              "id": "yaw-damper",
+              "info": "Main panel. Damps dutch roll — the yawing oscillation swept and straight-wing aircraft can develop at altitude. Set and forget.",
+              "tier": "normal"
+            },
+            {
+              "label": "Anti-Ice",
+              "action": "As Required",
+              "id": "anti-ice-climb",
+              "info": "Left panel. Activate engine and prop anti-ice when climbing through visible moisture at or below 5°C. The 414AW cruises above the freezing level on most flights.",
+              "tier": "full"
+            },
+            {
+              "label": "Air Conditioning",
+              "action": "As Required",
+              "id": "air-conditioning-climb",
+              "info": "Left panel. Restore A/C once established in the climb and clear of the takeoff power segment.",
+              "tier": "full"
+            },
+            {
+              "label": "Oxygen",
+              "action": "On",
+              "id": "oxygen-climb",
+              "info": "Cabin. Required when cabin altitude exceeds 10,000 ft. The 414 can reach 30,000 ft with pressurization; monitor cabin altitude on the pressurization gauge.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Passing Transition Altitude",
+          "items": [
+            {
+              "label": "Altimeters",
+              "action": "Set Std",
+              "id": "altimeters-std",
+              "info": "Main panel. Set to standard pressure (29.92 / 1013) at transition altitude.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cruise",
+      "id": "cruise",
+      "groups": [
+        {
+          "title": "Cruise Monitoring",
+          "items": [
+            {
+              "label": "Cruise Power",
+              "action": "Set",
+              "id": "cruise-power",
+              "info": "Center pedestal. Typical: Max ~72-76% (31.5 inHG / 2450 RPM), Normal ~78-84% (34.0 inHG / 2300 RPM — only with RPM at 2200-2300), Economy ~52-68% (25 inHG / 2200 RPM).",
+              "tier": "normal"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Lean",
+              "id": "mixtures-cruise",
+              "info": "Center pedestal. Lean per the cruise fuel flow chart for altitude. EGT peak for best economy.",
+              "tier": "normal"
+            },
+            {
+              "label": "Prop Synchrophaser",
+              "action": "On",
+              "id": "prop-synchrophaser-cruise",
+              "info": "Main panel. Synchronizes both propeller RPMs to eliminate the irritating beat frequency in the cabin.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cowl Flaps",
+              "action": "Closed",
+              "id": "cowl-flaps-cruise",
+              "info": "Center pedestal. Close once CHT is stable in the green to reduce drag.",
+              "tier": "normal"
+            },
+            {
+              "label": "Pressurization",
+              "action": "Monitor",
+              "id": "pressurization-cruise",
+              "info": "Main panel. Verify cabin altitude is holding at the set level. Normal differential is 5.0 PSI.",
+              "tier": "normal"
+            },
+            {
+              "label": "Aux Fuel Pumps",
+              "action": "Off",
+              "id": "aux-pumps-cruise",
+              "info": "Center pedestal. Can be turned off in stable cruise unless fuel flow fluctuations occur.",
+              "tier": "full"
+            },
+            {
+              "label": "Oxygen",
+              "action": "Monitor",
+              "id": "oxygen-cruise",
+              "info": "Cabin. On if cabin altitude exceeds 10,000 ft.",
+              "tier": "full"
+            },
+            {
+              "label": "Anti-Ice",
+              "action": "As Required",
+              "id": "anti-ice-cruise",
+              "info": "Left panel. Monitor outside air temperature and visible moisture. Activate engine and prop anti-ice as needed.",
+              "tier": "full"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Descent",
+      "id": "descent",
+      "groups": [
+        {
+          "title": "Descent Prep",
+          "items": [
+            {
+              "label": "Descent Power",
+              "action": "Set",
+              "id": "descent-power",
+              "info": "Center pedestal. Example: 24.5 inHG / 2200 RPM. Reduce gradually — turbochargers are sensitive to shock cooling.",
+              "tier": "normal"
+            },
+            {
+              "label": "Descent Speed",
+              "action": "180 KIAS",
+              "id": "descent-speed",
+              "info": "Target 180 KIAS. Use TOD formula: (cruise alt − field alt) ÷ 1000 × 3 + 10 NM.",
+              "tier": "normal"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Enrich",
+              "id": "mixtures-descent",
+              "info": "Center pedestal. Gradually enrich as altitude decreases and manifold pressure increases.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cabin Altitude",
+              "action": "Set Landing Elev",
+              "id": "cabin-altitude-descent",
+              "info": "Main panel. Set the destination field elevation so pressurization equalizes smoothly before landing.",
+              "tier": "normal"
+            },
+            {
+              "label": "Aux Fuel Pumps",
+              "action": "Low",
+              "id": "aux-pumps-descent",
+              "info": "Center pedestal. Backup fuel pressure for the approach and landing phases.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cowl Flaps",
+              "action": "Closed",
+              "id": "cowl-flaps-descent",
+              "info": "Center pedestal. Closed during descent unless CHT climbs out of the green.",
+              "tier": "full"
+            },
+            {
+              "label": "Oxygen",
+              "action": "Off",
+              "id": "oxygen-descent",
+              "info": "Cabin. Off once cabin altitude is confirmed below 10,000 ft.",
+              "tier": "normal"
+            },
+            {
+              "label": "Anti-Ice",
+              "action": "As Required",
+              "id": "anti-ice-descent",
+              "info": "Left panel. Activate engine and prop anti-ice if descending through visible moisture at or below 5°C.",
+              "tier": "normal"
+            }
+          ]
+        },
+        {
+          "title": "Descent",
+          "items": [
+            {
+              "label": "Altimeters",
+              "action": "Set QNH",
+              "id": "altimeters-local",
+              "info": "Main panel. Set local pressure passing the transition level.",
+              "tier": "quick"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "On",
+              "id": "landing-lights-descent",
+              "info": "Left panel. On below 10,000 ft for traffic visibility.",
+              "tier": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Approach",
+      "id": "approach",
+      "groups": [
+        {
+          "title": "Approach Setup",
+          "items": [
+            {
+              "label": "Prop Synchrophaser",
+              "action": "Off",
+              "id": "prop-synchrophaser-approach",
+              "info": "Main panel. Off before landing. Not needed at low speeds and must be off for go-around.",
+              "tier": "normal"
+            },
+            {
+              "label": "Propellers",
+              "action": "Full Forward",
+              "id": "propellers-approach",
+              "info": "Center pedestal. Full fine pitch for immediate go-around power.",
+              "tier": "quick"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Full Rich",
+              "id": "mixtures-approach",
+              "info": "Center pedestal. Full rich for maximum power availability on go-around.",
+              "tier": "normal"
+            },
+            {
+              "label": "Yaw Damper",
+              "action": "Off",
+              "id": "yaw-damper-off",
+              "info": "Main panel. Off for landing — pilot needs full rudder authority for crosswind corrections.",
+              "tier": "normal"
+            },
+            {
+              "label": "Anti-Ice",
+              "action": "As Required",
+              "id": "anti-ice-approach",
+              "info": "Left panel. Verify engine and prop anti-ice status for current conditions.",
+              "tier": "full"
+            }
+          ]
+        },
+        {
+          "title": "Configuration",
+          "items": [
+            {
+              "label": "Speed",
+              "action": "Below 150 KIAS",
+              "id": "speed-reduce",
+              "info": "Begin slowing to allow gear and flap extension within speed limits.",
+              "tier": "normal"
+            },
+            {
+              "label": "Flaps",
+              "action": "15 Degrees",
+              "id": "flaps-15",
+              "info": "Main panel. First flap setting. Vfe for 15 degrees is 177 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Gear",
+              "action": "Down",
+              "id": "gear-down",
+              "info": "Main panel. Extend below 177 KIAS. Confirm three green lights.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flaps",
+              "action": "30 Degrees",
+              "id": "flaps-30",
+              "info": "Main panel. Set on glideslope intercept or base leg.",
+              "tier": "quick"
+            },
+            {
+              "label": "Flaps",
+              "action": "45 Degrees",
+              "id": "flaps-45",
+              "info": "Main panel. Full flaps at 1000 ft AGL on the glideslope or on final. Vfe is 146 KIAS.",
+              "tier": "quick"
+            },
+            {
+              "label": "Speed",
+              "action": "Vref",
+              "id": "speed-vref",
+              "info": "Vref by landing weight: 84-94 KIAS (flaps 45). Stable on final approach speed.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Landing",
+      "id": "landing",
+      "groups": [
+        {
+          "title": "Landing",
+          "items": [
+            {
+              "label": "Landing Gear",
+              "action": "3 Green",
+              "id": "landing-gear-confirm",
+              "info": "Main panel. Final confirmation of three green lights before the threshold.",
+              "tier": "quick"
+            },
+            {
+              "label": "Throttles",
+              "action": "Idle",
+              "id": "throttles-idle-landing",
+              "info": "Center pedestal. Slowly retard at the threshold. Gently flare and touch down on the main gear first.",
+              "tier": "quick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Shutdown & Secure",
+      "id": "shutdown-secure",
+      "groups": [
+        {
+          "title": "After Landing Flow",
+          "items": [
+            {
+              "label": "Taxi Lights",
+              "action": "On",
+              "id": "taxi-lights-after",
+              "info": "Left panel. Illuminate the taxiway for the taxi to parking.",
+              "tier": "normal"
+            },
+            {
+              "label": "Landing Lights",
+              "action": "Off",
+              "id": "landing-lights-off",
+              "info": "Left panel. Off once clear of the runway.",
+              "tier": "normal"
+            },
+            {
+              "label": "Strobes",
+              "action": "Off",
+              "id": "strobes-off",
+              "info": "Left panel. No longer on an active runway.",
+              "tier": "normal"
+            },
+            {
+              "label": "Flaps",
+              "action": "Up",
+              "id": "flaps-up",
+              "info": "Main panel. Retract to prevent ground damage during taxi.",
+              "tier": "normal"
+            },
+            {
+              "label": "Transponder",
+              "action": "Stby",
+              "id": "transponder-stby",
+              "info": "Main panel. Back to standby once clear of the active.",
+              "tier": "normal"
+            },
+            {
+              "label": "Cowl Flaps",
+              "action": "Open",
+              "id": "cowl-flaps-after-landing",
+              "info": "Center pedestal. Open to cool the engines during taxi.",
+              "tier": "full"
+            }
+          ]
+        },
+        {
+          "title": "Shutdown",
+          "items": [
+            {
+              "label": "Parking Brake",
+              "action": "Set",
+              "id": "parking-brake-shutdown",
+              "info": "Center pedestal. Hold the aircraft at the gate.",
+              "tier": "quick"
+            },
+            {
+              "label": "Avionics Bus Switch",
+              "action": "Off",
+              "id": "avionics-off",
+              "info": "Left panel. Power down radios and GPS before cutting battery.",
+              "tier": "normal"
+            },
+            {
+              "label": "Aux Fuel Pumps",
+              "action": "Off",
+              "id": "aux-pumps-off",
+              "info": "Center pedestal. No longer needed with engines about to stop.",
+              "tier": "normal"
+            },
+            {
+              "label": "Throttles",
+              "action": "Idle",
+              "id": "throttles-idle-shutdown",
+              "info": "Center pedestal. Confirm at idle before mixture cutoff.",
+              "tier": "normal"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Cutoff",
+              "id": "mixtures-cutoff",
+              "info": "Center pedestal. Pull both mixture levers to cutoff for a clean shutdown.",
+              "tier": "quick"
+            },
+            {
+              "label": "Magnetos",
+              "action": "Off",
+              "id": "magnetos-off",
+              "info": "Left panel. Both switches to OFF after props stop turning.",
+              "tier": "quick"
+            },
+            {
+              "label": "Battery & Alternators",
+              "action": "Off",
+              "id": "battery-alternators-off",
+              "info": "Left panel. Master battery and both alternator switches off.",
+              "tier": "quick"
+            }
+          ]
+        },
+        {
+          "title": "Secure",
+          "items": [
+            {
+              "label": "Fuel Selectors",
+              "action": "Off",
+              "id": "fuel-selectors-off",
+              "info": "Between the seats. Shut off fuel flow to prevent leaks while parked.",
+              "tier": "full"
+            },
+            {
+              "label": "Control Locks",
+              "action": "Install",
+              "id": "control-locks",
+              "info": "Yoke and pedals. Prevents wind damage to control surfaces while parked.",
+              "tier": "full"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "description": "A turbocharged aircraft capable of 30,000 ft with a full complement of passengers, offering jet-like range in a piston twin.",
+  "manufacturer": "Cessna",
+  "model": "414AW",
+  "slug": "c414",
+  "status": "active",
+  "systemsType": "piston",
+  "addon": "Milviz",
+  "flightsim": "MSFS",
+  "simDepth": "Study Level"
+}

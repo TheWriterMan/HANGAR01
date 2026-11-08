@@ -1,0 +1,1284 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "battery",
+              "info": "Overhead Panel. Connects the main battery to the standby electrical system.",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "standby-power",
+              "info": "Overhead Panel. Backup electrical bus that keeps the standby instruments alive if main power drops out.",
+              "label": "Standby Power",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "external-power",
+              "info": "Overhead Panel. Both left and right ground power switches used when a GPU is connected.",
+              "label": "External Power",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Hold the selector to START to spin up the Auxiliary Power Unit.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "apu-generator",
+              "info": "Overhead Panel. Connects the APU generator to the electrical buses.",
+              "label": "APU Generator",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "wipers",
+              "label": "Wipers",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "logo-lights",
+              "info": "Overhead Panel. Illuminates the airline logo on the tail. Usually on at night.",
+              "label": "Logo Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "info": "Overhead Panel. Red on the left wingtip, green on the right, white at the tail. Required anytime the aircraft is powered.",
+              "label": "NAV Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "NAV",
+              "id": "irs-selectors",
+              "info": "Overhead Panel. The Inertial Reference System needs about 10 minutes to align at typical latitudes.",
+              "label": "IRS Selectors",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "window-heat",
+              "info": "Overhead Panel. Heats the cockpit windows to prevent fogging at altitude and improve bird-strike resilience.",
+              "label": "Window Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "wing-anti-ice",
+              "info": "Overhead Panel. Uses bleed air to automatically heat the wing leading edges when ice is detected.",
+              "label": "Wing Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "engine-anti-ice",
+              "info": "Overhead Panel. Protects the engine cowls and fan blades from ice ingestion.",
+              "label": "Engine Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "yaw-damper",
+              "info": "Overhead Panel. Damps out dutch roll, the wallowing yaw-roll oscillation typical of swept-wing jets.",
+              "label": "Yaw Damper",
+              "tier": "full"
+            },
+            {
+              "action": "ARMED",
+              "id": "emergency-lights",
+              "info": "Overhead Panel. Arms the floor-path lighting to activate automatically if cabin power is lost.",
+              "label": "Emergency Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "bus-tie",
+              "info": "Overhead Panel. Lets the electrical system automatically isolate buses if a generator drops out.",
+              "label": "Bus Tie",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "generator-control",
+              "info": "Overhead Panel. Arms the engine-driven generators to pick up the electrical load once the engines are running.",
+              "label": "Generator Control",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "utility-l-r",
+              "info": "Overhead Panel. Powers galleys, in-seat outlets, and other passenger amenities.",
+              "label": "Utility L & R",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "internal-lighting",
+              "label": "Internal Lighting",
+              "tier": "full"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "pack-1-2-3",
+              "info": "Overhead Panel. Air conditioning packs that take hot bleed air and turn it into cool, pressurised cabin air.",
+              "label": "Pack 1+2+3",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "trim-air",
+              "info": "Overhead Panel. Allows individual cabin temperature zones to be heated or cooled separately.",
+              "label": "Trim Air",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "recirc-fans",
+              "info": "Overhead Panel. Recirculates cabin air to reduce the load on the air conditioning packs.",
+              "label": "Recirc Fans",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Provides bleed air from the APU for engine start and air conditioning.",
+              "label": "APU Bleed",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-bleeds",
+              "info": "Overhead Panel. Engine bleeds OFF for APU-assisted engine start.",
+              "label": "Engine Bleeds",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "crossfeed",
+              "info": "Overhead Panel. Opens crossfeed valves, allowing fuel from any tank to feed any engine.",
+              "label": "Crossfeed",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Verify all pump switches off during cockpit preparation. They get turned on in Pre-Start before engine start.",
+              "label": "Fuel Pumps",
+              "tier": "full"
+            }
+          ],
+          "title": "Air & Fuel"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "fmc-preflight",
+              "info": "Pedestal. Program the Flight Management Computer with route, weights, and performance data.",
+              "label": "FMC Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atis",
+              "info": "Pedestal. Get the current weather and airport information via ACARS or radio.",
+              "label": "ATIS",
+              "tier": "normal"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atc-clearance",
+              "info": "Pedestal. Obtain IFR clearance from Air Traffic Control.",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Forward Panel. Verify the total fuel loaded matches the flight plan requirements.",
+              "label": "Fuel Quantity",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "stab-trim",
+              "info": "Pedestal. Set the horizontal stabilizer trim for takeoff based on the center of gravity.",
+              "label": "Stab Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "ZERO",
+              "id": "rudder-aileron-trim",
+              "info": "Pedestal. Ensure trim settings are neutral before flight.",
+              "label": "Rudder & Aileron Trim",
+              "tier": "full"
+            }
+          ],
+          "title": "FMC Preflight"
+        },
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Forward Panel. Set to the local altimeter setting for accurate altitude below the transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "flight-director",
+              "info": "MCP. Displays guidance cues on the Primary Flight Display for the pilot to follow.",
+              "label": "Flight Director",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "autothrust",
+              "info": "MCP. Arms the autothrottle system to manage engine thrust automatically.",
+              "label": "Autothrust",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "mcp-bugs",
+              "info": "MCP. Set the initial airspeed, heading, and altitude targets for departure.",
+              "label": "MCP Bugs",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "lnav-vnav",
+              "info": "MCP. Arms Lateral Navigation and Vertical Navigation modes for the flight path.",
+              "label": "LNAV / VNAV",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "bank-limit",
+              "info": "MCP. Limits the maximum bank angle the autopilot uses during turns.",
+              "label": "Bank Limit",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "autopilot-disc-bar",
+              "info": "MCP. The disconnect bar must be up to allow autopilot engagement.",
+              "label": "Autopilot DISC Bar",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "standby-flight-display",
+              "info": "Forward Panel. Verify the independent digital backup displays airspeed, altitude, and attitude.",
+              "label": "Standby Flight Display",
+              "tier": "full"
+            }
+          ],
+          "title": "MCP"
+        },
+        {
+          "items": [
+            {
+              "action": "RTO",
+              "id": "autobrake",
+              "info": "Forward Panel. RTO (Rejected Takeoff) automatically applies maximum braking if the takeoff is aborted.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "speed-brake",
+              "info": "Pedestal. Lever is fully forward to retract the spoilers.",
+              "label": "Speed Brake",
+              "tier": "full"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Pedestal. Verify thrust levers are at idle.",
+              "label": "Throttles",
+              "tier": "full"
+            },
+            {
+              "action": "AGREE",
+              "id": "flap-lever",
+              "info": "Pedestal. Verify the flap lever matches the current physical flap position.",
+              "label": "Flap Lever",
+              "tier": "full"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "fuel-control",
+              "info": "Pedestal. Fuel control switches to CUTOFF.",
+              "label": "Fuel Control",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "transponder",
+              "info": "Pedestal. Enter the assigned squawk code.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Illuminates passenger seat belt signs when gear is down or flaps are extended.",
+              "label": "Seatbelt Sign",
+              "tier": "full"
+            }
+          ],
+          "title": "Pedestal"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CLOSED",
+              "id": "doors",
+              "info": "Overhead Panel. EICAS indication confirms all cabin and cargo doors are secured.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "hydraulic-pumps",
+              "info": "Overhead Panel. Controls the engine-driven and demand hydraulic pumps.",
+              "label": "Hydraulic Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power",
+              "info": "Overhead Panel. Disconnects ground power before taxiing.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "ALL ON",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Main and override pumps on before engine start. Center and stab pumps on only if those tanks have fuel.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "Overhead Panel. Red flashing lights on the top and bottom of the fuselage. Turned on before engine start to warn ground crew.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "pushback-clearance",
+              "info": "Pedestal. Communicate with ground control via VHF or intercom to coordinate pushback.",
+              "label": "Pushback Clearance",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "parking-brake",
+              "info": "Pedestal. Released for pushback or set at the gate.",
+              "label": "Parking Brake",
+              "tier": "full"
+            },
+            {
+              "action": "PULL",
+              "id": "engine-4-start",
+              "info": "Overhead Panel. Pulling the start switch opens the start valve to spin the engine with bleed air.",
+              "label": "Engine 4 Start",
+              "tier": "quick"
+            },
+            {
+              "action": "RUN",
+              "id": "engine-4-fuel",
+              "info": "Pedestal. Switch moved to RUN to introduce fuel and ignite the engine at max motoring speed.",
+              "label": "Engine 4 Fuel",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-4-monitor",
+              "info": "Forward Panel. Watch the EICAS for oil pressure, N1 rotation, and a stable EGT.",
+              "label": "Engine 4 Monitor",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "engines-2-3-1",
+              "info": "Overhead Panel and Pedestal. Start the remaining engines.",
+              "label": "Engines 2, 3, 1",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "eicas",
+              "info": "Forward Panel. Verify engine parameters are normal and no warning messages exist.",
+              "label": "EICAS",
+              "tier": "full"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "engine-bleeds",
+              "info": "Overhead Panel. Supplies engine bleed air to the pneumatic system after start.",
+              "label": "Engine Bleeds",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "generators",
+              "info": "Overhead Panel. Verify that engine generators have picked up the electrical load.",
+              "label": "Generators",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-generator",
+              "info": "Overhead Panel. Disconnects the APU generator.",
+              "label": "APU Generator",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "apu",
+              "info": "Overhead Panel. Shuts down the APU once engine generators are running.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Manual override if icing conditions exist on the ground.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Yoke and Pedestal. Move the control column and rudder pedals to confirm full and free movement.",
+              "label": "Flight Controls",
+              "tier": "quick"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Pedestal. Extend the trailing edge flaps and leading edge slats to the required takeoff position.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CLOSED & LOCKED",
+              "id": "flight-deck-door",
+              "info": "Cockpit Door. Secured prior to departure for security.",
+              "label": "Flight Deck Door",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Illuminates the taxiway ahead.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Angled lights that illuminate intersecting taxiways.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "brakes",
+              "info": "Pedestal. Gently apply toe brakes during initial taxi to verify stopping capability.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments",
+              "info": "Forward Panel. Confirm altimeters, heading, and attitude indicators are functioning correctly without flags.",
+              "label": "Flight Instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Overhead Panel. High-intensity flashing white lights on the wingtips and tail. Turned on when entering an active runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights used for takeoff, landing, and operations below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "logo-lights",
+              "info": "Overhead Panel. Illuminates the airline logo on the tail. Usually on at night.",
+              "label": "Logo Lights",
+              "tier": "full"
+            },
+            {
+              "action": "TA/RA",
+              "id": "transponder",
+              "info": "Pedestal. Sets Traffic Advisory and Resolution Advisory to enable full TCAS functionality.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "weather-radar",
+              "info": "Pedestal. Turned on to detect precipitation and storm cells.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY T/O",
+              "id": "flaps",
+              "info": "Forward Panel. Verify the EICAS shows flaps at the commanded takeoff position.",
+              "label": "Flaps",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Forward Panel. Flight Mode Annunciator at the top of the PFD confirms autopilot and autothrottle modes.",
+              "label": "FMA",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "mcp",
+              "info": "MCP. Verify correct speeds, heading, and initial altitude.",
+              "label": "MCP",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RELEASED",
+              "id": "brakes",
+              "info": "Pedestal. Release toe brakes when cleared for takeoff.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "TOGA",
+              "id": "throttles",
+              "info": "Pedestal. Press the Takeoff/Go-Around switches to command takeoff thrust.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Yoke. Pull back on the control column to lift the nose at the calculated rotate speed.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "info": "Forward Panel. Retract the landing gear once a positive rate of climb is established.",
+              "label": "Positive Climb",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RETRACT",
+              "id": "flaps",
+              "info": "Forward Panel. Verify the EICAS shows flaps are fully retracted.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "MCP. Engages the autopilot to follow the flight director guidance.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "Forward Panel. Turned off after takeoff.",
+              "label": "Autobrake",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Manual override if icing conditions exist on the ground.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Turned off after takeoff or upon arriving at the gate.",
+              "label": "Taxi Lights",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Turned off after takeoff.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "gear",
+              "info": "Forward Panel. Confirm all landing gear indications show up and locked.",
+              "label": "Gear",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "flaps-2",
+              "info": "Forward Panel. Verify the EICAS shows flaps are fully retracted.",
+              "label": "Flaps",
+              "tier": "full"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Turned off above 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "logo-lights",
+              "info": "Overhead Panel. Turned off after landing during daytime or post-flight.",
+              "label": "Logo Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON below 10,000 ft or during turbulence.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "STD",
+              "id": "altimeters",
+              "info": "Forward Panel. Set to standard pressure (1013 hPa / 29.92 inHg) when passing the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Passing 10,000 ft"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON below 10,000 ft or during turbulence.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "top-of-descent",
+              "info": "FMC. Verify the calculated point where the aircraft must begin descending to meet altitude restrictions.",
+              "label": "Top Of Descent",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Forward Panel. Flight Mode Annunciator at the top of the PFD confirms autopilot and autothrottle modes.",
+              "label": "FMA",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OBTAIN",
+              "id": "arrival-atis",
+              "info": "Pedestal. Get the weather and runway information for the destination airport.",
+              "label": "Arrival ATIS",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "approach-briefing",
+              "info": "Cockpit. Review the approach chart, minimums, and missed approach procedure.",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "PROGRAM",
+              "id": "fmc-approach",
+              "info": "Pedestal. Select the arrival route and instrument approach in the Flight Management Computer.",
+              "label": "FMC Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "ils-frequency",
+              "info": "Pedestal. Tune the Instrument Landing System localizer frequency.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "autobrake",
+              "info": "Forward Panel. Set the auto-braking level (1-4 or MAX AUTO) depending on runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Forward Panel. Set the Decision Altitude (DA) or Minimum Descent Altitude (MDA).",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "holding",
+              "info": "FMC. Program a holding pattern if instructed by ATC.",
+              "label": "Holding",
+              "tier": "full"
+            },
+            {
+              "action": "PRESELECT",
+              "id": "approach-altitude",
+              "info": "MCP. Set the altitude for the initial approach fix.",
+              "label": "Approach Altitude",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "descent",
+              "info": "MCP. Initiate the descent via VNAV or flight level change.",
+              "label": "Descent",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights used for takeoff, landing, and operations below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "250 KIAS",
+              "id": "speed",
+              "info": "MCP. Reduce airspeed to 250 knots below 10,000 feet as per standard regulations.",
+              "label": "Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Forward Panel. Set to the local altimeter setting for accurate altitude below the transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "ils-frequency",
+              "info": "Forward Panel. Verify the ILS frequency and identifier are active on the Primary Flight Display.",
+              "label": "ILS Frequency",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK QNH",
+              "id": "altimeters",
+              "info": "Forward Panel. Switch back to local altimeter setting when descending below the transition level.",
+              "label": "Altimeters",
+              "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "approach-mode",
+              "info": "MCP. Arms the localizer and glideslope for the ILS approach.",
+              "label": "Approach Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "missed-approach-altitude",
+              "info": "MCP. Set the go-around altitude once the aircraft has captured the glideslope.",
+              "label": "Missed Approach Altitude",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "flaps-1",
+              "info": "Pedestal. Extends leading edge slats and trails edge flaps slightly.",
+              "label": "Flaps 1",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-5",
+              "info": "Pedestal. Extend flaps to position 5.",
+              "label": "Flaps 5",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-10",
+              "info": "Pedestal. Extend flaps to position 10.",
+              "label": "Flaps 10",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-20",
+              "info": "Pedestal. Extend flaps to position 20.",
+              "label": "Flaps 20",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Forward Panel. Extend the landing gear when intercepting the glideslope or reaching the final approach fix.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "landing-flaps",
+              "info": "Pedestal. Usually set to 25 or 30 for landing.",
+              "label": "Landing Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "speed-brake",
+              "info": "Pedestal. Pull the lever into the armed detent so spoilers deploy automatically on touchdown.",
+              "label": "Speed Brake",
+              "tier": "quick"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Pedestal. Verify thrust levers are at idle.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "AT 50 FT",
+              "id": "flare",
+              "info": "Yoke. Pitch the nose up slightly to about 5-6 degrees just before touchdown to reduce the descent rate.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "reverse-thrust",
+              "info": "Pedestal. Deploys thrust reversers to direct exhaust air forward and slow the aircraft.",
+              "label": "Reverse Thrust",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "reverse",
+              "info": "Pedestal. Stow the reversers as the aircraft slows to taxi speed to prevent engine compressor stalls.",
+              "label": "Reverse",
+              "tier": "full"
+            },
+            {
+              "action": "APPLY",
+              "id": "brakes",
+              "info": "Pedestal. Apply manual braking once the autobrake is disengaged.",
+              "label": "Brakes",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Illuminates the taxiway ahead.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Turned off above 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes",
+              "info": "Overhead Panel. Turned off when vacating the runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "logo-lights",
+              "info": "Overhead Panel. Illuminates the airline logo on the tail. Usually on at night.",
+              "label": "Logo Lights",
+              "tier": "full"
+            },
+            {
+              "action": "DOWN",
+              "id": "speed-brake",
+              "info": "Pedestal. Lever is fully forward to retract the spoilers.",
+              "label": "Speed Brake",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Pedestal. Fully retract the flaps and slats during taxi-in.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "Pedestal. Turned off post-flight.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Pedestal. Turned off post-flight so ground crew are not irradiated.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Overhead Panel. Turned off after landing if no longer in icing conditions.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Overhead Panel. Leave running or connect external power at the gate.",
+              "label": "APU",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Pedestal. Pull the handle to keep the aircraft stationary.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "fuel-control",
+              "info": "Pedestal. Fuel control switches to CUTOFF to shut down engines.",
+              "label": "Fuel Control",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-bleeds",
+              "info": "Overhead Panel. Engine bleeds OFF after shutdown.",
+              "label": "Engine Bleeds",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "hydraulic-pumps",
+              "info": "Overhead Panel. Turned off post-flight to depressurise the system.",
+              "label": "Hydraulic Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. Turned off post-flight once engines spool down.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "beacon",
+              "info": "Overhead Panel. Turned off once engines have spooled down.",
+              "label": "Beacon",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign OFF.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "window-heat",
+              "info": "Overhead Panel. Turned off after shutdown.",
+              "label": "Window Heat",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "anti-ice-2",
+              "info": "Overhead Panel. Turned off after landing if no longer in icing conditions.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "transponder-2",
+              "info": "Pedestal. Turned off post-flight.",
+              "label": "Transponder",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "flight-director",
+              "info": "MCP. Clears the guidance cues from the displays post-flight.",
+              "label": "Flight Director",
+              "tier": "full"
+            },
+            {
+              "action": "UNLOCK",
+              "id": "cockpit-door",
+              "info": "Cockpit Door. Unlocked once parked to allow ground crew and cabin crew access.",
+              "label": "Cockpit Door",
+              "tier": "full"
+            }
+          ],
+          "title": "Cabin & Avionics"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "irs-selectors",
+              "info": "Overhead Panel. Powers down the navigation gyros and sensors.",
+              "label": "IRS Selectors",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "pack-1-2-3",
+              "info": "Overhead Panel. Packs OFF for engine start.",
+              "label": "Pack 1+2+3",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "recirc-fans",
+              "info": "Overhead Panel. Turned off during shutdown.",
+              "label": "Recirc Fans",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "apu-2",
+              "info": "Overhead Panel. Leave running or connect external power at the gate.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "external-power",
+              "info": "Overhead Panel. Reconnects ground power upon arrival at the gate.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "battery",
+              "info": "Overhead Panel. Disconnects the battery and completely powers down the aircraft.",
+              "label": "Battery",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "The Queen of the Skies, instantly recognizable by its iconic upper-deck that defined aviation for generations.",
+  "manufacturer": "Boeing",
+  "model": "747",
+  "slug": "b747",
+  "status": "active",
+  "suffix": "-8i",
+  "systemsType": "airliner",
+  "addon": "Microsoft",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

@@ -1,0 +1,1274 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CLOSED",
+              "id": "cabin-pilot-doors",
+              "label": "Cabin & Pilot Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "ADJUST",
+              "id": "seat-pedals-harness",
+              "label": "Seat, Pedals, Harness",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "oxygen-master-switch",
+              "info": "Overhead Panel. Activates the oxygen supply for the cabin in case of depressurization.",
+              "label": "Oxygen Master Switch",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls navigation, strobe, and landing lights.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "crash-lever",
+              "info": "Left Electrical Panel. Acts as a master kill switch to shut down all electrical power in an emergency.",
+              "label": "Crash Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "starter",
+              "info": "Left Pilot Console. Engages the starter motor to begin engine rotation.",
+              "label": "Starter",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "ignition",
+              "info": "Left Pilot Console. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
+              "label": "Ignition",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "aux-boost-pump",
+              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "label": "Aux Boost Pump",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cockpit Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "MAN",
+              "id": "fuel-selector",
+              "info": "Left Pilot Console. Switches the fuel system to manual tank selection.",
+              "label": "Fuel Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ap-trims",
+              "info": "Left Pilot Console. Provides master electrical power to the autopilot and electric trim systems.",
+              "label": "AP / Trims",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "air-conditioning",
+              "info": "Left Pilot Console. Controls the cabin cooling and climate system.",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "landing-gear",
+              "info": "Main Instrument Panel. Controls the raising and lowering of the landing gear.",
+              "label": "Landing Gear",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "bleed",
+              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "label": "Bleed",
+              "tier": "normal"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "CUTOFF",
+              "id": "throttle",
+              "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "OPEN",
+              "id": "fuel-tank-selector",
+              "info": "Center Pedestal. Allows manual selection of the left or right fuel tank.",
+              "label": "Fuel Tank Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "ALL IN",
+              "id": "circuit-breakers",
+              "info": "Side Panels. Protects the electrical systems from power surges.",
+              "label": "Circuit Breakers",
+              "tier": "full"
+            }
+          ],
+          "title": "Pedestal"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "UP",
+              "id": "crash-lever",
+              "info": "Left Electrical Panel. Acts as a master kill switch to shut down all electrical power in an emergency.",
+              "label": "Crash Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "OBTAINED",
+              "id": "atis-clearance",
+              "label": "ATIS / Clearance",
+              "tier": "full"
+            },
+            {
+              "action": "BAT OR GPU",
+              "id": "source",
+              "info": "Left Electrical Panel. Selects the primary power source, typically the battery or a Ground Power Unit (GPU).",
+              "label": "Source",
+              "tier": "quick"
+            },
+            {
+              "action": "MAIN",
+              "id": "generator",
+              "info": "Left Electrical Panel. Selects the main or standby generator to power the electrical buses.",
+              "label": "Generator",
+              "tier": "quick"
+            },
+            {
+              "action": "TEST",
+              "id": "audio-alarms",
+              "info": "Main Instrument Panel. Tests the aural warning system.",
+              "label": "Audio Alarms",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "de-ice-lights",
+              "info": "Overhead Panel. Illuminates the wings to check for ice accumulation at night.",
+              "label": "De-Ice Lights",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "gear-lights",
+              "info": "Main Instrument Panel. Three green lights indicate the landing gear is fully down and locked.",
+              "label": "Gear Lights",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "mfd",
+              "info": "Main Instrument Panel. The Multi-Function Display shows maps, weather, and engine instrumentation.",
+              "label": "MFD",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "gtc-preflight",
+              "info": "Center Console. The Garmin Touchscreen Controllers are used to set up the flight plan, radios, and performance data.",
+              "label": "GTC Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-on-board",
+              "info": "MFD. Verifies the total fuel quantity on the Engine Indicating System (EIS).",
+              "label": "Fuel On Board",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "residual-itt",
+              "info": "MFD. Checks the Interstage Turbine Temperature to ensure it is low enough before starting the engine.",
+              "label": "Residual ITT",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "voltage",
+              "info": "MFD. Ensures the battery has sufficient voltage for a safe engine start.",
+              "label": "Voltage",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas",
+              "info": "MFD. The Crew Alerting System displays warnings, cautions, and advisory messages.",
+              "label": "CAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "GTC & Checks"
+        }
+      ],
+      "id": "before-start",
+      "title": "Before Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AUTO",
+              "id": "ignition",
+              "info": "Left Pilot Console. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
+              "label": "Ignition",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "aux-boost-pump",
+              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "label": "Aux Boost Pump",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas-aux-boost-msg",
+              "info": "MFD. Confirms the auxiliary boost pump is active and functioning.",
+              "label": "CAS Aux Boost Msg",
+              "tier": "normal"
+            },
+            {
+              "action": "CLEAR",
+              "id": "propeller-area",
+              "label": "Propeller Area",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "starter",
+              "info": "Left Pilot Console. Engages the starter motor to begin engine rotation.",
+              "label": "Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "LO-IDLE",
+              "id": "ng-13-throttle",
+              "info": "Center Pedestal. Introduces fuel into the engine once the gas generator speed (Ng) reaches 13 percent.",
+              "label": "Ng 13%: Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "auto-starter-off",
+              "info": "MFD. Confirms the starter has automatically disengaged after a successful start.",
+              "label": "Auto Starter Off",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "FLIGHT IDLE",
+              "id": "throttle",
+              "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "ng-70",
+              "info": "MFD. Confirms the engine has reached a stable idle speed.",
+              "label": "Ng 70%",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "oil-press-temp",
+              "info": "MFD. Verifies oil parameters are in the green before applying takeoff power.",
+              "label": "Oil Press / Temp",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "aux-boost-pump-2",
+              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "label": "Aux Boost Pump",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "fuel-selector",
+              "info": "Left Pilot Console. The system automatically switches between left and right fuel tanks to keep the aircraft balanced.",
+              "label": "Fuel Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "ap-trims",
+              "info": "Left Pilot Console. Provides master electrical power to the autopilot and electric trim systems.",
+              "label": "AP / Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "TEST",
+              "id": "fuel-sel-shift-button",
+              "info": "Left Pilot Console. Press the Fuel Sel Shift button to verify it cycles the automatic fuel selector between tanks. Confirms the auto-switching mechanism works before flight.",
+              "label": "Fuel Sel Shift Button",
+              "tier": "full"
+            },
+            {
+              "action": "ST-BY / TEST",
+              "id": "generator-test",
+              "info": "Left Electrical Panel. Move generator switch to ST-BY, then TEST. Verify the standby generator powers the buses correctly before returning to MAIN.",
+              "label": "Generator",
+              "tier": "full"
+            },
+            {
+              "action": "MAIN",
+              "id": "generator-main",
+              "info": "Left Electrical Panel. Return generator switch to MAIN after the standby test completes. Confirms normal operation is restored.",
+              "label": "Generator",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas",
+              "info": "MFD. The Crew Alerting System displays warnings, cautions, and advisory messages.",
+              "label": "CAS",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "bleed",
+              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "label": "Bleed",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "standby-instruments",
+              "info": "Main Instrument Panel. The backup display provides attitude, altitude, and airspeed if the primary displays fail.",
+              "label": "Standby Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "mfd-fpl",
+              "info": "GTC. Enters or verifies the active flight plan.",
+              "label": "MFD FPL",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "mfd-lfe",
+              "info": "GTC. Sets the Landing Field Elevation so the pressurization system knows the destination altitude.",
+              "label": "MFD LFE",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "weather-radar",
+              "info": "GTC. Sets the weather radar to standby on the ground to avoid exposing ground personnel to radiation.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Control Yoke and Pedals. Verifies full and free movement of the ailerons, elevator, and rudder.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "trims",
+              "info": "Center Pedestal / Yoke. Ensures pitch, roll, and yaw trims are set correctly for takeoff.",
+              "label": "Trims",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "throttle-feather",
+              "info": "Center Pedestal. Tests the ability to feather the propeller blades, which reduces drag if the engine fails.",
+              "label": "Throttle Feather",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis",
+              "info": "MFD. The Engine Indicating System monitors all engine parameters.",
+              "label": "EIS",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas",
+              "info": "MFD. The Crew Alerting System displays warnings, cautions, and advisory messages.",
+              "label": "CAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Overhead Panel. Bright flashing lights that make the aircraft highly visible to other traffic.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ignition",
+              "info": "Left Pilot Console. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
+              "label": "Ignition",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "aux-boost-pump",
+              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "label": "Aux Boost Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "fuel-selector",
+              "info": "Left Pilot Console. The system automatically switches between left and right fuel tanks to keep the aircraft balanced.",
+              "label": "Fuel Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "pitot-l-r-stall-htr",
+              "info": "Left Pilot Console. Heats the pitot tubes and stall warning vane to prevent ice blockage.",
+              "label": "Pitot L/R & Stall Htr",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET FOR T/O",
+              "id": "trims",
+              "info": "Center Pedestal / Yoke. Ensures pitch, roll, and yaw trims are set correctly for takeoff.",
+              "label": "Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "bleed",
+              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "label": "Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-gauges",
+              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "label": "Fuel Gauges",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis",
+              "info": "MFD. The Engine Indicating System monitors all engine parameters.",
+              "label": "EIS",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas",
+              "info": "MFD. The Crew Alerting System displays warnings, cautions, and advisory messages.",
+              "label": "CAS",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "altimeters",
+              "info": "PFD. Sets the local barometric pressure so the altimeter reads the correct altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Configuration"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "sid-procedure",
+              "info": "GTC. Loads the Standard Instrument Departure routing.",
+              "label": "SID / Procedure",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "altitude-selector",
+              "info": "Autopilot Panel. Dials in the initial cleared altitude.",
+              "label": "Altitude Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "transponder",
+              "info": "GTC. Sends aircraft identification and altitude data to Air Traffic Control.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "ap-nav",
+              "info": "Autopilot Panel. Arms the navigation mode to follow the flight plan.",
+              "label": "AP NAV",
+              "tier": "normal"
+            }
+          ],
+          "title": "Departure Setting"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RELEASED",
+              "id": "brakes",
+              "info": "Rudder Pedals. Tests the toe brakes to ensure stopping capability.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "GREEN SECTOR",
+              "id": "prop-speed",
+              "info": "MFD. Verify propeller RPM is in the green arc before advancing power. A prop out of the green sector before takeoff can cause excessive vibration and engine stress at full torque.",
+              "label": "Prop Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "100%",
+              "id": "torque",
+              "info": "MFD. Monitors engine torque to ensure it reaches its target setting without exceeding limits.",
+              "label": "Torque",
+              "tier": "quick"
+            },
+            {
+              "action": "90 KIAS",
+              "id": "rotate",
+              "info": "Control Yoke. The speed at which the pilot gently pulls back to lift the nose off the runway.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "info": "PFD. Confirms the aircraft is actively gaining altitude before retracting the landing gear.",
+              "label": "Positive Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "FLAPS UP",
+              "id": "ias-115-kts",
+              "info": "PFD. Ensures the aircraft has enough speed to safely retract the flaps.",
+              "label": "IAS > 115 Kts",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "UP",
+              "id": "landing-gear",
+              "info": "Main Instrument Panel. Controls the raising and lowering of the landing gear.",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "torque-max-100",
+              "info": "MFD. Ensures engine power does not exceed its structural limits.",
+              "label": "Torque Max 100%",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis",
+              "info": "MFD. The Engine Indicating System monitors all engine parameters.",
+              "label": "EIS",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas",
+              "info": "MFD. The Crew Alerting System displays warnings, cautions, and advisory messages.",
+              "label": "CAS",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "altitude-selector",
+              "info": "Autopilot Panel. Dials in the initial cleared altitude.",
+              "label": "Altitude Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "altimeters",
+              "info": "PFD. Sets the local barometric pressure so the altimeter reads the correct altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "autopilot",
+              "info": "Autopilot Panel. Engages the autopilot to follow the flight director.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "torque-itt-ng",
+              "info": "MFD. Monitors engine gauges to ensure they remain within safe operating limits during climb.",
+              "label": "Torque / ITT / Ng",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-gauges",
+              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "label": "Fuel Gauges",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "de-ice-systems-2",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "label": "Landing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "voltmeter-ammeter",
+              "info": "MFD. Verify electrical load is positive and bus voltage is in the normal range.",
+              "label": "Voltmeter / Ammeter",
+              "tier": "full"
+            }
+          ],
+          "title": "Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "altimeters",
+              "info": "PFD. Sets the local barometric pressure so the altimeter reads the correct altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "autopilot",
+              "info": "Autopilot Panel. Engages the autopilot to follow the flight director.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "torque-itt-ng",
+              "info": "MFD. Monitors engine gauges to ensure they remain within safe operating limits during climb.",
+              "label": "Torque / ITT / Ng",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-gauges",
+              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "label": "Fuel Gauges",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "COMPLETE",
+              "id": "approach-briefing",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "altimeters",
+              "info": "PFD. Sets the local barometric pressure so the altimeter reads the correct altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "lfe",
+              "info": "GTC. Confirms the Landing Field Elevation is set.",
+              "label": "LFE",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-gauges",
+              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "label": "Fuel Gauges",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent Prep"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "PFD. Sets the local barometric pressure so the altimeter reads the correct altitude.",
+              "label": "Altimeters",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "GTC. Sets the minimum descent altitude for the approach.",
+              "label": "Minimums",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "com-nav-gps",
+              "info": "GTC. Tunes the required radio frequencies and navigation aids.",
+              "label": "COM / NAV / GPS",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-gauges",
+              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "label": "Fuel Gauges",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "landing-gear",
+              "info": "Main Instrument Panel. Controls the raising and lowering of the landing gear.",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "T/O",
+              "id": "flaps",
+              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "LDG",
+              "id": "flaps-2",
+              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "ap-yaw-damper",
+              "info": "Autopilot Panel. Disengages the autopilot and yaw damper for manual landing.",
+              "label": "AP / Yaw Damper",
+              "tier": "quick"
+            }
+          ],
+          "title": "Final Approach"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-light",
+              "info": "Overhead Panel. Provides forward illumination for ground taxiing.",
+              "label": "Taxi Light",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "de-ice-systems",
+              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "label": "De-Ice Systems",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "normal"
+            },
+            {
+              "action": "RESET",
+              "id": "trims",
+              "info": "Center Pedestal / Yoke. Ensures pitch, roll, and yaw trims are set correctly for takeoff.",
+              "label": "Trims",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "GND",
+              "id": "transponder",
+              "info": "GTC. Sends aircraft identification and altitude data to Air Traffic Control.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "weather-radar",
+              "info": "GTC. Sets the weather radar to standby on the ground to avoid exposing ground personnel to radiation.",
+              "label": "Weather Radar",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Secures the aircraft when stationary on the ground.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls navigation, strobe, and landing lights.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "oxygen-master-switch",
+              "info": "Overhead Panel. Activates the oxygen supply for the cabin in case of depressurization.",
+              "label": "Oxygen Master Switch",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-selector",
+              "info": "Left Pilot Console. Cuts off the fuel supply to the engine.",
+              "label": "Fuel Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "ap-trims",
+              "info": "Left Pilot Console. Provides master electrical power to the autopilot and electric trim systems.",
+              "label": "AP / Trims",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "air-conditioning",
+              "info": "Left Pilot Console. Controls the cabin cooling and climate system.",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "bleed",
+              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "label": "Bleed",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "COOL DOWN",
+              "id": "throttle",
+              "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "throttle-2",
+              "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "inertial-separator",
+              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "label": "Inertial Separator",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "cas-aux-boost-msg",
+              "info": "MFD. Confirms the auxiliary boost pump is active and functioning.",
+              "label": "CAS Aux Boost Msg",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "aux-boost-pump",
+              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "label": "Aux Boost Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "generator",
+              "info": "Left Electrical Panel. Selects the main or standby generator to power the electrical buses.",
+              "label": "Generator",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Cool & Cutoff"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "source",
+              "info": "Left Electrical Panel. Selects the primary power source, typically the battery or a Ground Power Unit (GPU).",
+              "label": "Source",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "crash-lever",
+              "info": "Left Electrical Panel. Acts as a master kill switch to shut down all electrical power in an emergency.",
+              "label": "Crash Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "standby-instruments",
+              "info": "Main Instrument Panel. The backup display provides attitude, altitude, and airspeed if the primary displays fail.",
+              "label": "Standby Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "A high-performance turboprop delivering jet-like cruise speeds with the agility of a smaller aircraft.",
+  "manufacturer": "Daher",
+  "model": "TBM",
+  "slug": "tbm930",
+  "status": "active",
+  "suffix": " 930",
+  "systemsType": "turboprop",
+  "addon": "Microsoft",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

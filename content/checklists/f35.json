@@ -1,0 +1,824 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "windscreen-canopy",
+              "info": "Canopy. Check the windscreen and canopy.",
+              "label": "Windscreen & Canopy",
+              "tier": "full"
+            },
+            {
+              "action": "REMOVED",
+              "id": "mdc-pin",
+              "info": "Canopy. Remove and stow the MDC firing handle safety pin.",
+              "label": "MDC Canopy PIN",
+              "tier": "full"
+            },
+            {
+              "action": "REMOVED",
+              "id": "ejection-seat-pin",
+              "info": "Seat. Remove and stow the ejection seat safety pin.",
+              "label": "Ejection Seat PIN",
+              "tier": "full"
+            },
+            {
+              "action": "SAFE",
+              "id": "ejection-seat-safe-pre",
+              "info": "Seat.",
+              "label": "Ejection Seat",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "throttle-off-pre",
+              "info": "Left Panel. Full aft.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "ldg-gear-handle",
+              "info": "Left Vertical Panel.",
+              "label": "LDG GEAR Handle",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Left Vertical Panel. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "ADJUST",
+              "id": "rudder-pedals",
+              "info": "Cockpit floor.",
+              "label": "Rudder Pedals",
+              "tier": "normal"
+            },
+            {
+              "action": "CONNECT",
+              "id": "oxygen-g-suit",
+              "info": "Seat. Connect the oxygen, G-suit and helmet leads.",
+              "label": "Oxygen & G-Suit",
+              "tier": "normal"
+            },
+            {
+              "action": "SECURE",
+              "id": "harness",
+              "info": "Seat. Fasten the harness and leg restraints.",
+              "label": "Harness",
+              "tier": "normal"
+            }
+          ],
+          "title": "Safety Check"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "ipp-master",
+              "info": "Left Panel. IPP is the Integrated Power Package.",
+              "label": "IPP Master",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "icc-switches",
+              "info": "Left Panel. ICC1 and ICC2 inverter/controller/converter switches.",
+              "label": "ICC 1 & 2",
+              "tier": "quick"
+            },
+            {
+              "action": "NORM",
+              "id": "cabin-pressure",
+              "info": "Left Panel. Cabin pressure selector.",
+              "label": "Cabin Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "batt-switch",
+              "info": "Left Panel. Main battery switch.",
+              "label": "BATT Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "ipp-selector-check",
+              "info": "Left Panel. Middle position.",
+              "label": "IPP Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "GUARDED",
+              "id": "ipp-emer-off",
+              "info": "Left Panel. IPP emergency off switch, guard closed.",
+              "label": "IPP EMER OFF",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-switch-check",
+              "info": "Left Panel.",
+              "label": "ENGINE Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "NEUTRAL",
+              "id": "rudder-trim",
+              "info": "Left Panel.",
+              "label": "Rudder Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "EXT",
+              "id": "jettison-selector",
+              "info": "Left Vertical Panel. Stores jettison selector.",
+              "label": "JETTISON Selector",
+              "tier": "full"
+            },
+            {
+              "action": "GUARDED",
+              "id": "alt-gear-extension",
+              "info": "Left Vertical Panel. Alternate gear extension, guard closed.",
+              "label": "ALT GEAR EXT",
+              "tier": "full"
+            },
+            {
+              "action": "SAFE",
+              "id": "master-arm",
+              "info": "Center Instrument Panel. Down position.",
+              "label": "Master Arm",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "hmd-selector",
+              "info": "Center Instrument Panel. Helmet-mounted display selector.",
+              "label": "HMD Selector",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "mfd-selector",
+              "info": "Center Instrument Panel. Multifunction display selector.",
+              "label": "MFD Selector",
+              "tier": "full"
+            },
+            {
+              "action": "GUARDED",
+              "id": "auto-recovery",
+              "info": "Right Vertical Panel. Auto recovery switch, guard closed.",
+              "label": "AUTO RECOVERY",
+              "tier": "full"
+            },
+            {
+              "action": "NORM",
+              "id": "zeroize",
+              "info": "Right Vertical Panel. Aircraft zeroize selector.",
+              "label": "ZEROIZE Selector",
+              "tier": "full"
+            },
+            {
+              "action": "ADJUSTED",
+              "id": "stick-arm-rest",
+              "info": "Right Panel. Control stick arm rest.",
+              "label": "Stick Arm Rest",
+              "tier": "full"
+            }
+          ],
+          "title": "Interior Check"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "ipp-master-on",
+              "info": "Left Panel. Integrated Power Package master switch.",
+              "label": "IPP Master",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "icc-switches-on",
+              "info": "Left Panel. Both ICC1 and ICC2.",
+              "label": "ICC 1 & 2",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "batt-switch-on",
+              "info": "Left Panel. Main battery switch.",
+              "label": "BATT Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "ipp-selector-auto",
+              "info": "Left Panel. Middle position.",
+              "label": "IPP Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY ON",
+              "id": "pcd-on",
+              "info": "Main Panel. The Panoramic Cockpit Display should come on.",
+              "label": "PCD",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "pcd-eng-page",
+              "info": "PCD ENG page.",
+              "label": "PCD ENG Page",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "PCD FUEL page. Check the fuel quantity.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "OPEN",
+              "id": "fuel-shutoff-valve",
+              "info": "PCD FUEL page. Main fuel shutoff valve (MSFOV). Open as required.",
+              "label": "Fuel Shutoff Valve",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "remaining-brake-appl",
+              "info": "Left Vertical Panel. Remaining brake applications indicator.",
+              "label": "Remaining Brake Appl",
+              "tier": "full"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "NORM",
+              "id": "engine-switch-norm",
+              "info": "Left Panel. Guarded switch.",
+              "label": "ENGINE Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "ipp-selector-start",
+              "info": "Left Panel.",
+              "label": "IPP Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-idle",
+              "info": "Left Panel. Move from OFF to IDLE.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "MONITOR",
+              "id": "engine-start-monitor",
+              "info": "PCD ENG page. Monitor the engine start.",
+              "label": "Engine Start",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY OFF",
+              "id": "generator-low",
+              "info": "PCD left side. The GENERATOR LOW message should go out once the engine is running.",
+              "label": "GEN LOW Message",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "ipp-powered",
+              "info": "Left Panel. Check the IPP selector shows powered up.",
+              "label": "IPP Status",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY AUTO",
+              "id": "cabin-pressure",
+              "info": "Left Panel. Cabin pressure selector.",
+              "label": "Cabin Pressure",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK NORM",
+              "id": "hmd-norm",
+              "info": "Center Instrument Panel. Helmet-mounted display.",
+              "label": "HMD",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "pcd-brightness",
+              "info": "PCD. Adjust display brightness as desired.",
+              "label": "PCD Brightness",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "comms-nav",
+              "info": "PCD. Set up COMS, VOR/ILS and TACAN as desired.",
+              "label": "COMS & NAV",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "strobe-lights",
+              "info": "PCD Menu Lights page.",
+              "label": "Strobe Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "iff",
+              "info": "PCD.",
+              "label": "IFF",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "land-taxi-lights",
+              "info": "Left Vertical Panel.",
+              "label": "LAND/TAXI Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "SET GROUND",
+              "id": "iff-squawk",
+              "info": "PCD. Set the Mode 3A squawk code, then select GROUND.",
+              "label": "IFF / Squawk",
+              "tier": "normal"
+            },
+            {
+              "action": "SET LOCAL",
+              "id": "altimeter-set",
+              "info": "PCD. Set local altimeter pressure.",
+              "label": "Altimeter",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "backup-instruments",
+              "info": "Backup flight instrument. Check it is on and aligned.",
+              "label": "Backup Instruments",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "bingo-joker",
+              "info": "PCD FUEL page. Set the BINGO and JOKER fuel values.",
+              "label": "BINGO & JOKER",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "nav-waypoints",
+              "info": "PCD NAV page. Check the flight plan waypoints are loaded and set the NAV source. Flight plans are entered on the world map.",
+              "label": "NAV Waypoints",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-run-up",
+              "info": "Left Panel. Advance the throttle slowly to 70% and check normal readings on the PCD ENG page. Back to IDLE and check EGT and RPM.",
+              "label": "Engine Run-Up",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Stick and pedals. Check free and full movement.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "refuel-system",
+              "info": "PCD FUEL page. Click REFUEL SYSTEM and check the refuel door or probe opens (external view). Click REFUEL PRE CNTCT and check it closes.",
+              "label": "Refuel System",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "arrestor-hook",
+              "info": "Left Vertical Panel. With the FCS page up, press the HOOK/STOVL button. Check the HOOK message and the hook extended (external view). Press again and check the hook retracts and the message clears.",
+              "label": "Arrestor Hook",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "atc-clearance",
+              "info": "Radio.",
+              "label": "ATC Clearance",
+              "tier": "full"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake-release",
+              "info": "Left Vertical Panel. Release to begin taxi.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes-steering",
+              "info": "Pedals. Apply power slowly and test the brakes and steering during taxi.",
+              "label": "Brakes & Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments-taxi",
+              "info": "PCD. Check the flight instruments during taxi.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "CLOSED",
+              "id": "canopy-closed",
+              "info": "Canopy. Closed and locked.",
+              "label": "Canopy",
+              "tier": "quick"
+            },
+            {
+              "action": "ARMED",
+              "id": "ejection-seat-armed",
+              "info": "Seat.",
+              "label": "Ejection Seat",
+              "tier": "normal"
+            },
+            {
+              "action": "IN",
+              "id": "speed-brakes-in",
+              "info": "Speed brake control. Fully retracted.",
+              "label": "Speed Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Pitot and engine anti-ice.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "FLAPS 1",
+              "id": "manual-trim",
+              "info": "Flap lever. Flaps 1 selects manual trim, recommended for every takeoff. Autotrim is only active at Flaps 0.",
+              "label": "Manual Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "SET 7-10",
+              "id": "elevator-trim",
+              "info": "Elevator trim. Set 7 to 10 depending on payload.",
+              "label": "Elevator Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "master-arm-lineup",
+              "info": "Center Instrument Panel.",
+              "label": "Master Arm",
+              "tier": "full"
+            },
+            {
+              "action": "DOWN",
+              "id": "helmet-visor",
+              "info": "Helmet.",
+              "label": "Helmet Visor",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET 80% N2",
+              "id": "throttle-80",
+              "info": "Left Panel. Hold the brakes and set 80% N2 before brake release.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "RELEASE",
+              "id": "brakes-release",
+              "info": "Pedals.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "MRT",
+              "id": "throttle-mrt",
+              "info": "Left Panel. Military Rated Thrust, about 105%.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "150-170 KIAS",
+              "id": "rotate",
+              "info": "Stick. Lift the nose at 150 to 170 KIAS. Airborne at 170 to 200 KIAS.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "gear-up",
+              "info": "Left Vertical Panel. Retract at a positive rate of climb.",
+              "label": "Gear",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK UP",
+              "id": "gear-check-up",
+              "info": "Left Vertical Panel. Gear handle up, no green lights.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "FLAPS 0",
+              "id": "autotrim-engage",
+              "info": "Flap lever. Flaps 0 selects autotrim. Select once stabilized in conventional mode above 100 ft AGL.",
+              "label": "Autotrim",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments-climb",
+              "info": "PCD. Check normal indications.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "cabin-press-climb",
+              "info": "Left Panel. Check cabin pressurization.",
+              "label": "Cabin Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-state-climb",
+              "info": "PCD FUEL page.",
+              "label": "Fuel State",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "lights-climb",
+              "info": "Left Vertical Panel and PCD Menu Lights page.",
+              "label": "Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "canopy-defog",
+              "info": "Left Panel.",
+              "label": "Canopy Defog",
+              "tier": "full"
+            },
+            {
+              "action": "SAFE",
+              "id": "master-arm-enroute",
+              "info": "Center Instrument Panel.",
+              "label": "Master Arm",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "coms-nav",
+              "info": "PCD. Set the displays, COMS and NAV as needed.",
+              "label": "COMS & NAV",
+              "tier": "normal"
+            },
+            {
+              "action": "SET STD",
+              "id": "altimeter-std",
+              "info": "PCD. Set standard pressure (29.92/1013) at the transition altitude.",
+              "label": "Altimeter",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET LOCAL",
+              "id": "altimeter-local",
+              "info": "PCD. Set local pressure passing the transition level on descent.",
+              "label": "Altimeter",
+              "tier": "normal"
+            },
+            {
+              "action": "FLAPS 1",
+              "id": "manual-trim",
+              "info": "Flap lever. Flaps 1 selects manual trim, recommended for landings flown with the On Speed AOA technique. Autotrim changes to direct law below 50 ft AGL.",
+              "label": "Manual Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights-app",
+              "info": "Left Vertical Panel.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "800 FT AGL",
+              "id": "pattern-entry",
+              "info": "Upwind leg. Runway heading at 400 to 500 KIAS.",
+              "label": "Pattern Entry",
+              "tier": "normal"
+            },
+            {
+              "action": "BELOW 300 KIAS",
+              "id": "break-turn",
+              "info": "Upwind leg, at least 1.5 NM abeam. 3G break into the downwind leg. Leave the break at about 250 to 300 KIAS and hold 800 ft AGL.",
+              "label": "3G Break Turn",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear-down",
+              "info": "Left Vertical Panel. Downwind leg, below 300 KIAS.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "speed-brake-app",
+              "info": "Downwind leg. Use if needed to slow onto On Speed AOA.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "STABILIZE",
+              "id": "on-speed-aoa",
+              "info": "Downwind leg. Stabilize On Speed AOA, then descend to 600 ft AGL.",
+              "label": "On Speed AOA",
+              "tier": "quick"
+            },
+            {
+              "action": "30° BANK",
+              "id": "base-turn",
+              "info": "Downwind leg, at least 1.5 NM abeam. Turn at about 30° bank, On Speed AOA, holding 600 ft AGL.",
+              "label": "Base Turn",
+              "tier": "normal"
+            }
+          ],
+          "title": "Configuration"
+        },
+        {
+          "items": [
+            {
+              "action": "3 GREEN",
+              "id": "gear-confirm",
+              "info": "Left Vertical Panel. Check gear down, 3 green.",
+              "label": "Gear Indication",
+              "tier": "quick"
+            },
+            {
+              "action": "600 FT AGL",
+              "id": "final-altitude",
+              "info": "Final. Roll out at about 1.5 NM and 600 ft AGL, then descend to the runway.",
+              "label": "Pattern Altitude",
+              "tier": "normal"
+            },
+            {
+              "action": "ON SPEED",
+              "id": "final-aoa",
+              "info": "Final. Hold On Speed AOA and aim the flight path vector at the runway threshold.",
+              "label": "AOA",
+              "tier": "quick"
+            }
+          ],
+          "title": "Final"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "11 AOA",
+              "id": "flare",
+              "info": "Stick. Slight flare to about 11° AOA at the threshold. FPV at the upper end of the E bracket.",
+              "label": "Threshold Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "RETARD",
+              "id": "throttle-retard",
+              "info": "Left Panel. Retard slowly. No idle until touchdown. Aim for a 300 to 500 fpm sink rate at touchdown.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-idle-land",
+              "info": "Left Panel. After touchdown.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "HOLD",
+              "id": "nose-up-hold",
+              "info": "Stick. Keep the nose up as long as possible.",
+              "label": "Nose Attitude",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY",
+              "id": "speedbrakes-deploy",
+              "info": "After touchdown. Check the speed brakes have deployed.",
+              "label": "Speed Brakes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    }
+  ],
+  "description": "Conventional takeoff and landing (CTOL) variant of the F-35, with most systems run through the panoramic cockpit display.",
+  "isNew": true,
+  "manufacturer": "Lockheed Martin",
+  "model": "F-35A",
+  "slug": "f35",
+  "status": "active",
+  "suffix": " Lightning II",
+  "systemsType": "military",
+  "addon": "IndiaFoxtEcho",
+  "flightsim": "MSFS",
+  "simDepth": "Standard"
+}

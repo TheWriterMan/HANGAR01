@@ -1,0 +1,1111 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "REMOVED",
+              "id": "control-wheel-lock",
+              "label": "Control Wheel Restraint",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Prevents the aircraft from rolling during prep. Chocks, covers and tie downs are handled on the EFB Controls page.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master",
+              "info": "Radios off as well.",
+              "label": "Avionics Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot-master",
+              "label": "Autopilot Master",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "electrical-switches",
+              "info": "Lower left panel. All electrical switches.",
+              "label": "Electrical Switches",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ignition",
+              "label": "Ignition",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "landing-gear-selector",
+              "info": "Instrument panel.",
+              "label": "Gear Selector",
+              "tier": "quick"
+            }
+          ],
+          "title": "Cockpit Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "master-switch",
+              "label": "Master Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "interior-lights",
+              "label": "Interior Lights",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "exterior-lights",
+              "label": "Exterior Lights",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Fuel and payload are set on the EFB Fuel & Payload page.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "flaps",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "master-switch-preflight-off",
+              "label": "Master Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "oxygen-quantity",
+              "info": "If equipped.",
+              "label": "Oxygen Quantity",
+              "tier": "full"
+            }
+          ],
+          "title": "Power-Up Checks"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake-start",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL COLD",
+              "id": "carburetor-heat",
+              "label": "Carburetor Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "DESIRED TANK",
+              "id": "fuel-selector",
+              "label": "Fuel Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK IN",
+              "id": "circuit-breakers",
+              "info": "Under the instrument panel.",
+              "label": "Circuit Breakers",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master-start",
+              "info": "Radios off as well.",
+              "label": "Avionics Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot-master",
+              "label": "Autopilot Master",
+              "tier": "full"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "vents-heat-defrost",
+              "info": "Lower right panel. Air vents, heater and defroster.",
+              "label": "Vents, Heat & Defrost",
+              "tier": "full"
+            },
+            {
+              "action": "CLOSED",
+              "id": "alternate-static",
+              "info": "If installed.",
+              "label": "Alternate Static",
+              "tier": "full"
+            },
+            {
+              "action": "FREE & CORRECT",
+              "id": "controls",
+              "info": "Move full travel in all axes.",
+              "label": "Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED & LATCHED",
+              "id": "door",
+              "label": "Door",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "master-switch-start",
+              "label": "Master Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "label": "Nav Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "The flashing red anti-collision light.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "1/4 INCH OPEN",
+              "id": "throttle",
+              "info": "Cold engine. Hot engine: 1/2 inch open.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "MAX RPM",
+              "id": "propeller-control",
+              "info": "Full forward.",
+              "label": "Propeller Control",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture",
+              "info": "Or as required.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK, THEN OFF",
+              "id": "electric-fuel-pump",
+              "info": "Check operation, then off for the start.",
+              "label": "Electric Fuel Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "2-8 STROKES",
+              "id": "primer",
+              "info": "Number of strokes depends on OAT. Hot engine: leave locked and do not prime.",
+              "label": "Primer",
+              "tier": "quick"
+            },
+            {
+              "action": "CLEAR",
+              "id": "propeller-area",
+              "label": "Propeller Area",
+              "tier": "normal"
+            },
+            {
+              "action": "BOTH",
+              "id": "ignition-start",
+              "label": "Ignition",
+              "tier": "quick"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "starter",
+              "info": "Max 15 seconds.",
+              "label": "Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "1000 RPM",
+              "id": "throttle-idle",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "oil-pressure",
+              "info": "Right instrument panel. Engine instruments.",
+              "label": "Oil Pressure",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Start (Cold)"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "LEAN",
+              "id": "mixture-ground",
+              "info": "Lean as required to prevent spark plug fouling.",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "IN & LOCKED",
+              "id": "primer-locked",
+              "label": "Primer",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-instruments",
+              "info": "Right instrument panel. Normal readings.",
+              "label": "Engine Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "GREEN",
+              "id": "gear-indicator",
+              "info": "Instrument panel, next to the gear selector. Landing gear indicator light.",
+              "label": "Gear Indicator",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "flaps-retract",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "avionics-master-on",
+              "label": "Avionics Master",
+              "tier": "quick"
+            },
+            {
+              "action": "ON & SET",
+              "id": "radios",
+              "label": "COM & NAV Radios",
+              "tier": "normal"
+            },
+            {
+              "action": "ON & SET",
+              "id": "gps",
+              "info": "Garmin GPS, if installed.",
+              "label": "GPS",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK & SET",
+              "id": "jpi-edm",
+              "info": "Engine monitor. Set fuel quantity in Fuel/Fill mode, or sync it from the EFB Fuel & Payload page.",
+              "label": "JPI EDM 830",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "marker-lights",
+              "label": "Marker Lights",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "horizon",
+              "info": "Left instrument panel. Attitude indicator. Check it has erected.",
+              "label": "Horizon",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "gyro-compass",
+              "info": "Left instrument panel. Align the directional gyro with the magnetic compass.",
+              "label": "Gyro Compass",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK ZERO",
+              "id": "vsi",
+              "info": "Left instrument panel.",
+              "label": "VSI",
+              "tier": "full"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeter",
+              "info": "Left instrument panel. Local QNH.",
+              "label": "Altimeter",
+              "tier": "normal"
+            },
+            {
+              "action": "WIND & SET",
+              "id": "clock",
+              "label": "Clock",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "pitot-heat",
+              "info": "Lower left panel. On, check the ammeter, then off.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "autopilot-test",
+              "info": "Master switch on. All lights illuminate for the test, then RDY shows. Then off.",
+              "label": "Autopilot Master",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "taxi-clearance",
+              "info": "ATC taxi clearance.",
+              "label": "Taxi Clearance",
+              "tier": "full"
+            },
+            {
+              "action": "SET STBY",
+              "id": "transponder-2",
+              "info": "Set the squawk code, leave on standby.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "landing-lights",
+              "label": "Landing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes",
+              "info": "Left rudder pedals. Release the parking brake, check braking and steering. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
+              "label": "Brakes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake-runup",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "fuel-selector-runup",
+              "label": "Fuel Selector",
+              "tier": "full"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture-runup",
+              "info": "Lean as required above 3000 ft.",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL RPM",
+              "id": "propeller-runup",
+              "label": "Propeller Control",
+              "tier": "normal"
+            },
+            {
+              "action": "2000 RPM",
+              "id": "throttle-runup",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "suction-gauge",
+              "info": "About 5.0 inHG.",
+              "label": "Suction Gauge",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "ammeter",
+              "info": "Charging.",
+              "label": "Ammeter",
+              "tier": "full"
+            },
+            {
+              "action": "GREEN",
+              "id": "oil-temp-press",
+              "info": "Right instrument panel.",
+              "label": "Oil Temp & Press",
+              "tier": "normal"
+            },
+            {
+              "action": "PERFORM",
+              "id": "magneto-check",
+              "info": "Ignition L, BOTH, R, BOTH. Max 125 RPM drop, max 50 RPM difference.",
+              "label": "Magneto Check",
+              "tier": "quick"
+            },
+            {
+              "action": "PERFORM",
+              "id": "carb-heat-test",
+              "info": "Carb heat to WARM, confirm the RPM drop, then back to COLD.",
+              "label": "Carb Heat Test",
+              "tier": "normal"
+            },
+            {
+              "action": "CYCLE 3X",
+              "id": "prop-cycle",
+              "info": "Cycle the propeller control 3 times, down to 1500 RPM.",
+              "label": "Propeller Cycle",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-idle-runup",
+              "label": "Throttle",
+              "tier": "normal"
+            }
+          ],
+          "title": "Run-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "CONFIRM",
+              "id": "takeoff-speeds",
+              "info": "VR 70-85 MPH with flaps 0, 65-75 MPH with flaps 2, depending on weight. Vy 97-105 MPH.",
+              "label": "Takeoff Flaps & Speeds",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL RICH",
+              "id": "mixture-takeoff",
+              "info": "Lean as required above 3000 ft.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL RPM",
+              "id": "propeller-takeoff",
+              "label": "Propeller Control",
+              "tier": "quick"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "flaps-takeoff",
+              "info": "0° to 18°. Flaps 0 for a normal takeoff. Flaps 2 (18°) for short field or soft field.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "electric-fuel-pump-to",
+              "label": "Electric Fuel Pump",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "elevator-trim",
+              "info": "Takeoff position, neutral.",
+              "label": "Elevator Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "NEUTRAL",
+              "id": "rudder-trim",
+              "info": "Or as required.",
+              "label": "Rudder Trim",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "pitot-heat-to",
+              "info": "Lower left panel. Or as required.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-instruments-to",
+              "info": "Right instrument panel.",
+              "label": "Engine Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK QNH",
+              "id": "altimeter-to",
+              "info": "Left instrument panel.",
+              "label": "Altimeter",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "departure-clearance",
+              "info": "ATC departure clearance.",
+              "label": "Departure Clearance",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights-to",
+              "info": "Before entering the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Before entering the runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON + ALT",
+              "id": "transponder",
+              "info": "Before entering the runway.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "FULL",
+              "id": "throttle-takeoff",
+              "info": "Advance slowly and release the brakes, then full throttle.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "ROTATE",
+              "id": "rotate",
+              "info": "VR 70-85 MPH with flaps 0, 65-75 MPH with flaps 2, depending on weight.",
+              "label": "At VR",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACT",
+              "id": "gear-up",
+              "info": "Instrument panel. At a positive rate of climb. Tap the brakes first.",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "97-105 MPH",
+              "id": "initial-climb",
+              "info": "Hold Vy until at a safe altitude. On a short field or soft field takeoff, hold Vx (76-84 MPH at sea level) until obstacles are cleared, then accelerate to Vy.",
+              "label": "Vy Climb",
+              "tier": "normal"
+            }
+          ],
+          "title": "Takeoff Roll & Rotate"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "climb-power-set",
+              "info": "At 1000 ft AGL. Normal climb: 25 inHG MAP, 2400 RPM, 120 MPH. Max power climb: full MAP, max RPM, Vy.",
+              "label": "Climb Power",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "landing-gear-confirm",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF (MID)",
+              "id": "gear-selector-off",
+              "info": "Instrument panel.",
+              "label": "Gear Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "flaps-climb",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights-climb",
+              "info": "Or as required.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pump-climb",
+              "info": "Or as required.",
+              "label": "Electric Fuel Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "fuel-selector-climb",
+              "label": "Fuel Selector",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "oxygen-climb",
+              "info": "Above 12,000 ft.",
+              "label": "Oxygen",
+              "tier": "full"
+            },
+            {
+              "action": "SET STD",
+              "id": "altimeter-transition",
+              "info": "Left instrument panel. 29.92 / 1013 at transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "cruise-power",
+              "info": "Set MAP and RPM from the 55%, 65% or 75% cruise power tables (2100-2400 RPM).",
+              "label": "Cruise Power",
+              "tier": "quick"
+            },
+            {
+              "action": "LEAN",
+              "id": "mixture-cruise",
+              "info": "Best power at 50-100°F rich of peak EGT. Best economy at peak EGT. The JPI EDM 830 has a Lean Find mode (right button, short click).",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pump-cruise",
+              "info": "Or as required.",
+              "label": "Electric Fuel Pump",
+              "tier": "full"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "fuel-selector-cruise",
+              "label": "Fuel Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "oxygen-cruise",
+              "info": "Above 12,000 ft.",
+              "label": "Oxygen",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CONFIRM",
+              "id": "approach-data",
+              "info": "Runway and weather.",
+              "label": "Approach Data",
+              "tier": "normal"
+            },
+            {
+              "action": "CONFIRM",
+              "id": "minimums",
+              "label": "Minimums",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "gps-nav-descent",
+              "label": "GPS / NAV Radios",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "descent-power",
+              "info": "15-17 inHG MAP at cruise RPM, about 700 fpm. Top of descent for a 3° path: thousands of feet to lose x 3, plus 10 NM.",
+              "label": "Descent Power",
+              "tier": "quick"
+            },
+            {
+              "action": "ENRICH",
+              "id": "mixture-descent",
+              "info": "Enrich as required.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "MONITOR",
+              "id": "cht-descent",
+              "info": "Right instrument panel. Keep in the green range.",
+              "label": "CHT",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeter-descent",
+              "info": "Left instrument panel. At transition level.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CONFIRM",
+              "id": "landing-speeds",
+              "info": "VREF 70-85 MPH depending on weight. Subtract 5 MPH for short or soft field, add 5 MPH if flaps are not full. Enter the pattern at no more than 125 MPH.",
+              "label": "Landing Speeds",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK QNH",
+              "id": "altimeter-approach",
+              "info": "Left instrument panel.",
+              "label": "Altimeter",
+              "tier": "full"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "fuel-selector-approach",
+              "label": "Fuel Selector",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pump-approach",
+              "label": "Electric Fuel Pump",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights-app",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "MAX RPM",
+              "id": "propeller-approach",
+              "info": "On downwind at 1000 ft AGL.",
+              "label": "Propeller Control",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear-down",
+              "info": "Instrument panel. On downwind. Max gear speed 148 MPH, 125 MPH recommended.",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "FLAPS 1",
+              "id": "flaps-downwind",
+              "info": "On downwind at about 100 MPH (VREF + 15 KIAS). Max flap speed 125 MPH, 100 MPH recommended.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "FLAPS 2",
+              "id": "flaps-base",
+              "info": "Base turn. Descend at 500-700 fpm, hold at least VREF + 10 KIAS, stay above 500 ft AGL until turning final.",
+              "label": "Flaps (Base)",
+              "tier": "normal"
+            },
+            {
+              "action": "FULL",
+              "id": "flaps-final",
+              "info": "On final. VREF + 5 KIAS until landing is assured, then cross the threshold at VREF.",
+              "label": "Flaps (Final)",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach"
+        },
+        {
+          "items": [
+            {
+              "action": "DOWN & 3 GREEN",
+              "id": "gear-check-final",
+              "label": "Landing Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL",
+              "id": "flaps-check-final",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "lights-check-final",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "MAX RPM",
+              "id": "prop-check-final",
+              "label": "Propeller Control",
+              "tier": "normal"
+            }
+          ],
+          "title": "Landing Check"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "throttle-landing",
+              "info": "At 50 ft or the threshold, retard slowly to idle.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "FLARE",
+              "id": "flare",
+              "info": "At about 10 ft. Touch down on the main gear first.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "braking",
+              "info": "Short field: retract flaps after touchdown, full back pressure, brake as heavily as required. Soft field: keep flaps, full back pressure, brake only as necessary.",
+              "label": "Braking",
+              "tier": "normal"
+            }
+          ],
+          "title": "Touchdown"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights-after",
+              "info": "Or as required.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes-after",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACT",
+              "id": "flaps-after",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pump-after",
+              "label": "Electric Fuel Pump",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pitot-heat-after",
+              "info": "Lower left panel.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "LEAN",
+              "id": "mixture-taxi-in",
+              "info": "Lean as required to prevent spark plug fouling.",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder-after",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake-shut",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttle-shutdown",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master-shut",
+              "label": "Avionics Master",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot-master-shut",
+              "label": "Autopilot Master",
+              "tier": "full"
+            },
+            {
+              "action": "LEAN",
+              "id": "mixture-lean-shut",
+              "info": "When CHT starts to decrease. Lean as required to prevent spark plug fouling.",
+              "label": "Mixture",
+              "tier": "normal"
+            },
+            {
+              "action": "1800 RPM",
+              "id": "throttle-plug-clear",
+              "info": "15-20 seconds to clear the spark plugs.",
+              "label": "Throttle (Plug Clear)",
+              "tier": "normal"
+            },
+            {
+              "action": "1200 RPM",
+              "id": "throttle-pre-cutoff",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "mixture-cutoff",
+              "info": "Idle cutoff.",
+              "label": "Mixture",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "ignition-off",
+              "label": "Ignition",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights-off",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "master-switch-off",
+              "label": "Master Switch",
+              "tier": "quick"
+            }
+          ],
+          "title": "Engine Shutdown"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "A four-seat retractable-gear piston single from the late 1950s, flown here as A2A Simulations' Comanche 250 with its detailed engine modelling.",
+  "isNew": true,
+  "manufacturer": "Piper",
+  "model": "Comanche",
+  "slug": "comanche-250",
+  "status": "active",
+  "suffix": " 250",
+  "systemsType": "piston",
+  "addon": "A2A Simulations",
+  "flightsim": "MSFS",
+  "simDepth": "Study Level"
+}

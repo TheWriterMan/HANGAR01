@@ -1,0 +1,1260 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "On",
+              "id": "dc-master",
+              "info": "Overhead panel. Powers the DC bus.",
+              "label": "D.C. Master",
+              "tier": "quick"
+            },
+            {
+              "action": "Battery or EXT",
+              "id": "battery-switch",
+              "info": "Overhead panel. External/Battery switch. EXT when using external power.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "bus-voltage",
+              "info": "Main panel. Minimum 18 volts.",
+              "label": "Bus Voltage",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "internal-lights",
+              "info": "Overhead panel.",
+              "label": "Internal Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "cabin-lighting",
+              "info": "Overhead panel.",
+              "label": "Cabin Lighting",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "position-lights",
+              "info": "Overhead panel.",
+              "label": "Position Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Arm",
+              "id": "emergency-lights",
+              "info": "Overhead panel.",
+              "label": "Emergency Lights",
+              "tier": "full"
+            },
+            {
+              "action": "Test",
+              "id": "caution-lights",
+              "info": "Glare shield. Test, then on.",
+              "label": "Caution Lights",
+              "tier": "full"
+            },
+            {
+              "action": "Test & Arm",
+              "id": "fire-detection",
+              "info": "Glare shield. Test the fire detection, then arm. The fire bell mute button is on the main panel.",
+              "label": "Fire Detection",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "fuel-quantity",
+              "info": "Main panel. A fuel quantity indicator test is also on the main panel.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            }
+          ],
+          "title": "Power Up"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "control-locks",
+              "info": "Releases the flight control locks.",
+              "label": "Control Locks",
+              "tier": "quick"
+            },
+            {
+              "action": "In",
+              "id": "fire-handles",
+              "info": "Glare shield.",
+              "label": "Fire Handles",
+              "tier": "full"
+            },
+            {
+              "action": "Normal",
+              "id": "emergency-fuel",
+              "info": "Glare shield. Emergency fuel switches.",
+              "label": "Emergency Fuel",
+              "tier": "full"
+            },
+            {
+              "action": "Both Off",
+              "id": "emergency-pumps",
+              "info": "Main panel.",
+              "label": "Emergency Pumps",
+              "tier": "full"
+            },
+            {
+              "action": "Normal",
+              "id": "fuel-selector",
+              "info": "Main panel.",
+              "label": "Fuel Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "Both Off",
+              "id": "fuel-boost-pumps",
+              "info": "Main panel. Turned on before engine start.",
+              "label": "Fuel Boost Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "Normal",
+              "id": "static-source",
+              "info": "Main panel.",
+              "label": "Static Source",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "vent-fan",
+              "info": "Center pedestal.",
+              "label": "Vent Fan",
+              "tier": "full"
+            },
+            {
+              "action": "Closed",
+              "id": "ram-air",
+              "info": "Center pedestal.",
+              "label": "Ram Air",
+              "tier": "full"
+            }
+          ],
+          "title": "Cockpit Preparation"
+        },
+        {
+          "items": [
+            {
+              "action": "Off",
+              "id": "de-icing",
+              "info": "Overhead panel.",
+              "label": "De-Icing Switches",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "bleed-air",
+              "info": "Overhead panel.",
+              "label": "Bleed Air Switches",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "pitot-heat-pre",
+              "info": "Overhead panel. Turned on before takeoff.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "Both Off",
+              "id": "generators",
+              "info": "Overhead panel. Turned on during engine start.",
+              "label": "Generator Switches",
+              "tier": "normal"
+            },
+            {
+              "action": "Normal",
+              "id": "bus-tie",
+              "info": "Overhead panel.",
+              "label": "Bus Tie",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "windshield-heat",
+              "info": "Overhead panel.",
+              "label": "Windshield Heat",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "wipers",
+              "info": "Overhead panel.",
+              "label": "Wipers",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "landing-lights",
+              "info": "Overhead panel.",
+              "label": "Landing Lights",
+              "tier": "full"
+            },
+            {
+              "action": "Normal",
+              "id": "ignition-switch",
+              "info": "Overhead panel. Normal and guarded.",
+              "label": "Ignition Switch",
+              "tier": "full"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Up",
+              "id": "flap-handle",
+              "info": "Flaps retracted.",
+              "label": "Flap Handle",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-levers-pre",
+              "info": "Fuel off to both engines.",
+              "label": "Fuel Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Feathered",
+              "id": "propeller-levers-pre",
+              "info": "Both propellers feathered.",
+              "label": "Propeller Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Flight Idle",
+              "id": "power-levers-pre",
+              "info": "Both power levers at flight idle.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "brake-hyd-pressure",
+              "info": "Main panel. Brake and hydraulic pressure indication.",
+              "label": "Brake/Hyd Pressure",
+              "tier": "full"
+            }
+          ],
+          "title": "Levers"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Closed",
+              "id": "doors",
+              "info": "After boarding is complete.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "cabin-signs",
+              "info": "Overhead panel.",
+              "label": "Cabin Signs",
+              "tier": "full"
+            },
+            {
+              "action": "Test & On",
+              "id": "flight-data-recorder",
+              "info": "Test, then on.",
+              "label": "Flight Data Recorder",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "atc-clearance",
+              "info": "Start or pushback clearance from ATC.",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "anti-collision-lights",
+              "info": "Overhead panel.",
+              "label": "Anti-Collision Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-levers-start",
+              "info": "Off before the starter is engaged.",
+              "label": "Fuel Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Feathered",
+              "id": "propeller-levers-start",
+              "info": "Feathered before start.",
+              "label": "Propeller Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Flight Idle",
+              "id": "power-levers-start",
+              "info": "Both power levers at flight idle.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Both On",
+              "id": "boost-pumps-start",
+              "info": "Main panel.",
+              "label": "Fuel Boost Pumps",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "parking-brake-start",
+              "info": "Set before engine start.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Engage",
+              "id": "starter-right",
+              "info": "Starter switch to the right engine. Check the oil pressure indication rises.",
+              "label": "Right Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "fuel-lever-right",
+              "info": "At about 15% Ng, minimum 12% Ng.",
+              "label": "Right Fuel Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "Max RPM",
+              "id": "prop-lever-right",
+              "info": "Right propeller lever to maximum RPM.",
+              "label": "Right Prop Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "Monitor",
+              "id": "t5-right",
+              "info": "Observe T5 during the start.",
+              "label": "Right T5",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "starter-off-right",
+              "info": "Check the starter switch is off at minimum 45% Ng.",
+              "label": "Right Starter",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "oil-pressure-right",
+              "info": "Oil pressure indication.",
+              "label": "Right Oil Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "generator-right",
+              "info": "Overhead panel. On if the start was on battery.",
+              "label": "Right Generator",
+              "tier": "quick"
+            }
+          ],
+          "title": "Start Right Engine"
+        },
+        {
+          "items": [
+            {
+              "action": "Engage",
+              "id": "starter-left",
+              "info": "Starter switch to the left engine. Check the oil pressure indication rises.",
+              "label": "Left Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "fuel-lever-left",
+              "info": "At about 15% Ng, minimum 12% Ng.",
+              "label": "Left Fuel Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "Max RPM",
+              "id": "prop-lever-left",
+              "info": "Left propeller lever to maximum RPM.",
+              "label": "Left Prop Lever",
+              "tier": "quick"
+            },
+            {
+              "action": "Monitor",
+              "id": "t5-left",
+              "info": "Observe T5 during the start.",
+              "label": "Left T5",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "starter-off-left",
+              "info": "Check the starter switch is off at minimum 45% Ng.",
+              "label": "Left Starter",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "oil-pressure-left",
+              "info": "Oil pressure indication.",
+              "label": "Left Oil Pressure",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "generator-left",
+              "info": "Overhead panel. Both generators on.",
+              "label": "Left Generator",
+              "tier": "quick"
+            }
+          ],
+          "title": "Start Left Engine"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Battery",
+              "id": "battery-master",
+              "info": "Overhead panel. Switch from EXT to battery if the start was on external power.",
+              "label": "Battery Master",
+              "tier": "normal"
+            },
+            {
+              "action": "Check Both On",
+              "id": "generators-after",
+              "info": "Overhead panel. Reset a generator if necessary.",
+              "label": "Generators",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "voltmeters-ammeters",
+              "info": "Electrical indications after both generators are on.",
+              "label": "Voltmeters/Ammeters",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "bleed-air-taxi",
+              "info": "Overhead panel. For heating or anti-ice.",
+              "label": "Bleed Air",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "warning-lights-2",
+              "info": "Only the PNEUMATIC LOW PRESS light should be illuminated.",
+              "label": "Warning Lights",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "vent-fan",
+              "info": "Center pedestal.",
+              "label": "Vent Fan",
+              "tier": "full"
+            },
+            {
+              "action": "Set & Check",
+              "id": "radios-avionics",
+              "info": "Set radios and avionics. Check the autopilot.",
+              "label": "Radios / Avionics",
+              "tier": "quick"
+            },
+            {
+              "action": "Stby",
+              "id": "transponder-taxi",
+              "info": "Standby until before takeoff.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "Set Local",
+              "id": "altimeters-taxi",
+              "info": "Set local pressure. Set the standby altimeter too.",
+              "label": "Altimeters",
+              "tier": "quick"
+            },
+            {
+              "action": "Set 10°",
+              "id": "flaps-taxi",
+              "info": "Takeoff flap setting.",
+              "label": "Flaps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "As Required",
+              "id": "pax-signs",
+              "info": "Overhead panel.",
+              "label": "PAX Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "flight-controls",
+              "info": "Free and full movement.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "de-ice-deflector",
+              "info": "Overhead panel.",
+              "label": "De-Ice / Deflector",
+              "tier": "full"
+            },
+            {
+              "action": "On",
+              "id": "taxi-lights",
+              "info": "Taxi lights on before moving.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Release",
+              "id": "parking-brake-taxi",
+              "info": "Release, then slowly apply power.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Test",
+              "id": "brakes-steering",
+              "info": "Test brakes and steering during taxi.",
+              "label": "Brakes / Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "flight-instruments-taxi",
+              "info": "Check flight instruments during taxi.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi"
+        },
+        {
+          "items": [
+            {
+              "action": "Check",
+              "id": "prop-feather-check",
+              "info": "Retard propeller levers to feather and check the PROP RESET light on. Then return to full forward.",
+              "label": "Prop Feather Check",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "beta-range-check",
+              "info": "Retard power levers to the beta range. BETA RANGE L and R lights on.",
+              "label": "Beta Range Check",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "engine-instruments-runup",
+              "info": "Check all engine instruments.",
+              "label": "Engine Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Run-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-lineup",
+              "info": "Line up and hold on the brakes.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "autofeather",
+              "info": "Check the SELECT light on.",
+              "label": "Autofeather",
+              "tier": "normal"
+            },
+            {
+              "action": "Recheck 10°",
+              "id": "flaps-lineup",
+              "info": "Takeoff flap setting.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Full Fwd",
+              "id": "prop-levers-lineup",
+              "info": "Maximum RPM for takeoff.",
+              "label": "Propeller Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "warning-lights",
+              "info": "Check the warning lights before takeoff.",
+              "label": "Warning Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "pitot-heat",
+              "info": "Overhead panel.",
+              "label": "Pitot Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "trim-lineup",
+              "info": "Set trim for takeoff.",
+              "label": "Trim",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "transponder-lineup",
+              "info": "On for departure.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "autopilot-preselect",
+              "info": "Preselect ALT, VS and NAV modes.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "landing-lights-lineup",
+              "info": "Overhead panel.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "strobes-lineup",
+              "info": "Overhead panel. Anti-collision light switch to beacon and strobes.",
+              "label": "Strobes",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "85% Ng",
+              "id": "power-levers-initial",
+              "info": "Advance to 85% Ng and let torque (PSI) and T5 stabilize.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "50 PSI TQ",
+              "id": "power-levers-takeoff",
+              "info": "Adjust torque with the power levers to not exceed 50 PSI. Takeoff limits: 96% Nh (prop RPM), 101.6% Ng, T5 725°C.",
+              "label": "Takeoff Power",
+              "tier": "quick"
+            },
+            {
+              "action": "Release",
+              "id": "brakes-takeoff",
+              "info": "Release brakes to begin the takeoff roll.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "Check On",
+              "id": "autofeather-arm",
+              "info": "Autofeather ARM light on during the roll.",
+              "label": "Autofeather ARM",
+              "tier": "normal"
+            },
+            {
+              "action": "73–75 KIAS",
+              "id": "rotate",
+              "info": "V1/VR at flaps 10°. 73 KIAS up to 12,000 lbs, 75 KIAS at 12,500 lbs.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "73–80 KIAS",
+              "id": "initial-climb",
+              "info": "Climb at V2/V50, the speed at 50 ft. Depends on weight.",
+              "label": "Initial Climb",
+              "tier": "quick"
+            },
+            {
+              "action": "Up",
+              "id": "flaps-up",
+              "info": "At a safe altitude, minimum 400 ft AGL. Then accelerate to 87 KIAS (Vx).",
+              "label": "Flaps",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Check Up",
+              "id": "flaps-climb",
+              "info": "Flaps fully retracted.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "87 then 100 KIAS",
+              "id": "climb-speed",
+              "info": "Vx 87 KIAS, flaps up. After obstacles are cleared, accelerate to Vy 100 KIAS.",
+              "label": "Climb Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
+              "id": "climb-power",
+              "info": "Nh is prop RPM. Maximum climb: 50 PSI TQ, 96% Nh at 100 KIAS. Normal: 50 PSI, 91% Nh at 110 KIAS. Economic: 40 PSI, 85% Nh at 110 KIAS.",
+              "label": "Climb Power",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "autofeather-climb",
+              "info": "Off once established in the climb.",
+              "label": "Autofeather",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "yaw-damper",
+              "info": "On once established in the climb.",
+              "label": "Yaw Damper",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "vent-fan",
+              "info": "Center pedestal.",
+              "label": "Vent Fan",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "pax-signs",
+              "info": "Overhead panel.",
+              "label": "PAX Signs",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "bleed-air-climb",
+              "info": "Overhead panel. For heating or anti-ice.",
+              "label": "Bleed Air",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "taxi-lights-climb",
+              "info": "Off after takeoff.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "landing-lights-climb",
+              "info": "Overhead panel. On below 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "cruise-power",
+              "info": "Nh is prop RPM. High speed: 50 PSI TQ, 91% Nh, about 165 to 145 KIAS. Normal: 50 PSI, 75% Nh, 155 to 140 KIAS. Economic: 40 PSI, 75% Nh, 145 to 135 KIAS.",
+              "label": "Cruise Power",
+              "tier": "quick"
+            },
+            {
+              "action": "Monitor",
+              "id": "t5-cruise",
+              "info": "Maximum continuous T5 is 695°C. At higher altitudes, reduce torque with the power levers to stay below it.",
+              "label": "T5 Temperature",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "pax-signs",
+              "info": "Overhead panel.",
+              "label": "PAX Signs",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "bleed-air",
+              "info": "Overhead panel.",
+              "label": "Bleed Air",
+              "tier": "full"
+            },
+            {
+              "action": "As Required",
+              "id": "de-ice-cruise",
+              "info": "Overhead panel. Anti-ice and intake deflector.",
+              "label": "De-Ice / Deflector",
+              "tier": "normal"
+            },
+            {
+              "action": "Set Standard",
+              "id": "altimeters-cruise",
+              "info": "Set standard pressure at the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "As Required",
+              "id": "atc-descent",
+              "info": "Descent clearance. Cruise power can be kept as long as the aircraft does not overspeed. Adjust power for the desired sink rate and speed.",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "pax-signs-descent",
+              "info": "Overhead panel.",
+              "label": "PAX Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "bleed-air-descent",
+              "info": "Overhead panel.",
+              "label": "Bleed Air",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "de-ice-descent",
+              "info": "Overhead panel.",
+              "label": "De-Ice / Deflector",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "landing-lights-descent",
+              "info": "Overhead panel. On below 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "fuel-quantity-descent",
+              "info": "Main panel.",
+              "label": "Fuel Quantity",
+              "tier": "full"
+            },
+            {
+              "action": "Set Local",
+              "id": "altimeters-descent",
+              "info": "Set local pressure at the transition level.",
+              "label": "Altimeters",
+              "tier": "quick"
+            }
+          ],
+          "title": "Descent Prep"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Check",
+              "id": "approach-briefing",
+              "info": "Approach briefing and landing data, including Vapp.",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "pax-signs-approach",
+              "info": "Overhead panel.",
+              "label": "PAX Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "landing-lights-approach",
+              "info": "Overhead panel.",
+              "label": "Landing Lights",
+              "tier": "quick"
+            },
+            {
+              "action": "Check Local",
+              "id": "altimeters-approach",
+              "info": "Both altimeters on local pressure.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "yaw-damper-approach",
+              "info": "Off for the approach. Recheck off on final.",
+              "label": "Yaw Damper",
+              "tier": "normal"
+            },
+            {
+              "action": "Full Fwd",
+              "id": "prop-levers-approach",
+              "info": "Set Nh (prop RPM) to 96%.",
+              "label": "Propeller Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "bleed-air-approach",
+              "info": "Overhead panel. Bleed air L and R, de-ice and deflector.",
+              "label": "Bleed Air / De-Ice",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "120 KIAS",
+              "id": "approach-speed",
+              "info": "Initial approach speed. Reduce to about 90 KIAS by 3 NM out, or about 100 KIAS entering the downwind leg.",
+              "label": "Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "10°",
+              "id": "flaps-10-approach",
+              "info": "At 100 KIAS. In a visual pattern, on the downwind leg.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "20°",
+              "id": "flaps-20-approach",
+              "info": "At 95 KIAS. In a visual pattern, on the base leg at about 90 KIAS, descending at about 500 fpm.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "30°",
+              "id": "flaps-30-approach",
+              "info": "At 3 NM out, about 1,000 ft AGL. In a visual pattern, mid base leg.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "37°",
+              "id": "flaps-full",
+              "info": "At 1 NM out, about 330 ft AGL, reducing to about 80 KIAS. In a visual pattern, turning final. Flaps 20° can be used for landing if the runway is longer than 2,500 ft.",
+              "label": "Flaps",
+              "tier": "normal"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "At Threshold",
+              "id": "vapp",
+              "info": "Vapp at 50 ft over the threshold. By weight from 8,500 to 12,300 lbs: flaps 20° 62 to 80 KIAS, full flaps 57 to 74 KIAS.",
+              "label": "Vapp",
+              "tier": "quick"
+            },
+            {
+              "action": "Idle",
+              "id": "power-levers-landing",
+              "info": "At 50 ft over the threshold.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Flare",
+              "id": "touchdown",
+              "info": "Flare and touch down on the main wheels first.",
+              "label": "Touchdown",
+              "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "reverse-thrust",
+              "info": "Use reverse if necessary until 40 KIAS.",
+              "label": "Reverse Thrust",
+              "tier": "normal"
+            }
+          ],
+          "title": "Touchdown and Rollout"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Up",
+              "id": "flaps-after",
+              "info": "Retract after landing.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "strobes-after",
+              "info": "Overhead panel.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "taxi-lights-after",
+              "info": "On for taxi to parking.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
+              "id": "bleed-air",
+              "info": "Overhead panel. As required or off.",
+              "label": "Bleed Air",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "pitot-heat-after",
+              "info": "Overhead panel.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "de-ice-after",
+              "info": "Overhead panel.",
+              "label": "De-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "landing-lights-after",
+              "info": "Overhead panel.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "transponder-after",
+              "info": "Off after landing.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "Reset",
+              "id": "trim-after",
+              "info": "Reset trim after landing.",
+              "label": "Trim",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "Set",
+              "id": "parking-brake-shutdown",
+              "info": "Set at the parking position.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "radios-avionics-off",
+              "info": "Radios and avionics off.",
+              "label": "Radios / Avionics",
+              "tier": "quick"
+            },
+            {
+              "action": "Idle",
+              "id": "power-levers-shutdown",
+              "info": "Both power levers to idle.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Feathered",
+              "id": "prop-levers-shutdown",
+              "info": "Both propellers feathered.",
+              "label": "Propeller Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "generators-shutdown",
+              "info": "Overhead panel.",
+              "label": "Generators",
+              "tier": "normal"
+            },
+            {
+              "action": "Cut-Off",
+              "id": "fuel-levers-shutdown",
+              "info": "Cuts fuel to both engines.",
+              "label": "Fuel Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "boost-pumps-shutdown",
+              "info": "Main panel.",
+              "label": "Boost Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "All Off",
+              "id": "lights-shutdown",
+              "info": "Overhead panel.",
+              "label": "Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "battery-shutdown",
+              "info": "Overhead panel. Battery/external switch off.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "dc-master-shutdown",
+              "info": "Overhead panel.",
+              "label": "D.C. Master",
+              "tier": "quick"
+            },
+            {
+              "action": "Applied",
+              "id": "control-locks",
+              "info": "Flight control locks back on.",
+              "label": "Control Locks",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown & Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "Aerosoft DHC-6-300 Twin Otter on wheels. Twin turboprop with a 12,500 lb maximum takeoff weight, 25,000 ft ceiling and 600 to 700 NM range.",
+  "isNew": true,
+  "manufacturer": "de Havilland Canada",
+  "model": "DHC-6",
+  "slug": "dhc6",
+  "status": "active",
+  "suffix": "-300 Twin Otter",
+  "systemsType": "turboprop",
+  "addon": "Aerosoft",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

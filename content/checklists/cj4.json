@@ -1,0 +1,1026 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Instrument Panel. Controls the extension and retraction of the landing gear.",
+              "label": "Gear",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms the spoiler panels to automatically destroy lift and increase braking effectiveness upon touchdown.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "battery-switch",
+              "info": "Left Switch Panel. Connects the main battery to power the aircraft's electrical system.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "ARMED",
+              "id": "emergency-lights",
+              "info": "Overhead Panel. Arms the emergency cabin and egress lighting in case of a power loss.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "stdby-flight-display",
+              "info": "Main Instrument Panel. Provides backup attitude, altitude, and airspeed information if primary displays fail.",
+              "label": "Stdby Flight Display",
+              "tier": "normal"
+            },
+            {
+              "action": "DISPATCH",
+              "id": "avionics-switch",
+              "info": "Left Switch Panel. Powers the primary avionics and displays in the cockpit.",
+              "label": "Avionics Switch",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cockpit Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "ground-power",
+              "info": "Left Switch Panel. Connects external power if available (In FMC: IDX → NEXT → MOD SET → Ground Power Unit = ON).",
+              "label": "Ground Power",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "cockpit-lights",
+              "info": "Overhead Panel. Adjusts the interior lighting for the flight deck.",
+              "label": "Cockpit Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "pfd-mfd-dimming",
+              "info": "Main Instrument Panel. Adjusts the brightness of the primary and multi-function flight displays.",
+              "label": "PFD/MFD Dimming",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "external-lights",
+              "info": "Left Switch Panel. Controls exterior lighting such as navigation and beacon lights.",
+              "label": "External Lights",
+              "tier": "full"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "fms-preflight",
+              "info": "FMC / Center Pedestal. FMS TUN radio setup, FMS DATA check, FMS setup, and FPLN/LEGS/PERF reviewed.",
+              "label": "FMS Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atc-clearance",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "takeoff-briefing",
+              "label": "Takeoff Briefing",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "squawk",
+              "info": "FMC / Center Pedestal. Set via FMS TUN page to transmit a transponder code to air traffic control.",
+              "label": "Squawk",
+              "tier": "normal"
+            }
+          ],
+          "title": "FMC Preflight"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "REMOVED",
+              "id": "wheel-chocks",
+              "info": "Exterior. Prevents the aircraft from moving on the ramp while parked.",
+              "label": "Wheel Chocks",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED",
+              "id": "cabin-door",
+              "info": "Exterior. Secures the main entry door for flight.",
+              "label": "Cabin Door",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "passenger-briefing",
+              "info": "MFD / Main Instrument Panel. Accessed below MFD → PASS BRIEF → TAKEOFF (LONG) or TAKEOFF (SHORT).",
+              "label": "Passenger Briefing",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "exterior-lights",
+              "info": "Left Switch Panel. Controls exterior lighting like the beacon, NAV, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eicas",
+              "info": "MFD / Main Instrument Panel. Monitors engine instruments and the crew alerting system for messages.",
+              "label": "EICAS",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "climate-control",
+              "info": "Right Switch Panel. Manages cabin temperature and pressurization.",
+              "label": "Climate Control",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        }
+      ],
+      "id": "before-start",
+      "title": "Before Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls the engine thrust.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "PUSH",
+              "id": "engine-starter",
+              "info": "Left Switch Panel. Initiates the engine start sequence.",
+              "label": "Engine Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "RUN",
+              "id": "engine-run-stop",
+              "info": "Throttle Quadrant / Center Pedestal. Introduces fuel to the engines during start or cuts it during shutdown.",
+              "label": "Engine Run/Stop",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK FOR RISE",
+              "id": "itt",
+              "info": "EICAS / Main Instrument Panel. Monitors the Interstage Turbine Temperature during start to prevent overheating.",
+              "label": "ITT",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "eicas",
+              "info": "MFD / Main Instrument Panel. Monitors engine instruments and the crew alerting system for messages.",
+              "label": "EICAS",
+              "tier": "normal"
+            },
+            {
+              "action": "START",
+              "id": "opposite-engine",
+              "info": "Left Switch Panel. Follow the same start sequence for the remaining engine.",
+              "label": "Opposite Engine",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power",
+              "info": "Left Switch Panel. Disconnects ground power (In FMC: IDX → NEXT → MOD SET → Ground Power Unit = OFF).",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "electrical-system",
+              "info": "EICAS / Main Instrument Panel. Verifies generator loads and battery charging status are normal.",
+              "label": "Electrical System",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "avionics-switch",
+              "info": "Left Switch Panel. Powers the primary avionics and displays in the cockpit.",
+              "label": "Avionics Switch",
+              "tier": "quick"
+            },
+            {
+              "action": "NORM",
+              "id": "climate-control",
+              "info": "Right Switch Panel. Manages cabin temperature and pressurization.",
+              "label": "Climate Control",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK/SET",
+              "id": "trims",
+              "info": "Center Pedestal. Sets the pitch, roll, and yaw trims for takeoff.",
+              "label": "Trims",
+              "tier": "normal"
+            },
+            {
+              "action": "FREE",
+              "id": "flight-controls",
+              "info": "Yoke and Pedals. Checks for full and free movement of the ailerons, elevator, and rudder.",
+              "label": "Flight Controls",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms the spoiler panels to automatically destroy lift and increase braking effectiveness upon touchdown.",
+              "label": "Ground Spoilers",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK/SET",
+              "id": "flaps",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "hydraulic-pressure",
+              "info": "EICAS / Main Instrument Panel. Confirms normal hydraulic pressure for flight controls and brakes.",
+              "label": "Hydraulic Pressure",
+              "tier": "normal"
+            }
+          ],
+          "title": "Before Taxi"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Left and Right Switch Panels. Activates engine and wing anti-ice systems if icing conditions exist.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "CONFIRM",
+              "id": "takeoff-data",
+              "info": "FMC / Center Pedestal. Confirms V-speeds and performance data are set for departure.",
+              "label": "Takeoff Data",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "autopilot",
+              "info": "Flight Guidance Panel. Engage and disconnect to verify the autopilot system is functioning.",
+              "label": "Autopilot",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "yaw-damper",
+              "info": "Flight Guidance Panel. Engages the yaw damper to improve flight stability.",
+              "label": "Yaw Damper",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Sets the barometric pressure for the altimeters.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eicas",
+              "info": "MFD / Main Instrument Panel. Monitors engine instruments and the crew alerting system for messages.",
+              "label": "EICAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Left Switch Panel. Illuminates the taxiway during ground operations.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Secures the aircraft from rolling while parked on the ground.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes",
+              "info": "Rudder Pedals. Applies toe brakes to slow the aircraft on the ground.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "nosewheel-steering",
+              "info": "Rudder Pedals. Steers the aircraft on the ground using the nose wheel.",
+              "label": "Nosewheel Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments",
+              "info": "Main Instrument Panel. Verifies primary flight displays are normal with no red warning flags.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Out"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK/SET",
+              "id": "flaps",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Deploys speed brakes to increase drag and reduce airspeed in flight.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "trims",
+              "info": "Center Pedestal. Sets the pitch, roll, and yaw trims for takeoff.",
+              "label": "Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "TA/RA",
+              "id": "tcas",
+              "info": "FMC / Center Pedestal. Set via FMS TUN page to monitor surrounding traffic and provide collision avoidance.",
+              "label": "TCAS",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "weather-radar",
+              "info": "MFD / Main Instrument Panel. Configures the weather radar for precipitation monitoring.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "PUSH",
+              "id": "to-ga",
+              "info": "Glareshield. Hidden button located under L ENG FIRE handle on the glareshield to trigger Takeoff/Go-Around mode.",
+              "label": "TO/GA",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "pitot-static-heat",
+              "info": "Left Switch Panel. Heats the pitot tubes and static ports to prevent ice blockage.",
+              "label": "Pitot/Static Heat",
+              "tier": "normal"
+            }
+          ],
+          "title": "Lineup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Left Switch Panel. Illuminates the runway during takeoff and landing.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Left Switch Panel. Activates high-intensity strobe lights to increase aircraft visibility.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eicas",
+              "info": "MFD / Main Instrument Panel. Monitors engine instruments and the crew alerting system for messages.",
+              "label": "EICAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Final Checks"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "TAKEOFF",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls the engine thrust.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "GREEN CHEVRON",
+              "id": "n1-command-bugs",
+              "info": "EICAS / Main Instrument Panel. Verifies the target N1 fan speed is correctly set for takeoff.",
+              "label": "N1 Command Bugs",
+              "tier": "quick"
+            },
+            {
+              "action": "RELEASE",
+              "id": "brakes",
+              "info": "Rudder Pedals. Applies toe brakes to slow the aircraft on the ground.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Yoke. Maintain pitch at ~10° and follow the flight director to lift off.",
+              "label": "Rotate",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "UP",
+              "id": "gear",
+              "info": "Main Instrument Panel. Controls the extension and retraction of the landing gear.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CLIMB",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls the engine thrust.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "yaw-damper",
+              "info": "Flight Guidance Panel. Engages the yaw damper to improve flight stability.",
+              "label": "Yaw Damper",
+              "tier": "quick"
+            },
+            {
+              "action": "AS DESIRED",
+              "id": "autopilot",
+              "info": "Flight Guidance Panel. Engage and disconnect to verify the autopilot system is functioning.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Left Switch Panel. Illuminates the runway during takeoff and landing.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "SET STD",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Sets the barometric pressure for the altimeters.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Initial Climb"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls the engine thrust.",
+              "label": "Throttles",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "monitor-flight",
+              "label": "Monitor Flight",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "monitor-weather",
+              "label": "Monitor Weather",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-management",
+              "info": "FMC / Center Pedestal. For fuel economy, check PERF → FUEL MGMT.",
+              "label": "Fuel Management",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "COMPLETE",
+              "id": "approach-briefing",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Main Instrument Panel. Sets the barometric pressure for the altimeters.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "exterior-lights",
+              "info": "Left Switch Panel. Controls exterior lighting like the beacon, NAV, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-lights",
+              "info": "Overhead Panel. Illuminates the passenger cabin.",
+              "label": "Passenger Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Left Switch Panel. Illuminates the runway during takeoff and landing.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CONFIRM",
+              "id": "landing-data",
+              "info": "FMC / Center Pedestal. Confirms V-speeds and performance data are set for arrival.",
+              "label": "Landing Data",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "avionics",
+              "info": "Main Instrument Panel. Confirms avionics displays and navigation radios are set for the approach.",
+              "label": "Avionics",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "PFD / Main Instrument Panel. Sets the decision height or minimum descent altitude for the approach.",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-transfer",
+              "info": "Center Pedestal. Manages fuel balance between the wing tanks if an imbalance occurs.",
+              "label": "Fuel Transfer",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY ON",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign ON.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "15°",
+              "id": "flaps",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "passenger-briefing",
+              "info": "MFD / Main Instrument Panel. Accessed below MFD → PASS BRIEF → LANDING.",
+              "label": "Passenger Briefing",
+              "tier": "full"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Instrument Panel. Controls the extension and retraction of the landing gear.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "35°",
+              "id": "flaps-2",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Deploys speed brakes to increase drag and reduce airspeed in flight.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "VREF",
+              "id": "airspeed",
+              "info": "PFD / Main Instrument Panel. Monitors the target approach speed (VREF).",
+              "label": "Airspeed",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "Flight Guidance Panel. Disengage before short final.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "yaw-damper",
+              "info": "Flight Guidance Panel. Disengage before short final.",
+              "label": "Yaw Damper",
+              "tier": "quick"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls the engine thrust.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "APPLY",
+              "id": "brakes",
+              "info": "Rudder Pedals. Applies toe brakes to slow the aircraft on the ground.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "EXTEND",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms the spoiler panels to automatically destroy lift and increase braking effectiveness upon touchdown.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Deploys speed brakes to increase drag and reduce airspeed in flight.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pitot-static-heat",
+              "info": "Left Switch Panel. Heats the pitot tubes and static ports to prevent ice blockage.",
+              "label": "Pitot/Static Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "weather-radar",
+              "info": "MFD / Main Instrument Panel. Configures the weather radar for precipitation monitoring.",
+              "label": "Weather Radar",
+              "tier": "normal"
+            },
+            {
+              "action": "STBY",
+              "id": "tcas",
+              "info": "FMC / Center Pedestal. Set via FMS TUN page to monitor surrounding traffic and provide collision avoidance.",
+              "label": "TCAS",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Left Switch Panel. Illuminates the taxiway during ground operations.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes",
+              "info": "Left Switch Panel. Activates high-intensity strobe lights to increase aircraft visibility.",
+              "label": "Strobes",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Secures the aircraft from rolling while parked on the ground.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls the engine thrust.",
+              "label": "Throttles",
+              "tier": "normal"
+            },
+            {
+              "action": "STOP",
+              "id": "engine-run-stop-l-r",
+              "info": "Throttle Quadrant / Center Pedestal. Cuts fuel to both engines to shut them down.",
+              "label": "Engine Run/Stop L&R",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights",
+              "info": "Left Switch Panel. Controls exterior lighting like the beacon, NAV, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "emergency-lights",
+              "info": "Overhead Panel. Arms the emergency cabin and egress lighting in case of a power loss.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "stdby-flight-display",
+              "info": "Main Instrument Panel. Provides backup attitude, altitude, and airspeed information if primary displays fail.",
+              "label": "Stdby Flight Display",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-switch",
+              "info": "Left Switch Panel. Powers the primary avionics and displays in the cockpit.",
+              "label": "Avionics Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "climate-control",
+              "info": "Right Switch Panel. Manages cabin temperature and pressurization.",
+              "label": "Climate Control",
+              "tier": "normal"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "ice-protection",
+              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "label": "Ice Protection",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "passenger-lights",
+              "info": "Overhead Panel. Illuminates the passenger cabin.",
+              "label": "Passenger Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "battery-switch",
+              "info": "Left Switch Panel. Connects the main battery to power the aircraft's electrical system.",
+              "label": "Battery Switch",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "A sophisticated light business jet with high performance and simple single-pilot operation for regional trips.",
+  "manufacturer": "Cessna",
+  "model": "Citation CJ4",
+  "slug": "cj4",
+  "status": "active",
+  "systemsType": "business-jet",
+  "addon": "Microsoft",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

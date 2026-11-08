@@ -1,0 +1,1156 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "TEST",
+              "id": "standby-power",
+              "info": "Left Switch Panel. Hold TEST position — verify green light for minimum 10 seconds, then release to ON.",
+              "label": "Standby Power",
+              "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "emergency-lights",
+              "info": "Left Switch Panel. Controls the emergency cabin and exit lighting system.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Center Panel. Verify handle down.",
+              "label": "Gear",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "battery-1-2",
+              "info": "Left Switch Panel. Check volts on MFD when display comes on.",
+              "label": "Battery 1+2",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis-cas",
+              "info": "MFD. Verify landing elevation displayed.",
+              "label": "EIS/CAS",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "external-power",
+              "info": "Left Switch Panel. If available. Verify BATT amps 0 or charging.",
+              "label": "External Power",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Left Switch Panel. Knob to ON/START. Disconnect external power once APU is running.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "interior-lights",
+              "info": "Overhead Panel. Controls cabin and cockpit lighting.",
+              "label": "Interior Lights",
+              "tier": "full"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "fms-preflight",
+              "info": "GTC. HOME → FLIGHT PLAN (route, SID/STAR, VNAV profiles). HOME → PERF → Weight & Fuel (op weight, payload, sync fuel). PERF → Takeoff Data (weather, config, accept V speeds). PERF → Speed Bugs (verify). RADIO page (transponder code, STBY).",
+              "label": "FMS Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atc-clearance",
+              "info": "GTC / Comm Radio. Used to obtain and copy clearance from Air Traffic Control.",
+              "label": "ATC Clearance",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis-cas-2",
+              "info": "MFD. Verify landing elevation displayed.",
+              "label": "EIS/CAS",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "pfd-nav-source",
+              "info": "GTC / PFD. FMS or as required.",
+              "label": "PFD NAV Source",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "AFCS Panel. Sets the barometric pressure for accurate altitude readings.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "FMS Preflight"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "trims",
+              "info": "Center Pedestal. Set stab trim per CG table. As of AAU 2: reduce value by 2 from the figures.",
+              "label": "Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "pressurization",
+              "info": "Right Switch Panel. Verify landing elevation on EIS.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "MFD. Verify quantity and balance.",
+              "label": "Fuel Quantity",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "mfd-synoptics",
+              "info": "MFD. Summary & Pre Flight pages — verify all green.",
+              "label": "MFD Synoptics",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "autopilot",
+              "info": "AFCS Panel. First flight of day — engage ON then OFF to verify.",
+              "label": "Autopilot",
+              "tier": "full"
+            }
+          ],
+          "title": "Cockpit Setup"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Locks the aircraft wheels while on the ground.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the seatbelt and no smoking signs.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis-cas",
+              "info": "MFD. Displays engine indications and crew alerting system messages.",
+              "label": "EIS/CAS",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls engine thrust levels.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power",
+              "info": "Left Switch Panel. Disconnect if APU is running.",
+              "label": "External Power",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "RUN",
+              "id": "engine-run-stop",
+              "info": "Center Pedestal. Either engine first.",
+              "label": "Engine Run/Stop",
+              "tier": "quick"
+            },
+            {
+              "action": "VERIFY",
+              "id": "start-pressure",
+              "info": "MFD. Minimum 32 PSI on EIS before pushing starter.",
+              "label": "Start Pressure",
+              "tier": "quick"
+            },
+            {
+              "action": "PUSH",
+              "id": "engine-starter",
+              "info": "Center Pedestal. Initiates the engine start sequence.",
+              "label": "Engine Starter",
+              "tier": "quick"
+            },
+            {
+              "action": "MONITOR",
+              "id": "engine-instruments",
+              "info": "MFD. Watch N1, N2, ITT, oil pressure rise.",
+              "label": "Engine Instruments",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "opposite-engine",
+              "info": "Center Pedestal. Repeat run/stop, verify pressure, push starter sequence.",
+              "label": "Opposite Engine",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis-cas-2",
+              "info": "MFD. Displays engine indications and crew alerting system messages.",
+              "label": "EIS/CAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Engine Start"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "apu",
+              "info": "Left Switch Panel. Engines now provide bleed and electrical. APU no longer needed.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "FREE",
+              "id": "flight-controls",
+              "info": "Yoke / Pedals. Full and free movement.",
+              "label": "Flight Controls",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Verify retracted.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "flaps",
+              "info": "Center Pedestal. Set for takeoff — Flaps 1 or 2.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "AFCS Panel. Verify set to local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments",
+              "info": "PFD. Displays airspeed, attitude, altitude, and heading.",
+              "label": "Flight Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-instruments",
+              "info": "MFD. Displays critical engine parameters like N1, ITT, and oil pressure.",
+              "label": "Engine Instruments",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "full"
+            }
+          ],
+          "title": "Before Taxi"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "altitude-selector",
+              "info": "AFCS Panel. Set cruise altitude or initial cleared altitude.",
+              "label": "Altitude Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "FMS",
+              "id": "spd-selector",
+              "info": "AFCS Panel. Verify FMS speed mode.",
+              "label": "SPD Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "hdg-selector",
+              "info": "AFCS Panel. Set takeoff runway heading.",
+              "label": "HDG Selector",
+              "tier": "normal"
+            },
+            {
+              "action": "PUSH",
+              "id": "to-ga-button",
+              "info": "Throttle Levers. Press on throttle. Verify TO/TO (green) and ALTS (white) in FMA. Flight director comes ON.",
+              "label": "TO/GA Button",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "transponder",
+              "info": "GTC. Sets the aircraft squawk code and reporting mode.",
+              "label": "Transponder",
+              "tier": "normal"
+            }
+          ],
+          "title": "Taxi Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Illuminates the area ahead of the aircraft during ground maneuvering.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Stow emergency/park brake handle.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "brakes",
+              "info": "Rudder Pedals. Check brakes and controls during taxi.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "nosewheel-steering",
+              "info": "Rudder Pedals / Tiller. Controls ground steering of the nose gear.",
+              "label": "Nosewheel Steering",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "thrust-reversers",
+              "info": "Throttle Levers. Deploy briefly during taxi to verify.",
+              "label": "Thrust Reversers",
+              "tier": "full"
+            }
+          ],
+          "title": "Taxi Flow"
+        }
+      ],
+      "id": "taxi",
+      "title": "Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "VERIFY SET",
+              "id": "autopilot",
+              "info": "AFCS Panel. Coms and autopilot modes set as desired.",
+              "label": "Autopilot",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY SET",
+              "id": "flaps",
+              "info": "Center Pedestal. Verify set for takeoff.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Controls aerodynamic spoilers to increase drag and reduce speed.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY SET",
+              "id": "trims",
+              "info": "Center Pedestal. Set for takeoff.",
+              "label": "Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "v-speeds",
+              "info": "GTC / PFD. Verify displayed on PFD.",
+              "label": "V Speeds",
+              "tier": "quick"
+            },
+            {
+              "action": "FMS",
+              "id": "spd-knob",
+              "info": "AFCS Panel. Verify FMS speed mode.",
+              "label": "SPD Knob",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "PFD. Verify TO/TO (green) and ALTS (white).",
+              "label": "FMA",
+              "tier": "quick"
+            }
+          ],
+          "title": "Lineup"
+        },
+        {
+          "items": [
+            {
+              "action": "FMS",
+              "id": "nav-source",
+              "info": "GTC / PFD. Verify FMS selected.",
+              "label": "NAV Source",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "mfd-synoptics",
+              "info": "MFD. Pre Flight page — verify all green.",
+              "label": "MFD Synoptics",
+              "tier": "full"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "crew-briefing",
+              "info": "Cockpit. Verifies departure or arrival procedures between crew members.",
+              "label": "Crew Briefing",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "weather-radar",
+              "info": "GTC / MFD. Detects precipitation and weather cells.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "pitot-static-heat",
+              "info": "Right Switch Panel. ON for 15 seconds then back to NORM.",
+              "label": "Pitot/Static Heat",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Provides maximum illumination for takeoff and landing.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Illuminates the area ahead of the aircraft during ground maneuvering.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "transponder",
+              "info": "GTC. Sets the aircraft squawk code and reporting mode.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis-cas",
+              "info": "MFD. Displays engine indications and crew alerting system messages.",
+              "label": "EIS/CAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Final Checks"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ARM",
+              "id": "autothrottle",
+              "info": "Throttle Levers / AFCS. Verify AT FMA = HOLD (green).",
+              "label": "Autothrottle",
+              "tier": "quick"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "throttles",
+              "info": "Center Pedestal. Slowly advance to full forward.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "autothrottle-2",
+              "info": "Throttle Levers / AFCS. Verify AT FMA = HOLD (green).",
+              "label": "Autothrottle",
+              "tier": "quick"
+            },
+            {
+              "action": "RELEASE",
+              "id": "brakes",
+              "info": "Rudder Pedals. Applies wheel brakes to slow the aircraft.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Yoke. 10 degrees initial pitch. Follow flight director bars.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "info": "PFD. Confirms the aircraft is actively gaining altitude.",
+              "label": "Positive Climb",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "VERIFY UP",
+              "id": "gear",
+              "info": "Center Panel. Controls the raising and lowering of the landing gear.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Retract above 180 KIAS (min V2+20 kts). Verify FMA = CLIMB.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CLIMB",
+              "id": "throttles",
+              "info": "Center Pedestal. Verify EIS shows CLB/CLB.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "AFCS Panel. Engage at own discretion (above 500 ft AGL). Select NAV and VNAV.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "PFD. Verify SPD xxx KT | FMS | AP AT | green.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "Right Switch Panel. Verify cabin climbing normally.",
+              "label": "Pressurization",
+              "tier": "quick"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Above 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the seatbelt and no smoking signs.",
+              "label": "Passenger Signs",
+              "tier": "full"
+            },
+            {
+              "action": "SET STD",
+              "id": "altimeters",
+              "info": "AFCS Panel. At transition altitude — set standard barometric.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu",
+              "info": "Left Switch Panel. Prior to climb above FL350.",
+              "label": "APU",
+              "tier": "normal"
+            }
+          ],
+          "title": "Climb Flow"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CRU",
+              "id": "throttles",
+              "info": "Center Pedestal. Verify EIS shows CRU/CRU. Or set as desired.",
+              "label": "Throttles",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "PFD. Verify SPD xxx KT | FMS | AP AT | green modes.",
+              "label": "FMA",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "autopilot",
+              "info": "AFCS Panel. Required in RVSM airspace.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "CROSSCHECK",
+              "id": "altimeters",
+              "info": "AFCS Panel. RVSM crosscheck.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "pressurization",
+              "info": "Right Switch Panel. Manages cabin altitude and pressurization.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY",
+              "id": "tod",
+              "info": "MFD. Rule of thumb: (CRZ ALT – DEST ALT) / 1000 × 3 = TOD in NM.",
+              "label": "TOD",
+              "tier": "normal"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "fms-landing-data",
+              "info": "GTC. MFD GTC → PERF → Landing Data. Set all info on all pages, accept V speeds. Confirm speed bugs.",
+              "label": "FMS Landing Data",
+              "tier": "normal"
+            },
+            {
+              "action": "CONFIRM",
+              "id": "fms-approach",
+              "info": "GTC. Verify approach, STAR, and VNAV data.",
+              "label": "FMS Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "vnav-data",
+              "info": "GTC. Verify VNAV altitude constraints match the approach chart. Confirm the FAF altitude and missed approach altitude are correct.",
+              "label": "VNAV Data",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "GTC / PFD. Sets the minimum descent altitude for an approach.",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "ils-frequency",
+              "info": "GTC. If ILS approach.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY",
+              "id": "landing-elevation",
+              "info": "GTC / MFD. Verify on EIS.",
+              "label": "Landing Elevation",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "ap-altitude",
+              "info": "AFCS Panel. Preselect target altitude for approach.",
+              "label": "AP Altitude",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "VERIFY",
+              "id": "pressurization",
+              "info": "Right Switch Panel. Verify landing elevation set.",
+              "label": "Pressurization",
+              "tier": "normal"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Left Switch Panel. At or below FL310.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "AFCS Panel. At transition level, set local QNH.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Below 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "passenger-signs",
+              "info": "Overhead Panel. Controls the seatbelt and no smoking signs.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent Flow"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CONFIRM",
+              "id": "landing-data",
+              "info": "GTC. Final confirmation of Vref and landing distance.",
+              "label": "Landing Data",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "v-speeds",
+              "info": "GTC / PFD. Reference speeds used for takeoff and landing.",
+              "label": "V Speeds",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "fms-nav-aids",
+              "info": "GTC. Set as required for approach type.",
+              "label": "FMS/NAV Aids",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY",
+              "id": "minimums",
+              "info": "GTC / PFD. Sets the minimum descent altitude for an approach.",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "VERIFY",
+              "id": "altimeters",
+              "info": "AFCS Panel. Sets the barometric pressure for accurate altitude readings.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "crew-briefing",
+              "info": "Cockpit. Verifies departure or arrival procedures between crew members.",
+              "label": "Crew Briefing",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "eis-cas-approach",
+              "info": "MFD. Scan EIS for normal engine parameters and CAS for any active warnings or cautions before the approach.",
+              "label": "EIS / CAS",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "flaps-1",
+              "info": "Center Pedestal. Below 250 KIAS. FMA verifies 200 KIAS.",
+              "label": "Flaps 1",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-2",
+              "info": "Center Pedestal. Below 230 KIAS. FMA verifies 160 KIAS.",
+              "label": "Flaps 2",
+              "tier": "normal"
+            },
+            {
+              "action": "ACTIVATE",
+              "id": "appr-mode",
+              "info": "AFCS Panel. Verify FMA arms LOC & GS (white).",
+              "label": "APPR Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Center Panel. 3 green. At ~1 dot below glideslope.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL",
+              "id": "flaps",
+              "info": "Center Pedestal. Below 180 KIAS. FMA verifies 140 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "RETRACTED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Controls aerodynamic spoilers to increase drag and reduce speed.",
+              "label": "Speed Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "AFCS Panel. Disengage latest at 200 ft AGL.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "VREF",
+              "id": "airspeed",
+              "info": "PFD. Manually set VREF+5 KIAS if transitioning from FMS to manual speed.",
+              "label": "Airspeed",
+              "tier": "quick"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "autothrottle",
+              "info": "Throttle Levers / AFCS. Verify AT FMA → RETARD. Retard hardware throttle.",
+              "label": "Autothrottle",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Center Pedestal. At ~30 ft, slowly flare.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "APPLY",
+              "id": "brakes",
+              "info": "Rudder Pedals. After nosewheel touchdown.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "DEPLOY",
+              "id": "thrust-reversers",
+              "info": "Throttle Levers. Deploy after touchdown. Stow (reverse idle) by 45 KIAS.",
+              "label": "Thrust Reversers",
+              "tier": "quick"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "STOW",
+              "id": "thrust-reversers",
+              "info": "Throttle Levers. Verify stowed.",
+              "label": "Thrust Reversers",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Center Pedestal. Adjusts wing trailing edge flaps for takeoff or landing performance.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Illuminates the area ahead of the aircraft during ground maneuvering.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Overhead Panel. Provides maximum illumination for takeoff and landing.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Locks the aircraft wheels while on the ground.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Center Pedestal. Controls engine thrust levels.",
+              "label": "Throttles",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "ice-protection",
+              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "label": "Ice Protection",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "engine-run-stop",
+              "info": "Center Pedestal. Both buttons to STOP.",
+              "label": "Engine Run/Stop",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "emergency-lights",
+              "info": "Left Switch Panel. Controls the emergency cabin and exit lighting system.",
+              "label": "Emergency Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "standby-power",
+              "info": "Left Switch Panel. Provides emergency backup power to essential avionics.",
+              "label": "Standby Power",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu",
+              "info": "Left Switch Panel. Controls the Auxiliary Power Unit for ground power and air conditioning.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "exterior-lights",
+              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "label": "Exterior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "interior-lights",
+              "info": "Overhead Panel. Controls cabin and cockpit lighting.",
+              "label": "Interior Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "battery-1-2",
+              "info": "Left Switch Panel. Last item — all power off.",
+              "label": "Battery 1+2",
+              "tier": "quick"
+            }
+          ],
+          "title": "Shutdown"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "The pinnacle of super-midsize business travel featuring state-of-the-art technology wrapped in an ultra-luxurious cabin.",
+  "manufacturer": "Cessna",
+  "model": "Citation Longitude",
+  "slug": "longitude",
+  "status": "active",
+  "systemsType": "business-jet",
+  "addon": "Microsoft",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity"
+}

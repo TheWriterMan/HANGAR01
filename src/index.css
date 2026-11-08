@@ -1,0 +1,498 @@
+@import 'tailwindcss';
+
+/* ─── Fonts ──────────────────────────────────────────────────────────────
+ * Self-hosted Latin subsets in public/fonts (licences alongside). Inter is
+ * one variable file for every weight; index.html preloads it. vercel.json
+ * caches /fonts for a year, so give a replacement file a new name.
+ * ──────────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-latin-wght.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-latin-400.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-latin-500.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * HANGAR01 Design System
+ * 
+ * Architecture: Primitive → Semantic → Component
+ * - Primitives: raw color values (never referenced in components directly)
+ * - Semantics: role-based tokens (the only tokens components may use)
+ * - Light mode: swap semantic values via [data-theme="light"]
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ─── Typefaces ──────────────────────────────────────────────────────── */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: 'IBM Plex Mono', 'Menlo', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ─── Font Size Scale ────────────────────────────────────────────────── 
+   * Explicitly defined to prevent collision with --color-base etc.
+   * Without these, `text-base` resolves to the base color (#111111) —
+   * making text invisible on the page background.
+   * ──────────────────────────────────────────────────────────────────── */
+  --text-2xs: 0.625rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* ─── Primitive Palette ──────────────────────────────────────────────── 
+   * Raw values. Components MUST NOT reference these directly.
+   * They exist so semantic tokens can point at them, and light mode
+   * can remap semantics to different primitives.
+   * ──────────────────────────────────────────────────────────────────── */
+  --color-gray-0: #ffffff;
+  --color-gray-50: #f5f5f5;
+  --color-gray-100: #ebebeb;
+  --color-gray-400: #999999;
+  --color-gray-600: #5c5c5c;
+  --color-gray-800: #2d2d2d;
+  --color-gray-900: #222222;
+  --color-gray-925: #191919;
+  --color-gray-950: #111111;
+
+  --color-blue-400: #7b9eb8;
+  --color-amber-400: #e2a336;
+  --color-red-400: #d45555;
+  --color-green-400: #3d9970;
+
+  /* ─── Semantic Tokens (Dark — default) ───────────────────────────────── 
+   * These are the ONLY color tokens components may reference.
+   * ──────────────────────────────────────────────────────────────────── */
+  --color-base: #111111;
+  --color-surface: #191919;
+  --color-surface-raised: #222222;
+  --color-border: #2d2d2d;
+
+  --color-primary: #ebebeb;
+  --color-muted: #999999;
+  --color-faint: #878787;
+  --color-inverted: #111111;
+
+  --color-accent: #7b9eb8;
+  --color-warning: #e2a336;
+  --color-danger: #d45555;
+  --color-success: #3d9970;
+
+  /* ─── Layout ─────────────────────────────────────────────────────────── */
+  --height-header: 3rem;
+  /* Header plus announcement banner; Header.tsx keeps it measured. */
+  --height-shell: 3rem;
+  --width-sidebar: 14rem;
+  --width-sidebar-lg: 16rem;
+  --max-width-page: 100rem;
+  --max-width-content: 56rem;
+  --padding-page: 1rem;
+  --padding-page-md: 2rem;
+
+  /* ─── Motion ─────────────────────────────────────────────────────────── */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─── Z-Index Scale ──────────────────────────────────────────────────── */
+  --z-behind: -10;
+  --z-base: 0;
+  --z-sticky: 30;
+  /* Above the sticky phase tabs and sidebar, which start at the same top edge; under the header. */
+  --z-progress: 35;
+  --z-header: 40;
+  --z-overlay: 50;
+  --z-tooltip: 60;
+  --z-modal: 70;
+  --z-skip: 100;
+}
+
+/* ─── Light Mode Swap Point ────────────────────────────────────────────── 
+ * When [data-theme="light"] is set on <html>, all semantic tokens remap
+ * to light-appropriate values. Accent/warning/success/danger are darkened
+ * to maintain WCAG AA contrast on white/light surfaces.
+ * ──────────────────────────────────────────────────────────────────────── */
+[data-theme='light'] {
+  --color-base: var(--color-gray-0);
+  --color-surface: var(--color-gray-50);
+  --color-surface-raised: var(--color-gray-100);
+  --color-border: #d4d4d4;
+  --color-primary: var(--color-gray-950);
+  --color-muted: #525252;
+  --color-faint: #6b6b6b;
+  --color-inverted: var(--color-gray-0);
+
+  --color-accent: #3a6b8a;
+  --color-warning: #8a6218;
+  --color-danger: #b93c3c;
+  --color-success: #2d7a57;
+}
+
+/* ─── On a photo ───────────────────────────────────────────────────────────
+ * A block over a darkened photo (the home hero) keeps the dark tokens in both
+ * themes, as the aircraft cards keep white text on their scrim. Secondary
+ * text is a step lighter than dark mode's muted, for contrast on the photo.
+ * ──────────────────────────────────────────────────────────────────────── */
+.on-photo,
+[data-theme='light'] .on-photo {
+  --color-base: #111111;
+  --color-surface: #191919;
+  --color-surface-raised: #222222;
+  --color-border: #2d2d2d;
+  --color-primary: #ebebeb;
+  --color-muted: #c2c2c2;
+  --color-faint: #878787;
+  --color-inverted: #111111;
+  --color-accent: #7b9eb8;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BASE LAYER — Global resets and element defaults
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  /* ─── Reduced Motion ─────────────────────────────────────────────────── 
+   * Kill all CSS animations/transitions for users who opt out of motion.
+   * Framer Motion is handled separately via the useReducedMotion hook.
+   * ──────────────────────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-primary);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Focus ring — one rule, everywhere */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Links in prose/body context */
+  article a,
+  .prose-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-border);
+    transition: text-decoration-color var(--duration-fast) var(--ease-default);
+  }
+
+  article a:hover,
+  .prose-link:hover {
+    text-decoration-color: var(--color-primary);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * UTILITIES — Typography classes + helpers
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* ─── Typography Scale ───────────────────────────────────────────────── 
+   * DANGER: Never use `text-base` or `md:text-base` in component classes.
+   * Tailwind v4 auto-generates `text-base` as color: var(--color-base)
+   * from our --color-base token. The manual override below only covers
+   * the static `.text-base` but NOT responsive variants like `md:text-base`.
+   * Use explicit sizes (`text-sm`, `text-lg`), `md:text-(length:--text-base)` for a
+   * responsive 1rem, or type classes.
+   * ──────────────────────────────────────────────────────────────────── */
+  .text-base {
+    font-size: var(--text-base);
+    line-height: 1.5rem;
+  }
+
+  .type-display {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .type-title {
+    font-size: clamp(1.875rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .type-heading {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .type-subheading {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .type-body {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  .type-caption {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+
+  .type-mono {
+    font-family: var(--font-family-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* ─── Containers ──────────────────────────────────────────────────────── */
+  .container-page {
+    width: 100%;
+    max-width: var(--max-width-page);
+    margin-inline: auto;
+    padding-inline: var(--padding-page);
+  }
+
+  .container-content {
+    max-width: var(--max-width-content);
+    margin-inline: auto;
+    padding-inline: var(--padding-page);
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: var(--padding-page-md);
+    }
+    .container-content {
+      padding-inline: var(--padding-page-md);
+    }
+  }
+
+  /* ─── Checklist Layout ──────────────────────────────────────────────────
+   * Mobile stacks the header, phase tabs and phases. From md the sidebar
+   * spans both rows, beside the header (row 1) and the phases (row 2), so
+   * the aircraft name renders once for both layouts.
+   * ──────────────────────────────────────────────────────────────────── */
+  .layout-checklist {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .layout-checklist {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  /* ─── Procedure Post Layout ─────────────────────────────────────────────
+   * Posts built around :::checklist blocks. One reading column; from lg a
+   * sticky step rail sits to its left.
+   * ──────────────────────────────────────────────────────────────────── */
+  .layout-procedure {
+    max-width: var(--max-width-content);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .layout-procedure {
+      max-width: none;
+      display: grid;
+      grid-template-columns: var(--width-sidebar-lg) minmax(0, var(--max-width-content));
+      justify-content: center;
+      column-gap: 3rem;
+    }
+  }
+
+  /* ─── Z-Index Utilities ──────────────────────────────────────────────── 
+   * Tailwind v4 only recognizes --z-index-* for auto-generating z-* classes.
+   * Our --z-* tokens are generic CSS vars, so we define utilities manually.
+   * ──────────────────────────────────────────────────────────────────── */
+  .z-behind {
+    z-index: var(--z-behind);
+  }
+  .z-base {
+    z-index: var(--z-base);
+  }
+  .z-sticky {
+    z-index: var(--z-sticky);
+  }
+  .z-progress {
+    z-index: var(--z-progress);
+  }
+  .z-header {
+    z-index: var(--z-header);
+  }
+  .z-overlay {
+    z-index: var(--z-overlay);
+  }
+  .z-tooltip {
+    z-index: var(--z-tooltip);
+  }
+  .z-modal {
+    z-index: var(--z-modal);
+  }
+  .z-skip {
+    z-index: var(--z-skip);
+  }
+
+  /* ─── Duration Utilities ─────────────────────────────────────────────── 
+   * Tailwind v4 only recognizes --transition-duration-* for duration-* classes.
+   * Our --duration-* tokens are generic CSS vars, so we define utilities manually.
+   * ──────────────────────────────────────────────────────────────────── */
+  .duration-instant {
+    transition-duration: var(--duration-instant);
+  }
+  .duration-fast {
+    transition-duration: var(--duration-fast);
+  }
+  .duration-base {
+    transition-duration: var(--duration-base);
+  }
+
+  .animate-menu-in {
+    animation: menuIn var(--duration-base) var(--ease-default) both;
+  }
+
+  @keyframes menuIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* ─── CSS Animations ─────────────────────────────────────────────────── 
+   * Preferred over Framer Motion for simple entrance animations.
+   * Use animation-delay via inline style for stagger effects.
+   * ──────────────────────────────────────────────────────────────────── */
+  .animate-fade-up {
+    animation: fadeUp 0.4s ease-out both;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ─── Scrollbar (global — non-utility) ─────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ─── Print ────────────────────────────────────────────────────────────────
+ * A checklist prints as black on white in the mode on screen, so it can go on
+ * a kneeboard or be saved as a PDF. Site chrome, phase
+ * navigation and buttons stay off the paper; the empty tick boxes stay on it.
+ * ──────────────────────────────────────────────────────────────────────── */
+@media print {
+  :root,
+  [data-theme] {
+    --color-base: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-raised: #ffffff;
+    --color-border: #bdbdbd;
+    --color-primary: #000000;
+    --color-muted: #333333;
+    --color-faint: #555555;
+    --color-accent: #000000;
+    --color-success: #000000;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  main button {
+    display: none !important;
+  }
+
+  .layout-checklist {
+    display: block !important;
+  }
+
+  .sticky {
+    position: static !important;
+  }
+
+  .animate-fade-up {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,1340 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "battery",
+              "info": "First switch on a cold-and-dark 777. Powers the standby buses.",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "bus-tie",
+              "info": "Both bus tie switches in AUTO. Lets the electrical system isolate buses on its own if a generator drops out.",
+              "label": "Bus Tie",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "external-power",
+              "info": "Primary and secondary ground power switches if a GPU is connected. Skip if you only have the APU.",
+              "label": "External Power",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Hold the selector to START, release to ON. The APU is a small jet engine in the tail that gives you bleed air for engine start and electricity before the big engines are running.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "apu-generators",
+              "info": "Both APU generator switches. Power them on once the APU AVAIL light comes up.",
+              "label": "APU Generators",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "wipers",
+              "label": "Wipers",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "info": "Red on the left wingtip, green on the right, white at the tail. Required from engine start to shutdown.",
+              "label": "NAV Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "logo-lights",
+              "info": "Lights on the inboard tail illuminating the airline logo. Usually on at night.",
+              "label": "Logo Lights",
+              "tier": "full"
+            }
+          ],
+          "title": "Power-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "adiru",
+              "info": "Air Data Inertial Reference Unit. Needs about 10 minutes to align at typical latitudes — start it early so you are not waiting later.",
+              "label": "ADIRU",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "thrust-asymm-comp",
+              "info": "Automatically applies rudder if you lose an engine on takeoff. Set and forget.",
+              "label": "Thrust Asymm Comp",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "pfc-switches",
+              "info": "Three Primary Flight Computers run the 777 fly-by-wire system. Verify all three switches in AUTO and guarded.",
+              "label": "PFC Switches",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "generator-control",
+              "info": "Both engine main generators and both backup generators on. The OFF light stays lit until the engine is running.",
+              "label": "Generator Control",
+              "tier": "full"
+            },
+            {
+              "action": "GUARDED",
+              "id": "drive-disconnects",
+              "info": "The DRIVE switches mechanically uncouple a generator from the engine. Guards down — you only pull these for an engine fire or seized generator.",
+              "label": "Drive Disconnects",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "window-heat",
+              "info": "All four. Stops cockpit windows fogging up at altitude and helps with bird-strike resilience.",
+              "label": "Window Heat",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "anti-ice",
+              "info": "Engine and wing anti-ice selectors in AUTO. The system turns ice protection on automatically when icing is detected.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "ARMED",
+              "id": "emergency-lights",
+              "info": "Floor-path lighting that fires automatically if cabin power is lost. Close the guard once armed.",
+              "label": "Emergency Lights",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "oxygen-masks",
+              "info": "Overhead Panel. Don and test both crew oxygen masks — verify flow, communications, and normal/100% selector function. Confirm oxygen pressure is adequate on the quantity indicator.",
+              "label": "Oxygen Masks",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "hyd-demand-pumps",
+              "info": "Left, center, and right demand pumps in AUTO. They come on automatically when the system needs extra pressure.",
+              "label": "Hyd Demand Pumps",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "hyd-emps",
+              "info": "C1 and C2 electric primary pumps on. The 777 fly-by-wire needs hydraulic pressure to move the control surfaces.",
+              "label": "Hyd EMPs",
+              "tier": "normal"
+            }
+          ],
+          "title": "Overhead Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "AUTO",
+              "id": "pack-1-2",
+              "info": "The two air conditioning packs take hot bleed air and turn it into the cool, pressurised air you breathe. AUTO lets the system regulate flow on its own.",
+              "label": "Pack 1+2",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "trim-air",
+              "info": "Lets each cabin zone be heated or cooled separately so the front and back are not at wildly different temperatures.",
+              "label": "Trim Air",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "recirc-fans",
+              "info": "Both fans recirculate cabin air through the HEPA filters instead of dumping it overboard, which saves bleed air and fuel.",
+              "label": "Recirc Fans",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "bleed-isolation",
+              "info": "L, C, and R isolation valves in AUTO. They open and close automatically to keep the bleed manifold pressurised on one side if the other fails.",
+              "label": "Bleed Isolation",
+              "tier": "full"
+            },
+            {
+              "action": "AUTO",
+              "id": "apu-bleed",
+              "info": "Sends APU pressurised air into the duct so the engine starters have something to spin them up with.",
+              "label": "APU Bleed",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "engine-bleeds",
+              "info": "Both engine bleeds armed. They take over from the APU once the engines are stable.",
+              "label": "Engine Bleeds",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "crossfeed",
+              "info": "Initial state — opened later for fuel balancing if needed.",
+              "label": "Crossfeed",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pumps",
+              "info": "Left and right main pumps always on. Center pumps on only if there is fuel in the center tank.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
+              "id": "pressurization",
+              "info": "Forward and aft outflow valves in AUTO. The system handles cabin pressurisation automatically once a landing altitude is set in the FMC.",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Air & Fuel"
+        },
+        {
+          "items": [
+            {
+              "action": "PROGRAM",
+              "id": "fmc-preflight",
+              "info": "Walk through the CDU pages in order: confirm aircraft and navdata on IDENT, align the position on POS INIT, build the route on RTE, pick the SID and STAR on DEP/ARR, enter weights and reserves on PERF INIT, set takeoff thrust on THRUST LIM, and read your V-speeds off TAKEOFF REF. Hit EXEC after each page.",
+              "label": "FMC Preflight",
+              "tier": "quick"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atis",
+              "info": "Recorded broadcast of weather, runway in use, and field conditions at the departure airport.",
+              "label": "ATIS",
+              "tier": "normal"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "atc-clearance",
+              "info": "Departure clearance from ground or clearance delivery before pushback. Tells you the SID, initial altitude and squawk code.",
+              "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "info": "Cross-check the fuel on the EICAS against the loaded flight plan.",
+              "label": "Fuel Quantity",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "stab-trim",
+              "info": "Stabiliser trim per the FMC TAKEOFF REF page. Should land in the green band on the EICAS.",
+              "label": "Stab Trim",
+              "tier": "quick"
+            },
+            {
+              "action": "ZERO",
+              "id": "rudder-aileron-trim",
+              "info": "Both at zero. The takeoff roll can swerve hard if either of these is mis-set.",
+              "label": "Rudder & Aileron Trim",
+              "tier": "full"
+            }
+          ],
+          "title": "FMC Preflight"
+        },
+        {
+          "items": [
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Local pressure. With QNH set the altimeter reads field elevation while you are on the ground.",
+              "label": "Altimeters",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "flight-director",
+              "info": "The magenta bars on the PFD that command pitch and roll. You hand-fly the bars and the autopilot follows them too.",
+              "label": "Flight Director",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "autothrust",
+              "info": "Both autothrottle switches armed so TO/GA mode engages on the takeoff push.",
+              "label": "Autothrust",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "mcp-bugs",
+              "info": "Speed bug at V2 + 10, heading at the runway, altitude at initial cleared level. These are what the autopilot and FD will fly to after takeoff.",
+              "label": "MCP Bugs",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "lnav-vnav",
+              "info": "Both armed before takeoff. They engage at the thrust reduction altitude and start flying the FMC route and vertical profile.",
+              "label": "LNAV / VNAV",
+              "tier": "quick"
+            },
+            {
+              "action": "UP",
+              "id": "autopilot-disc-bar",
+              "info": "Guard above the autopilot disconnect button. Up means it is in the way of an accidental disconnect.",
+              "label": "Autopilot DISC Bar",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "standby-instruments",
+              "info": "The little PFD between the captain and FO seats. Verify it is aligned and reading local QNH.",
+              "label": "Standby Instruments",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "efis",
+              "info": "Minimums reference, baro reference, ND mode and range. WXR/TFC/TERR off for the gate.",
+              "label": "EFIS",
+              "tier": "full"
+            }
+          ],
+          "title": "MCP"
+        },
+        {
+          "items": [
+            {
+              "action": "RTO",
+              "id": "autobrake",
+              "info": "Rejected Takeoff arming. If you abort the takeoff, autobrake slams on max braking the moment thrust comes back to idle.",
+              "label": "Autobrake",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "speed-brake",
+              "label": "Speed Brake",
+              "tier": "full"
+            },
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Both throttles at idle and reverse stowed.",
+              "label": "Throttles",
+              "tier": "full"
+            },
+            {
+              "action": "AGREE",
+              "id": "flap-lever",
+              "info": "Match the lever to the actual flap position on the EICAS.",
+              "label": "Flap Lever",
+              "tier": "full"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "fuel-control",
+              "info": "Both levers at cutoff. These are the actual fuel valves — moving them to RUN during start is what lights the engine off.",
+              "label": "Fuel Control",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "transponder",
+              "info": "Squawk code from your clearance, mode in STBY for now. You will switch it to TA/RA before takeoff.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "TEST",
+              "id": "weather-radar",
+              "info": "Self-test the radar before the gate so you know it works. AUTO afterwards.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "IN",
+              "id": "engine-fire-handles",
+              "info": "Both fire handles seated and not illuminated. Pulling one cuts fuel, hydraulics and electrics from that engine.",
+              "label": "Engine Fire Handles",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "fire-test",
+              "info": "Press and hold the fire/overheat test button. Verify all the warning lights illuminate, then release.",
+              "label": "Fire Test",
+              "tier": "full"
+            }
+          ],
+          "title": "Pedestal"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CLOSED",
+              "id": "doors",
+              "info": "All passenger and cargo doors. The EICAS doors page should show all clear before you can pressurise.",
+              "label": "Doors",
+              "tier": "normal"
+            },
+            {
+              "action": "CLOSED & LOCKED",
+              "id": "flight-deck-door",
+              "info": "Per security protocols, once both pilots are seated.",
+              "label": "Flight Deck Door",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "external-power",
+              "info": "Disconnect ground power before pushback if you had it plugged in.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "info": "The flashing red anti-collision light on top and bottom of the fuselage. Required before any engine start so the ground crew know the engines are about to spool.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "seat-belts",
+              "info": "Seat belt signs on before pushback.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "no-smoking",
+              "label": "No Smoking",
+              "tier": "full"
+            },
+            {
+              "action": "OBTAIN",
+              "id": "pushback-clearance",
+              "info": "Ground crew confirms the tug is attached and the area behind the aircraft is clear.",
+              "label": "Pushback Clearance",
+              "tier": "normal"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "parking-brake",
+              "info": "Released for pushback, set if you are starting at the gate.",
+              "label": "Parking Brake",
+              "tier": "full"
+            },
+            {
+              "action": "PULL",
+              "id": "engine-2-start",
+              "info": "Real-world Boeing convention is to start engine 2 (right) first so the captain can monitor cross-cockpit. Pull the start selector to START.",
+              "label": "Engine 2 Start",
+              "tier": "quick"
+            },
+            {
+              "action": "RUN",
+              "id": "engine-2-fuel",
+              "info": "Move the fuel control lever to RUN once N2 stabilises around 25%. That introduces fuel and the engine lights off.",
+              "label": "Engine 2 Fuel",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "engine-2-monitor",
+              "info": "Watch for a clean light-off — exhaust temperature, fan speed, fuel flow all rising normally with no hung start or hot start.",
+              "label": "Engine 2 Monitor",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "engine-1",
+              "info": "Same sequence: pull the start selector, then fuel control to RUN at ~25% N2. Wait for engine 2 to stabilise before kicking off engine 1.",
+              "label": "Engine 1",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "eicas",
+              "info": "Both engines stable at idle and no caution messages.",
+              "label": "EICAS",
+              "tier": "full"
+            }
+          ],
+          "title": "Engine Start"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "generators",
+              "info": "Verify both engine generators are online — no OFF light on either of them.",
+              "label": "Generators",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-generators",
+              "info": "Hand the electrical load over from the APU to the engine generators now that both engines are stable.",
+              "label": "APU Generators",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed",
+              "info": "Engines now feed the pneumatic system — APU bleed no longer needed.",
+              "label": "APU Bleed",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "apu",
+              "info": "Engines now feed the pneumatic system — APU bleed no longer needed.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "NORM",
+              "id": "start-selectors",
+              "info": "Both start selectors return to NORM automatically once N2 is up, but verify here.",
+              "label": "Start Selectors",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Turn on if you have visible moisture or freezing temperatures during start or taxi.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-controls",
+              "info": "Move the yoke and rudder full and free on every axis. Confirms the fly-by-wire and all three hydraulic systems are responding.",
+              "label": "Flight Controls",
+              "tier": "quick"
+            },
+            {
+              "action": "SET FOR T/O",
+              "id": "flaps",
+              "info": "Per the FMC TAKEOFF REF page. Typically 5, 15, or 20 on the 777 depending on weight and runway length.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "recall",
+              "info": "Press CANCEL then RECALL on the EICAS to flush old messages and surface any active ones.",
+              "label": "Recall",
+              "tier": "full"
+            }
+          ],
+          "title": "After Start Flow"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Forward-facing white light on the nose gear so ground crew and other aircraft see you moving.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "runway-turnoff-lights",
+              "info": "Wing-root lights that throw light to the side. Useful at night for spotting taxiway turnoffs.",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "brakes",
+              "info": "Test brakes and nosewheel steering at low speed. Max around 30 kts on straights, 8 to 10 in turns — the 777 is heavy and the tires get hot fast.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "flight-instruments",
+              "info": "Cross-check the PFDs during taxi — attitude, heading, altimeters, all in agreement.",
+              "label": "Flight Instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Taxi Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "High-intensity flashes on the wingtips and tail. Required when on the runway or in the air.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Bright forward lights on the wings. On below 10,000 ft and on the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "runway-turnoff-lights-2",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "TA/RA",
+              "id": "transponder",
+              "info": "Switches the TCAS to full-resolution mode. With it active, the system can call CLIMB or DESCEND to avoid other traffic.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "weather-radar",
+              "info": "Onboard radar that paints precipitation. Lets you steer around storm cells.",
+              "label": "Weather Radar",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY T/O",
+              "id": "flaps",
+              "info": "Cross-check the flap position matches what the FMC TAKEOFF REF page expects.",
+              "label": "Flaps",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "The Flight Mode Annunciator across the top of the PFD. Before takeoff you should see TO/GA armed for thrust and roll, and LNAV/VNAV armed below.",
+              "label": "FMA",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "clock",
+              "label": "Clock",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "before-takeoff",
+      "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RELEASED",
+              "id": "brakes",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "TOGA",
+              "id": "throttles",
+              "info": "Stabilise around 55% N1 first to let both GE90s spool together, then push the throttles forward to TO/GA. The autothrottle takes over and sets full takeoff thrust.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Smooth rotation at 2 to 3 degrees per second to about 12 to 15 degrees of pitch. The 300ER has a long fuselage, so over-rotating will scrape the tail on the runway.",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "info": "Once the vertical speed indicator on the PFD is positive and confirmed climbing.",
+              "label": "Positive Climb",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RETRACT",
+              "id": "flaps",
+              "info": "On the speed bugs in sequence: 20 down to 15, then 5, then 1, then UP. Usually starts at acceleration altitude, around 1,500 ft AGL.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "Engage CMD A at pilot discretion, earliest around 200 ft AGL.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "RTO arming auto-disengages on takeoff — set the knob to OFF for cleanup.",
+              "label": "Autobrake",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Turn on if you are climbing through icing — visible moisture below 10°C outside air temperature.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "label": "Taxi Lights",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "runway-turnoff-lights",
+              "label": "Runway Turnoff Lights",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "gear",
+              "info": "Confirm all three gear show UP and locked on the EICAS.",
+              "label": "Gear",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY UP",
+              "id": "flaps-2",
+              "info": "Confirm flaps are fully retracted before accelerating to climb speed.",
+              "label": "Flaps",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "cabin-pressure",
+              "info": "Verify the cabin is pressurising normally on the EICAS.",
+              "label": "Cabin Pressure",
+              "tier": "full"
+            }
+          ],
+          "title": "Initial Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Off above 10,000 ft.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "logo-lights",
+              "label": "Logo Lights",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "seat-belts",
+              "info": "Pilot call. Usually off in smooth air, on if turbulence is forecast.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "STD",
+              "id": "altimeters",
+              "info": "Set standard pressure (29.92 inHg or 1013 hPa) at the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Passing 10,000 ft"
+        }
+      ],
+      "id": "after-takeoff-climb",
+      "title": "After Takeoff / Climb"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "AS REQUIRED",
+              "id": "seat-belts",
+              "info": "Cycle on and off based on the ride and turbulence forecasts.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "CHECK",
+              "id": "top-of-descent",
+              "info": "Distance to T/D shows on the FMC PROG page. Quick rule of thumb: take cruise altitude in thousands of feet, multiply by three, that is roughly your descent distance in nautical miles for a 3 degree path.",
+              "label": "Top Of Descent",
+              "tier": "normal"
+            },
+            {
+              "action": "MONITOR",
+              "id": "fuel-quantity",
+              "info": "Cross-check fuel against the flight plan every 30 minutes or so on long legs.",
+              "label": "Fuel Quantity",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "In steady cruise the Flight Mode Annunciator should show speed mode active, LNAV tracking the route, and VNAV PATH holding altitude.",
+              "label": "FMA",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise Monitoring"
+        }
+      ],
+      "id": "cruise",
+      "title": "Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "OBTAIN",
+              "id": "arrival-atis",
+              "info": "Pull the destination ATIS roughly 50 NM before top of descent. Tells you the runway in use and weather.",
+              "label": "Arrival ATIS",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPLETE",
+              "id": "approach-briefing",
+              "info": "Brief the runway, approach type, minimums, missed approach procedure, and taxi expectations.",
+              "label": "Approach Briefing",
+              "tier": "normal"
+            },
+            {
+              "action": "PROGRAM",
+              "id": "fmc-approach",
+              "info": "On the INIT REF page, jump to APPROACH. Enter VREF, pick the landing flap setting, and update arrival winds.",
+              "label": "FMC Approach",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "ils-frequency",
+              "info": "Tune the ILS for the planned runway, either via the FMC nav radio page or the standby tuner.",
+              "label": "ILS Frequency",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "autobrake",
+              "info": "A 2 or 3 setting is typical for a dry runway. Use higher values for short or contaminated runways.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "minimums",
+              "info": "Set the decision height for an ILS, or minimum descent altitude for a non-precision approach.",
+              "label": "Minimums",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "info": "Engine and wing anti-ice if descending through cloud or icing temperatures.",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "holding",
+              "info": "If ATC tells you to hold, enter it via the FMC HOLD page so the autopilot flies the racetrack for you.",
+              "label": "Holding",
+              "tier": "full"
+            },
+            {
+              "action": "PRESELECT",
+              "id": "approach-altitude",
+              "info": "Set the platform altitude for the final approach fix on the MCP. The lowest you should be before glideslope capture or starting the final descent.",
+              "label": "Approach Altitude",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "descent",
+              "info": "Verify VNAV PATH starts the descent automatically at top of descent.",
+              "label": "Descent",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Back on passing 10,000 ft for visibility.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "250 KIAS",
+              "id": "speed",
+              "info": "Below 10,000 ft you are speed-limited to 250 knots in most airspace, unless ATC waives it.",
+              "label": "Speed",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "seat-belts",
+              "info": "Below 10,000 ft. Seatbelt sign ON for the approach.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "altimeters",
+              "info": "Set local pressure passing the transition level on descent. Now your altimeter reads above ground again instead of pressure altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "CHECK",
+              "id": "ils-frequency",
+              "info": "Final verify the ILS is tuned to the correct runway frequency.",
+              "label": "ILS Frequency",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK QNH",
+              "id": "altimeters",
+              "info": "Sanity check that altimeters are reading close to field elevation as you near the runway.",
+              "label": "Altimeters",
+              "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "approach-mode",
+              "info": "Push LOC to capture the localiser, then APP once established. Both LOC and G/S go green on the FMA when captured.",
+              "label": "Approach Mode",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "missed-approach-alt",
+              "info": "Pre-set the go-around altitude on the MCP. If you push TO/GA, the autopilot immediately captures the right level-off.",
+              "label": "Missed Approach Alt",
+              "tier": "normal"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "flaps-1",
+              "info": "First flap step, taken at UP maneuvering speed.",
+              "label": "Flaps 1",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-5",
+              "label": "Flaps 5",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-15",
+              "info": "Plan for Flaps 15 / Gear UP / ~170 KIAS at the final approach fix.",
+              "label": "Flaps 15",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-20",
+              "info": "At glideslope intercept, around 8 NM out.",
+              "label": "Flaps 20",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Three green lights confirmed on the EICAS — all gear down and locked.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "landing-flaps",
+              "info": "Flaps 25 or 30 on glideslope. Latest by 1,000 ft AGL — you want a stable approach by then.",
+              "label": "Landing Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "speed-brake",
+              "info": "Arms the spoilers to deploy automatically the moment the wheels touch the runway.",
+              "label": "Speed Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Looking for LAND 3 with ROLLOUT and FLARE armed if you are letting it autoland. Otherwise plan to disconnect by minimums.",
+              "label": "FMA",
+              "tier": "full"
+            }
+          ],
+          "title": "Configuration"
+        }
+      ],
+      "id": "approach",
+      "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "throttles",
+              "info": "Pull the throttles back to idle around 30 ft above the runway, even with autothrottle on.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "ROTATE",
+              "id": "flare",
+              "info": "Slow flare to about 3 to 4 degrees of pitch as you cross 30 ft. Touch down on the main gear first, then lower the nose.",
+              "label": "Flare",
+              "tier": "quick"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "reverse-thrust",
+              "info": "Both engines into reverse — keep it smooth and symmetric. The GE90s have a lot of mass to pull back.",
+              "label": "Reverse Thrust",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "reverse",
+              "info": "Pull reverse out of detent at 60 KIAS. Below that the engines can ingest debris kicked up off the runway.",
+              "label": "Reverse",
+              "tier": "full"
+            },
+            {
+              "action": "APPLY",
+              "id": "brakes",
+              "info": "Manual braking around 40 KIAS disengages the autobrake and gives you direct control to make your taxiway turnoff.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "After an autoland, disconnect once clear of the runway.",
+              "label": "Autopilot",
+              "tier": "full"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Back on for taxi-in.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "landing-lights",
+              "info": "Off once clear of the active runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes",
+              "info": "Off once clear of the active runway.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "logo-lights",
+              "label": "Logo Lights",
+              "tier": "full"
+            },
+            {
+              "action": "DOWN",
+              "id": "speed-brake",
+              "info": "Stowed manually after rollout if you forgot, or to confirm it stowed itself.",
+              "label": "Speed Brake",
+              "tier": "full"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Clean up flaps once clear of the runway so ground vehicles do not catch on them.",
+              "label": "Flaps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "label": "Autobrake",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "info": "STBY on the ground means you are not transmitting position to ATC any more.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "START",
+              "id": "apu",
+              "info": "Brought back online so it can take over electrics and bleed at the gate, ready for engine shutdown.",
+              "label": "APU",
+              "tier": "normal"
+            }
+          ],
+          "title": "After Landing Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Set once parked at the gate so the aircraft does not roll.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "CUTOFF",
+              "id": "fuel-control",
+              "info": "Both levers to cutoff. The engines spool down to zero N2 over the next minute or two.",
+              "label": "Fuel Control",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "beacon",
+              "info": "Off once the engines have stopped spinning. Tells ground crew it is safe to approach.",
+              "label": "Beacon",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-pumps",
+              "info": "Off once the engines have spooled down.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "hyd-emps",
+              "info": "Electric primary pumps off after engine shutdown — no hydraulic pressure needed at the gate.",
+              "label": "Hyd EMPs",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "weather-radar",
+              "info": "Off on the ground.",
+              "label": "Weather Radar",
+              "tier": "full"
+            }
+          ],
+          "title": "Shutdown"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "seat-belts",
+              "info": "Overhead Panel. Seatbelt sign OFF.",
+              "label": "Seatbelt Sign",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "anti-ice-2",
+              "label": "Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder-2",
+              "label": "Transponder",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "flight-director",
+              "info": "Clears the magenta bars so the next crew can set up fresh.",
+              "label": "Flight Director",
+              "tier": "full"
+            },
+            {
+              "action": "UNLOCK",
+              "id": "cockpit-door",
+              "info": "Unlocked once at the gate so the cabin crew and cleaners can get in.",
+              "label": "Cockpit Door",
+              "tier": "full"
+            }
+          ],
+          "title": "Cabin & Avionics"
+        },
+        {
+          "items": [
+            {
+              "action": "OFF",
+              "id": "adiru",
+              "info": "Saves the alignment data for next flight.",
+              "label": "ADIRU",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "emergency-lights",
+              "label": "Emergency Lights",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "pack-1-2",
+              "info": "Off at the gate. Boarding and unloading uses jetway air conditioning.",
+              "label": "Pack 1+2",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "apu-2",
+              "info": "Leave running on external power as needed during the turnaround for galley and cabin power.",
+              "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "external-power",
+              "info": "Connect the GPU before shutting the APU down so the aircraft never goes dark.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "battery",
+              "info": "Final switch — aircraft fully de-powered.",
+              "label": "Battery",
+              "tier": "quick"
+            }
+          ],
+          "title": "Secure"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
+    }
+  ],
+  "description": "A long-range wide-body titan driven by the most dominant turbofan engine in existence. Procedures cover the 777-200 and 777-300ER.",
+  "manufacturer": "Boeing",
+  "model": "777",
+  "slug": "b777",
+  "status": "active",
+  "suffix": "Combined",
+  "systemsType": "airliner",
+  "addon": "PMDG",
+  "flightsim": "MSFS",
+  "simDepth": "Study Level"
+}

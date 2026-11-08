@@ -1,0 +1,36 @@
+name: New checklist
+description: Send a checklist for an aircraft HANGAR01 doesn't cover yet
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in a copy of the [sample checklist Sheet](https://docs.google.com/spreadsheets/d/1FOwrMW12GnBehLL55yKaKO_LF_Dew_CfiF2zfGhlkb4/copy), download it as a CSV file and attach it below. If you'd rather write the JSON yourself, see [CONTRIBUTING.md](https://github.com/TheWriterMan/HANGAR01/blob/main/CONTRIBUTING.md) and open a pull request instead.
+  - type: input
+    id: addon
+    attributes:
+      label: Add-on and version
+      placeholder: Black Square King Air 350 v1.2
+    validations:
+      required: true
+  - type: dropdown
+    id: sim
+    attributes:
+      label: Sim
+      options:
+        - MSFS 2024
+        - MSFS 2020
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: csv
+    attributes:
+      label: Your checklist
+      description: Drag the CSV file in here.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything we should know
+      description: Optional. Such as procedures that differ from the real aircraft, or phases you left out.

@@ -1,0 +1,34 @@
+phase,group,label,action,tier,info
+Preflight,Cabin,Parking brake,SET,quick,
+Preflight,Cabin,Avionics master,OFF,normal,Keeps avionics off while the battery powers up.
+Preflight,Cabin,Battery master,ON,quick,
+Preflight,Cabin,Fuel quantity,CHECK,quick,Compare both gauges against your planned fuel.
+Preflight,Cabin,Flaps,"EXTEND, CHECK",normal,"Lower fully, check both sides visually, then retract."
+Preflight,Cabin,Battery master,OFF,normal,
+Preflight,Exterior,Walkaround,COMPLETE,full,Often non-interactive in the sim. Tick it once you've looked around the aircraft.
+Before Start,,Seats and belts,ADJUSTED / SECURE,normal,
+Before Start,,Circuit breakers,IN,full,
+Before Start,,Fuel selector,BOTH,quick,
+Before Start,,Mixture,RICH,quick,
+Before Start,,Beacon,ON,normal,
+Engine Start,,Throttle,OPEN 1/4 INCH,quick,
+Engine Start,,Area,CLEAR,normal,
+Engine Start,,Magnetos,START,quick,Release to BOTH as soon as the engine fires.
+Engine Start,,Oil pressure,CHECK,quick,Should rise within 30 seconds.
+Engine Start,,Avionics master,ON,quick,
+Taxi,,Taxi light,ON,normal,
+Taxi,,Brakes,CHECK,quick,
+Taxi,,Flight instruments,CHECK,normal,"Heading, attitude and turn coordinator respond correctly in turns."
+Taxi,,Transponder,ALT,normal,
+Before Takeoff,Run-up,Throttle,1700 RPM,normal,
+Before Takeoff,Run-up,Magnetos,CHECK,normal,Drop on each magneto should be small and even.
+Before Takeoff,Run-up,Throttle,IDLE,normal,
+Before Takeoff,Final items,Flight controls,FREE AND CORRECT,quick,
+Before Takeoff,Final items,Flaps,SET FOR TAKEOFF,quick,
+Before Takeoff,Final items,Landing light,ON,normal,
+Before Takeoff,Final items,Strobes,ON,normal,
+Shutdown,,Avionics master,OFF,quick,
+Shutdown,,Mixture,IDLE CUT-OFF,quick,
+Shutdown,,Magnetos,OFF,quick,
+Shutdown,,Battery master,OFF,quick,
+Shutdown,,Parking brake,SET,quick,

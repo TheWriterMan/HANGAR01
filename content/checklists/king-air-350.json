@@ -1,0 +1,720 @@
+{
+  "checklist": [
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON momentarily — check voltage > 24V",
+              "id": "battery",
+              "label": "Battery",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "fuel-quantity",
+              "label": "Fuel quantity",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "annunciators",
+              "label": "Annunciators",
+              "tier": "full"
+            },
+            {
+              "action": "OFF for walkaround",
+              "id": "battery-2",
+              "label": "Battery",
+              "tier": "full"
+            }
+          ],
+          "title": "Cabin"
+        },
+        {
+          "items": [
+            {
+              "action": "COMPLETE",
+              "id": "exterior-walkaround",
+              "info": "Non-interactive in MSFS",
+              "label": "Exterior walkaround",
+              "tier": "full"
+            }
+          ],
+          "title": "Walkaround"
+        }
+      ],
+      "id": "preflight",
+      "title": "Preflight"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Adjusted",
+              "id": "seats-belts",
+              "label": "Seats / belts",
+              "tier": "full"
+            },
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "label": "Parking brake",
+              "tier": "quick",
+              "info": "Center Pedestal. Prevents the aircraft from rolling during prep."
+            },
+            {
+              "action": "IDLE",
+              "id": "power-levers",
+              "label": "Power levers",
+              "tier": "quick"
+            },
+            {
+              "action": "FULL FORWARD (HIGH RPM)",
+              "id": "prop-levers",
+              "label": "Prop levers",
+              "tier": "quick"
+            },
+            {
+              "action": "FUEL CUTOFF",
+              "id": "condition-levers",
+              "label": "Condition levers",
+              "tier": "quick"
+            },
+            {
+              "action": "ON / OFF until after start",
+              "id": "battery-avionics-master",
+              "label": "Battery / Avionics master",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "beacon",
+              "label": "Beacon",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pumps-boost",
+              "label": "Fuel pumps (boost)",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "crossfeed",
+              "label": "Crossfeed",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "generators",
+              "label": "Generators",
+              "tier": "full"
+            },
+            {
+              "action": "Set field elev + 500 ft",
+              "id": "pressurization",
+              "info": "Auto-managed in MSFS Asobo default",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Cockpit Setup"
+        }
+      ],
+      "id": "before-start",
+      "title": "Before Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "ignition-start-switch-right",
+              "label": "Ignition / Start switch — Right",
+              "tier": "quick"
+            },
+            {
+              "action": "Monitor N1 to ~13–14% before introducing fuel",
+              "id": "monitor-n1-to-12",
+              "label": "Monitor N1 to ~12%",
+              "tier": "full"
+            },
+            {
+              "action": "LOW IDLE",
+              "id": "condition-lever-right",
+              "label": "Condition lever — Right",
+              "tier": "quick"
+            },
+            {
+              "action": "Monitor — peak below 1000°C",
+              "id": "itt",
+              "info": "Real PT6A-60A limit 1090°C momentary; in MSFS default, treat ~870°C as practical limit.",
+              "label": "ITT",
+              "tier": "full"
+            },
+            {
+              "action": "N1 ~52%, ITT in green",
+              "id": "stabilize-at-low-idle",
+              "label": "Stabilize at LOW IDLE",
+              "tier": "full"
+            },
+            {
+              "action": "HIGH IDLE",
+              "id": "condition-lever-right-high-idle",
+              "info": "Center Pedestal. Move to HIGH IDLE once engine is stable at LOW IDLE.",
+              "label": "Condition Lever — Right",
+              "tier": "quick"
+            },
+            {
+              "action": "ON / RESET",
+              "id": "generator-right",
+              "label": "Generator — Right",
+              "tier": "quick"
+            },
+            {
+              "action": "Same procedure",
+              "id": "repeat-for-left",
+              "label": "Repeat for Left",
+              "tier": "quick"
+            }
+          ],
+          "title": "Start Right then Left"
+        }
+      ],
+      "id": "engine-start",
+      "title": "Engine Start"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "avionics-master",
+              "label": "Avionics master",
+              "tier": "quick"
+            },
+            {
+              "action": "OPEN",
+              "id": "bleed-air-valves",
+              "label": "Bleed air valves",
+              "tier": "quick"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "trim-pitch-aileron-rudder",
+              "label": "Trim — pitch / aileron / rudder",
+              "tier": "quick"
+            },
+            {
+              "action": "UP (or APPROACH for short field)",
+              "id": "flaps",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
+              "action": "Set QNH",
+              "id": "altimeters",
+              "label": "Altimeters",
+              "tier": "quick"
+            },
+            {
+              "action": "Verify",
+              "id": "flight-plan-fms",
+              "label": "Flight plan / FMS",
+              "tier": "quick"
+            },
+            {
+              "action": "Code SET, STBY",
+              "id": "transponder",
+              "label": "Transponder",
+              "tier": "quick"
+            }
+          ],
+          "title": "After Start Flow"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "taxi-light",
+              "label": "Taxi light",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "brakes",
+              "label": "Brakes",
+              "tier": "full"
+            },
+            {
+              "action": "GROUND IDLE for taxi",
+              "id": "power-levers",
+              "label": "Power levers",
+              "tier": "full"
+            },
+            {
+              "action": "Cross-check",
+              "id": "flight-instruments",
+              "label": "Flight instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Taxi"
+        }
+      ],
+      "id": "after-start-taxi",
+      "title": "After Start / Taxi"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "1500 ft-lb torque",
+              "id": "power-levers",
+              "label": "Power levers",
+              "tier": "full"
+            },
+            {
+              "action": "Each engine",
+              "id": "prop-feather-check",
+              "info": "May not respond reliably in Asobo default; works on Carenado.",
+              "label": "Prop feather check",
+              "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "autofeather",
+              "label": "Autofeather",
+              "tier": "quick"
+            },
+            {
+              "action": "ARM",
+              "id": "auto-ignition",
+              "label": "Auto-ignition",
+              "tier": "full"
+            },
+            {
+              "action": "Green",
+              "id": "engine-instruments",
+              "label": "Engine instruments",
+              "tier": "full"
+            }
+          ],
+          "title": "Run-Up"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "strobes",
+              "label": "Strobes",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "landing-taxi-lights",
+              "label": "Landing & taxi lights",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "pitot-heat",
+              "label": "Pitot heat",
+              "tier": "quick"
+            },
+            {
+              "action": "ALT",
+              "id": "transponder",
+              "label": "Transponder",
+              "tier": "full"
+            },
+            {
+              "action": "Verify on",
+              "id": "bleed-air",
+              "label": "Bleed air",
+              "tier": "full"
+            },
+            {
+              "action": "Verify rate set",
+              "id": "cabin-pressurization",
+              "label": "Cabin pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Lineup"
+        }
+      ],
+      "id": "run-up-before-takeoff",
+      "title": "Run-Up / Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RELEASE",
+              "id": "brakes",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "Smoothly to TAKEOFF torque (~2230 ft-lb)",
+              "id": "power-levers",
+              "label": "Power levers",
+              "tier": "quick"
+            },
+            {
+              "action": "Within limits",
+              "id": "engine-instruments",
+              "label": "Engine instruments",
+              "tier": "full"
+            },
+            {
+              "action": "VR ~100–105 KIAS (weight dependent)",
+              "id": "rotate",
+              "label": "Rotate",
+              "tier": "quick"
+            },
+            {
+              "action": "GEAR UP",
+              "id": "positive-climb",
+              "label": "Positive climb",
+              "tier": "quick"
+            },
+            {
+              "action": "125 KIAS (best angle)",
+              "id": "climb-speed",
+              "label": "Climb speed (Vx)",
+              "tier": "quick"
+            },
+            {
+              "action": "ON above 200 ft",
+              "id": "yaw-damper",
+              "label": "Yaw damper",
+              "tier": "full"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "MAX CLIMB (1820 ft-lb / 1700 RPM)",
+              "id": "power",
+              "label": "Power",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF above 400 AGL or as required",
+              "id": "autofeather",
+              "label": "Autofeather",
+              "tier": "full"
+            },
+            {
+              "action": "140 KIAS or as briefed",
+              "id": "climb-speed",
+              "label": "Climb speed",
+              "tier": "quick"
+            },
+            {
+              "action": "Verify schedule",
+              "id": "pressurization",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "MAX CRUISE / NORM CRUISE per chart",
+              "id": "power-2",
+              "label": "Power",
+              "tier": "quick"
+            },
+            {
+              "action": "1500 RPM (lower for noise)",
+              "id": "prop-rpm",
+              "label": "Prop RPM",
+              "tier": "quick"
+            },
+            {
+              "action": "Monitor",
+              "id": "fuel-balance",
+              "label": "Fuel balance",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "label": "Anti-ice",
+              "tier": "full"
+            }
+          ],
+          "title": "Cruise"
+        }
+      ],
+      "id": "climb-cruise",
+      "title": "Climb / Cruise"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Complete",
+              "id": "atis-approach-briefing",
+              "label": "ATIS / approach briefing",
+              "tier": "full"
+            },
+            {
+              "action": "Set destination QNH at TL",
+              "id": "altimeters",
+              "label": "Altimeters",
+              "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "auto-ignition",
+              "label": "Auto-ignition",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "anti-ice",
+              "label": "Anti-ice",
+              "tier": "full"
+            },
+            {
+              "action": "Set destination field elev",
+              "id": "pressurization",
+              "label": "Pressurization",
+              "tier": "full"
+            }
+          ],
+          "title": "Descent Prep"
+        }
+      ],
+      "id": "descent",
+      "title": "Descent"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Secure",
+              "id": "seats-belts",
+              "label": "Seats / belts",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "landing-light",
+              "label": "Landing light",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF below 200 AGL",
+              "id": "yaw-damper",
+              "label": "Yaw damper",
+              "tier": "full"
+            },
+            {
+              "action": "On schedule",
+              "id": "flaps-approach",
+              "label": "Flaps APPROACH",
+              "tier": "quick"
+            },
+            {
+              "action": "Extend below 184 KIAS (Vlo); 181 KIAS (Vle) once down",
+              "id": "gear-down",
+              "label": "Gear DOWN",
+              "tier": "quick"
+            },
+            {
+              "action": "On final, below 158 KIAS",
+              "id": "flaps-down-full",
+              "label": "Flaps DOWN (FULL)",
+              "tier": "quick"
+            },
+            {
+              "action": "Set per chart (~110 KIAS for typical weight)",
+              "id": "vref",
+              "label": "Vref",
+              "tier": "quick"
+            }
+          ],
+          "title": "Approach"
+        }
+      ],
+      "id": "before-landing",
+      "title": "Before Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "Hold nose off",
+              "id": "mains-touch-first",
+              "label": "Mains touch first",
+              "tier": "full"
+            },
+            {
+              "action": "As required",
+              "id": "reverse-beta-then-reverse",
+              "label": "Reverse (Beta then reverse)",
+              "tier": "full"
+            },
+            {
+              "action": "Smooth application",
+              "id": "brakes",
+              "label": "Brakes",
+              "tier": "full"
+            },
+            {
+              "action": "By 40 kts",
+              "id": "reverse-to-ground-idle",
+              "label": "Reverse to GROUND IDLE",
+              "tier": "full"
+            }
+          ],
+          "title": "Touchdown & Rollout"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "UP",
+              "id": "flaps",
+              "label": "Flaps",
+              "tier": "full"
+            },
+            {
+              "action": "Reset",
+              "id": "trim",
+              "label": "Trim",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "anti-ice",
+              "info": "Center Pedestal. Engine anti-ice ON after landing — leave on while taxiing in.",
+              "label": "Anti-ice",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "pitot-heat",
+              "label": "Pitot heat",
+              "tier": "full"
+            },
+            {
+              "action": "OFF (NAV/taxi remain)",
+              "id": "strobes",
+              "label": "Strobes",
+              "tier": "full"
+            },
+            {
+              "action": "STBY",
+              "id": "transponder",
+              "label": "Transponder",
+              "tier": "full"
+            }
+          ],
+          "title": "After Landing Flow"
+        }
+      ],
+      "id": "after-landing",
+      "title": "After Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "label": "Parking brake",
+              "tier": "quick"
+            },
+            {
+              "action": "GROUND IDLE for ~1 min cooldown",
+              "id": "power-levers",
+              "label": "Power levers",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "avionics-master",
+              "label": "Avionics master",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "generators",
+              "label": "Generators",
+              "tier": "full"
+            },
+            {
+              "action": "FUEL CUTOFF",
+              "id": "condition-levers",
+              "label": "Condition levers",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "boost-pumps",
+              "label": "Boost pumps",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "battery",
+              "label": "Battery",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF when props stop",
+              "id": "beacon",
+              "label": "Beacon",
+              "tier": "full"
+            }
+          ],
+          "title": "Shutdown & Secure"
+        }
+      ],
+      "id": "shutdown",
+      "title": "Shutdown"
+    }
+  ],
+  "description": "A pressurized, highly versatile cabin-class aircraft that became the gold standard of corporate turboprops.",
+  "manufacturer": "Beechcraft",
+  "model": "King Air",
+  "slug": "king-air-350",
+  "status": "active",
+  "suffix": " 350i",
+  "systemsType": "turboprop",
+  "addon": "Microsoft",
+  "flightsim": "MSFS",
+  "simDepth": "High Fidelity",
+  "variant": "Third-party King Air add-ons model their systems differently."
+}
