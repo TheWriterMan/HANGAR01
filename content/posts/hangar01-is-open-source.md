@@ -4,11 +4,10 @@ description: 'All checklists and everything behind HANGAR01 are now open source 
 slug: 'hangar01-is-open-source'
 date: '2026-11-08T12:00:00.000Z'
 category: 'News'
-status: 'draft'
 timage: '/images/news/hangar01-is-open-source/banner.webp'
 bannerImage: '/images/news/hangar01-is-open-source/banner.webp'
 bannerStyle: 'card'
-imageAltText: 'The GitHub mark beside TheWriterMan / HANGAR01 on a black ground with a green and purple glow'
+imageAltText: 'A GitHub pull request, HANGAR01 becomes free and open-source #4, with a purple Merged label: TheWriterMan merged into main'
 tags: []
 ---
 
