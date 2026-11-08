@@ -48,13 +48,16 @@ export interface MarkdownBlock {
     | 'checklist'
     | 'code-block'
     | 'image'
-    | 'link-card';
+    | 'link-card'
+    | 'meta';
   level?: number;
   tone?: string;
   title?: string;
   filename?: string;
   language?: string;
   src?: string;
+  /** An image's caption, from the Markdown title: ![alt](src "caption"). */
+  caption?: string;
   lines: string[];
 }
 
@@ -118,7 +121,7 @@ function parseInlineStyles(text: string): React.ReactNode[] {
   });
 }
 
-const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)\)$/;
+const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)(?:\s+"(.*?)")?\)$/;
 
 /**
  * Splits raw markdown into structural blocks.
@@ -163,6 +166,11 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
         i++;
       }
       i++; // Skip closing :::
+      // `:::meta` lists an item's maker, sim and price, one per line
+      if (tone === 'meta') {
+        blocks.push({ type: 'meta', lines: calloutLines.filter((l) => l.trim()) });
+        continue;
+      }
       // `:::link <url>` embeds a link preview card; its lines are `image:`, `title:` and `description:`
       if (tone.startsWith('link ')) {
         blocks.push({
@@ -259,7 +267,7 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
     // Images: `![alt](src)` alone on a line
     const image = line.trim().match(IMAGE_LINE);
     if (image) {
-      blocks.push({ type: 'image', src: image[2], lines: [image[1]] });
+      blocks.push({ type: 'image', src: image[2], caption: image[3], lines: [image[1]] });
       i++;
       continue;
     }
@@ -420,8 +428,34 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
                   decoding="async"
                   className="block w-full h-auto"
                 />
+                {block.caption && (
+                  <figcaption className="px-3 py-2 border-t border-border text-xs text-muted">
+                    {parseInlineStyles(block.caption)}
+                  </figcaption>
+                )}
               </figure>
             );
+          case 'meta': {
+            const labels = ['By', 'Sim', 'Price'];
+            return (
+              <dl
+                key={index}
+                className="not-prose -mt-2 mb-5 grid grid-cols-1 sm:grid-cols-[auto_auto_1fr] border border-border bg-surface"
+              >
+                {block.lines.map((line, i) => (
+                  <div
+                    key={i}
+                    className="px-3 py-2 border-b sm:border-b-0 sm:border-r last:border-0 border-border"
+                  >
+                    <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">
+                      {labels[i] ?? ''}
+                    </dt>
+                    <dd className="text-sm text-primary">{parseInlineStyles(line.trim())}</dd>
+                  </div>
+                ))}
+              </dl>
+            );
+          }
           case 'link-card': {
             const meta = Object.fromEntries(
               block.lines
