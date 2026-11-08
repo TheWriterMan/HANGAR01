@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
       <div className="container-content pt-8 md:pt-16">
         <PageHeader
           title="ABOUT"
-          subtitle={`Free interactive checklists for ${count} aircraft in Microsoft Flight Simulator (MSFS), from the default Cessna 172 to PMDG's 737 and 777.`}
+          subtitle="Free interactive checklists for flight simulators. Step-by-step procedures from preflight to shutdown."
           backLink={{ to: '/', label: 'Return home' }}
         />
 
@@ -90,13 +90,13 @@ const AboutPage: React.FC = () => {
 
         <TextSection title="Licence">
           <p>
-            The checklists and posts are free to share and adapt under the{' '}
+            The checklists and posts are free to share and adapt for non-commercial use under the{' '}
             <a
-              href="https://creativecommons.org/licenses/by/4.0/"
+              href="https://creativecommons.org/licenses/by-nc/4.0/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Creative Commons Attribution 4.0 licence
+              Creative Commons Attribution-NonCommercial 4.0 licence
             </a>
             , as long as you credit HANGAR01 and link back to hangar01.space. See the{' '}
             <Link to="/privacy">privacy page</Link> for what the site stores and sends.

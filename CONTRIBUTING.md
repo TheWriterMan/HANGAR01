@@ -40,4 +40,4 @@ Checklists are for simulator add-ons, not real aircraft: values should match the
 
 ## License
 
-By contributing, you agree that code is licensed under the MIT License and checklist and post content under CC BY 4.0 (see the [README](README.md#license)).
+By contributing, you agree that code is licensed under the MIT License and checklist and post content under CC BY-NC 4.0 (see the [README](README.md#license)).
