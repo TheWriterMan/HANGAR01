@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Check } from 'lucide-react';
 import { MarkdownBlock } from './MarkdownComponents';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 
@@ -13,11 +12,10 @@ interface Entry {
 const plain = (text: string) => text.replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/[*`]/g, '');
 
 /**
- * The post's sections as a checklist card: a sticky panel left of the article,
- * centred in the viewport from 1400px. Each section is ticked once the reader
- * has scrolled past it, and the one being read carries the accent bar.
- * When a post has `###` headings, its `##` headings become the card's group
- * rows and the `###` headings its items, as phases and items do on a checklist.
+ * The post's sections as a plain list left of the article, sticky and centred
+ * in the viewport from 1400px. The section being read is bright, the ones
+ * already passed dim, the ones ahead stay muted. A post with `###` headings
+ * lists those (the items); otherwise it lists its `##` headings.
  */
 const PostTOC: React.FC<{ blocks: MarkdownBlock[] }> = ({ blocks }) => {
   const entries = useMemo<Entry[]>(
@@ -79,16 +77,14 @@ const PostTOC: React.FC<{ blocks: MarkdownBlock[] }> = ({ blocks }) => {
   if (items.length < 2) return null;
 
   const activeIndex = entries.findIndex((e) => e.id === activeId);
-  // Items before the active one are done. The active item's group counts as reached.
-  const isDone = (e: Entry) => activeIndex >= 0 && entries.indexOf(e) < activeIndex;
+  // The section being read is the last listed item at or before the active heading.
   const activeItemId = (() => {
-    if (activeIndex < 0) return null;
     for (let i = activeIndex; i >= 0; i--) {
       if (!hasItems || entries[i].level === 3) return entries[i].id;
     }
     return null;
   })();
-  const doneCount = items.filter(isDone).length;
+  const activeItemIndex = items.findIndex((e) => e.id === activeItemId);
 
   const go = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     const el = document.getElementById(id);
@@ -99,78 +95,29 @@ const PostTOC: React.FC<{ blocks: MarkdownBlock[] }> = ({ blocks }) => {
   };
 
   return (
-    <div className="print:hidden! hidden min-[1400px]:block absolute right-full top-0 bottom-0 mr-10 w-60">
+    <div className="print:hidden! hidden min-[1400px]:block absolute right-full top-0 bottom-0 mr-12 w-56">
       <div className="sticky top-(--height-shell,3rem) h-[calc(100vh-var(--height-shell,3rem))] flex items-center">
         <nav
           aria-label="On this page"
           ref={navRef}
-          className="w-full max-h-[calc(100vh-var(--height-shell,3rem)-3rem)] overflow-y-auto overscroll-contain bg-base border border-border"
+          className="w-full max-h-[calc(100vh-var(--height-shell,3rem)-3rem)] overflow-y-auto overscroll-contain"
         >
-          <div className="sticky top-0 bg-surface px-4 py-2.5 border-b border-border flex items-center justify-between">
-            <p className="text-sm font-medium text-accent">On this page</p>
-            <span
-              className={`text-2xs font-mono tabular-nums ${
-                doneCount === items.length ? 'text-success' : 'text-muted'
-              }`}
-            >
-              {doneCount}/{items.length}
-            </span>
-          </div>
-          <ul>
-            {entries.map((e) => {
-              if (hasItems && e.level === 2) {
-                return (
-                  <li
-                    key={e.id}
-                    className="px-4 pt-3 pb-1.5 text-2xs font-medium uppercase tracking-wider text-muted"
-                  >
-                    <a
-                      href={`#${e.id}`}
-                      onClick={(ev) => go(ev, e.id)}
-                      className="no-underline hover:text-primary"
-                    >
-                      {e.title}
-                    </a>
-                  </li>
-                );
-              }
-              const done = isDone(e);
-              const active = e.id === activeItemId;
+          <ul className="space-y-0.5">
+            {items.map((e, i) => {
+              const active = i === activeItemIndex;
+              const passed = activeItemIndex >= 0 && i < activeItemIndex;
               return (
-                <li key={e.id} className="relative border-b border-border/50 last:border-b-0">
+                <li key={e.id}>
                   <a
                     href={`#${e.id}`}
                     onClick={(ev) => go(ev, e.id)}
                     aria-current={active ? 'location' : undefined}
-                    className={`group no-underline flex items-center justify-between gap-3 px-4 py-2 text-[13px] leading-snug transition-colors duration-base ${
-                      active
-                        ? 'bg-surface/50 text-primary'
-                        : done
-                          ? 'text-faint hover:text-primary'
-                          : 'text-muted hover:text-primary hover:bg-surface-raised/30'
+                    className={`block py-1.5 text-[13px] leading-snug no-underline transition-colors duration-base hover:text-primary ${
+                      active ? 'text-primary' : passed ? 'text-faint opacity-50' : 'text-muted'
                     }`}
                   >
-                    <span className={done && !active ? 'opacity-60' : ''}>{e.title}</span>
-                    <span
-                      aria-hidden="true"
-                      className={`shrink-0 w-3.5 h-3.5 border flex items-center justify-center transition-colors duration-base ${
-                        done ? 'bg-success border-success' : 'border-border bg-surface'
-                      }`}
-                    >
-                      <Check
-                        size={10}
-                        className={`text-inverted stroke-[3px] transition-transform duration-fast ${
-                          done ? 'scale-100' : 'scale-0'
-                        }`}
-                      />
-                    </span>
+                    {e.title}
                   </a>
-                  <span
-                    aria-hidden="true"
-                    className={`pointer-events-none absolute left-0 top-0 bottom-0 w-[2px] ${
-                      active ? 'bg-accent' : ''
-                    }`}
-                  />
                 </li>
               );
             })}
