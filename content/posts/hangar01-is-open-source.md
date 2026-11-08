@@ -33,6 +33,8 @@ Fly something that isn't on the site? Send me the whole checklist. You don't nee
 
 You'll need a Google account to copy the Sheet and a free GitHub account to open the issue.
 
+![The sample checklist Sheet: a black header row with phase, group, label and action, then Preflight rows such as Parking brake SET and Avionics master OFF](/images/news/hangar01-is-open-source/sample-sheet.webp)
+
 1. Open the [sample checklist Sheet](https://docs.google.com/spreadsheets/d/1FOwrMW12GnBehLL55yKaKO_LF_Dew_CfiF2zfGhlkb4/copy) and make a copy. It comes filled in with a short Cessna 172 checklist, and the "How to fill this in" tab explains each column.
 2. Replace the example rows with your aircraft's items, one row per item, in the order you do them in the sim.
 3. Download it as a CSV (File > Download > Comma-separated values).
