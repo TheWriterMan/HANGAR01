@@ -1,5 +1,5 @@
 import { ChecklistItem, ChecklistPhase } from '../types';
-import { ChecklistMode } from '../components/ui/ModeToggle';
+import type { ChecklistMode } from '../components/ui/ModeToggle';
 
 /** Phases with fewer than this many items (after filtering) get hidden. */
 export const PHASE_MIN_ITEMS = 4;
