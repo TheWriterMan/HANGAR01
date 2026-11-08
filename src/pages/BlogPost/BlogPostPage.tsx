@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPostBySlug } from '../../utils/posts';
 import Breadcrumbs, { breadcrumbSchema, Crumb } from '../../components/layout/Breadcrumbs';
-import { MarkdownRenderer } from './MarkdownComponents';
+import { MarkdownBlocks, parseMarkdown } from './MarkdownComponents';
+import PostTOC from './PostTOC';
 import SEO from '../../components/seo/SEO';
 import NotFoundPage from '../NotFoundPage';
 import PostHeroBanner from './PostHeroBanner';
@@ -14,6 +15,7 @@ const BlogPostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   // Posts are bundled at build time, so the lookup is synchronous.
   const post = useMemo(() => (id ? getPostBySlug(id) : null), [id]);
+  const blocks = useMemo(() => (post ? parseMarkdown(post.content) : []), [post]);
 
   if (!post) {
     return <NotFoundPage />;
@@ -54,13 +56,16 @@ const BlogPostPage: React.FC = () => {
         <div className="container-content pt-8 md:pt-12">
           <Breadcrumbs crumbs={crumbs} className="mb-8" />
 
-          <article className="animate-fade-up">
+          <article className="relative animate-fade-up">
+            <PostTOC blocks={blocks} />
+
             {post.imageUrl && (
               <PostHeroBanner
                 imageUrl={post.imageUrl}
                 imageAltText={post.imageAltText}
                 credit={post.imageCredit}
                 creditUrl={post.imageCreditUrl}
+                card={post.bannerStyle === 'card'}
               />
             )}
 
@@ -69,7 +74,7 @@ const BlogPostPage: React.FC = () => {
             {/* Content Body */}
             <div className="pt-10">
               <div className="prose prose-invert prose-lg max-w-none">
-                <MarkdownRenderer content={post.content} />
+                <MarkdownBlocks blocks={blocks} />
               </div>
             </div>
           </article>

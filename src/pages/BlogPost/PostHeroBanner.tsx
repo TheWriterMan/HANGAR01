@@ -7,6 +7,8 @@ interface PostHeroBannerProps {
   credit?: string;
   /** The photo's source page. */
   creditUrl?: string;
+  /** A drawn card shows at full strength, without the fade a photo gets. */
+  card?: boolean;
 }
 
 const PostHeroBanner: React.FC<PostHeroBannerProps> = ({
@@ -14,6 +16,7 @@ const PostHeroBanner: React.FC<PostHeroBannerProps> = ({
   imageAltText,
   credit,
   creditUrl,
+  card = false,
 }) => {
   return (
     <figure>
@@ -26,9 +29,11 @@ const PostHeroBanner: React.FC<PostHeroBannerProps> = ({
           decoding="async"
           // The post's largest image, so fetch it first.
           fetchPriority="high"
-          className="w-full h-full object-cover opacity-80"
+          className={`w-full h-full object-cover ${card ? '' : 'opacity-80'}`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-base/80 via-transparent to-transparent pointer-events-none" />
+        {!card && (
+          <div className="absolute inset-0 bg-gradient-to-t from-base/80 via-transparent to-transparent pointer-events-none" />
+        )}
       </div>
       {credit && (
         <figcaption className="mt-2 text-2xs text-muted text-right">

@@ -47,15 +47,29 @@ export interface MarkdownBlock {
     | 'callout'
     | 'checklist'
     | 'code-block'
-    | 'image';
+    | 'image'
+    | 'link-card'
+    | 'meta';
   level?: number;
   tone?: string;
   title?: string;
   filename?: string;
   language?: string;
   src?: string;
+  /** An image's caption, from the Markdown title: ![alt](src "caption"). */
+  caption?: string;
+  /** A `##` or `###` heading's anchor, unique within the post. */
+  id?: string;
   lines: string[];
 }
+
+const headingSlug = (text: string) =>
+  text
+    .replace(/\[(.*?)\]\(.*?\)/g, '$1')
+    .replace(/[*`]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 
 /**
  * Parses markdown inline styles: **bold**, *italic*, `code`, and [text](url).
@@ -117,7 +131,7 @@ function parseInlineStyles(text: string): React.ReactNode[] {
   });
 }
 
-const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)\)$/;
+const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)(?:\s+(["'])(.*?)\3)?\)$/;
 
 /**
  * Splits raw markdown into structural blocks.
@@ -125,6 +139,7 @@ const IMAGE_LINE = /^!\[(.*?)\]\((\S+?)\)$/;
 export function parseMarkdown(markdown: string): MarkdownBlock[] {
   const lines = markdown.split(/\r?\n/);
   const blocks: MarkdownBlock[] = [];
+  const usedIds = new Map<string, number>();
 
   let i = 0;
   while (i < lines.length) {
@@ -162,6 +177,20 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
         i++;
       }
       i++; // Skip closing :::
+      // `:::meta` lists an item's maker, sim and price, one per line
+      if (tone === 'meta') {
+        blocks.push({ type: 'meta', lines: calloutLines.filter((l) => l.trim()) });
+        continue;
+      }
+      // `:::link <url>` embeds a link preview card; its lines are `image:`, `title:` and `description:`
+      if (tone.startsWith('link ')) {
+        blocks.push({
+          type: 'link-card',
+          src: tone.slice('link '.length).trim(),
+          lines: calloutLines,
+        });
+        continue;
+      }
       // `:::checklist Title` embeds an interactive mini checklist
       if (tone.startsWith('checklist')) {
         blocks.push({
@@ -185,9 +214,17 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
       if (match) {
         const level = match[1].length;
         const text = match[2].trim();
+        let id: string | undefined;
+        if (level === 2 || level === 3) {
+          const base = headingSlug(text) || 'section';
+          const n = usedIds.get(base) ?? 0;
+          usedIds.set(base, n + 1);
+          id = n ? `${base}-${n + 1}` : base;
+        }
         blocks.push({
           type: 'heading',
           level,
+          id,
           lines: [text],
         });
         i++;
@@ -249,7 +286,7 @@ export function parseMarkdown(markdown: string): MarkdownBlock[] {
     // Images: `![alt](src)` alone on a line
     const image = line.trim().match(IMAGE_LINE);
     if (image) {
-      blocks.push({ type: 'image', src: image[2], lines: [image[1]] });
+      blocks.push({ type: 'image', src: image[2], caption: image[4], lines: [image[1]] });
       i++;
       continue;
     }
@@ -310,7 +347,8 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
               return (
                 <h2
                   key={index}
-                  className="type-heading text-primary mt-10 mb-5 border-b border-border pb-2"
+                  id={block.id}
+                  className="type-heading text-primary mt-10 mb-5 border-b border-border pb-2 scroll-mt-20"
                 >
                   {headingText}
                 </h2>
@@ -318,7 +356,11 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
             }
             if (block.level === 3) {
               return (
-                <h3 key={index} className="type-subheading text-primary mt-8 mb-4">
+                <h3
+                  key={index}
+                  id={block.id}
+                  className="type-subheading text-primary mt-8 mb-4 scroll-mt-20"
+                >
                   {headingText}
                 </h3>
               );
@@ -410,8 +452,90 @@ export const MarkdownBlocks: React.FC<MarkdownBlocksProps> = ({ blocks, renderCh
                   decoding="async"
                   className="block w-full h-auto"
                 />
+                {block.caption && (
+                  <figcaption className="px-3 py-2 border-t border-border text-xs text-muted">
+                    {parseInlineStyles(block.caption)}
+                  </figcaption>
+                )}
               </figure>
             );
+          case 'meta': {
+            // Lines are positional (maker, sim, price) unless written `Label: value`.
+            // Only the maker and labelled lines show a label; sim and price read on their own.
+            const facts = block.lines.map((line, i) => {
+              const labelled = line.trim().match(/^([A-Z][A-Za-z ]{1,15}):\s+(.+)$/);
+              if (labelled) return { label: labelled[1], value: labelled[2], kind: 'labelled' };
+              const kind = ['by', 'sim', 'price'][i] ?? 'other';
+              return { label: kind === 'by' ? 'By' : '', value: line.trim(), kind };
+            });
+            const inline = facts.filter((f) => f.kind !== 'labelled');
+            const labelled = facts.filter((f) => f.kind === 'labelled');
+            return (
+              <div key={index} className="not-prose -mt-2 mb-6 text-sm leading-relaxed">
+                <p className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
+                  {inline.map((f, i) => (
+                    <React.Fragment key={i}>
+                      <span
+                        className={
+                          f.kind === 'price'
+                            ? 'font-medium text-accent'
+                            : 'font-medium text-primary'
+                        }
+                      >
+                        {f.label && <span className="font-normal text-muted">{f.label} </span>}
+                        {parseInlineStyles(f.value)}
+                      </span>
+                    </React.Fragment>
+                  ))}
+                </p>
+                {labelled.map((f, i) => (
+                  <p key={i} className="mt-1">
+                    <span className="text-muted">{f.label} </span>
+                    <span className="font-medium text-primary">{parseInlineStyles(f.value)}</span>
+                  </p>
+                ))}
+              </div>
+            );
+          }
+          case 'link-card': {
+            const meta = Object.fromEntries(
+              block.lines
+                .map((l) => l.match(/^\s*(\w+):\s*(.*)$/))
+                .filter((m): m is RegExpMatchArray => m !== null)
+                .map((m) => [m[1], m[2].trim()]),
+            );
+            const host = block.src ? new URL(block.src).hostname.replace(/^www\./, '') : '';
+            return (
+              <a
+                key={index}
+                href={block.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group not-prose my-8 flex items-center gap-4 sm:gap-6 border border-border bg-surface p-4 sm:p-5 no-underline hover:border-accent transition-colors duration-base"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="block font-mono text-xs text-muted">{host}</span>
+                  <span className="block text-primary font-semibold mt-1 group-hover:text-accent break-words">
+                    {meta.title || block.src}
+                  </span>
+                  {meta.description && (
+                    <span className="block text-muted text-sm mt-1">{meta.description}</span>
+                  )}
+                </span>
+                {meta.image && (
+                  <img
+                    src={meta.image}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={600}
+                    className="block shrink-0 w-24 sm:w-40 h-auto border border-border"
+                  />
+                )}
+              </a>
+            );
+          }
           case 'code-block': {
             const codeContent = block.lines.join('\n');
             return (

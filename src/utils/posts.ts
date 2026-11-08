@@ -92,6 +92,7 @@ export function parsePost(rawMarkdown: string, excerptLength: 150 | 200 = 200): 
     metaTitle: metadata.metaTitle || undefined,
     imageCredit: metadata.imageCredit || undefined,
     imageCreditUrl: metadata.imageCreditUrl || undefined,
+    bannerStyle: metadata.bannerStyle === 'card' ? 'card' : undefined,
     content: content,
     excerpt: deriveExcerpt(content, excerptLength),
   };

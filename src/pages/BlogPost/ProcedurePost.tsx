@@ -255,6 +255,7 @@ const ProcedurePost: React.FC<ProcedurePostProps> = ({ post, before, after }) =>
               imageAltText={post.imageAltText}
               credit={post.imageCredit}
               creditUrl={post.imageCreditUrl}
+              card={post.bannerStyle === 'card'}
             />
           )}
 
