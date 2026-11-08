@@ -21,6 +21,8 @@ interface AircraftCardProps {
   headingLevel?: 'h2' | 'h3';
   /** The image's `sizes`. The default fits the three-column library grid. */
   sizes?: string;
+  /** Smaller type and padding, for the home page's four-across New Arrivals row. */
+  compact?: boolean;
 }
 
 const simLabel = (sim: string): string => {
@@ -34,6 +36,7 @@ const AircraftCard: React.FC<AircraftCardProps> = ({
   aircraft,
   headingLevel: Heading = 'h2',
   sizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
+  compact = false,
 }) => {
   return (
     <Link
@@ -91,7 +94,7 @@ const AircraftCard: React.FC<AircraftCardProps> = ({
         )}
 
         {/* Text — bottom left, over the scrim */}
-        <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
+        <div className={`absolute bottom-0 left-0 right-0 ${compact ? 'px-3 pb-3' : 'px-4 pb-4'}`}>
           <div className="flex items-center gap-2 mb-1.5 flex-wrap">
             <span className="text-xs font-bold uppercase text-white/80">
               {aircraft.manufacturer}
@@ -108,7 +111,9 @@ const AircraftCard: React.FC<AircraftCardProps> = ({
             )}
           </div>
 
-          <div className="text-base md:text-lg font-medium text-white leading-tight">
+          <div
+            className={`${compact ? 'text-base' : 'text-base md:text-lg'} font-medium text-white leading-tight`}
+          >
             <Heading className="inline">{formatModelName(aircraft)}</Heading>
             {aircraft.suffix === 'Combined' && (
               <sup className="text-accent text-2xs ml-1 font-medium">ALL</sup>
