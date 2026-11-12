@@ -5,20 +5,20 @@ import TextSection from '../../components/layout/TextSection';
 import SEO from '../../components/seo/SEO';
 
 /** Last substantive change to this page. Update it when what the site stores or sends changes. */
-const UPDATED = '8 November 2026';
+const UPDATED = '13 November 2026';
 
 /**
  * What HANGAR01 stores and sends. The newsletter, contact and report forms collect email
  * addresses. Facts from the code: src/utils/storage.ts and
  * src/utils/progress.ts (on the device), api/contact.ts and api/report.ts (the forms),
- * src/entry-client.tsx (Vercel's scripts).
+ * src/entry-client.tsx (Vercel's scripts), src/utils/events.ts (the usage counts).
  */
 const PrivacyPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-base pb-24">
       <SEO
         title="Privacy"
-        description="What HANGAR01 stores and sends: ticks saved only on your device, cookie-free visit counts, and what you type into the contact, newsletter and report forms."
+        description="What HANGAR01 stores and sends: ticks saved only on your device, cookie-free counts of visits and how checklists are used, and what you type into the contact, newsletter and report forms."
         path="/privacy"
       />
       <div className="container-content pt-8 md:pt-16">
@@ -31,9 +31,9 @@ const PrivacyPage: React.FC = () => {
         <TextSection title="On your device">
           <p>
             Your ticks, your chosen mode for each aircraft and your light or dark theme are saved in
-            your browser's storage, so a checklist picks up where you left off. They never leave
-            your device. A report you are still writing is kept until you close the tab. Clearing
-            your browser's site data removes all of it.
+            your browser's storage, so a checklist picks up where you left off. Which items you
+            ticked never leaves your device. A report you are still writing is kept until you close
+            the tab. Clearing your browser's site data removes all of it.
           </p>
         </TextSection>
 
@@ -42,7 +42,11 @@ const PrivacyPage: React.FC = () => {
             The site is hosted on Vercel. Vercel's analytics count page visits and measure how fast
             pages load, without cookies and without identifying you: the page, where the visit came
             from, the country, and the type of device and browser. Like any web host, Vercel's
-            servers also log your IP address to deliver the site.
+            servers also log your IP address to deliver the site. HANGAR01 also counts how
+            checklists are used: the mode you open and switch to, how many items you tick, how far
+            you get, how long the page is open, and whether you print or open the report form. These
+            counts use no cookies and nothing that identifies you, and HANGAR01 keeps them on
+            Cloudflare.
           </p>
         </TextSection>
 

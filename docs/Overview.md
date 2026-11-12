@@ -73,6 +73,10 @@ Tokens, type, layout and rules: [DESIGN.md](../DESIGN.md).
 - All storage access goes through `src/utils/storage.ts`, which never throws.
 - **Filter pipeline**: `filterChecklist()` drops items not visible in the current mode, then drops empty groups, then drops phases with fewer than 4 items.
 
+### Usage counts
+
+- Read the usage counts before changing a checklist page: the seven events sent by `src/utils/events.ts` are stored as site `hangar01` in the `events` D1 database in the HOBI Cloudflare account, and the private `TheWriterMan/events` repo's README says how to query them.
+
 ## Development
 
 ```bash
