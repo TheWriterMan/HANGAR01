@@ -95,3 +95,7 @@ Server-side only, set in Vercel: see [Reporting-plan.md](Reporting-plan.md#secur
 ## Deployment
 
 - `.github/workflows/ci.yml`: after the quality checks, a push to `main` deploys production (www.hangar01.space) and pings IndexNow; a push to `dev` deploys the preview at dev.hangar01.space.
+- The Vercel project `hangar01` has no Git link: `ci.yml` deploys through the Vercel API with `gitSource`.
+- Speed Insights needs Vercel Pro (its toggle answers `payment_required`), so it is off.
+- `vite preview` answers an unknown path with the home page and 200, while Vercel serves `404.html`. Check 404s on dev, not on the preview.
+- A browser check that should count as a real visitor uses Playwright with `channel: 'chrome'`, `ignoreDefaultArgs: ['--enable-automation']` and `--disable-blink-features=AutomationControlled`.
