@@ -72,15 +72,26 @@ function referrerHost(): string {
 }
 
 /** The JSON the collector receives. Exported for the tests. */
-export function eventBody<N extends keyof UsageEvents>(name: N, values: UsageEvents[N]): string {
-  return JSON.stringify({ n: name, p: values, u: window.location.pathname, r: referrerHost() });
+export function eventBody<N extends keyof UsageEvents>(
+  name: N,
+  values: UsageEvents[N],
+  path: string = window.location.pathname,
+): string {
+  return JSON.stringify({ n: name, p: values, u: path, r: referrerHost() });
 }
 
-/** Sends one event. Never throws and never delays the page. */
-export function track<N extends keyof UsageEvents>(name: N, values: UsageEvents[N]): void {
+/**
+ * Sends one event. Never throws and never delays the page. `path` defaults to
+ * the current page, and is given when the address has already moved on.
+ */
+export function track<N extends keyof UsageEvents>(
+  name: N,
+  values: UsageEvents[N],
+  path?: string,
+): void {
   try {
     if (!countingEnabled()) return;
-    const body = eventBody(name, values);
+    const body = eventBody(name, values, path);
     const blob = new Blob([body], { type: 'text/plain' });
     if (typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(ENDPOINT, blob)) return;
     void fetch(ENDPOINT, {
