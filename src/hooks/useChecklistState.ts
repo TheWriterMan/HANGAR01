@@ -2,7 +2,13 @@ import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { Aircraft, ChecklistItem, ChecklistPhase } from '../types';
 import { ChecklistMode } from '../components/ui/ModeToggle';
 import { filterChecklist, countItems } from '../utils/checklist';
-import { itemKey, loadProgress, saveProgress } from '../utils/progress';
+import {
+  itemKey,
+  legacyProgressKey,
+  loadProgress,
+  progressKey,
+  saveProgress,
+} from '../utils/progress';
 import { readStorage, writeStorage } from '../utils/storage';
 import { useReducedMotion } from './useReducedMotion';
 import { useHydrated } from './useHydrated';
@@ -18,6 +24,15 @@ function loadMode(slug: string): ChecklistMode {
 
 function loadCompleted(slug: string, checklist: ChecklistPhase[]): Record<string, boolean> {
   return Object.fromEntries(loadProgress(slug, checklist).map((k) => [k, true]));
+}
+
+/** Whether this browser had a chosen mode or ticks saved for the aircraft. */
+export function hasSavedState(slug: string): boolean {
+  return (
+    readStorage(modeKey(slug)) !== null ||
+    readStorage(progressKey(slug)) !== null ||
+    readStorage(legacyProgressKey(slug)) !== null
+  );
 }
 
 const checkedKeys = (items: Record<string, boolean>) => Object.keys(items).filter((k) => items[k]);
@@ -61,6 +76,9 @@ export interface UseChecklistStateOptions {
 }
 
 export interface UseChecklistStateReturn {
+  /** Saved mode and progress have loaded (or there is nothing to load). */
+  loaded: boolean;
+
   // Mode
   mode: ChecklistMode;
   setMode: (m: ChecklistMode) => void;
@@ -275,6 +293,7 @@ export function useChecklistState(
   );
 
   return {
+    loaded: loadedSlug === slug,
     mode,
     setMode,
     showModeToggle,

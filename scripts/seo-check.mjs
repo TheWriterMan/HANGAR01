@@ -48,6 +48,10 @@ function urlFor(file) {
   return rel === 'index' ? `${BASE_URL}/` : `${BASE_URL}/${rel}`;
 }
 
+// Pages whose description was approved word for word and runs past 160. Search
+// results cut it short, which is fine for these pages.
+const LONG_DESCRIPTION_OK = new Set([`${BASE_URL}/privacy`]);
+
 const errors = [];
 const titles = new Map();
 const descriptions = new Map();
@@ -84,7 +88,7 @@ for (const file of htmlFiles(dist)) {
   if (!title) fail('missing title');
   else if (title.length > 60) fail(`title is ${title.length} characters (max 60): "${title}"`);
   if (!description) fail('missing description');
-  else if (description.length > 160)
+  else if (description.length > 160 && !LONG_DESCRIPTION_OK.has(url))
     fail(`description is ${description.length} characters (max 160)`);
   if (h1Count !== 1) fail(`has ${h1Count} <h1> elements (expected 1)`);
   if (!canonical) fail('missing canonical');

@@ -7,6 +7,7 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
 import RouteAnnouncer from './components/layout/RouteAnnouncer';
+import PageViewCounter from './components/layout/PageViewCounter';
 import PageLoadingState from './components/ui/PageLoadingState';
 import { lazyRoute, LazyRoute } from './utils/lazyRoute';
 
@@ -61,6 +62,7 @@ const App: React.FC = () => {
     <MotionConfig reducedMotion="user">
       <ScrollToTop />
       <RouteAnnouncer />
+      <PageViewCounter />
       <div className="min-h-screen bg-base text-primary font-sans flex flex-col">
         <a
           href="#main-content"

@@ -2,6 +2,8 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Printer, RotateCcw } from 'lucide-react';
 import { Aircraft, ChecklistPhase } from '../../types';
 import { useChecklistState } from '../../hooks/useChecklistState';
+import { useChecklistEvents } from '../../hooks/useChecklistEvents';
+import { ChecklistMode } from '../../components/ui/ModeToggle';
 import {
   checklistMetaDescription,
   checklistPageTitle,
@@ -35,6 +37,19 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
     onComplete: () => setShowCompletionModal(true),
   });
 
+  const events = useChecklistEvents({
+    slug: aircraft.slug,
+    loaded: checklist.loaded,
+    mode: checklist.mode,
+    checklistData: checklist.checklistData,
+    completedItems: checklist.completedItems,
+    getItemKey: checklist.getItemKey,
+  });
+  const handleModeChange = (next: ChecklistMode) => {
+    events.viewSwitched(next);
+    checklist.setMode(next);
+  };
+
   const aircraftName = formatAircraftName(aircraft);
   const path = `/aircraft/${aircraft.slug}`;
   const crumbs: Crumb[] = [
@@ -44,7 +59,10 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
   ];
   // The bundled index carries the build-time git date; the checklist JSON doesn't.
   const lastUpdated = getAircraftList().find((ac) => ac.slug === aircraft.slug)?.lastUpdated;
-  const handleReportOpen = () => setReportOpen(true);
+  const handleReportOpen = () => {
+    if (!reportOpen) events.reportOpened();
+    setReportOpen(true);
+  };
   // Stable identities: both dialogs re-run their focus effects when onClose changes.
   const handleReportClose = useCallback(() => setReportOpen(false), []);
   const handleModalClose = useCallback(() => setShowCompletionModal(false), []);
@@ -77,7 +95,7 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
               crumbs={crumbs}
               lastUpdated={lastUpdated}
               mode={checklist.mode}
-              onModeChange={checklist.setMode}
+              onModeChange={handleModeChange}
               showModeToggle={checklist.showModeToggle}
               fullCount={checklist.fullCount}
               normalCount={checklist.normalCount}

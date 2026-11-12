@@ -7,9 +7,12 @@ import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import App, { preloadRoute } from './App';
 import { InitialChecklistContext, readEmbeddedChecklist } from './services/initialChecklist';
+import { applyCountSwitch } from './utils/events';
 
 inject();
 injectSpeedInsights();
+// ?count=off stops this browser's usage events, ?count=on starts them again.
+applyCountSwitch();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
