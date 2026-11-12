@@ -47,6 +47,8 @@ export function useChecklistEvents(input: ChecklistEventsInput) {
     latest.current = input;
   });
   const openedAt = useRef<number | null>(null);
+  // Moving to another page in the app changes the address before the leave is sent.
+  const openedPath = useRef('');
   const returning = useRef(false);
   const leaveSent = useRef(false);
 
@@ -54,6 +56,7 @@ export function useChecklistEvents(input: ChecklistEventsInput) {
   useEffect(() => {
     if (!loaded || openedAt.current !== null) return;
     openedAt.current = Date.now();
+    openedPath.current = window.location.pathname;
     returning.current = hasSavedState(slug);
     track('checklist_open', { aircraft: slug, view: latest.current.mode });
   }, [loaded, slug]);
@@ -67,14 +70,18 @@ export function useChecklistEvents(input: ChecklistEventsInput) {
       const { checklistData, completedItems, getItemKey, mode: view } = latest.current;
       const { ticked, phase } = tickSummary(checklistData, completedItems, getItemKey);
       const minutes = Math.round((Date.now() - openedAt.current) / 6000) / 10;
-      track('checklist_leave', {
-        aircraft: slug,
-        view,
-        ticked,
-        phase,
-        minutes,
-        returning: returning.current,
-      });
+      track(
+        'checklist_leave',
+        {
+          aircraft: slug,
+          view,
+          ticked,
+          phase,
+          minutes,
+          returning: returning.current,
+        },
+        openedPath.current,
+      );
     };
     const onHidden = () => {
       if (document.visibilityState === 'hidden') leave();
