@@ -11,6 +11,7 @@ import {
   Mail,
 } from 'lucide-react';
 import { LIMITS, validateReportForm } from '../../utils/validation';
+import { track } from '../../utils/events';
 
 export interface ReportPanelProps {
   isOpen: boolean;
@@ -130,6 +131,7 @@ const ReportPanel: React.FC<ReportPanelProps> = ({
       const json = await res.json();
 
       if (res.ok && json.success) {
+        track('report_sent', { aircraft: aircraftSlug });
         setStatus('success');
         clearDraft(aircraftSlug);
         setDetails('');
