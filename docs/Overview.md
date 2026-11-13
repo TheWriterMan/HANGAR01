@@ -76,8 +76,9 @@ Tokens, type, layout and rules: [DESIGN.md](../DESIGN.md).
 ### My Hangar (`/hangar`)
 
 - Visitors import their own checklist from a CSV; it stays in their browser. `src/utils/checklistCsv.ts` converts rows to the same `ChecklistPhase` tree (Papa Parse, loaded with `import()` on the import screen only), and `src/utils/localChecklists.ts` keeps it in IndexedDB (`hangar01` / `local-checklists`), falling back to memory without IndexedDB.
-- `/hangar/:id` renders the local checklist with `ChecklistView`'s `local` variant: noindex, no Report, About or related sections, no checklist events (page views send `/hangar/local`). Ticks use the v2 progress key with the local id as the slug.
-- On `/hangar` each checklist can be renamed, downloaded as CSV (`checklistToCsv`: the import format with ids, a BOM, and a leading `'` on cells starting with `=`, `+`, `-` or `@` against formula injection, which import strips again) and replaced from a new CSV, which keeps the ticks of every `<phaseId>/<itemId>` that still exists.
+- `/hangar/:id` renders the local checklist with `ChecklistView`'s `local` variant: noindex, no Report, About or related sections, no checklist events (page views send `/hangar/local`, to our counter and, through `beforeSend` in `entry-client.tsx`, to Vercel Analytics and Speed Insights). Ticks use the v2 progress key with the local id as the slug.
+- A file that isn't valid UTF-8 is read as Windows-1252 (Excel's plain "CSV (Comma delimited)"), with a warning in the preview. Phase and group names over 80 characters are cut, with a warning.
+- On `/hangar` each checklist can be renamed, downloaded as CSV (`checklistToCsv`: the import format with ids, a BOM, and a leading `'` on cells starting with `=`, `+`, `-` or `@` against formula injection, which import strips again) and replaced from a new CSV, which keeps the ticks of every `<phaseId>/<itemId>` that still exists under a phase with the same title (`ticksAfterReplace`).
 - Both routes are prerendered noindex and kept out of the sitemap. `/hangar/:id` has no file per id, so `vercel.json` (and the preview server, in `vite.config.ts`) rewrite it to the prerendered loading shell `/hangar/local`.
 
 ### Usage counts

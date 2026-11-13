@@ -1,7 +1,7 @@
 import type { Aircraft, ChecklistPhase } from '../types';
 import { countItems } from './checklist';
 import { LOCAL_CHECKLIST_LIMIT } from './checklistCsv';
-import { loadProgress, modeKey, progressKey, saveProgress } from './progress';
+import { collectItemKeys, loadProgress, modeKey, progressKey, saveProgress } from './progress';
 import { removeStorage } from './storage';
 
 /**
@@ -44,31 +44,76 @@ let dbPromise: Promise<IDBDatabase | null> | null = null;
 /** True once IndexedDB turned out to be unavailable: records last only as long as the tab. */
 export const isInMemory = () => inMemory;
 
+/** Errors that mean this browser won't give the site IndexedDB at all (storage disabled, old private modes). */
+const UNAVAILABLE = new Set(['SecurityError', 'InvalidStateError', 'NotSupportedError']);
+/** How long to wait when another tab's open connection blocks ours. */
+const BLOCKED_TIMEOUT_MS = 3_000;
+
+/**
+ * Opens the database. A failure other than "IndexedDB is unavailable" is retried on
+ * the next call, so one error never moves the whole tab to memory.
+ */
 function openDb(): Promise<IDBDatabase | null> {
+  if (inMemory) return Promise.resolve(null);
   if (dbPromise) return dbPromise;
-  dbPromise = new Promise<IDBDatabase | null>((resolve) => {
-    try {
-      if (typeof indexedDB === 'undefined') return resolve(null);
-      const request = indexedDB.open(DB_NAME, 1);
+  const attempt = new Promise<IDBDatabase | null>((resolve) => {
+    if (typeof indexedDB === 'undefined') {
+      inMemory = true;
+      return resolve(null);
+    }
+    let settled = false;
+    const finish = (db: IDBDatabase | null) => {
+      if (settled) {
+        db?.close();
+        return;
+      }
+      settled = true;
+      resolve(db);
+    };
+    const open = (version?: number) => {
+      let request: IDBOpenDBRequest;
+      try {
+        request = version ? indexedDB.open(DB_NAME, version) : indexedDB.open(DB_NAME);
+      } catch {
+        inMemory = true;
+        return finish(null);
+      }
       request.onupgradeneeded = () => {
         const db = request.result;
         if (!db.objectStoreNames.contains(STORE)) db.createObjectStore(STORE, { keyPath: 'id' });
       };
       request.onsuccess = () => {
         const db = request.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          db.close();
+          return finish(null);
+        }
         // A later version opened in another tab: step aside, reopen on next use.
         db.onversionchange = () => {
           db.close();
           dbPromise = null;
         };
-        resolve(db);
+        finish(db);
       };
-      request.onerror = () => resolve(null);
-    } catch {
-      resolve(null);
-    }
-  }).then((db) => {
-    if (!db) inMemory = true;
+      request.onerror = (event) => {
+        const name = request.error?.name;
+        // The database is at a higher version than this code asks for (a newer
+        // deploy in another tab): open it at whatever version it has.
+        if (name === 'VersionError' && version) {
+          event.preventDefault();
+          return open();
+        }
+        if (name && UNAVAILABLE.has(name)) inMemory = true;
+        finish(null);
+      };
+      // Another tab holds an older connection open, so this open waits. Give up for
+      // now; the next call tries again.
+      request.onblocked = () => setTimeout(() => finish(null), BLOCKED_TIMEOUT_MS);
+    };
+    open(1);
+  });
+  dbPromise = attempt.then((db) => {
+    if (!db) dbPromise = null;
     return db;
   });
   return dbPromise;
@@ -142,7 +187,7 @@ export async function addLocalChecklist(
 
   const stamp = now.toISOString();
   const record: LocalChecklist = {
-    id: crypto.randomUUID(),
+    id: newId(),
     schemaVersion: 1,
     meta,
     checklist,
@@ -159,42 +204,79 @@ export async function addLocalChecklist(
   return { ok: true, checklist: record };
 }
 
-/** Writes a changed record (rename, replace). Null when it's gone or the write failed. */
+export type UpdateResult =
+  | { ok: true; checklist: LocalChecklist }
+  /** `missing`: deleted, in another tab perhaps. `storage`: the write failed. */
+  | { ok: false; reason: 'missing' | 'storage' };
+
+/** Writes a changed record (rename, replace). */
 async function updateLocalChecklist(
   id: string,
   change: (record: LocalChecklist) => LocalChecklist,
   now: Date,
-): Promise<LocalChecklist | null> {
+): Promise<UpdateResult> {
   const current = await getLocalChecklist(id);
-  if (!current) return null;
+  if (!current) return { ok: false, reason: 'missing' };
   const next = { ...change(current), id, updatedAt: now.toISOString() };
   if (inMemory) {
     memory.set(id, next);
-    return next;
+    return { ok: true, checklist: next };
   }
-  return (await run('readwrite', (store) => store.put(next))).ok ? next : null;
+  const result = await run('readwrite', (store) => store.put(next));
+  return result.ok ? { ok: true, checklist: next } : { ok: false, reason: 'storage' };
 }
 
 export async function renameLocalChecklist(
   id: string,
   name: string,
   now = new Date(),
-): Promise<LocalChecklist | null> {
+): Promise<UpdateResult> {
   return updateLocalChecklist(id, (record) => ({ ...record, meta: { ...record.meta, name } }), now);
 }
 
 /**
- * Swaps in the items of a new CSV. Ticks stay on every `<phaseId>/<itemId>` that still
- * exists and are dropped for the rest, so a removed item can't come back ticked.
+ * The ticks a replace keeps: those whose item still exists under the same phase id
+ * and whose phase kept its title. Phase ids come from titles, and titles with no
+ * latin letters all become `item`, `item-2`…, so reordering or deleting such phases
+ * hands an id to another phase; the title check stops a tick moving onto it.
  */
+export function ticksAfterReplace(
+  checked: string[],
+  before: ChecklistPhase[],
+  after: ChecklistPhase[],
+): string[] {
+  const titleBefore = new Map(before.map((phase) => [phase.id, phase.title]));
+  const titleAfter = new Map(after.map((phase) => [phase.id, phase.title]));
+  const exists = collectItemKeys(after);
+  return checked.filter((key) => {
+    const phaseId = key.slice(0, key.indexOf('/'));
+    return (
+      exists.has(key) &&
+      titleBefore.has(phaseId) &&
+      titleBefore.get(phaseId) === titleAfter.get(phaseId)
+    );
+  });
+}
+
+/** Swaps in the items of a new CSV, keeping the ticks `ticksAfterReplace` allows. */
 export async function replaceLocalChecklistItems(
   id: string,
   checklist: ChecklistPhase[],
   now = new Date(),
-): Promise<LocalChecklist | null> {
-  const next = await updateLocalChecklist(id, (record) => ({ ...record, checklist }), now);
-  if (next) saveProgress(id, loadProgress(id, checklist), now);
-  return next;
+): Promise<UpdateResult> {
+  let before: ChecklistPhase[] = [];
+  const result = await updateLocalChecklist(
+    id,
+    (record) => {
+      before = record.checklist;
+      return { ...record, checklist };
+    },
+    now,
+  );
+  if (result.ok) {
+    saveProgress(id, ticksAfterReplace(loadProgress(id, before), before, checklist), now);
+  }
+  return result;
 }
 
 /** Deletes the checklist, its ticks and its mode. */
@@ -207,6 +289,16 @@ export async function deleteLocalChecklist(id: string): Promise<boolean> {
     removeStorage(modeKey(id));
   }
   return ok;
+}
+
+/** A random v4 UUID. `crypto.randomUUID` is missing outside secure contexts and in older browsers. */
+export function newId(): string {
+  if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = [...bytes].map((b) => b.toString(16).padStart(2, '0')).join('');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
 }
 
 /** Asks the browser not to evict site storage under pressure. Best effort. */

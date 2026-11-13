@@ -62,9 +62,12 @@ const ChecklistActions: React.FC<ChecklistActionsProps> = ({
       return;
     }
     if (next === name) return close();
-    if (await renameLocalChecklist(checklist.id, next)) {
+    const result = await renameLocalChecklist(checklist.id, next);
+    if (result.ok) {
       close();
       onChanged();
+    } else if (result.reason === 'missing') {
+      setError('This checklist no longer exists in this browser.');
     } else {
       setError("The name couldn't be saved. Try again.");
     }

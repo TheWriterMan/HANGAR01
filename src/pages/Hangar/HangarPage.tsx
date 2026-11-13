@@ -27,6 +27,7 @@ const HangarPage: React.FC = () => {
   const importHeadingRef = useRef<HTMLHeadingElement>(null);
   // The checklist whose items the next import replaces, if any.
   const [replacing, setReplacing] = useState<LocalChecklist | null>(null);
+  const [deleteError, setDeleteError] = useState('');
   const { hash } = useLocation();
 
   // The home page's "Import CSV" links to /hangar#import. The section only has its
@@ -40,7 +41,11 @@ const HangarPage: React.FC = () => {
       `Delete "${checklist.meta.name}" and its ticks from this browser? This can't be undone.`,
     );
     if (!ok) return;
-    await deleteLocalChecklist(checklist.id);
+    if (!(await deleteLocalChecklist(checklist.id))) {
+      setDeleteError(`"${checklist.meta.name}" couldn't be deleted. Try again.`);
+      return;
+    }
+    setDeleteError('');
     if (replacing?.id === checklist.id) setReplacing(null);
     refresh();
     listHeadingRef.current?.focus();
@@ -100,6 +105,15 @@ const HangarPage: React.FC = () => {
             )}
           </div>
 
+          {deleteError && (
+            <div
+              role="alert"
+              className="mb-6 p-3 bg-danger/20 border border-danger text-danger text-xs break-words"
+            >
+              {deleteError}
+            </div>
+          )}
+
           {!loaded ? (
             <PageLoadingState message="Loading…" className="py-10 text-sm text-muted" />
           ) : checklists.length === 0 ? (
@@ -136,14 +150,31 @@ const HangarPage: React.FC = () => {
             tabIndex={-1}
             className="type-title text-primary mb-6 break-words focus:outline-none"
           >
-            {replacing ? 'Replace from a CSV' : 'Import a CSV'}
+            {replacing ? `Replace ${replacing.meta.name} from a CSV` : 'Import a CSV'}
           </h2>
+          {/* Always in the page, so screen readers announce the banner when replace mode starts. */}
+          <div aria-live="polite">
+            {replacing && (
+              <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-4 border border-accent/40 bg-accent/10">
+                <p className="type-body text-primary break-words min-w-0">
+                  Choose the new CSV for {replacing.meta.name}. Download its CSV first to keep the
+                  ids, and with them the ticks.
+                </p>
+                <button
+                  type="button"
+                  onClick={cancelReplace}
+                  className="px-4 py-2 text-xs font-bold uppercase text-muted hover:text-primary transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            )}
+          </div>
           {loaded ? (
             <ImportPanel
               key={replacing?.id ?? 'new'}
               count={checklists.length}
               replacing={replacing}
-              onCancelReplace={cancelReplace}
             />
           ) : (
             <PageLoadingState message="Loading…" className="py-10 text-sm text-muted" />

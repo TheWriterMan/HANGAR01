@@ -3,8 +3,10 @@ import { resolve } from 'node:path';
 import Papa from 'papaparse';
 import { describe, expect, it } from 'vitest';
 import {
-  CSV_LIMITS,
   convertCsvRows,
+  CSV_LIMITS,
+  decodeCsvBytes,
+  LEGACY_ENCODING_WARNING,
   nameFromFileName,
   parseChecklistCsv,
 } from '../../src/utils/checklistCsv';
@@ -293,5 +295,49 @@ describe('nameFromFileName', () => {
   it('drops the extension and underscores', () => {
     expect(nameFromFileName('My_C172 checklist.csv')).toBe('My C172 checklist');
     expect(nameFromFileName('a320-200.tsv')).toBe('a320-200');
+  });
+});
+
+describe('file encoding', () => {
+  // "Flaps 10°" and "Café" as Excel's plain "CSV (Comma delimited)" writes them on
+  // Windows: Windows-1252, where ° is 0xB0 and é is 0xE9, neither valid UTF-8.
+  const latin1 = (text: string) => Uint8Array.from([...text].map((c) => c.charCodeAt(0)));
+  const csv1252 = latin1('phase,label,action\nCafé,Flaps 10°,SET\n');
+
+  it('reads a Windows-1252 file as Windows-1252, with a warning', () => {
+    const { text, legacyEncoding } = decodeCsvBytes(csv1252);
+    expect(legacyEncoding).toBe(true);
+    const result = parseChecklistCsv(text, Papa, { legacyEncoding });
+    expect(result.errors).toEqual([]);
+    expect(result.checklist[0].title).toBe('Café');
+    expect(result.checklist[0].groups[0].items[0].label).toBe('Flaps 10°');
+    expect(result.warnings).toEqual([{ row: null, message: LEGACY_ENCODING_WARNING }]);
+  });
+
+  it('reads UTF-8, with or without a BOM, with no warning', () => {
+    const utf8 = new TextEncoder().encode('﻿phase,label,action\nCafé,Flaps 10°,SET\n');
+    const { text, legacyEncoding } = decodeCsvBytes(utf8);
+    expect(legacyEncoding).toBe(false);
+    const result = parseChecklistCsv(text, Papa, { legacyEncoding });
+    expect(result.warnings).toEqual([]);
+    expect(result.checklist[0].groups[0].items[0].label).toBe('Flaps 10°');
+  });
+});
+
+describe('phase and group names', () => {
+  it('cuts names over 80 characters, warning once per name', () => {
+    const long = 'P'.repeat(90);
+    const group = 'G'.repeat(81);
+    const result = parse(
+      csv('phase,group,label,action', `${long},${group},A,ON`, `${long},${group},B,ON`),
+    );
+    expect(result.errors).toEqual([]);
+    expect(result.checklist[0].title).toBe('P'.repeat(80));
+    expect(result.checklist[0].groups[0].title).toBe('G'.repeat(80));
+    expect(result.itemCount).toBe(2);
+    expect(result.warnings).toEqual([
+      { row: 2, message: "Phase name is over 80 characters, so it's cut to 80." },
+      { row: 2, message: "Group name is over 80 characters, so it's cut to 80." },
+    ]);
   });
 });

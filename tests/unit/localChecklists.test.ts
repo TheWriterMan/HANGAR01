@@ -23,8 +23,10 @@ const {
   getLocalChecklist,
   isInMemory,
   listLocalChecklists,
+  newId,
   renameLocalChecklist,
   replaceLocalChecklistItems,
+  ticksAfterReplace,
   toAircraft,
 } = await import('../../src/utils/localChecklists');
 
@@ -77,8 +79,9 @@ describe('local checklists without IndexedDB', () => {
     const { id } = saved.checklist;
 
     const renamed = await renameLocalChecklist(id, 'New name', new Date('2030-01-01'));
-    expect(renamed?.meta).toEqual({ name: 'New name', sim: 'MSFS' });
-    expect(renamed?.updatedAt).toBe('2030-01-01T00:00:00.000Z');
+    if (!renamed.ok) throw new Error('not renamed');
+    expect(renamed.checklist.meta).toEqual({ name: 'New name', sim: 'MSFS' });
+    expect(renamed.checklist.updatedAt).toBe('2030-01-01T00:00:00.000Z');
 
     store.set(
       progressKey(id),
@@ -100,16 +103,21 @@ describe('local checklists without IndexedDB', () => {
       },
     ];
     const replaced = await replaceLocalChecklistItems(id, next);
-    expect(replaced?.checklist).toEqual(next);
-    expect(replaced?.meta.name).toBe('New name');
+    if (!replaced.ok) throw new Error('not replaced');
+    expect(replaced.checklist.checklist).toEqual(next);
+    expect(replaced.checklist.meta.name).toBe('New name');
     expect(JSON.parse(store.get(progressKey(id))!).checked).toEqual(['preflight/battery']);
 
     // Nothing left to keep: the progress entry goes.
     await replaceLocalChecklistItems(id, [{ ...next[0], id: 'renamed-phase' }]);
     expect(store.has(progressKey(id))).toBe(false);
 
-    expect(await renameLocalChecklist('missing', 'x')).toBeNull();
-    expect(await replaceLocalChecklistItems('missing', next)).toBeNull();
+    // Deleted in another tab, say.
+    expect(await renameLocalChecklist('missing', 'x')).toEqual({ ok: false, reason: 'missing' });
+    expect(await replaceLocalChecklistItems('missing', next)).toEqual({
+      ok: false,
+      reason: 'missing',
+    });
     await deleteLocalChecklist(id);
   });
 
@@ -121,5 +129,59 @@ describe('local checklists without IndexedDB', () => {
       ok: false,
       reason: 'limit',
     });
+  });
+});
+
+describe('ticksAfterReplace', () => {
+  const phase = (id: string, title: string, items: string[]): ChecklistPhase => ({
+    id,
+    title,
+    groups: [
+      { title, items: items.map((i) => ({ id: i, label: i, action: 'ON', tier: 'quick' })) },
+    ],
+  });
+
+  it('drops a tick when its phase id now belongs to another phase (non-Latin titles reordered)', () => {
+    // Cyrillic and Chinese titles have no latin letters, so their ids are item, item-2, item-3.
+    const before = [
+      phase('item', 'Предполётная', ['item', 'item-2']),
+      phase('item-2', '起飞前', ['item', 'item-2']),
+      phase('item-3', 'Посадка', ['item']),
+    ];
+    // The same phases, reordered: every id now names a different phase.
+    const after = [
+      phase('item', '起飞前', ['item', 'item-2']),
+      phase('item-2', 'Посадка', ['item']),
+      phase('item-3', 'Предполётная', ['item', 'item-2']),
+    ];
+    expect(ticksAfterReplace(['item/item', 'item-2/item-2', 'item-3/item'], before, after)).toEqual(
+      [],
+    );
+  });
+
+  it('keeps ticks whose phase kept its id and title and whose item still exists', () => {
+    const before = [
+      phase('item', 'Предполётная', ['item', 'item-2']),
+      phase('taxi', 'Taxi', ['a']),
+    ];
+    const after = [phase('item', 'Предполётная', ['item']), phase('taxi', 'Taxi', ['a', 'b'])];
+    expect(ticksAfterReplace(['item/item', 'item/item-2', 'taxi/a'], before, after)).toEqual([
+      'item/item',
+      'taxi/a',
+    ]);
+  });
+});
+
+describe('newId', () => {
+  it('makes a v4 UUID without crypto.randomUUID', () => {
+    const original = crypto.randomUUID;
+    Object.defineProperty(crypto, 'randomUUID', { value: undefined, configurable: true });
+    try {
+      const a = newId();
+      expect(a).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
+      expect(newId()).not.toBe(a);
+    } finally {
+      Object.defineProperty(crypto, 'randomUUID', { value: original, configurable: true });
+    }
   });
 });

@@ -77,3 +77,27 @@ describe('csvFileName', () => {
     expect(csvFileName('°°°')).toBe('checklist.csv');
   });
 });
+
+describe('apostrophes', () => {
+  it("guards a value that already starts with ' before =, +, - or @, and import strips exactly one", () => {
+    const checklist: ChecklistPhase[] = [
+      {
+        id: 'p',
+        title: 'P',
+        groups: [
+          {
+            title: 'P',
+            items: [
+              { id: 'a', label: "'-'", action: "'=x", tier: 'quick' },
+              { id: 'b', label: "'Twas", action: "''", tier: 'quick' },
+            ],
+          },
+        ],
+      },
+    ];
+    const csv = checklistToCsv(checklist);
+    expect(csv).toContain(`P,,''-',''=x,quick,,a`);
+    expect(csv).toContain(`P,,''Twas,''',quick,,b`);
+    expect(parse(csv).checklist).toEqual(checklist);
+  });
+});

@@ -24,6 +24,8 @@ export const CSV_LIMITS = {
   label: 120,
   action: 120,
   info: 500,
+  /** Phase and group names: longer ones are cut, with a warning. */
+  title: 80,
 } as const;
 
 /** How many checklists My Hangar holds. */
@@ -121,6 +123,21 @@ export function convertCsvRows(rows: string[][]): CsvConversion {
   const phases = new Map<string, PendingPhase>();
   let previousPhase: string | null = null;
 
+  // Long phase and group names would crowd the sidebar and tabs: cut them, warning once per name.
+  const cutNames = new Set<string>();
+  const capTitle = (value: string, kind: 'Phase' | 'Group', row: number) => {
+    if (value.length <= CSV_LIMITS.title) return value;
+    const key = `${kind}:${value}`;
+    if (!cutNames.has(key)) {
+      cutNames.add(key);
+      warnings.push({
+        row,
+        message: `${kind} name is over ${CSV_LIMITS.title} characters, so it's cut to ${CSV_LIMITS.title}.`,
+      });
+    }
+    return value.slice(0, CSV_LIMITS.title).trimEnd();
+  };
+
   for (let index = 1; index < end; index++) {
     const cells = rows[index];
     const row = index + 1;
@@ -133,7 +150,7 @@ export function convertCsvRows(rows: string[][]): CsvConversion {
       return at === undefined ? '' : unescapeFormula((cells[at] ?? '').trim());
     };
 
-    const phase = get('phase');
+    const phase = capTitle(get('phase'), 'Phase', row);
     const label = get('label');
     const action = get('action');
     const info = get('info');
@@ -177,7 +194,7 @@ export function convertCsvRows(rows: string[][]): CsvConversion {
     }
     previousPhase = phase;
 
-    const group = get('group') || phase;
+    const group = capTitle(get('group'), 'Group', row) || phase;
     const items = pending.groups.get(group) ?? [];
     items.push({ row, label, action, tier, info, id: get('id') });
     pending.groups.set(group, items);
@@ -261,7 +278,28 @@ export interface CsvParser {
 }
 
 /** Size check, parse and convert. `text` is the whole file or the pasted cells. */
-export function parseChecklistCsv(text: string, parser: CsvParser): CsvConversion {
+/** Shown when a file wasn't UTF-8 and was read as Windows-1252 instead. */
+export const LEGACY_ENCODING_WARNING =
+  'This file isn\'t saved as UTF-8, so it was read as Windows text. Check that letters like é and symbols like ° look right. In Excel, choose "CSV UTF-8" when you save to avoid this.';
+
+/**
+ * A file's bytes as text. UTF-8 when they are valid UTF-8; otherwise Windows-1252,
+ * which is what Excel's plain "CSV (Comma delimited)" writes on Windows, so ° é ü
+ * come through instead of turning into �.
+ */
+export function decodeCsvBytes(bytes: BufferSource): { text: string; legacyEncoding: boolean } {
+  try {
+    return { text: new TextDecoder('utf-8', { fatal: true }).decode(bytes), legacyEncoding: false };
+  } catch {
+    return { text: new TextDecoder('windows-1252').decode(bytes), legacyEncoding: true };
+  }
+}
+
+export function parseChecklistCsv(
+  text: string,
+  parser: CsvParser,
+  { legacyEncoding = false }: { legacyEncoding?: boolean } = {},
+): CsvConversion {
   const bytes = new TextEncoder().encode(text).length;
   if (bytes > CSV_LIMITS.fileBytes) {
     return {
@@ -276,7 +314,13 @@ export function parseChecklistCsv(text: string, parser: CsvParser): CsvConversio
   const rows = result.data.map((row) =>
     Array.isArray(row) ? row.map((cell) => String(cell ?? '')) : [],
   );
-  const conversion = convertCsvRows(rows);
+  const converted = convertCsvRows(rows);
+  const conversion = legacyEncoding
+    ? {
+        ...converted,
+        warnings: [{ row: null, message: LEGACY_ENCODING_WARNING }, ...converted.warnings],
+      }
+    : converted;
   const quoteErrors: CsvIssue[] = result.errors
     .filter((e) => e.type === 'Quotes')
     .map((e) => ({
@@ -289,20 +333,23 @@ export function parseChecklistCsv(text: string, parser: CsvParser): CsvConversio
 
 // ─── Export ───────────────────────────────────────────────────────────────────
 
-/** A cell a spreadsheet would run as a formula. */
-const FORMULA_START = /^[=+\-@]/;
+/**
+ * A cell a spreadsheet would run as a formula, or one that already starts with the
+ * `'` guard (so a value like `'-` survives the round trip).
+ */
+const GUARDED_START = /^[=+\-@']/;
 
 /**
  * Exported cells that start like a formula get a leading `'`, so a spreadsheet shows
- * them as text instead of running them (CSV formula injection). Import takes it off
- * again, so a downloaded CSV comes back unchanged.
+ * them as text instead of running them (CSV formula injection). Import takes exactly
+ * one off again, so a downloaded CSV comes back unchanged.
  */
 function unescapeFormula(cell: string): string {
-  return cell.startsWith("'") && FORMULA_START.test(cell.slice(1)) ? cell.slice(1) : cell;
+  return cell.startsWith("'") && GUARDED_START.test(cell.slice(1)) ? cell.slice(1) : cell;
 }
 
 function csvCell(value: string): string {
-  const safe = FORMULA_START.test(value) ? `'${value}` : value;
+  const safe = GUARDED_START.test(value) ? `'${value}` : value;
   return /[",\r\n]/.test(safe) ? `"${safe.replace(/"/g, '""')}"` : safe;
 }
 

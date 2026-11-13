@@ -5,6 +5,7 @@ import {
   CSV_LIMITS,
   CsvConversion,
   CsvIssue,
+  decodeCsvBytes,
   LOCAL_CHECKLIST_LIMIT,
   nameFromFileName,
   parseChecklistCsv,
@@ -48,23 +49,26 @@ interface ImportPanelProps {
   count: number;
   /** Replace mode: the new CSV's items go into this checklist, keeping its name and matching ticks. */
   replacing?: LocalChecklist | null;
-  onCancelReplace?: () => void;
 }
 
 /**
  * Choose, drop or paste a CSV, preview what it becomes with every problem by row,
  * then name the aircraft and save. Papa Parse loads only when something is imported.
  */
-const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCancelReplace }) => {
+const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null }) => {
   const navigate = useNavigate();
   const [preview, setPreview] = useState<Preview | null>(null);
   const [busy, setBusy] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [pasted, setPasted] = useState('');
+  const [pasteOpen, setPasteOpen] = useState(false);
+  // Where focus goes once the preview closes: back to where the import started.
+  const returnFocusRef = useRef<'file' | 'paste' | null>(null);
   const [details, setDetails] = useState({ name: '', manufacturer: '', sim: '', addon: '' });
   const [nameError, setNameError] = useState('');
   const [saveError, setSaveError] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const pasteRef = useRef<HTMLTextAreaElement>(null);
   const previewHeadingRef = useRef<HTMLHeadingElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const full = !replacing && count >= LOCAL_CHECKLIST_LIMIT;
@@ -72,6 +76,13 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
   // Move to the preview once it shows, so keyboard and screen-reader users land on it.
   useEffect(() => {
     if (preview) previewHeadingRef.current?.focus();
+  }, [preview]);
+
+  // The chooser only exists again once the preview has gone, so focus moves here.
+  useEffect(() => {
+    if (preview || !returnFocusRef.current) return;
+    (returnFocusRef.current === 'paste' ? pasteRef : fileInputRef).current?.focus();
+    returnFocusRef.current = null;
   }, [preview]);
 
   const showPreview = (next: Preview) => {
@@ -86,11 +97,11 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
     setSaveError('');
   };
 
-  const convert = async (text: string, fileName: string | null) => {
+  const convert = async (text: string, fileName: string | null, legacyEncoding = false) => {
     setBusy(true);
     try {
       const { default: Papa } = await import('papaparse');
-      showPreview({ fileName, result: parseChecklistCsv(text, Papa) });
+      showPreview({ fileName, result: parseChecklistCsv(text, Papa, { legacyEncoding }) });
     } catch {
       showPreview({
         fileName,
@@ -112,7 +123,9 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
       showPreview(tooBig(file.name));
       return;
     }
-    await convert(await file.text(), file.name);
+    // Not file.text(): that always reads UTF-8, which turns Excel's Windows-1252 ° é ü into �.
+    const { text, legacyEncoding } = decodeCsvBytes(await file.arrayBuffer());
+    await convert(text, file.name, legacyEncoding);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,10 +142,10 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
     if (file && !full) void importFile(file);
   };
 
+  /** Back to the chooser. Pasted cells stay, so they can be fixed. */
   const reset = () => {
+    returnFocusRef.current = preview?.fileName === null ? 'paste' : 'file';
     setPreview(null);
-    setPasted('');
-    fileInputRef.current?.focus();
   };
 
   const handleSave = async (e: React.FormEvent) => {
@@ -146,16 +159,22 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
     }
     setBusy(true);
     setSaveError('');
-    const saved = await addLocalChecklist(
-      {
-        name,
-        manufacturer: details.manufacturer.trim() || undefined,
-        sim: details.sim.trim() || undefined,
-        addon: details.addon.trim() || undefined,
-      },
-      preview.result.checklist,
-    );
-    setBusy(false);
+    let saved: Awaited<ReturnType<typeof addLocalChecklist>>;
+    try {
+      saved = await addLocalChecklist(
+        {
+          name,
+          manufacturer: details.manufacturer.trim() || undefined,
+          sim: details.sim.trim() || undefined,
+          addon: details.addon.trim() || undefined,
+        },
+        preview.result.checklist,
+      );
+    } catch {
+      saved = { ok: false, reason: 'storage' };
+    } finally {
+      setBusy(false);
+    }
     if (saved.ok) {
       navigate(`/hangar/${saved.checklist.id}`);
     } else if (saved.reason === 'limit') {
@@ -171,10 +190,18 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
     if (!preview || !replacing) return;
     setBusy(true);
     setSaveError('');
-    const saved = await replaceLocalChecklistItems(replacing.id, preview.result.checklist);
-    setBusy(false);
-    if (saved) navigate(`/hangar/${saved.id}`);
-    else setSaveError("The checklist couldn't be saved. Your browser's storage may be full.");
+    let saved: Awaited<ReturnType<typeof replaceLocalChecklistItems>>;
+    try {
+      saved = await replaceLocalChecklistItems(replacing.id, preview.result.checklist);
+    } catch {
+      saved = { ok: false, reason: 'storage' };
+    } finally {
+      setBusy(false);
+    }
+    if (saved.ok) navigate(`/hangar/${saved.checklist.id}`);
+    else if (saved.reason === 'missing') {
+      setSaveError('This checklist no longer exists in this browser.');
+    } else setSaveError("The checklist couldn't be saved. Your browser's storage may be full.");
   };
 
   const setField = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -444,21 +471,6 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
 
   return (
     <div className="space-y-6">
-      {replacing && (
-        <div className="flex flex-wrap items-center justify-between gap-3 p-4 border border-accent/40 bg-accent/10">
-          <p className="type-body text-primary break-words min-w-0">
-            Choose the new CSV for {replacing.meta.name}. Download its CSV first to keep the ids,
-            and with them the ticks.
-          </p>
-          <button
-            type="button"
-            onClick={onCancelReplace}
-            className="px-4 py-2 text-xs font-bold uppercase text-muted hover:text-primary transition-colors"
-          >
-            Cancel
-          </button>
-        </div>
-      )}
       <p className="type-body text-muted max-w-2xl">
         One row per item. The file needs <strong className="text-primary font-medium">phase</strong>
         , <strong className="text-primary font-medium">label</strong> and{' '}
@@ -507,7 +519,11 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
         </a>
       </div>
 
-      <details className="group border border-border">
+      <details
+        className="group border border-border"
+        open={pasteOpen}
+        onToggle={(e) => setPasteOpen(e.currentTarget.open)}
+      >
         <summary className="cursor-pointer px-4 py-3 text-sm text-muted hover:text-primary transition-colors">
           Or paste cells from a spreadsheet
         </summary>
@@ -516,6 +532,7 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCa
             Cells, with the header row
           </label>
           <textarea
+            ref={pasteRef}
             id="hangar-paste"
             rows={6}
             value={pasted}
