@@ -563,6 +563,13 @@
         {
           "items": [
             {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Before taxi, with ground crew clear.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
               "action": "ON",
               "id": "taxi-lights",
               "info": "Forward-facing white light on the nose gear so ground crew and other aircraft see you moving.",
@@ -676,7 +683,7 @@
             {
               "action": "AT VR",
               "id": "rotate",
-              "info": "Smooth rotation at 2 to 3 degrees per second to about 12 to 15 degrees of pitch. The 300ER has a long fuselage, so over-rotating will scrape the tail on the runway.",
+              "info": "Smooth rotation at 2 to 3 degrees per second to about 12 to 15 degrees of pitch. The 777 has a long fuselage, so over-rotating will scrape the tail on the runway.",
               "label": "Rotate",
               "tier": "quick"
             },
@@ -1078,7 +1085,7 @@
             {
               "action": "ENGAGE",
               "id": "reverse-thrust",
-              "info": "Both engines into reverse — keep it smooth and symmetric. The GE90s have a lot of mass to pull back.",
+              "info": "Both engines into reverse — keep it smooth and symmetric.",
               "label": "Reverse Thrust",
               "tier": "quick"
             },
@@ -1099,7 +1106,7 @@
             {
               "action": "OFF",
               "id": "autopilot",
-              "info": "After an autoland, disconnect once clear of the runway.",
+              "info": "After an autoland, disconnect before turning off the runway.",
               "label": "Autopilot",
               "tier": "full"
             }
