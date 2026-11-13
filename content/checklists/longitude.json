@@ -21,7 +21,7 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Center Panel. Verify handle down.",
+              "info": "Copilot panel, inboard side, below the PFD. Verify handle down.",
               "label": "Gear",
               "tier": "normal"
             },
@@ -35,7 +35,7 @@
             {
               "action": "CHECK",
               "id": "eis-cas",
-              "info": "MFD. Verify landing elevation displayed.",
+              "info": "MFD. Check engine indications and CAS messages.",
               "label": "EIS/CAS",
               "tier": "normal"
             },
@@ -63,7 +63,7 @@
             {
               "action": "AS REQUIRED",
               "id": "interior-lights",
-              "info": "Overhead Panel. Controls cabin and cockpit lighting.",
+              "info": "Overhead Panel. PANEL and FLOOD knobs for cockpit lighting. Cabin lighting is not modeled.",
               "label": "Interior Lights",
               "tier": "full"
             }
@@ -89,9 +89,9 @@
             {
               "action": "CHECK",
               "id": "eis-cas-2",
-              "info": "MFD. Verify landing elevation displayed.",
+              "info": "MFD. Check engine indications and CAS messages.",
               "label": "EIS/CAS",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "SET",
@@ -103,7 +103,7 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "AFCS Panel. Sets the barometric pressure for accurate altitude readings.",
+              "info": "Display controller above the PFD, BARO button and knob. Set local QNH.",
               "label": "Altimeters",
               "tier": "normal"
             }
@@ -115,7 +115,7 @@
             {
               "action": "SET",
               "id": "trims",
-              "info": "EIS. Set stab trim inside the green takeoff band. Outside it, NO TAKEOFF shows.",
+              "info": "EIS. Stab, aileron and rudder trim must each be inside the green takeoff band, or NO TAKEOFF shows. The stab band covers all valid CGs.",
               "label": "Trims",
               "tier": "quick"
             },
@@ -252,13 +252,6 @@
         {
           "items": [
             {
-              "action": "OFF",
-              "id": "apu",
-              "info": "Center Pedestal, aft right. Engines now provide bleed and electrical. APU no longer needed.",
-              "label": "APU",
-              "tier": "normal"
-            },
-            {
               "action": "FREE",
               "id": "flight-controls",
               "info": "Yoke / Pedals. Full and free movement.",
@@ -282,7 +275,7 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "AFCS Panel. Verify set to local QNH.",
+              "info": "Display controller above the PFD, BARO button and knob. Within 75 ft of field elevation and 50 ft of each other.",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -303,8 +296,8 @@
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
-              "label": "Ice Protection",
+              "info": "Copilot lower panel, below the PFD. ENGINE buttons.",
+              "label": "Engine Ice Protection",
               "tier": "full"
             }
           ],
@@ -336,7 +329,7 @@
             {
               "action": "PUSH",
               "id": "to-ga-button",
-              "info": "Throttle Levers. Press on throttle. Verify TO/TO (green) and ALTS (white) in FMA. Flight director comes ON.",
+              "info": "Throttle Levers, outboard side of either handle. Do not arm the autothrottle (AT button) during taxi or before takeoff clearance.",
               "label": "TO/GA Button",
               "tier": "quick"
             },
@@ -422,14 +415,14 @@
             {
               "action": "VERIFY SET",
               "id": "trims",
-              "info": "Center Pedestal. Set for takeoff.",
+              "info": "EIS. Stab, aileron and rudder trim inside the green band.",
               "label": "Trims",
               "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "info": "Copilot lower panel, below the PFD. Controls anti-ice and de-ice systems.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -450,7 +443,7 @@
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "PFD. Verify TO/TO (green) and ALTS (white).",
+              "info": "PFD, AFCS Status Box at the top. Active modes show green, armed modes white.",
               "label": "FMA",
               "tier": "quick"
             },
@@ -466,6 +459,13 @@
         },
         {
           "items": [
+            {
+              "action": "FREE",
+              "id": "flight-controls",
+              "info": "Yoke / Pedals. Once cleared for takeoff.",
+              "label": "Flight Controls",
+              "tier": "full"
+            },
             {
               "action": "FMS",
               "id": "nav-source",
@@ -536,7 +536,7 @@
             {
               "action": "ARM",
               "id": "autothrottle",
-              "info": "Throttle Levers. AT button at the rear of the throttle lever arm. AT shows armed (white) on the PFD.",
+              "info": "Throttle Levers. AT button at the rear of the throttle lever arm. Arm only after takeoff clearance. AT shows armed (white) on the PFD.",
               "label": "Autothrottle",
               "tier": "quick"
             },
@@ -550,7 +550,7 @@
             {
               "action": "CHECK",
               "id": "autothrottle-2",
-              "info": "Throttle Levers / AFCS. Verify AT FMA = HOLD (green).",
+              "info": "PFD, AFCS Status Box. Verify green HOLD.",
               "label": "Autothrottle",
               "tier": "quick"
             },
@@ -571,7 +571,7 @@
             {
               "action": "GEAR UP",
               "id": "positive-climb",
-              "info": "PFD. Confirms the aircraft is actively gaining altitude.",
+              "info": "Copilot panel, inboard side, below the PFD. Raise the gear at a positive rate of climb.",
               "label": "Positive Climb",
               "tier": "quick"
             }
@@ -589,42 +589,42 @@
             {
               "action": "VERIFY UP",
               "id": "gear",
-              "info": "Center Panel. Controls the raising and lowering of the landing gear.",
+              "info": "Copilot panel, inboard side, below the PFD. Verify up.",
               "label": "Gear",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Center Pedestal. Retract above 180 KIAS (min V2+20 kts). Verify FMA = CLIMB.",
+              "info": "Center Pedestal. Retract at or above V2 + 20 kts.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "CLIMB",
               "id": "throttles",
-              "info": "Center Pedestal. Verify EIS shows CLB/CLB.",
+              "info": "Center Pedestal. Verify EIS shows CLB/CLB. With the autothrottle on, the FMA shows CLIMB.",
               "label": "Throttles",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "autopilot",
-              "info": "AFCS Panel. Engage at own discretion (above 500 ft AGL). Select NAV and VNAV.",
+              "info": "AFCS Panel. Engage at or above 400 ft AGL. Select NAV and VNAV.",
               "label": "Autopilot",
               "tier": "normal"
             },
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "PFD. Verify SPD xxx KT | FMS | AP AT | green.",
+              "info": "PFD, AFCS Status Box at the top. Active modes show green, armed modes white.",
               "label": "FMA",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "info": "Copilot lower panel, below the PFD. Controls anti-ice and de-ice systems.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -657,16 +657,16 @@
             {
               "action": "SET STD",
               "id": "altimeters",
-              "info": "AFCS Panel. At transition altitude — set standard barometric.",
+              "info": "Display controller above the PFD, BARO button and knob. At transition altitude, set standard.",
               "label": "Altimeters",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "apu",
-              "info": "Center Pedestal, aft right. Prior to climb above FL350.",
+              "info": "Center Pedestal, aft right. Before climbing above FL350, the APU's maximum operating altitude. Left on above it, a yellow APU ON caution shows.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Climb Flow"
@@ -689,7 +689,7 @@
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "PFD. Verify SPD xxx KT | FMS | AP AT | green modes.",
+              "info": "PFD, AFCS Status Box at the top. Active modes show green, armed modes white.",
               "label": "FMA",
               "tier": "normal"
             },
@@ -703,14 +703,14 @@
             {
               "action": "CROSSCHECK",
               "id": "altimeters",
-              "info": "AFCS Panel. RVSM crosscheck.",
+              "info": "Display controller above the PFD, BARO button and knob. RVSM crosscheck: within 200 ft, at least every hour.",
               "label": "Altimeters",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "info": "Copilot lower panel, below the PFD. Controls anti-ice and de-ice systems.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -791,7 +791,7 @@
             {
               "action": "SET LOWER",
               "id": "altitude-selector",
-              "info": "AFCS Panel. Set the cleared descent altitude before TOD. VNAV descends at TOD only when the selector is below cruise altitude.",
+              "info": "AFCS Panel. Set the cleared descent altitude.",
               "label": "Altitude Selector",
               "tier": "quick"
             }
@@ -817,7 +817,7 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "AFCS Panel. At transition level, set local QNH.",
+              "info": "Display controller above the PFD, BARO button and knob. At transition level, set local QNH.",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -870,7 +870,7 @@
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
+              "info": "Copilot lower panel, below the PFD. Controls anti-ice and de-ice systems.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -891,7 +891,7 @@
             {
               "action": "VERIFY",
               "id": "altimeters",
-              "info": "AFCS Panel. Sets the barometric pressure for accurate altitude readings.",
+              "info": "Display controller above the PFD, BARO button and knob. Verify the setting.",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -917,14 +917,14 @@
             {
               "action": "SET",
               "id": "flaps-1",
-              "info": "Center Pedestal. Below 250 KIAS. FMA verifies 200 KIAS.",
+              "info": "Center Pedestal. Below 250 KIAS.",
               "label": "Flaps 1",
               "tier": "normal"
             },
             {
               "action": "SET",
               "id": "flaps-2",
-              "info": "Center Pedestal. Below 230 KIAS. FMA verifies 160 KIAS.",
+              "info": "Center Pedestal. Below 230 KIAS.",
               "label": "Flaps 2",
               "tier": "normal"
             },
@@ -938,14 +938,14 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Center Panel. Below 230 KIAS. 3 green.",
+              "info": "Copilot panel, inboard side, below the PFD. Below 230 KIAS. Check 3 green.",
               "label": "Gear",
               "tier": "quick"
             },
             {
               "action": "FULL",
               "id": "flaps",
-              "info": "Center Pedestal. Below 180 KIAS. FMA verifies 140 KIAS.",
+              "info": "Center Pedestal. Below 180 KIAS.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -959,14 +959,14 @@
             {
               "action": "OFF",
               "id": "autopilot",
-              "info": "AFCS Panel. Disengage latest at 200 ft AGL.",
+              "info": "AFCS Panel. Disengage before the minimum use height: 160 ft AGL on an approach.",
               "label": "Autopilot",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "VREF",
               "id": "airspeed",
-              "info": "PFD. Manually set VREF+5 KIAS if transitioning from FMS to manual speed.",
+              "info": "PFD. VREF is the minimum.",
               "label": "Airspeed",
               "tier": "quick"
             }
@@ -984,14 +984,14 @@
             {
               "action": "CHECK",
               "id": "autothrottle",
-              "info": "Throttle Levers / AFCS. Verify AT FMA → RETARD. Retard hardware throttle.",
+              "info": "PFD, AFCS Status Box. Verify green RETARD at 50 ft AGL.",
               "label": "Autothrottle",
               "tier": "quick"
             },
             {
               "action": "IDLE",
               "id": "throttles",
-              "info": "Center Pedestal. At ~30 ft, slowly flare.",
+              "info": "Center Pedestal.",
               "label": "Throttles",
               "tier": "quick"
             },
@@ -1023,14 +1023,14 @@
             {
               "action": "STOW",
               "id": "thrust-reversers",
-              "info": "Throttle Levers. Verify stowed.",
+              "info": "Throttle Levers. Verify the T/R DEPLOY indications clear before taxi.",
               "label": "Thrust Reversers",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Center Pedestal. Adjusts wing trailing edge flaps for takeoff or landing performance.",
+              "info": "Center Pedestal. Retract as desired.",
               "label": "Flaps",
               "tier": "normal"
             },
@@ -1050,27 +1050,28 @@
             },
             {
               "action": "AS REQUIRED",
-              "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
-              "label": "Ice Protection",
+              "id": "engine-ice-protection",
+              "info": "Copilot lower panel, below the PFD. ENGINE buttons.",
+              "label": "Engine Ice Protection",
               "tier": "full"
             },
             {
+              "action": "OFF",
+              "id": "wing-stab-ice",
+              "info": "Copilot lower panel, below the PFD. WING and STAB buttons.",
+              "label": "Wing & Stab Ice",
+              "tier": "normal"
+            },
+            {
               "action": "AS REQUIRED",
-              "id": "exterior-lights",
+              "id": "exterior-lights-2",
               "info": "Overhead Panel and GTC. Nav lights come on at G5000 power-up and the beacon defaults to Normal, on whenever an engine is in RUN or the starter is engaged. Both are set on the GTC Exterior Lights page (Systems). The overhead panel has ANTI COLL (white strobes) and TAIL FLOOD (logo).",
               "label": "Exterior Lights",
               "tier": "normal"
             }
           ],
           "title": "After Landing Flow"
-        }
-      ],
-      "id": "after-landing",
-      "title": "After Landing"
-    },
-    {
-      "groups": [
+        },
         {
           "items": [
             {
@@ -1090,8 +1091,8 @@
             {
               "action": "OFF",
               "id": "ice-protection",
-              "info": "Right Switch Panel. Controls anti-ice and de-ice systems.",
-              "label": "Ice Protection",
+              "info": "Copilot lower panel, below the PFD. Both ENGINE buttons.",
+              "label": "Engine Ice Protection",
               "tier": "normal"
             },
             {
@@ -1111,16 +1112,16 @@
             {
               "action": "OFF",
               "id": "standby-power",
-              "info": "Left Switch Panel. Provides emergency backup power to essential avionics.",
+              "info": "Left Switch Panel. Connects the standby battery to the standby flight instruments only.",
               "label": "Standby Power",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "apu",
-              "info": "Center Pedestal, aft right. Controls the Auxiliary Power Unit for ground power and air conditioning.",
+              "info": "Center Pedestal, aft right. Turn it off before the batteries.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "OFF",
@@ -1132,7 +1133,7 @@
             {
               "action": "OFF",
               "id": "interior-lights",
-              "info": "Overhead Panel. Controls cabin and cockpit lighting.",
+              "info": "Overhead Panel. PANEL and FLOOD knobs.",
               "label": "Interior Lights",
               "tier": "normal"
             },
