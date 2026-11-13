@@ -14,7 +14,7 @@
             {
               "action": "POS",
               "id": "position-lights",
-              "info": "Glareshield. POS/Strobe switch to POS.",
+              "info": "Overhead Panel. POS/Strobe switch to POS.",
               "label": "Position Lights",
               "tier": "normal"
             },
@@ -313,7 +313,7 @@
             {
               "action": "On",
               "id": "beacon",
-              "info": "Glareshield. Anti-collision light.",
+              "info": "Overhead Panel. Anti-collision light.",
               "label": "Beacon",
               "tier": "normal"
             },
@@ -432,7 +432,7 @@
             {
               "action": "On",
               "id": "nose-lights",
-              "info": "Glareshield. Nose (taxi) lights.",
+              "info": "Overhead Panel. Nose (taxi) lights.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -505,14 +505,14 @@
             {
               "action": "On",
               "id": "wing-ldg-lights",
-              "info": "Glareshield.",
+              "info": "Overhead Panel.",
               "label": "Wing LDG Lights",
               "tier": "normal"
             },
             {
               "action": "Both",
               "id": "strobe-lights",
-              "info": "Glareshield. POS/Strobe switch.",
+              "info": "Overhead Panel. POS/Strobe switch.",
               "label": "POS/Strobe Lights",
               "tier": "normal"
             },
@@ -841,7 +841,7 @@
             {
               "action": "On",
               "id": "landing-lights-desc",
-              "info": "Glareshield. Passing 10,000 ft.",
+              "info": "Overhead Panel. Passing 10,000 ft.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -907,7 +907,7 @@
             {
               "action": "Extend",
               "id": "slats-extend",
-              "info": "Slow to Vman 0/EXT (2nd speed bug). Extend slats at Vman UP/RET (1st speed bug). About 18-15 NM out, flaps 15 at Vman 0/EXT, then slow to Vman 15/EXT (3rd speed bug).",
+              "info": "Center Pedestal. Slow to about 170 kts, below the 179 kts slats-out speed (2nd speed bug), then set flaps 0 so the slats extend. Slow to 155 kts (3rd speed bug), then set flaps 15.",
               "label": "Slats/Flaps",
               "tier": "quick"
             },
@@ -942,7 +942,7 @@
             {
               "action": "On",
               "id": "nose-lights-app",
-              "info": "Glareshield.",
+              "info": "Overhead Panel.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -1020,21 +1020,21 @@
             {
               "action": "On",
               "id": "nose-lights-ldg",
-              "info": "Glareshield.",
+              "info": "Overhead Panel.",
               "label": "Nose Lights",
               "tier": "normal"
             },
             {
               "action": "Off",
               "id": "landing-lights-off",
-              "info": "Glareshield.",
+              "info": "Overhead Panel.",
               "label": "Landing Lights",
               "tier": "normal"
             },
             {
               "action": "POS",
               "id": "strobe-pos",
-              "info": "Glareshield. POS/Strobe switch.",
+              "info": "Overhead Panel. POS/Strobe switch.",
               "label": "POS/Strobe Lights",
               "tier": "normal"
             },
@@ -1112,7 +1112,7 @@
             {
               "action": "Off",
               "id": "nose-lights-off",
-              "info": "Glareshield.",
+              "info": "Overhead Panel.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -1167,7 +1167,7 @@
             {
               "action": "Off",
               "id": "beacon-off",
-              "info": "Glareshield. Anti-collision light.",
+              "info": "Overhead Panel. Anti-collision light.",
               "label": "Beacon",
               "tier": "normal"
             },
@@ -1214,7 +1214,7 @@
             {
               "action": "Off",
               "id": "pos-lights-off",
-              "info": "Glareshield. POS/Strobe switch.",
+              "info": "Overhead Panel. POS/Strobe switch.",
               "label": "POS/Strobe Lights",
               "tier": "normal"
             },
