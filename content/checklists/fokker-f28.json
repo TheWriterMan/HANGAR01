@@ -416,14 +416,14 @@
               "id": "apu-gen-3",
               "info": "Overhead. Gen 1 and 2 Inop lights off first. APU Air switch OFF too.",
               "label": "APU Gen 3",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SHUTDOWN",
               "id": "apu-shutdown",
               "info": "Overhead. Hold Stop/OS for 2-3 sec. Main OFF no earlier than 10 sec after RPM reaches zero. On flights under 30 min, leave it running.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "BOTH ON",

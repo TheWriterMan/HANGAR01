@@ -508,7 +508,7 @@
               "id": "apu",
               "info": "Overhead Panel. Shuts down the APU once engine generators are running.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",

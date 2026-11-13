@@ -514,7 +514,7 @@
               "id": "apu",
               "info": "Both engines now supply electrics and bleed air, so the APU can shut down.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "NORM",

@@ -348,7 +348,7 @@
               "id": "apu-shutdown",
               "info": "Overhead Panel. APU bus switches OFF, APU Air OFF, APU Master OFF.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "Auto",
