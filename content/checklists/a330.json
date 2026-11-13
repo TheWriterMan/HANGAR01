@@ -16,35 +16,35 @@
               "id": "speed-brake",
               "info": "Center Pedestal. Deploys wing panels to increase drag and reduce airspeed or increase descent rate.",
               "label": "Speed Brake",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "UP",
               "id": "flap-lever",
               "info": "Center Pedestal. Commands the extension or retraction of the wing flaps and slats.",
               "label": "Flap Lever",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "NORM",
               "id": "eng-mode",
-              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "info": "Center Pedestal. Selects the engine ignition and start mode. Check it is in NORM before power-up.",
               "label": "ENG Mode",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "OFF",
               "id": "engine-masters",
               "info": "Center Pedestal. Controls fuel flow and initiates the start or shutdown sequence for both engines.",
               "label": "Engine Masters",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "IDLE",
               "id": "thrust-levers",
               "info": "Center Pedestal. Both levers at idle before power-up.",
               "label": "Thrust Levers",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "OFF",
@@ -56,9 +56,9 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Main Instrument Panel. Controls landing gear extension and retraction. Drop the gear at glideslope intercept and verify three green lights.",
+              "info": "Main Instrument Panel. Check the gear lever is down before power-up.",
               "label": "Gear",
-              "tier": "normal"
+              "tier": "full"
             }
           ],
           "title": "Safety Check"
@@ -68,8 +68,8 @@
             {
               "action": "ON",
               "id": "battery-1-2-apu",
-              "info": "Overhead Panel. Connects the main and APU batteries. Check that the voltage is above 25.5V before switching ON.",
-              "label": "Battery 1+2+APU",
+              "info": "Overhead Panel. Connects batteries 1 and 2. Check that the voltage is above 25.5V before switching ON.",
+              "label": "Battery 1+2",
               "tier": "quick"
             },
             {
@@ -195,7 +195,7 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "info": "Glareshield (EFIS panel). Set the departure airport QNH on the baro knob.",
               "label": "Altimeters",
               "tier": "quick"
             },
@@ -256,7 +256,7 @@
             {
               "action": "STBY",
               "id": "transponder",
-              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code and ALT RPTG ON. Leave in STBY until taxi.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -279,9 +279,9 @@
         {
           "items": [
             {
-              "action": "SET",
+              "action": "AS REQUIRED",
               "id": "parking-brake",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "info": "Center Pedestal. SET for engine start at the gate, released for pushback. Pushback is on the flyPad Ground page.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -360,12 +360,6 @@
         {
           "items": [
             {
-              "action": "START",
-              "id": "pushback",
-              "label": "Pushback",
-              "tier": "quick"
-            },
-            {
               "action": "VERIFY IDLE",
               "id": "thrust-levers",
               "info": "Center Pedestal. Both levers must be at idle before engine start.",
@@ -375,7 +369,7 @@
             {
               "action": "IGN/START",
               "id": "eng-mode",
-              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "info": "Center Pedestal. Turn to IGN/START before opening the engine masters. The ENG page appears on the lower ECAM.",
               "label": "ENG Mode",
               "tier": "quick"
             },
@@ -396,7 +390,7 @@
             {
               "action": "NORM",
               "id": "eng-mode-2",
-              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
+              "info": "Center Pedestal. Return to NORM once both engines are stable at idle.",
               "label": "ENG Mode",
               "tier": "quick"
             }
@@ -414,16 +408,16 @@
             {
               "action": "OFF",
               "id": "apu-bleed",
-              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "info": "Overhead Panel. Turn OFF once both engines are running. The engine bleeds now supply the packs.",
               "label": "APU Bleed",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "apu-master",
-              "info": "Overhead Panel. Powers the APU electronic control box to prepare for startup.",
+              "info": "Overhead Panel. Shuts the APU down after engine start. The engine generators now power the aircraft.",
               "label": "APU Master",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
@@ -442,14 +436,14 @@
             {
               "action": "MAX",
               "id": "autobrake",
-              "info": "Main Instrument Panel. Set to MAX for takeoff. This arms the RTO (Rejected Takeoff) mode — if the takeoff is aborted with thrust to idle, maximum braking applies automatically.",
+              "info": "Main Instrument Panel. Set MAX for takeoff. If you reject the takeoff with the thrust levers at idle, full braking applies automatically.",
               "label": "Autobrake",
               "tier": "normal"
             },
             {
-              "action": "SET",
+              "action": "CONF 1+F",
               "id": "flaps",
-              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "info": "Center Pedestal. Flap lever to 1. On the ground this gives CONF 1+F, shown on the upper ECAM. Match the flap setting on the MCDU PERF TAKEOFF page.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -480,13 +474,6 @@
               "tier": "normal"
             },
             {
-              "action": "ZERO",
-              "id": "aileron-trim",
-              "info": "Center Pedestal. Adjusts the resting position of the ailerons to relieve lateral control pressure.",
-              "label": "Aileron Trim",
-              "tier": "normal"
-            },
-            {
               "action": "SET",
               "id": "pitch-trim",
               "info": "Center Pedestal. Adjusts the horizontal stabilizer. Set this according to the calculated THS value from your PERF page.",
@@ -508,7 +495,7 @@
             {
               "action": "TAXI",
               "id": "nose-lights",
-              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "info": "Overhead Panel. Nose light to TAXI for taxi. It goes to T.O at lineup.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -596,7 +583,7 @@
             {
               "action": "VERIFY MAX",
               "id": "autobrake",
-              "info": "Main Instrument Panel. Confirm RTO MAX is set before entering the runway.",
+              "info": "Main Instrument Panel. Confirm MAX is set before entering the runway.",
               "label": "Autobrake",
               "tier": "normal"
             },
@@ -636,7 +623,7 @@
             {
               "action": "CHECK SET",
               "id": "flaps",
-              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "info": "Center Pedestal. Confirm CONF 1+F on the upper ECAM and that it matches the MCDU PERF TAKEOFF page.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -671,7 +658,7 @@
             {
               "action": "TAKEOFF",
               "id": "nose-lights",
-              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "info": "Overhead Panel. Nose light to T.O for the takeoff roll.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -703,7 +690,7 @@
             {
               "action": "AT VR",
               "id": "rotate",
-              "info": "Sidestick. At VR, rotate smoothly at about 3° per second. Liftoff comes at about 10° nose up, then follow the flight director.",
+              "info": "Sidestick. At VR, rotate smoothly at about 3° per second, then follow the flight director.",
               "label": "Rotate",
               "tier": "quick"
             },
@@ -711,7 +698,8 @@
               "action": "GEAR UP",
               "id": "positive-climb",
               "label": "Positive Climb",
-              "tier": "quick"
+              "tier": "quick",
+              "info": "Main Instrument Panel. Raise the gear lever once the altimeter and vertical speed show a positive climb."
             },
             {
               "action": "ON",
@@ -732,18 +720,11 @@
         {
           "items": [
             {
-              "action": "CHECK",
-              "id": "fma",
-              "info": "Primary Flight Display. With the thrust levers in CL, expect THR CLB, then CLB (managed) or OP CLB (selected), and NAV.",
-              "label": "FMA",
-              "tier": "normal"
-            },
-            {
               "action": "VERIFY UP",
               "id": "gear",
-              "info": "Main Instrument Panel. Controls landing gear extension and retraction. Drop the gear at glideslope intercept and verify three green lights.",
+              "info": "Main Instrument Panel. Confirm the lever is up and the gear has retracted.",
               "label": "Gear",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CLIMB",
@@ -751,6 +732,13 @@
               "info": "Center Pedestal. At thrust reduction altitude, when LVR CLB flashes on the PFD, pull the levers back to the CL detent.",
               "label": "Thrust Levers",
               "tier": "quick"
+            },
+            {
+              "action": "CHECK",
+              "id": "fma",
+              "info": "Primary Flight Display. With the thrust levers in CL, expect THR CLB, then CLB (managed) or OP CLB (selected), and NAV.",
+              "label": "FMA",
+              "tier": "normal"
             },
             {
               "action": "RETRACT",
@@ -762,7 +750,7 @@
             {
               "action": "DISARM",
               "id": "ground-spoilers",
-              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "info": "Center Pedestal. Disarm the ground spoilers after takeoff by pushing the speed brake lever down.",
               "label": "Ground Spoilers",
               "tier": "normal"
             },
@@ -772,13 +760,6 @@
               "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
               "label": "ENG Mode",
               "tier": "full"
-            },
-            {
-              "action": "OFF",
-              "id": "autobrake",
-              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
-              "label": "Autobrake",
-              "tier": "normal"
             },
             {
               "action": "ON",
@@ -793,9 +774,16 @@
         {
           "items": [
             {
+              "action": "SET CRUISE",
+              "id": "fcu-altitude",
+              "info": "Glareshield (FCU). Once cleared, turn the altitude knob to your cruise level and push it to continue the managed climb.",
+              "label": "FCU Altitude",
+              "tier": "quick"
+            },
+            {
               "action": "STD",
               "id": "altimeters",
-              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "info": "Glareshield (EFIS panel). Push the baro knob for STD at the transition altitude.",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -869,7 +857,7 @@
             {
               "action": "CROSSCHECK",
               "id": "top-of-descent",
-              "info": "Navigation Display. The calculated point to start descending. Multiply your altitude to lose in thousands by 3, then add 10 to get the required NM.",
+              "info": "Navigation Display. The T/D arrow on the ND marks the calculated point to start descending.",
               "label": "Top of Descent",
               "tier": "normal"
             }
@@ -894,16 +882,16 @@
             {
               "action": "SET",
               "id": "mcdu-approach",
-              "info": "MCDU. Activates approach phase speeds. Verify the STAR and approach in F-PLN, and enter QNH, temperature, wind, and minimums in PERF APPR.",
+              "info": "MCDU. Load the arrival and approach on the F-PLN page, then enter QNH, temperature, wind and minimums in PERF APPR.",
               "label": "MCDU Approach",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
               "id": "ils-frequency",
-              "info": "MCDU. Tunes the Instrument Landing System frequency. Cross-check this on the RAD NAV page.",
+              "info": "MCDU RAD NAV page. Check the ILS frequency and course for the approach you loaded, and enter them if they are missing.",
               "label": "ILS Frequency",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
@@ -947,6 +935,13 @@
             },
             {
               "action": "AS REQUIRED",
+              "id": "speed-brake",
+              "info": "Center Pedestal. Extend to steepen the descent if you are above the profile. Retract before selecting flaps.",
+              "label": "Speed Brake",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
               "id": "anti-ice",
               "info": "Overhead Panel. Prevents or removes ice buildup on critical aircraft surfaces and engine cowls.",
               "label": "Anti-Ice",
@@ -967,22 +962,8 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "info": "Glareshield (EFIS panel). Pull the baro knob and set the destination QNH passing the transition level.",
               "label": "Altimeters",
-              "tier": "normal"
-            },
-            {
-              "action": "TAKEOFF",
-              "id": "nose-lights",
-              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
-              "label": "Nose Lights",
-              "tier": "normal"
-            },
-            {
-              "action": "ON",
-              "id": "rwy-turnoff-lights",
-              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
-              "label": "RWY Turnoff Lights",
               "tier": "normal"
             },
             {
@@ -1010,6 +991,20 @@
               "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
               "label": "Landing Lights",
               "tier": "normal"
+            },
+            {
+              "action": "TAKEOFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Nose light to T.O below 10,000 feet.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Illuminates the area to the sides of the nose gear to aid in turning off the runway.",
+              "label": "RWY Turnoff Lights",
+              "tier": "normal"
             }
           ],
           "title": "Passing 10,000 ft"
@@ -1023,31 +1018,10 @@
         {
           "items": [
             {
-              "action": "ON",
-              "id": "ls-mode",
-              "info": "Glareshield (FCU). Displays ILS localizer and glideslope deviations. Turn ON for ILS approaches, but leave OFF for RNAV.",
-              "label": "LS Mode",
-              "tier": "normal"
-            },
-            {
-              "action": "ARM",
-              "id": "appr",
-              "info": "Glareshield (FCU). Arms the approach modes: LOC and G/S in blue on the FMA for an ILS, or APP NAV and FINAL for an RNAV approach.",
-              "label": "APPR",
-              "tier": "quick"
-            },
-            {
               "action": "CHECK QNH",
               "id": "altimeters",
-              "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
+              "info": "Glareshield (EFIS panel). Confirm the destination QNH is set on both sides.",
               "label": "Altimeters",
-              "tier": "normal"
-            },
-            {
-              "action": "VERIFY SET",
-              "id": "autobrake",
-              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
-              "label": "Autobrake",
               "tier": "normal"
             },
             {
@@ -1065,23 +1039,18 @@
               "tier": "normal"
             },
             {
-              "action": "SET",
+              "action": "CHECK",
               "id": "minimums",
-              "info": "EFIS Panel. Set the decision altitude or minimum descent altitude for the approach. BARO for a standard ILS, RADIO for low-visibility approaches.",
+              "info": "MCDU PERF APPR page. BARO is the decision altitude for a standard approach; RADIO is the decision height for a low-visibility approach. The value shows on the PFD.",
               "label": "Minimums",
-              "tier": "normal"
-            }
-          ],
-          "title": "Approach Setup"
-        },
-        {
-          "items": [
+              "tier": "full"
+            },
             {
               "action": "ACTIVATE",
               "id": "approach-phase",
-              "info": "MCDU PERF page. Activate the approach phase so managed speed slows the aircraft for the flap schedule.",
+              "info": "MCDU PERF page. Activate the approach phase with the speed knob pushed for managed speed. The aircraft then slows to green dot, the green circle on the speed tape.",
               "label": "Approach Phase",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ARM",
@@ -1091,9 +1060,28 @@
               "tier": "quick"
             },
             {
+              "action": "ON",
+              "id": "ls-mode",
+              "info": "Glareshield (FCU). Displays ILS localizer and glideslope deviations. Turn ON for ILS approaches, but leave OFF for RNAV.",
+              "label": "LS Mode",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "appr",
+              "info": "Glareshield (FCU). Arms the approach modes: LOC and G/S in blue on the FMA for an ILS, or APP NAV and FINAL for an RNAV approach.",
+              "label": "APPR",
+              "tier": "quick"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
               "action": "SET",
               "id": "flaps-1",
-              "info": "Center Pedestal. Initial flap setting for approach. Select this at green dot speed, typically around 15 NM out.",
+              "info": "Center Pedestal. Select Flaps 1 at green dot speed, typically around 15 NM out. Wait for the speed tape to slow to green dot first.",
               "label": "Flaps 1",
               "tier": "quick"
             },
@@ -1107,9 +1095,16 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Main Instrument Panel. Controls landing gear extension and retraction. Drop the gear at glideslope intercept and verify three green lights.",
+              "info": "Main Instrument Panel. Lower the gear after Flaps 2, before 2,000 ft above the runway, and check three green lights.",
               "label": "Gear",
               "tier": "quick"
+            },
+            {
+              "action": "VERIFY SET",
+              "id": "autobrake",
+              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
+              "label": "Autobrake",
+              "tier": "normal"
             },
             {
               "action": "SET",
@@ -1151,17 +1146,17 @@
               "tier": "quick"
             },
             {
-              "action": "IDLE",
-              "id": "thrust-levers",
-              "info": "Center Pedestal. At about 20 ft, flare and pull the thrust levers to IDLE.",
-              "label": "Thrust Levers",
+              "action": "PERFORM",
+              "id": "flare",
+              "info": "Sidestick. At about 20 ft, raise the nose gently to reduce the rate of descent. For an autoland, keep hands off until rollout.",
+              "label": "Flare",
               "tier": "quick"
             },
             {
-              "action": "SET",
-              "id": "flare",
-              "info": "Flight Controls. Maintain about 4 to 5 degrees nose up during landing. For an autoland, keep hands off until rollout.",
-              "label": "Flare",
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Pull the thrust levers to IDLE during the flare.",
+              "label": "Thrust Levers",
               "tier": "quick"
             },
             {
@@ -1172,9 +1167,9 @@
               "tier": "quick"
             },
             {
-              "action": "VERIFY",
+              "action": "AS REQUIRED",
               "id": "brakes",
-              "info": "Rudder Pedals. Controls wheel braking. Disengage the autopilot before turning off the runway if performing an autoland.",
+              "info": "Rudder Pedals. Brake to taxi speed with the toe brakes, or let the autobrake do it if set. After an autoland, disconnect the autopilot before turning off the runway.",
               "label": "Brakes",
               "tier": "quick"
             }
@@ -1199,14 +1194,14 @@
             {
               "action": "OFF",
               "id": "landing-lights",
-              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
+              "info": "Overhead Panel. Retract and switch OFF once clear of the runway.",
               "label": "Landing Lights",
               "tier": "normal"
             },
             {
               "action": "TAXI",
               "id": "nose-lights",
-              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "info": "Overhead Panel. Nose light to TAXI once clear of the runway.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -1253,21 +1248,21 @@
             {
               "action": "OFF",
               "id": "autobrake",
-              "info": "Main Instrument Panel. Automatically applies wheel brakes on landing. Set to LO or MED based on your runway length and conditions.",
+              "info": "Main Instrument Panel. Press the lit autobrake button, or the brake pedals, to disengage it below 20 knots.",
               "label": "Autobrake",
               "tier": "normal"
             },
             {
               "action": "RETRACT",
               "id": "ground-spoilers",
-              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "info": "Center Pedestal. Push the speed brake lever down to retract and disarm the ground spoilers once off the runway.",
               "label": "Ground Spoilers",
               "tier": "normal"
             },
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Center Pedestal. Controls trailing edge flaps. During climb, retract to Flaps 1 at F-speed, and Flaps 0 at S-speed.",
+              "info": "Center Pedestal. Retract flaps and slats fully once clear of the runway.",
               "label": "Flaps",
               "tier": "normal"
             },
@@ -1288,7 +1283,7 @@
             {
               "action": "STBY",
               "id": "transponder",
-              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "info": "Center Pedestal. Set to STBY once clear of the runway.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -1313,7 +1308,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Center Pedestal. Locks wheel brakes. Ensure it is OFF when ground chocks are set.",
+              "info": "Center Pedestal. Prevents the aircraft from rolling while parked.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -1327,14 +1322,14 @@
             {
               "action": "OFF",
               "id": "nose-lights",
-              "info": "Overhead Panel. Provides forward illumination during taxi and takeoff. Turn OFF after climbing above 10,000 feet.",
+              "info": "Overhead Panel. Turn OFF once parked.",
               "label": "Nose Lights",
               "tier": "normal"
             },
             {
               "action": "ON",
               "id": "apu-bleed",
-              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "info": "Overhead Panel. Supplies air to the packs from the APU once the engines are shut down.",
               "label": "APU Bleed",
               "tier": "normal"
             },
@@ -1372,13 +1367,6 @@
               "info": "Overhead Panel. Supplies fuel under pressure from the tanks to the engines.",
               "label": "Fuel Pumps",
               "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "transponder",
-              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
-              "label": "Transponder",
-              "tier": "normal"
             }
           ],
           "title": "Shutdown"
@@ -1388,7 +1376,7 @@
             {
               "action": "AS REQUIRED",
               "id": "parking-brake-2",
-              "info": "Center Pedestal. Locks wheel brakes. Ensure it is OFF when ground chocks are set.",
+              "info": "Center Pedestal. Release once the ground crew has the chocks in place.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -1409,23 +1397,23 @@
             {
               "action": "OFF",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls all external aircraft lighting. Set Strobes to AUTO, Beacon OFF, Nav ON, and others as required.",
+              "info": "Overhead Panel. Turn all exterior lights OFF, including Nav & Logo.",
               "label": "Exterior Lights",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "apu-bleed-2",
-              "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
+              "info": "Overhead Panel. Turn OFF before the APU master.",
               "label": "APU Bleed",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "apu-master",
-              "info": "Overhead Panel. Powers the APU electronic control box to prepare for startup.",
+              "info": "Overhead Panel. Shuts the APU down. Wait for the APU to stop before switching the batteries OFF.",
               "label": "APU Master",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -1437,7 +1425,7 @@
             {
               "action": "OFF",
               "id": "batteries",
-              "info": "Overhead Panel. Connects the main batteries to the DC network. Turn OFF Battery 1, 2, and the APU battery to fully de-power the aircraft.",
+              "info": "Overhead Panel. Turn OFF Battery 1 and 2 to fully de-power the aircraft.",
               "label": "Batteries",
               "tier": "quick"
             }
