@@ -292,16 +292,16 @@
             {
               "action": "SET",
               "id": "ias-mach",
-              "info": "Glareshield. Set V2 speed on the MCP.",
+              "info": "Glareshield. Set the MCP speed to V2 from the FMC TAKEOFF REF page. After takeoff the flight director commands V2+20.",
               "label": "IAS/Mach",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
               "id": "yaw-damper",
               "info": "Overhead Panel. Turn on to prevent Dutch roll.",
               "label": "Yaw Damper",
-              "tier": "quick"
+              "tier": "full"
             }
           ],
           "title": "MCP / Pedestal"
@@ -355,14 +355,14 @@
               "id": "flight-altitude",
               "info": "Overhead Panel. Set the cruise altitude on the pressurization panel. The FMC does not set it for you.",
               "label": "Flight Altitude",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
               "id": "landing-altitude",
-              "info": "Overhead Panel. Pressurization — set destination elevation.",
+              "info": "Overhead Panel. Set the destination field elevation on the pressurization panel. The FMC does not set it for you.",
               "label": "Landing Altitude",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -372,18 +372,18 @@
               "tier": "quick"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "ARM",
               "id": "lnav",
-              "info": "Glareshield. Arm LNAV on the MCP for lateral navigation.",
+              "info": "Glareshield. Press LNAV on the MCP. LNAV shows in small white letters on the PFD and engages at 50 ft after liftoff. It will not arm on the ground if the first leg is more than 5 degrees off the runway heading.",
               "label": "LNAV",
-              "tier": "full"
+              "tier": "quick"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "ARM",
               "id": "vnav",
-              "info": "Glareshield. Arm VNAV on the MCP for vertical navigation.",
+              "info": "Glareshield. Press VNAV on the MCP. VNAV shows in small white letters on the PFD and engages at 400 ft after liftoff.",
               "label": "VNAV",
-              "tier": "full"
+              "tier": "quick"
             },
             {
               "action": "RTO",
@@ -441,6 +441,7 @@
             {
               "action": "COMPLETE",
               "id": "takeoff-briefing",
+              "info": "Review the departure route, the takeoff speeds and what you will do if something fails before V1.",
               "label": "Takeoff Briefing",
               "tier": "full"
             },
@@ -561,7 +562,7 @@
             {
               "action": "CONT",
               "id": "l-start-selector-2",
-              "info": "Overhead Panel. When it kicks back, set to CONT for continuous ignition during start.",
+              "info": "Overhead Panel. When it kicks back, set to CONT.",
               "label": "L Start Selector",
               "tier": "quick"
             }
@@ -609,7 +610,7 @@
               "id": "packs",
               "info": "Overhead Panel. Restore cabin air conditioning.",
               "label": "Packs",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "AUTO",
@@ -751,14 +752,14 @@
               "id": "flight-instruments",
               "info": "Main Panel. Ensure no flags and correct indications on PFD/ND.",
               "label": "Flight Instruments",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CHECK",
               "id": "engine-instruments",
               "info": "Main Panel. Verify stable parameters.",
               "label": "Engine Instruments",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CHECK",
@@ -772,7 +773,7 @@
               "id": "takeoff-data",
               "info": "Main Panel. Confirm V1, VR, V2 on FMC/PFD.",
               "label": "Takeoff Data",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "CHECK",
@@ -893,31 +894,10 @@
               "tier": "quick"
             },
             {
-              "action": "OFF",
-              "id": "autobrake",
-              "info": "Main Panel. Switch from RTO to OFF.",
-              "label": "Autobrake",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "start-selectors",
-              "info": "Overhead Panel. Move from CONT back to OFF in the after-takeoff flow, or leave them in CONT if conditions call for it.",
-              "label": "Start Selectors",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "gear-lever",
-              "info": "Main Panel. Move gear lever to OFF after retraction complete to depressurize hydraulics.",
-              "label": "Gear Lever",
-              "tier": "normal"
-            },
-            {
-              "action": "UP",
-              "id": "flaps",
-              "info": "Pedestal. At acceleration height (1,500 ft AGL by default) select flaps 1, then flaps UP passing the \"1\" marker on the speed tape.",
-              "label": "Flaps",
+              "action": "ENGAGED",
+              "id": "lnav",
+              "info": "Glareshield. LNAV turns green on the PFD at 50 ft if it was armed on the ground. If it did not arm, press LNAV now.",
+              "label": "LNAV",
               "tier": "quick"
             },
             {
@@ -928,17 +908,38 @@
               "tier": "quick"
             },
             {
-              "action": "ON",
-              "id": "lnav",
-              "info": "Glareshield. Engage lateral navigation on the MCP.",
-              "label": "LNAV",
+              "action": "ENGAGED",
+              "id": "vnav",
+              "info": "Glareshield. VNAV turns green on the PFD at 400 ft if it was armed on the ground.",
+              "label": "VNAV",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "gear-lever",
+              "info": "Main Panel. Move gear lever to OFF after retraction complete to depressurize hydraulics.",
+              "label": "Gear Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "Main Panel. Switch from RTO to OFF.",
+              "label": "Autobrake",
+              "tier": "normal"
+            },
+            {
+              "action": "UP",
+              "id": "flaps",
+              "info": "Pedestal. At acceleration height (1,500 ft AGL by default) select flaps 1, then flaps UP passing the \"1\" marker on the speed tape.",
+              "label": "Flaps",
               "tier": "quick"
             },
             {
-              "action": "ON",
-              "id": "vnav",
-              "info": "Glareshield. Engage vertical navigation on the MCP.",
-              "label": "VNAV",
+              "action": "OFF",
+              "id": "start-selectors",
+              "info": "Overhead Panel. Move from CONT back to OFF in the after-takeoff flow, or leave them in CONT if conditions call for it.",
+              "label": "Start Selectors",
               "tier": "normal"
             },
             {
@@ -960,6 +961,13 @@
         },
         {
           "items": [
+            {
+              "action": "CRUISE ALT",
+              "id": "mcp-altitude",
+              "info": "Glareshield. As you approach the initial altitude, turn the MCP altitude knob to the cruise altitude. If VNAV has already levelled off, set the cruise altitude and press ALT INTV to resume the climb.",
+              "label": "MCP Altitude",
+              "tier": "normal"
+            },
             {
               "action": "STD",
               "id": "altimeters",
@@ -1070,16 +1078,16 @@
             {
               "action": "SET",
               "id": "ils-frequency",
-              "info": "Pedestal. Tune the ILS frequency for the destination runway.",
+              "info": "Pedestal. Tune the ILS frequency from the FMC INIT REF page and press TFR to make it active. Tune both NAV radios for an autoland; one is enough otherwise.",
               "label": "ILS Frequency",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
               "id": "ils-course",
-              "info": "Glareshield. Set the inbound course on both MCP course windows.",
+              "info": "Glareshield. Set the inbound course on both MCP course windows, captain and first officer.",
               "label": "ILS Course",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "COMPLETE",
@@ -1240,13 +1248,6 @@
               "tier": "quick"
             },
             {
-              "action": "DOWN",
-              "id": "gear",
-              "info": "Main Panel. Extend landing gear for landing.",
-              "label": "Gear",
-              "tier": "quick"
-            },
-            {
               "action": "SET",
               "id": "flaps-15",
               "info": "Pedestal. Slow to 160 kt, then select flaps 15, usually as you turn onto the localizer.",
@@ -1256,8 +1257,22 @@
             {
               "action": "ARM",
               "id": "speed-brake",
-              "info": "Pedestal. Arm the speed brake lever for automatic deployment on touchdown.",
+              "info": "Pedestal. Arm just before following the glideslope down, for automatic deployment on touchdown.",
               "label": "Speed Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Panel. Put the gear down just before following the glideslope down. The engines spool up to approach idle.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "VREF+5",
+              "id": "mcp-speed",
+              "info": "Glareshield. Once the glideslope is captured, turn the MCP speed down to VREF plus at least 5 kt. VREF for the landing flaps is on the FMC APPROACH REF page.",
+              "label": "MCP Speed",
               "tier": "quick"
             },
             {
@@ -1316,7 +1331,7 @@
             {
               "action": "ENGAGE",
               "id": "thrust-reversers",
-              "info": "Pedestal. Deploy after touchdown. Reverse idle by 60 kts.",
+              "info": "Pedestal. Deploy after touchdown. Keep reverse until about 80 kt, then stow.",
               "label": "Thrust Reversers",
               "tier": "quick"
             },
@@ -1463,7 +1478,7 @@
             {
               "action": "OFF",
               "id": "rwy-turnoff-lights",
-              "info": "Overhead Panel. Turn off after takeoff.",
+              "info": "Overhead Panel. Turn off before turning toward the gate.",
               "label": "RWY Turnoff Lights",
               "tier": "normal"
             },
@@ -1572,7 +1587,7 @@
               "id": "yaw-damper",
               "info": "Overhead Panel. Turn off after engines are shut down.",
               "label": "Yaw Damper",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "OFF",
@@ -1594,6 +1609,13 @@
               "info": "Overhead Panel. AC meter selector (right) to GRD PWR to check ground power voltage.",
               "label": "AC Voltmeter",
               "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "apu-bleed",
+              "info": "Overhead Panel. Turn off before the APU is shut down.",
+              "label": "APU Bleed",
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -1621,13 +1643,6 @@
               "id": "isolation-valve",
               "info": "Overhead Panel. Open the isolation valve.",
               "label": "Isolation Valve",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "apu-bleed",
-              "info": "Overhead Panel. Turn off once the APU is shut down.",
-              "label": "APU Bleed",
               "tier": "normal"
             },
             {
