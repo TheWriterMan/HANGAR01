@@ -25,15 +25,15 @@
               "label": "GEN 1 / GEN 2",
               "action": "On",
               "id": "gen-1-gen-2",
-              "info": "Overhead Panel. Engine-driven generators. Switch both ON so they come online automatically after engine start.",
+              "info": "Overhead Panel. GEN 1 is a generator that feeds the ESS, MAIN and EMER buses. GEN 2 is an alternator that feeds only the ESS and EMER buses. Switch both ON so they come online after engine start.",
               "tier": "quick"
             },
             {
               "label": "Strobe Lights",
               "action": "On",
               "id": "strobe-lights",
-              "info": "Overhead Panel. Required before engine start — warns ramp personnel the aircraft is live.",
-              "tier": "normal"
+              "info": "Overhead Panel. The anti-collision lights on each wingtip and the tail. The SF50 has no separate beacon. Required before engine start so people on the ramp know the engine is about to spool.",
+              "tier": "quick"
             },
             {
               "label": "CAS Messages",
@@ -111,21 +111,14 @@
               "label": "Engine Knob",
               "action": "Run",
               "id": "engine-knob-run",
-              "info": "Center Pedestal. Three-position rotary: OFF / START / RUN. Move to RUN to arm the FADEC for engine start.",
+              "info": "Center Pedestal. Two positions: RUN and OFF. Move to RUN to arm the FADEC and turn on the electric fuel pump. The separate ENGINE START/STOP button starts the engine.",
               "tier": "quick"
             },
             {
               "label": "Fuel Pump",
               "action": "Check On",
               "id": "fuel-pump-check",
-              "info": "Overhead Panel. Verify the FUEL PUMP ON CAS advisory is displayed, confirming the electric boost pump is running. The pump arms automatically when BAT switches are ON.",
-              "tier": "quick"
-            },
-            {
-              "label": "Beacon",
-              "action": "On",
-              "id": "beacon",
-              "info": "Overhead Panel. Red anti-collision light on the tail. Required before engine start so ground personnel know the engine is about to spool.",
+              "info": "PFD. Verify the FUEL PUMP ON CAS advisory is displayed after the Engine Knob goes to RUN, confirming the electric boost pump is running.",
               "tier": "quick"
             }
           ]
@@ -174,10 +167,10 @@
               "tier": "normal"
             },
             {
-              "label": "Bleed Air",
-              "action": "On",
+              "label": "BLEED Switch",
+              "action": "Bleed",
               "id": "bleed-air-after-start",
-              "info": "Overhead Panel. Leave bleed OFF until the engine has been at idle for at least 2 minutes, then switch ON for pressurization and ECS.",
+              "info": "Overhead Panel. Two positions: BLEED and FRESH. Don't set BLEED until BAT 1 and BAT 2 have been ON for 2 minutes or more. BLEED routes engine bleed air into the cabin for pressurization.",
               "tier": "normal"
             },
             {
@@ -191,7 +184,7 @@
               "label": "CAPS Pin",
               "action": "Remove & Stow",
               "id": "caps-pin",
-              "info": "Left side of the instrument panel. Remove and stow after engine start. A CAPS PIN CAS advisory clears once removed.",
+              "info": "Overhead (ceiling) CAPS handle. Remove and stow after engine start. A CAPS PIN CAS advisory clears once removed.",
               "tier": "quick"
             }
           ]
@@ -228,9 +221,9 @@
             },
             {
               "label": "Pitch Trim",
-              "action": "6° Up",
+              "action": "Set",
               "id": "pitch-trim",
-              "info": "Center Pedestal. The SF50 departs at a trim setting of 6 degrees nose-up for normal takeoff weight. Verify on the trim indicator on the MFD.",
+              "info": "Center Pedestal. Set pitch trim for takeoff and check it on the trim indicator on the MFD.",
               "tier": "quick"
             },
             {
@@ -248,6 +241,13 @@
               "tier": "normal"
             },
             {
+              "label": "Parking Brake",
+              "action": "Released",
+              "id": "parking-brake",
+              "info": "Below the PFD and the pilot-side touchscreen controller. Release before taxi; the click spot is just right of the handle.",
+              "tier": "quick"
+            },
+            {
               "label": "Brakes",
               "action": "Check",
               "id": "brakes-taxi",
@@ -258,7 +258,7 @@
               "label": "TO/GA Button",
               "action": "Press",
               "id": "toga-button",
-              "info": "Glareshield or sidestick. Activates Takeoff/Go-Around mode, sets the flight director to takeoff pitch and arms initial climb guidance.",
+              "info": "Thrust lever, the thumb button on the side of the handle. Sets the flight director to takeoff pitch. ROL appears on the PFD mode annunciator when it is pressed.",
               "tier": "normal"
             },
             {
@@ -289,9 +289,9 @@
             },
             {
               "label": "Transponder",
-              "action": "TA/RA",
+              "action": "ALT",
               "id": "transponder-lineup",
-              "info": "MFD. Switch from STBY to ALT/ON with TCAS in TA/RA mode at runway entry. TA-only is insufficient — RA logic is needed once airborne.",
+              "info": "MFD. Switch from STBY to ALT at runway entry. The Vision Jet's traffic system (TCAS I) gives traffic advisories only, with no resolution advisories.",
               "tier": "quick"
             },
             {
@@ -303,9 +303,9 @@
             },
             {
               "label": "Pitch Trim",
-              "action": "Verify 6° Up",
+              "action": "Set",
               "id": "pitch-trim-lineup",
-              "info": "MFD trim indicator. Confirm trim setting is unchanged from the taxi check.",
+              "info": "MFD trim indicator. Confirm trim is still set for takeoff.",
               "tier": "normal"
             },
             {
@@ -358,7 +358,7 @@
               "label": "Rotate",
               "action": "At Vr",
               "id": "rotate",
-              "info": "Sidestick. Rotate at 80–90 KIAS. Pitch to approximately 5 degrees nose-up initially, then follow the flight director. Maximum 7 degrees pitch.",
+              "info": "Sidestick. Rotate at 85 KIAS to 10° nose-up, then follow the flight director.",
               "tier": "quick"
             },
             {
@@ -372,7 +372,7 @@
               "label": "Flaps",
               "action": "Up",
               "id": "flaps-up-takeoff",
-              "info": "Overhead Panel. Retract after clearing obstacles with airspeed above 115 KIAS. VFE 100% is 150 KIAS — do not retract flaps while above that speed.",
+              "info": "Overhead Panel. Retract above 115 KIAS, clear of obstacles.",
               "tier": "quick"
             }
           ]
@@ -459,10 +459,10 @@
               "tier": "normal"
             },
             {
-              "label": "Thrust",
-              "action": "MGT / FMS",
+              "label": "Thrust Lever",
+              "action": "MCT",
               "id": "thrust-cruise",
-              "info": "Center Pedestal. Set cruise thrust to the target shown by the FMS or FADEC cruise management. Max cruise is 311 KTAS at FL280.",
+              "info": "Center Pedestal. Click the spot at the back of the thrust lever handle to snap to MCT, or let the autothrottle manage thrust in FMS mode. Max cruise is 311 KTAS at FL280.",
               "tier": "normal"
             },
             {
@@ -510,6 +510,13 @@
           "title": "Descent",
           "items": [
             {
+              "label": "Thrust Lever",
+              "action": "Reduce",
+              "id": "thrust-lever",
+              "info": "Center Pedestal. Pull back as needed to start down and hold the descent speed.",
+              "tier": "normal"
+            },
+            {
               "label": "Altimeters",
               "action": "Set QNH",
               "id": "altimeters-qnh",
@@ -535,10 +542,10 @@
           "title": "Approach Setup",
           "items": [
             {
-              "label": "Airspeed",
-              "action": "< 150 KIAS",
-              "id": "airspeed-flap-gate",
-              "info": "PFD. Slow below VLO extend (210 KIAS) before extending gear, and below 150 KIAS before selecting initial flap.",
+              "label": "Approach Mode",
+              "action": "Arm",
+              "id": "approach-mode",
+              "info": "Autopilot control panel, APR button. Arms the autopilot to capture the final approach course and glidepath once the approach is loaded.",
               "tier": "normal"
             },
             {
@@ -547,6 +554,13 @@
               "id": "flaps-approach",
               "info": "Overhead Panel. Set initial 50% flap for the approach. Maximum speed with flaps at 50% is 190 KIAS. Maintain below 140 KIAS before adding full flap.",
               "tier": "quick"
+            },
+            {
+              "label": "Airspeed",
+              "action": "140 KIAS",
+              "id": "airspeed-flap-gate",
+              "info": "PFD. Hold 140 KIAS once flaps are at 50%. Flaps 50% are limited to 190 KIAS and gear extension to 210 KIAS.",
+              "tier": "normal"
             }
           ]
         },
@@ -585,7 +599,7 @@
               "label": "Windshield IPS",
               "action": "Off",
               "id": "windshield-ips-off",
-              "info": "Overhead Panel. Turn off windshield ice protection before landing to prevent the heated windshield from distorting visibility on short final.",
+              "info": "Overhead Panel. Fluid spray reduces visibility, so turn windshield ice protection off before landing.",
               "tier": "normal"
             },
             {
@@ -700,10 +714,24 @@
               "tier": "quick"
             },
             {
+              "label": "Bleed",
+              "action": "Fresh",
+              "id": "bleed-fresh",
+              "info": "Overhead Panel. Two positions: BLEED and FRESH. Set FRESH before shutting the engine down.",
+              "tier": "normal"
+            },
+            {
+              "label": "GEN 1 / GEN 2",
+              "action": "Off",
+              "id": "gen-1-gen-2-off",
+              "info": "Overhead Panel. Turn off both before the Engine Knob goes to OFF.",
+              "tier": "quick"
+            },
+            {
               "label": "Engine Knob",
               "action": "Off",
               "id": "engine-knob-off",
-              "info": "Center Pedestal. Move the three-position rotary to OFF to close the FADEC fuel metering valve.",
+              "info": "Center Pedestal. Two positions: RUN and OFF. Move to OFF to close the FADEC fuel metering valve and stop the electric fuel pump.",
               "tier": "quick"
             },
             {
@@ -712,6 +740,13 @@
               "id": "engine-stop",
               "info": "Overhead Panel. Press the Engine START/STOP button to complete the shutdown sequence after the Engine Knob is in OFF.",
               "tier": "quick"
+            },
+            {
+              "label": "N2",
+              "action": "Below 24%",
+              "id": "n2",
+              "info": "MFD. Wait for N2 to drop below 24% before removing aircraft power. Switching the batteries off earlier can log FADEC faults.",
+              "tier": "normal"
             }
           ]
         },
@@ -719,24 +754,17 @@
           "title": "Secure",
           "items": [
             {
-              "label": "Bleed",
-              "action": "Fresh",
-              "id": "bleed-fresh",
-              "info": "Overhead Panel. Set bleed air to FRESH after engine shutdown for ventilation while passengers deplane.",
+              "label": "CAPS Pin",
+              "action": "Replace",
+              "id": "caps-pin",
+              "info": "Overhead (ceiling) CAPS handle. Put the safety pin back so the parachute handle can't be pulled on the ground.",
               "tier": "normal"
-            },
-            {
-              "label": "GEN 1 / GEN 2",
-              "action": "Off",
-              "id": "gen-1-gen-2-off",
-              "info": "Overhead Panel. Turn off both generators after engine has spooled down.",
-              "tier": "quick"
             },
             {
               "label": "Lights",
               "action": "Off",
               "id": "lights-off",
-              "info": "Overhead Panel. Turn off all external and interior lights — strobe, beacon, landing, navigation, and cabin.",
+              "info": "Overhead Panel. Turn off all external and interior lights: strobe, landing, navigation and cabin.",
               "tier": "normal"
             },
             {
