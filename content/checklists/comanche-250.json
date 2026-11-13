@@ -81,8 +81,9 @@
               "tier": "normal"
             },
             {
-              "action": "DOWN",
+              "action": "Up",
               "id": "flaps",
+              "info": "Mechanical flaps. Locks hold them in the up position.",
               "label": "Flaps",
               "tier": "normal"
             },
@@ -228,9 +229,9 @@
               "tier": "normal"
             },
             {
-              "action": "2-8 STROKES",
+              "action": "1-5 Strokes",
               "id": "primer",
-              "info": "Number of strokes depends on OAT. Hot engine: leave locked and do not prime.",
+              "info": "Cold engine (below 40°F): 3-5 strokes, more if extremely cold. Warm engine (above 40°F): do not prime, set the magnetos to BOTH and engage the starter straight away.",
               "label": "Primer",
               "tier": "quick"
             },
@@ -396,6 +397,13 @@
         {
           "items": [
             {
+              "action": "Release",
+              "id": "parking-brake",
+              "info": "Parking brake T-handle.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "taxi-clearance",
               "info": "ATC taxi clearance.",
@@ -418,7 +426,7 @@
             {
               "action": "CHECK",
               "id": "brakes",
-              "info": "Left rudder pedals. Release the parking brake, check braking and steering. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
+              "info": "Left rudder pedals. Check braking and steering. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
               "label": "Brakes",
               "tier": "normal"
             }
@@ -428,9 +436,17 @@
         {
           "items": [
             {
-              "action": "SET",
+              "action": "Hold",
               "id": "parking-brake-runup",
-              "label": "Parking Brake",
+              "info": "Toe brakes on the left rudder pedals. Hold them through the run-up.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "800-1200 RPM",
+              "id": "engine-warm-up",
+              "info": "Throttle. Not more than 2 minutes in warm weather, or 4 in cold. The engine is warm enough for takeoff when the throttle opens without the engine faltering.",
+              "label": "Engine Warm-Up",
               "tier": "normal"
             },
             {
@@ -601,7 +617,7 @@
               "tier": "normal"
             },
             {
-              "action": "ON + ALT",
+              "action": "Alt",
               "id": "transponder",
               "info": "Before entering the runway.",
               "label": "Transponder",
@@ -642,7 +658,7 @@
             {
               "action": "97-105 MPH",
               "id": "initial-climb",
-              "info": "Hold Vy until at a safe altitude. On a short field or soft field takeoff, hold Vx (76-84 MPH at sea level) until obstacles are cleared, then accelerate to Vy.",
+              "info": "Hold Vy until at a safe altitude. On a short field or soft field takeoff, hold Vx (84 MPH at sea level) until obstacles are cleared, then accelerate to Vy.",
               "label": "Vy Climb",
               "tier": "normal"
             }
@@ -660,7 +676,7 @@
             {
               "action": "SET",
               "id": "climb-power-set",
-              "info": "At 1000 ft AGL. Normal climb: 25 inHG MAP, 2400 RPM, 120 MPH. Max power climb: full MAP, max RPM, Vy.",
+              "info": "At 1000 ft AGL. Throttle as far as engine temperatures will tolerate, propeller 2400 RPM max. Normal climb at 110 MPH. Best rate of climb is 105 MPH at sea level, about 1 MPH less per 1000 ft.",
               "label": "Climb Power",
               "tier": "quick"
             },
@@ -696,6 +712,20 @@
               "info": "Or as required.",
               "label": "Electric Fuel Pump",
               "tier": "normal"
+            },
+            {
+              "action": "Check",
+              "id": "cht",
+              "info": "Right instrument panel and the JPI EDM 830. The EDM shows a cylinder in red above 380°F. Keep cylinders below 400°F except in an emergency.",
+              "label": "CHT",
+              "tier": "normal"
+            },
+            {
+              "action": "Lean As Required",
+              "id": "mixture",
+              "info": "Lean as altitude increases.",
+              "label": "Mixture",
+              "tier": "full"
             },
             {
               "action": "AS DESIRED",
@@ -832,9 +862,16 @@
         {
           "items": [
             {
+              "action": "Off",
+              "id": "autopilot-master",
+              "info": "Disconnect button on the yoke, or hold the Mode button for more than 3 seconds.",
+              "label": "Autopilot Master",
+              "tier": "normal"
+            },
+            {
               "action": "CONFIRM",
               "id": "landing-speeds",
-              "info": "VREF 70-85 MPH depending on weight. Subtract 5 MPH for short or soft field, add 5 MPH if flaps are not full. Enter the pattern at no more than 125 MPH.",
+              "info": "Pattern at 120 MPH. Final at 90 MPH with full flaps, or 95 MPH with no flaps. Add 5 MPH when windy.",
               "label": "Landing Speeds",
               "tier": "normal"
             },
@@ -873,28 +910,28 @@
             {
               "action": "DOWN",
               "id": "gear-down",
-              "info": "Instrument panel. On downwind. Max gear speed 148 MPH, 125 MPH recommended.",
+              "info": "Instrument panel. On downwind, below 125 MPH. Extending is allowed up to 150 MPH but loads the gear motor and doors.",
               "label": "Landing Gear",
               "tier": "quick"
             },
             {
               "action": "FLAPS 1",
               "id": "flaps-downwind",
-              "info": "On downwind at about 100 MPH (VREF + 15 KIAS). Max flap speed 125 MPH, 100 MPH recommended.",
+              "info": "On downwind. Below 100 MPH recommended, max flap speed 125 MPH.",
               "label": "Flaps",
               "tier": "normal"
             },
             {
               "action": "FLAPS 2",
               "id": "flaps-base",
-              "info": "Base turn. Descend at 500-700 fpm, hold at least VREF + 10 KIAS, stay above 500 ft AGL until turning final.",
+              "info": "Base turn. Descend at 500-700 fpm, stay above 500 ft AGL until turning final.",
               "label": "Flaps (Base)",
               "tier": "normal"
             },
             {
               "action": "FULL",
               "id": "flaps-final",
-              "info": "On final. VREF + 5 KIAS until landing is assured, then cross the threshold at VREF.",
+              "info": "On final. Trim for about 90 MPH with full flaps, or 95 MPH with no flaps. Add 5 MPH when windy.",
               "label": "Flaps (Final)",
               "tier": "normal"
             }
@@ -904,8 +941,9 @@
         {
           "items": [
             {
-              "action": "DOWN & 3 GREEN",
+              "action": "Down & Green",
               "id": "gear-check-final",
+              "info": "Instrument panel, below the gear switch. One green light shows all three gears down and locked.",
               "label": "Landing Gear",
               "tier": "quick"
             },
@@ -919,6 +957,13 @@
               "action": "ON",
               "id": "lights-check-final",
               "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Rich",
+              "id": "mixture",
+              "info": "Lean as required at airports above 4,000 ft.",
+              "label": "Mixture",
               "tier": "normal"
             },
             {
