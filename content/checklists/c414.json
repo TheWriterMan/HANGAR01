@@ -1016,7 +1016,7 @@
               "label": "Magnetos",
               "action": "Off",
               "id": "magnetos-off",
-              "info": "Side console. Both switches to OFF after props stop turning.",
+              "info": "Side console. All magneto switches, left and right engine, to OFF after the props stop turning.",
               "tier": "quick"
             },
             {
@@ -1057,7 +1057,7 @@
       ]
     }
   ],
-  "description": "A pressurized, turbocharged piston twin with a service ceiling above 30,000 ft and roughly 1,300 NM of range for serious cross-country trips.",
+  "description": "A pressurized, turbocharged piston twin with a service ceiling above 30,000 ft and about 1,100 NM of range for serious cross-country trips.",
   "manufacturer": "Cessna",
   "model": "414AW",
   "slug": "c414",
