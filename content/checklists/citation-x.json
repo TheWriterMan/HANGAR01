@@ -21,7 +21,7 @@
             {
               "action": "On",
               "id": "stby-power",
-              "info": "Main panel. Standby power. To test it first: hold TEST and check the green light, then ON and check the red light.",
+              "info": "Main panel. Standby power. To test it first: hold TEST and check the green light, then ON and check the amber light.",
               "label": "Stby Power",
               "tier": "normal"
             },
@@ -155,13 +155,6 @@
               "tier": "normal"
             },
             {
-              "action": "As Required",
-              "id": "ats",
-              "info": "Main panel, ATS button. Off or armed. ATS can be enabled or disabled in the FFX EFB options.",
-              "label": "ATS",
-              "tier": "full"
-            },
-            {
               "action": "Closed",
               "id": "doors",
               "info": "Doors and windows closed and locked.",
@@ -196,7 +189,7 @@
             {
               "action": "Set",
               "id": "v-speeds",
-              "info": "PFD. Set and confirm V-speeds from the FMS takeoff data.",
+              "info": "PFD. Set and confirm V-speeds from the FMS takeoff data. They appear on the PFD once the flaps are set for takeoff.",
               "label": "V-Speeds",
               "tier": "normal"
             },
@@ -205,7 +198,7 @@
               "id": "pac-isol-valve",
               "info": "Main panel. Closed is vertical.",
               "label": "PAC Isol Valve",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "Gnd Rec",
@@ -243,7 +236,7 @@
             {
               "action": "Idle",
               "id": "thrust-lever-r",
-              "info": "Pedestal. At 10% N2, click the right lever to IDLE. Verify ignition at about 33% N2 and starter disengage by about 57% N2.",
+              "info": "Pedestal. At 10% N2, click the right lever to IDLE. Ignition comes on at about 14% N2 and fuel at about 33% N2. The start ends by 57% N2, when the START and DISENGAGE lights go out.",
               "label": "Thrust Lever (R)",
               "tier": "quick"
             },
@@ -283,9 +276,16 @@
             {
               "action": "Check",
               "id": "hydraulic-panel",
-              "info": "Hyd B about 3,000 PSI. Hyd A pressure will fluctuate.",
+              "info": "EICAS > FUEL HYD page. Hyd A and B both about 3,000 PSI.",
               "label": "Hydraulic Pressure",
               "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "generators",
+              "info": "DC power panel, left of the pedestal. LH and RH GEN switches to GEN. The GEN OFF L-R message clears.",
+              "label": "Generators",
+              "tier": "quick"
             },
             {
               "action": "Check",
@@ -385,6 +385,13 @@
               "info": "FGCP. Meant to stay on all the time.",
               "label": "Mach Trim",
               "tier": "full"
+            },
+            {
+              "action": "Armed / As Required",
+              "id": "ats",
+              "info": "Main panel, ATS button. Push to arm it on the ground (amber light on the button). N1 TO then engages when you press TO/GA. ATS can be enabled or disabled in the FFX EFB options.",
+              "label": "ATS",
+              "tier": "normal"
             },
             {
               "action": "Preselect",
@@ -494,7 +501,7 @@
             {
               "action": "TO/MC",
               "id": "thrust-levers-to",
-              "info": "Pedestal. Advance to the TO/MC detent. If you use ATS, activate it now with the ATS button. TO/MC thrust is limited to 5 minutes.",
+              "info": "Pedestal. Advance to the TO/MC detent. TO/MC thrust is limited to 5 minutes.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
@@ -547,14 +554,14 @@
             {
               "action": "CLB",
               "id": "thrust-levers",
-              "info": "Pedestal. CLB detent once flaps are up. Activate ATS now if you use it. 250 KIAS below 10,000 ft.",
+              "info": "Pedestal. CLB detent once flaps are up. 250 KIAS below 10,000 ft.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
             {
               "action": "Off",
               "id": "taxi-lights",
-              "info": "Pedestal.",
+              "info": "Pedestal. The taxi lights already went out at liftoff, since weight-on-wheels switches keep them off in flight. This sets the switch off.",
               "label": "Taxi Lights",
               "tier": "normal"
             },
@@ -570,7 +577,7 @@
               "id": "apu-climb",
               "info": "Right wall, APU switches. Shut down before FL310: APU Bleed OFF, Start switch STOP, APU Master OFF.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Initial Climb"
@@ -633,7 +640,7 @@
             {
               "action": "Cross-Check",
               "id": "tod",
-              "info": "FMS PROG page 2/3 shows distance and time to TOD.",
+              "info": "FMS PERF > DESCENT page shows the time to TOD.",
               "label": "Top of Descent",
               "tier": "normal"
             },
@@ -720,13 +727,6 @@
         {
           "items": [
             {
-              "action": "Set QNH",
-              "id": "altimeters-appr",
-              "info": "At transition level, if it is below FL 100.",
-              "label": "Altimeters",
-              "tier": "full"
-            },
-            {
               "action": "Norm",
               "id": "ignition-appr",
               "info": "Main panel, LH and RH.",
@@ -762,7 +762,7 @@
             {
               "action": "On",
               "id": "taxi-lights",
-              "info": "Pedestal.",
+              "info": "Pedestal. Weight-on-wheels switches keep the taxi lights off in flight, so they come on at touchdown.",
               "label": "Taxi Lights",
               "tier": "normal"
             },
@@ -833,7 +833,7 @@
             {
               "action": "Disengage",
               "id": "autopilot",
-              "info": "Latest 200 ft AGL. Cross the threshold at VREF.",
+              "info": "Off by 170 ft AGL on an ILS, 400 ft AGL on other approaches. Cross the threshold at VREF.",
               "label": "Autopilot",
               "tier": "quick"
             },
@@ -861,7 +861,7 @@
             {
               "action": "As Required",
               "id": "thrust-reversers",
-              "info": "Max 70 KIAS.",
+              "info": "Deploy after nosewheel contact. Idle reverse by 65 KIAS.",
               "label": "Thrust Reversers",
               "tier": "normal"
             }
@@ -1046,7 +1046,7 @@
               "id": "apu-shut",
               "info": "Right wall, APU switches. APU Bleed OFF, Start switch STOP, APU Master OFF. Can stay running at the gate if desired.",
               "label": "APU",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "Off",
