@@ -1002,8 +1002,8 @@
             {
               "action": "AS REQUIRED",
               "id": "seat-belts",
-              "info": "Overhead Panel. Seatbelt sign off if smooth above 10,000 ft.",
-              "label": "Seatbelt Sign",
+              "info": "Overhead Panel. The seat belt signs may be turned off above 10,000 ft.",
+              "label": "Seat Belts",
               "tier": "full"
             },
             {
@@ -1131,13 +1131,6 @@
               "tier": "quick"
             },
             {
-              "action": "INITIATE",
-              "id": "descent",
-              "info": "Glareshield. Verify automatic descent in PROFILE mode, or manually select LVL CH if required by ATC.",
-              "label": "Descent",
-              "tier": "normal"
-            },
-            {
               "action": "AS REQUIRED",
               "id": "eng-mode",
               "info": "Overhead Panel. Move to CONT RELIGHT if descending through icing, turbulence, or heavy precipitation.",
@@ -1154,8 +1147,8 @@
             {
               "action": "ON",
               "id": "seat-belts",
-              "info": "Overhead Panel. Seatbelt sign ON below 10,000 ft.",
-              "label": "Seatbelt Sign",
+              "info": "Overhead Panel. Turn the seat belt signs on before reaching 10,000 ft.",
+              "label": "Seat Belts",
               "tier": "normal"
             },
             {
@@ -1516,8 +1509,8 @@
             {
               "action": "OFF",
               "id": "seat-belts",
-              "info": "Overhead Panel. Seatbelt sign OFF.",
-              "label": "Seatbelt Sign",
+              "info": "Overhead Panel. Turn the seat belt signs off once the engines are shut down.",
+              "label": "Seat Belts",
               "tier": "normal"
             },
             {
@@ -1638,7 +1631,7 @@
             {
               "action": "OFF",
               "id": "batteries",
-              "info": "Overhead Panel. Switch all three batteries off. This is the final step to fully de-power the aircraft.",
+              "info": "Overhead Panel. Switch the batteries off. This is the final step to fully de-power the aircraft.",
               "label": "Batteries",
               "tier": "quick"
             }
