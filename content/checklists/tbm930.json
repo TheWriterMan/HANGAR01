@@ -17,6 +17,13 @@
               "tier": "full"
             },
             {
+              "action": "STBY",
+              "id": "passenger-oxygen",
+              "info": "Overhead Panel, guarded switch next to OXYGEN. Set to STBY before turning OXYGEN on, or the passenger masks drop.",
+              "label": "Passenger Oxygen",
+              "tier": "full"
+            },
+            {
               "action": "ON",
               "id": "oxygen-master-switch",
               "info": "Overhead Panel. Activates the oxygen supply for the cabin in case of depressurization.",
@@ -124,6 +131,13 @@
         },
         {
           "items": [
+            {
+              "action": "FULL BACK",
+              "id": "man-ovrd",
+              "info": "Center Pedestal. The emergency fuel lever. Keep it notched fully back, or the engine can over-temperature at start.",
+              "label": "MAN OVRD",
+              "tier": "full"
+            },
             {
               "action": "CUTOFF",
               "id": "throttle",
@@ -233,7 +247,7 @@
             {
               "action": "CHECK",
               "id": "voltage",
-              "info": "MFD. Ensures the battery has sufficient voltage for a safe engine start.",
+              "info": "MFD. Battery above 24.5 V, or about 28 V on ground power.",
               "label": "Voltage",
               "tier": "normal"
             },
@@ -255,6 +269,13 @@
       "groups": [
         {
           "items": [
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Upper Panel, EXT LIGHTS. On before start so people outside know the engine is about to run.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
             {
               "action": "AUTO",
               "id": "ignition",
@@ -309,6 +330,20 @@
         {
           "items": [
             {
+              "action": "BATT",
+              "id": "source",
+              "info": "Upper Panel. Only after a start on ground power: back to BATT before the GPU is removed.",
+              "label": "Source",
+              "tier": "full"
+            },
+            {
+              "action": "DISCONNECT",
+              "id": "gpu",
+              "info": "Outside, left side of the fuselage. Only after a start on ground power. GPU DOOR should go out on the CAS.",
+              "label": "GPU",
+              "tier": "full"
+            },
+            {
               "action": "FLIGHT IDLE",
               "id": "throttle",
               "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
@@ -344,13 +379,6 @@
               "tier": "quick"
             },
             {
-              "action": "ON",
-              "id": "ap-trims",
-              "info": "Upper Panel. Provides master electrical power to the autopilot and electric trim systems.",
-              "label": "AP / Trims",
-              "tier": "quick"
-            },
-            {
               "action": "TEST",
               "id": "fuel-sel-shift-button",
               "info": "Upper Panel, FUEL panel. Press the SHIFT button to verify it cycles the automatic fuel selector between tanks. Confirms the auto-switching mechanism works before flight.",
@@ -358,16 +386,23 @@
               "tier": "full"
             },
             {
-              "action": "ST-BY / TEST",
+              "action": "ON",
+              "id": "ap-trims",
+              "info": "Upper Panel. Provides master electrical power to the autopilot and electric trim systems.",
+              "label": "AP / Trims",
+              "tier": "quick"
+            },
+            {
+              "action": "ST-BY",
               "id": "generator-test",
-              "info": "Upper Panel. Move generator switch to ST-BY, then TEST. Verify the standby generator powers the buses correctly before returning to MAIN.",
-              "label": "Generator",
+              "info": "Upper Panel, GENERATOR selector (MAIN, ST-BY, OFF). Keep BLEED OFF to unload the generator, check MAIN and read the amps and volts. Only when the main load is below 80 amps, turn to ST-BY and check amps and volts. If the standby voltage is low (close to 27 V), press GENERATOR RESET ST-BY and check the voltage is back in the green.",
+              "label": "Generator Test",
               "tier": "full"
             },
             {
               "action": "MAIN",
               "id": "generator-main",
-              "info": "Upper Panel. Return generator switch to MAIN after the standby test completes. Confirms normal operation is restored.",
+              "info": "Upper Panel. Back to MAIN after the standby test.",
               "label": "Generator",
               "tier": "full"
             },
@@ -567,11 +602,11 @@
               "tier": "normal"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "ON",
               "id": "inertial-separator",
-              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Stays ON for takeoff. It is already on from taxi, so check it is still on.",
               "label": "Inertial Separator",
-              "tier": "full"
+              "tier": "normal"
             }
           ],
           "title": "Lineup"
@@ -605,6 +640,13 @@
               "info": "MFD. Confirms fuel quantity and balance before takeoff.",
               "label": "Fuel Gauges",
               "tier": "normal"
+            },
+            {
+              "action": "BELOW 50 A",
+              "id": "battery-amps",
+              "info": "MFD. A high charge just after a start on the battery is normal. If it stays above 50 amps, do not take off: the battery or the generator may have failed.",
+              "label": "Battery Amps",
+              "tier": "full"
             },
             {
               "action": "CHECK",
@@ -652,13 +694,6 @@
               "info": "GTC, Transponder screen. Set the squawk code and select ALT. ALT shows white on the ground and turns green once airborne, when altitude reporting starts.",
               "label": "Transponder",
               "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "ap-nav",
-              "info": "Autopilot Panel. Arms the navigation mode to follow the flight plan.",
-              "label": "AP NAV",
-              "tier": "normal"
             }
           ],
           "title": "Departure Setting"
@@ -695,21 +730,21 @@
             {
               "action": "90 KIAS",
               "id": "rotate",
-              "info": "Control Yoke. The speed at which the pilot gently pulls back to lift the nose off the runway.",
+              "info": "Control Yoke. Pull back gently at 90 KIAS and hold about 10° nose up.",
               "label": "Rotate",
               "tier": "quick"
             },
             {
               "action": "GEAR UP",
               "id": "positive-climb",
-              "info": "PFD. Confirms the aircraft is actively gaining altitude before retracting the landing gear.",
+              "info": "PFD. Once vertical speed is positive, tap the brakes briefly, then raise the gear below 150 KIAS. The amber light flashes while the gear pump runs and goes out when all three gear are up.",
               "label": "Positive Climb",
               "tier": "quick"
             },
             {
               "action": "FLAPS UP",
               "id": "ias-115-kts",
-              "info": "PFD. Ensures the aircraft has enough speed to safely retract the flaps.",
+              "info": "PFD. Flaps up above 115 KIAS, then climb at 124 KIAS. When climbing at 100 KIAS for best angle, keep the flaps at TO until 500 ft above the ground.",
               "label": "IAS > 115 Kts",
               "tier": "quick"
             }
@@ -743,6 +778,13 @@
               "id": "torque-max-100",
               "info": "MFD. Ensures engine power does not exceed its structural limits.",
               "label": "Torque Max 100%",
+              "tier": "normal"
+            },
+            {
+              "action": "124 KIAS",
+              "id": "climb-airspeed",
+              "info": "PFD, airspeed tape. Best rate of climb speed with gear and flaps up.",
+              "label": "Climb Airspeed",
               "tier": "normal"
             },
             {
@@ -869,7 +911,7 @@
             {
               "action": "CHECK",
               "id": "torque-itt-ng",
-              "info": "MFD. Monitors engine gauges to ensure they remain within safe operating limits during climb.",
+              "info": "MFD. Set torque from the engine operation tables or the cruise index on the PFDs, and keep torque, ITT and Ng within limits.",
               "label": "Torque / ITT / Ng",
               "tier": "normal"
             },
@@ -1007,13 +1049,6 @@
               "tier": "normal"
             },
             {
-              "action": "ARM",
-              "id": "apr-mode",
-              "info": "AFCS control unit, above the MFD. Press APR so the autopilot captures and flies the loaded approach. It shows in white while armed.",
-              "label": "APR Mode",
-              "tier": "normal"
-            },
-            {
               "action": "CHECK",
               "id": "pressurization",
               "info": "MFD. Confirms the cabin pressure is following the descent normally.",
@@ -1037,7 +1072,7 @@
             {
               "action": "ON",
               "id": "landing-lights",
-              "info": "Upper Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "info": "Upper Panel. On below FL100.",
               "label": "Landing Lights",
               "tier": "normal"
             }
@@ -1056,14 +1091,14 @@
             {
               "action": "DOWN",
               "id": "landing-gear",
-              "info": "Main Instrument Panel. Controls the raising and lowering of the landing gear.",
+              "info": "Main Instrument Panel. Below 178 KIAS. Check three green, and the amber light and GEAR UNSAFE off.",
               "label": "Landing Gear",
               "tier": "quick"
             },
             {
               "action": "T/O",
               "id": "flaps",
-              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "info": "Center Pedestal. Below 178 KIAS.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -1140,9 +1175,30 @@
             },
             {
               "action": "OFF",
+              "id": "nav-lights",
+              "info": "Upper Panel, EXT LIGHTS.",
+              "label": "NAV Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "strobes",
+              "info": "Upper Panel, EXT LIGHTS.",
+              "label": "Strobes",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
               "id": "de-ice-systems",
               "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "pitot-l-r-stall-htr",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. PITOT L HTR and PITOT R & STALL HTR both off.",
+              "label": "Pitot L/R & Stall Htr",
               "tier": "normal"
             },
             {
@@ -1315,10 +1371,17 @@
             },
             {
               "action": "OFF",
-              "id": "standby-instruments",
-              "info": "Main Instrument Panel. The backup display provides attitude, altitude, and airspeed if the primary displays fail.",
-              "label": "Standby Instruments",
+              "id": "fuel-tank-selector",
+              "info": "Center Pedestal. Closes the fuel supply from both tanks.",
+              "label": "Fuel Tank Selector",
               "tier": "normal"
+            },
+            {
+              "action": "AUTO OFF",
+              "id": "standby-instruments",
+              "info": "Main Instrument Panel, MD302 standby instrument. No action needed: it shuts itself down within 60 seconds of the power going off. Press and hold its knob for about 2 seconds to shut it down sooner.",
+              "label": "Standby Instruments",
+              "tier": "full"
             }
           ],
           "title": "Secure"
