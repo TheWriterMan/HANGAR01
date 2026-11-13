@@ -37,7 +37,7 @@
               "id": "battery-1-2",
               "info": "Left subpanel.",
               "label": "Battery 1+2",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "REVERSIONARY",
@@ -49,7 +49,7 @@
             {
               "action": "CHECK",
               "id": "bus-voltage",
-              "info": "PFD, ENGINE/SYSTEM page. BUS 1 and BUS 2 minimum 23 volts.",
+              "info": "PFD, ENGINE/SYSTEM page. Bus 1 at least 23 volts, Bus 2 about 2 volts lower.",
               "label": "Bus Voltage",
               "tier": "full"
             },
@@ -163,7 +163,7 @@
               "id": "alternator-1-2",
               "info": "Left subpanel.",
               "label": "Alternator 1+2",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -250,7 +250,7 @@
             {
               "action": "START",
               "id": "magneto-start",
-              "info": "Left subpanel. Hold at START until the engine fires, then release to BOTH.",
+              "info": "Left subpanel. Hold at START until the engine fires, then release to BOTH. The STARTER ENGD caution shows while cranking and goes out on release. Crank for no more than 30 seconds in any 4 minutes.",
               "label": "Magneto/Start",
               "tier": "quick"
             },
@@ -266,6 +266,13 @@
         },
         {
           "items": [
+            {
+              "action": "CHECK",
+              "id": "oil-pressure",
+              "info": "MFD engine page. Oil pressure and temperature in the green before run-up.",
+              "label": "Oil Pressure",
+              "tier": "normal"
+            },
             {
               "action": "ON",
               "id": "avionics-master",
@@ -470,6 +477,13 @@
               "info": "Pedestal. BUSES TIED message illuminates again.",
               "label": "Throttle",
               "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Release after the run-up, before taxiing onto the runway.",
+              "label": "Parking Brake",
+              "tier": "normal"
             }
           ],
           "title": "Run-Up"
@@ -493,7 +507,7 @@
             {
               "action": "SET FOR T/O",
               "id": "flaps-takeoff",
-              "info": "Right subpanel. Check operation, then set UP or APH. For a flaps UP takeoff the runway should be longer than 1,500 ft.",
+              "info": "Right subpanel. Check operation, then set UP or APH.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -540,9 +554,9 @@
               "tier": "full"
             },
             {
-              "action": "ON",
+              "action": "ALT",
               "id": "transponder-on",
-              "info": "PFD, XPDR softkey. Set the code, then ON.",
+              "info": "PFD, XPDR softkey. Set the code, then ALT. Shows GND on the ground.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -602,6 +616,7 @@
             {
               "action": "RELEASE",
               "id": "brakes-takeoff",
+              "info": "Toe brakes. Release once full power is set.",
               "label": "Brakes",
               "tier": "quick"
             },
@@ -700,6 +715,13 @@
               "tier": "normal"
             },
             {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "MFD bezel, AP key. Engages AP and YD. Not below 400 ft AGL.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "cowl-flaps-climb",
               "info": "Pedestal.",
@@ -707,9 +729,9 @@
               "tier": "normal"
             },
             {
-              "action": "LEAN",
+              "action": "SET CLIMB FF",
               "id": "mixture-climb",
-              "info": "Pedestal. Lean to 20° rich of peak EGT.",
+              "info": "Pedestal. Keep fuel flow on the cyan climb marker of the fuel flow gauge: 25.7 GPH at sea level, 24.0 at 6,000 ft, 20.9 at 10,000 ft, 2 GPH less at 2500 RPM.",
               "label": "Mixture",
               "tier": "normal"
             },
@@ -759,7 +781,7 @@
               "tier": "quick"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "CLOSED",
               "id": "cowl-flaps-cruise",
               "info": "Pedestal.",
               "label": "Cowl Flaps",
@@ -818,7 +840,7 @@
               "tier": "normal"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "CLOSED",
               "id": "cowl-flaps-descent",
               "info": "Pedestal.",
               "label": "Cowl Flaps",
@@ -843,20 +865,6 @@
               "id": "altimeter-descent",
               "info": "PFD. Set local pressure below the transition level.",
               "label": "Altimeter",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "yaw-damper-desc",
-              "info": "MFD, YD key.",
-              "label": "YAW Damper",
-              "tier": "normal"
-            },
-            {
-              "action": "MAX RPM",
-              "id": "propeller-descent",
-              "info": "Pedestal. Full forward.",
-              "label": "Propeller",
               "tier": "normal"
             },
             {
@@ -892,6 +900,13 @@
               "tier": "normal"
             },
             {
+              "action": "ARM",
+              "id": "apr-mode",
+              "info": "MFD bezel, APR key. Armed modes show white on the PFD and turn green when captured.",
+              "label": "APR Mode",
+              "tier": "normal"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "anti-ice-approach",
               "label": "Anti-Ice",
@@ -919,11 +934,25 @@
               "tier": "quick"
             },
             {
+              "action": "MAX RPM",
+              "id": "propeller",
+              "info": "Pedestal. Full forward.",
+              "label": "Propeller",
+              "tier": "quick"
+            },
+            {
               "action": "FULL",
               "id": "flaps-full",
               "info": "Right subpanel. On base for a visual approach, 3 NM out on an ILS. VFE full 124 KIAS.",
               "label": "Flaps Full",
               "tier": "quick"
+            },
+            {
+              "action": "DISCONNECT",
+              "id": "autopilot",
+              "info": "AP DISC switch on the control wheel. Disconnects AP and YD.",
+              "label": "Autopilot",
+              "tier": "normal"
             },
             {
               "action": "CHECK OFF",
@@ -1018,11 +1047,11 @@
               "tier": "normal"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "OPEN",
               "id": "cowl-flaps-after",
               "info": "Pedestal.",
               "label": "Cowl Flaps",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "RESET",
