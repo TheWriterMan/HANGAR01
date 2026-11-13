@@ -35,8 +35,8 @@
             {
               "action": "ON",
               "id": "apu-generator",
-              "info": "Overhead Panel. Connects the APU generator to the electrical buses.",
-              "label": "APU Generator",
+              "info": "Overhead Panel. Connects the APU generators to the electrical buses once the AVAIL light shows.",
+              "label": "APU Generators",
               "tier": "quick"
             },
             {
@@ -122,6 +122,13 @@
             },
             {
               "action": "ON",
+              "id": "hyd-edps",
+              "info": "Overhead Panel. The engine-driven hydraulic pumps. They pressurise the hydraulics once the engines run.",
+              "label": "Hyd EDPs",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
               "id": "utility-l-r",
               "info": "Overhead Panel. Powers galleys, in-seat outlets, and other passenger amenities.",
               "label": "Utility L & R",
@@ -167,9 +174,9 @@
               "tier": "quick"
             },
             {
-              "action": "OFF",
+              "action": "ON",
               "id": "engine-bleeds",
-              "info": "Overhead Panel. Engine bleeds OFF for APU-assisted engine start.",
+              "info": "Overhead Panel. Engine bleed air switches on during cockpit preparation.",
               "label": "Engine Bleeds",
               "tier": "full"
             },
@@ -377,8 +384,8 @@
             {
               "action": "AUTO",
               "id": "hydraulic-pumps",
-              "info": "Overhead Panel. Controls the engine-driven and demand hydraulic pumps.",
-              "label": "Hydraulic Pumps",
+              "info": "Overhead Panel. In AUTO the demand pumps back up the engine-driven pumps when needed.",
+              "label": "Hyd Demand Pumps",
               "tier": "normal"
             },
             {
@@ -389,11 +396,11 @@
               "tier": "normal"
             },
             {
-              "action": "ALL ON",
+              "action": "ON",
               "id": "fuel-pumps",
               "info": "Overhead Panel. Main and override pumps on before engine start. Center and stab pumps on only if those tanks have fuel.",
               "label": "Fuel Pumps",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -427,6 +434,13 @@
               "info": "Pedestal. Released for pushback or set at the gate.",
               "label": "Parking Brake",
               "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "pack-1-2-3",
+              "info": "Overhead Panel. Packs off so the APU bleed air goes to the engine starters.",
+              "label": "Pack 1+2+3",
+              "tier": "normal"
             },
             {
               "action": "PULL",
@@ -485,8 +499,8 @@
             {
               "action": "OFF",
               "id": "apu-generator",
-              "info": "Overhead Panel. Disconnects the APU generator.",
-              "label": "APU Generator",
+              "info": "Overhead Panel. Disconnects the APU generators.",
+              "label": "APU Generators",
               "tier": "quick"
             },
             {
@@ -494,6 +508,13 @@
               "id": "apu",
               "info": "Overhead Panel. Shuts down the APU once engine generators are running.",
               "label": "APU",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "pack-1-2-3-2",
+              "info": "Overhead Panel. Packs back on once all four engines are running.",
+              "label": "Pack 1+2+3",
               "tier": "normal"
             },
             {
@@ -535,6 +556,13 @@
       "groups": [
         {
           "items": [
+            {
+              "action": "RELEASED",
+              "id": "parking-brake",
+              "info": "Pedestal. Release before taxi so the aircraft can move.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
             {
               "action": "ON",
               "id": "taxi-lights",
@@ -594,7 +622,7 @@
               "id": "transponder",
               "info": "Pedestal. Sets Traffic Advisory and Resolution Advisory to enable full TCAS functionality.",
               "label": "Transponder",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
@@ -638,7 +666,7 @@
             {
               "action": "RELEASED",
               "id": "brakes",
-              "info": "Pedestal. Release toe brakes when cleared for takeoff.",
+              "info": "Rudder Pedals. Feet off the toe brakes as thrust comes up.",
               "label": "Brakes",
               "tier": "quick"
             },
@@ -698,7 +726,7 @@
             {
               "action": "AS REQUIRED",
               "id": "anti-ice",
-              "info": "Overhead Panel. Manual override if icing conditions exist on the ground.",
+              "info": "Overhead Panel. Manual override if icing conditions exist in flight. Otherwise leave in AUTO.",
               "label": "Anti-Ice",
               "tier": "full"
             },
@@ -707,7 +735,7 @@
               "id": "taxi-lights",
               "info": "Overhead Panel. Turned off after takeoff or upon arriving at the gate.",
               "label": "Taxi Lights",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -745,7 +773,7 @@
             {
               "action": "OFF",
               "id": "logo-lights",
-              "info": "Overhead Panel. Turned off after landing during daytime or post-flight.",
+              "info": "Overhead Panel. Illuminates the airline logo on the tail. Can go off in daylight once above 10,000 feet.",
               "label": "Logo Lights",
               "tier": "full"
             },
@@ -829,6 +857,13 @@
             },
             {
               "action": "SET",
+              "id": "vref",
+              "info": "Pedestal. Enter VREF for the landing flap setting (25 or 30) on the FMC APPROACH REF page.",
+              "label": "VREF",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
               "id": "ils-frequency",
               "info": "Pedestal. Tune the Instrument Landing System localizer frequency.",
               "label": "ILS Frequency",
@@ -868,11 +903,11 @@
         {
           "items": [
             {
-              "action": "CHECK",
+              "action": "START",
               "id": "descent",
               "info": "MCP. Initiate the descent via VNAV or flight level change.",
               "label": "Descent",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "ON",
@@ -949,7 +984,7 @@
             {
               "action": "SET",
               "id": "flaps-1",
-              "info": "Pedestal. Extends leading edge slats and trails edge flaps slightly.",
+              "info": "Pedestal. Extends leading edge slats and trailing edge flaps slightly.",
               "label": "Flaps 1",
               "tier": "quick"
             },
@@ -1007,6 +1042,13 @@
         {
           "items": [
             {
+              "action": "DISCONNECT",
+              "id": "autopilot",
+              "info": "Yoke. Disconnect before the flare for a manual landing. Leave engaged for autoland.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "IDLE",
               "id": "throttles",
               "info": "Pedestal. Verify thrust levers are at idle.",
@@ -1032,7 +1074,7 @@
               "id": "reverse",
               "info": "Pedestal. Stow the reversers as the aircraft slows to taxi speed to prevent engine compressor stalls.",
               "label": "Reverse",
-              "tier": "full"
+              "tier": "quick"
             },
             {
               "action": "APPLY",
@@ -1062,7 +1104,7 @@
             {
               "action": "OFF",
               "id": "landing-lights",
-              "info": "Overhead Panel. Turned off above 10,000 feet.",
+              "info": "Overhead Panel. Turned off when vacating the runway.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -1085,7 +1127,14 @@
               "id": "speed-brake",
               "info": "Pedestal. Lever is fully forward to retract the spoilers.",
               "label": "Speed Brake",
-              "tier": "full"
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autobrake",
+              "info": "Forward Panel. Turned off after vacating the runway.",
+              "label": "Autobrake",
+              "tier": "normal"
             },
             {
               "action": "UP",
@@ -1095,9 +1144,9 @@
               "tier": "normal"
             },
             {
-              "action": "STBY",
+              "action": "XPDR",
               "id": "transponder",
-              "info": "Pedestal. Turned off post-flight.",
+              "info": "Pedestal. TCAS off. The transponder keeps replying while you taxi in.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -1135,18 +1184,18 @@
               "tier": "normal"
             },
             {
+              "action": "ON",
+              "id": "apu-generators",
+              "info": "Overhead Panel. Moves the electrical load to the APU before the engines shut down.",
+              "label": "APU Generators",
+              "tier": "normal"
+            },
+            {
               "action": "CUTOFF",
               "id": "fuel-control",
               "info": "Pedestal. Fuel control switches to CUTOFF to shut down engines.",
               "label": "Fuel Control",
               "tier": "quick"
-            },
-            {
-              "action": "OFF",
-              "id": "engine-bleeds",
-              "info": "Overhead Panel. Engine bleeds OFF after shutdown.",
-              "label": "Engine Bleeds",
-              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -1196,11 +1245,11 @@
               "tier": "full"
             },
             {
-              "action": "OFF",
+              "action": "STBY",
               "id": "transponder-2",
-              "info": "Pedestal. Turned off post-flight.",
+              "info": "Pedestal. Set to standby at the gate.",
               "label": "Transponder",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -1231,7 +1280,7 @@
             {
               "action": "OFF",
               "id": "pack-1-2-3",
-              "info": "Overhead Panel. Packs OFF for engine start.",
+              "info": "Overhead Panel. Turned off when securing the aircraft.",
               "label": "Pack 1+2+3",
               "tier": "full"
             },
