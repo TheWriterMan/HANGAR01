@@ -21,7 +21,7 @@
             {
               "action": "Check",
               "id": "bus-voltage",
-              "info": "Main panel. Minimum 18 volts.",
+              "info": "Main panel. Minimum 18 volts, and at least 24 volts for a start on battery.",
               "label": "Bus Voltage",
               "tier": "normal"
             },
@@ -56,14 +56,14 @@
             {
               "action": "Test",
               "id": "caution-lights",
-              "info": "Glare shield. Test, then on.",
+              "info": "Overhead panel, CAUTION LT switch. TEST lights the caution lights and sounds the stall horn. Then back to DIM or BRT.",
               "label": "Caution Lights",
               "tier": "full"
             },
             {
-              "action": "Test & Arm",
+              "action": "Test",
               "id": "fire-detection",
-              "info": "Glare shield. Test the fire detection, then arm. The fire bell mute button is on the main panel.",
+              "info": "Fire Detection switch to TEST: the fire bell rings. Fire Bell Mute switch, under the red cover near the left cockpit door, ON (the bell stops), then OFF (it rings again). Then Fire Detection switch to OFF. Done in this order, the sim's own checklist ticks it; otherwise it shows a red X.",
               "label": "Fire Detection",
               "tier": "full"
             },
@@ -290,13 +290,6 @@
               "tier": "full"
             },
             {
-              "action": "Test & On",
-              "id": "flight-data-recorder",
-              "info": "Test, then on.",
-              "label": "Flight Data Recorder",
-              "tier": "full"
-            },
-            {
               "action": "As Required",
               "id": "atc-clearance",
               "info": "Start or pushback clearance from ATC.",
@@ -360,7 +353,7 @@
             {
               "action": "On",
               "id": "fuel-lever-right",
-              "info": "At about 15% Ng, minimum 12% Ng.",
+              "info": "Overhead panel, red fuel lever. Move to ON once Ng has stabilised. A successful start needs at least 16% Ng: usually 16 to 18% on battery, about 23% on external power.",
               "label": "Right Fuel Lever",
               "tier": "quick"
             },
@@ -407,7 +400,7 @@
             {
               "action": "On",
               "id": "fuel-lever-left",
-              "info": "At about 15% Ng, minimum 12% Ng.",
+              "info": "Overhead panel, red fuel lever. Move to ON once Ng has stabilised. A successful start needs at least 16% Ng: usually 16 to 18% on battery, about 23% on external power.",
               "label": "Left Fuel Lever",
               "tier": "quick"
             },
@@ -461,7 +454,7 @@
               "action": "Battery",
               "id": "battery-master",
               "info": "Overhead panel. Switch from EXT to battery if the start was on external power.",
-              "label": "Battery Master",
+              "label": "Battery Switch",
               "tier": "normal"
             },
             {
@@ -488,7 +481,7 @@
             {
               "action": "Check",
               "id": "warning-lights-2",
-              "info": "Only the PNEUMATIC LOW PRESS light should be illuminated.",
+              "info": "All caution lights should be out except PNEUMATIC LOW PRESS. With bleed air on, it goes out once the power levers are advanced.",
               "label": "Warning Lights",
               "tier": "full"
             },
@@ -624,7 +617,7 @@
               "id": "parking-brake-lineup",
               "info": "Handle between the pilot's rudder pedals. In the sim, click the red lever. From here, hold the aircraft on the toe brakes.",
               "label": "Parking Brake",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "On",
@@ -692,7 +685,7 @@
             {
               "action": "On",
               "id": "strobes-lineup",
-              "info": "Overhead panel. Anti-collision light switch to beacon and strobes.",
+              "info": "Overhead panel, strobe light switch. Controls the white flashing light on the roof. The anti-collision light has its own switch.",
               "label": "Strobes",
               "tier": "normal"
             }
@@ -791,7 +784,7 @@
             {
               "action": "Set",
               "id": "climb-power",
-              "info": "Np is prop RPM. Maximum climb: 50 PSI TQ, 96% Np at 100 KIAS. Normal: 50 PSI, 91% Np at 110 KIAS. Economic: 40 PSI, 85% Np at 110 KIAS.",
+              "info": "Overhead panel, power and propeller levers. Reduce power only once the flaps are fully retracted. Pull the propeller levers back to 91% Np (prop RPM) for the climb.",
               "label": "Climb Power",
               "tier": "quick"
             },
@@ -845,9 +838,9 @@
               "tier": "normal"
             },
             {
-              "action": "As Required",
+              "action": "Off",
               "id": "landing-lights-climb",
-              "info": "Overhead panel. On below 10,000 ft.",
+              "info": "Overhead panel. Off after takeoff.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -953,7 +946,7 @@
             {
               "action": "On",
               "id": "landing-lights-descent",
-              "info": "Overhead panel. On below 10,000 ft.",
+              "info": "Overhead panel.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -1037,16 +1030,16 @@
         {
           "items": [
             {
-              "action": "120 KIAS",
+              "action": "Min 94 KIAS",
               "id": "approach-speed",
-              "info": "Initial approach speed. Reduce to about 90 KIAS by 3 NM out, or about 100 KIAS entering the downwind leg.",
+              "info": "Not below 94 KIAS with the flaps up. Once the flaps are at 10°, not below 85 KIAS.",
               "label": "Speed",
               "tier": "quick"
             },
             {
               "action": "10°",
               "id": "flaps-10-approach",
-              "info": "At 100 KIAS. In a visual pattern, on the downwind leg.",
+              "info": "At or below 103 KIAS.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -1060,7 +1053,7 @@
             {
               "action": "20°",
               "id": "flaps-20-approach",
-              "info": "At or below 93 KIAS. In a visual pattern, on the base leg at about 90 KIAS, descending at about 500 fpm.",
+              "info": "At or below 93 KIAS.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -1112,8 +1105,15 @@
             },
             {
               "action": "As Required",
+              "id": "brakes",
+              "info": "Toe brakes, tops of the rudder pedals. Lower the nosewheel first, then brake.",
+              "label": "Brakes",
+              "tier": "normal"
+            },
+            {
+              "action": "As Required",
               "id": "reverse-thrust",
-              "info": "Use reverse if necessary until 40 KIAS.",
+              "info": "Overhead panel, power levers. Use reverse if necessary, for no more than 60 seconds.",
               "label": "Reverse Thrust",
               "tier": "normal"
             }
