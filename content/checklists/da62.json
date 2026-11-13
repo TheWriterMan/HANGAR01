@@ -52,13 +52,20 @@
               "id": "eng-master-l-r",
               "info": "Instrument Panel. Both engine master switches must be off before electrical power-up.",
               "label": "ENG MASTER L + R",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "ON",
               "id": "master-elect",
               "label": "Master ELECT",
               "tier": "quick"
+            },
+            {
+              "label": "G1000",
+              "action": "Press ENT",
+              "id": "g1000",
+              "info": "MFD. Wait until the G1000 has finished powering up, then press ENT on the MFD to acknowledge. The engine instruments only appear on the MFD after this.",
+              "tier": "normal"
             },
             {
               "action": "Check",
@@ -75,9 +82,9 @@
             {
               "action": "AUTO",
               "id": "voter-switches",
-              "info": "Instrument Panel. VOTER 1 and VOTER 2 to AUTO. These switches select which ECU channel (A or B) controls each engine's FADEC. AUTO lets the system self-monitor.",
+              "info": "Instrument Panel. VOTER 1 and VOTER 2 to AUTO. Each switch selects which ECU channel (A or B) runs its engine. AUTO is the only setting that keeps both channels as backup.",
               "label": "VOTER Switches",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "Verify ON each side",
@@ -124,22 +131,25 @@
               "tier": "quick"
             },
             {
-              "action": "ENGAGE",
+              "action": "Press",
               "id": "starter-l",
-              "label": "Starter L",
-              "tier": "quick"
+              "label": "Start Left Button",
+              "tier": "quick",
+              "info": "Press and release once the engine has started. Wait for L ENGINE GLOW to go out first. Do not run the starter for more than 10 seconds."
             },
             {
-              "action": "CONFIRM (RPM steady, no warnings)",
+              "action": "Check",
               "id": "idle-stabilize",
-              "label": "Idle stabilize",
-              "tier": "quick"
+              "label": "After Start Checks",
+              "tier": "quick",
+              "info": "MFD engine page. Oil pressure must leave the red range within 3 seconds of starting; if not, set ENGINE MASTER OFF. The L STARTER annunciation goes out, and idle settles at 710 ± 30 RPM."
             },
             {
-              "action": "Same procedure",
+              "action": "Start",
               "id": "repeat-for-r-engine",
-              "label": "Repeat for R engine",
-              "tier": "quick"
+              "label": "Right Engine",
+              "tier": "quick",
+              "info": "Repeat the same steps with ENGINE MASTER R and the START RIGHT button."
             },
             {
               "action": "Check both online",
@@ -148,7 +158,7 @@
               "tier": "full"
             }
           ],
-          "title": "Start (Either order)"
+          "title": "Engine Start"
         }
       ],
       "id": "engine-start",
@@ -165,16 +175,10 @@
               "tier": "quick"
             },
             {
-              "action": "Wait for AHRS / GPS initialization",
-              "id": "g1000-init",
-              "label": "G1000 init",
-              "tier": "full"
-            },
-            {
               "action": "Set QNH",
               "id": "altimeter",
               "label": "Altimeter",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "Set",
@@ -186,13 +190,13 @@
               "action": "Set, STBY",
               "id": "transponder-code",
               "label": "Transponder code",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "Activate",
               "id": "flight-plan",
               "label": "Flight plan",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "Release",
@@ -234,7 +238,7 @@
               "action": "SET",
               "id": "parking-brake",
               "label": "Parking brake",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "Cycle",
@@ -248,33 +252,28 @@
               "id": "ecu-test",
               "info": "Instrument Panel. Engine and gearbox oil temperatures in the green range and parking brake set first. Hold the button: the ECU A/B FAIL lights come on, propeller RPM rises above 1800 and drops twice, then twice more on the other ECU channel. Release when both FAIL lights go out. Releasing early or moving the power lever aborts the test.",
               "label": "ECU TEST",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "Release",
               "id": "parking-brake-2",
               "info": "Small center console under the instrument panel. Lever up releases the brake.",
               "label": "Parking Brake",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "Max 10 Sec",
               "id": "power-check",
               "info": "Center Pedestal. Power levers MAX for 10 seconds; the engines produce maximum thrust, so hold the brakes firmly. RPM stabilizes at 2250 to 2300 and LOAD at 89% to 100%. Then power levers IDLE.",
               "label": "Power Check",
-              "tier": "full"
+              "tier": "normal"
             },
             {
-              "action": "All green",
+              "action": "Green",
               "id": "engine-instruments",
-              "label": "Engine instruments",
-              "tier": "full"
-            },
-            {
-              "action": "In limits",
-              "id": "fuel-pressure",
-              "label": "Fuel pressure",
-              "tier": "full"
+              "label": "Engine Instruments",
+              "tier": "full",
+              "info": "MFD engine page. Check after the power levers return to IDLE. At IDLE the oil pressure may sit in the low yellow range, which is acceptable."
             },
             {
               "action": "ON if required",
@@ -301,16 +300,17 @@
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "Check On",
               "id": "strobes",
               "label": "Strobes",
-              "tier": "quick"
+              "tier": "full",
+              "info": "Instrument Panel, STROBE switch. Already on from engine start."
             },
             {
               "action": "ON",
               "id": "landing-light",
               "label": "Landing light",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "TAKEOFF",
@@ -335,7 +335,7 @@
               "action": "ALT",
               "id": "transponder",
               "label": "Transponder",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "COMPLETE",
@@ -384,13 +384,15 @@
               "action": "GEAR UP",
               "id": "positive-climb",
               "label": "Positive climb",
-              "tier": "quick"
+              "tier": "quick",
+              "info": "Once safe climb is established. Firmly apply the brakes before selecting gear UP, then check the unsafe light is off. Do not retract above 162 KIAS."
             },
             {
-              "action": "UP at 500 ft AGL",
+              "action": "Up",
               "id": "flaps",
               "label": "Flaps",
-              "tier": "full"
+              "tier": "quick",
+              "info": "Instrument Panel, flap selector switch. Part of the initial climb check. Do not exceed 136 KIAS with flaps T/O."
             }
           ],
           "title": "Takeoff Roll"
@@ -406,9 +408,9 @@
             {
               "action": "Off",
               "id": "fuel-pumps",
-              "info": "Instrument Panel.",
+              "info": "Instrument Panel. LH and RH fuel pumps OFF in the initial climb check.",
               "label": "Fuel Pumps",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "Up to 95%",
@@ -418,10 +420,11 @@
               "tier": "quick"
             },
             {
-              "action": "100 KIAS",
+              "action": "87 KIAS",
               "id": "climb-airspeed",
-              "label": "Climb airspeed",
-              "tier": "quick"
+              "label": "Climb Airspeed",
+              "tier": "quick",
+              "info": "Flaps UP, best rate of climb up to 1999 kg (4407 lb). Above 1999 kg: 89 KIAS. For an en route cruise climb: 93 KIAS (96 above 1999 kg)."
             },
             {
               "action": "As Required",
@@ -446,13 +449,13 @@
               "id": "power-2",
               "info": "Center Pedestal. Recommended cruise power is 75%.",
               "label": "Power",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "Adjust",
               "id": "trim",
               "label": "Trim",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "Visually balanced",
@@ -484,9 +487,9 @@
               "tier": "full"
             },
             {
-              "action": "Reduce gradually",
+              "action": "As Required",
               "id": "power",
-              "info": "Center Pedestal. Reduce power gradually. The AE330 is a liquid-cooled diesel — no shock cooling concern, but smooth power management extends engine life.",
+              "info": "Center Pedestal.",
               "label": "Power",
               "tier": "normal"
             }
@@ -511,7 +514,7 @@
               "action": "ON",
               "id": "landing-light",
               "label": "Landing light",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "On",
@@ -521,10 +524,11 @@
               "tier": "quick"
             },
             {
-              "action": "Below 205 KIAS",
+              "action": "Down",
               "id": "gear-down",
-              "label": "Gear DOWN",
-              "tier": "quick"
+              "label": "Landing Gear",
+              "tier": "quick",
+              "info": "Check 3 green. Do not extend above 205 KIAS."
             },
             {
               "action": "Check Released",
@@ -537,7 +541,7 @@
               "action": "Below 136 KIAS",
               "id": "flaps-app",
               "label": "Flaps T/O",
-              "info": "Instrument Panel, flap selector switch. The positions are UP, T/O and LDG.",
+              "info": "Instrument Panel, flap selector switch. The positions are UP, T/O and LDG. Minimum approach speed with flaps T/O is 88 KIAS up to 1999 kg (4407 lb), 91 KIAS above; with flaps UP, 91 and 95 KIAS.",
               "tier": "quick"
             },
             {
@@ -577,12 +581,6 @@
               "tier": "full"
             },
             {
-              "action": "Reset",
-              "id": "trim",
-              "label": "Trim",
-              "tier": "full"
-            },
-            {
               "action": "OFF",
               "id": "pitot-heat-anti-ice",
               "label": "Pitot heat / anti-ice",
@@ -595,23 +593,11 @@
               "tier": "full"
             },
             {
-              "action": "OFF",
-              "id": "strobes",
-              "label": "Strobes",
-              "tier": "full"
-            },
-            {
-              "action": "STBY",
-              "id": "transponder",
-              "label": "Transponder",
-              "tier": "full"
-            },
-            {
               "action": "Off",
               "id": "fuel-pumps",
               "info": "Instrument Panel.",
               "label": "Fuel Pumps",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "After Landing Flow"
@@ -631,10 +617,10 @@
               "tier": "quick"
             },
             {
-              "action": "MAX 10% for ~1 min",
+              "action": "10% Load",
               "id": "power-levers",
-              "info": "Center Pedestal. Run at max 10% for at least 1 minute before shutdown to cool the turbochargers.",
-              "label": "Power levers",
+              "info": "Center Pedestal. Run at up to 10% load for at least 1 minute before shutdown to avoid heat damage to the turbochargers.",
+              "label": "Power Levers",
               "tier": "quick"
             },
             {
@@ -660,7 +646,7 @@
               "action": "OFF",
               "id": "elect-master",
               "info": "Left side of the instrument panel. Before switching OFF, wait until the G1000 engine readouts show a red or yellow X. This lets engine and flight data save to memory.",
-              "label": "ELECT MASTER",
+              "label": "Master ELECT",
               "tier": "quick"
             }
           ],
