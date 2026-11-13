@@ -11,15 +11,15 @@
               "label": "Parking Brake",
               "action": "Set",
               "id": "parking-brake",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "info": "Pilot lower panel. Prevents the aircraft from rolling during prep.",
               "tier": "normal"
             },
             {
               "label": "Control Locks",
               "action": "Remove",
               "id": "control-locks-remove",
-              "info": "Control column and rudder pedals. Remove the gust lock before any power-up. Leaving it in will jam the flight controls.",
-              "tier": "full"
+              "info": "Control column. Click the control lock to remove it. Chocks and the rudder lock are removed in the EFB's parking mode. Leaving a lock in will jam the flight controls.",
+              "tier": "quick"
             },
             {
               "label": "All Switches",
@@ -39,14 +39,14 @@
               "label": "Alternate Air Controls",
               "action": "Locked In",
               "id": "alternate-air",
-              "info": "Main panel. Confirms the alternate induction air doors are in the normal (closed) position.",
+              "info": "Pilot lower panel. Confirms the alternate induction air doors are in the normal (closed) position.",
               "tier": "full"
             },
             {
               "label": "Landing Gear Switch",
               "action": "Down",
               "id": "landing-gear-switch",
-              "info": "Main panel. Handle must match the weight-on-wheels state before power-up.",
+              "info": "Pilot lower panel. Handle must match the weight-on-wheels state before power-up.",
               "tier": "full"
             },
             {
@@ -57,10 +57,10 @@
               "tier": "quick"
             },
             {
-              "label": "Emergency Crossfeed",
+              "label": "Emergency Crossfeed Shutoff",
               "action": "Open",
               "id": "emergency-crossfeed",
-              "info": "Between the seats. Push down to open. Allows either engine to feed from either tank in an emergency.",
+              "info": "Between the seats. Open for normal operation. Closed only for a fire or a wheels-up landing, when it isolates the crossfeed lines from the tanks.",
               "tier": "full"
             }
           ]
@@ -137,7 +137,7 @@
             },
             {
               "label": "Throttles",
-              "action": "Open 1 Inch",
+              "action": "Open ½ Inch",
               "id": "throttles-cracked",
               "info": "Center pedestal. Cracked slightly for the engine to catch without surging.",
               "tier": "quick"
@@ -190,24 +190,38 @@
           "title": "Engine Start",
           "items": [
             {
-              "label": "Left Magnetos",
+              "label": "Magnetos",
               "action": "On",
               "id": "left-magnetos",
-              "info": "Left panel. Both left-engine mag switches to BOTH for dual ignition.",
+              "info": "Side console. All magneto switches ON, left and right engine.",
+              "tier": "quick"
+            },
+            {
+              "label": "Primer",
+              "action": "Press",
+              "id": "primer",
+              "info": "Side console. Prime the left engine briefly before cranking. Needed when the engine is cold.",
               "tier": "quick"
             },
             {
               "label": "Left Engine",
               "action": "Start",
               "id": "left-engine-start",
-              "info": "Left panel. Hold left starter button until engine fires, then set aux fuel pump to LOW.",
+              "info": "Side console. Hold the left starter until the engine fires. Aux fuel pump OFF after start; it goes to LOW for takeoff.",
+              "tier": "quick"
+            },
+            {
+              "label": "Primer",
+              "action": "Press",
+              "id": "primer-2",
+              "info": "Side console. Prime the right engine briefly before cranking. Needed when the engine is cold.",
               "tier": "quick"
             },
             {
               "label": "Right Engine",
               "action": "Start",
               "id": "right-engine-start",
-              "info": "Left panel. Hold right starter button until engine fires, then set aux fuel pump to LOW.",
+              "info": "Side console. Hold the right starter until the engine fires. Aux fuel pump OFF after start; it goes to LOW for takeoff.",
               "tier": "quick"
             },
             {
@@ -237,7 +251,7 @@
           "title": "After Start Flow",
           "items": [
             {
-              "label": "Avionics Bus Switch",
+              "label": "Avionics Master Switch",
               "action": "On",
               "id": "avionics-bus",
               "info": "Left panel. Powers the avionics bus now that voltage is stable.",
@@ -275,7 +289,7 @@
               "label": "Flaps",
               "action": "Up",
               "id": "flaps-up-after-start",
-              "info": "Main panel. Retract from the preflight-check down position.",
+              "info": "Copilot lower panel. Retract from the preflight-check down position.",
               "tier": "normal"
             },
             {
@@ -307,8 +321,8 @@
               "label": "Parking Brake",
               "action": "Release",
               "id": "parking-brake-taxi",
-              "info": "Center pedestal. Release and begin taxi. Check braking and steering.",
-              "tier": "normal"
+              "info": "Pilot lower panel. Release and begin taxi. Check braking and steering.",
+              "tier": "quick"
             }
           ]
         },
@@ -319,7 +333,7 @@
               "label": "Parking Brake",
               "action": "Set",
               "id": "parking-brake-runup",
-              "info": "Center pedestal. Hold firmly for run-up power checks.",
+              "info": "Pilot lower panel. Hold firmly for run-up power checks.",
               "tier": "full"
             },
             {
@@ -347,7 +361,7 @@
               "label": "Magnetos",
               "action": "Check",
               "id": "magnetos-check",
-              "info": "Left panel. Max 150 RPM drop per mag, max 50 RPM difference between L and R.",
+              "info": "Side console. Max 150 RPM drop per mag, max 50 RPM difference between L and R.",
               "tier": "full"
             },
             {
@@ -384,6 +398,13 @@
               "id": "battery-load",
               "info": "Left panel. Ammeter selector to BATT position. Confirm zero load — the alternators should be carrying the full electrical bus with no remaining draw from the battery.",
               "tier": "full"
+            },
+            {
+              "label": "Parking Brake",
+              "action": "Release",
+              "id": "parking-brake",
+              "info": "Pilot lower panel. Release after the run-up checks are complete.",
+              "tier": "full"
             }
           ]
         },
@@ -401,7 +422,7 @@
               "label": "Flaps",
               "action": "Up",
               "id": "flaps-lineup",
-              "info": "Main panel. Normal takeoff is flaps up. Clean configuration provides best climb performance.",
+              "info": "Copilot lower panel. Normal takeoff is flaps up. Clean configuration provides best climb performance.",
               "tier": "quick"
             },
             {
@@ -422,7 +443,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Low",
               "id": "aux-fuel-pumps-lineup",
-              "info": "Center pedestal. Backup fuel pressure for the critical takeoff phase.",
+              "info": "Side console. Backup fuel pressure for the critical takeoff phase.",
               "tier": "quick"
             },
             {
@@ -443,12 +464,12 @@
               "label": "Air Conditioning",
               "action": "Off",
               "id": "air-conditioning-lineup",
-              "info": "Left panel. Turn off air conditioning for takeoff. The TSIO-520 turbocharger draws from the same power margin — keeping A/C on reduces available climb performance.",
+              "info": "Pilot lower panel. Off or recirculate for takeoff. The compressor runs off the hydraulic system; the green A COND HYD light shows when it is running.",
               "tier": "normal"
             },
             {
               "label": "Transponder",
-              "action": "On",
+              "action": "Alt",
               "id": "transponder-on",
               "info": "Main panel. Active for ATC radar identification at line-up.",
               "tier": "normal"
@@ -480,9 +501,9 @@
           "items": [
             {
               "label": "Throttles",
-              "action": "Full Power",
-              "id": "throttles-full",
-              "info": "Center pedestal. Stage to 30 inHG MP first, release brakes, then advance to max 41 inHG MP. The TSIO-520 is turbocharged — avoid slamming the throttles.",
+              "action": "30 inHg",
+              "id": "throttles",
+              "info": "Center pedestal. Hold the brakes and set 30 inHg MP on both engines.",
               "tier": "quick"
             },
             {
@@ -490,6 +511,13 @@
               "action": "Release",
               "id": "brakes-release",
               "info": "Rudder pedals. Release toe brakes and begin the takeoff roll.",
+              "tier": "quick"
+            },
+            {
+              "label": "Throttles",
+              "action": "Full Power",
+              "id": "throttles-full",
+              "info": "Center pedestal. Advance smoothly to max 41 inHg MP. The TSIO-520 is turbocharged, so avoid slamming the throttles.",
               "tier": "quick"
             },
             {
@@ -503,7 +531,7 @@
               "label": "Gear",
               "action": "Up",
               "id": "gear-up",
-              "info": "Main panel. Retract at positive rate of climb. Vlo is 177 KIAS.",
+              "info": "Pilot lower panel. Retract at positive rate of climb. Vlo is 177 KIAS.",
               "tier": "quick"
             }
           ]
@@ -521,8 +549,15 @@
               "label": "Climb Power",
               "action": "Set",
               "id": "climb-power",
-              "info": "Center pedestal. Recommended: 31.5 inHG MP, 2450 RPM, 120 KIAS. Adjust RPM first, then manifold pressure.",
+              "info": "Center pedestal. Recommended: 35.0 inHG MP, 2500 RPM, 120 KIAS. Adjust RPM first, then manifold pressure.",
               "tier": "quick"
+            },
+            {
+              "label": "Autopilot",
+              "action": "Engage",
+              "id": "autopilot",
+              "info": "Center pedestal on the Navomatic: AP toggle switch ON. With the GFC600, press the AP key.",
+              "tier": "normal"
             },
             {
               "label": "Taxi Lights",
@@ -542,7 +577,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Low",
               "id": "aux-pumps-climb",
-              "info": "Center pedestal. Keep on LOW during climb as backup fuel pressure.",
+              "info": "Side console. Keep on LOW during climb as backup fuel pressure.",
               "tier": "normal"
             },
             {
@@ -563,7 +598,7 @@
               "label": "Yaw Damper",
               "action": "On",
               "id": "yaw-damper",
-              "info": "Main panel. Damps dutch roll — the yawing oscillation swept and straight-wing aircraft can develop at altitude. Set and forget.",
+              "info": "Center pedestal on the Navomatic (YD toggle switch), or the YD key on the GFC600. Damps the yawing oscillation the aircraft can develop at altitude. Set and forget.",
               "tier": "normal"
             },
             {
@@ -577,15 +612,15 @@
               "label": "Air Conditioning",
               "action": "As Required",
               "id": "air-conditioning-climb",
-              "info": "Left panel. Restore A/C once established in the climb and clear of the takeoff power segment.",
+              "info": "Pilot lower panel. Restore A/C once established in the climb and clear of the takeoff power segment.",
               "tier": "full"
             },
             {
               "label": "Oxygen",
-              "action": "On",
+              "action": "As Required",
               "id": "oxygen-climb",
-              "info": "Cabin. Required when cabin altitude exceeds 10,000 ft. The 414 can reach 30,000 ft with pressurization; monitor cabin altitude on the pressurization gauge.",
-              "tier": "normal"
+              "info": "Cabin. Needed when cabin altitude exceeds 10,000 ft; the amber CABIN ALT light comes on above that. Pressurization normally keeps the cabin well below it.",
+              "tier": "full"
             }
           ]
         },
@@ -614,7 +649,7 @@
               "label": "Cruise Power",
               "action": "Set",
               "id": "cruise-power",
-              "info": "Center pedestal. Typical: Max ~72-76% (31.5 inHG / 2450 RPM), Normal ~78-84% (34.0 inHG / 2300 RPM — only with RPM at 2200-2300), Economy ~52-68% (25 inHG / 2200 RPM).",
+              "info": "Center pedestal. Typical: High ~78–84% (34.0 inHG / 2300 RPM), Normal ~72–76% (31.5 inHG / 2450 RPM), Economy ~52–56% (25 inHG / 2200 RPM).",
               "tier": "normal"
             },
             {
@@ -649,7 +684,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Off",
               "id": "aux-pumps-cruise",
-              "info": "Center pedestal. Can be turned off in stable cruise unless fuel flow fluctuations occur.",
+              "info": "Side console. Can be turned off in stable cruise unless fuel flow fluctuations occur.",
               "tier": "full"
             },
             {
@@ -709,7 +744,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Low",
               "id": "aux-pumps-descent",
-              "info": "Center pedestal. Backup fuel pressure for the approach and landing phases.",
+              "info": "Side console. Backup fuel pressure for the approach and landing phases.",
               "tier": "normal"
             },
             {
@@ -788,7 +823,14 @@
               "label": "Yaw Damper",
               "action": "Off",
               "id": "yaw-damper-off",
-              "info": "Main panel. Off for landing — pilot needs full rudder authority for crosswind corrections.",
+              "info": "Center pedestal on the Navomatic (YD toggle switch), or the YD key on the GFC600. Off for landing; the pilot needs full rudder authority for crosswind corrections.",
+              "tier": "normal"
+            },
+            {
+              "label": "Approach Mode",
+              "action": "Arm",
+              "id": "approach-mode",
+              "info": "GFC600 panel. Press APR so the autopilot captures the final approach course. The mode shows armed, then active on capture.",
               "tier": "normal"
             },
             {
@@ -814,28 +856,35 @@
               "label": "Flaps",
               "action": "15 Degrees",
               "id": "flaps-15",
-              "info": "Main panel. First flap setting. Vfe for 15 degrees is 177 KIAS.",
+              "info": "Copilot lower panel. First flap setting. Vfe for 15 degrees is 177 KIAS.",
               "tier": "quick"
             },
             {
               "label": "Gear",
               "action": "Down",
               "id": "gear-down",
-              "info": "Main panel. Extend below 177 KIAS. Confirm three green lights.",
+              "info": "Pilot lower panel. Extend below 177 KIAS. Confirm three green lights.",
               "tier": "quick"
+            },
+            {
+              "label": "Autopilot",
+              "action": "Disconnect",
+              "id": "autopilot",
+              "info": "Pilot yoke. Press the AP disconnect button and fly the rest of the approach by hand.",
+              "tier": "normal"
             },
             {
               "label": "Flaps",
               "action": "30 Degrees",
               "id": "flaps-30",
-              "info": "Main panel. Set on glideslope intercept or base leg.",
+              "info": "Copilot lower panel. Set on glideslope intercept or base leg.",
               "tier": "quick"
             },
             {
               "label": "Flaps",
               "action": "45 Degrees",
               "id": "flaps-45",
-              "info": "Main panel. Full flaps at 1000 ft AGL on the glideslope or on final. Vfe is 146 KIAS.",
+              "info": "Copilot lower panel. Full flaps at 1000 ft AGL on the glideslope or on final. Vfe is 146 KIAS.",
               "tier": "quick"
             },
             {
@@ -906,7 +955,7 @@
               "label": "Flaps",
               "action": "Up",
               "id": "flaps-up",
-              "info": "Main panel. Retract to prevent ground damage during taxi.",
+              "info": "Copilot lower panel. Retract to prevent ground damage during taxi.",
               "tier": "normal"
             },
             {
@@ -932,11 +981,11 @@
               "label": "Parking Brake",
               "action": "Set",
               "id": "parking-brake-shutdown",
-              "info": "Center pedestal. Hold the aircraft at the gate.",
+              "info": "Pilot lower panel. Hold the aircraft at the gate.",
               "tier": "quick"
             },
             {
-              "label": "Avionics Bus Switch",
+              "label": "Avionics Master Switch",
               "action": "Off",
               "id": "avionics-off",
               "info": "Left panel. Power down radios and GPS before cutting battery.",
@@ -946,7 +995,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Off",
               "id": "aux-pumps-off",
-              "info": "Center pedestal. No longer needed with engines about to stop.",
+              "info": "Side console. No longer needed with engines about to stop.",
               "tier": "normal"
             },
             {
@@ -967,7 +1016,7 @@
               "label": "Magnetos",
               "action": "Off",
               "id": "magnetos-off",
-              "info": "Left panel. Both switches to OFF after props stop turning.",
+              "info": "Side console. Both switches to OFF after props stop turning.",
               "tier": "quick"
             },
             {
@@ -990,6 +1039,13 @@
               "tier": "full"
             },
             {
+              "label": "Emergency Crossfeed Shutoff",
+              "action": "Closed",
+              "id": "emergency-crossfeed-shutoff",
+              "info": "Between the seats. Isolates the crossfeed lines from the tanks while the aircraft is parked.",
+              "tier": "full"
+            },
+            {
               "label": "Control Locks",
               "action": "Install",
               "id": "control-locks",
@@ -1007,7 +1063,7 @@
   "slug": "c414",
   "status": "active",
   "systemsType": "piston",
-  "addon": "Milviz",
+  "addon": "Flysimware",
   "flightsim": "MSFS",
   "simDepth": "Study Level"
 }
