@@ -15,7 +15,7 @@
             {
               "action": "ON",
               "id": "battery",
-              "info": "Overhead Panel. One switch powers up the aircraft and its screens. Press the rightmost MFD button to clear the splash screen. The screens drain the battery quickly: if External Power shows AVAIL, press it to connect ground power until the generators come on.",
+              "info": "Instrument Panel, ELECTRICAL panel just below the display softkeys. One switch powers up the aircraft and its screens. Press the rightmost MFD button to clear the splash screen. The screens drain the battery quickly: if External Power on the same panel shows AVAIL, press it to connect ground power until the generators come on.",
               "label": "Battery",
               "tier": "quick"
             },
@@ -33,14 +33,14 @@
             {
               "action": "ON",
               "id": "passenger-signs",
-              "info": "Center Pedestal (GTC). Controls the seat belt and no-smoking illumination in the passenger cabin.",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > Aircraft Systems > System Controls > Interior Lights, Fasten Seatbelts and No Smoking. Controls the seat belt and no-smoking signs in the cabin.",
               "label": "Passenger Signs",
               "tier": "normal"
             },
             {
-              "action": "CHECK",
+              "action": "SET",
               "id": "fuel-quantity",
-              "info": "Instrument Panel (MFD). Displays the current total fuel weight onboard to verify it matches the flight profile requirements.",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > Sim Options, the Load Manager page shown at first power-up. Set the fuel with the +/- 100 and +/- 500 lb buttons. Tap a passenger icon to add or remove a passenger and a cargo compartment to set its weight. These values replace the sim's own weights, though the sim's weights menu won't show the change.",
               "label": "Fuel Quantity",
               "tier": "quick"
             },
@@ -54,9 +54,16 @@
             {
               "action": "PROGRAM",
               "id": "fms",
-              "info": "Center Pedestal (GTC). Initializes the flight management system with departure, arrival, route, and performance parameters.",
+              "info": "Center Pedestal, left touchscreen (GTC1): Home > Flight Plan. Add the origin and destination, then PROC > Departure: pick the runway, departure and transition and press LOAD. Then add the enroute waypoints and airways. The approach is loaded later, in cruise.",
               "label": "FMS",
               "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "bugs-pfd-mfd",
+              "info": "Glareshield (autopilot panel). HDG SEL knob: heading bug to the runway heading. ALT SEL knob: altitude bug to the cleared altitude. SPD SEL knob: speed bug to V2 + 10. All three show in cyan on the PFD.",
+              "label": "Autopilot Bugs",
+              "tier": "normal"
             },
             {
               "action": "SET",
@@ -64,13 +71,6 @@
               "info": "Instrument Panel (PFD). Sets the local barometric altimeter pressure reference on the flight displays.",
               "label": "Baro Reference",
               "tier": "quick"
-            },
-            {
-              "action": "CHECK",
-              "id": "bugs-pfd-mfd",
-              "info": "Instrument Panel. Verifies that airspeed reference bugs and flight display configurations are correctly selected for departure.",
-              "label": "Bugs / PFD / MFD",
-              "tier": "full"
             },
             {
               "action": "CHECK",
@@ -82,7 +82,7 @@
             {
               "action": "CLOSED",
               "id": "doors",
-              "info": "Instrument Panel (MFD). Confirms via the status synoptic page that the main entry airstair and baggage doors are closed and latched.",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > Sim Options > Sim Actions tab. Close the main entry and baggage doors. The doors only work with the engines off. Check that no door CAS message is left on the PFD.",
               "label": "Doors",
               "tier": "quick"
             }
@@ -114,7 +114,7 @@
             {
               "action": "PRESS",
               "id": "start-button",
-              "info": "Instrument Panel. Press the start button for the engine just set to IDLE; it lights green and the FADEC runs the start. The engine display shows STARTER, then IGN, with START in cyan. ITT should rise within 15 seconds and must stay below 556°C; the starter drops out at 45% N2. The engine is running in about 20 seconds at about 23% N1 and 52% N2. Then set the left lever to IDLE and press the left start button.",
+              "info": "Center Pedestal, ENGINE START panel just below the touchscreens. Press the start button for the engine just set to IDLE; it lights green and the FADEC runs the start. The engine display shows STARTER, then IGN, with START in cyan. ITT should rise within 15 seconds and must stay below 556°C; the starter drops out at 45% N2. The engine is running in about 20 seconds at about 23% N1 and 52% N2. Then set the left lever to IDLE and press the left start button.",
               "label": "Start Button",
               "tier": "quick"
             }
@@ -138,11 +138,11 @@
               "tier": "full"
             },
             {
-              "action": "SET",
+              "action": "NORM",
               "id": "bleed-pressurization",
-              "info": "Center Pedestal (GTC). Sets the environmental control systems to automatic and enters the destination field elevation.",
+              "info": "Pressurization and pneumatic panels. Pressurization CONTROL MODE and CABIN DUMP in NORM, engine bleeds and cabin inflow in NORM. In this cockpit every switch is either dark or NORM for a normal flight, and the pressurization then runs on its own.",
               "label": "Bleed & Pressurization",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "AS REQUIRED",
@@ -168,7 +168,7 @@
             {
               "action": "SET FOR T/O",
               "id": "trims",
-              "info": "Yoke and Center Pedestal. Positions the pitch, roll, and yaw trims within their specified takeoff ranges.",
+              "info": "Yoke, trim switch. Trim the elevator into the green band on the trim indicator: its triangles turn green when the trim is right. Takeoff is very sensitive to trim, and the band moves with the flap setting, so set the flaps first.",
               "label": "Trims",
               "tier": "quick"
             },
@@ -190,6 +190,20 @@
       "groups": [
         {
           "items": [
+            {
+              "action": "TA ONLY",
+              "id": "transponder",
+              "info": "Center Pedestal, left touchscreen (GTC1). Enter the squawk code, then press the XPDR1 mode button above it and select TA ONLY. This aircraft has no RA mode: TA ONLY reports altitude and adds traffic advisories.",
+              "label": "Transponder",
+              "tier": "normal"
+            },
+            {
+              "action": "FMS",
+              "id": "navigation-source",
+              "info": "Instrument Panel, Active NAV softkey below the PFD. Each press steps through FMS, NAV1 and NAV2. Set FMS so NAV mode follows the flight plan.",
+              "label": "Navigation Source",
+              "tier": "normal"
+            },
             {
               "action": "RELEASED",
               "id": "parking-brake",
@@ -249,14 +263,7 @@
               "id": "passenger-signs",
               "info": "Center Pedestal (GTC). Verifies that passenger signs are active and the cabin is secured for departure.",
               "label": "Passenger Signs",
-              "tier": "normal"
-            },
-            {
-              "action": "TA ONLY",
-              "id": "transponder",
-              "info": "Center Pedestal, left touchscreen (GTC1). Enter the squawk code, then press the XPDR1 mode button above it and select TA ONLY. This aircraft has no RA mode: TA ONLY reports altitude and adds traffic advisories.",
-              "label": "Transponder",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "AS REQUIRED",
@@ -293,7 +300,7 @@
             {
               "action": "AT VR",
               "id": "rotate",
-              "info": "Yoke. Applies smooth aft pressure at rotation speed to establish the initial climb pitch attitude.",
+              "info": "Yoke. Rotate at VR, about 113 KIAS at a typical weight (the PFD shows the VR set during avionics initialization). Raise the nose smoothly over 3 to 4 seconds to meet the flight director at 11° nose up. That holds about 140 KIAS in the climb.",
               "label": "Rotate",
               "tier": "quick"
             },
@@ -353,7 +360,7 @@
             {
               "action": "ENGAGE",
               "id": "autopilot",
-              "info": "Glareshield (autopilot panel). Press AP, then FLC with the speed bug at 210 KIAS, then NAV to follow the flight plan up to cruise altitude.",
+              "info": "Glareshield (autopilot panel). Press AP, then FLC with the speed bug at 210 KIAS, then NAV to follow the flight plan up to cruise altitude. If the speed reaches 0.57 Mach before the top of climb, push the SPD knob once to switch the bug to Mach and hold 0.57.",
               "label": "Autopilot",
               "tier": "normal"
             },
@@ -365,17 +372,17 @@
               "tier": "full"
             },
             {
+              "action": "OFF",
+              "id": "passenger-signs",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > Aircraft Systems > System Controls > Interior Lights, Fasten Seatbelts and No Smoking. Passing 10,000 ft, switch the seat belt sign off.",
+              "label": "Passenger Signs",
+              "tier": "normal"
+            },
+            {
               "action": "STD",
               "id": "altimeters",
               "info": "Instrument Panel (PFD). Passing the transition altitude (18,000 ft in the US), press the baro knob to set standard pressure, 29.92 inHg.",
               "label": "Altimeters",
-              "tier": "normal"
-            },
-            {
-              "action": "AS REQUIRED",
-              "id": "passenger-signs",
-              "info": "Center Pedestal (GTC). Turns off the seat belt sign once the aircraft is established in smooth air during the climb.",
-              "label": "Passenger Signs",
               "tier": "normal"
             }
           ],
@@ -390,32 +397,39 @@
         {
           "items": [
             {
+              "action": "LOAD",
+              "id": "approach",
+              "info": "Center Pedestal, left touchscreen (GTC1): Home > Flight Plan > PROC > Approach. Pick the approach and its transition, then press LOAD. The chart's altitude constraints load with it; check them on the Flight Plan page. Do it before top of descent: VNAV and the approach mode both need it.",
+              "label": "Approach",
+              "tier": "normal"
+            },
+            {
               "action": "CHECK",
               "id": "altimeters",
-              "info": "Instrument Panel (PFD). Cross-checks the primary altimeter displays to ensure they show the identical standard flight level.",
+              "info": "Instrument Panel (PFD and standby). Check the pilot and standby altimeters agree at the standard setting. Only those two altimeters work in the sim.",
               "label": "Altimeters",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "CHECK",
               "id": "engine-instruments",
               "info": "Instrument Panel (MFD). Scans engine operating data to verify normal performance and fuel burn rates at cruise altitude.",
               "label": "Engine Instruments",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "CHECK",
               "id": "fuel-quantity",
               "info": "Instrument Panel (MFD). Monitors fuel remaining and checks tank balancing against flight planning values.",
               "label": "Fuel Quantity",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "CHECK",
               "id": "pressurization",
               "info": "Instrument Panel (MFD). Verifies that cabin altitude, pressure differential, and outflow valve scheduling are normal.",
               "label": "Pressurization",
-              "tier": "normal"
+              "tier": "full"
             }
           ],
           "title": "Cruise Monitoring"
@@ -438,16 +452,9 @@
             {
               "action": "SET",
               "id": "landing-data",
-              "info": "Center Pedestal (GTC). Inputs the reference approach airspeeds and planned landing flap settings into the FMS.",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > PERF > Speed Bugs > Landing tab. Press Get from Sim to fill in the landing speeds, then All On to show Vapp and Vref on the PFD. Set them before top of descent.",
               "label": "Landing Data",
               "tier": "quick"
-            },
-            {
-              "action": "SET",
-              "id": "pressurization",
-              "info": "Center Pedestal (GTC). Inputs the destination field elevation to schedule automatic cabin depressurization for landing.",
-              "label": "Pressurization",
-              "tier": "normal"
             },
             {
               "action": "COMPLETE",
@@ -461,6 +468,13 @@
               "id": "ice-protection",
               "info": "Center Pedestal (GTC). Activates structural and engine anti-ice systems if icing conditions are anticipated during descent.",
               "label": "Ice Protection",
+              "tier": "full"
+            },
+            {
+              "action": "VERIFY",
+              "id": "pressurization",
+              "info": "Pressurization. Verify the landing field elevation is set for the destination, so the cabin is at field pressure on landing.",
+              "label": "Landing Elevation",
               "tier": "full"
             }
           ],
@@ -503,7 +517,7 @@
             {
               "action": "SET",
               "id": "altimeters",
-              "info": "Instrument Panel (PFD). Re-verifies that both the pilot and copilot altimeters are set to the current local barometric pressure.",
+              "info": "Instrument Panel (PFD and standby). Recheck the pilot and standby altimeters show the local pressure. Only those two altimeters work in the sim.",
               "label": "Altimeters",
               "tier": "full"
             },
@@ -512,7 +526,7 @@
               "id": "passenger-signs",
               "info": "Center Pedestal (GTC). Confirms that the cabin is fully secured and all passenger seat belts are fastened for landing.",
               "label": "Passenger Signs",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "CHECK",
@@ -557,7 +571,7 @@
             {
               "action": "LDG",
               "id": "flaps-2",
-              "info": "Center Pedestal. Select LDG once the gear is down and the speed is below 160 KIAS, then fly the approach speed (Vapp). Stay at TO/APPR if there is any ice on the airframe.",
+              "info": "Center Pedestal. Select LDG once the gear is down and the speed is below 160 KIAS, then fly the approach speed (Vapp, about 112 KIAS). Stay at TO/APPR if there is any ice on the airframe.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -571,22 +585,8 @@
             {
               "action": "DISCONNECT",
               "id": "autopilot",
-              "info": "Yoke, left side. Press the red disconnect button by minimums (200 ft above the runway on an ILS). In E2 mode, disconnect the autothrottle too.",
-              "label": "Autopilot",
-              "tier": "normal"
-            },
-            {
-              "action": "IDLE",
-              "id": "thrust-levers",
-              "info": "Center Pedestal. At 50 ft above the runway, bring both levers smoothly to IDLE and touch down with a small flare.",
-              "label": "Thrust Levers",
-              "tier": "normal"
-            },
-            {
-              "action": "EXT",
-              "id": "speed-brakes-3",
-              "info": "Center Pedestal. After touchdown, lower the nose, extend the speed brakes and brake until below 40 kt. In E2 mode they deploy on their own at touchdown.",
-              "label": "Speed Brakes",
+              "info": "Yoke, left side, red disconnect button. Disconnect the autopilot by minimums (200 ft above the runway on an ILS), then switch the yaw damper off with the YD button on the glareshield. In E2 mode, disconnect the autothrottle too.",
+              "label": "Autopilot / Yaw Damper",
               "tier": "normal"
             }
           ],
@@ -595,6 +595,38 @@
       ],
       "id": "approach",
       "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "title": "Landing",
+          "items": [
+            {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. At 50 ft above the runway, bring both levers smoothly to IDLE and touch down with a small flare.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
+              "action": "APPLY",
+              "id": "brakes",
+              "info": "Rudder pedals, toe brakes. After touchdown, keep straight with the rudder, lower the nose gently, then brake hard and keep braking until below 40 kt.",
+              "label": "Brakes",
+              "tier": "quick"
+            },
+            {
+              "action": "EXT",
+              "id": "speed-brakes",
+              "info": "Center Pedestal, SPEED BRAKES switch left of the thrust levers. Extend after touchdown to help the brakes. In E2 mode they deploy on their own at touchdown.",
+              "label": "Speed Brakes",
+              "tier": "quick"
+            }
+          ]
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
     },
     {
       "groups": [
@@ -610,7 +642,7 @@
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Center Pedestal. Retracts the wing flaps fully to the up position to prevent damage from ground debris during taxi.",
+              "info": "Center Pedestal. Retract after leaving the runway. Leave them at TO/APPR if ice built up on the airframe: retracting over ice can damage the flaps.",
               "label": "Flaps",
               "tier": "normal"
             },
@@ -638,8 +670,8 @@
             {
               "action": "STBY",
               "id": "radar-tcas",
-              "info": "Center Pedestal (GTC). Switches the weather radar and traffic alerting system to standby upon clearing the runway.",
-              "label": "Radar & TCAS",
+              "info": "Center Pedestal, left touchscreen (GTC1): Home > Weather Selection > WX Radar Settings. Take the radar out of use after leaving the runway.",
+              "label": "Weather Radar",
               "tier": "normal"
             }
           ],
@@ -657,28 +689,28 @@
             {
               "action": "CUTOFF",
               "id": "thrust-levers",
-              "info": "Center Pedestal. Pulls both levers fully aft into the cutoff gate to shut off fuel and initiate engine shutdown.",
+              "info": "Center Pedestal. Pull both levers fully aft into the CUT OFF detent to shut down the engines. Run them at idle for at least 2 minutes first, so the engines cool evenly; taxiing at idle counts.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "passenger-signs",
-              "info": "Center Pedestal (GTC). Turns off the passenger signs to allow deplaning once the aircraft is safely parked.",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > Aircraft Systems > System Controls > Interior Lights, Fasten Seatbelts and No Smoking. Switch the signs off once parked.",
               "label": "Passenger Signs",
               "tier": "normal"
             },
             {
               "action": "OPEN",
               "id": "cabin-door",
-              "info": "Cabin. Open the main entry door to allow passengers to deplane after the aircraft is fully secured.",
+              "info": "Center Pedestal, right touchscreen (GTC2): Home > Sim Options > Sim Actions tab. Open the main entry door to let the passengers out. The doors only work with the engines off.",
               "label": "Cabin Door",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "batteries",
-              "info": "Overhead Panel. Switches the single battery off and powers down the aircraft. Open the doors first: they only work with the engines off. Switch and load positions carry over to the next flight.",
+              "info": "Instrument Panel, ELECTRICAL panel just below the display softkeys. Switches the single battery off and powers down the aircraft. Open the doors first: they only work with the engines off. Switch and load positions carry over to the next flight.",
               "label": "Battery",
               "tier": "quick"
             }
