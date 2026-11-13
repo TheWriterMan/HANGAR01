@@ -7,7 +7,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Main panel. Prevents the aircraft from rolling during prep.",
+              "info": "Blue T-handle below and left of the main panel. Press both brake pedals, then pull the handle out. Prevents the aircraft from rolling during prep.",
               "label": "Parking Brake",
               "tier": "quick"
             },
@@ -89,7 +89,7 @@
             {
               "action": "ON",
               "id": "battery",
-              "info": "Overhead. Check batteries 1 and 2 show at least 24 V first.",
+              "info": "Overhead. Check batteries 1 and 2 show at least 23 V first.",
               "label": "Battery",
               "tier": "quick"
             },
@@ -122,9 +122,16 @@
               "tier": "full"
             },
             {
+              "action": "SET",
+              "id": "air-conditioning",
+              "info": "Overhead. Before the APU start, one main switch ON (cockpit or cabin) and the other OFF/RESET. Mode controls AUTO, temperature as desired, override switch guarded.",
+              "label": "Air Conditioning",
+              "tier": "normal"
+            },
+            {
               "action": "START",
               "id": "apu",
-              "info": "Overhead. Main switch ON with Gen 3 and Air at OFF/RESET. Press Start at least 10 sec after Main ON. The Start button lights. Wait for RPM and TGT, then Gen 3 ON (Gen 3 Inop light off) and Air ON.",
+              "info": "Overhead. Main switch ON with Gen 3 at OFF/RESET and Air OFF. Press Start at least 10 sec after Main ON. The Start button lights, then goes out at about 45% RPM. Once RPM is above 95%, Gen 3 ON (Gen 3 Inop light off) and Air ON.",
               "label": "APU",
               "tier": "quick"
             },
@@ -145,13 +152,6 @@
               "id": "bleed-air",
               "info": "Overhead. AUTO switches to AUTO, MAIN switches ON. Pressure gauge green.",
               "label": "Bleed Air",
-              "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "air-conditioning",
-              "info": "Overhead. Only one master ON, cabin or cockpit. Mode controls AUTO, temperature as desired, override switch guarded.",
-              "label": "Air Conditioning",
               "tier": "normal"
             },
             {
@@ -299,7 +299,7 @@
             {
               "action": "SET",
               "id": "parking-brake-start",
-              "info": "Main panel. Brake and alternate brake hydraulic pressure green. Use the System 1 electric pump (right one) if needed.",
+              "info": "Blue T-handle below and left of the main panel. Brake and alternate brake hydraulic pressure green. Use the System 1 electric pump (right one) if needed.",
               "label": "Parking Brake",
               "tier": "quick"
             },
@@ -367,7 +367,7 @@
             {
               "action": "PERFORM",
               "id": "engine-2-start",
-              "info": "Start selector to 2 (briefly hold right). Starter valve light on, HP and LP rotating. At 15-20% HP RPM, right HP fuel valve to START. Outer igniter lights blink. Watch fuel flow, TGT, oil pressure and temperature rise. At 50% HP RPM, fuel valve to OPEN. Stable idle is about 50% HP and 25% LP.",
+              "info": "Start selector to 2 (briefly hold right). Starter valve light on, HP and LP rotating. At 15-20% HP RPM, right HP fuel valve to START. Outer igniter lights blink. Watch fuel flow, TGT, oil pressure and temperature rise. At 400°C TGT or 50% HP RPM, fuel valve to OPEN. Stable idle 47–53% HP, about 27% LP, oil pressure above 16 PSI.",
               "label": "Engine 2 Start",
               "tier": "quick"
             },
@@ -467,7 +467,7 @@
             {
               "action": "RELEASE",
               "id": "parking-brake-taxi",
-              "info": "Main panel. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
+              "info": "Blue T-handle below and left of the main panel. Press both brake pedals and the handle returns to off. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
               "label": "Parking Brake",
               "tier": "quick"
             }
@@ -528,7 +528,7 @@
             {
               "action": "ARM",
               "id": "lift-dumper-arm",
-              "info": "Pedestal. Arm button raised.",
+              "info": "Pedestal. Push the arm button in. The red light comes on and the glareshield indicators show RDY.",
               "label": "Lift Dumper Arm",
               "tier": "normal"
             },
@@ -558,7 +558,7 @@
               "id": "transponder-on",
               "info": "Pedestal. On with altitude reporting.",
               "label": "Transponder",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Lineup"
@@ -640,7 +640,7 @@
             {
               "action": "SET CLIMB",
               "id": "ttc-climb",
-              "info": "Pedestal, switches below the captain's throttles. Once flaps are up, TTC to CLIMB and throttles to the detent. Accelerate to 250 KIAS or the procedure limit.",
+              "info": "Pedestal, switches below the captain's throttles. Once flaps are up, TTC to CLIMB and throttles to the detent. TGT no more than 470°C. Accelerate to 250 KIAS or the procedure limit.",
               "label": "TTC",
               "tier": "quick"
             }
@@ -663,6 +663,13 @@
               "tier": "quick"
             },
             {
+              "action": "ENGAGE",
+              "id": "autopilot",
+              "info": "Pedestal, autopilot controller. A/P switch IN, then HDG and IAS on the glareshield mode selector.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "CHECK UP",
               "id": "gear-check",
               "info": "Right instrument panel.",
@@ -679,7 +686,7 @@
             {
               "action": "DISARMED",
               "id": "lift-dumper-check",
-              "info": "Pedestal. Arm button depressed.",
+              "info": "Pedestal. Arm button out and light off, glareshield indicators IN. The system disarms itself after takeoff.",
               "label": "Lift Dumper",
               "tier": "normal"
             },
@@ -742,16 +749,9 @@
               "tier": "quick"
             },
             {
-              "action": "OFF",
-              "id": "ttc-off",
-              "info": "Pedestal, switches below the throttles.",
-              "label": "TTC",
-              "tier": "normal"
-            },
-            {
               "action": "ON",
               "id": "alt-hold",
-              "info": "Flight director Alt Hold switch, at cruise altitude. For automatic capture, select ALERT and AUTO on the altitude controller. The autopilot then switches to HT mode.",
+              "info": "Flight director Alt Hold switch, at cruise altitude. For automatic capture, select ALERT and AUTO on the altitude controller. The autopilot then switches to ALT mode.",
               "label": "Alt Hold",
               "tier": "normal"
             },
@@ -907,6 +907,13 @@
               "info": "Right instrument panel. VREF on the 1st bug, VREF+10 on the yellow bug.",
               "label": "Speed Bugs",
               "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "approach-mode",
+              "info": "Glareshield. APPR on the remote datum selector, BEAM and GLIDE on the mode selector, FD mode selector to GS AUTO.",
+              "label": "Approach Mode",
+              "tier": "normal"
             }
           ],
           "title": "Initial Approach"
@@ -930,14 +937,14 @@
             {
               "action": "FULL",
               "id": "flaps-full",
-              "info": "Pedestal. On the glideslope, latest 2,000 ft AGL, set 25° then FULL. Slow to VREF+10 (yellow bug). Keep HP RPM above 70% until landing is assured.",
+              "info": "Pedestal. One dot below the glideslope, flaps 25° and VREF+20. At 1,500 ft AGL, FULL and VREF+10 (yellow bug). Keep HP RPM above 80% until landing is assured.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "ARM",
               "id": "lift-dumpers-arm",
-              "info": "Pedestal. Arm button raised.",
+              "info": "Pedestal. Push the arm button in. The red light comes on and the glareshield indicators show RDY.",
               "label": "Lift Dumpers",
               "tier": "quick"
             }
@@ -952,13 +959,6 @@
       "groups": [
         {
           "items": [
-            {
-              "action": "ON",
-              "id": "landing-lights-ldg",
-              "info": "Pedestal.",
-              "label": "Landing Lights",
-              "tier": "normal"
-            },
             {
               "action": "DOWN 5 GREEN",
               "id": "gear-confirm",
@@ -1123,14 +1123,14 @@
             {
               "action": "SET",
               "id": "parking-brake-final",
-              "info": "Main panel.",
+              "info": "Blue T-handle below and left of the main panel. Press both brake pedals, then pull the handle out.",
               "label": "Parking Brake",
               "tier": "quick"
             },
             {
               "action": "SHUT",
               "id": "hp-fuel-valves-shut",
-              "info": "Pedestal. Both levers aft. Check the APU is running with Gen 3 on first.",
+              "info": "Pedestal. Both levers aft. If the APU is running, check Gen 3 is on first.",
               "label": "HP Fuel Valves",
               "tier": "quick"
             },
