@@ -1001,7 +1001,7 @@
       ]
     }
   ],
-  "description": "A turbocharged aircraft capable of 30,000 ft with a full complement of passengers, offering jet-like range in a piston twin.",
+  "description": "A pressurized, turbocharged piston twin with a service ceiling above 30,000 ft and roughly 1,300 NM of range for serious cross-country trips.",
   "manufacturer": "Cessna",
   "model": "414AW",
   "slug": "c414",
