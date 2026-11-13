@@ -616,7 +616,7 @@
               "id": "isolation-valve",
               "info": "Overhead Panel. Set to AUTO for normal bleed air distribution.",
               "label": "Isolation Valve",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -902,7 +902,7 @@
             {
               "action": "OFF",
               "id": "start-selectors",
-              "info": "Overhead Panel. Move switches back to OFF once engines are stable.",
+              "info": "Overhead Panel. Move from CONT back to OFF in the after-takeoff flow, or leave them in CONT if conditions call for it.",
               "label": "Start Selectors",
               "tier": "normal"
             },
@@ -951,7 +951,7 @@
             {
               "action": "AS REQUIRED",
               "id": "cabin-lights",
-              "info": "Overhead Panel. Set appropriate lighting for takeoff.",
+              "info": "Overhead Panel. Set cabin lighting for the climb.",
               "label": "Cabin Lights",
               "tier": "full"
             }
@@ -1058,13 +1058,6 @@
               "id": "radios",
               "info": "Pedestal. Tune ILS or approach frequencies.",
               "label": "Radios",
-              "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "mcp-altitude",
-              "info": "Glareshield. Reset for initial approach altitude per ATC.",
-              "label": "MCP Altitude",
               "tier": "normal"
             },
             {
@@ -1397,7 +1390,7 @@
             {
               "action": "AS REQUIRED",
               "id": "cabin-lights",
-              "info": "Overhead Panel. Set appropriate lighting for takeoff.",
+              "info": "Overhead Panel. Set cabin lighting for the taxi in.",
               "label": "Cabin Lights",
               "tier": "full"
             },
@@ -1430,7 +1423,7 @@
             {
               "action": "OFF",
               "id": "start-selectors",
-              "info": "Overhead Panel. Move switches back to OFF once engines are stable.",
+              "info": "Overhead Panel. Move from CONT back to OFF once clear of the runway.",
               "label": "Start Selectors",
               "tier": "normal"
             },
@@ -1505,7 +1498,7 @@
             {
               "action": "OFF",
               "id": "taxi-lights-2",
-              "info": "Overhead Panel. Turn off as landing lights are now on.",
+              "info": "Overhead Panel. Turn off before turning toward the gate to avoid blinding the ground crew.",
               "label": "Taxi Lights",
               "tier": "normal"
             }
