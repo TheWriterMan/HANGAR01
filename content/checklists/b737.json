@@ -56,7 +56,7 @@
             {
               "action": "STBY PWR",
               "id": "ac-voltmeter",
-              "info": "Overhead Panel. Verify APU voltage on right selector.",
+              "info": "Overhead Panel. AC meter selector (right) to STBY PWR to check standby AC voltage.",
               "label": "AC Voltmeter",
               "tier": "full"
             },
@@ -96,14 +96,14 @@
             {
               "action": "ON",
               "id": "external-power",
-              "info": "FMC. Connect via FS ACTIONS → Ground Services → Ground Power Request.",
+              "info": "Overhead Panel. Connect a GPU first via the CDU: MENU → FS ACTIONS → GROUND SERVICES → Ground Power. Then switch ground power on.",
               "label": "External Power",
               "tier": "quick"
             },
             {
               "action": "GRND PWR",
               "id": "ac-voltmeter-2",
-              "info": "Overhead Panel. Verify APU voltage on right selector.",
+              "info": "Overhead Panel. AC meter selector (right) to GRD PWR to check ground power voltage.",
               "label": "AC Voltmeter",
               "tier": "full"
             },
@@ -184,7 +184,7 @@
             {
               "action": "NAV",
               "id": "irs-selectors",
-              "info": "Overhead Panel. All 3 selectors to NAV. Alignment takes ~10 min at mid-latitudes.",
+              "info": "Overhead Panel. Both selectors (left and right IRS) to NAV. Alignment takes ~10 min at mid-latitudes.",
               "label": "IRS Selectors",
               "tier": "quick"
             }
@@ -273,7 +273,7 @@
               "id": "initial-altitude",
               "info": "Glareshield. Set the initial cleared altitude on MCP altitude window.",
               "label": "Initial Altitude",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
@@ -353,9 +353,9 @@
             {
               "action": "SET",
               "id": "flight-altitude",
-              "info": "Overhead Panel. Pressurization — set cruise altitude on the overhead panel.",
+              "info": "Overhead Panel. Set the cruise altitude on the pressurization panel. The FMC does not set it for you.",
               "label": "Flight Altitude",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "SET",
@@ -367,9 +367,9 @@
             {
               "action": "ON",
               "id": "flight-directors",
-              "info": "Glareshield. Turn on for both pilot and copilot.",
+              "info": "Glareshield. Turn on both, captain's and first officer's. TO/GA will not engage if either is off.",
               "label": "Flight Directors",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
@@ -449,7 +449,14 @@
               "id": "packs",
               "info": "Overhead Panel. OFF for engine start to maximize bleed air to starters.",
               "label": "Packs",
-              "tier": "normal"
+              "tier": "quick"
+            },
+            {
+              "action": "OPEN",
+              "id": "isolation-valve",
+              "info": "Overhead Panel. The APU feeds only the left side of the bleed duct, and in AUTO the valve stays closed, so engine 2 gets no start air. Set back to AUTO after start.",
+              "label": "Isolation Valve",
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -490,6 +497,13 @@
         {
           "items": [
             {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Release when the ground crew is ready to push. Hold full brakes first, then release the latch. With keyboard brakes, hold the brake key for 2-3 seconds.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
               "action": "START",
               "id": "pushback",
               "label": "Pushback",
@@ -511,36 +525,15 @@
             },
             {
               "action": "GRD",
-              "id": "l-start-selector",
-              "info": "Overhead Panel. When it kicks back, set to CONT for continuous ignition during start.",
-              "label": "L Start Selector",
-              "tier": "quick"
-            },
-            {
-              "action": "ON",
-              "id": "l-fuel-control",
-              "info": "Pedestal. Move left fuel control lever to RUN position.",
-              "label": "L Fuel Control",
-              "tier": "quick"
-            },
-            {
-              "action": "CONT",
-              "id": "l-start-selector-2",
-              "info": "Overhead Panel. When it kicks back, set to CONT for continuous ignition during start.",
-              "label": "L Start Selector",
-              "tier": "quick"
-            },
-            {
-              "action": "GRD",
               "id": "r-start-selector",
-              "info": "Overhead Panel. When it kicks back, set to CONT.",
+              "info": "Overhead Panel. The starter spins the engine. Watch N2 rise. The switch springs back to OFF at 56% N2.",
               "label": "R Start Selector",
               "tier": "quick"
             },
             {
-              "action": "ON",
+              "action": "IDLE",
               "id": "r-fuel-control",
-              "info": "Pedestal. Move right fuel control lever to RUN position.",
+              "info": "Pedestal. Move the start lever to IDLE at 25% N2, or at maximum motoring if N2 stalls below that (20% N2 minimum). Moving it early can cause a hot start. Watch EGT rise and fuel flow.",
               "label": "R Fuel Control",
               "tier": "quick"
             },
@@ -549,6 +542,27 @@
               "id": "r-start-selector-2",
               "info": "Overhead Panel. When it kicks back, set to CONT.",
               "label": "R Start Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "GRD",
+              "id": "l-start-selector",
+              "info": "Overhead Panel. The starter spins the engine. Watch N2 rise. The switch springs back to OFF at 56% N2.",
+              "label": "L Start Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "IDLE",
+              "id": "l-fuel-control",
+              "info": "Pedestal. Move the start lever to IDLE at 25% N2, or at maximum motoring if N2 stalls below that (20% N2 minimum). Moving it early can cause a hot start. Watch EGT rise and fuel flow.",
+              "label": "L Fuel Control",
+              "tier": "quick"
+            },
+            {
+              "action": "CONT",
+              "id": "l-start-selector-2",
+              "info": "Overhead Panel. When it kicks back, set to CONT for continuous ignition during start.",
+              "label": "L Start Selector",
               "tier": "quick"
             }
           ],
@@ -578,20 +592,20 @@
             },
             {
               "action": "OFF",
-              "id": "apu",
-              "info": "Overhead Panel. Engine generators now provide power, turn APU off.",
-              "label": "APU",
-              "tier": "quick"
-            },
-            {
-              "action": "OFF",
               "id": "apu-bleed",
               "info": "Overhead Panel. Turn off as engine bleed is now available.",
               "label": "APU Bleed",
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "OFF",
+              "id": "apu",
+              "info": "Overhead Panel. Engine generators now provide power, turn APU off.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "AUTO",
               "id": "packs",
               "info": "Overhead Panel. Restore cabin air conditioning.",
               "label": "Packs",
@@ -682,7 +696,7 @@
             {
               "action": "CHECK",
               "id": "brakes",
-              "info": "Pedestal. Check brakes, gyro, turn coordinator during taxi. Max 15 kts apron, 30 kts taxiway.",
+              "info": "Rudder pedals. Press the toe brakes gently once moving to check they work. Max 15 kts apron, 30 kts taxiway.",
               "label": "Brakes",
               "tier": "normal"
             }
@@ -805,7 +819,7 @@
               "id": "transponder",
               "info": "Pedestal. Set to Traffic Advisory/Resolution Advisory mode.",
               "label": "Transponder",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -827,6 +841,45 @@
       ],
       "id": "before-takeoff",
       "title": "Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Hold full brakes first, then release the latch. With keyboard brakes, hold the brake key for 2-3 seconds.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
+              "action": "40% N1",
+              "id": "throttles",
+              "info": "Center Pedestal. Advance smoothly and let both engines settle at 40% N1. They spool slowly up to 40%, then accelerate quickly past about 50%.",
+              "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "PRESS",
+              "id": "to-ga",
+              "info": "Thrust levers. Press a TO/GA switch on the levers (Ctrl+Shift+G by default). The autothrottle sets takeoff N1 and the FMA shows N1 and TO/GA. Only works with both flight directors on.",
+              "label": "TO/GA",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Yoke. Rotate smoothly at 2-3 degrees per second toward 15 degrees nose up. Rotating faster risks a tail strike.",
+              "label": "Rotate",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
     },
     {
       "groups": [
@@ -863,14 +916,14 @@
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Pedestal. Ensure flaps are fully retracted.",
+              "info": "Pedestal. At acceleration height (1,500 ft AGL by default) select flaps 1, then flaps UP passing the \"1\" marker on the speed tape.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "autopilot",
-              "info": "Glareshield. Engage CMD A or B on the MCP.",
+              "info": "Glareshield. Press CMD A passing 400 ft with the controls centered, then take your hands off. Pressure on the controls makes it drop into CWS.",
               "label": "Autopilot",
               "tier": "quick"
             },
@@ -1054,6 +1107,13 @@
         {
           "items": [
             {
+              "action": "SET LOWER",
+              "id": "mcp-altitude",
+              "info": "Glareshield. When RESET MCP ALT appears on the CDU, about 5 NM before top of descent, set the lowest altitude ATC has cleared you to. VNAV will not start the descent until you do.",
+              "label": "MCP Altitude",
+              "tier": "quick"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "anti-ice",
               "info": "Overhead Panel. Use if icing conditions are present.",
@@ -1103,7 +1163,7 @@
             {
               "action": "ON",
               "id": "landing-lights",
-              "info": "Overhead Panel. Turn on when cleared onto the active runway.",
+              "info": "Overhead Panel. Turn on passing 10,000 ft.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -1173,6 +1233,20 @@
         {
           "items": [
             {
+              "action": "SET",
+              "id": "flaps-1",
+              "info": "Pedestal. Select at 220 kt as the aircraft slows in the descent.",
+              "label": "Flaps 1",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-5",
+              "info": "Pedestal. Slow to 180 kt, then select flaps 5, usually on the downwind leg.",
+              "label": "Flaps 5",
+              "tier": "quick"
+            },
+            {
               "action": "DOWN",
               "id": "gear",
               "info": "Main Panel. Extend landing gear for landing.",
@@ -1182,7 +1256,7 @@
             {
               "action": "SET",
               "id": "flaps-15",
-              "info": "Pedestal. Initial approach flaps.",
+              "info": "Pedestal. Slow to 160 kt, then select flaps 15, usually as you turn onto the localizer.",
               "label": "Flaps 15",
               "tier": "quick"
             },
@@ -1196,7 +1270,7 @@
             {
               "action": "SET",
               "id": "landing-flaps",
-              "info": "Pedestal. Set final landing flap configuration (25 or 30).",
+              "info": "Pedestal. Flaps 30 is the normal landing setting, 40 the alternative. Select it at the flaps 15 maneuvering speed.",
               "label": "Landing Flaps",
               "tier": "quick"
             }
@@ -1221,7 +1295,7 @@
             {
               "action": "ON",
               "id": "rwy-turnoff-lights",
-              "info": "Overhead Panel. Turn on for additional visibility during takeoff roll.",
+              "info": "Overhead Panel. Turn on for the landing roll and the runway exit.",
               "label": "RWY Turnoff Lights",
               "tier": "normal"
             },
@@ -1256,7 +1330,7 @@
             {
               "action": "APPLY",
               "id": "brakes",
-              "info": "Pedestal. Autobrake disengages ~30 kts. Manual braking as needed.",
+              "info": "Rudder pedals. Brake manually below 80 kt. Manual braking disarms the autobrake. With hardware toe brakes, press twice quickly and harder than the autobrake.",
               "label": "Brakes",
               "tier": "quick"
             }
@@ -1274,7 +1348,7 @@
             {
               "action": "ALT OFF",
               "id": "transponder",
-              "info": "Pedestal. Set to altitude reporting off during pushback.",
+              "info": "Pedestal. Stop altitude reporting once clear of the runway.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -1302,14 +1376,14 @@
             {
               "action": "OFF",
               "id": "landing-lights",
-              "info": "Overhead Panel. Turn off passing 10,000 ft.",
+              "info": "Overhead Panel. Turn off once clear of the runway.",
               "label": "Landing Lights",
               "tier": "normal"
             },
             {
               "action": "ON",
               "id": "taxi-lights",
-              "info": "Overhead Panel. Turn off as landing lights are now on.",
+              "info": "Overhead Panel. Turn on as the landing lights go off, for the taxi in.",
               "label": "Taxi Lights",
               "tier": "normal"
             },
@@ -1337,7 +1411,7 @@
             {
               "action": "START",
               "id": "apu",
-              "info": "Overhead Panel. Need bleed air for engine start.",
+              "info": "Overhead Panel. Start during the taxi in so the APU can take over power and air before the engines are shut down.",
               "label": "APU",
               "tier": "normal"
             }
@@ -1363,7 +1437,7 @@
             {
               "action": "OFF",
               "id": "autobrake",
-              "info": "Main Panel. Switch from RTO to OFF.",
+              "info": "Main Panel. Turn the knob to OFF.",
               "label": "Autobrake",
               "tier": "normal"
             },
@@ -1377,7 +1451,7 @@
             {
               "action": "ENGINE",
               "id": "lower-du",
-              "info": "Main Panel. Select engine display on lower DU for start monitoring.",
+              "info": "Main Panel. Brings the secondary engine indications back on the lower display.",
               "label": "Lower DU",
               "tier": "normal"
             },
@@ -1524,21 +1598,21 @@
             {
               "action": "GRND PWR",
               "id": "ac-voltmeter",
-              "info": "Overhead Panel. Right selector to STBY PWR.",
+              "info": "Overhead Panel. AC meter selector (right) to GRD PWR to check ground power voltage.",
               "label": "AC Voltmeter",
               "tier": "full"
             },
             {
               "action": "OFF",
               "id": "apu",
-              "info": "Overhead Panel. Engine generators now provide power, turn APU off.",
+              "info": "Overhead Panel. Turn off once ground power carries the electrical load.",
               "label": "APU",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "start-selectors",
-              "info": "Overhead Panel. Move switches back to OFF once engines are stable.",
+              "info": "Overhead Panel. Both engine start switches to OFF.",
               "label": "Start Selectors",
               "tier": "normal"
             },
@@ -1559,7 +1633,7 @@
             {
               "action": "OFF",
               "id": "apu-bleed",
-              "info": "Overhead Panel. Turn off as engine bleed is now available.",
+              "info": "Overhead Panel. Turn off once the APU is shut down.",
               "label": "APU Bleed",
               "tier": "normal"
             },
@@ -1599,7 +1673,7 @@
             {
               "action": "OFF",
               "id": "packs",
-              "info": "Overhead Panel. OFF for engine start to maximize bleed air to starters.",
+              "info": "Overhead Panel. Turn off both packs.",
               "label": "Packs",
               "tier": "normal"
             },
