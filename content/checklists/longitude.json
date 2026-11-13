@@ -29,7 +29,7 @@
               "action": "ON",
               "id": "battery-1-2",
               "info": "Left Switch Panel. Check volts on MFD when display comes on.",
-              "label": "Battery 1+2",
+              "label": "L/R BATT",
               "tier": "quick"
             },
             {
@@ -49,14 +49,14 @@
             {
               "action": "START",
               "id": "apu",
-              "info": "Left Switch Panel. Knob to ON/START. Disconnect external power once APU is running.",
+              "info": "Center Pedestal, aft right. Knob to ON/START. Disconnect external power once APU is running.",
               "label": "APU",
               "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "info": "Overhead Panel and GTC. Nav lights come on at G5000 power-up and the beacon defaults to Normal, on whenever an engine is in RUN or the starter is engaged. Both are set on the GTC Exterior Lights page (Systems). The overhead panel has ANTI COLL (white strobes) and TAIL FLOOD (logo).",
               "label": "Exterior Lights",
               "tier": "full"
             },
@@ -115,14 +115,14 @@
             {
               "action": "SET",
               "id": "trims",
-              "info": "Center Pedestal. Set stab trim per CG table. As of AAU 2: reduce value by 2 from the figures.",
+              "info": "EIS. Set stab trim inside the green takeoff band. Outside it, NO TAKEOFF shows.",
               "label": "Trims",
               "tier": "quick"
             },
             {
               "action": "SET",
               "id": "pressurization",
-              "info": "Right Switch Panel. Verify landing elevation on EIS.",
+              "info": "Center Pedestal, or the GTC Cabin Pressure page (Systems). Verify landing elevation on EIS.",
               "label": "Pressurization",
               "tier": "normal"
             },
@@ -201,7 +201,7 @@
             {
               "action": "RUN",
               "id": "engine-run-stop",
-              "info": "Center Pedestal. Either engine first.",
+              "info": "Center Pedestal, aft of the throttles. Right engine first recommended.",
               "label": "Engine Run/Stop",
               "tier": "quick"
             },
@@ -254,7 +254,7 @@
             {
               "action": "OFF",
               "id": "apu",
-              "info": "Left Switch Panel. Engines now provide bleed and electrical. APU no longer needed.",
+              "info": "Center Pedestal, aft right. Engines now provide bleed and electrical. APU no longer needed.",
               "label": "APU",
               "tier": "normal"
             },
@@ -345,7 +345,7 @@
               "id": "transponder",
               "info": "GTC. Sets the aircraft squawk code and reporting mode.",
               "label": "Transponder",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Taxi Setup"
@@ -453,6 +453,13 @@
               "info": "PFD. Verify TO/TO (green) and ALTS (white).",
               "label": "FMA",
               "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "strobes",
+              "info": "Overhead Panel, ANTI COLL button. Turns on the white flashing anti-collision lights.",
+              "label": "Strobes",
+              "tier": "normal"
             }
           ],
           "title": "Lineup"
@@ -485,13 +492,6 @@
               "id": "weather-radar",
               "info": "GTC / MFD. Detects precipitation and weather cells.",
               "label": "Weather Radar",
-              "tier": "full"
-            },
-            {
-              "action": "TEST",
-              "id": "pitot-static-heat",
-              "info": "Right Switch Panel. ON for 15 seconds then back to NORM.",
-              "label": "Pitot/Static Heat",
               "tier": "full"
             },
             {
@@ -536,7 +536,7 @@
             {
               "action": "ARM",
               "id": "autothrottle",
-              "info": "Throttle Levers / AFCS. Verify AT FMA = HOLD (green).",
+              "info": "Throttle Levers. AT button at the rear of the throttle lever arm. AT shows armed (white) on the PFD.",
               "label": "Autothrottle",
               "tier": "quick"
             },
@@ -557,7 +557,7 @@
             {
               "action": "RELEASE",
               "id": "brakes",
-              "info": "Rudder Pedals. Applies wheel brakes to slow the aircraft.",
+              "info": "Rudder Pedals. Release toe brakes to start the roll.",
               "label": "Brakes",
               "tier": "quick"
             },
@@ -631,9 +631,9 @@
             {
               "action": "CHECK",
               "id": "pressurization",
-              "info": "Right Switch Panel. Verify cabin climbing normally.",
+              "info": "Center Pedestal. Verify cabin climbing normally.",
               "label": "Pressurization",
-              "tier": "quick"
+              "tier": "normal"
             }
           ],
           "title": "Initial Climb"
@@ -664,7 +664,7 @@
             {
               "action": "OFF",
               "id": "apu",
-              "info": "Left Switch Panel. Prior to climb above FL350.",
+              "info": "Center Pedestal, aft right. Prior to climb above FL350.",
               "label": "APU",
               "tier": "normal"
             }
@@ -717,7 +717,7 @@
             {
               "action": "CHECK",
               "id": "pressurization",
-              "info": "Right Switch Panel. Manages cabin altitude and pressurization.",
+              "info": "Center Pedestal. Manages cabin altitude and pressurization.",
               "label": "Pressurization",
               "tier": "normal"
             },
@@ -787,6 +787,13 @@
               "info": "AFCS Panel. Preselect target altitude for approach.",
               "label": "AP Altitude",
               "tier": "normal"
+            },
+            {
+              "action": "SET LOWER",
+              "id": "altitude-selector",
+              "info": "AFCS Panel. Set the cleared descent altitude before TOD. VNAV descends at TOD only when the selector is below cruise altitude.",
+              "label": "Altitude Selector",
+              "tier": "quick"
             }
           ],
           "title": "Descent Prep"
@@ -796,14 +803,14 @@
             {
               "action": "VERIFY",
               "id": "pressurization",
-              "info": "Right Switch Panel. Verify landing elevation set.",
+              "info": "Center Pedestal, or the GTC Cabin Pressure page (Systems). Verify landing elevation set.",
               "label": "Pressurization",
               "tier": "normal"
             },
             {
               "action": "START",
               "id": "apu",
-              "info": "Left Switch Panel. At or below FL310.",
+              "info": "Center Pedestal, aft right. At or below FL310.",
               "label": "APU",
               "tier": "normal"
             },
@@ -831,7 +838,7 @@
             {
               "action": "AS REQUIRED",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "info": "Overhead Panel and GTC. Nav lights come on at G5000 power-up and the beacon defaults to Normal, on whenever an engine is in RUN or the starter is engaged. Both are set on the GTC Exterior Lights page (Systems). The overhead panel has ANTI COLL (white strobes) and TAIL FLOOD (logo).",
               "label": "Exterior Lights",
               "tier": "full"
             }
@@ -931,7 +938,7 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Center Panel. 3 green. At ~1 dot below glideslope.",
+              "info": "Center Panel. Below 230 KIAS. 3 green.",
               "label": "Gear",
               "tier": "quick"
             },
@@ -998,7 +1005,7 @@
             {
               "action": "DEPLOY",
               "id": "thrust-reversers",
-              "info": "Throttle Levers. Deploy after touchdown. Stow (reverse idle) by 45 KIAS.",
+              "info": "Throttle Levers. Deploy after touchdown. Reduce to reverse idle by 45 KIAS.",
               "label": "Thrust Reversers",
               "tier": "quick"
             }
@@ -1051,7 +1058,7 @@
             {
               "action": "AS REQUIRED",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "info": "Overhead Panel and GTC. Nav lights come on at G5000 power-up and the beacon defaults to Normal, on whenever an engine is in RUN or the starter is engaged. Both are set on the GTC Exterior Lights page (Systems). The overhead panel has ANTI COLL (white strobes) and TAIL FLOOD (logo).",
               "label": "Exterior Lights",
               "tier": "normal"
             }
@@ -1088,7 +1095,7 @@
               "tier": "normal"
             },
             {
-              "action": "OFF",
+              "action": "STOP",
               "id": "engine-run-stop",
               "info": "Center Pedestal. Both buttons to STOP.",
               "label": "Engine Run/Stop",
@@ -1111,14 +1118,14 @@
             {
               "action": "OFF",
               "id": "apu",
-              "info": "Left Switch Panel. Controls the Auxiliary Power Unit for ground power and air conditioning.",
+              "info": "Center Pedestal, aft right. Controls the Auxiliary Power Unit for ground power and air conditioning.",
               "label": "APU",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls beacon, nav, strobe, and logo lights.",
+              "info": "Overhead Panel and GTC. Nav lights come on at G5000 power-up and the beacon defaults to Normal, on whenever an engine is in RUN or the starter is engaged. Both are set on the GTC Exterior Lights page (Systems). The overhead panel has ANTI COLL (white strobes) and TAIL FLOOD (logo).",
               "label": "Exterior Lights",
               "tier": "normal"
             },
@@ -1133,7 +1140,7 @@
               "action": "OFF",
               "id": "battery-1-2",
               "info": "Left Switch Panel. Last item — all power off.",
-              "label": "Battery 1+2",
+              "label": "L/R BATT",
               "tier": "quick"
             }
           ],
