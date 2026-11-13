@@ -33,28 +33,28 @@
             {
               "action": "DOWN",
               "id": "crash-lever",
-              "info": "Left Electrical Panel. Acts as a master kill switch to shut down all electrical power in an emergency.",
+              "info": "Upper Panel, center. Lowering it cuts the battery bus and turns the SOURCE and GENERATOR selectors off.",
               "label": "Crash Lever",
               "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "starter",
-              "info": "Left Pilot Console. Engages the starter motor to begin engine rotation.",
+              "info": "Upper Panel, engine start switches. Engages the starter motor to begin engine rotation.",
               "label": "Starter",
               "tier": "normal"
             },
             {
               "action": "AUTO",
               "id": "ignition",
-              "info": "Left Pilot Console. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
+              "info": "Upper Panel, engine start switches. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
               "label": "Ignition",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "aux-boost-pump",
-              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "info": "Upper Panel, FUEL panel. Provides backup fuel pressure during critical phases of flight.",
               "label": "Aux Boost Pump",
               "tier": "normal"
             }
@@ -66,14 +66,14 @@
             {
               "action": "MAN",
               "id": "fuel-selector",
-              "info": "Left Pilot Console. Switches the fuel system to manual tank selection.",
+              "info": "Upper Panel, FUEL panel. Switches the fuel system to manual tank selection.",
               "label": "Fuel Selector",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "ap-trims",
-              "info": "Left Pilot Console. Provides master electrical power to the autopilot and electric trim systems.",
+              "info": "Upper Panel. Provides master electrical power to the autopilot and electric trim systems.",
               "label": "AP / Trims",
               "tier": "normal"
             },
@@ -101,7 +101,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "info": "Pilot's side lower instrument panel. Prevents the aircraft from rolling during prep. Press the toe brakes before turning the knob to ON, or the brakes are not set.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -159,7 +159,7 @@
             {
               "action": "UP",
               "id": "crash-lever",
-              "info": "Left Electrical Panel. Acts as a master kill switch to shut down all electrical power in an emergency.",
+              "info": "Upper Panel, center. Lowering it cuts the battery bus and turns the SOURCE and GENERATOR selectors off.",
               "label": "Crash Lever",
               "tier": "quick"
             },
@@ -172,29 +172,22 @@
             {
               "action": "BAT OR GPU",
               "id": "source",
-              "info": "Left Electrical Panel. Selects the primary power source, typically the battery or a Ground Power Unit (GPU).",
+              "info": "Upper Panel. Selects the primary power source, typically the battery or a Ground Power Unit (GPU).",
               "label": "Source",
               "tier": "quick"
             },
             {
               "action": "MAIN",
               "id": "generator",
-              "info": "Left Electrical Panel. Selects the main or standby generator to power the electrical buses.",
+              "info": "Upper Panel. Selects the main or standby generator to power the electrical buses.",
               "label": "Generator",
               "tier": "quick"
             },
             {
-              "action": "TEST",
+              "action": "PRESS",
               "id": "audio-alarms",
-              "info": "Main Instrument Panel. Tests the aural warning system.",
-              "label": "Audio Alarms",
-              "tier": "full"
-            },
-            {
-              "action": "TEST",
-              "id": "de-ice-lights",
-              "info": "Overhead Panel. Illuminates the wings to check for ice accumulation at night.",
-              "label": "De-Ice Lights",
+              "info": "Upper Panel. Tests the aural warnings, the DE ICE SYSTEM lights and the stick shaker.",
+              "label": "TEST Button",
               "tier": "full"
             },
             {
@@ -265,14 +258,14 @@
             {
               "action": "AUTO",
               "id": "ignition",
-              "info": "Left Pilot Console. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
+              "info": "Upper Panel, engine start switches. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
               "label": "Ignition",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "aux-boost-pump",
-              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "info": "Upper Panel, FUEL panel. Provides backup fuel pressure during critical phases of flight.",
               "label": "Aux Boost Pump",
               "tier": "quick"
             },
@@ -292,21 +285,21 @@
             {
               "action": "ON",
               "id": "starter",
-              "info": "Left Pilot Console. Engages the starter motor to begin engine rotation.",
+              "info": "Upper Panel, engine start switches. Set to ON for 2 seconds, then back to OFF. The start then runs on its own.",
               "label": "Starter",
               "tier": "quick"
             },
             {
               "action": "LO-IDLE",
               "id": "ng-13-throttle",
-              "info": "Center Pedestal. Introduces fuel into the engine once the gas generator speed (Ng) reaches 13 percent.",
+              "info": "Center Pedestal. Introduces fuel once Ng reaches about 13%. Then watch ITT, Ng, oil temperature and pressure. ITT limits: 870°C for 20 seconds, 1000°C for 5 seconds. Ng must pass 30% within 30 seconds and 50% within 1 minute.",
               "label": "Ng 13%: Throttle",
               "tier": "quick"
             },
             {
               "action": "CHECK",
               "id": "auto-starter-off",
-              "info": "MFD. Confirms the starter has automatically disengaged after a successful start.",
+              "info": "MFD. The starter should switch off by itself once Ng passes 50%, within 1 minute.",
               "label": "Auto Starter Off",
               "tier": "normal"
             }
@@ -339,21 +332,21 @@
             {
               "action": "AUTO",
               "id": "aux-boost-pump-2",
-              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "info": "Upper Panel, FUEL panel. Provides backup fuel pressure during critical phases of flight.",
               "label": "Aux Boost Pump",
               "tier": "quick"
             },
             {
               "action": "AUTO",
               "id": "fuel-selector",
-              "info": "Left Pilot Console. The system automatically switches between left and right fuel tanks to keep the aircraft balanced.",
+              "info": "Upper Panel, FUEL panel. The system automatically switches between left and right fuel tanks to keep the aircraft balanced.",
               "label": "Fuel Selector",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "ap-trims",
-              "info": "Left Pilot Console. Provides master electrical power to the autopilot and electric trim systems.",
+              "info": "Upper Panel. Provides master electrical power to the autopilot and electric trim systems.",
               "label": "AP / Trims",
               "tier": "quick"
             },
@@ -367,14 +360,14 @@
             {
               "action": "ST-BY / TEST",
               "id": "generator-test",
-              "info": "Left Electrical Panel. Move generator switch to ST-BY, then TEST. Verify the standby generator powers the buses correctly before returning to MAIN.",
+              "info": "Upper Panel. Move generator switch to ST-BY, then TEST. Verify the standby generator powers the buses correctly before returning to MAIN.",
               "label": "Generator",
               "tier": "full"
             },
             {
               "action": "MAIN",
               "id": "generator-main",
-              "info": "Left Electrical Panel. Return generator switch to MAIN after the standby test completes. Confirms normal operation is restored.",
+              "info": "Upper Panel. Return generator switch to MAIN after the standby test completes. Confirms normal operation is restored.",
               "label": "Generator",
               "tier": "full"
             },
@@ -460,7 +453,7 @@
             {
               "action": "TEST",
               "id": "trims",
-              "info": "Center Pedestal / Yoke. Ensures pitch, roll, and yaw trims are set correctly for takeoff.",
+              "info": "Center Pedestal / Yoke. Runs the pitch, roll and yaw trims to check each one moves.",
               "label": "Trims",
               "tier": "full"
             },
@@ -491,6 +484,20 @@
               "info": "MFD. The Crew Alerting System displays warnings, cautions, and advisory messages.",
               "label": "CAS",
               "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "taxi-lights",
+              "info": "Upper Panel, EXT LIGHTS. Set the OFF/TAXI/LDG switch to TAXI. The lights are in the winglet leading edges.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "parking-brake",
+              "info": "Pilot's side lower instrument panel. Press the toe brakes, then turn the knob to OFF. PARK BRAKE should go out on the CAS at the same time.",
+              "label": "Parking Brake",
+              "tier": "quick"
             }
           ],
           "title": "Taxi Flow"
@@ -512,6 +519,13 @@
             },
             {
               "action": "ON",
+              "id": "nav-lights",
+              "info": "Upper Panel, EXT LIGHTS. Position lights in the winglets and tail cone.",
+              "label": "NAV Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
               "id": "strobes",
               "info": "Overhead Panel. Bright flashing lights that make the aircraft highly visible to other traffic.",
               "label": "Strobes",
@@ -520,21 +534,21 @@
             {
               "action": "AS REQUIRED",
               "id": "ignition",
-              "info": "Left Pilot Console. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
+              "info": "Upper Panel, engine start switches. Controls the igniters that light the fuel-air mixture in the engine combustion chamber.",
               "label": "Ignition",
               "tier": "full"
             },
             {
               "action": "AUTO",
               "id": "aux-boost-pump",
-              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "info": "Upper Panel, FUEL panel. Provides backup fuel pressure during critical phases of flight.",
               "label": "Aux Boost Pump",
               "tier": "normal"
             },
             {
               "action": "AUTO",
               "id": "fuel-selector",
-              "info": "Left Pilot Console. The system automatically switches between left and right fuel tanks to keep the aircraft balanced.",
+              "info": "Upper Panel, FUEL panel. The system automatically switches between left and right fuel tanks to keep the aircraft balanced.",
               "label": "Fuel Selector",
               "tier": "normal"
             },
@@ -633,9 +647,9 @@
               "tier": "quick"
             },
             {
-              "action": "SET",
+              "action": "ALT",
               "id": "transponder",
-              "info": "GTC. Sends aircraft identification and altitude data to Air Traffic Control.",
+              "info": "GTC, Transponder screen. Set the squawk code and select ALT. ALT shows white on the ground and turns green once airborne, when altitude reporting starts.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -658,17 +672,17 @@
         {
           "items": [
             {
-              "action": "RELEASED",
-              "id": "brakes",
-              "info": "Rudder Pedals. Tests the toe brakes to ensure stopping capability.",
-              "label": "Brakes",
-              "tier": "quick"
-            },
-            {
               "action": "GREEN SECTOR",
               "id": "prop-speed",
               "info": "MFD. Verify propeller RPM is in the green arc before advancing power. A prop out of the green sector before takeoff can cause excessive vibration and engine stress at full torque.",
               "label": "Prop Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "RELEASED",
+              "id": "brakes",
+              "info": "Rudder Pedals. Release the toe brakes. Torque sits around 40-60% before release, and 100% is set after it.",
+              "label": "Brakes",
               "tier": "quick"
             },
             {
@@ -711,18 +725,18 @@
         {
           "items": [
             {
-              "action": "UP",
+              "action": "CHECK UP",
               "id": "landing-gear",
               "info": "Main Instrument Panel. Controls the raising and lowering of the landing gear.",
               "label": "Landing Gear",
-              "tier": "quick"
+              "tier": "full"
             },
             {
-              "action": "UP",
+              "action": "CHECK UP",
               "id": "flaps",
               "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
               "label": "Flaps",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CHECK",
@@ -772,16 +786,16 @@
               "tier": "normal"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "STD",
               "id": "altimeters",
-              "info": "PFD. Sets the local barometric pressure so the altimeter reads the correct altitude.",
+              "info": "Central instrument panel, BARO knob. Set standard pressure (1013 hPa / 29.92 inHg) passing the transition altitude.",
               "label": "Altimeters",
               "tier": "normal"
             },
             {
-              "action": "CHECK",
+              "action": "ON",
               "id": "autopilot",
-              "info": "Autopilot Panel. Engages the autopilot to follow the flight director.",
+              "info": "AFCS control unit, above the MFD. Engage the autopilot and check the yaw damper is on.",
               "label": "Autopilot",
               "tier": "normal"
             },
@@ -802,7 +816,7 @@
             {
               "action": "CHECK",
               "id": "fuel-gauges",
-              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "info": "MFD. Checks fuel quantity and the imbalance between tanks.",
               "label": "Fuel Gauges",
               "tier": "normal"
             },
@@ -862,14 +876,14 @@
             {
               "action": "CHECK",
               "id": "pressurization",
-              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "info": "MFD. Confirms the cabin pressure is holding normally.",
               "label": "Pressurization",
               "tier": "normal"
             },
             {
               "action": "CHECK",
               "id": "fuel-gauges",
-              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "info": "MFD. Checks fuel used, fuel expected at destination, the automatic tank change and the imbalance (15 USG max).",
               "label": "Fuel Gauges",
               "tier": "normal"
             },
@@ -892,6 +906,13 @@
               "id": "landing-lights",
               "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
               "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "COMPUTE",
+              "id": "top-of-descent",
+              "info": "MFD. Work out where to start the descent for the arrival.",
+              "label": "Top of Descent",
               "tier": "normal"
             }
           ],
@@ -921,7 +942,7 @@
             {
               "action": "CHECK",
               "id": "pressurization",
-              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "info": "MFD. Confirms the cabin pressure is following the descent normally.",
               "label": "Pressurization",
               "tier": "normal"
             },
@@ -935,7 +956,7 @@
             {
               "action": "CHECK",
               "id": "fuel-gauges",
-              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "info": "MFD. Checks fuel quantity and the imbalance between tanks.",
               "label": "Fuel Gauges",
               "tier": "normal"
             },
@@ -986,16 +1007,23 @@
               "tier": "normal"
             },
             {
+              "action": "ARM",
+              "id": "apr-mode",
+              "info": "AFCS control unit, above the MFD. Press APR so the autopilot captures and flies the loaded approach. It shows in white while armed.",
+              "label": "APR Mode",
+              "tier": "normal"
+            },
+            {
               "action": "CHECK",
               "id": "pressurization",
-              "info": "MFD. Confirms the cabin is pressurizing normally as the aircraft climbs.",
+              "info": "MFD. Confirms the cabin pressure is following the descent normally.",
               "label": "Pressurization",
               "tier": "normal"
             },
             {
               "action": "CHECK",
               "id": "fuel-gauges",
-              "info": "MFD. Confirms fuel quantity and balance before takeoff.",
+              "info": "MFD. Checks fuel quantity and the imbalance between tanks.",
               "label": "Fuel Gauges",
               "tier": "normal"
             },
@@ -1042,14 +1070,14 @@
             {
               "action": "LDG",
               "id": "flaps-2",
-              "info": "Center Pedestal. Sets the trailing edge flaps for takeoff or landing.",
+              "info": "Center Pedestal. Below 122 KIAS on short final (about 500 ft). Fly 85 KIAS without the autopilot, a little above 85 KIAS with it. On a coupled ILS in APR mode, set LDG before the outer marker.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "ap-yaw-damper",
-              "info": "Autopilot Panel. Disengages the autopilot and yaw damper for manual landing.",
+              "info": "Control wheel, AP/TRIM DISC button. Disconnect before 200 ft. The rudder pedals need less effort with the yaw damper off, which helps in a crosswind.",
               "label": "AP / Yaw Damper",
               "tier": "quick"
             }
@@ -1059,6 +1087,38 @@
       ],
       "id": "approach",
       "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "FLIGHT IDLE",
+              "id": "throttle",
+              "info": "Center Pedestal. Reduce power smoothly in the flare. Pulling to idle quickly can make the aircraft drop. Touch down on the main wheels first.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "reverse",
+              "info": "Center Pedestal. Can be used as soon as the wheels touch. Come out of reverse as speed drops. Avoid it below 40 KIAS on snowy or dirty runways.",
+              "label": "Reverse",
+              "tier": "full"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "brakes",
+              "info": "Rudder Pedals. Brake gently until below 40 KIAS, or the wheels may lock.",
+              "label": "Brakes",
+              "tier": "full"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
     },
     {
       "groups": [
@@ -1134,7 +1194,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Center Pedestal. Secures the aircraft when stationary on the ground.",
+              "info": "Pilot's side lower instrument panel. Press the toe brakes, then turn the knob to ON.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -1153,16 +1213,16 @@
               "tier": "full"
             },
             {
-              "action": "OFF",
+              "action": "MAN",
               "id": "fuel-selector",
-              "info": "Left Pilot Console. Cuts off the fuel supply to the engine.",
+              "info": "Upper Panel, FUEL panel. Returns the fuel system to manual tank selection. Fuel to the engine is cut off with the throttle.",
               "label": "Fuel Selector",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "ap-trims",
-              "info": "Left Pilot Console. Provides master electrical power to the autopilot and electric trim systems.",
+              "info": "Upper Panel. Provides master electrical power to the autopilot and electric trim systems.",
               "label": "AP / Trims",
               "tier": "normal"
             },
@@ -1186,9 +1246,16 @@
         {
           "items": [
             {
-              "action": "COOL DOWN",
+              "action": "FLIGHT IDLE",
               "id": "throttle",
-              "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
+              "info": "Center Pedestal. Hold at Flight IDLE for 2 minutes to let the engine cool.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "LO-IDLE",
+              "id": "throttle-3",
+              "info": "Center Pedestal. Hold at LO-IDLE for at least 15 seconds before cutting off.",
               "label": "Throttle",
               "tier": "quick"
             },
@@ -1216,14 +1283,14 @@
             {
               "action": "OFF",
               "id": "aux-boost-pump",
-              "info": "Left Pilot Console. Provides backup fuel pressure during critical phases of flight.",
+              "info": "Upper Panel, FUEL panel. Provides backup fuel pressure during critical phases of flight.",
               "label": "Aux Boost Pump",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "generator",
-              "info": "Left Electrical Panel. Selects the main or standby generator to power the electrical buses.",
+              "info": "Upper Panel. Selects the main or standby generator to power the electrical buses.",
               "label": "Generator",
               "tier": "quick"
             }
@@ -1235,14 +1302,14 @@
             {
               "action": "OFF",
               "id": "source",
-              "info": "Left Electrical Panel. Selects the primary power source, typically the battery or a Ground Power Unit (GPU).",
+              "info": "Upper Panel. Wait about 40 seconds after shutdown, until the inertial separator has retracted, then turn OFF.",
               "label": "Source",
               "tier": "quick"
             },
             {
               "action": "DOWN",
               "id": "crash-lever",
-              "info": "Left Electrical Panel. Acts as a master kill switch to shut down all electrical power in an emergency.",
+              "info": "Upper Panel, center. Lowering it cuts the battery bus and turns the SOURCE and GENERATOR selectors off.",
               "label": "Crash Lever",
               "tier": "quick"
             },
