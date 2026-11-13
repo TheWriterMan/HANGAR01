@@ -148,6 +148,13 @@
               "info": "Center pedestal.",
               "label": "Ram Air",
               "tier": "full"
+            },
+            {
+              "action": "Select 1 or 2",
+              "id": "inverter",
+              "info": "Selects which of the two static inverters feeds the AC instruments, such as torque, fuel quantity and fuel flow.",
+              "label": "Inverter",
+              "tier": "normal"
             }
           ],
           "title": "Cockpit Preparation"
@@ -358,13 +365,6 @@
               "tier": "quick"
             },
             {
-              "action": "Max RPM",
-              "id": "prop-lever-right",
-              "info": "Right propeller lever to maximum RPM.",
-              "label": "Right Prop Lever",
-              "tier": "quick"
-            },
-            {
               "action": "Monitor",
               "id": "t5-right",
               "info": "Observe T5 during the start.",
@@ -374,9 +374,9 @@
             {
               "action": "Off",
               "id": "starter-off-right",
-              "info": "Check the starter switch is off at minimum 45% Ng.",
+              "info": "Start panel, overhead. Center the START switch once Ng has stabilised (about 52%) and T5 is in the green. In the sim the switch stays where you click it, so the starter stays on until you center it.",
               "label": "Right Starter",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "Check",
@@ -386,10 +386,10 @@
               "tier": "normal"
             },
             {
-              "action": "On",
-              "id": "generator-right",
-              "info": "Overhead panel. On if the start was on battery.",
-              "label": "Right Generator",
+              "action": "Max RPM",
+              "id": "prop-lever-right",
+              "info": "Right propeller lever to maximum RPM.",
+              "label": "Right Prop Lever",
               "tier": "quick"
             }
           ],
@@ -412,13 +412,6 @@
               "tier": "quick"
             },
             {
-              "action": "Max RPM",
-              "id": "prop-lever-left",
-              "info": "Left propeller lever to maximum RPM.",
-              "label": "Left Prop Lever",
-              "tier": "quick"
-            },
-            {
               "action": "Monitor",
               "id": "t5-left",
               "info": "Observe T5 during the start.",
@@ -428,9 +421,9 @@
             {
               "action": "Off",
               "id": "starter-off-left",
-              "info": "Check the starter switch is off at minimum 45% Ng.",
+              "info": "Start panel, overhead. Center the START switch once Ng has stabilised (about 52%) and T5 is in the green. In the sim the switch stays where you click it, so the starter stays on until you center it.",
               "label": "Left Starter",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "Check",
@@ -440,10 +433,17 @@
               "tier": "normal"
             },
             {
+              "action": "Max RPM",
+              "id": "prop-lever-left",
+              "info": "Left propeller lever to maximum RPM.",
+              "label": "Left Prop Lever",
+              "tier": "quick"
+            },
+            {
               "action": "On",
               "id": "generator-left",
-              "info": "Overhead panel. Both generators on.",
-              "label": "Left Generator",
+              "info": "Overhead panel. Both generators on once both engines are running. Check the load is below 0.5.",
+              "label": "Generators",
               "tier": "quick"
             }
           ],
@@ -587,6 +587,13 @@
         {
           "items": [
             {
+              "action": "Set",
+              "id": "parking-brake",
+              "info": "Handle between the pilot's rudder pedals. Holds the aircraft for the run-up checks.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
               "action": "Check",
               "id": "prop-feather-check",
               "info": "Retard propeller levers to feather and check the PROP RESET light on. Then return to full forward.",
@@ -613,9 +620,9 @@
         {
           "items": [
             {
-              "action": "Set",
+              "action": "Release",
               "id": "parking-brake-lineup",
-              "info": "Line up and hold on the brakes.",
+              "info": "Handle between the pilot's rudder pedals. In the sim, click the red lever. From here, hold the aircraft on the toe brakes.",
               "label": "Parking Brake",
               "tier": "quick"
             },
@@ -659,7 +666,7 @@
               "id": "trim-lineup",
               "info": "Set trim for takeoff.",
               "label": "Trim",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "On",
@@ -701,6 +708,13 @@
         {
           "items": [
             {
+              "action": "Hold",
+              "id": "toe-brakes",
+              "info": "Tops of the rudder pedals. Stand on the brakes before advancing the power levers.",
+              "label": "Toe Brakes",
+              "tier": "quick"
+            },
+            {
               "action": "85% Ng",
               "id": "power-levers-initial",
               "info": "Advance to 85% Ng and let torque (PSI) and T5 stabilize.",
@@ -710,7 +724,7 @@
             {
               "action": "50 PSI TQ",
               "id": "power-levers-takeoff",
-              "info": "Adjust torque with the power levers to not exceed 50 PSI. Takeoff limits: 96% Nh (prop RPM), 101.6% Ng, T5 725°C.",
+              "info": "Adjust torque with the power levers to not exceed 50 PSI. Takeoff limits: 96% Np (prop RPM), 101.6% Ng, T5 725°C.",
               "label": "Takeoff Power",
               "tier": "quick"
             },
@@ -718,7 +732,7 @@
               "action": "Release",
               "id": "brakes-takeoff",
               "info": "Release brakes to begin the takeoff roll.",
-              "label": "Brakes",
+              "label": "Toe Brakes",
               "tier": "quick"
             },
             {
@@ -777,7 +791,7 @@
             {
               "action": "Set",
               "id": "climb-power",
-              "info": "Nh is prop RPM. Maximum climb: 50 PSI TQ, 96% Nh at 100 KIAS. Normal: 50 PSI, 91% Nh at 110 KIAS. Economic: 40 PSI, 85% Nh at 110 KIAS.",
+              "info": "Np is prop RPM. Maximum climb: 50 PSI TQ, 96% Np at 100 KIAS. Normal: 50 PSI, 91% Np at 110 KIAS. Economic: 40 PSI, 85% Np at 110 KIAS.",
               "label": "Climb Power",
               "tier": "quick"
             },
@@ -793,6 +807,13 @@
               "id": "yaw-damper",
               "info": "On once established in the climb.",
               "label": "Yaw Damper",
+              "tier": "normal"
+            },
+            {
+              "action": "Engage",
+              "id": "autopilot",
+              "info": "KAP140 autopilot. In IAS mode it holds the climb speed with pitch while you set the power. ALT holds the current altitude.",
+              "label": "Autopilot",
               "tier": "normal"
             },
             {
@@ -829,6 +850,13 @@
               "info": "Overhead panel. On below 10,000 ft.",
               "label": "Landing Lights",
               "tier": "normal"
+            },
+            {
+              "action": "Set Standard",
+              "id": "altimeters",
+              "info": "Set standard pressure at the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
             }
           ],
           "title": "Climb"
@@ -844,14 +872,14 @@
             {
               "action": "Set",
               "id": "cruise-power",
-              "info": "Nh is prop RPM. High speed: 50 PSI TQ, 91% Nh, about 165 to 145 KIAS. Normal: 50 PSI, 75% Nh, 155 to 140 KIAS. Economic: 40 PSI, 75% Nh, 145 to 135 KIAS.",
+              "info": "Np is prop RPM. High speed: 50 PSI TQ, 91% Np, about 165 to 145 KIAS. Normal: 50 PSI, 75% Np, 155 to 140 KIAS. Economic: 40 PSI, 75% Np, 145 to 135 KIAS.",
               "label": "Cruise Power",
               "tier": "quick"
             },
             {
               "action": "Monitor",
               "id": "t5-cruise",
-              "info": "Maximum continuous T5 is 695°C. At higher altitudes, reduce torque with the power levers to stay below it.",
+              "info": "Maximum cruise T5 is 695°C. At higher altitudes, reduce torque with the power levers to stay below it.",
               "label": "T5 Temperature",
               "tier": "normal"
             },
@@ -875,13 +903,6 @@
               "info": "Overhead panel. Anti-ice and intake deflector.",
               "label": "De-Ice / Deflector",
               "tier": "normal"
-            },
-            {
-              "action": "Set Standard",
-              "id": "altimeters-cruise",
-              "info": "Set standard pressure at the transition altitude.",
-              "label": "Altimeters",
-              "tier": "normal"
             }
           ],
           "title": "Cruise"
@@ -899,6 +920,13 @@
               "id": "atc-descent",
               "info": "Descent clearance. Cruise power can be kept as long as the aircraft does not overspeed. Adjust power for the desired sink rate and speed.",
               "label": "ATC Clearance",
+              "tier": "normal"
+            },
+            {
+              "action": "Set",
+              "id": "descent-power",
+              "info": "Overhead panel, power levers. Adjust power for the sink rate and speed you want.",
+              "label": "Descent Power",
               "tier": "normal"
             },
             {
@@ -983,18 +1011,18 @@
               "tier": "normal"
             },
             {
+              "action": "APPR Armed",
+              "id": "autopilot",
+              "info": "KAP140 autopilot. On an ILS, APPR flies the localizer and the glide path. On a VOR or LOC approach it holds the course only, so manage the descent yourself.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "Off",
               "id": "yaw-damper-approach",
               "info": "Off for the approach. Recheck off on final.",
               "label": "Yaw Damper",
               "tier": "normal"
-            },
-            {
-              "action": "Full Fwd",
-              "id": "prop-levers-approach",
-              "info": "Set Nh (prop RPM) to 96%.",
-              "label": "Propeller Levers",
-              "tier": "quick"
             },
             {
               "action": "As Required",
@@ -1023,25 +1051,32 @@
               "tier": "quick"
             },
             {
+              "action": "Disconnect",
+              "id": "autopilot-2",
+              "info": "KAP140 autopilot. Hand-fly from here. The autopilot does not handle low-speed approaches well.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "20°",
               "id": "flaps-20-approach",
-              "info": "At 95 KIAS. In a visual pattern, on the base leg at about 90 KIAS, descending at about 500 fpm.",
+              "info": "At or below 93 KIAS. In a visual pattern, on the base leg at about 90 KIAS, descending at about 500 fpm.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
-              "action": "30°",
-              "id": "flaps-30-approach",
-              "info": "At 3 NM out, about 1,000 ft AGL. In a visual pattern, mid base leg.",
+              "action": "37.5°",
+              "id": "flaps-full",
+              "info": "Overhead panel, flap handle. Short-field landings only. Normal landings use flaps 20°. Set once a safe landing is assured, at or below 93 KIAS.",
               "label": "Flaps",
-              "tier": "normal"
+              "tier": "full"
             },
             {
-              "action": "37°",
-              "id": "flaps-full",
-              "info": "At 1 NM out, about 330 ft AGL, reducing to about 80 KIAS. In a visual pattern, turning final. Flaps 20° can be used for landing if the runway is longer than 2,500 ft.",
-              "label": "Flaps",
-              "tier": "normal"
+              "action": "Full Fwd",
+              "id": "prop-levers-approach",
+              "info": "Overhead panel. Set Np (prop RPM) to 96%. No later than 500 ft AGL.",
+              "label": "Propeller Levers",
+              "tier": "quick"
             }
           ],
           "title": "Configuration"
@@ -1057,7 +1092,7 @@
             {
               "action": "At Threshold",
               "id": "vapp",
-              "info": "Vapp at 50 ft over the threshold. By weight from 8,500 to 12,300 lbs: flaps 20° 62 to 80 KIAS, full flaps 57 to 74 KIAS.",
+              "info": "Vapp at 50 ft over the threshold. By weight from 7,500 to 12,300 lbs: flaps 20° 62 to 80 KIAS, full flaps 57 to 74 KIAS.",
               "label": "Vapp",
               "tier": "quick"
             },
@@ -1197,7 +1232,7 @@
               "tier": "normal"
             },
             {
-              "action": "Cut-Off",
+              "action": "Off",
               "id": "fuel-levers-shutdown",
               "info": "Cuts fuel to both engines.",
               "label": "Fuel Levers",
