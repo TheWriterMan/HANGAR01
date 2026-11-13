@@ -62,7 +62,7 @@
               "id": "parking-brake",
               "label": "Parking brake",
               "tier": "quick",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep."
+              "info": "Subpanel below the instrument panel. Prevents the aircraft from rolling during prep."
             },
             {
               "action": "IDLE",
@@ -92,7 +92,14 @@
               "action": "ON",
               "id": "beacon",
               "label": "Beacon",
-              "tier": "full"
+              "tier": "normal"
+            },
+            {
+              "action": "On",
+              "id": "nav-lights",
+              "info": "Red, green and white position lights on the wingtips and tail.",
+              "label": "Nav Lights",
+              "tier": "normal"
             },
             {
               "action": "ON",
@@ -137,10 +144,11 @@
               "tier": "quick"
             },
             {
-              "action": "Monitor N1 to ~13–14% before introducing fuel",
+              "action": "12% Minimum",
               "id": "monitor-n1-to-12",
               "label": "Monitor N1 to ~12%",
-              "tier": "full"
+              "tier": "full",
+              "info": "Move the condition lever to LOW IDLE once N1 is stable and at least 12%, with ITT below 200°C."
             },
             {
               "action": "LOW IDLE",
@@ -151,15 +159,23 @@
             {
               "action": "Monitor — peak below 1000°C",
               "id": "itt",
-              "info": "Real PT6A-60A limit 1090°C momentary; in MSFS default, treat ~870°C as practical limit.",
+              "info": "Start limit 1000°C for 2 seconds. Light-off shows as an ITT rise within 10 seconds of fuel on. In MSFS default, treat ~870°C as practical limit.",
               "label": "ITT",
               "tier": "full"
             },
             {
-              "action": "N1 ~52%, ITT in green",
+              "action": "Off",
+              "id": "ignition-start-right",
+              "info": "Off at 50% N1 or above, once the engine keeps accelerating on its own.",
+              "label": "Ignition / Start — Right",
+              "tier": "quick"
+            },
+            {
+              "action": "N1 ~62%",
               "id": "stabilize-at-low-idle",
               "label": "Stabilize at LOW IDLE",
-              "tier": "full"
+              "tier": "full",
+              "info": "LOW IDLE minimum is 62% N1. ITT in the green, below 750°C at idle."
             },
             {
               "action": "HIGH IDLE",
@@ -239,10 +255,17 @@
         {
           "items": [
             {
+              "action": "Released",
+              "id": "parking-brake",
+              "info": "Subpanel below the instrument panel. Release before taxi.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
               "action": "ON",
               "id": "taxi-light",
               "label": "Taxi light",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "TEST",
@@ -282,7 +305,7 @@
             {
               "action": "Each engine",
               "id": "prop-feather-check",
-              "info": "May not respond reliably in Asobo default; works on Carenado.",
+              "info": "May not respond reliably in Asobo default.",
               "label": "Prop feather check",
               "tier": "full"
             },
@@ -331,7 +354,7 @@
               "action": "ALT",
               "id": "transponder",
               "label": "Transponder",
-              "tier": "full"
+              "tier": "quick"
             },
             {
               "action": "Verify on",
@@ -363,10 +386,11 @@
               "tier": "quick"
             },
             {
-              "action": "Smoothly to TAKEOFF torque (~2230 ft-lb)",
+              "action": "100% Torque",
               "id": "power-levers",
               "label": "Power levers",
-              "tier": "quick"
+              "tier": "quick",
+              "info": "Center Pedestal. Advance smoothly. Takeoff limits are 100% torque, 1,700 prop RPM and 820°C ITT. Stop at whichever comes first."
             },
             {
               "action": "Within limits",
@@ -384,6 +408,13 @@
               "action": "GEAR UP",
               "id": "positive-climb",
               "label": "Positive climb",
+              "tier": "quick"
+            },
+            {
+              "action": "Up",
+              "id": "flaps",
+              "info": "Retract if set to APPROACH for takeoff. APPROACH flap limit is 202 KIAS.",
+              "label": "Flaps",
               "tier": "quick"
             },
             {
@@ -410,10 +441,11 @@
         {
           "items": [
             {
-              "action": "MAX CLIMB (1820 ft-lb / 1700 RPM)",
+              "action": "Climb Power",
               "id": "power",
               "label": "Power",
-              "tier": "quick"
+              "tier": "quick",
+              "info": "Center Pedestal. Set climb torque, keeping ITT at or below 785°C and torque at or below 100%. Props at 1,700 RPM."
             },
             {
               "action": "OFF above 400 AGL or as required",
@@ -426,6 +458,20 @@
               "id": "climb-speed",
               "label": "Climb speed",
               "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "autopilot",
+              "info": "Engage once established in the climb.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
+              "action": "Std",
+              "id": "altimeters",
+              "info": "Set standard pressure (29.92 inHg / 1013 hPa) passing the transition altitude.",
+              "label": "Altimeters",
+              "tier": "normal"
             },
             {
               "action": "Verify schedule",
@@ -480,12 +526,6 @@
               "tier": "full"
             },
             {
-              "action": "Set destination QNH at TL",
-              "id": "altimeters",
-              "label": "Altimeters",
-              "tier": "full"
-            },
-            {
               "action": "ARM",
               "id": "auto-ignition",
               "label": "Auto-ignition",
@@ -505,6 +545,24 @@
             }
           ],
           "title": "Descent Prep"
+        },
+        {
+          "items": [
+            {
+              "action": "Initiate",
+              "id": "descent",
+              "info": "Start down at the planned top of descent.",
+              "label": "Descent",
+              "tier": "quick"
+            },
+            {
+              "action": "Set destination QNH at TL",
+              "id": "altimeters",
+              "label": "Altimeters",
+              "tier": "normal"
+            }
+          ],
+          "title": "Descent"
         }
       ],
       "id": "descent",
@@ -527,6 +585,13 @@
               "tier": "quick"
             },
             {
+              "action": "Arm",
+              "id": "approach-mode",
+              "info": "Arms the autopilot to capture the localizer and glideslope or the RNAV approach path.",
+              "label": "Approach Mode",
+              "tier": "normal"
+            },
+            {
               "action": "OFF below 200 AGL",
               "id": "yaw-damper",
               "label": "Yaw damper",
@@ -539,10 +604,11 @@
               "tier": "quick"
             },
             {
-              "action": "Extend below 184 KIAS (Vlo); 181 KIAS (Vle) once down",
+              "action": "Below 184 KIAS",
               "id": "gear-down",
               "label": "Gear DOWN",
-              "tier": "quick"
+              "tier": "quick",
+              "info": "Gear extension and gear-extended limits are both 184 KIAS."
             },
             {
               "action": "On final, below 158 KIAS",
@@ -555,6 +621,13 @@
               "id": "vref",
               "label": "Vref",
               "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "autopilot",
+              "info": "Disconnect no later than minimums and hand-fly the landing.",
+              "label": "Autopilot",
+              "tier": "normal"
             }
           ],
           "title": "Approach"
@@ -567,6 +640,13 @@
       "groups": [
         {
           "items": [
+            {
+              "action": "Idle",
+              "id": "power-levers",
+              "info": "Center Pedestal. Bring both power levers to idle in the flare.",
+              "label": "Power Levers",
+              "tier": "quick"
+            },
             {
               "action": "Hold nose off",
               "id": "mains-touch-first",
