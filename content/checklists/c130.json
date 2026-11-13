@@ -298,6 +298,13 @@
               "info": "Landing Lights Panel. TAXI LIGHTS and WINGTIP TAXI LIGHTS on before taxi. Check the taxi path is clear. Control taxi speed with LSGI and reverse rather than the brakes.",
               "label": "Taxi Lights",
               "tier": "normal"
+            },
+            {
+              "action": "Released",
+              "id": "parking-brake",
+              "info": "Release before taxiing; the aircraft will not roll with it set.",
+              "label": "Parking Brake",
+              "tier": "quick"
             }
           ],
           "title": "Before Taxi"
@@ -588,6 +595,13 @@
         {
           "items": [
             {
+              "action": "Arm",
+              "id": "approach-mode",
+              "info": "REF/MODE Panel. Arm the approach mode once cleared and on an intercept heading, with CDI SOURCE on the approach navaid.",
+              "label": "Approach Mode",
+              "tier": "normal"
+            },
+            {
               "action": "50%",
               "id": "flaps-50",
               "info": "Flaps Lever. Select 50% and confirm the indicator reads 50% before the before landing checklist.",
@@ -702,7 +716,7 @@
             {
               "action": "Gnd Idle Low",
               "id": "power-levers-shutdown",
-              "info": "Throttle Quadrant. GND IDLE with low speed ground idle selected.",
+              "info": "Throttle Quadrant. GND IDLE with low speed ground idle selected. Run 2 minutes in LSGI before stopping the engines.",
               "label": "Power Levers",
               "tier": "quick"
             },
@@ -752,6 +766,27 @@
               "info": "Wheel chocks installed.",
               "label": "Chocks",
               "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "ext-pwr-apu-off",
+              "info": "Electrical panel. EXT PWR/APU switch off before stopping the APU.",
+              "label": "EXT PWR/APU",
+              "tier": "normal"
+            },
+            {
+              "action": "Stop",
+              "id": "apu",
+              "info": "APU panel. Stop the APU once its bleed and generator are off.",
+              "label": "APU",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "battery",
+              "info": "Electrical panel. Last item: removes all power.",
+              "label": "Battery",
+              "tier": "quick"
             }
           ],
           "title": "Secure"
