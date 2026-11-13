@@ -77,6 +77,7 @@ Tokens, type, layout and rules: [DESIGN.md](../DESIGN.md).
 
 - Visitors import their own checklist from a CSV; it stays in their browser. `src/utils/checklistCsv.ts` converts rows to the same `ChecklistPhase` tree (Papa Parse, loaded with `import()` on the import screen only), and `src/utils/localChecklists.ts` keeps it in IndexedDB (`hangar01` / `local-checklists`), falling back to memory without IndexedDB.
 - `/hangar/:id` renders the local checklist with `ChecklistView`'s `local` variant: noindex, no Report, About or related sections, no checklist events (page views send `/hangar/local`). Ticks use the v2 progress key with the local id as the slug.
+- On `/hangar` each checklist can be renamed, downloaded as CSV (`checklistToCsv`: the import format with ids, a BOM, and a leading `'` on cells starting with `=`, `+`, `-` or `@` against formula injection, which import strips again) and replaced from a new CSV, which keeps the ticks of every `<phaseId>/<itemId>` that still exists.
 - Both routes are prerendered noindex and kept out of the sitemap. `/hangar/:id` has no file per id, so `vercel.json` (and the preview server, in `vite.config.ts`) rewrite it to the prerendered loading shell `/hangar/local`.
 
 ### Usage counts

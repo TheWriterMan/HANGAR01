@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Trash2 } from 'lucide-react';
 import PageHeader from '../../components/layout/PageHeader';
 import SEO from '../../components/seo/SEO';
 import LocalChecklistCard from '../../components/ui/LocalChecklistCard';
@@ -8,11 +7,12 @@ import PageLoadingState from '../../components/ui/PageLoadingState';
 import { useLocalChecklists } from '../../hooks/useLocalChecklists';
 import { LOCAL_CHECKLIST_LIMIT } from '../../utils/checklistCsv';
 import { deleteLocalChecklist, LocalChecklist } from '../../utils/localChecklists';
+import ChecklistActions from './ChecklistActions';
 import ImportPanel from './ImportPanel';
 
 /** What can delete a visitor's checklists, from the plan's "Storage lifetime". */
 const STORAGE_FACTS = [
-  "They're saved in this browser only. Other devices and browsers don't see them, so keep your CSV file as a backup.",
+  "They're saved in this browser only. Other devices and browsers don't see them, so keep a copy with Download CSV.",
   'Clearing the cache usually keeps them. Clearing site data or cookies deletes them.',
   'Safari can delete them after 7 days without a visit.',
   'The browser may delete them when the device runs low on space. HANGAR01 asks it to keep them.',
@@ -24,6 +24,9 @@ const STORAGE_FACTS = [
 const HangarPage: React.FC = () => {
   const { loaded, checklists, inMemory, refresh } = useLocalChecklists();
   const listHeadingRef = useRef<HTMLHeadingElement>(null);
+  const importHeadingRef = useRef<HTMLHeadingElement>(null);
+  // The checklist whose items the next import replaces, if any.
+  const [replacing, setReplacing] = useState<LocalChecklist | null>(null);
   const { hash } = useLocation();
 
   // The home page's "Import CSV" links to /hangar#import. The section only has its
@@ -38,7 +41,19 @@ const HangarPage: React.FC = () => {
     );
     if (!ok) return;
     await deleteLocalChecklist(checklist.id);
+    if (replacing?.id === checklist.id) setReplacing(null);
     refresh();
+    listHeadingRef.current?.focus();
+  };
+
+  const handleReplace = (checklist: LocalChecklist) => {
+    setReplacing(checklist);
+    document.getElementById('import')?.scrollIntoView();
+    importHeadingRef.current?.focus({ preventScroll: true });
+  };
+
+  const cancelReplace = () => {
+    setReplacing(null);
     listHeadingRef.current?.focus();
   };
 
@@ -98,15 +113,12 @@ const HangarPage: React.FC = () => {
                   <LocalChecklistCard
                     checklist={checklist}
                     footer={
-                      <button
-                        type="button"
-                        onClick={() => void handleDelete(checklist)}
-                        aria-label={`Delete ${checklist.meta.name}`}
-                        className="inline-flex items-center gap-1.5 px-2 py-1.5 text-xs text-muted hover:text-danger transition-colors"
-                      >
-                        <Trash2 size={12} aria-hidden="true" />
-                        Delete
-                      </button>
+                      <ChecklistActions
+                        checklist={checklist}
+                        onChanged={refresh}
+                        onReplace={handleReplace}
+                        onDelete={(c) => void handleDelete(c)}
+                      />
                     }
                   />
                 </li>
@@ -118,11 +130,21 @@ const HangarPage: React.FC = () => {
         <div className="border-t border-border my-16" />
 
         <section id="import" aria-labelledby="hangar-import-heading" className="scroll-mt-24">
-          <h2 id="hangar-import-heading" className="type-title text-primary mb-6">
-            Import a CSV
+          <h2
+            id="hangar-import-heading"
+            ref={importHeadingRef}
+            tabIndex={-1}
+            className="type-title text-primary mb-6 break-words focus:outline-none"
+          >
+            {replacing ? 'Replace from a CSV' : 'Import a CSV'}
           </h2>
           {loaded ? (
-            <ImportPanel count={checklists.length} />
+            <ImportPanel
+              key={replacing?.id ?? 'new'}
+              count={checklists.length}
+              replacing={replacing}
+              onCancelReplace={cancelReplace}
+            />
           ) : (
             <PageLoadingState message="Loading…" className="py-10 text-sm text-muted" />
           )}

@@ -1,7 +1,7 @@
 import type { Aircraft, ChecklistPhase } from '../types';
 import { countItems } from './checklist';
 import { LOCAL_CHECKLIST_LIMIT } from './checklistCsv';
-import { modeKey, progressKey } from './progress';
+import { loadProgress, modeKey, progressKey, saveProgress } from './progress';
 import { removeStorage } from './storage';
 
 /**
@@ -157,6 +157,44 @@ export async function addLocalChecklist(
   if (!result.ok) return { ok: false, reason: 'storage' };
   requestPersistence();
   return { ok: true, checklist: record };
+}
+
+/** Writes a changed record (rename, replace). Null when it's gone or the write failed. */
+async function updateLocalChecklist(
+  id: string,
+  change: (record: LocalChecklist) => LocalChecklist,
+  now: Date,
+): Promise<LocalChecklist | null> {
+  const current = await getLocalChecklist(id);
+  if (!current) return null;
+  const next = { ...change(current), id, updatedAt: now.toISOString() };
+  if (inMemory) {
+    memory.set(id, next);
+    return next;
+  }
+  return (await run('readwrite', (store) => store.put(next))).ok ? next : null;
+}
+
+export async function renameLocalChecklist(
+  id: string,
+  name: string,
+  now = new Date(),
+): Promise<LocalChecklist | null> {
+  return updateLocalChecklist(id, (record) => ({ ...record, meta: { ...record.meta, name } }), now);
+}
+
+/**
+ * Swaps in the items of a new CSV. Ticks stay on every `<phaseId>/<itemId>` that still
+ * exists and are dropped for the rest, so a removed item can't come back ticked.
+ */
+export async function replaceLocalChecklistItems(
+  id: string,
+  checklist: ChecklistPhase[],
+  now = new Date(),
+): Promise<LocalChecklist | null> {
+  const next = await updateLocalChecklist(id, (record) => ({ ...record, checklist }), now);
+  if (next) saveProgress(id, loadProgress(id, checklist), now);
+  return next;
 }
 
 /** Deletes the checklist, its ticks and its mode. */

@@ -1,4 +1,5 @@
 import type { ChecklistItem, ChecklistPhase, ChecklistTier } from '../types';
+import { getItemTier } from './checklist';
 import { ID_PATTERN, toKebabId, uniqueId } from './ids';
 
 /**
@@ -129,7 +130,7 @@ export function convertCsvRows(rows: string[][]): CsvConversion {
     }
     const get = (name: Column) => {
       const at = columns.get(name);
-      return at === undefined ? '' : (cells[at] ?? '').trim();
+      return at === undefined ? '' : unescapeFormula((cells[at] ?? '').trim());
     };
 
     const phase = get('phase');
@@ -284,6 +285,57 @@ export function parseChecklistCsv(text: string, parser: CsvParser): CsvConversio
     }));
   if (quoteErrors.length === 0) return conversion;
   return { ...conversion, errors: [...quoteErrors, ...conversion.errors] };
+}
+
+// ─── Export ───────────────────────────────────────────────────────────────────
+
+/** A cell a spreadsheet would run as a formula. */
+const FORMULA_START = /^[=+\-@]/;
+
+/**
+ * Exported cells that start like a formula get a leading `'`, so a spreadsheet shows
+ * them as text instead of running them (CSV formula injection). Import takes it off
+ * again, so a downloaded CSV comes back unchanged.
+ */
+function unescapeFormula(cell: string): string {
+  return cell.startsWith("'") && FORMULA_START.test(cell.slice(1)) ? cell.slice(1) : cell;
+}
+
+function csvCell(value: string): string {
+  const safe = FORMULA_START.test(value) ? `'${value}` : value;
+  return /[",\r\n]/.test(safe) ? `"${safe.replace(/"/g, '""')}"` : safe;
+}
+
+/**
+ * The checklist as a CSV in the import format, ids included, so editing it and
+ * replacing the checklist keeps every tick whose item kept its id. A group named
+ * like its phase is left blank, as import reads it. UTF-8 with a BOM, so Excel
+ * reads accents correctly; CRLF line ends.
+ */
+export function checklistToCsv(checklist: ChecklistPhase[]): string {
+  const rows: string[][] = [['phase', 'group', 'label', 'action', 'tier', 'info', 'id']];
+  for (const phase of checklist) {
+    for (const group of phase.groups) {
+      for (const item of group.items) {
+        rows.push([
+          phase.title,
+          group.title === phase.title ? '' : group.title,
+          item.label,
+          item.action,
+          getItemTier(item),
+          item.info ?? '',
+          item.id,
+        ]);
+      }
+    }
+  }
+  return `\uFEFF${rows.map((row) => row.map(csvCell).join(',')).join('\r\n')}\r\n`;
+}
+
+/** "Cessna 172 Skyhawk" → "cessna-172-skyhawk.csv". */
+export function csvFileName(name: string): string {
+  const base = toKebabId(name);
+  return `${base === 'item' ? 'checklist' : base}.csv`;
 }
 
 /** "My C172 checklist.csv" → "My C172 checklist". */

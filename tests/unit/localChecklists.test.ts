@@ -23,6 +23,8 @@ const {
   getLocalChecklist,
   isInMemory,
   listLocalChecklists,
+  renameLocalChecklist,
+  replaceLocalChecklistItems,
   toAircraft,
 } = await import('../../src/utils/localChecklists');
 
@@ -67,6 +69,48 @@ describe('local checklists without IndexedDB', () => {
     expect(store.has(progressKey(a.checklist.id))).toBe(false);
     expect(store.has(modeKey(a.checklist.id))).toBe(false);
     await deleteLocalChecklist(b.checklist.id);
+  });
+
+  it('renames, and replaces items keeping only the ticks whose phase/id still exist', async () => {
+    const saved = await addLocalChecklist({ name: 'Old', sim: 'MSFS' }, checklist);
+    if (!saved.ok) throw new Error('not saved');
+    const { id } = saved.checklist;
+
+    const renamed = await renameLocalChecklist(id, 'New name', new Date('2030-01-01'));
+    expect(renamed?.meta).toEqual({ name: 'New name', sim: 'MSFS' });
+    expect(renamed?.updatedAt).toBe('2030-01-01T00:00:00.000Z');
+
+    store.set(
+      progressKey(id),
+      JSON.stringify({ v: 2, checked: ['preflight/battery', 'preflight/gone'], updatedAt: 'x' }),
+    );
+    const next: ChecklistPhase[] = [
+      {
+        id: 'preflight',
+        title: 'Preflight',
+        groups: [
+          {
+            title: 'Preflight',
+            items: [
+              { id: 'beacon', label: 'Beacon', action: 'ON', tier: 'quick' },
+              { id: 'battery', label: 'Battery', action: 'ON', tier: 'quick' },
+            ],
+          },
+        ],
+      },
+    ];
+    const replaced = await replaceLocalChecklistItems(id, next);
+    expect(replaced?.checklist).toEqual(next);
+    expect(replaced?.meta.name).toBe('New name');
+    expect(JSON.parse(store.get(progressKey(id))!).checked).toEqual(['preflight/battery']);
+
+    // Nothing left to keep: the progress entry goes.
+    await replaceLocalChecklistItems(id, [{ ...next[0], id: 'renamed-phase' }]);
+    expect(store.has(progressKey(id))).toBe(false);
+
+    expect(await renameLocalChecklist('missing', 'x')).toBeNull();
+    expect(await replaceLocalChecklistItems('missing', next)).toBeNull();
+    await deleteLocalChecklist(id);
   });
 
   it(`refuses a checklist past the limit of ${LOCAL_CHECKLIST_LIMIT}`, async () => {

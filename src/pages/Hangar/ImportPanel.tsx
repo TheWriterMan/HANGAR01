@@ -10,7 +10,11 @@ import {
   parseChecklistCsv,
   SAMPLE_CSV_URL,
 } from '../../utils/checklistCsv';
-import { addLocalChecklist } from '../../utils/localChecklists';
+import {
+  addLocalChecklist,
+  LocalChecklist,
+  replaceLocalChecklistItems,
+} from '../../utils/localChecklists';
 
 /** Rows shown in the problems table; the rest are counted. */
 const MAX_ISSUES_SHOWN = 100;
@@ -42,13 +46,16 @@ const tooBig = (fileName: string): Preview => ({
 interface ImportPanelProps {
   /** How many checklists My Hangar already holds. */
   count: number;
+  /** Replace mode: the new CSV's items go into this checklist, keeping its name and matching ticks. */
+  replacing?: LocalChecklist | null;
+  onCancelReplace?: () => void;
 }
 
 /**
  * Choose, drop or paste a CSV, preview what it becomes with every problem by row,
  * then name the aircraft and save. Papa Parse loads only when something is imported.
  */
-const ImportPanel: React.FC<ImportPanelProps> = ({ count }) => {
+const ImportPanel: React.FC<ImportPanelProps> = ({ count, replacing = null, onCancelReplace }) => {
   const navigate = useNavigate();
   const [preview, setPreview] = useState<Preview | null>(null);
   const [busy, setBusy] = useState(false);
@@ -60,7 +67,7 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const previewHeadingRef = useRef<HTMLHeadingElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
-  const full = count >= LOCAL_CHECKLIST_LIMIT;
+  const full = !replacing && count >= LOCAL_CHECKLIST_LIMIT;
 
   // Move to the preview once it shows, so keyboard and screen-reader users land on it.
   useEffect(() => {
@@ -158,6 +165,16 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count }) => {
     } else {
       setSaveError("The checklist couldn't be saved. Your browser's storage may be full.");
     }
+  };
+
+  const handleReplace = async () => {
+    if (!preview || !replacing) return;
+    setBusy(true);
+    setSaveError('');
+    const saved = await replaceLocalChecklistItems(replacing.id, preview.result.checklist);
+    setBusy(false);
+    if (saved) navigate(`/hangar/${saved.id}`);
+    else setSaveError("The checklist couldn't be saved. Your browser's storage may be full.");
   };
 
   const setField = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -291,6 +308,41 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count }) => {
               Import another file
             </button>
           </div>
+        ) : replacing ? (
+          <div className="pt-6 border-t border-border space-y-4">
+            <p className="type-body text-muted max-w-2xl">
+              These items replace the ones in{' '}
+              <strong className="text-primary font-medium break-words">
+                {replacing.meta.name}
+              </strong>
+              . Ticks stay on items whose phase and id are unchanged.
+            </p>
+            <div className="pt-4 flex flex-wrap items-center justify-end gap-3 border-t border-border">
+              <button
+                type="button"
+                onClick={reset}
+                className="px-4 py-2.5 text-xs font-bold uppercase text-muted hover:text-primary transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => void handleReplace()}
+                disabled={busy}
+                className="border border-accent text-accent hover:bg-accent hover:text-inverted px-6 py-2.5 font-bold text-xs uppercase transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Replace checklist
+              </button>
+            </div>
+            {saveError && (
+              <div
+                role="alert"
+                className="p-3 bg-danger/20 border border-danger text-danger text-xs"
+              >
+                {saveError}
+              </div>
+            )}
+          </div>
         ) : (
           <form onSubmit={handleSave} noValidate className="pt-6 border-t border-border space-y-6">
             <h4 className="type-subheading text-primary">Aircraft</h4>
@@ -392,6 +444,21 @@ const ImportPanel: React.FC<ImportPanelProps> = ({ count }) => {
 
   return (
     <div className="space-y-6">
+      {replacing && (
+        <div className="flex flex-wrap items-center justify-between gap-3 p-4 border border-accent/40 bg-accent/10">
+          <p className="type-body text-primary break-words min-w-0">
+            Choose the new CSV for {replacing.meta.name}. Download its CSV first to keep the ids,
+            and with them the ticks.
+          </p>
+          <button
+            type="button"
+            onClick={onCancelReplace}
+            className="px-4 py-2 text-xs font-bold uppercase text-muted hover:text-primary transition-colors"
+          >
+            Cancel
+          </button>
+        </div>
+      )}
       <p className="type-body text-muted max-w-2xl">
         One row per item. The file needs <strong className="text-primary font-medium">phase</strong>
         , <strong className="text-primary font-medium">label</strong> and{' '}
