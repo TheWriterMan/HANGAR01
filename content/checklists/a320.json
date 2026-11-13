@@ -19,23 +19,23 @@
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "AUTO",
               "id": "battery-1-2",
-              "info": "Overhead Panel. Verify voltage is above 25.5V on the ECAM ELEC page before switching ON.",
+              "info": "Overhead Panel. Check BAT 1 and 2 above 25.5 V on the indicators before selecting AUTO.",
               "label": "Battery 1+2",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "external-power",
-              "info": "Overhead Panel. Disconnects external ground power once the APU is supplying power.",
+              "info": "Overhead Panel. Press only when the green AVAIL light shows, meaning ground power is connected. The white ON light then comes on.",
               "label": "External Power",
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "2",
               "id": "nav-logo-lights",
-              "info": "Overhead Panel. Nav & logo lights ON.",
+              "info": "Overhead Panel. Position 2 turns on the nav and logo lights. The A32NX has only 2 and OFF.",
               "label": "Nav & Logo Lights",
               "tier": "normal"
             },
@@ -242,7 +242,7 @@
             {
               "action": "STBY",
               "id": "transponder",
-              "info": "Pedestal. Set squawk code. Mode AUTO, system 1, ALT RPTG ON.",
+              "info": "Pedestal. Set the squawk code, system 1 and ALT RPTG ON. The mode stays on STBY until lineup.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -267,7 +267,7 @@
             {
               "action": "CLOSED",
               "id": "doors",
-              "info": "Overhead Panel. Verify all passenger and cargo doors are closed and armed.",
+              "info": "Main Panel. On the lower ECAM DOOR page, check all doors are closed and the slides are armed.",
               "label": "Doors",
               "tier": "full"
             },
@@ -340,30 +340,30 @@
             },
             {
               "action": "ON",
-              "id": "engine-master-2",
-              "info": "Pedestal. Engine 2 starts first — receives direct APU bleed air.",
-              "label": "Engine Master 2",
-              "tier": "quick"
-            },
-            {
-              "action": "MONITOR",
-              "id": "engine-2-parameters",
-              "info": "Main Panel. N2 rises, followed by ignition at ~16% N2, then fuel flow at ~22% N2. Stabilized: N1 ~20%, N2 ~60%, EGT ~400-500°C, FF ~600 lb/h.",
-              "label": "Engine 2 Parameters",
-              "tier": "quick"
-            },
-            {
-              "action": "ON",
               "id": "engine-master-1",
-              "info": "Pedestal. Engine Master 1 ON.",
+              "info": "Pedestal. Engine 1 starts first, as current Airbus procedure calls for. Some airlines start engine 2 first.",
               "label": "Engine Master 1",
               "tier": "quick"
             },
             {
               "action": "MONITOR",
               "id": "engine-1-parameters",
-              "info": "Main Panel. Same sequence as engine 2. Stabilized: N1 ~20%, N2 ~60%, EGT ~400-500°C.",
+              "info": "Main Panel. The start takes about 1 minute. Stabilized at ISA sea level: N1 ~19%, N2 ~68%, EGT ~520°C, FF ~290 kg/h, and N1 shows AVAIL.",
               "label": "Engine 1 Parameters",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "engine-master-2",
+              "info": "Pedestal. Start engine 2 once engine 1 is stabilized.",
+              "label": "Engine Master 2",
+              "tier": "quick"
+            },
+            {
+              "action": "MONITOR",
+              "id": "engine-2-parameters",
+              "info": "Main Panel. Same as engine 1. Stabilized at ISA sea level: N1 ~19%, N2 ~68%, EGT ~520°C, FF ~290 kg/h.",
+              "label": "Engine 2 Parameters",
               "tier": "quick"
             }
           ],
@@ -387,9 +387,9 @@
             {
               "action": "OFF",
               "id": "apu-bleed",
-              "info": "Overhead Panel. APU bleed OFF once engines are running.",
+              "info": "Overhead Panel. APU bleed OFF once the engines are running. All engine bleed valves then open automatically.",
               "label": "APU Bleed",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "OFF",
@@ -408,7 +408,7 @@
             {
               "action": "AS REQUIRED",
               "id": "wing-anti-ice",
-              "info": "Overhead Panel. Turn on wing anti-ice if necessary for ground conditions.",
+              "info": "Overhead Panel. On the ground, wing anti-ice runs only a 30-second test, then the valves close.",
               "label": "Wing Anti-Ice",
               "tier": "full"
             },
@@ -457,7 +457,7 @@
               "id": "flight-controls",
               "info": "Main Panel. Check for full and free movement of the elevator, ailerons, and rudder on the ECAM F-CTL page.",
               "label": "Flight Controls",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "CHECK",
@@ -467,9 +467,9 @@
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "SYS 1",
               "id": "weather-radar",
-              "info": "Pedestal. Weather radar ON.",
+              "info": "Pedestal. Position 1 turns on radar system 1. The sim shows precipitation only.",
               "label": "Weather Radar",
               "tier": "full"
             },
@@ -541,7 +541,7 @@
             {
               "action": "AS REQUIRED",
               "id": "packs",
-              "info": "Overhead Panel. Turn OFF for more takeoff performance when using FLEX thrust. Otherwise, leave ON.",
+              "info": "Overhead Panel. Turning the packs OFF improves takeoff performance with TOGA thrust. Otherwise, leave ON.",
               "label": "Packs",
               "tier": "full"
             },
@@ -574,9 +574,9 @@
               "tier": "normal"
             },
             {
-              "action": "TA",
+              "action": "AUTO",
               "id": "transponder",
-              "info": "Pedestal. Switch the transponder to Traffic Advisory (TA) mode for takeoff.",
+              "info": "Pedestal. AUTO makes the transponder reply in flight. TCAS works only when the transponder is out of STBY.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -607,9 +607,9 @@
         {
           "items": [
             {
-              "action": "TAKEOFF",
+              "action": "T.O.",
               "id": "nose-lights",
-              "info": "Overhead Panel. Set the nose wheel light to TAKEOFF.",
+              "info": "Overhead Panel. Set the nose light to T.O., which turns on both the taxi and takeoff lights.",
               "label": "Nose Lights",
               "tier": "normal"
             },
@@ -657,7 +657,7 @@
               "id": "fma",
               "info": "Main Panel. Verify the Flight Mode Annunciator shows MAN FLEX or MAN TOGA, SRS, and RWY.",
               "label": "FMA",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "AT VR",
@@ -696,7 +696,7 @@
               "id": "gear",
               "info": "Main Panel. Verify the landing gear indicators show UP and locked.",
               "label": "Gear",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CLIMB",
@@ -704,6 +704,13 @@
               "info": "Pedestal. Set thrust levers to the CL (Climb) detent at the thrust reduction altitude when LVR CLB flashes in the FMA.",
               "label": "Thrust Levers",
               "tier": "quick"
+            },
+            {
+              "action": "AP1 ON",
+              "id": "autopilot",
+              "info": "Glareshield. Press AP1 on the FCU once the thrust levers are in CL. The FMA shows AP1 in white at the top right.",
+              "label": "Autopilot",
+              "tier": "normal"
             },
             {
               "action": "ON",
@@ -720,6 +727,20 @@
               "tier": "quick"
             },
             {
+              "action": "OFF",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Set to OFF after flap retraction. The light goes off by itself when the gear retracts, and the switch covers a failed auto-off.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. Set to OFF after flap retraction. Like the nose light, it goes off by itself when the gear retracts.",
+              "label": "RWY Turnoff Lights",
+              "tier": "full"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "engine-anti-ice",
               "info": "Overhead Panel. Turn on engine anti-ice if flying through visible moisture below 10°C.",
@@ -732,13 +753,6 @@
               "info": "Pedestal. Adjust engine mode selector as required for current weather.",
               "label": "ENG Mode",
               "tier": "full"
-            },
-            {
-              "action": "TA/RA",
-              "id": "transponder",
-              "info": "Pedestal. Ensure the transponder is actively transmitting in TA/RA mode.",
-              "label": "Transponder",
-              "tier": "normal"
             }
           ],
           "title": "Initial Climb"
@@ -753,17 +767,10 @@
               "tier": "normal"
             },
             {
-              "action": "OFF",
+              "action": "RETRACT",
               "id": "landing-lights",
-              "info": "Overhead Panel. Turn off landing lights above 10,000 feet.",
+              "info": "Overhead Panel. Passing 10,000 ft. RETRACT stows the lights. OFF leaves them extended under the wings, where they add drag.",
               "label": "Landing Lights",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "nose-lights",
-              "info": "Overhead Panel. Nose lights OFF above 10,000 ft.",
-              "label": "Nose Lights",
               "tier": "normal"
             },
             {
@@ -892,6 +899,13 @@
         {
           "items": [
             {
+              "action": "PUSH/PULL",
+              "id": "fcu-alt-knob",
+              "info": "Glareshield. Start the descent at top of descent, once ATC clears you. Push for managed descent (DES), which respects altitude constraints. Pull for open descent (OP DES), a steadier descent that ignores them.",
+              "label": "FCU ALT Knob",
+              "tier": "normal"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "engine-anti-ice",
               "info": "Overhead Panel. Turn on engine anti-ice if passing through visible moisture.",
@@ -913,13 +927,6 @@
               "tier": "normal"
             },
             {
-              "action": "TAKEOFF",
-              "id": "nose-lights",
-              "info": "Overhead Panel. Turn on the nose light to the TAKEOFF position below 10,000 feet.",
-              "label": "Nose Lights",
-              "tier": "normal"
-            },
-            {
               "action": "ON",
               "id": "terrain-on-nd",
               "info": "Main Panel. Turn on the terrain display on the ND to monitor surrounding ground elevation.",
@@ -927,7 +934,7 @@
               "tier": "full"
             },
             {
-              "action": "CONSTR",
+              "action": "CSTR",
               "id": "efis",
               "info": "Glareshield. Press the CSTR button to show altitude and speed constraints on the ND.",
               "label": "EFIS",
@@ -996,9 +1003,9 @@
             {
               "action": "AS REQUIRED",
               "id": "tcas",
-              "info": "Pedestal. Set TCAS to TA for approach if operating in busy terminal airspace.",
+              "info": "Pedestal. TA/RA is the normal setting. Use TA only where RAs are inappropriate, such as converging or parallel runways.",
               "label": "TCAS",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "ACTIVATE",
@@ -1020,6 +1027,20 @@
               "tier": "quick"
             },
             {
+              "action": "ARM",
+              "id": "appr",
+              "info": "Glareshield. Press APPR on the FCU when cleared for the approach and on an intercept path to the localizer. LOC and G/S show in blue on the FMA, and the aircraft descends once it captures the glideslope.",
+              "label": "APPR",
+              "tier": "normal"
+            },
+            {
+              "action": "AP2 ON",
+              "id": "autopilot-2",
+              "info": "Glareshield. Engage AP2 alongside AP1 once APPR is armed, for redundancy on the approach.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "SET",
               "id": "flaps-2",
               "info": "Pedestal. Select Flaps 2 when intercepting the glideslope or at ~2000 ft AGL.",
@@ -1039,6 +1060,13 @@
               "info": "Pedestal. Arm the ground spoilers for automatic deployment upon touchdown.",
               "label": "Ground Spoilers",
               "tier": "quick"
+            },
+            {
+              "action": "T.O.",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Set the nose light to T.O. once the gear is down.",
+              "label": "Nose Lights",
+              "tier": "normal"
             },
             {
               "action": "SET",
@@ -1073,13 +1101,6 @@
         {
           "items": [
             {
-              "action": "IDLE",
-              "id": "thrust-levers",
-              "info": "Pedestal. Retard thrust levers to IDLE at the ~30 ft radio altitude auto-callout.",
-              "label": "Thrust Levers",
-              "tier": "quick"
-            },
-            {
               "action": "SET",
               "id": "flare",
               "info": "Sidestick. Slowly raise the nose to flare at ~30 ft. Hold the attitude and let the speed bleed off.",
@@ -1087,9 +1108,16 @@
               "tier": "quick"
             },
             {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Pedestal. After starting the flare, retard to IDLE at the RETARD callout, around 10-20 ft.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "reverse-thrust",
-              "info": "Pedestal. Deploy reverse thrust after the main landing gear touches down. Stow reversers by 70-80 kts.",
+              "info": "Pedestal. Select reverse right after the main gear touches down. Back to REV IDLE at 70 kts, and stow the reversers at taxi speed.",
               "label": "Reverse Thrust",
               "tier": "quick"
             },
@@ -1133,9 +1161,9 @@
               "tier": "normal"
             },
             {
-              "action": "OFF",
+              "action": "RETRACT",
               "id": "landing-lights",
-              "info": "Overhead Panel. Turn off the landing lights during taxi to the gate.",
+              "info": "Overhead Panel. Retract the landing lights after landing.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -1303,9 +1331,9 @@
               "tier": "normal"
             },
             {
-              "action": "OFF",
+              "action": "STBY",
               "id": "transponder",
-              "info": "Pedestal. Ensure the transponder is turned off.",
+              "info": "Pedestal. The mode selector has no OFF. STBY keeps the transponder powered but not replying.",
               "label": "Transponder",
               "tier": "normal"
             }
@@ -1352,7 +1380,7 @@
             {
               "action": "OFF",
               "id": "apu-master",
-              "info": "Overhead Panel. APU Master OFF.",
+              "info": "Overhead Panel. APU Master OFF. Wait 2 minutes for the APU flap door to close before turning off the batteries, as closing it needs APU or external power.",
               "label": "APU Master",
               "tier": "normal"
             },
