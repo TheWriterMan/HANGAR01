@@ -14,8 +14,15 @@
             {
               "action": "ON",
               "id": "external-power",
-              "info": "Overhead Panel. L, R & AFT switches ON if GPU connected.",
+              "info": "Overhead Panel. FWD EXT PWR L and R switches ON.",
               "label": "External Power",
+              "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "fuel-pumps",
+              "info": "Overhead Panel. L and R FWD and AFT pumps ON before starting the APU. Center pumps ON only when the center tank has fuel. Verify PRESS lights extinguished.",
+              "label": "Fuel Pumps",
               "tier": "quick"
             },
             {
@@ -35,7 +42,7 @@
             {
               "action": "ON",
               "id": "irs-selectors",
-              "info": "Overhead Panel. OFF for 30 seconds then ON. Alignment takes ~10 min.",
+              "info": "Overhead Panel. Left and right IRS ON. The GPS position fills in on the POS INIT page by itself.",
               "label": "IRS Selectors",
               "tier": "quick"
             },
@@ -135,20 +142,6 @@
             },
             {
               "action": "AUTO",
-              "id": "hyd-c1-c2-pumps",
-              "info": "Overhead Panel. Electric pumps — verify no FAULT.",
-              "label": "Hyd C1 & C2 Pumps",
-              "tier": "full"
-            },
-            {
-              "action": "AUTO",
-              "id": "hyd-demand-pumps",
-              "info": "Overhead Panel. Verify no FAULT.",
-              "label": "Hyd Demand Pumps",
-              "tier": "full"
-            },
-            {
-              "action": "AUTO",
               "id": "wing-anti-ice",
               "info": "Overhead Panel. AUTO.",
               "label": "Wing Anti-Ice",
@@ -167,13 +160,6 @@
               "info": "Overhead Panel. Connects the left and right fuel manifolds.",
               "label": "Fuel Crossfeed",
               "tier": "full"
-            },
-            {
-              "action": "ON",
-              "id": "fuel-pumps",
-              "info": "Overhead Panel. L, R & Center pump switches ON. Verify PRESS lights extinguished.",
-              "label": "Fuel Pumps",
-              "tier": "quick"
             },
             {
               "action": "AUTO",
@@ -244,15 +230,8 @@
             {
               "action": "SET",
               "id": "altimeters",
-              "info": "EFIS Control Panel. Set local QNH. Cross-check standby instrument.",
+              "info": "PFD Control Panel, glareshield. Set local QNH. Cross-check standby instrument.",
               "label": "Altimeters",
-              "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "mcp-altitude",
-              "info": "MCP. Set initial cleared altitude.",
-              "label": "MCP Altitude",
               "tier": "normal"
             },
             {
@@ -265,16 +244,9 @@
             {
               "action": "SET",
               "id": "mcp-speed",
-              "info": "MCP. Set V2 + 10.",
+              "info": "MCP. Enter V2 from the CDU TAKEOFF page in the speed window.",
               "label": "MCP Speed",
               "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "lnav-vnav",
-              "info": "MCP. Preselect for departure.",
-              "label": "LNAV / VNAV",
-              "tier": "full"
             },
             {
               "action": "RTO",
@@ -286,7 +258,7 @@
             {
               "action": "SET",
               "id": "transponder",
-              "info": "Radio Tuning Panel. Enter assigned squawk, set to STBY.",
+              "info": "Center Pedestal. Enter the assigned squawk on a tuning control panel. Mode knob, between the two panels, at STBY.",
               "label": "Transponder",
               "tier": "normal"
             }
@@ -365,14 +337,14 @@
             {
               "action": "ON",
               "id": "fuel-pumps",
-              "info": "Overhead Panel. L, R & Center ON if not already.",
+              "info": "Overhead Panel. L and R ON if not already. Center pumps only when the center tank has fuel.",
               "label": "Fuel Pumps",
               "tier": "normal"
             },
             {
               "action": "XPDR",
               "id": "transponder",
-              "info": "Radio Tuning Panel. Switch to XPDR or TA/RA.",
+              "info": "Center Pedestal, mode knob between the two tuning control panels. Switch to XPDR or TA/RA.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -409,6 +381,13 @@
         {
           "items": [
             {
+              "action": "RELEASED",
+              "id": "parking-brake",
+              "info": "Center Pedestal, left of the throttles. Push down and forward to release before pushback.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
               "action": "START",
               "id": "pushback",
               "info": "Exterior. Initiate pushback sequence.",
@@ -416,38 +395,31 @@
               "tier": "quick"
             },
             {
-              "action": "CHECK",
-              "id": "eicas",
-              "info": "Main Panel. Verify both engines stable — normal N1, N2, EGT, oil pressure.",
-              "label": "EICAS",
-              "tier": "normal"
-            },
-            {
-              "action": "START",
-              "id": "l-start-selector",
-              "info": "Overhead Panel. AUTOSTART message appears on EICAS above N2.",
-              "label": "L Start Selector",
-              "tier": "quick"
-            },
-            {
               "action": "RUN",
-              "id": "l-fuel-control",
-              "info": "Center Pedestal. Move to RUN when prompted. Engine self-starts with AUTOSTART.",
-              "label": "L Fuel Control",
+              "id": "r-fuel-control",
+              "info": "Center Pedestal, behind the throttles. Set to RUN before turning the start selector. The right engine starts first.",
+              "label": "R Fuel Control",
               "tier": "quick"
             },
             {
               "action": "START",
               "id": "r-start-selector",
-              "info": "Overhead Panel. Wait for left engine to stabilize first.",
+              "info": "Overhead Panel. Turn to START. AUTOSTART shows above the N2 gauge on EICAS and changes to RUNNING when the engine is ready.",
               "label": "R Start Selector",
               "tier": "quick"
             },
             {
               "action": "RUN",
-              "id": "r-fuel-control",
-              "info": "Center Pedestal. Initiates fuel flow for the right engine start.",
-              "label": "R Fuel Control",
+              "id": "l-fuel-control",
+              "info": "Center Pedestal. Set to RUN before turning the left start selector.",
+              "label": "L Fuel Control",
+              "tier": "quick"
+            },
+            {
+              "action": "START",
+              "id": "l-start-selector",
+              "info": "Overhead Panel. Turn to START. Watch AUTOSTART change to RUNNING above the N2 gauge.",
+              "label": "L Start Selector",
               "tier": "quick"
             },
             {
@@ -463,10 +435,31 @@
         {
           "items": [
             {
+              "action": "SET",
+              "id": "parking-brake-2",
+              "info": "Center Pedestal, left of the throttles. Set once pushback is complete and the engines are running.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
               "action": "NORM",
               "id": "start-selectors",
               "info": "Overhead Panel. Verify both return to NORM.",
               "label": "Start Selectors",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "hyd-c1-c2-pumps",
+              "info": "Overhead Panel. Electric pumps, off until the engines are running. Verify no FAULT.",
+              "label": "Hyd C1 & C2 Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "hyd-demand-pumps",
+              "info": "Overhead Panel. L and R demand pumps, off until the engines are running. Verify no FAULT.",
+              "label": "Hyd Demand Pumps",
               "tier": "normal"
             },
             {
@@ -577,6 +570,13 @@
         {
           "items": [
             {
+              "action": "SET",
+              "id": "mcp-altitude",
+              "info": "MCP. Set the initial cleared altitude. VNAV climbs to it after takeoff.",
+              "label": "MCP Altitude",
+              "tier": "quick"
+            },
+            {
               "action": "CHECK",
               "id": "flaps",
               "info": "EICAS. Verify set for takeoff.",
@@ -586,7 +586,7 @@
             {
               "action": "TA/RA",
               "id": "transponder",
-              "info": "Radio Tuning Panel. TA/RA.",
+              "info": "Center Pedestal, mode knob between the two tuning control panels. TA/RA.",
               "label": "Transponder",
               "tier": "quick"
             },
@@ -614,14 +614,14 @@
             {
               "action": "AS REQUIRED",
               "id": "weather-radar",
-              "info": "EFIS Control Panel. Turn on weather radar to monitor conditions ahead.",
+              "info": "ND Control Panel, glareshield. Turn on weather radar (WXR) to monitor conditions ahead.",
               "label": "Weather Radar",
               "tier": "full"
             },
             {
               "action": "AS REQUIRED",
               "id": "terrain-display",
-              "info": "EFIS Control Panel. Turn on terrain display for situational awareness.",
+              "info": "ND Control Panel, glareshield. Turn on terrain display (TERR) for situational awareness.",
               "label": "Terrain Display",
               "tier": "full"
             },
@@ -631,6 +631,13 @@
               "info": "Overhead Panel. Lower the HUD combiner glass into the deployed position before entering the runway.",
               "label": "HUD",
               "tier": "full"
+            },
+            {
+              "action": "ARM",
+              "id": "lnav-vnav",
+              "info": "MCP. Arm VNAV for the climb to the MCP altitude. Arm LNAV too when flying a departure procedure; leave it off when ATC assigns a heading. The PFD should show TO/GA for roll and pitch.",
+              "label": "LNAV / VNAV",
+              "tier": "quick"
             },
             {
               "action": "CHECK",
@@ -652,6 +659,38 @@
       ],
       "id": "taxi",
       "title": "Taxi & Before Takeoff"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "30% TPR",
+              "id": "throttles",
+              "info": "Center Pedestal. Advance both throttles to 30% TPR and check the engines are stable, then move them to the green carrot on the TPR gauge. Setting the levers by hand first stops a noisy hardware throttle from changing thrust when the autothrottle hands over at 80 kt.",
+              "label": "Throttles",
+              "tier": "normal"
+            },
+            {
+              "action": "PRESS",
+              "id": "toga",
+              "info": "Throttles, or the AUTO THROTTLE TO GA key binding. Press once before 50 kt. The autothrottle sets takeoff thrust and the PFD shows THR REF, then HOLD at 80 kt.",
+              "label": "TOGA",
+              "tier": "quick"
+            },
+            {
+              "action": "AT VR",
+              "id": "rotate",
+              "info": "Yoke. Rotate at the VR speed shown on the PFD and follow the flight director. The autopilot can go on after 50 ft AGL.",
+              "label": "Rotate",
+              "tier": "quick"
+            }
+          ],
+          "title": "Takeoff Roll"
+        }
+      ],
+      "id": "takeoff",
+      "title": "Takeoff"
     },
     {
       "groups": [
@@ -702,7 +741,7 @@
             {
               "action": "TA/RA",
               "id": "transponder",
-              "info": "Radio Tuning Panel. Verify mode.",
+              "info": "Center Pedestal, mode knob between the two tuning control panels. Verify mode.",
               "label": "Transponder",
               "tier": "full"
             }
@@ -728,7 +767,7 @@
             {
               "action": "STD",
               "id": "altimeters",
-              "info": "EFIS Control Panel. Set standard at transition altitude.",
+              "info": "PFD Control Panel, glareshield. Set standard at transition altitude.",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -753,7 +792,7 @@
             {
               "action": "CHECK",
               "id": "altimeters",
-              "info": "EFIS Control Panel. Verify set to STD (29.92 / 1013).",
+              "info": "PFD Control Panel, glareshield. Verify set to STD (29.92 / 1013).",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -792,7 +831,7 @@
             {
               "action": "SET",
               "id": "fmc-approach",
-              "info": "CDU. APPROACH REF page — select flaps/speed for landing (25° or 30°). Verify ILS frequency on RADNAV page.",
+              "info": "CDU, APPROACH REF page. Pick the landing flap setting (20, 25 or 30) and copy its VREF into the FLAP/SPEED line. This puts VREF on the PFD. Verify ILS frequency on RADNAV page.",
               "label": "FMC Approach",
               "tier": "normal"
             },
@@ -806,16 +845,16 @@
             {
               "action": "SET",
               "id": "minimums",
-              "info": "EFIS Control Panel. BARO for manual landing, RADIO for autoland or low-vis.",
+              "info": "PFD Control Panel, glareshield. BARO for manual landing, RADIO for autoland or low-vis.",
               "label": "Minimums",
               "tier": "normal"
             },
             {
-              "action": "SET",
+              "action": "SET LOWER",
               "id": "mcp-altitude",
-              "info": "MCP. Set initial descent/approach altitude.",
+              "info": "MCP. About 10 nm before top of descent (TO T/D on the VNAV CRZ page), set the lowest altitude on the arrival or your cleared altitude. VNAV only descends once the MCP altitude is below cruise.",
               "label": "MCP Altitude",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
@@ -846,7 +885,7 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "EFIS Control Panel. Set local barometric at transition level.",
+              "info": "PFD Control Panel, glareshield. Set local barometric at transition level.",
               "label": "Altimeters",
               "tier": "normal"
             },
@@ -946,7 +985,7 @@
             {
               "action": "SET",
               "id": "landing-flaps",
-              "info": "Center Pedestal. Set 25° then 30° on glideslope. Decelerate to VREF.",
+              "info": "Center Pedestal. Set the flap setting chosen on the APPROACH REF page, with the gear down. Slow to VREF + 5.",
               "label": "Landing Flaps",
               "tier": "quick"
             }
@@ -1072,14 +1111,14 @@
             {
               "action": "STBY",
               "id": "transponder",
-              "info": "Radio Tuning Panel. Set to STBY to stop transmitting.",
+              "info": "Center Pedestal, mode knob between the two tuning control panels. Set to STBY to stop transmitting.",
               "label": "Transponder",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "weather-radar",
-              "info": "EFIS Control Panel. Off on the ground.",
+              "info": "ND Control Panel, glareshield. Off on the ground.",
               "label": "Weather Radar",
               "tier": "normal"
             }
@@ -1173,7 +1212,7 @@
             {
               "action": "STBY",
               "id": "transponder-2",
-              "info": "Radio Tuning Panel. Set to STBY to stop transmitting.",
+              "info": "Center Pedestal, mode knob between the two tuning control panels. Set to STBY to stop transmitting.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -1249,5 +1288,5 @@
   "systemsType": "airliner",
   "addon": "Microsoft",
   "flightsim": "MSFS",
-  "simDepth": "Study Level"
+  "simDepth": "High Fidelity"
 }
