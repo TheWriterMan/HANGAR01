@@ -356,7 +356,7 @@
             {
               "action": "Off",
               "id": "prop-brake",
-              "info": "Overhead Panel. Press AUX HYD pump, verify Prop Brake READY light, then switch Prop Brake OFF. Wait for NP to stabilize around 70% and LO PITCH annunciation — then move Condition Lever 2 to AUTO.",
+              "info": "Center Pedestal: press HYD AUX PUMP, next to the power levers. Overhead Panel: wait for the green READY light, then lift the guard and set Prop Brake OFF. Wait for NP to stabilize around 70% and LO PITCH annunciation — then move Condition Lever 2 to AUTO.",
               "label": "Prop Brake",
               "tier": "quick"
             },
@@ -454,6 +454,13 @@
               "tier": "normal"
             },
             {
+              "action": "Release",
+              "id": "parking-brake",
+              "info": "Center Pedestal. Release it as you start the taxi.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
               "action": "Set",
               "id": "fgcp-taxi",
               "info": "Glareshield. Select HDG mode, arm NAV mode, preselect cleared altitude, set IAS bug to VFTO or AUTO.",
@@ -472,7 +479,7 @@
               "id": "to-config-test",
               "info": "Main Panel. Verifies flaps, trim and other takeoff-critical settings are correct. Triggers a warning if anything is misconfigured.",
               "label": "TO Config Test",
-              "tier": "full"
+              "tier": "normal"
             }
           ]
         },
@@ -630,7 +637,7 @@
             {
               "action": "ON",
               "id": "engine-bleed",
-              "info": "Overhead Panel. Re-enable engine bleeds for pressurization and air conditioning now that takeoff power demand has passed.",
+              "info": "Overhead Panel. Back ON if they were selected off for takeoff. The bleeds supply pressurization and air conditioning.",
               "label": "Engine Bleed",
               "tier": "normal"
             },
@@ -874,7 +881,7 @@
             {
               "action": "Down",
               "id": "gear-down",
-              "info": "Main Panel. Extend landing gear at or below 150 KIAS. Verify three green lights.",
+              "info": "Main Panel. Extend at or below 170 KIAS (ATR 72 limit). Verify three green lights.",
               "label": "Gear",
               "tier": "quick"
             },
@@ -895,14 +902,14 @@
             {
               "action": "Set 30",
               "id": "flaps-30-approach",
-              "info": "Center Pedestal. Full flaps for landing. ATR 72 uses 30 degrees; ATR 42 uses 25 then 35 degrees. Deploy below 150 KIAS.",
+              "info": "Center Pedestal. ATR 72: 30. ATR 42: 25 or 35, as briefed. ATR 72 limit 150 KIAS.",
               "label": "Flaps Full",
               "tier": "quick"
             },
             {
               "action": "Check",
               "id": "tlu-lo-speed",
-              "info": "EWD. Verify TLU LO SPEED annunciation appears, confirming the throttle lock-up system is armed for landing.",
+              "info": "EWD. Rudder travel limiter, ATR 72 only. TLU LO SPEED shows below 185 kt, giving full rudder travel for landing.",
               "label": "TLU Lo Speed",
               "tier": "full"
             }
@@ -937,6 +944,13 @@
               "info": "Center Pedestal. Retard power levers to IDLE at approximately 20 ft, flare to about 3 degrees pitch.",
               "label": "Power Levers",
               "tier": "quick"
+            },
+            {
+              "action": "Ground Idle",
+              "id": "power-levers",
+              "info": "Center Pedestal. After touchdown, move the power levers past the flight idle gate to ground idle. The gate blocks this in flight.",
+              "label": "Power Levers",
+              "tier": "normal"
             },
             {
               "action": "As Required",
@@ -1041,14 +1055,14 @@
             {
               "action": "Fuel S.O.",
               "id": "condition-lever-1",
-              "info": "Center Pedestal. Move CL 1 through FTR to FUEL S.O. to shut down engine 1.",
+              "info": "Center Pedestal. At least 2 min after vacating the runway, move CL 1 to FTR, wait 30 s, then FUEL S.O. to shut down engine 1.",
               "label": "Condition Lever 1",
               "tier": "quick"
             },
             {
               "action": "Fuel S.O.",
               "id": "condition-lever-2",
-              "info": "Center Pedestal. Move CL 2 through FTR to FUEL S.O. to shut down engine 2. If using Hotel Mode, leave at FTR and engage prop brake instead.",
+              "info": "Center Pedestal. Move CL 2 to FTR and wait for NP to stabilize, then FUEL S.O. to shut down engine 2. If using Hotel Mode, leave at FTR and engage prop brake instead.",
               "label": "Condition Lever 2",
               "tier": "quick"
             },
