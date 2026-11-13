@@ -47,6 +47,13 @@
               "tier": "quick"
             },
             {
+              "action": "ON",
+              "id": "fd-door-power",
+              "info": "Overhead Panel. Powers the flight deck door.",
+              "label": "FD Door Power",
+              "tier": "full"
+            },
+            {
               "action": "ARM",
               "id": "emergency-lights",
               "info": "Overhead Panel. Arms the emergency lighting system.",
@@ -89,7 +96,7 @@
             {
               "action": "ON",
               "id": "window-heat",
-              "info": "Overhead Panel. All 6 switches ON.",
+              "info": "Overhead Panel. Primary L and R ON.",
               "label": "Window Heat",
               "tier": "normal"
             },
@@ -134,13 +141,6 @@
         {
           "items": [
             {
-              "action": "ON",
-              "id": "hyd-primary-pumps",
-              "info": "Overhead Panel. Verify no FAULT light.",
-              "label": "Hyd Primary Pumps",
-              "tier": "quick"
-            },
-            {
               "action": "AUTO",
               "id": "wing-anti-ice",
               "info": "Overhead Panel. AUTO.",
@@ -171,7 +171,7 @@
             {
               "action": "TEST",
               "id": "fire-overheat-test",
-              "info": "Overhead Panel. Tests the fire detection and extinguishing systems.",
+              "info": "Overhead Panel. Tests the fire and overheat detection. Fire warnings show on EICAS during the test and clear when it ends.",
               "label": "Fire/Overheat Test",
               "tier": "full"
             }
@@ -183,7 +183,7 @@
             {
               "action": "PROGRAM",
               "id": "fmc-preflight",
-              "info": "CDU. IDENT, POS INIT, ROUTE (origin/dest/flight no), DEP/ARR, LEGS (delete discontinuities), PERF INIT (ZFW/reserves/cost index/CRZ ALT), THRUST LIM, TAKEOFF REF (flaps/CG trim/V-speeds). EXEC each page.",
+              "info": "CDU. IDENT, POS INIT, RTE (origin, destination, flight number, route), DEP/ARR, LEGS (delete discontinuities). Back on the RTE page press ACTIVATE, then EXEC: the header reads ACT RTE 1 and the route turns magenta on the ND. Then ALTN, PERF INIT (ZFW, reserves, CRZ ALT, cost index), THRUST LIM and TAKEOFF (flaps, CG, then V1, VR and V2 from the REF column). Forecast winds on the VNAV CLB and DES pages are optional. EXEC after each change.",
               "label": "FMC Preflight",
               "tier": "quick"
             },
@@ -236,17 +236,10 @@
             },
             {
               "action": "SET",
-              "id": "heading-bug",
-              "info": "MCP. Set runway heading.",
-              "label": "Heading Bug",
-              "tier": "normal"
-            },
-            {
-              "action": "SET",
               "id": "mcp-speed",
-              "info": "MCP. Enter V2 from the CDU TAKEOFF page in the speed window.",
-              "label": "MCP Speed",
-              "tier": "normal"
+              "info": "MCP. Speed window at V2 from the CDU TAKEOFF page. Heading window at the runway heading. Altitude window at the initial cleared altitude, which VNAV climbs to after takeoff.",
+              "label": "MCP Bugs",
+              "tier": "quick"
             },
             {
               "action": "RTO",
@@ -328,24 +321,17 @@
               "tier": "normal"
             },
             {
+              "action": "OFF",
+              "id": "external-power",
+              "info": "Overhead Panel. FWD L and R and AFT EXT PWR switches OFF once the APU generators carry the load (ELEC page on the SYS display). It may already have disconnected by itself.",
+              "label": "External Power",
+              "tier": "normal"
+            },
+            {
               "action": "ON",
               "id": "beacon",
               "info": "Overhead Panel. Required before engine start.",
               "label": "Beacon",
-              "tier": "normal"
-            },
-            {
-              "action": "ON",
-              "id": "fuel-pumps",
-              "info": "Overhead Panel. L and R ON if not already. Center pumps only when the center tank has fuel.",
-              "label": "Fuel Pumps",
-              "tier": "normal"
-            },
-            {
-              "action": "XPDR",
-              "id": "transponder",
-              "info": "Center Pedestal, mode knob between the two tuning control panels. Switch to XPDR or TA/RA.",
-              "label": "Transponder",
               "tier": "normal"
             },
             {
@@ -356,37 +342,17 @@
               "tier": "full"
             },
             {
-              "action": "REMOVED",
-              "id": "wheel-chocks",
-              "info": "Exterior. Confirm chocks are removed by ground personnel.",
-              "label": "Wheel Chocks",
-              "tier": "normal"
-            },
-            {
-              "action": "CLEAR",
-              "id": "ground-equipment",
-              "info": "Exterior. Verify all ground equipment is clear of the aircraft.",
-              "label": "Ground Equipment",
-              "tier": "normal"
-            }
-          ],
-          "title": "Pre-Start Flow"
-        }
-      ],
-      "id": "before-start",
-      "title": "Before Start"
-    },
-    {
-      "groups": [
-        {
-          "items": [
-            {
               "action": "RELEASED",
               "id": "parking-brake",
               "info": "Center Pedestal, left of the throttles. Push down and forward to release before pushback.",
               "label": "Parking Brake",
-              "tier": "normal"
-            },
+              "tier": "quick"
+            }
+          ],
+          "title": "Pre-Start Flow"
+        },
+        {
+          "items": [
             {
               "action": "START",
               "id": "pushback",
@@ -449,6 +415,13 @@
               "tier": "normal"
             },
             {
+              "action": "ON",
+              "id": "hyd-primary-pumps",
+              "info": "Overhead Panel. L and R primary pumps ON once the engines are running. Verify no FAULT light.",
+              "label": "Hyd Primary Pumps",
+              "tier": "quick"
+            },
+            {
               "action": "AUTO",
               "id": "hyd-c1-c2-pumps",
               "info": "Overhead Panel. Electric pumps, off until the engines are running. Verify no FAULT.",
@@ -477,10 +450,10 @@
               "tier": "quick"
             },
             {
-              "action": "OFF",
-              "id": "external-power",
-              "info": "Overhead Panel. Disconnect GPU if still connected.",
-              "label": "External Power",
+              "action": "TA ONLY",
+              "id": "transponder",
+              "info": "Center Pedestal, mode knob between the two tuning control panels. Enter the assigned squawk if not already set.",
+              "label": "Transponder",
               "tier": "normal"
             },
             {
@@ -488,12 +461,12 @@
               "id": "flight-controls",
               "info": "Cockpit. Full and free movement — verify on SYS/FCTL page.",
               "label": "Flight Controls",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "SET",
               "id": "flaps",
-              "info": "Center Pedestal. Set for takeoff — typically 5 or 15.",
+              "info": "Center Pedestal. Set the takeoff flaps entered on the CDU TAKEOFF page, such as flaps 10.",
               "label": "Flaps",
               "tier": "quick"
             }
@@ -548,14 +521,14 @@
               "id": "brakes",
               "info": "Rudder Pedals. Test brakes and steering during initial taxi. Max 30 kts straight, 10 kts in turns.",
               "label": "Brakes",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CHECK",
               "id": "flight-instruments",
               "info": "PFD. Cross-check heading, attitude, altimeter during taxi.",
               "label": "Flight Instruments",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "SET",
@@ -569,13 +542,6 @@
         },
         {
           "items": [
-            {
-              "action": "SET",
-              "id": "mcp-altitude",
-              "info": "MCP. Set the initial cleared altitude. VNAV climbs to it after takeoff.",
-              "label": "MCP Altitude",
-              "tier": "quick"
-            },
             {
               "action": "CHECK",
               "id": "flaps",
@@ -644,14 +610,14 @@
               "id": "takeoff-data",
               "info": "PFD. Confirm V1, VR, V2 — cross-check MCP speed.",
               "label": "Takeoff Data",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "CHECK",
               "id": "engine-instruments",
               "info": "EICAS. Verify normal indications before advancing throttles.",
               "label": "Engine Instruments",
-              "tier": "quick"
+              "tier": "full"
             }
           ],
           "title": "Lineup"
@@ -667,9 +633,16 @@
             {
               "action": "30% TPR",
               "id": "throttles",
-              "info": "Center Pedestal. Advance both throttles to 30% TPR and check the engines are stable, then move them to the green carrot on the TPR gauge. Setting the levers by hand first stops a noisy hardware throttle from changing thrust when the autothrottle hands over at 80 kt.",
+              "info": "Center Pedestal. Advance both throttles to 30% TPR and check the engines are stable.",
               "label": "Throttles",
               "tier": "normal"
+            },
+            {
+              "action": "GREEN CARROT",
+              "id": "throttles-2",
+              "info": "Center Pedestal. Move both levers to the green carrot on the TPR gauge before pressing TOGA. At 80 kt the autothrottle goes to HOLD and hands the levers back, and a hardware throttle left behind would change the thrust.",
+              "label": "Throttles",
+              "tier": "quick"
             },
             {
               "action": "PRESS",
@@ -706,15 +679,36 @@
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Center Pedestal. Retract on schedule at speed bugs: 15 → 5 → 1 → UP.",
+              "info": "Center Pedestal. Retract in steps as the speed passes each flap marker on the PFD speed tape.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "autopilot",
-              "info": "MCP. Engage at own discretion after 400 ft AGL.",
+              "info": "MCP. Engage at your discretion after 50 ft AGL.",
               "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "PRESS",
+              "id": "hdg-sel",
+              "info": "MCP, heading knob. Press SEL after 1,500 ft to hold the runway heading when departing on a heading.",
+              "label": "HDG SEL",
+              "tier": "normal"
+            },
+            {
+              "action": "ENGAGE",
+              "id": "lnav",
+              "info": "MCP. Once level at the initial altitude, press LNAV. To join the route, on the CDU LEGS page press the left key next to the first waypoint twice, then EXEC. The PFD shows LNAV as the roll mode and the aircraft turns onto the route.",
+              "label": "LNAV",
+              "tier": "quick"
+            },
+            {
+              "action": "SET CRUISE",
+              "id": "mcp-altitude",
+              "info": "MCP. Set the cruise altitude from PERF INIT, then press the altitude knob once to start the climb. The PFD shows VNAV SPD and THR REF.",
+              "label": "MCP Altitude",
               "tier": "quick"
             },
             {
@@ -729,7 +723,7 @@
               "id": "autobrake",
               "info": "Main Panel. Disarm after successful takeoff.",
               "label": "Autobrake",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "STOW",
@@ -770,13 +764,6 @@
               "info": "PFD Control Panel, glareshield. Set standard at transition altitude.",
               "label": "Altimeters",
               "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "seat-belts",
-              "info": "Overhead Panel. Seatbelt sign off in smooth air at crew discretion.",
-              "label": "Seatbelt Sign",
-              "tier": "full"
             }
           ],
           "title": "Climb Flow"
@@ -833,7 +820,7 @@
               "id": "fmc-approach",
               "info": "CDU, APPROACH REF page. Pick the landing flap setting (20, 25 or 30) and copy its VREF into the FLAP/SPEED line. This puts VREF on the PFD. Verify ILS frequency on RADNAV page.",
               "label": "FMC Approach",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
@@ -909,6 +896,13 @@
               "info": "Overhead Panel.",
               "label": "Wing Lights",
               "tier": "full"
+            },
+            {
+              "action": "BELOW 240 KT",
+              "id": "speed",
+              "info": "PFD speed tape. Below 10,000 ft the FMS target speed should be under 240 kt. Use the speed brake lever on the Center Pedestal to slow down if needed.",
+              "label": "Speed",
+              "tier": "normal"
             }
           ],
           "title": "Passing Transition"
@@ -936,43 +930,31 @@
               "tier": "full"
             },
             {
-              "action": "ARM",
-              "id": "app-mode",
-              "info": "MCP. Arm on localizer intercept course.",
-              "label": "APP Mode",
+              "action": "220 KT",
+              "id": "mcp-speed",
+              "info": "MCP, speed knob. Press the knob to open the speed window, then set 220 kt. The PFD shows the selected speed in magenta.",
+              "label": "MCP Speed",
               "tier": "quick"
-            },
-            {
-              "action": "SET",
-              "id": "flaps-1",
-              "info": "Center Pedestal. At speed bug UP or ~230 KIAS.",
-              "label": "Flaps 1",
-              "tier": "normal"
             },
             {
               "action": "SET",
               "id": "flaps-5",
-              "info": "Center Pedestal. At speed bug 1.",
+              "info": "Center Pedestal. Flaps 5 is good to 240 kt, so set it once slowing to 220 kt.",
               "label": "Flaps 5",
-              "tier": "quick"
-            }
-          ],
-          "title": "Approach Setup"
-        },
-        {
-          "items": [
-            {
-              "action": "SET",
-              "id": "flaps-20",
-              "info": "Center Pedestal. Before glideslope or by 3,000 ft AGL.",
-              "label": "Flaps 20",
               "tier": "quick"
             },
             {
-              "action": "DOWN",
-              "id": "gear",
-              "info": "Main Panel. Down by 2,500 ft AGL. Verify 3 green.",
-              "label": "Gear",
+              "action": "SET LOWER",
+              "id": "mcp-altitude",
+              "info": "MCP. Set the approach altitudes in steps below the lowest arrival altitude, down to the altitude for the final approach fix.",
+              "label": "MCP Altitude",
+              "tier": "quick"
+            },
+            {
+              "action": "-800 FPM",
+              "id": "vs",
+              "info": "MCP. Press VS/FPA and set -800 ft/min with the V/S knob for each step down. The aircraft levels at the MCP altitude, below the glideslope.",
+              "label": "V/S",
               "tier": "quick"
             },
             {
@@ -983,9 +965,56 @@
               "tier": "quick"
             },
             {
+              "action": "ARM",
+              "id": "app-mode",
+              "info": "MCP. Press APP about 1 nm before the first approach fix, on an intercept heading. A direct-to that fix on the CDU LEGS page turns the aircraft onto one. The PFD shows LOC active and G/S armed in white.",
+              "label": "APP Mode",
+              "tier": "quick"
+            }
+          ],
+          "title": "Approach Setup"
+        },
+        {
+          "items": [
+            {
+              "action": "180 KT",
+              "id": "mcp-speed-2",
+              "info": "MCP, speed knob. Set 180 kt once the localizer is captured.",
+              "label": "MCP Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "flaps-15",
+              "info": "Center Pedestal. After slowing to 180 kt.",
+              "label": "Flaps 15",
+              "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "missed-approach-alt",
+              "info": "MCP. Once the glideslope is captured, set the missed approach altitude from the approach chart, so the autopilot climbs to it on a go-around.",
+              "label": "Missed Approach Alt",
+              "tier": "normal"
+            },
+            {
+              "action": "VREF + 5",
+              "id": "mcp-speed-3",
+              "info": "MCP, speed knob. Approaching the final approach fix, set VREF + 5. VREF shows on the PFD from the APPROACH REF page.",
+              "label": "MCP Speed",
+              "tier": "quick"
+            },
+            {
+              "action": "DOWN",
+              "id": "gear",
+              "info": "Main Panel. Down by 2,500 ft AGL. EICAS shows DOWN.",
+              "label": "Gear",
+              "tier": "quick"
+            },
+            {
               "action": "SET",
               "id": "landing-flaps",
-              "info": "Center Pedestal. Set the flap setting chosen on the APPROACH REF page, with the gear down. Slow to VREF + 5.",
+              "info": "Center Pedestal. Set the landing flaps chosen on the APPROACH REF page, such as flaps 30, with the gear down.",
               "label": "Landing Flaps",
               "tier": "quick"
             }
@@ -1005,7 +1034,7 @@
               "id": "gear",
               "info": "Main Panel. Verify landing gear is down and locked.",
               "label": "Gear",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "CHECK ARM",
@@ -1024,7 +1053,7 @@
             {
               "action": "OFF",
               "id": "a-t",
-              "info": "MCP. Retard throttles to IDLE at ~50 ft callout.",
+              "info": "MCP A/T arm switches, or the disconnect button on the throttles. Disconnect during the flare and bring the throttles to idle.",
               "label": "A/T",
               "tier": "quick"
             },
@@ -1075,8 +1104,16 @@
               "tier": "normal"
             },
             {
+              "action": "OFF",
+              "id": "a-t-arm",
+              "info": "MCP. L and R autothrottle arm switches OFF.",
+              "label": "A/T Arm",
+              "tier": "normal"
+            },
+            {
               "action": "START",
               "id": "apu",
+              "info": "Overhead Panel. Start it while taxiing in so it can take the electrical load at shutdown.",
               "label": "APU",
               "tier": "normal"
             },
@@ -1156,13 +1193,6 @@
               "tier": "normal"
             },
             {
-              "action": "SET",
-              "id": "wheel-chocks",
-              "info": "Exterior. Confirm chocks are placed by ground personnel.",
-              "label": "Wheel Chocks",
-              "tier": "normal"
-            },
-            {
               "action": "ON",
               "id": "external-power",
               "info": "Overhead Panel. Connect GPU before shutting down APU.",
@@ -1210,13 +1240,6 @@
               "tier": "normal"
             },
             {
-              "action": "STBY",
-              "id": "transponder-2",
-              "info": "Center Pedestal, mode knob between the two tuning control panels. Set to STBY to stop transmitting.",
-              "label": "Transponder",
-              "tier": "normal"
-            },
-            {
               "action": "OFF",
               "id": "irs-selectors",
               "info": "Overhead Panel. Turn off inertial reference systems.",
@@ -1254,6 +1277,7 @@
             {
               "action": "OFF",
               "id": "apu-2",
+              "info": "Overhead Panel. Off once external power is connected.",
               "label": "APU",
               "tier": "normal"
             },
