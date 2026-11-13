@@ -129,11 +129,25 @@
               "tier": "normal"
             },
             {
+              "label": "Cabin Door",
+              "action": "Latched",
+              "id": "cabin-door",
+              "info": "Annunciator panel. The red DOOR WARN light stays on until the main cabin door is secured for flight.",
+              "tier": "normal"
+            },
+            {
               "label": "Prop Synchrophaser",
               "action": "Off",
               "id": "prop-synchrophaser-prestart",
               "info": "Main panel. Must be off before start — only activated in cruise once both engines are running.",
               "tier": "normal"
+            },
+            {
+              "label": "Yaw Damper",
+              "action": "Off",
+              "id": "yaw-damper",
+              "info": "Center pedestal on the Navomatic (YD toggle switch), or the YD key on the GFC600. Off for start and taxi; it goes on after takeoff.",
+              "tier": "full"
             },
             {
               "label": "Throttles",
@@ -153,7 +167,7 @@
               "label": "Mixtures",
               "action": "Full Rich",
               "id": "mixtures-prestart",
-              "info": "Center pedestal. Full forward for maximum fuel flow during start.",
+              "info": "Center pedestal. Full forward for start. Keep the auto mixture assist in the sim options disabled; the aircraft has its own fuel controller. On Xbox auto mixture is forced on and the levers can be ignored.",
               "tier": "quick"
             },
             {
@@ -171,18 +185,25 @@
               "tier": "quick"
             },
             {
+              "label": "Fuel Computer",
+              "action": "Program",
+              "id": "fuel-computer",
+              "info": "Engine panel. Enter the usable fuel on board before each flight. The computer counts down from that figure, so a wrong entry gives a wrong fuel remaining and range. Update it after refuelling.",
+              "tier": "normal"
+            },
+            {
               "label": "Beacon",
               "action": "On",
               "id": "beacon",
-              "info": "Left panel. Red anti-collision light before engine start to warn ground crew.",
+              "info": "Left panel, ANTI-COLL switch. The only anti-collision light switch; there is no separate strobe switch. On before engine start to warn ground crew.",
               "tier": "normal"
             },
             {
               "label": "Cowl Flaps",
               "action": "Open",
               "id": "cowl-flaps-prestart",
-              "info": "Center pedestal. Open for maximum cooling airflow during ground ops.",
-              "tier": "normal"
+              "info": "Center pedestal. Open for cooling during ground running and takeoff. Closed cowl flaps let the cylinder heads overheat.",
+              "tier": "quick"
             }
           ]
         },
@@ -207,7 +228,7 @@
               "label": "Left Engine",
               "action": "Start",
               "id": "left-engine-start",
-              "info": "Side console. Hold the left starter until the engine fires. Aux fuel pump OFF after start; it goes to LOW for takeoff.",
+              "info": "Side console. Hold the left starter until the engine fires.",
               "tier": "quick"
             },
             {
@@ -221,21 +242,21 @@
               "label": "Right Engine",
               "action": "Start",
               "id": "right-engine-start",
-              "info": "Side console. Hold the right starter until the engine fires. Aux fuel pump OFF after start; it goes to LOW for takeoff.",
+              "info": "Side console. Hold the right starter until the engine fires.",
               "tier": "quick"
             },
             {
               "label": "Throttles",
-              "action": "800-1000 RPM",
+              "action": "900-1000 RPM",
               "id": "throttles-idle",
-              "info": "Center pedestal. Both to idle range. Oil pressure must show within 30 seconds.",
+              "info": "Center pedestal. Warm-up range. Oil pressure must reach 25 PSI within 30 seconds.",
               "tier": "quick"
             },
             {
               "label": "Oil Pressure",
               "action": "Check",
               "id": "oil-pressure",
-              "info": "Main panel. Must indicate within 30 seconds of start. No pressure — shut down immediately.",
+              "info": "Engine panel. At least 25 PSI within 30 seconds of start. No pressure: shut the engine down.",
               "tier": "normal"
             },
             {
@@ -289,7 +310,7 @@
               "label": "Flaps",
               "action": "Up",
               "id": "flaps-up-after-start",
-              "info": "Copilot lower panel. Retract from the preflight-check down position.",
+              "info": "Copilot lower panel. Up for taxi.",
               "tier": "normal"
             },
             {
@@ -334,13 +355,13 @@
               "action": "Set",
               "id": "parking-brake-runup",
               "info": "Pilot lower panel. Hold firmly for run-up power checks.",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "label": "Mixtures",
               "action": "Full Rich",
               "id": "mixtures-runup",
-              "info": "Center pedestal. Full rich or leaned for field elevation before run-up.",
+              "info": "Center pedestal. Full rich. The fuel controller holds fuel flow, so no leaning is needed.",
               "tier": "full"
             },
             {
@@ -355,21 +376,21 @@
               "action": "1700 RPM",
               "id": "throttles-runup",
               "info": "Center pedestal. Run-up power for magneto and system checks.",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "label": "Magnetos",
               "action": "Check",
               "id": "magnetos-check",
-              "info": "Side console. Max 150 RPM drop per mag, max 50 RPM difference between L and R.",
-              "tier": "full"
+              "info": "Side console. At run-up RPM, switch off one magneto at a time and back on. The engine should keep running smoothly with only a small RPM drop.",
+              "tier": "normal"
             },
             {
               "label": "Propellers",
               "action": "Check",
               "id": "propellers-feather-check",
-              "info": "Center pedestal. Cycle to feather (1200 RPM), then back to full forward. Confirms governor operation.",
-              "tier": "full"
+              "info": "Center pedestal. Pull each propeller lever into feather until the RPM starts to fall, then back to full forward. Confirms the governor and feathering work.",
+              "tier": "normal"
             },
             {
               "label": "Engine Instruments",
@@ -382,7 +403,7 @@
               "label": "Vacuum System",
               "action": "Check",
               "id": "vacuum-system",
-              "info": "Main panel. Verify 4.75–5.25 inHG. Powers the attitude indicator and directional gyro — out of range means gyro instruments may not be reliable.",
+              "info": "Pilot lower panel, suction gauge. Powers the gyro instruments. A red marker in the gauge means that engine’s vacuum source is inoperative.",
               "tier": "full"
             },
             {
@@ -400,11 +421,18 @@
               "tier": "full"
             },
             {
+              "label": "Throttles",
+              "action": "1000 RPM",
+              "id": "throttles",
+              "info": "Center pedestal. Back to 1000 RPM once the run-up checks are done.",
+              "tier": "normal"
+            },
+            {
               "label": "Parking Brake",
               "action": "Release",
               "id": "parking-brake",
               "info": "Pilot lower panel. Release after the run-up checks are complete.",
-              "tier": "full"
+              "tier": "normal"
             }
           ]
         },
@@ -433,10 +461,17 @@
               "tier": "quick"
             },
             {
+              "label": "Ram Dump",
+              "action": "In",
+              "id": "ram-dump",
+              "info": "Pilot lower panel, DUMP PULL RAM knob. Pulled out, it dumps cabin pressure and the cabin will not pressurize.",
+              "tier": "normal"
+            },
+            {
               "label": "Pressurization",
               "action": "Set",
               "id": "pressurization",
-              "info": "Main panel. Switch to PRESSURIZE. Set cabin altitude to 500 ft above field elevation.",
+              "info": "Pilot lower panel. Mode switch to PRESSURIZE and set the cabin altitude controller.",
               "tier": "normal"
             },
             {
@@ -450,14 +485,14 @@
               "label": "Pitot Heat",
               "action": "On",
               "id": "pitot-heat",
-              "info": "Left panel. Prevents pitot icing that would corrupt airspeed readings.",
+              "info": "Left panel. Prevents pitot icing that would corrupt airspeed readings. A placard requires it on below 40°F (4°C) in instrument conditions.",
               "tier": "normal"
             },
             {
               "label": "Anti-Ice",
               "action": "As Required",
               "id": "anti-ice-lineup",
-              "info": "Left panel. Engine and prop anti-ice on if visible moisture exists below 5°C. The 414AW can reach 30,000 ft and frequently enters icing conditions during climb.",
+              "info": "Left panel. PROP ANTI-ICE, ANTI-ICE ELECT (HI or LO), SURFACE DE-ICE and STALL & VENT HEAT on as needed when flying into visible moisture at freezing temperatures. There is no engine anti-ice.",
               "tier": "normal"
             },
             {
@@ -480,13 +515,6 @@
               "id": "landing-lights-on",
               "info": "Left panel. Visibility for traffic avoidance during takeoff roll and climb.",
               "tier": "normal"
-            },
-            {
-              "label": "Strobes",
-              "action": "On",
-              "id": "strobes-on",
-              "info": "Left panel. High-intensity white strobes for traffic visibility on the runway.",
-              "tier": "normal"
             }
           ]
         }
@@ -501,9 +529,9 @@
           "items": [
             {
               "label": "Throttles",
-              "action": "30 inHg",
+              "action": "Advance",
               "id": "throttles",
-              "info": "Center pedestal. Hold the brakes and set 30 inHg MP on both engines.",
+              "info": "Center pedestal. Hold the brakes and bring both throttles up together. Check both manifold pressure needles rise evenly before brake release.",
               "tier": "quick"
             },
             {
@@ -524,7 +552,7 @@
               "label": "Rotate",
               "action": "At Vr",
               "id": "rotate",
-              "info": "Vr by weight: 86-98 KIAS (flaps up). Rotate slowly and maintain takeoff speed until clear of obstacles.",
+              "info": "Yoke. Rotate gently with flaps up, keeping well above the red line (Vmca) on the airspeed indicator.",
               "tier": "quick"
             },
             {
@@ -549,7 +577,7 @@
               "label": "Climb Power",
               "action": "Set",
               "id": "climb-power",
-              "info": "Center pedestal. Recommended: 35.0 inHG MP, 2500 RPM, 120 KIAS. Adjust RPM first, then manifold pressure.",
+              "info": "Center pedestal. Reduce from takeoff power: throttles back first, then propellers. Keep manifold pressure in the green arc. Full manifold pressure is for takeoff only; holding it too long overheats the engines and costs power.",
               "tier": "quick"
             },
             {
@@ -568,9 +596,9 @@
             },
             {
               "label": "Landing Lights",
-              "action": "Off",
+              "action": "Retract",
               "id": "landing-lights-off-climb",
-              "info": "Left panel. Off after traffic pattern altitude to reduce heat build-up.",
+              "info": "Left panel. LDG switch to RETRACT, which stows the retractable landing lights. OFF only switches them off.",
               "tier": "normal"
             },
             {
@@ -591,7 +619,7 @@
               "label": "Cabin Altitude",
               "action": "Set Cruise Alt",
               "id": "cabin-altitude-climb",
-              "info": "Main panel. Dial in the planned cruise altitude for the pressurization controller.",
+              "info": "Pilot lower panel. Dial in the planned cruise altitude on the cabin altitude controller.",
               "tier": "normal"
             },
             {
@@ -605,7 +633,7 @@
               "label": "Anti-Ice",
               "action": "As Required",
               "id": "anti-ice-climb",
-              "info": "Left panel. Activate engine and prop anti-ice when climbing through visible moisture at or below 5°C. The 414AW cruises above the freezing level on most flights.",
+              "info": "Left panel. PROP ANTI-ICE, ANTI-ICE ELECT (HI or LO), SURFACE DE-ICE and STALL & VENT HEAT on as needed when climbing through visible moisture at freezing temperatures. With visible ice on the aircraft, stay below 185 KIAS (placard).",
               "tier": "full"
             },
             {
@@ -619,7 +647,7 @@
               "label": "Oxygen",
               "action": "As Required",
               "id": "oxygen-climb",
-              "info": "Cabin. Needed when cabin altitude exceeds 10,000 ft; the amber CABIN ALT light comes on above that. Pressurization normally keeps the cabin well below it.",
+              "info": "Pilot lower panel, EMER OXY PULL knob and oxygen cylinder gauge. Needed when cabin altitude exceeds 10,000 ft; the amber CABIN ALT light comes on above that. Pressurization normally keeps the cabin well below it.",
               "tier": "full"
             }
           ]
@@ -654,9 +682,9 @@
             },
             {
               "label": "Mixtures",
-              "action": "Lean",
+              "action": "Rich",
               "id": "mixtures-cruise",
-              "info": "Center pedestal. Lean per the cruise fuel flow chart for altitude. EGT peak for best economy.",
+              "info": "Center pedestal. No leaning needed. A fuel controller holds fuel flow at any altitude, including above the 21,000 ft critical altitude, so the mixture can stay rich for most of the flight. Keep the sim’s auto mixture disabled.",
               "tier": "normal"
             },
             {
@@ -677,7 +705,7 @@
               "label": "Pressurization",
               "action": "Monitor",
               "id": "pressurization-cruise",
-              "info": "Main panel. Verify cabin altitude is holding at the set level. Normal differential is 5.0 PSI.",
+              "info": "Pilot lower panel. Verify cabin altitude is holding at the set level. Maximum differential is 5.3 PSI.",
               "tier": "normal"
             },
             {
@@ -685,20 +713,20 @@
               "action": "Off",
               "id": "aux-pumps-cruise",
               "info": "Side console. Can be turned off in stable cruise unless fuel flow fluctuations occur.",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "label": "Oxygen",
               "action": "Monitor",
               "id": "oxygen-cruise",
-              "info": "Cabin. On if cabin altitude exceeds 10,000 ft.",
+              "info": "Pilot lower panel, oxygen cylinder gauge. On if cabin altitude exceeds 10,000 ft.",
               "tier": "full"
             },
             {
               "label": "Anti-Ice",
               "action": "As Required",
               "id": "anti-ice-cruise",
-              "info": "Left panel. Monitor outside air temperature and visible moisture. Activate engine and prop anti-ice as needed.",
+              "info": "Left panel. Monitor outside air temperature and visible moisture. PROP ANTI-ICE, ANTI-ICE ELECT (HI or LO), SURFACE DE-ICE and STALL & VENT HEAT on as needed.",
               "tier": "full"
             }
           ]
@@ -716,28 +744,21 @@
               "label": "Descent Power",
               "action": "Set",
               "id": "descent-power",
-              "info": "Center pedestal. Example: 24.5 inHG / 2200 RPM. Reduce gradually — turbochargers are sensitive to shock cooling.",
-              "tier": "normal"
-            },
-            {
-              "label": "Descent Speed",
-              "action": "180 KIAS",
-              "id": "descent-speed",
-              "info": "Target 180 KIAS. Use TOD formula: (cruise alt − field alt) ÷ 1000 × 3 + 10 NM.",
+              "info": "Center pedestal. Reduce power gradually, throttles first, keeping manifold pressure in the green arc. A sudden power cut from high altitude cools the cylinders too fast.",
               "tier": "normal"
             },
             {
               "label": "Mixtures",
-              "action": "Enrich",
+              "action": "Adjust",
               "id": "mixtures-descent",
-              "info": "Center pedestal. Gradually enrich as altitude decreases and manifold pressure increases.",
+              "info": "Center pedestal. Watch EGT while descending from high altitude into warmer air and adjust the mixture to keep it steady. Letting it swing can crack a cylinder head.",
               "tier": "normal"
             },
             {
               "label": "Cabin Altitude",
               "action": "Set Landing Elev",
               "id": "cabin-altitude-descent",
-              "info": "Main panel. Set the destination field elevation so pressurization equalizes smoothly before landing.",
+              "info": "Pilot lower panel. Set the destination field elevation on the cabin altitude controller so the cabin equalizes smoothly before landing.",
               "tier": "normal"
             },
             {
@@ -758,14 +779,14 @@
               "label": "Oxygen",
               "action": "Off",
               "id": "oxygen-descent",
-              "info": "Cabin. Off once cabin altitude is confirmed below 10,000 ft.",
-              "tier": "normal"
+              "info": "Pilot lower panel. Off once cabin altitude is confirmed below 10,000 ft.",
+              "tier": "full"
             },
             {
               "label": "Anti-Ice",
               "action": "As Required",
               "id": "anti-ice-descent",
-              "info": "Left panel. Activate engine and prop anti-ice if descending through visible moisture at or below 5°C.",
+              "info": "Left panel. PROP ANTI-ICE, ANTI-ICE ELECT (HI or LO), SURFACE DE-ICE and STALL & VENT HEAT on as needed when descending through visible moisture at freezing temperatures.",
               "tier": "normal"
             }
           ]
@@ -830,14 +851,14 @@
               "label": "Approach Mode",
               "action": "Arm",
               "id": "approach-mode",
-              "info": "GFC600 panel. Press APR so the autopilot captures the final approach course. The mode shows armed, then active on capture.",
+              "info": "Autopilot panel. GFC600: press APR; the mode shows armed, then active on capture. Navomatic 800B: press NAV with the localizer tuned; the glideslope engages by itself at beam center when approached from below.",
               "tier": "normal"
             },
             {
               "label": "Anti-Ice",
               "action": "As Required",
               "id": "anti-ice-approach",
-              "info": "Left panel. Verify engine and prop anti-ice status for current conditions.",
+              "info": "Left panel. Check PROP ANTI-ICE, ANTI-ICE ELECT (HI or LO), SURFACE DE-ICE and STALL & VENT HEAT are set for the conditions.",
               "tier": "full"
             }
           ]
@@ -847,16 +868,16 @@
           "items": [
             {
               "label": "Speed",
-              "action": "Below 150 KIAS",
+              "action": "Below 171 KIAS",
               "id": "speed-reduce",
-              "info": "Begin slowing to allow gear and flap extension within speed limits.",
-              "tier": "normal"
+              "info": "Throttles, center pedestal. Slow down before the first flap and gear extension. Flaps 15 are limited to 171 KIAS and the gear to 177 KIAS.",
+              "tier": "quick"
             },
             {
               "label": "Flaps",
               "action": "15 Degrees",
               "id": "flaps-15",
-              "info": "Copilot lower panel. First flap setting. Vfe for 15 degrees is 177 KIAS.",
+              "info": "Copilot lower panel. First flap setting. Limit for flaps 15 is 171 KIAS (placard by the flap selector).",
               "tier": "quick"
             },
             {
@@ -867,31 +888,38 @@
               "tier": "quick"
             },
             {
-              "label": "Autopilot",
-              "action": "Disconnect",
-              "id": "autopilot",
-              "info": "Pilot yoke. Press the AP disconnect button and fly the rest of the approach by hand.",
-              "tier": "normal"
+              "label": "Speed",
+              "action": "Below 140 KIAS",
+              "id": "speed",
+              "info": "Throttles, center pedestal. Limit for flaps beyond 15 degrees is 140 KIAS (placard by the flap selector). Slow down before flaps 30.",
+              "tier": "quick"
             },
             {
               "label": "Flaps",
               "action": "30 Degrees",
               "id": "flaps-30",
-              "info": "Copilot lower panel. Set on glideslope intercept or base leg.",
+              "info": "Copilot lower panel. Only below 140 KIAS. Set on glideslope intercept or base leg.",
               "tier": "quick"
             },
             {
               "label": "Flaps",
               "action": "45 Degrees",
               "id": "flaps-45",
-              "info": "Copilot lower panel. Full flaps at 1000 ft AGL on the glideslope or on final. Vfe is 146 KIAS.",
+              "info": "Copilot lower panel. Full flaps at 1000 ft AGL on the glideslope or on final. Limit is 140 KIAS.",
               "tier": "quick"
+            },
+            {
+              "label": "Autopilot",
+              "action": "Disconnect",
+              "id": "autopilot",
+              "info": "Pilot yoke. Press the AP disconnect button, which trips the autopilot master switch, and hand-fly the final approach and landing.",
+              "tier": "normal"
             },
             {
               "label": "Speed",
               "action": "Vref",
               "id": "speed-vref",
-              "info": "Vref by landing weight: 84-94 KIAS (flaps 45). Stable on final approach speed.",
+              "info": "Yoke and throttles. Stable final approach speed with full flaps: below the 140 KIAS flap limit and well above the red line (Vmca).",
               "tier": "quick"
             }
           ]
@@ -939,16 +967,9 @@
             },
             {
               "label": "Landing Lights",
-              "action": "Off",
+              "action": "Retract",
               "id": "landing-lights-off",
-              "info": "Left panel. Off once clear of the runway.",
-              "tier": "normal"
-            },
-            {
-              "label": "Strobes",
-              "action": "Off",
-              "id": "strobes-off",
-              "info": "Left panel. No longer on an active runway.",
+              "info": "Left panel. LDG switch to RETRACT once clear of the runway, which stows the retractable landing lights.",
               "tier": "normal"
             },
             {
@@ -1057,7 +1078,7 @@
       ]
     }
   ],
-  "description": "A pressurized, turbocharged piston twin with a service ceiling above 30,000 ft and about 1,100 NM of range for serious cross-country trips.",
+  "description": "A pressurized, turbocharged piston twin with a 30,000 ft service ceiling and about 1,100 NM of range for serious cross-country trips.",
   "manufacturer": "Cessna",
   "model": "414AW",
   "slug": "c414",
