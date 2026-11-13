@@ -42,7 +42,7 @@
             {
               "action": "NORM",
               "id": "eng-mode-selector",
-              "info": "Center Pedestal. Engine mode selector in the NORM position.",
+              "info": "Overhead Panel. Engine Start panel. The selector has three positions: NORM, IGN START and CRANK. NORM for normal operation.",
               "label": "ENG Mode Selector",
               "tier": "full"
             },
@@ -68,7 +68,7 @@
             {
               "action": "ON",
               "id": "external-power",
-              "info": "Overhead Panel. Connect in order 2-3-4-1 if a GPU is available. Skip if you only have the APU.",
+              "info": "Overhead Panel. Connect in order 2-3-1-4 if a GPU is available, which gives the displays a shorter start time. At least two units are needed to power the whole aircraft. Skip if you only have the APU.",
               "label": "External Power",
               "tier": "quick"
             },
@@ -113,9 +113,9 @@
               "tier": "full"
             },
             {
-              "action": "ON",
+              "action": "SET",
               "id": "passenger-signs",
-              "info": "Overhead Panel. Seat Belts ON, No Mobile ON.",
+              "info": "Overhead Panel. Seat Belts ON, No Mobile AUTO.",
               "label": "Passenger Signs",
               "tier": "normal"
             },
@@ -134,16 +134,9 @@
               "tier": "quick"
             },
             {
-              "action": "OFF",
-              "id": "external-power-2",
-              "info": "Overhead Panel. Disconnect in order 1-4-3-2 once APU is supplying power. Only relevant if you connected ground power earlier.",
-              "label": "External Power",
-              "tier": "full"
-            },
-            {
-              "action": "ON",
+              "action": "AUTO",
               "id": "fuel-pumps",
-              "info": "Overhead Panel. All pumps from left to right for tanks that have fuel. The A380 has up to 11 fuel tanks across the wings and fuselage.",
+              "info": "Overhead Panel. Feed tank main and standby pumps to AUTO. With the transfer pushbuttons in AUTO, fuel moves between tanks automatically.",
               "label": "Fuel Pumps",
               "tier": "quick"
             }
@@ -176,8 +169,8 @@
             {
               "action": "PROGRAM",
               "id": "mcdu-preflight",
-              "info": "Center Pedestal. INIT page: enter or import route (FROM/TO, FLT NBR, COST INDEX, CRZ FL). F-PLN: verify waypoints, select departure RWY/SID/TRANS. PERF: after boarding, enter ZFW/ZFWCG/BLOCK from the fuel page, then set V1/VR/V2, FLEX or TOGA, flap config, THS trim, and acceleration altitudes.",
-              "label": "MCDU Preflight",
+              "info": "MFD, using the KCCU or your mouse and keyboard. INIT page: FLT NBR, FROM/TO, CI and CRZ FL, then DEPARTURE for runway and SID. F-PLN: add the route and arrival, check it, then INSERT TMPY. FUEL&LOAD page: ZFW, ZFWCG and BLOCK. T.O PERF page: V1, VR, V2, FLEX or TOGA, FLAPS and the THS FOR trim value. Import via simBrief if desired.",
+              "label": "FMS Preflight",
               "tier": "quick"
             }
           ],
@@ -209,9 +202,9 @@
             {
               "action": "SET",
               "id": "transponder",
-              "info": "Center Pedestal. FMS SURV page — enter squawk code from clearance, set to AUTO (stays on ground until airborne).",
+              "info": "Main Panel. SURV page on the MFD. Click the SQWK field, type the code from your clearance, press ENTER, then click AUTO.",
               "label": "Transponder",
-              "tier": "full"
+              "tier": "normal"
             }
           ],
           "title": "Glareshield & Pedestal"
@@ -246,6 +239,13 @@
               "tier": "full"
             },
             {
+              "action": "OFF",
+              "id": "external-power-2",
+              "info": "Overhead Panel. Press all four external power buttons before pushback so the ground crew can disconnect the units. Check the AVAIL lights. Only relevant if you connected ground power.",
+              "label": "External Power",
+              "tier": "quick"
+            },
+            {
               "action": "ON",
               "id": "beacon",
               "info": "Overhead Panel. The flashing red anti-collision light on top and bottom of the fuselage. Required before any engine start so ground crew know the engines are about to spool.",
@@ -253,9 +253,9 @@
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "SET",
               "id": "passenger-signs",
-              "info": "Overhead Panel. Both Seat Belts and No Mobile signs on before pushback.",
+              "info": "Overhead Panel. Seat Belts ON and No Mobile AUTO before pushback.",
               "label": "Passenger Signs",
               "tier": "full"
             },
@@ -265,6 +265,13 @@
               "info": "Center Pedestal. Ground controller confirms pushback approved and area clear.",
               "label": "Pushback Clearance",
               "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "parking-brake-2",
+              "info": "Center Pedestal. Release for pushback.",
+              "label": "Parking Brake",
+              "tier": "normal"
             }
           ],
           "title": "Pre-Start Flow"
@@ -272,16 +279,16 @@
         {
           "items": [
             {
-              "action": "IGN/START",
+              "action": "IGN START",
               "id": "eng-mode-selector",
-              "info": "Center Pedestal. Moves the ignition mode from NORM to IGN/START, which enables the start sequence when you flip the engine masters.",
+              "info": "Overhead Panel. Engine Start panel. Moves the selector from NORM to IGN START, which runs the automatic start sequence when you set the engine masters ON. The engine page appears on the system display.",
               "label": "ENG Mode Selector",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "engine-1-2-masters",
-              "info": "Center Pedestal. Left-side engines first. Flip both master switches ON — the FADEC handles the start sequence automatically. Monitor N2 and EGT on the ECAM.",
+              "info": "Center Pedestal. Wait 10 seconds after setting IGN START, then master 1 ON, then master 2 ON. The FADEC runs the start sequence automatically. Monitor N2 and EGT on the ECAM.",
               "label": "Engine 1+2 Masters",
               "tier": "quick"
             },
@@ -307,7 +314,7 @@
             {
               "action": "NORM",
               "id": "eng-mode-selector-2",
-              "info": "Center Pedestal. Return to NORM after all four engines are stable at idle.",
+              "info": "Overhead Panel. Return to NORM after all four engines are stable at idle.",
               "label": "ENG Mode Selector",
               "tier": "full"
             },
@@ -381,7 +388,7 @@
             {
               "action": "AS REQUIRED",
               "id": "runway-turnoff-lights",
-              "info": "Overhead Panel. Wing-root lights that illuminate taxiway turnoffs. Useful at night.",
+              "info": "Overhead Panel. Two lights on the nose gear strut that light the taxiway and runway turnoffs. Useful at night.",
               "label": "Runway Turnoff Lights",
               "tier": "full"
             },
@@ -390,12 +397,12 @@
               "id": "parking-brake",
               "info": "Center Pedestal. Release to begin taxi.",
               "label": "Parking Brake",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "TEST",
               "id": "brakes",
-              "info": "Pedals. Check braking and nosewheel steering at low speed. Max 20 kts straight, 5 kts in turns — the A380 is 575 tonnes and the gear is wide.",
+              "info": "Pedals. Check braking and nosewheel steering at low speed. Taxi at 10-20 kts in a straight line and 8-10 kts in sharp turns — the A380 is 575 tonnes and the gear is wide.",
               "label": "Brakes",
               "tier": "normal"
             }
@@ -421,7 +428,7 @@
             {
               "action": "TA/RA",
               "id": "tcas",
-              "info": "Center Pedestal. FMS SURV page. Full resolution advisory mode — the system can now command CLIMB or DESCEND to avoid traffic.",
+              "info": "Main Panel. SURV page on the MFD. Full resolution advisory mode — the system can now command CLIMB or DESCEND to avoid traffic.",
               "label": "TCAS",
               "tier": "normal"
             },
@@ -468,7 +475,7 @@
               "tier": "normal"
             },
             {
-              "action": "TAKEOFF",
+              "action": "T.O.",
               "id": "nose-lights-2",
               "info": "Overhead Panel. Brighter setting than taxi for the takeoff roll.",
               "label": "Nose Lights",
@@ -509,7 +516,7 @@
             {
               "action": "AT VR",
               "id": "rotate",
-              "info": "Sidestick. Start rotation at VR — initially max 10 degrees pitch, then target about 15 degrees. The A380 is long, gentle rotation prevents a tail strike.",
+              "info": "Sidestick. At VR pull back smoothly for a pitch rate of 2-3 degrees per second, reaching about 12.5 degrees in about 5 seconds. Once airborne, follow the flight director. The A380 is long, gentle rotation prevents a tail strike.",
               "label": "Rotate",
               "tier": "quick"
             },
@@ -537,6 +544,13 @@
               "info": "Center Pedestal. At FMA \"LVR CLB\" message, pull thrust levers back to the CLB detent.",
               "label": "Thrust Levers",
               "tier": "quick"
+            },
+            {
+              "action": "AP1 ON",
+              "id": "autopilot",
+              "info": "Glareshield. Press AP1 on the FCU once above 100 ft. The FMA shows AP1 in white in the upper right corner. On the approach, AP 1+2 go on together once APPR is pressed.",
+              "label": "Autopilot",
+              "tier": "normal"
             },
             {
               "action": "RETRACT",
@@ -583,7 +597,7 @@
             {
               "action": "TA/RA",
               "id": "tcas",
-              "info": "Center Pedestal. Verify still in full TA/RA mode after takeoff.",
+              "info": "Main Panel. SURV page on the MFD. Verify still in full TA/RA mode after takeoff.",
               "label": "TCAS",
               "tier": "full"
             }
@@ -725,20 +739,6 @@
               "tier": "normal"
             },
             {
-              "action": "TAKEOFF",
-              "id": "nose-lights",
-              "info": "Overhead Panel. Bright setting below 10,000 ft.",
-              "label": "Nose Lights",
-              "tier": "full"
-            },
-            {
-              "action": "ON",
-              "id": "runway-turnoff-lights",
-              "info": "Overhead Panel. Additional illumination below 10,000 ft.",
-              "label": "Runway Turnoff Lights",
-              "tier": "full"
-            },
-            {
               "action": "ON",
               "id": "ls-mode",
               "info": "Glareshield. Displays the ILS localiser and glideslope scales on the PFD.",
@@ -764,6 +764,13 @@
         {
           "items": [
             {
+              "action": "ACTIVATE",
+              "id": "approach-phase",
+              "info": "Main Panel. PERF page on the MFD. The approach phase starts on its own at the DECEL point. If the APPR tab is not green, press ACTIVATE APPR at the bottom of the page. Managed speed then slows the aircraft with each flap setting.",
+              "label": "Approach Phase",
+              "tier": "normal"
+            },
+            {
               "action": "ARM",
               "id": "approach-mode",
               "info": "Glareshield. Press APPR on the FCU. Arms LOC and G/S capture — verify blue armed modes on the FMA.",
@@ -783,13 +790,6 @@
               "info": "Center Pedestal. Final check that autobrake is armed for landing.",
               "label": "Autobrake",
               "tier": "full"
-            },
-            {
-              "action": "SET",
-              "id": "missed-approach-alt",
-              "info": "Glareshield. Set the go-around altitude in the FCU so the aircraft levels off correctly if you push TOGA.",
-              "label": "Missed Approach Alt",
-              "tier": "normal"
             }
           ],
           "title": "Approach Setup"
@@ -802,6 +802,13 @@
               "info": "Center Pedestal. Select at green dot speed. First slat extension for deceleration.",
               "label": "Flaps 1",
               "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "missed-approach-alt",
+              "info": "Glareshield. Set the go-around altitude in the FCU once G/S is captured, so the aircraft levels off correctly if you push TOGA.",
+              "label": "Missed Approach Alt",
+              "tier": "normal"
             },
             {
               "action": "SET",
@@ -818,6 +825,20 @@
               "tier": "quick"
             },
             {
+              "action": "T.O.",
+              "id": "nose-lights",
+              "info": "Overhead Panel. Turns on the taxi and takeoff lights. The nose gear lights switch off automatically when the gear is up, so set this once the gear is down.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "runway-turnoff-lights",
+              "info": "Overhead Panel. Two lights on the nose gear strut. They switch off automatically when the gear is up, so turn them on once the gear is down.",
+              "label": "Runway Turnoff Lights",
+              "tier": "normal"
+            },
+            {
               "action": "SET",
               "id": "flaps-3",
               "info": "Center Pedestal. Intermediate landing flap step.",
@@ -827,8 +848,8 @@
             {
               "action": "SET",
               "id": "flaps-4",
-              "info": "Center Pedestal. Final landing configuration. The A380X uses Config 4 — there is no FULL detent.",
-              "label": "Flaps 4",
+              "info": "Center Pedestal. FULL is the landing flap setting. Select it below its 182 kt limit, after Flaps 3.",
+              "label": "Flaps Full",
               "tier": "quick"
             },
             {
@@ -850,11 +871,11 @@
         {
           "items": [
             {
-              "action": "IDLE",
-              "id": "thrust-levers",
-              "info": "Center Pedestal. Retard at 50 ft — pull thrust levers to idle. The aircraft callout \"RETARD\" is your cue.",
-              "label": "Thrust Levers",
-              "tier": "quick"
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "Sidestick. Press the red autopilot disconnect button at about 500 ft, then press it again at least 1.8 seconds later, or further warnings sound. Leave autothrust on.",
+              "label": "Autopilot",
+              "tier": "normal"
             },
             {
               "action": "ROTATE",
@@ -864,9 +885,16 @@
               "tier": "quick"
             },
             {
+              "action": "IDLE",
+              "id": "thrust-levers",
+              "info": "Center Pedestal. Pull to idle as the main gear touches down, or at the RETARD callout. The ground spoilers will not deploy if two or more levers stay above idle.",
+              "label": "Thrust Levers",
+              "tier": "quick"
+            },
+            {
               "action": "ENGAGE",
               "id": "reverse-thrust",
-              "info": "Center Pedestal. Full reverse on all four engines down to about 80 kts, then idle reverse only.",
+              "info": "Center Pedestal. Reverser levers for engines 2 and 3 to MAX REV at touchdown, idle reverse below 80 kt.",
               "label": "Reverse Thrust",
               "tier": "quick"
             },
@@ -947,7 +975,7 @@
             {
               "action": "STBY",
               "id": "tcas",
-              "info": "Center Pedestal. FMS SURV page — TCAS to standby on the ground.",
+              "info": "Main Panel. SURV page on the MFD. TCAS to standby on the ground.",
               "label": "TCAS",
               "tier": "full"
             },
@@ -994,7 +1022,7 @@
             {
               "action": "NORM",
               "id": "eng-mode-selector",
-              "info": "Center Pedestal. Verify in NORM position.",
+              "info": "Overhead Panel. Verify in NORM position.",
               "label": "ENG Mode Selector",
               "tier": "full"
             },
@@ -1057,14 +1085,14 @@
               "id": "apu-bleed-2",
               "info": "Overhead Panel. Off before APU shutdown.",
               "label": "APU Bleed",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "apu-master",
               "info": "Overhead Panel. Shuts down the APU. External power takes over if connected.",
               "label": "APU Master",
-              "tier": "full"
+              "tier": "quick"
             },
             {
               "action": "OFF",
