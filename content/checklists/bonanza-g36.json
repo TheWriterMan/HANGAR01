@@ -1,4 +1,5 @@
 {
+  "addon": "Microsoft",
   "checklist": [
     {
       "groups": [
@@ -10,6 +11,13 @@
               "info": "Lower left subpanel. Prevents the aircraft from rolling during prep.",
               "label": "Parking Brake",
               "tier": "normal"
+            },
+            {
+              "action": "REMOVE",
+              "id": "control-locks",
+              "info": "Remove before moving the flight controls.",
+              "label": "Control Locks",
+              "tier": "full"
             },
             {
               "action": "OFF",
@@ -36,7 +44,7 @@
               "action": "ON",
               "id": "battery-1-2",
               "info": "Left subpanel.",
-              "label": "Battery 1+2",
+              "label": "Battery 1",
               "tier": "full"
             },
             {
@@ -49,14 +57,42 @@
             {
               "action": "CHECK",
               "id": "bus-voltage",
-              "info": "PFD, ENGINE/SYSTEM page. Bus 1 at least 23 volts, Bus 2 about 2 volts lower.",
+              "info": "PFD, ENGINE and SYSTEM soft keys. Bus 1 at least 23 volts, Bus 2 about 2 volts lower.",
               "label": "Bus Voltage",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "battery-2",
+              "info": "Left subpanel.",
+              "label": "Battery 2",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "battery-1",
+              "info": "Left subpanel.",
+              "label": "Battery 1",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "bus-voltage-2",
+              "info": "PFD. Bus 1 at 0 volts, Bus 2 at least 20 volts.",
+              "label": "Bus Voltage",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "battery-1-3",
+              "info": "Left subpanel.",
+              "label": "Battery 1",
               "tier": "full"
             },
             {
               "action": "CHECK",
               "id": "gear-position-lights",
-              "info": "Left subpanel, above gear handle. Three green.",
+              "info": "Left subpanel. Three green.",
               "label": "Gear Position Lights",
               "tier": "full"
             },
@@ -69,16 +105,16 @@
             },
             {
               "action": "CHECK",
-              "id": "stby-attitude",
-              "info": "Right of MFD. Standby attitude indicator. Check the flag is pulled.",
-              "label": "STBY Attitude",
+              "id": "exterior-lights",
+              "info": "Left subpanel. Exterior and interior lights, as required.",
+              "label": "Ext & Int Lights",
               "tier": "full"
             },
             {
               "action": "CHECK",
-              "id": "exterior-lights",
-              "info": "Left subpanel. Exterior and interior lights, as required.",
-              "label": "Exterior & Interior Lights",
+              "id": "stby-attitude",
+              "info": "Right side of the instrument panel. Standby attitude indicator. Check the flag is pulled.",
+              "label": "STBY Attitude",
               "tier": "full"
             },
             {
@@ -96,12 +132,14 @@
             {
               "action": "REMOVED",
               "id": "wheel-chocks",
+              "info": "Outside the aircraft.",
               "label": "Wheel Chocks",
               "tier": "normal"
             },
             {
               "action": "CLOSED",
               "id": "doors",
+              "info": "Cabin door lock indicator shows closed.",
               "label": "Doors",
               "tier": "normal"
             },
@@ -147,7 +185,7 @@
             {
               "action": "ARM",
               "id": "elt-switch",
-              "info": "Test, then arm.",
+              "info": "Arms the emergency locator transmitter.",
               "label": "ELT Switch",
               "tier": "full"
             },
@@ -164,13 +202,6 @@
               "info": "Left subpanel.",
               "label": "Alternator 1+2",
               "tier": "quick"
-            },
-            {
-              "action": "ON",
-              "id": "nav-lights",
-              "info": "Left subpanel. Position lights. As required.",
-              "label": "NAV Lights",
-              "tier": "normal"
             },
             {
               "action": "CHECK",
@@ -196,7 +227,7 @@
             {
               "action": "CHECK",
               "id": "aux-fuel-pump",
-              "info": "Left subpanel, left of gear handle. Select LOW and listen for the pump running, then OFF.",
+              "info": "Left subpanel. Select LOW and listen for the pump running, then OFF.",
               "label": "AUX Fuel Pump",
               "tier": "full"
             },
@@ -236,7 +267,7 @@
             {
               "action": "HIGH THEN OFF",
               "id": "aux-fuel-pump-prime",
-              "info": "Left subpanel, left of gear handle. HIGH until fuel flow peaks, then OFF.",
+              "info": "Left subpanel. HIGH until fuel flow peaks, then OFF.",
               "label": "AUX Fuel Pump",
               "tier": "quick"
             },
@@ -281,6 +312,20 @@
               "tier": "quick"
             },
             {
+              "action": "COMPLETE",
+              "id": "autopilot-preflight-test",
+              "info": "PFD. Red AFCS while the AHRS aligns, then white PFT for about 5 seconds, then the autopilot disconnect tone. Required before any flight using the autopilot or electric trim.",
+              "label": "AP Preflight Test",
+              "tier": "normal"
+            },
+            {
+              "action": "ACKNOWLEDGE",
+              "id": "mfd-database",
+              "info": "MFD. Press ENT to acknowledge the aviation database.",
+              "label": "MFD Database",
+              "tier": "normal"
+            },
+            {
               "action": "CHECK",
               "id": "pfd-mfd-normal",
               "info": "PFD and MFD. Both in normal mode.",
@@ -314,6 +359,13 @@
               "info": "Left subpanel.",
               "label": "Internal Lights",
               "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "nav-lights",
+              "info": "Left subpanel. Position lights. As required after start.",
+              "label": "NAV Lights",
+              "tier": "normal"
             },
             {
               "action": "SET",
@@ -353,14 +405,14 @@
             {
               "action": "ERECT",
               "id": "stby-attitude-erect",
-              "info": "Right of MFD. Pull the knob to erect, then release slowly.",
+              "info": "Right side of the instrument panel. Pull the knob to erect, then release slowly.",
               "label": "STBY Attitude",
               "tier": "full"
             },
             {
               "action": "SET QNH",
               "id": "stby-altimeter",
-              "info": "Right of MFD. Set local pressure.",
+              "info": "Set local pressure.",
               "label": "STBY Altimeter",
               "tier": "full"
             }
@@ -479,11 +531,11 @@
               "tier": "normal"
             },
             {
-              "action": "RELEASE",
-              "id": "parking-brake",
-              "info": "Lower left subpanel. Release after the run-up, before taxiing onto the runway.",
-              "label": "Parking Brake",
-              "tier": "normal"
+              "action": "CHECK",
+              "id": "electric-trim",
+              "info": "Left side of the pilot's control wheel. Each segment alone moves nothing; both together move the trim. AP DISC stops trim in motion.",
+              "label": "Electric Trim",
+              "tier": "full"
             }
           ],
           "title": "Run-Up"
@@ -502,7 +554,7 @@
               "id": "elevator-trim",
               "info": "Pedestal, left side. 6° nose up if only the front seats are occupied.",
               "label": "Elevator Trim",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET FOR T/O",
@@ -521,7 +573,7 @@
             {
               "action": "OFF",
               "id": "aux-fuel-pump-lineup",
-              "info": "Left subpanel, left of gear handle.",
+              "info": "Left subpanel.",
               "label": "AUX Fuel Pump",
               "tier": "full"
             },
@@ -538,6 +590,13 @@
               "info": "PFD.",
               "label": "PFD Attitude & Heading",
               "tier": "full"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Release as the last run-up item, before the final items.",
+              "label": "Parking Brake",
+              "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
@@ -623,6 +682,7 @@
             {
               "action": "CHECK",
               "id": "instruments-takeoff",
+              "info": "MFD. Manifold pressure, RPM, fuel flow, oil temperature and pressure.",
               "label": "Instruments",
               "tier": "normal"
             },
@@ -648,18 +708,18 @@
               "tier": "quick"
             },
             {
+              "action": "UP",
+              "id": "flaps-retract-takeoff",
+              "info": "Right subpanel. Retract if APH was used for takeoff. VFE APH 154 KIAS.",
+              "label": "Flaps",
+              "tier": "quick"
+            },
+            {
               "action": "100 KIAS",
               "id": "climb-speed",
               "info": "Once clear of obstacles, accelerate to 100 KIAS (Vy), or 110 KIAS for cruise climb.",
               "label": "Climb Speed",
               "tier": "quick"
-            },
-            {
-              "action": "UP",
-              "id": "flaps-retract-takeoff",
-              "info": "Right subpanel. If APH was used, retract after 84 KIAS.",
-              "label": "Flaps",
-              "tier": "normal"
             }
           ],
           "title": "Takeoff Roll"
@@ -680,9 +740,9 @@
               "tier": "normal"
             },
             {
-              "action": "UP / NO LIGHTS",
+              "action": "CHECK UP",
               "id": "landing-gear-climb",
-              "info": "Left subpanel. Gear up, no gear lights.",
+              "info": "Left subpanel. No gear lights.",
               "label": "Landing Gear",
               "tier": "normal"
             },
@@ -737,14 +797,8 @@
             },
             {
               "action": "AS REQUIRED",
-              "id": "anti-ice-climb",
-              "label": "Anti-Ice",
-              "tier": "full"
-            },
-            {
-              "action": "AS REQUIRED",
               "id": "aux-fuel-pump",
-              "info": "Left subpanel, left of gear handle. Do not use HIGH in flight. Use LOW if fuel flow is very low or fluctuating.",
+              "info": "Left subpanel. Use LOW and lean to the cyan climb marker if fuel flow is low or fluctuating.",
               "label": "AUX Fuel Pump",
               "tier": "full"
             },
@@ -767,20 +821,6 @@
         {
           "items": [
             {
-              "action": "SET",
-              "id": "cruise-power",
-              "info": "2500 RPM at 25 inHg (or max) for higher speed, or 2300 RPM at 23 inHg (or max) for more range.",
-              "label": "Cruise Power",
-              "tier": "quick"
-            },
-            {
-              "action": "LEAN",
-              "id": "mixture-cruise",
-              "info": "Pedestal. Find peak EGT, then set 20°C rich of peak for max power or 20°C lean of peak for economy. Plugs foul if the mixture is not leaned properly; the Bonanza Hangar toolbar panel shows fouled plugs.",
-              "label": "Mixture",
-              "tier": "quick"
-            },
-            {
               "action": "CLOSED",
               "id": "cowl-flaps-cruise",
               "info": "Pedestal.",
@@ -788,30 +828,38 @@
               "tier": "normal"
             },
             {
-              "action": "SWITCH",
-              "id": "fuel-selector-cruise",
-              "info": "Forward left of pilot seat. Switch tanks every 30 minutes.",
-              "label": "Fuel Selector",
+              "action": "SET",
+              "id": "cruise-power",
+              "info": "2500 RPM at 25 inHg (or max) for higher speed, or 2300 RPM at 23 inHg (or max) for more range.",
+              "label": "Cruise Power",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "aux-fuel-pump-cruise",
+              "info": "Left subpanel. If it was on for the climb. Return the mixture to full rich before turning it off.",
+              "label": "AUX Fuel Pump",
+              "tier": "full"
+            },
+            {
+              "action": "LEAN",
+              "id": "mixture-cruise",
+              "info": "Pedestal. MFD, ENGINE then LEAN soft keys. Rich of peak: lean until the first cylinder peaks, then enrich. Lean of peak: lean past the last cylinder's peak. Stay at least 20°C from peak EGT.",
+              "label": "Mixture",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
-              "id": "anti-ice-cruise",
-              "label": "Anti-Ice",
-              "tier": "full"
+              "id": "fuel-selector-cruise",
+              "info": "Forward left of pilot seat. Keep the imbalance under 15 gallons with the autopilot engaged.",
+              "label": "Fuel Selector",
+              "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "air-condition",
               "info": "Left subpanel.",
               "label": "Air Condition",
-              "tier": "full"
-            },
-            {
-              "action": "AS REQUIRED",
-              "id": "aux-fuel-pump-cruise",
-              "info": "Left subpanel, left of gear handle. Do not use HIGH in flight. Use LOW if fuel flow is very low or fluctuating.",
-              "label": "AUX Fuel Pump",
               "tier": "full"
             }
           ],
@@ -826,11 +874,39 @@
         {
           "items": [
             {
+              "action": "SET QNH",
+              "id": "altimeter-descent",
+              "info": "PFD. Set local pressure below the transition level.",
+              "label": "Altimeter",
+              "tier": "normal"
+            },
+            {
+              "action": "SET QNH",
+              "id": "stby-altimeter-descent",
+              "info": "Set local pressure.",
+              "label": "STBY Altimeter",
+              "tier": "full"
+            },
+            {
+              "action": "CONFIRM CLOSED",
+              "id": "cowl-flaps-descent",
+              "info": "Pedestal.",
+              "label": "Cowl Flaps",
+              "tier": "full"
+            },
+            {
               "action": "SET",
               "id": "descent-power",
-              "info": "Top of descent: altitude to lose in thousands of ft x 3 = NM out. Avoid prolonged idle power.",
+              "info": "Avoid prolonged idle settings. Cylinder head temperature should not fall below the green band.",
               "label": "Descent Power",
               "tier": "quick"
+            },
+            {
+              "action": "ENRICH",
+              "id": "mixture-descent",
+              "info": "Pedestal. Enrich as required during descent.",
+              "label": "Mixture",
+              "tier": "normal"
             },
             {
               "action": "SELECT FULLEST",
@@ -838,13 +914,6 @@
               "info": "Forward left of pilot seat.",
               "label": "Fuel Selector",
               "tier": "normal"
-            },
-            {
-              "action": "CLOSED",
-              "id": "cowl-flaps-descent",
-              "info": "Pedestal.",
-              "label": "Cowl Flaps",
-              "tier": "full"
             },
             {
               "action": "OFF",
@@ -856,22 +925,8 @@
             {
               "action": "ON",
               "id": "landing-lights-desc",
-              "info": "Left subpanel. On below 10,000 ft.",
+              "info": "Left subpanel.",
               "label": "Landing Lights",
-              "tier": "normal"
-            },
-            {
-              "action": "SET QNH",
-              "id": "altimeter-descent",
-              "info": "PFD. Set local pressure below the transition level.",
-              "label": "Altimeter",
-              "tier": "normal"
-            },
-            {
-              "action": "ENRICH",
-              "id": "mixture-descent",
-              "info": "Pedestal. Enrich as required during descent.",
-              "label": "Mixture",
               "tier": "normal"
             }
           ],
@@ -907,12 +962,6 @@
               "tier": "normal"
             },
             {
-              "action": "AS REQUIRED",
-              "id": "anti-ice-approach",
-              "label": "Anti-Ice",
-              "tier": "full"
-            },
-            {
               "action": "FULL RICH",
               "id": "mixture-approach",
               "info": "Pedestal. Full rich, or lean as required for altitude.",
@@ -922,14 +971,14 @@
             {
               "action": "APPROACH",
               "id": "flaps-approach",
-              "info": "Right subpanel. Set APH at about 130 KIAS. VFE APH 154 KIAS.",
+              "info": "Right subpanel. VFE APH 154 KIAS.",
               "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "DOWN",
               "id": "landing-gear-approach",
-              "info": "Left subpanel. On downwind for a visual approach, 3 NM out on an ILS, at about 90 KIAS. VLE 154 KIAS.",
+              "info": "Left subpanel. At 154 KIAS or below (VLE).",
               "label": "Landing Gear",
               "tier": "quick"
             },
@@ -943,7 +992,7 @@
             {
               "action": "FULL",
               "id": "flaps-full",
-              "info": "Right subpanel. On base for a visual approach, 3 NM out on an ILS. VFE full 124 KIAS.",
+              "info": "Right subpanel. At 124 KIAS or below (VFE full).",
               "label": "Flaps Full",
               "tier": "quick"
             },
@@ -1133,7 +1182,7 @@
               "id": "alternator-shutdown",
               "info": "Left subpanel.",
               "label": "Alternator 1+2",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "INSTALL",
@@ -1145,7 +1194,15 @@
             {
               "action": "SET",
               "id": "wheel-chocks",
+              "info": "Outside the aircraft.",
               "label": "Wheel Chocks",
+              "tier": "full"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake",
+              "info": "Lower left subpanel. Leave it off once the chocks are in.",
+              "label": "Parking Brake",
               "tier": "full"
             }
           ],
@@ -1156,15 +1213,14 @@
       "title": "Shutdown & Secure"
     }
   ],
-  "description": "Retractable-gear single-engine piston with a PFD and MFD glass cockpit. Max takeoff weight 3,650 lbs, max altitude 18,500 ft, range about 900 NM.",
+  "description": "Retractable-gear single-engine piston with a PFD and MFD glass cockpit. Max takeoff weight 3,650 lbs, service ceiling 18,500 ft.",
+  "flightsim": "MSFS",
   "isNew": true,
   "manufacturer": "Beechcraft",
   "model": "Bonanza",
+  "simDepth": "High Fidelity",
   "slug": "bonanza-g36",
   "status": "active",
   "suffix": " G36",
-  "systemsType": "piston",
-  "addon": "Microsoft",
-  "flightsim": "MSFS",
-  "simDepth": "High Fidelity"
+  "systemsType": "piston"
 }
