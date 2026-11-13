@@ -89,7 +89,7 @@
             {
               "action": "AUTO",
               "id": "probe-window-heat",
-              "info": "Overhead Panel. Should not be illuminated, as window heating is auto-managed.",
+              "info": "Overhead Panel. The pushbutton light should be off. Probe and window heat then run automatically.",
               "label": "Probe Window Heat",
               "tier": "normal"
             },
@@ -422,7 +422,7 @@
             {
               "action": "SET",
               "id": "flaps",
-              "info": "Pedestal. Flaps 1 for standard takeoff. Flaps 2 or 3 for short runways.",
+              "info": "Pedestal. Set the takeoff flaps shown on the MCDU PERF TAKE OFF page.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -523,7 +523,7 @@
             {
               "action": "CHECK",
               "id": "brakes",
-              "info": "Pedestal. Check brakes during initial taxi. Max taxi speed is 30 kts, turn at ~10 kts.",
+              "info": "Rudder Pedals. Leave a little thrust on and briefly press the brakes to check they work. Let the aircraft reach about 30 kts, then brake back to about 10 kts.",
               "label": "Brakes",
               "tier": "normal"
             }
@@ -555,16 +555,9 @@
             {
               "action": "AS REQUIRED",
               "id": "eng-mode",
-              "info": "Pedestal. Select IGN if water is on the runway or heavy rain is expected after takeoff.",
+              "info": "Pedestal. Select IGN/START if water is on the runway or heavy rain is expected after takeoff.",
               "label": "ENG Mode",
               "tier": "full"
-            },
-            {
-              "action": "AUTO",
-              "id": "pred-w-s",
-              "info": "Center Pedestal. Predictive windshear system. Set to AUTO for departure so it alerts you to wind shear on the runway and during climb.",
-              "label": "PRED W/S",
-              "tier": "normal"
             },
             {
               "action": "TEST",
@@ -672,13 +665,6 @@
               "info": "Main Panel. Confirm a positive rate of climb, then retract the landing gear.",
               "label": "Positive Climb",
               "tier": "quick"
-            },
-            {
-              "action": "DISARM",
-              "id": "ground-spoilers",
-              "info": "Pedestal. Disarm the ground spoilers after liftoff.",
-              "label": "Ground Spoilers",
-              "tier": "quick"
             }
           ],
           "title": "Takeoff Roll"
@@ -722,9 +708,16 @@
             {
               "action": "RETRACT",
               "id": "flaps",
-              "info": "Pedestal. Retract Flaps 1 at 'F' speed, and Flaps 0 at 'S' speed as indicated on the PFD.",
+              "info": "Pedestal. Retract with a positive speed trend, using the marks next to the PFD speed band. From Flaps 1+F, go straight to 0 at 'S'. From Flaps 2 or 3, go to 1 at 'F', then to 0 at 'S'.",
               "label": "Flaps",
               "tier": "quick"
+            },
+            {
+              "action": "DISARM",
+              "id": "ground-spoilers",
+              "info": "Pedestal. Push the speed brake lever down to disarm the ground spoilers once the flaps are at 0.",
+              "label": "Ground Spoilers",
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -778,7 +771,7 @@
               "id": "terrain-on-nd",
               "info": "Main Panel. Terrain on ND OFF.",
               "label": "Terrain on ND",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "AS REQUIRED",
@@ -803,13 +796,6 @@
               "id": "fma",
               "info": "Main Panel. Verify the correct autopilot and autothrust modes are engaged on the FMA.",
               "label": "FMA",
-              "tier": "normal"
-            },
-            {
-              "action": "CHECK",
-              "id": "pressurization",
-              "info": "Main Panel. Verify the landing elevation is set to AUTO on the ECAM PRESS page.",
-              "label": "Pressurization",
               "tier": "normal"
             },
             {
@@ -889,7 +875,7 @@
             {
               "action": "SET",
               "id": "fcu-altitude",
-              "info": "Glareshield. Set 3000 ft or the proper procedure altitude on the FCU. Do not initiate descent yet.",
+              "info": "Glareshield. Set the altitude ATC has cleared you to. Do not start the descent yet.",
               "label": "FCU Altitude",
               "tier": "normal"
             }
@@ -915,7 +901,7 @@
             {
               "action": "AS REQUIRED",
               "id": "eng-mode",
-              "info": "Pedestal. Set engine mode to IGN if heavy rain or turbulence is expected.",
+              "info": "Pedestal. Select IGN/START if heavy rain or turbulence is expected.",
               "label": "ENG Mode",
               "tier": "full"
             },
@@ -966,16 +952,16 @@
         {
           "items": [
             {
-              "action": "CHECK ON",
+              "action": "ON",
               "id": "ls-button",
-              "info": "Main Panel. Confirm the LS button is active and scales are visible on the PFD.",
+              "info": "Glareshield. Press LS if it is not on yet. The localizer and glideslope scales show on the PFD.",
               "label": "LS Button",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "eng-mode",
-              "info": "Pedestal. Select IGN on the engine mode selector if precipitation or icing conditions exist.",
+              "info": "Pedestal. Select IGN/START if precipitation or icing conditions exist.",
               "label": "ENG Mode",
               "tier": "full"
             },
@@ -996,7 +982,7 @@
             {
               "action": "CHECK SET",
               "id": "minimums",
-              "info": "Main Panel. Verify minimums are entered in the MCDU PERF approach page.",
+              "info": "Pedestal. Verify minimums are entered on the MCDU PERF APPR page.",
               "label": "Minimums",
               "tier": "normal"
             },
@@ -1010,9 +996,9 @@
             {
               "action": "ACTIVATE",
               "id": "mcdu-approach-phase",
-              "info": "Pedestal. Verify the approach phase is active in the MCDU to enable approach speeds.",
+              "info": "Pedestal. On the MCDU PERF page. In NAV mode the approach phase turns on by itself at the DECEL point. When flying ATC headings, activate it about 15 NM from touchdown. With managed speed, the aircraft then slows to green dot speed.",
               "label": "MCDU Approach Phase",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Approach Setup"
@@ -1022,7 +1008,7 @@
             {
               "action": "SET",
               "id": "flaps-1",
-              "info": "Pedestal. Select Flaps 1 at ~15 NM or when speed allows. Verify the green dot speed on the PFD.",
+              "info": "Pedestal. Select Flaps 1 at green dot speed, about 3 NM before the final descent point. The aircraft then slows to S speed.",
               "label": "Flaps 1",
               "tier": "quick"
             },
@@ -1050,7 +1036,7 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Main Panel. Lower the landing gear at the glideslope intercept or 2000 ft AGL. Verify 3 green lights.",
+              "info": "Main Panel. Lower the landing gear once Flaps 2 is set, between 2,500 and 1,500 ft above the ground. Verify 3 green lights.",
               "label": "Gear",
               "tier": "quick"
             },
@@ -1069,6 +1055,13 @@
               "tier": "normal"
             },
             {
+              "action": "ON",
+              "id": "rwy-turnoff-lights",
+              "info": "Overhead Panel. On together with the nose light at T.O. once Flaps 2 and the gear are down.",
+              "label": "RWY Turnoff Lights",
+              "tier": "full"
+            },
+            {
               "action": "SET",
               "id": "flaps-3",
               "info": "Pedestal. Select Flaps 3 as the speed continues to decrease.",
@@ -1085,9 +1078,9 @@
             {
               "action": "OFF",
               "id": "autopilot",
-              "info": "Glareshield. Disengage the autopilot for a manual landing, typically by 400 ft AGL. Leave engaged for an autoland.",
+              "info": "Glareshield. Press AP1 on the FCU at about 500 ft above the ground for a manual landing. Leave the autothrust on. Leave the autopilot engaged for an autoland.",
               "label": "Autopilot",
-              "tier": "quick"
+              "tier": "normal"
             }
           ],
           "title": "Configuration"
@@ -1124,7 +1117,7 @@
             {
               "action": "VERIFY",
               "id": "brakes",
-              "info": "Pedestal. Monitor autobrake or apply manual braking. Disengage autopilot after rollout if an autoland was performed.",
+              "info": "Rudder Pedals. Check the autobrake is slowing the aircraft. At about 40 kts, press the brakes to take over manually, which disengages the autobrake.",
               "label": "Brakes",
               "tier": "quick"
             }
@@ -1154,9 +1147,9 @@
               "tier": "normal"
             },
             {
-              "action": "OFF",
+              "action": "AUTO",
               "id": "strobes",
-              "info": "Overhead Panel. Strobes OFF after clearing the runway.",
+              "info": "Overhead Panel. AUTO once off the runway. Set ON while crossing a runway.",
               "label": "Strobes",
               "tier": "normal"
             },
@@ -1188,27 +1181,6 @@
           "items": [
             {
               "action": "OFF",
-              "id": "flight-directors",
-              "info": "Glareshield. Flight directors OFF.",
-              "label": "Flight Directors",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "ls-button",
-              "info": "Glareshield. LS button OFF.",
-              "label": "LS Button",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "terrain-on-nd",
-              "info": "Main Panel. Terrain on ND OFF.",
-              "label": "Terrain on ND",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
               "id": "weather-radar",
               "info": "Pedestal. Weather radar OFF.",
               "label": "Weather Radar",
@@ -1223,23 +1195,9 @@
             },
             {
               "action": "STBY",
-              "id": "transponder",
-              "info": "Pedestal. Transponder STBY.",
-              "label": "Transponder",
-              "tier": "normal"
-            },
-            {
-              "action": "STBY",
               "id": "tcas",
               "info": "Pedestal. TCAS STBY.",
               "label": "TCAS",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "autobrake",
-              "info": "Main Panel. Autobrake OFF.",
-              "label": "Autobrake",
               "tier": "normal"
             },
             {
@@ -1382,7 +1340,7 @@
               "id": "apu-master",
               "info": "Overhead Panel. APU Master OFF. Wait 2 minutes for the APU flap door to close before turning off the batteries, as closing it needs APU or external power.",
               "label": "APU Master",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "OFF",
