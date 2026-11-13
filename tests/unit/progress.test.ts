@@ -99,37 +99,63 @@ describe('loadProgress / saveProgress', () => {
     expect(store.size).toBe(0);
   });
 
-  it('migrates legacy progress on first load, writes v2 on save and keeps the legacy entry', () => {
-    const legacy = JSON.stringify({ 'preflight:0:0': true, 'preflight:1:0': true });
-    store.set(legacyProgressKey(slug), legacy);
+  it('migrates legacy progress on first load into v2 and deletes the legacy entry', () => {
+    store.set(
+      legacyProgressKey(slug),
+      JSON.stringify({ 'preflight:0:0': true, 'preflight:1:0': true }),
+    );
 
     const checked = loadProgress(slug, checklist);
     expect(checked.sort()).toEqual(['preflight/battery', 'preflight/beacon']);
+    expect(readV2(slug).checked).toEqual(['preflight/battery', 'preflight/beacon']);
+    expect(store.has(legacyProgressKey(slug))).toBe(false);
 
-    saveProgress(slug, checked, new Date('2026-09-27T10:00:00Z'));
-    expect(readV2(slug)).toEqual({
-      v: 2,
-      checked: ['preflight/battery', 'preflight/beacon'],
-      updatedAt: '2026-09-27T10:00:00.000Z',
-    });
-    expect(store.get(legacyProgressKey(slug))).toBe(legacy);
+    // The next save sees the same ticks and leaves the entry alone.
+    const before = store.get(progressKey(slug));
+    saveProgress(slug, checked);
+    expect(store.get(progressKey(slug))).toBe(before);
   });
 
-  it('prefers v2 over legacy once v2 exists', () => {
+  it('deletes a legacy entry left beside v2 without touching the v2 ticks', () => {
     store.set(legacyProgressKey(slug), JSON.stringify({ 'preflight:0:0': true }));
     saveProgress(slug, ['shutdown-secure/beacon']);
     expect(loadProgress(slug, checklist)).toEqual(['shutdown-secure/beacon']);
+    expect(store.has(legacyProgressKey(slug))).toBe(false);
+  });
+
+  it('deletes a legacy entry that is corrupt or has nothing ticked', () => {
+    store.set(legacyProgressKey(slug), 'not json');
+    expect(loadProgress(slug, checklist)).toEqual([]);
+    expect(store.size).toBe(0);
+    store.set(legacyProgressKey(slug), JSON.stringify({ 'preflight:0:0': false }));
+    expect(loadProgress(slug, checklist)).toEqual([]);
+    expect(store.size).toBe(0);
+  });
+
+  it('keeps the legacy entry when the v2 entry cannot be written', () => {
+    const legacy = JSON.stringify({ 'preflight:0:0': true });
+    store.set(legacyProgressKey(slug), legacy);
+    const realSet = memoryStorage.setItem;
+    memoryStorage.setItem = () => {
+      throw new Error('QuotaExceededError');
+    };
+    try {
+      expect(loadProgress(slug, checklist)).toEqual(['preflight/battery']);
+      expect(store.get(legacyProgressKey(slug))).toBe(legacy);
+    } finally {
+      memoryStorage.setItem = realSet;
+    }
   });
 
   it('does not resurrect legacy ticks after a reset', () => {
     store.set(legacyProgressKey(slug), JSON.stringify({ 'preflight:0:0': true }));
     saveProgress(slug, loadProgress(slug, checklist));
     saveProgress(slug, []); // user resets the flight
-    expect(readV2(slug)?.checked).toEqual([]);
+    expect(store.size).toBe(0); // the legacy entry went at load, so nothing is left to come back
     expect(loadProgress(slug, checklist)).toEqual([]);
   });
 
-  it('removes the v2 entry when emptied and no legacy entry exists', () => {
+  it('removes the v2 entry when emptied', () => {
     saveProgress(slug, ['preflight/battery']);
     saveProgress(slug, []);
     expect(store.has(progressKey(slug))).toBe(false);

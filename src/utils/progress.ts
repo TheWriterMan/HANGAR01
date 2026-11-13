@@ -9,7 +9,7 @@ import { readJSON, readStorage, removeStorage, writeStorage } from './storage';
  * reordering items can only drop a tick, never move it to another item.
  *
  * v1 (legacy): `HANGAR01_progress_<slug>` → { "<phaseId>:<groupIndex>:<itemIndex>": true }.
- * Positional. Migrated to v2 on first load; see loadProgress.
+ * Positional. On first load it is migrated to v2 and then deleted; see loadProgress.
  */
 
 export interface ProgressV2 {
@@ -21,8 +21,8 @@ export interface ProgressV2 {
 export const progressKey = (slug: string) => `hangar01:progress:v2:${slug}`;
 
 /**
- * Kept for one release after v2 ships, for rollback safety. The next release
- * should delete it on load.
+ * v1.1.0 kept this entry for one release as a rollback path. Since v1.1.1 it is
+ * only read once, to migrate it, and then deleted (PRA-150, in PRA-355).
  */
 export const legacyProgressKey = (slug: string) => `HANGAR01_progress_${slug}`;
 
@@ -94,16 +94,34 @@ export function migrateLegacyProgress(
 
 /**
  * Returns the checked keys for an aircraft. Uses v2 when present, otherwise
- * migrates v1. Keys that no longer match an item are ignored. Pure read:
- * the caller's next saveProgress writes the migrated v2 entry.
+ * migrates v1 into a v2 entry. Either way the v1 entry is then deleted, but
+ * only once the v2 entry is safely stored, so a failed write never loses ticks.
+ * Keys that no longer match an item are ignored.
  */
 export function loadProgress(slug: string, checklist: ChecklistPhase[]): string[] {
   const valid = collectItemKeys(checklist);
+  const legacyKey = legacyProgressKey(slug);
   const v2 = readJSON(progressKey(slug), isProgressV2);
-  if (v2) return [...new Set(v2.checked)].filter((k) => valid.has(k));
+  if (v2) {
+    removeStorage(legacyKey);
+    return [...new Set(v2.checked)].filter((k) => valid.has(k));
+  }
 
-  const legacy = readJSON(legacyProgressKey(slug), isLegacyProgress);
-  return legacy ? migrateLegacyProgress(legacy, checklist) : [];
+  if (readStorage(legacyKey) === null) return [];
+  const legacy = readJSON(legacyKey, isLegacyProgress);
+  const migrated = legacy ? migrateLegacyProgress(legacy, checklist) : [];
+  if (migrated.length === 0) {
+    removeStorage(legacyKey);
+    return [];
+  }
+  const value: ProgressV2 = {
+    v: 2,
+    checked: [...migrated].sort(),
+    updatedAt: new Date().toISOString(),
+  };
+  writeStorage(progressKey(slug), JSON.stringify(value));
+  if (readJSON(progressKey(slug), isProgressV2)) removeStorage(legacyKey);
+  return migrated;
 }
 
 const sameKeys = (a: string[], b: string[]) =>
@@ -114,9 +132,7 @@ export function saveProgress(slug: string, checked: Iterable<string>, now = new 
   const stored = readJSON(progressKey(slug), isProgressV2);
   if (stored && sameKeys([...new Set(stored.checked)].sort(), next)) return;
 
-  // While a legacy entry exists, an empty v2 entry must be written: removing it
-  // would make the next load migrate the old ticks back after a reset.
-  if (next.length === 0 && readStorage(legacyProgressKey(slug)) === null) {
+  if (next.length === 0) {
     removeStorage(progressKey(slug));
     return;
   }

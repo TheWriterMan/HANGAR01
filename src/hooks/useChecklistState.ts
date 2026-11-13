@@ -138,7 +138,7 @@ export function useChecklistState(
     setActivePhaseId('');
   }
 
-  // Also writes the migrated v2 entry on first load of a legacy checklist.
+  // loadProgress has already moved a legacy checklist to v2 and deleted the old entry.
   // Skipped until saved state has loaded, so the defaults never overwrite it.
   useEffect(() => {
     if (persist && loadedSlug === slug) saveProgress(slug, checkedKeys(completedItems));
