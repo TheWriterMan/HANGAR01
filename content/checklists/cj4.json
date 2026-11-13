@@ -7,7 +7,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "info": "Pull handle below the Tilt Panel. Prevents the aircraft from rolling during prep.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -28,7 +28,7 @@
             {
               "action": "RETRACTED",
               "id": "ground-spoilers",
-              "info": "Center Pedestal. Arms the spoiler panels to automatically destroy lift and increase braking effectiveness upon touchdown.",
+              "info": "Center Pedestal, speed brake lever. Nothing arms them: extend them by hand after touchdown.",
               "label": "Ground Spoilers",
               "tier": "normal"
             },
@@ -40,16 +40,23 @@
               "tier": "quick"
             },
             {
+              "action": "ON",
+              "id": "generators",
+              "info": "Electrical Panel. Puts the left and right generators on the main bus once the engines run.",
+              "label": "Generators L/R",
+              "tier": "normal"
+            },
+            {
               "action": "ARMED",
               "id": "emergency-lights",
-              "info": "Overhead Panel. Arms the emergency cabin and egress lighting in case of a power loss.",
+              "info": "Electrical Panel, beside the battery switch. Arms the emergency cabin and egress lighting in case of a power loss.",
               "label": "Emergency Lights",
               "tier": "normal"
             },
             {
               "action": "ON",
               "id": "stdby-flight-display",
-              "info": "Main Instrument Panel. Provides backup attitude, altitude, and airspeed information if primary displays fail.",
+              "info": "Electrical Panel. Provides backup attitude, altitude, and airspeed information if primary displays fail.",
               "label": "Stdby Flight Display",
               "tier": "normal"
             },
@@ -58,7 +65,7 @@
               "id": "avionics-switch",
               "info": "Left Switch Panel. Powers the primary avionics and displays in the cockpit.",
               "label": "Avionics Switch",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Cockpit Setup"
@@ -68,9 +75,9 @@
             {
               "action": "ON",
               "id": "ground-power",
-              "info": "Left Switch Panel. Connects external power if available (In FMC: IDX → NEXT → MOD SET → Ground Power Unit = ON).",
+              "info": "FMS: IDX → NEXT → MOD SET → Ground Power Unit = ON. Only at a parking spot that has ground power; the engines start on the battery alone.",
               "label": "Ground Power",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
@@ -138,7 +145,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "info": "Pull handle below the Tilt Panel. Prevents the aircraft from rolling during prep.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -180,7 +187,7 @@
             {
               "action": "OFF",
               "id": "climate-control",
-              "info": "Right Switch Panel. Manages cabin temperature and pressurization.",
+              "info": "Middle of the Tilt Panel. Manages cabin temperature and pressurization.",
               "label": "Climate Control",
               "tier": "normal"
             }
@@ -205,7 +212,7 @@
             {
               "action": "PUSH",
               "id": "engine-starter",
-              "info": "Left Switch Panel. Initiates the engine start sequence.",
+              "info": "Below the throttles. Initiates the engine start sequence.",
               "label": "Engine Starter",
               "tier": "quick"
             },
@@ -219,7 +226,7 @@
             {
               "action": "CHECK FOR RISE",
               "id": "itt",
-              "info": "EICAS / Main Instrument Panel. Monitors the Interstage Turbine Temperature during start to prevent overheating.",
+              "info": "EICAS / Main Instrument Panel. IGN shows at 12% N2; N1 and ITT then settle near 25% N1 and 600°C.",
               "label": "ITT",
               "tier": "quick"
             },
@@ -233,14 +240,14 @@
             {
               "action": "START",
               "id": "opposite-engine",
-              "info": "Left Switch Panel. Follow the same start sequence for the remaining engine.",
+              "info": "Below the throttles. Follow the same start sequence for the remaining engine.",
               "label": "Opposite Engine",
               "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "external-power",
-              "info": "Left Switch Panel. Disconnects ground power (In FMC: IDX → NEXT → MOD SET → Ground Power Unit = OFF).",
+              "info": "FMS: IDX → NEXT → MOD SET → Ground Power Unit = OFF.",
               "label": "External Power",
               "tier": "normal"
             },
@@ -272,14 +279,14 @@
             {
               "action": "NORM",
               "id": "climate-control",
-              "info": "Right Switch Panel. Manages cabin temperature and pressurization.",
+              "info": "Middle of the Tilt Panel. Manages cabin temperature and pressurization.",
               "label": "Climate Control",
               "tier": "normal"
             },
             {
               "action": "ON",
               "id": "seat-belts",
-              "info": "Overhead Panel. Seatbelt sign ON.",
+              "info": "Center console, next to the exterior lights. Seatbelt sign ON.",
               "label": "Seatbelt Sign",
               "tier": "normal"
             },
@@ -300,7 +307,7 @@
             {
               "action": "CHECK",
               "id": "ground-spoilers",
-              "info": "Center Pedestal. Arms the spoiler panels to automatically destroy lift and increase braking effectiveness upon touchdown.",
+              "info": "Center Pedestal, speed brake lever. Nothing arms them: extend them by hand after touchdown.",
               "label": "Ground Spoilers",
               "tier": "full"
             },
@@ -380,7 +387,7 @@
             {
               "action": "RELEASE",
               "id": "parking-brake",
-              "info": "Center Pedestal. Secures the aircraft from rolling while parked on the ground.",
+              "info": "Pull handle below the Tilt Panel. Secures the aircraft from rolling while parked on the ground.",
               "label": "Parking Brake",
               "tier": "quick"
             },
@@ -419,7 +426,7 @@
             {
               "action": "CHECK",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -449,7 +456,7 @@
               "id": "tcas",
               "info": "FMC / Center Pedestal. Set via FMS TUN page to monitor surrounding traffic and provide collision avoidance.",
               "label": "TCAS",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
@@ -468,7 +475,7 @@
             {
               "action": "ON",
               "id": "pitot-static-heat",
-              "info": "Left Switch Panel. Heats the pitot tubes and static ports to prevent ice blockage.",
+              "info": "Tilt Panel, Ice Protection section. Heats the pitot tubes and static ports to prevent ice blockage.",
               "label": "Pitot/Static Heat",
               "tier": "normal"
             }
@@ -558,35 +565,35 @@
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "info": "Center Pedestal. Retract after accelerating through V2 + 10.",
               "label": "Flaps",
-              "tier": "quick"
-            },
-            {
-              "action": "CLIMB",
-              "id": "throttles",
-              "info": "Center Pedestal. Controls the engine thrust.",
-              "label": "Throttles",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "yaw-damper",
-              "info": "Flight Guidance Panel. Engages the yaw damper to improve flight stability.",
+              "info": "Flight Guidance Panel. Engage after the flaps are up, no lower than 300 ft AGL.",
               "label": "Yaw Damper",
+              "tier": "quick"
+            },
+            {
+              "action": "CLIMB",
+              "id": "throttles",
+              "info": "Center Pedestal. Pull back to the CLB detent passing 1,000 ft AGL; FADEC manages climb power.",
+              "label": "Throttles",
               "tier": "quick"
             },
             {
               "action": "AS DESIRED",
               "id": "autopilot",
-              "info": "Flight Guidance Panel. Engage and disconnect to verify the autopilot system is functioning.",
+              "info": "Flight Guidance Panel. No lower than 300 ft AGL. FLC at 240 KIAS / M0.64 for the climb.",
               "label": "Autopilot",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -625,7 +632,7 @@
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -666,9 +673,16 @@
               "tier": "normal"
             },
             {
+              "action": "INITIATE",
+              "id": "descent-initiate",
+              "info": "Flight Guidance Panel. Top of descent ≈ (altitude to lose × 3) ÷ 1000 nm out. Use FLC, VS or VNAV, and slow to 250 KIAS by 10,000 ft.",
+              "label": "Descent",
+              "tier": "normal"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "full"
             },
@@ -689,7 +703,7 @@
             {
               "action": "ON",
               "id": "passenger-lights",
-              "info": "Overhead Panel. Illuminates the passenger cabin.",
+              "info": "FMS: IDX → NEXT → MOD SET → CABIN LIGHTS. The PASS LIGHTS buttons only play the safety announcements.",
               "label": "Passenger Lights",
               "tier": "normal"
             },
@@ -716,7 +730,7 @@
               "id": "landing-data",
               "info": "FMC / Center Pedestal. Confirms V-speeds and performance data are set for arrival.",
               "label": "Landing Data",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "CHECK",
@@ -733,23 +747,30 @@
               "tier": "normal"
             },
             {
+              "action": "ARM",
+              "id": "approach-mode",
+              "info": "Flight Guidance Panel. APPR arms LOC and GS, or LNV and GP. For an ILS, tune NAV1 on the FMS TUN page first.",
+              "label": "Approach Mode",
+              "tier": "normal"
+            },
+            {
               "action": "OFF",
               "id": "fuel-transfer",
-              "info": "Center Pedestal. Manages fuel balance between the wing tanks if an imbalance occurs.",
+              "info": "Tilt Panel, next to the climate control selector. Manages fuel balance between the wing tanks if an imbalance occurs.",
               "label": "Fuel Transfer",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "full"
             },
             {
               "action": "VERIFY ON",
               "id": "seat-belts",
-              "info": "Overhead Panel. Seatbelt sign ON.",
+              "info": "Center console, next to the exterior lights. Seatbelt sign ON.",
               "label": "Seatbelt Sign",
               "tier": "normal"
             }
@@ -761,7 +782,7 @@
             {
               "action": "15°",
               "id": "flaps",
-              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "info": "Center Pedestal. VFE 200 KIAS at 15°. Be at 200 KIAS or less before starting the approach.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -775,14 +796,14 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Main Instrument Panel. Controls the extension and retraction of the landing gear.",
+              "info": "Main Instrument Panel. VLE 200 KIAS.",
               "label": "Gear",
               "tier": "quick"
             },
             {
               "action": "35°",
               "id": "flaps-2",
-              "info": "Center Pedestal. Increases lift and drag for takeoff and landing operations.",
+              "info": "Center Pedestal. VFE 160 KIAS at 35°. No faster than 160 KIAS by the FAF.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -803,9 +824,9 @@
             {
               "action": "OFF",
               "id": "autopilot",
-              "info": "Flight Guidance Panel. Disengage before short final.",
+              "info": "Flight Guidance Panel. Disengage no lower than 200 ft AGL.",
               "label": "Autopilot",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -842,7 +863,7 @@
             {
               "action": "EXTEND",
               "id": "ground-spoilers",
-              "info": "Center Pedestal. Arms the spoiler panels to automatically destroy lift and increase braking effectiveness upon touchdown.",
+              "info": "Center Pedestal, speed brake lever. Nothing arms them: extend them by hand after touchdown.",
               "label": "Ground Spoilers",
               "tier": "quick"
             }
@@ -874,14 +895,14 @@
             {
               "action": "OFF",
               "id": "pitot-static-heat",
-              "info": "Left Switch Panel. Heats the pitot tubes and static ports to prevent ice blockage.",
+              "info": "Tilt Panel, Ice Protection section. Heats the pitot tubes and static ports to prevent ice blockage.",
               "label": "Pitot/Static Heat",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "normal"
             },
@@ -908,6 +929,13 @@
             },
             {
               "action": "OFF",
+              "id": "landing-lights",
+              "info": "Left Switch Panel. Off once clear of the runway.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
               "id": "strobes",
               "info": "Left Switch Panel. Activates high-intensity strobe lights to increase aircraft visibility.",
               "label": "Strobes",
@@ -927,7 +955,7 @@
             {
               "action": "SET",
               "id": "parking-brake",
-              "info": "Center Pedestal. Secures the aircraft from rolling while parked on the ground.",
+              "info": "Pull handle below the Tilt Panel. Secures the aircraft from rolling while parked on the ground.",
               "label": "Parking Brake",
               "tier": "normal"
             },
@@ -955,14 +983,14 @@
             {
               "action": "OFF",
               "id": "emergency-lights",
-              "info": "Overhead Panel. Arms the emergency cabin and egress lighting in case of a power loss.",
+              "info": "Electrical Panel, beside the battery switch. Arms the emergency cabin and egress lighting in case of a power loss.",
               "label": "Emergency Lights",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "stdby-flight-display",
-              "info": "Main Instrument Panel. Provides backup attitude, altitude, and airspeed information if primary displays fail.",
+              "info": "Electrical Panel. Provides backup attitude, altitude, and airspeed information if primary displays fail.",
               "label": "Stdby Flight Display",
               "tier": "normal"
             },
@@ -976,7 +1004,7 @@
             {
               "action": "OFF",
               "id": "climate-control",
-              "info": "Right Switch Panel. Manages cabin temperature and pressurization.",
+              "info": "Middle of the Tilt Panel. Manages cabin temperature and pressurization.",
               "label": "Climate Control",
               "tier": "normal"
             }
@@ -988,14 +1016,14 @@
             {
               "action": "OFF",
               "id": "ice-protection",
-              "info": "Left and Right Switch Panels. Configures anti-ice and de-ice systems for current weather conditions.",
+              "info": "Tilt Panel, Ice Protection section. Configures anti-ice and de-ice systems for current weather conditions.",
               "label": "Ice Protection",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "passenger-lights",
-              "info": "Overhead Panel. Illuminates the passenger cabin.",
+              "info": "FMS: IDX → NEXT → MOD SET → CABIN LIGHTS. The PASS LIGHTS buttons only play the safety announcements.",
               "label": "Passenger Lights",
               "tier": "normal"
             },
