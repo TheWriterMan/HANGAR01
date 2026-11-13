@@ -132,14 +132,14 @@
               "id": "hyd-demand-pumps",
               "info": "Left, center, and right demand pumps in AUTO. They come on automatically when the system needs extra pressure.",
               "label": "Hyd Demand Pumps",
-              "tier": "full"
+              "tier": "quick"
             },
             {
               "action": "ON",
               "id": "hyd-emps",
               "info": "C1 and C2 electric primary pumps on. The 777 fly-by-wire needs hydraulic pressure to move the control surfaces.",
               "label": "Hyd EMPs",
-              "tier": "normal"
+              "tier": "quick"
             }
           ],
           "title": "Overhead Flow"
@@ -285,14 +285,14 @@
             {
               "action": "SET",
               "id": "mcp-bugs",
-              "info": "Speed bug at V2 + 10, heading at the runway, altitude at initial cleared level. These are what the autopilot and FD will fly to after takeoff.",
+              "info": "Speed bug at V2, heading at the runway, altitude at initial cleared level. These are what the autopilot and FD will fly to after takeoff.",
               "label": "MCP Bugs",
               "tier": "quick"
             },
             {
               "action": "ARM",
               "id": "lnav-vnav",
-              "info": "Both armed before takeoff. They engage at the thrust reduction altitude and start flying the FMC route and vertical profile.",
+              "info": "Both armed before takeoff. VNAV engages at 400 ft, and LNAV is engaged by then. From there they fly the FMC route and vertical profile.",
               "label": "LNAV / VNAV",
               "tier": "quick"
             },
@@ -472,7 +472,7 @@
             {
               "action": "RUN",
               "id": "engine-2-fuel",
-              "info": "Move the fuel control lever to RUN once N2 stabilises around 25%. That introduces fuel and the engine lights off.",
+              "info": "Move the fuel control lever to RUN right after selecting START. There is no need to wait for engine rotation or oil pressure; Autostart manages the start.",
               "label": "Engine 2 Fuel",
               "tier": "quick"
             },
@@ -486,7 +486,7 @@
             {
               "action": "START",
               "id": "engine-1",
-              "info": "Same sequence: pull the start selector, then fuel control to RUN at ~25% N2. Wait for engine 2 to stabilise before kicking off engine 1.",
+              "info": "Same sequence: pull the start selector, then move the fuel control to RUN right away. Wait for engine 2 to stabilise before kicking off engine 1.",
               "label": "Engine 1",
               "tier": "quick"
             },
@@ -511,22 +511,8 @@
             },
             {
               "action": "OFF",
-              "id": "apu-generators",
-              "info": "Hand the electrical load over from the APU to the engine generators now that both engines are stable.",
-              "label": "APU Generators",
-              "tier": "quick"
-            },
-            {
-              "action": "OFF",
-              "id": "apu-bleed",
-              "info": "Engines now feed the pneumatic system — APU bleed no longer needed.",
-              "label": "APU Bleed",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
               "id": "apu",
-              "info": "Engines now feed the pneumatic system — APU bleed no longer needed.",
+              "info": "Both engines now supply electrics and bleed air, so the APU can shut down.",
               "label": "APU",
               "tier": "normal"
             },
@@ -634,7 +620,7 @@
               "id": "transponder",
               "info": "Switches the TCAS to full-resolution mode. With it active, the system can call CLIMB or DESCEND to avoid other traffic.",
               "label": "Transponder",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "AS REQUIRED",
@@ -683,7 +669,7 @@
             {
               "action": "TOGA",
               "id": "throttles",
-              "info": "Stabilise around 55% N1 first to let both GE90s spool together, then push the throttles forward to TO/GA. The autothrottle takes over and sets full takeoff thrust.",
+              "info": "Stabilise near 55% N1, then press TO/GA. The autothrottle takes over and sets full takeoff thrust.",
               "label": "Throttles",
               "tier": "quick"
             },
@@ -715,7 +701,7 @@
             {
               "action": "RETRACT",
               "id": "flaps",
-              "info": "On the speed bugs in sequence: 20 down to 15, then 5, then 1, then UP. Usually starts at acceleration altitude, around 1,500 ft AGL.",
+              "info": "On the speed bugs in sequence: 15 or 20 to 5, then 1, then UP. Usually starts at acceleration altitude, around 1,500 ft AGL.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -912,11 +898,11 @@
               "tier": "full"
             },
             {
-              "action": "PRESELECT",
+              "action": "SET",
               "id": "approach-altitude",
-              "info": "Set the platform altitude for the final approach fix on the MCP. The lowest you should be before glideslope capture or starting the final descent.",
-              "label": "Approach Altitude",
-              "tier": "normal"
+              "info": "Glareshield (MCP). Set a lower altitude before T/D or VNAV won't descend.",
+              "label": "MCP Altitude",
+              "tier": "quick"
             }
           ],
           "title": "Descent Prep"
@@ -954,7 +940,7 @@
             {
               "action": "SET QNH",
               "id": "altimeters",
-              "info": "Set local pressure passing the transition level on descent. Now your altimeter reads above ground again instead of pressure altitude.",
+              "info": "Set local pressure passing the transition level on descent. The altimeter now reads altitude above sea level instead of pressure altitude.",
               "label": "Altimeters",
               "tier": "normal"
             }
@@ -989,13 +975,6 @@
               "info": "Push LOC to capture the localiser, then APP once established. Both LOC and G/S go green on the FMA when captured.",
               "label": "Approach Mode",
               "tier": "quick"
-            },
-            {
-              "action": "SET",
-              "id": "missed-approach-alt",
-              "info": "Pre-set the go-around altitude on the MCP. If you push TO/GA, the autopilot immediately captures the right level-off.",
-              "label": "Missed Approach Alt",
-              "tier": "normal"
             }
           ],
           "title": "Approach Setup"
@@ -1018,21 +997,21 @@
             {
               "action": "SET",
               "id": "flaps-15",
-              "info": "Plan for Flaps 15 / Gear UP / ~170 KIAS at the final approach fix.",
+              "info": "Usually skipped. The standard sequence goes from Flaps 5 to gear down and Flaps 20; Flaps 15 is for manoeuvring before the approach.",
               "label": "Flaps 15",
-              "tier": "quick"
+              "tier": "full"
             },
             {
               "action": "SET",
               "id": "flaps-20",
-              "info": "At glideslope intercept, around 8 NM out.",
+              "info": "At glideslope alive, together with the gear.",
               "label": "Flaps 20",
               "tier": "quick"
             },
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Three green lights confirmed on the EICAS — all gear down and locked.",
+              "info": "At glideslope alive, together with Flaps 20. Three green lights confirmed on the EICAS — all gear down and locked.",
               "label": "Gear",
               "tier": "quick"
             },
@@ -1042,6 +1021,13 @@
               "info": "Flaps 25 or 30 on glideslope. Latest by 1,000 ft AGL — you want a stable approach by then.",
               "label": "Landing Flaps",
               "tier": "quick"
+            },
+            {
+              "action": "SET",
+              "id": "missed-approach-alt",
+              "info": "Set the go-around altitude on the MCP once G/S is captured. If you push TO/GA, the autopilot immediately captures the right level-off.",
+              "label": "Missed Approach Alt",
+              "tier": "normal"
             },
             {
               "action": "ARM",
@@ -1056,6 +1042,13 @@
               "info": "Looking for LAND 3 with ROLLOUT and FLARE armed if you are letting it autoland. Otherwise plan to disconnect by minimums.",
               "label": "FMA",
               "tier": "full"
+            },
+            {
+              "action": "DISCONNECT",
+              "id": "autopilot",
+              "info": "Control wheel. By minimums for a manual landing. After autoland, disconnect before turning off the runway.",
+              "label": "Autopilot",
+              "tier": "normal"
             }
           ],
           "title": "Configuration"
@@ -1092,7 +1085,7 @@
             {
               "action": "IDLE",
               "id": "reverse",
-              "info": "Pull reverse out of detent at 60 KIAS. Below that the engines can ingest debris kicked up off the runway.",
+              "info": "Ease to reverse idle by 60 kts. Below that the engines can ingest debris kicked up off the runway.",
               "label": "Reverse",
               "tier": "full"
             },
@@ -1254,12 +1247,6 @@
               "tier": "full"
             },
             {
-              "action": "STBY",
-              "id": "transponder-2",
-              "label": "Transponder",
-              "tier": "full"
-            },
-            {
               "action": "OFF",
               "id": "flight-director",
               "info": "Clears the magenta bars so the next crew can set up fresh.",
@@ -1281,7 +1268,7 @@
             {
               "action": "OFF",
               "id": "adiru",
-              "info": "Saves the alignment data for next flight.",
+              "info": "Switching off loses the alignment, so the next flight starts with a fresh one.",
               "label": "ADIRU",
               "tier": "full"
             },
@@ -1301,7 +1288,7 @@
             {
               "action": "AS REQUIRED",
               "id": "apu-2",
-              "info": "Leave running on external power as needed during the turnaround for galley and cabin power.",
+              "info": "Leave running for galley and cabin power during the turnaround, or shut it down once external power is connected.",
               "label": "APU",
               "tier": "normal"
             },
