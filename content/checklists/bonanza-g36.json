@@ -600,9 +600,9 @@
               "tier": "quick"
             },
             {
-              "action": "FULL RICH",
+              "action": "SET CLIMB FF",
               "id": "mixture-takeoff",
-              "info": "Pedestal. Full rich, or lean as required for field altitude.",
+              "info": "Pedestal. Set fuel flow at the cyan climb marker on the fuel flow gauge: 25.7 GPH at sea level at 2700 RPM.",
               "label": "Mixture",
               "tier": "quick"
             },
