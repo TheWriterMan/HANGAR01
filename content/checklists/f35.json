@@ -54,25 +54,11 @@
               "tier": "quick"
             },
             {
-              "action": "ADJUST",
-              "id": "rudder-pedals",
-              "info": "Cockpit floor.",
-              "label": "Rudder Pedals",
-              "tier": "normal"
-            },
-            {
-              "action": "CONNECT",
-              "id": "oxygen-g-suit",
-              "info": "Seat. Connect the oxygen, G-suit and helmet leads.",
-              "label": "Oxygen & G-Suit",
-              "tier": "normal"
-            },
-            {
               "action": "SECURE",
               "id": "harness",
               "info": "Seat. Fasten the harness and leg restraints.",
               "label": "Harness",
-              "tier": "normal"
+              "tier": "full"
             }
           ],
           "title": "Safety Check"
@@ -81,24 +67,17 @@
           "items": [
             {
               "action": "OFF",
-              "id": "ipp-master",
-              "info": "Left Panel. IPP is the Integrated Power Package.",
-              "label": "IPP Master",
-              "tier": "quick"
-            },
-            {
-              "action": "OFF",
               "id": "icc-switches",
-              "info": "Left Panel. ICC1 and ICC2 inverter/controller/converter switches.",
-              "label": "ICC 1 & 2",
+              "info": "Left Panel, PTMS panel. ICC 1 and 2 are the engine generators. ICC 3, marked IPP, is the IPP generator.",
+              "label": "ICC 1, 2 & 3",
               "tier": "quick"
             },
             {
               "action": "NORM",
               "id": "cabin-pressure",
-              "info": "Left Panel. Cabin pressure selector.",
+              "info": "Left Panel, PTMS panel. Positions DUMP, NORM and ALTN. The knob has no function in the sim.",
               "label": "Cabin Pressure",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "OFF",
@@ -136,7 +115,7 @@
               "tier": "normal"
             },
             {
-              "action": "EXT",
+              "action": "SEL",
               "id": "jettison-selector",
               "info": "Left Vertical Panel. Stores jettison selector.",
               "label": "JETTISON Selector",
@@ -204,16 +183,9 @@
           "items": [
             {
               "action": "ON",
-              "id": "ipp-master-on",
-              "info": "Left Panel. Integrated Power Package master switch.",
-              "label": "IPP Master",
-              "tier": "quick"
-            },
-            {
-              "action": "ON",
               "id": "icc-switches-on",
-              "info": "Left Panel. Both ICC1 and ICC2.",
-              "label": "ICC 1 & 2",
+              "info": "Left Panel, PTMS panel. All three must be ON to power the engine start.",
+              "label": "ICC 1, 2 & 3",
               "tier": "quick"
             },
             {
@@ -224,9 +196,23 @@
               "tier": "quick"
             },
             {
+              "action": "START",
+              "id": "ipp-selector-start",
+              "info": "Left Panel, PTMS panel. Starts the IPP. The green light next to the knob starts blinking.",
+              "label": "IPP Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "STEADY GREEN",
+              "id": "ipp-light",
+              "info": "Left Panel, next to the IPP knob. Blinks while the IPP starts and stays steady once it is running. The BURN caption also shows between the engine and fuel FABs.",
+              "label": "IPP Light",
+              "tier": "quick"
+            },
+            {
               "action": "AUTO",
               "id": "ipp-selector-auto",
-              "info": "Left Panel. Middle position.",
+              "info": "Left Panel, PTMS panel. Middle position. Turn back once the green light is steady.",
               "label": "IPP Selector",
               "tier": "quick"
             },
@@ -259,11 +245,11 @@
               "tier": "full"
             },
             {
-              "action": "CHECK",
-              "id": "remaining-brake-appl",
-              "info": "Left Vertical Panel. Remaining brake applications indicator.",
-              "label": "Remaining Brake Appl",
-              "tier": "full"
+              "action": "ON",
+              "id": "position-lights",
+              "info": "PCD MENU, LITES page, POSIT. Turns on the wing navigation lights.",
+              "label": "Position Lights",
+              "tier": "normal"
             }
           ],
           "title": "Pre-Start Flow"
@@ -275,13 +261,6 @@
               "id": "engine-switch-norm",
               "info": "Left Panel. Guarded switch.",
               "label": "ENGINE Switch",
-              "tier": "quick"
-            },
-            {
-              "action": "START",
-              "id": "ipp-selector-start",
-              "info": "Left Panel.",
-              "label": "IPP Selector",
               "tier": "quick"
             },
             {
@@ -311,17 +290,10 @@
         {
           "items": [
             {
-              "action": "CHECK",
-              "id": "ipp-powered",
-              "info": "Left Panel. Check the IPP selector shows powered up.",
-              "label": "IPP Status",
-              "tier": "normal"
-            },
-            {
               "action": "VERIFY AUTO",
-              "id": "cabin-pressure",
-              "info": "Left Panel. Cabin pressure selector.",
-              "label": "Cabin Pressure",
+              "id": "ipp-powered",
+              "info": "Left Panel, PTMS panel. The knob stays in AUTO after the start.",
+              "label": "IPP Selector",
               "tier": "full"
             },
             {
@@ -343,20 +315,6 @@
               "id": "comms-nav",
               "info": "PCD. Set up COMS, VOR/ILS and TACAN as desired.",
               "label": "COMS & NAV",
-              "tier": "normal"
-            },
-            {
-              "action": "AS REQUIRED",
-              "id": "strobe-lights",
-              "info": "PCD Menu Lights page.",
-              "label": "Strobe Lights",
-              "tier": "full"
-            },
-            {
-              "action": "ON",
-              "id": "iff",
-              "info": "PCD.",
-              "label": "IFF",
               "tier": "normal"
             },
             {
@@ -448,6 +406,13 @@
               "tier": "full"
             },
             {
+              "action": "ENGAGE",
+              "id": "nose-wheel-steering",
+              "info": "Stick pinkie switch, bound to the sim's SET NOSE WHEEL STEERING TO LIMIT control. Steering starts disengaged, so the nose wheel will not turn until it is engaged.",
+              "label": "Nose Wheel Steering",
+              "tier": "quick"
+            },
+            {
               "action": "RELEASE",
               "id": "parking-brake-release",
               "info": "Left Vertical Panel. Release to begin taxi.",
@@ -483,9 +448,9 @@
             {
               "action": "ARMED",
               "id": "ejection-seat-armed",
-              "info": "Seat.",
+              "info": "Seat. A SEAT NOT ARMED caution shows above 80% RPM if the seat is still safe.",
               "label": "Ejection Seat",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "IN",
@@ -502,10 +467,10 @@
               "tier": "full"
             },
             {
-              "action": "FLAPS 1",
+              "action": "MAN",
               "id": "manual-trim",
-              "info": "Flap lever. Flaps 1 selects manual trim, recommended for every takeoff. Autotrim is only active at Flaps 0.",
-              "label": "Manual Trim",
+              "info": "Sim flaps key (or the FCS button). Any flaps position but UP selects MAN mode: manual trim, with the G and AoA limiters off. The FCS page shows MAN. Recommended for every takeoff.",
+              "label": "FCS Mode",
               "tier": "normal"
             },
             {
@@ -528,6 +493,20 @@
               "info": "Helmet.",
               "label": "Helmet Visor",
               "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "strobe-lights",
+              "info": "PCD MENU, LITES page, STROB.",
+              "label": "Strobe Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "ON",
+              "id": "iff",
+              "info": "PCD. Switch from GROUND to ON for takeoff.",
+              "label": "IFF",
+              "tier": "normal"
             }
           ],
           "title": "Lineup"
@@ -594,10 +573,10 @@
               "tier": "quick"
             },
             {
-              "action": "FLAPS 0",
+              "action": "AUTO",
               "id": "autotrim-engage",
-              "info": "Flap lever. Flaps 0 selects autotrim. Select once stabilized in conventional mode above 100 ft AGL.",
-              "label": "Autotrim",
+              "info": "Sim flaps key UP (or the FCS button). AUTO mode trims by itself and turns the G and AoA limiters on. The FCS page shows AUTO. Select once stabilized above 100 ft AGL.",
+              "label": "FCS Mode",
               "tier": "normal"
             },
             {
@@ -608,11 +587,18 @@
               "tier": "normal"
             },
             {
+              "action": "ON",
+              "id": "autopilot",
+              "info": "PCD FCS page, A/P. Set the modes on the AP/AT page: ALT SEL, HDG SEL or RTE HOLD to follow the flight plan.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
+            {
               "action": "CHECK",
               "id": "cabin-press-climb",
               "info": "Left Panel. Check cabin pressurization.",
               "label": "Cabin Pressure",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "CHECK",
@@ -636,20 +622,6 @@
               "tier": "full"
             },
             {
-              "action": "SAFE",
-              "id": "master-arm-enroute",
-              "info": "Center Instrument Panel.",
-              "label": "Master Arm",
-              "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "coms-nav",
-              "info": "PCD. Set the displays, COMS and NAV as needed.",
-              "label": "COMS & NAV",
-              "tier": "normal"
-            },
-            {
               "action": "SET STD",
               "id": "altimeter-std",
               "info": "PCD. Set standard pressure (29.92/1013) at the transition altitude.",
@@ -668,24 +640,43 @@
         {
           "items": [
             {
+              "action": "SAFE",
+              "id": "master-arm",
+              "info": "Center Instrument Panel.",
+              "label": "Master Arm",
+              "tier": "normal"
+            },
+            {
+              "action": "SET",
+              "id": "coms-nav",
+              "info": "PCD. Set the displays, COMS and NAV as needed.",
+              "label": "COMS & NAV",
+              "tier": "normal"
+            },
+            {
               "action": "SET LOCAL",
               "id": "altimeter-local",
               "info": "PCD. Set local pressure passing the transition level on descent.",
               "label": "Altimeter",
               "tier": "normal"
-            },
-            {
-              "action": "FLAPS 1",
-              "id": "manual-trim",
-              "info": "Flap lever. Flaps 1 selects manual trim, recommended for landings flown with the On Speed AOA technique. Autotrim changes to direct law below 50 ft AGL.",
-              "label": "Manual Trim",
-              "tier": "quick"
-            },
+            }
+          ],
+          "title": "Descent"
+        },
+        {
+          "items": [
             {
               "action": "ON",
               "id": "landing-lights-app",
               "info": "Left Vertical Panel.",
               "label": "Landing Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "PCD FCS page, A/P. The pattern and landing are flown by hand.",
+              "label": "Autopilot",
               "tier": "normal"
             },
             {
@@ -696,10 +687,10 @@
               "tier": "normal"
             },
             {
-              "action": "BELOW 300 KIAS",
+              "action": "3G",
               "id": "break-turn",
-              "info": "Upwind leg, at least 1.5 NM abeam. 3G break into the downwind leg. Leave the break at about 250 to 300 KIAS and hold 800 ft AGL.",
-              "label": "3G Break Turn",
+              "info": "Upwind leg, at least 1.5 NM abeam. Enter at 400 to 500 KIAS and break into the downwind leg at 3G. Roll out at about 250 to 300 KIAS and hold 800 ft AGL.",
+              "label": "Break Turn",
               "tier": "normal"
             },
             {
@@ -707,6 +698,13 @@
               "id": "gear-down",
               "info": "Left Vertical Panel. Downwind leg, below 300 KIAS.",
               "label": "Gear",
+              "tier": "quick"
+            },
+            {
+              "action": "MAN",
+              "id": "manual-trim",
+              "info": "Sim flaps key (or the FCS button). Any flaps position but UP selects MAN mode: manual trim, with the G and AoA limiters off. Above 400 KIAS in MAN the FCS DEGRADED caution shows. Depending on the PMD/DR page setting, gear down or descending below 50 ft AGL selects MAN by itself.",
+              "label": "FCS Mode",
               "tier": "quick"
             },
             {
@@ -808,6 +806,52 @@
       ],
       "id": "landing",
       "title": "Landing"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "SET",
+              "id": "parking-brake",
+              "info": "Left Vertical Panel. Prevents the aircraft from rolling.",
+              "label": "Parking Brake",
+              "tier": "normal"
+            },
+            {
+              "action": "SAFE",
+              "id": "ejection-seat",
+              "info": "Seat.",
+              "label": "Ejection Seat",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "land-taxi-lights",
+              "info": "Left Vertical Panel.",
+              "label": "LAND/TAXI Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "throttle",
+              "info": "Left Panel. Full aft. Stops the engine. The IPP shuts down by itself once the engine stops.",
+              "label": "Throttle",
+              "tier": "quick"
+            },
+            {
+              "action": "OFF",
+              "id": "batt-switch",
+              "info": "Left Panel, PTMS panel.",
+              "label": "BATT Switch",
+              "tier": "quick"
+            }
+          ],
+          "title": "Shutdown"
+        }
+      ],
+      "id": "shutdown-secure",
+      "title": "Shutdown & Secure"
     }
   ],
   "description": "Conventional takeoff and landing (CTOL) variant of the F-35, with most systems run through the panoramic cockpit display.",
