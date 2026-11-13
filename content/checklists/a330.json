@@ -42,7 +42,7 @@
             {
               "action": "IDLE",
               "id": "thrust-levers",
-              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "info": "Center Pedestal. Both levers at idle before power-up.",
               "label": "Thrust Levers",
               "tier": "normal"
             },
@@ -216,14 +216,14 @@
             {
               "action": "SET",
               "id": "fcu-altitude",
-              "info": "Glareshield (FCU). Sets the target altitude. Set your platform altitude or the last waypoint altitude before the runway, but do not push yet.",
+              "info": "Glareshield (FCU). Set the initial climb altitude from your departure clearance.",
               "label": "FCU Altitude",
               "tier": "quick"
             },
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "info": "Primary Flight Display. The Flight Mode Annunciator shows the autothrust and autopilot modes. With the flight directors on, check SRS (takeoff mode) and NAV in blue, armed.",
               "label": "FMA",
               "tier": "full"
             }
@@ -368,7 +368,7 @@
             {
               "action": "VERIFY IDLE",
               "id": "thrust-levers",
-              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "info": "Center Pedestal. Both levers must be at idle before engine start.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
@@ -381,16 +381,16 @@
             },
             {
               "action": "ON",
-              "id": "engine-master-1",
-              "info": "Center Pedestal. Initiates the start sequence for engine 1. Monitor N2, EGT, and fuel flow until stabilized before starting engine 2.",
-              "label": "Engine Master 1",
+              "id": "engine-master-2",
+              "info": "Center Pedestal. Start engine 2 first. Watch N2, EGT and fuel flow until the engine is stable at idle.",
+              "label": "Engine Master 2",
               "tier": "quick"
             },
             {
               "action": "ON",
-              "id": "engine-master-2",
-              "info": "Center Pedestal. Initiates the start sequence for engine 2. Monitor the engine parameters until stable.",
-              "label": "Engine Master 2",
+              "id": "engine-master-1",
+              "info": "Center Pedestal. Start engine 1 once engine 2 is stable. Watch the engine parameters until stable.",
+              "label": "Engine Master 1",
               "tier": "quick"
             },
             {
@@ -444,13 +444,6 @@
               "id": "autobrake",
               "info": "Main Instrument Panel. Set to MAX for takeoff. This arms the RTO (Rejected Takeoff) mode — if the takeoff is aborted with thrust to idle, maximum braking applies automatically.",
               "label": "Autobrake",
-              "tier": "normal"
-            },
-            {
-              "action": "NORM",
-              "id": "eng-mode",
-              "info": "Center Pedestal. Selects the engine ignition mode. Use IGN/START if there is precipitation or icing conditions.",
-              "label": "ENG Mode",
               "tier": "normal"
             },
             {
@@ -536,21 +529,21 @@
             {
               "action": "AUTO",
               "id": "transponder",
-              "info": "Center Pedestal. Transmits aircraft identification to ATC. Set your squawk code, ALT ON, and keep in STBY until lining up on the runway.",
+              "info": "Center Pedestal. Set the squawk code and ALT RPTG ON. AUTO for taxi.",
               "label": "Transponder",
               "tier": "normal"
             },
             {
               "action": "RELEASE",
               "id": "parking-brake",
-              "info": "Center Pedestal. Locks wheel brakes. Ensure it is OFF when ground chocks are set.",
+              "info": "Center Pedestal. Release once you have taxi clearance and the ground crew is clear.",
               "label": "Parking Brake",
               "tier": "quick"
             },
             {
               "action": "CHECK",
               "id": "brakes",
-              "info": "Rudder Pedals. Controls wheel braking. Disengage the autopilot before turning off the runway if performing an autoland.",
+              "info": "Rudder Pedals. Press the toe brakes gently as the aircraft starts to roll to confirm they work.",
               "label": "Brakes",
               "tier": "normal"
             }
@@ -589,7 +582,7 @@
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "info": "Primary Flight Display. Expect SRS, NAV in blue (armed), and RWY if the runway has a localizer. Once thrust is set, the first column shows MAN FLX with the flex temperature, or MAN TOGA.",
               "label": "FMA",
               "tier": "normal"
             },
@@ -615,7 +608,7 @@
               "tier": "full"
             },
             {
-              "action": "ON",
+              "action": "AUTO",
               "id": "pred-w-s",
               "info": "Center Pedestal. Activates the predictive windshear system on the weather radar to detect hazardous wind conditions.",
               "label": "PRED W/S",
@@ -703,14 +696,14 @@
             {
               "action": "FLEX/TOGA",
               "id": "thrust-levers",
-              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "info": "Center Pedestal. Push to the FLX/MCT detent for a reduced-thrust takeoff, or to TOGA for full thrust.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
             {
               "action": "AT VR",
               "id": "rotate",
-              "info": "Flight Controls. At VR speed, pull back on the stick smoothly to achieve a maximum 8-degree initial pitch.",
+              "info": "Sidestick. At VR, rotate smoothly at about 3° per second. Liftoff comes at about 10° nose up, then follow the flight director.",
               "label": "Rotate",
               "tier": "quick"
             },
@@ -741,7 +734,7 @@
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "info": "Primary Flight Display. With the thrust levers in CL, expect THR CLB, then CLB (managed) or OP CLB (selected), and NAV.",
               "label": "FMA",
               "tier": "normal"
             },
@@ -755,7 +748,7 @@
             {
               "action": "CLIMB",
               "id": "thrust-levers",
-              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "info": "Center Pedestal. At thrust reduction altitude, when LVR CLB flashes on the PFD, pull the levers back to the CL detent.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
@@ -848,7 +841,7 @@
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "info": "Primary Flight Display. At cruise level, expect MACH (or SPEED), ALT CRZ and NAV.",
               "label": "FMA",
               "tier": "normal"
             },
@@ -917,7 +910,7 @@
               "id": "fcu-altitude",
               "info": "Glareshield (FCU). Sets the target altitude. Set your platform altitude or the last waypoint altitude before the runway, but do not push yet.",
               "label": "FCU Altitude",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "SET",
@@ -943,12 +936,12 @@
               "id": "descent",
               "info": "Glareshield (FCU). Push the altitude selector to start a managed descent and monitor your path deviations.",
               "label": "Descent",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "CHECK",
               "id": "fma",
-              "info": "Primary Flight Display. The Flight Mode Annunciator shows active autopilot modes. Verify THR DES (or IDLE), DES, and NAV are displayed in green.",
+              "info": "Primary Flight Display. In a managed descent, expect THR IDLE, DES and NAV. A selected descent shows OP DES instead of DES.",
               "label": "FMA",
               "tier": "normal"
             },
@@ -976,13 +969,6 @@
               "id": "altimeters",
               "info": "Main Instrument Panel. Displays the aircraft's current altitude. At transition level, ensure you set the local QNH.",
               "label": "Altimeters",
-              "tier": "normal"
-            },
-            {
-              "action": "ON",
-              "id": "landing-lights",
-              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
-              "label": "Landing Lights",
               "tier": "normal"
             },
             {
@@ -1015,6 +1001,18 @@
             }
           ],
           "title": "Passing Transition"
+        },
+        {
+          "items": [
+            {
+              "action": "ON",
+              "id": "landing-lights",
+              "info": "Overhead Panel. High-intensity forward-facing lights. Keep these ON when operating below 10,000 feet.",
+              "label": "Landing Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Passing 10,000 ft"
         }
       ],
       "id": "descent",
@@ -1030,6 +1028,13 @@
               "info": "Glareshield (FCU). Displays ILS localizer and glideslope deviations. Turn ON for ILS approaches, but leave OFF for RNAV.",
               "label": "LS Mode",
               "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "appr",
+              "info": "Glareshield (FCU). Arms the approach modes: LOC and G/S in blue on the FMA for an ILS, or APP NAV and FINAL for an RNAV approach.",
+              "label": "APPR",
+              "tier": "quick"
             },
             {
               "action": "CHECK QNH",
@@ -1072,6 +1077,20 @@
         {
           "items": [
             {
+              "action": "ACTIVATE",
+              "id": "approach-phase",
+              "info": "MCDU PERF page. Activate the approach phase so managed speed slows the aircraft for the flap schedule.",
+              "label": "Approach Phase",
+              "tier": "normal"
+            },
+            {
+              "action": "ARM",
+              "id": "ground-spoilers",
+              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
+              "label": "Ground Spoilers",
+              "tier": "quick"
+            },
+            {
               "action": "SET",
               "id": "flaps-1",
               "info": "Center Pedestal. Initial flap setting for approach. Select this at green dot speed, typically around 15 NM out.",
@@ -1107,13 +1126,6 @@
               "tier": "quick"
             },
             {
-              "action": "ARM",
-              "id": "ground-spoilers",
-              "info": "Center Pedestal. Arms spoilers to deploy automatically upon touchdown to reduce lift and increase drag.",
-              "label": "Ground Spoilers",
-              "tier": "quick"
-            },
-            {
               "action": "NO BLUE",
               "id": "ecam-memo-landing",
               "info": "ECAM upper display. LANDING memo should show no blue items — all landing configuration checks complete.",
@@ -1132,9 +1144,16 @@
         {
           "items": [
             {
+              "action": "OFF",
+              "id": "autopilot",
+              "info": "Glareshield (FCU), or the red button on the sidestick. Disconnect by minimums unless you are flying an autoland.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
               "action": "IDLE",
               "id": "thrust-levers",
-              "info": "Center Pedestal. Controls engine thrust output. At about 30 feet above the runway, retard the levers to idle before starting the flare.",
+              "info": "Center Pedestal. At about 20 ft, flare and pull the thrust levers to IDLE.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
@@ -1148,7 +1167,7 @@
             {
               "action": "AS REQUIRED",
               "id": "reverse-thrust",
-              "info": "Center Pedestal. Apply full reverse thrust down to 70 knots, then idle reverse until 30 knots.",
+              "info": "Center Pedestal. Full reverse at touchdown, reverse idle at 70 knots, then forward idle by 25 knots.",
               "label": "Reverse Thrust",
               "tier": "quick"
             },
@@ -1382,6 +1401,13 @@
             },
             {
               "action": "OFF",
+              "id": "adirs",
+              "info": "Overhead Panel. Turn IR 1, 2 and 3 to OFF.",
+              "label": "ADIRS",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
               "id": "exterior-lights",
               "info": "Overhead Panel. Controls all external aircraft lighting. Set Strobes to AUTO, Beacon OFF, Nav ON, and others as required.",
               "label": "Exterior Lights",
@@ -1392,14 +1418,14 @@
               "id": "apu-bleed-2",
               "info": "Overhead Panel. Supplies pressurized air from the APU for engine starting and air conditioning. Verify the PACK fault lights extinguish after it is turned on.",
               "label": "APU Bleed",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "apu-master",
               "info": "Overhead Panel. Powers the APU electronic control box to prepare for startup.",
               "label": "APU Master",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "OFF",
