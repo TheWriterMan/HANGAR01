@@ -23,9 +23,14 @@ export function itemVisibleInMode(item: ChecklistItem, mode: ChecklistMode): boo
   return tier === 'quick';
 }
 
+/**
+ * The checklist as shown in `mode`. Phases left with fewer than `minPhaseItems`
+ * items are hidden; My Hangar's local checklists pass 1, so small phases stay.
+ */
 export function filterChecklist(
   checklist: ChecklistPhase[],
   mode: ChecklistMode,
+  minPhaseItems: number = PHASE_MIN_ITEMS,
 ): ChecklistPhase[] {
   if (mode === 'full') return checklist;
   return checklist
@@ -37,7 +42,7 @@ export function filterChecklist(
     }))
     .filter((phase) => {
       const count = phase.groups.reduce((acc, g) => acc + g.items.length, 0);
-      return count >= PHASE_MIN_ITEMS;
+      return count >= minPhaseItems;
     });
 }
 

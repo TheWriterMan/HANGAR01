@@ -11,6 +11,8 @@ interface ChecklistEventsInput {
   checklistData: ChecklistPhase[];
   completedItems: Record<string, boolean>;
   getItemKey: (item: ChecklistItem) => string;
+  /** False for a My Hangar checklist: its id and contents are the visitor's own, so nothing is sent. */
+  enabled?: boolean;
 }
 
 /** How many items in the shown view are ticked, and the id of the furthest phase with one. */
@@ -40,7 +42,7 @@ function tickSummary(
  * never which items were ticked.
  */
 export function useChecklistEvents(input: ChecklistEventsInput) {
-  const { slug, loaded, mode } = input;
+  const { slug, loaded, mode, enabled = true } = input;
   // The latest values, read when the page is left.
   const latest = useRef(input);
   useEffect(() => {
@@ -54,12 +56,12 @@ export function useChecklistEvents(input: ChecklistEventsInput) {
 
   // Opened: once saved state has loaded, so the view is the one the visitor sees.
   useEffect(() => {
-    if (!loaded || openedAt.current !== null) return;
+    if (!enabled || !loaded || openedAt.current !== null) return;
     openedAt.current = Date.now();
     openedPath.current = window.location.pathname;
     returning.current = hasSavedState(slug);
     track('checklist_open', { aircraft: slug, view: latest.current.mode });
-  }, [loaded, slug]);
+  }, [enabled, loaded, slug]);
 
   // Left: the first of closing the tab, hiding it (phones rarely fire pagehide)
   // or moving to another page in the app. Sent once per open.
@@ -103,12 +105,14 @@ export function useChecklistEvents(input: ChecklistEventsInput) {
 
   const viewSwitched = useCallback(
     (to: ChecklistMode) => {
-      if (to !== mode) track('view_switch', { aircraft: slug, from: mode, to });
+      if (enabled && to !== mode) track('view_switch', { aircraft: slug, from: mode, to });
     },
-    [slug, mode],
+    [enabled, slug, mode],
   );
 
-  const reportOpened = useCallback(() => track('report_open', { aircraft: slug }), [slug]);
+  const reportOpened = useCallback(() => {
+    if (enabled) track('report_open', { aircraft: slug });
+  }, [enabled, slug]);
 
   return { viewSwitched, reportOpened };
 }

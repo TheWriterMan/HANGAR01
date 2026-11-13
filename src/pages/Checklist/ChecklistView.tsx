@@ -25,16 +25,23 @@ import CompletionModal from './CompletionModal';
 
 interface ChecklistViewProps {
   aircraft: Aircraft;
+  /**
+   * A My Hangar checklist, imported by the visitor and kept in this browser. Its slug is the
+   * local id. It lives at /hangar/:id, is noindex, sends no usage events, and has no Report
+   * button, About section or related checklists.
+   */
+  local?: boolean;
 }
 
 /** The interactive checklist for one loaded aircraft. Keyed by slug in ChecklistPage. */
-const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
+const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft, local = false }) => {
   const [reportOpen, setReportOpen] = useState(false);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
   const reportTriggerRef = useRef<HTMLButtonElement>(null);
 
   const checklist = useChecklistState(aircraft, {
     onComplete: () => setShowCompletionModal(true),
+    local,
   });
 
   const events = useChecklistEvents({
@@ -44,6 +51,7 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
     checklistData: checklist.checklistData,
     completedItems: checklist.completedItems,
     getItemKey: checklist.getItemKey,
+    enabled: !local,
   });
   const handleModeChange = (next: ChecklistMode) => {
     events.viewSwitched(next);
@@ -51,14 +59,16 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
   };
 
   const aircraftName = formatAircraftName(aircraft);
-  const path = `/aircraft/${aircraft.slug}`;
+  const path = local ? `/hangar/${aircraft.slug}` : `/aircraft/${aircraft.slug}`;
   const crumbs: Crumb[] = [
     { label: 'Home', to: '/' },
-    { label: 'Aircraft', to: '/aircraft' },
+    local ? { label: 'My Hangar', to: '/hangar' } : { label: 'Aircraft', to: '/aircraft' },
     { label: formatModelName(aircraft), to: path },
   ];
   // The bundled index carries the build-time git date; the checklist JSON doesn't.
-  const lastUpdated = getAircraftList().find((ac) => ac.slug === aircraft.slug)?.lastUpdated;
+  const lastUpdated = local
+    ? undefined
+    : getAircraftList().find((ac) => ac.slug === aircraft.slug)?.lastUpdated;
   const handleReportOpen = () => {
     if (!reportOpen) events.reportOpened();
     setReportOpen(true);
@@ -78,14 +88,23 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
     <>
       <ChecklistProgressBar progress={checklist.progress} />
       <div className="layout-checklist min-h-screen bg-base">
-        <SEO
-          title={checklistPageTitle(aircraft)}
-          description={checklistMetaDescription(aircraft)}
-          path={path}
-          image={aircraftOgImageUrl(aircraft.slug)}
-          jsonLd={[breadcrumbSchema(crumbs)]}
-          noindex={aircraft.status === 'draft'}
-        />
+        {local ? (
+          <SEO
+            title={`${aircraftName} · My Hangar`}
+            description="A checklist imported into My Hangar, saved in this browser."
+            path={path}
+            noindex
+          />
+        ) : (
+          <SEO
+            title={checklistPageTitle(aircraft)}
+            description={checklistMetaDescription(aircraft)}
+            path={path}
+            image={aircraftOgImageUrl(aircraft.slug)}
+            jsonLd={[breadcrumbSchema(crumbs)]}
+            noindex={aircraft.status === 'draft'}
+          />
+        )}
 
         {/* Row 1 beside the sidebar from md; first on mobile. */}
         <div className="md:col-start-2 md:row-start-1 md:px-10 md:pt-8">
@@ -100,8 +119,9 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
               fullCount={checklist.fullCount}
               normalCount={checklist.normalCount}
               quickCount={checklist.quickCount}
-              onReportOpen={handleReportOpen}
+              onReportOpen={local ? undefined : handleReportOpen}
               reportTriggerRef={reportTriggerRef}
+              local={local}
             />
           </div>
         </div>
@@ -110,6 +130,7 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
           phases={checklist.checklistData}
           activePhaseId={checklist.activePhaseId}
           onSelectPhase={checklist.handlePhaseSelect}
+          back={local ? { to: '/hangar', label: 'Return to My Hangar' } : undefined}
         />
 
         <div className="md:col-start-2 md:row-start-2 flex-1 p-4 md:px-10 md:pt-0 md:pb-24 w-full">
@@ -185,28 +206,34 @@ const ChecklistView: React.FC<ChecklistViewProps> = ({ aircraft }) => {
             </button>
           </div>
 
-          <div className="max-w-6xl mx-auto">
-            <ChecklistAbout
-              aircraft={aircraft}
-              fullCount={checklist.fullCount}
-              normalCount={checklist.normalCount}
-              quickCount={checklist.quickCount}
-              lastUpdated={lastUpdated}
-            />
-          </div>
+          {!local && (
+            <>
+              <div className="max-w-6xl mx-auto">
+                <ChecklistAbout
+                  aircraft={aircraft}
+                  fullCount={checklist.fullCount}
+                  normalCount={checklist.normalCount}
+                  quickCount={checklist.quickCount}
+                  lastUpdated={lastUpdated}
+                />
+              </div>
 
-          <div className="max-w-6xl mx-auto print:hidden!">
-            <ChecklistRelated aircraft={aircraft} />
-          </div>
+              <div className="max-w-6xl mx-auto print:hidden!">
+                <ChecklistRelated aircraft={aircraft} />
+              </div>
+            </>
+          )}
         </div>
 
-        <ReportPanel
-          isOpen={reportOpen}
-          onClose={handleReportClose}
-          aircraftSlug={aircraft.slug}
-          aircraftName={aircraftName}
-          triggerRef={reportTriggerRef}
-        />
+        {!local && (
+          <ReportPanel
+            isOpen={reportOpen}
+            onClose={handleReportClose}
+            aircraftSlug={aircraft.slug}
+            aircraftName={aircraftName}
+            triggerRef={reportTriggerRef}
+          />
+        )}
 
         <CompletionModal
           isOpen={showCompletionModal}

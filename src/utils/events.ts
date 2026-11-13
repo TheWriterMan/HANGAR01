@@ -71,13 +71,16 @@ function referrerHost(): string {
   }
 }
 
+/** A My Hangar checklist's address carries the visitor's own id, so it is sent as /hangar/local. */
+const publicPath = (path: string) => path.replace(/^\/hangar\/[^/]+$/, '/hangar/local');
+
 /** The JSON the collector receives. Exported for the tests. */
 export function eventBody<N extends keyof UsageEvents>(
   name: N,
   values: UsageEvents[N],
   path: string = window.location.pathname,
 ): string {
-  return JSON.stringify({ n: name, p: values, u: path, r: referrerHost() });
+  return JSON.stringify({ n: name, p: values, u: publicPath(path), r: referrerHost() });
 }
 
 /**

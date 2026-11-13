@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { Aircraft, ChecklistItem, ChecklistPhase } from '../types';
 import { ChecklistMode } from '../components/ui/ModeToggle';
-import { filterChecklist, countItems } from '../utils/checklist';
+import { filterChecklist, countItems, getItemTier, PHASE_MIN_ITEMS } from '../utils/checklist';
 import {
   itemKey,
   legacyProgressKey,
   loadProgress,
+  modeKey,
   progressKey,
   saveProgress,
 } from '../utils/progress';
@@ -14,8 +15,6 @@ import { useReducedMotion } from './useReducedMotion';
 import { useHydrated } from './useHydrated';
 
 // ─── Persistence ────────────────────────────────────────────────────────────
-
-const modeKey = (slug: string) => `HANGAR01_mode_${slug}`;
 
 function loadMode(slug: string): ChecklistMode {
   const saved = readStorage(modeKey(slug));
@@ -73,6 +72,11 @@ export interface UseChecklistStateOptions {
    * shows it, without scrolling the window.
    */
   phaseNav?: 'scroll' | 'switch';
+  /**
+   * A My Hangar checklist: small phases stay visible, and the mode toggle shows only when the
+   * checklist uses more than one tier.
+   */
+  local?: boolean;
 }
 
 export interface UseChecklistStateReturn {
@@ -106,7 +110,7 @@ export interface UseChecklistStateReturn {
 
 export function useChecklistState(
   aircraft: Aircraft,
-  { onComplete, persist = true, phaseNav = 'scroll' }: UseChecklistStateOptions = {},
+  { onComplete, persist = true, phaseNav = 'scroll', local = false }: UseChecklistStateOptions = {},
 ): UseChecklistStateReturn {
   const prefersReducedMotion = useReducedMotion();
   const { slug, checklist: fullChecklist } = aircraft;
@@ -120,7 +124,7 @@ export function useChecklistState(
   const [loadedSlug, setLoadedSlug] = useState<string | null>(() =>
     hydrated || !persist ? slug : null,
   );
-  const [mode, setModeState] = useState<ChecklistMode>(() =>
+  const [chosenMode, setModeState] = useState<ChecklistMode>(() =>
     hydrated && persist ? loadMode(slug) : 'normal',
   );
   const [completedItems, setCompletedItems] = useState<Record<string, boolean>>(() =>
@@ -160,14 +164,32 @@ export function useChecklistState(
   );
 
   // ─── Filtered checklists ──────────────────────────────────────────────────────
-  const quickChecklist = useMemo(() => filterChecklist(fullChecklist, 'quick'), [fullChecklist]);
-  const normalChecklist = useMemo(() => filterChecklist(fullChecklist, 'normal'), [fullChecklist]);
+  const minPhaseItems = local ? 1 : PHASE_MIN_ITEMS;
+  const quickChecklist = useMemo(
+    () => filterChecklist(fullChecklist, 'quick', minPhaseItems),
+    [fullChecklist, minPhaseItems],
+  );
+  const normalChecklist = useMemo(
+    () => filterChecklist(fullChecklist, 'normal', minPhaseItems),
+    [fullChecklist, minPhaseItems],
+  );
 
   const fullCount = useMemo(() => countItems(fullChecklist), [fullChecklist]);
   const normalCount = useMemo(() => countItems(normalChecklist), [normalChecklist]);
   const quickCount = useMemo(() => countItems(quickChecklist), [quickChecklist]);
 
-  const showModeToggle = quickCount > 0 || normalCount < fullCount;
+  const tiersUsed = useMemo(
+    () =>
+      new Set(fullChecklist.flatMap((p) => p.groups.flatMap((g) => g.items.map(getItemTier)))).size,
+    [fullChecklist],
+  );
+  const showModeToggle = local ? tiersUsed > 1 : quickCount > 0 || normalCount < fullCount;
+
+  // A mode with nothing in it (a local checklist without quick items, say) shows the next
+  // wider one instead, so the page is never empty.
+  let mode = chosenMode;
+  if (mode === 'quick' && quickCount === 0) mode = 'normal';
+  if (mode === 'normal' && normalCount === 0) mode = 'full';
 
   const checklistData = useMemo(() => {
     if (mode === 'quick') return quickChecklist;

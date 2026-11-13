@@ -11,6 +11,8 @@ interface ChecklistTOCProps {
   /** False where the TOC sits inside another landmark (the home hero's checklist section), so its sidebar is not a
    *  nested complementary landmark (axe landmark-complementary-is-top-level). */
   landmark?: boolean;
+  /** The back button. A My Hangar checklist goes back to /hangar. */
+  back?: { to: string; label: string };
 }
 
 /**
@@ -23,6 +25,7 @@ const ChecklistTOC: React.FC<ChecklistTOCProps> = ({
   onSelectPhase,
   isDemo = false,
   landmark = true,
+  back = { to: '/aircraft', label: 'Return to Hangar' },
 }) => {
   const tabsScrollRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -91,7 +94,7 @@ const ChecklistTOC: React.FC<ChecklistTOCProps> = ({
         <div className="hidden md:flex md:flex-col w-56 lg:w-64 bg-base border-r border-border flex-shrink-0 h-[calc(100vh-3rem)] sticky top-12 overflow-y-auto z-sticky">
           {/* Back button — original styling */}
           <div className="px-4 py-4 border-b border-border">
-            <BackButton to="/aircraft" label="Return to Hangar" />
+            <BackButton to={back.to} label={back.label} />
           </div>
 
           {/* Phase list */}
@@ -126,7 +129,7 @@ const ChecklistTOC: React.FC<ChecklistTOCProps> = ({
         >
           {/* Back button — original styling */}
           <div className="px-4 py-4 border-b border-border">
-            <BackButton to="/aircraft" label="Return to Hangar" />
+            <BackButton to={back.to} label={back.label} />
           </div>
 
           {/* Phase list */}

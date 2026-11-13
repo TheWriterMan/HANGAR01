@@ -20,6 +20,9 @@ export interface ProgressV2 {
 
 export const progressKey = (slug: string) => `hangar01:progress:v2:${slug}`;
 
+/** The chosen mode (quick, normal or full) for an aircraft. */
+export const modeKey = (slug: string) => `HANGAR01_mode_${slug}`;
+
 /**
  * v1.1.0 kept this entry for one release as a rollback path. Since v1.1.1 it is
  * only read once, to migrate it, and then deleted (PRA-150, in PRA-355).

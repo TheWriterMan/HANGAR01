@@ -76,6 +76,17 @@ describe('usage events', () => {
     expect(countingEnabled()).toBe(true);
   });
 
+  it("sends a My Hangar checklist's address without the visitor's local id", async () => {
+    location.pathname = '/hangar/0f8e7c1a-2b3d-4e5f-8a9b-0c1d2e3f4a5b';
+    track('page_view', {});
+    location.pathname = '/hangar';
+    track('page_view', {});
+    location.pathname = '/aircraft/a320';
+    const [checklist, list] = await sentBodies();
+    expect(checklist.u).toBe('/hangar/local');
+    expect(list.u).toBe('/hangar');
+  });
+
   it('never throws when sending fails', () => {
     beacon.mockImplementationOnce(() => {
       throw new Error('blocked');

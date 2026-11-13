@@ -57,9 +57,10 @@ const ModeToggle: React.FC<ModeToggleProps> = ({
       activeClasses: 'bg-warning/10 text-warning border-warning/30',
     },
   ];
-  const segments = normalSameAsQuick
-    ? allSegments.filter((seg) => seg.key !== 'normal')
-    : allSegments;
+  // A mode with no items (a My Hangar checklist without quick items) isn't offered.
+  const segments = allSegments.filter(
+    (seg) => seg.count > 0 && !(normalSameAsQuick && seg.key === 'normal'),
+  );
 
   const handleKeyDown = (e: React.KeyboardEvent, idx: number) => {
     let nextIdx: number | null = null;

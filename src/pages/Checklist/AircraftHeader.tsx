@@ -25,6 +25,8 @@ interface AircraftHeaderProps {
   titleAs?: 'h1' | 'p';
   /** False in the home hero: no mode description under the toggle. */
   showModeDescription?: boolean;
+  /** A My Hangar checklist: labelled "Local checklist". */
+  local?: boolean;
 }
 
 /**
@@ -45,6 +47,7 @@ const AircraftHeader: React.FC<AircraftHeaderProps> = ({
   reportTriggerRef,
   titleAs: Title = 'h1',
   showModeDescription = true,
+  local = false,
 }) => {
   // Default aircraft (Microsoft) aren't searched by developer, so they get none.
   const addon = aircraft.addon && aircraft.addon !== 'Microsoft' ? aircraft.addon : '';
@@ -54,14 +57,16 @@ const AircraftHeader: React.FC<AircraftHeaderProps> = ({
       {crumbs && (
         <div className="print:hidden! flex items-center justify-between gap-4 px-4 py-5 border-b border-border md:px-0 md:pt-0 md:pb-6 md:border-b-0">
           <Breadcrumbs crumbs={crumbs} />
-          <button
-            ref={reportTriggerRef}
-            onClick={onReportOpen}
-            className="inline-flex shrink-0 items-center gap-1.5 text-xs md:text-sm text-warning hover:text-warning/80 transition-colors"
-          >
-            <AlertTriangle size={14} aria-hidden="true" />
-            <span>Report Inaccuracy</span>
-          </button>
+          {onReportOpen && (
+            <button
+              ref={reportTriggerRef}
+              onClick={onReportOpen}
+              className="inline-flex shrink-0 items-center gap-1.5 text-xs md:text-sm text-warning hover:text-warning/80 transition-colors"
+            >
+              <AlertTriangle size={14} aria-hidden="true" />
+              <span>Report Inaccuracy</span>
+            </button>
+          )}
         </div>
       )}
 
@@ -70,18 +75,27 @@ const AircraftHeader: React.FC<AircraftHeaderProps> = ({
           // The heading names the add-on: "PMDG · Boeing 737NG". The COMBINED label sits beside it,
           // not in it. The updated date takes the line under the name.
           <>
-            <div className="flex items-center gap-3">
+            {/* A local checklist's tag wraps under a long name instead of squeezing it. */}
+            <div className={`flex items-center gap-3 ${local ? 'flex-wrap gap-y-2' : ''}`}>
               <h1>
-                <span className="block text-xs font-bold uppercase text-muted mb-1 md:mb-2">
-                  {addon && (
-                    <>
-                      {addon}
-                      <span aria-hidden="true"> · </span>
-                      <span className="sr-only"> </span>
-                    </>
-                  )}
-                  {aircraft.manufacturer}
-                </span>{' '}
+                {(addon || aircraft.manufacturer) && (
+                  <>
+                    <span className="block text-xs font-bold uppercase text-muted mb-1 md:mb-2">
+                      {addon && (
+                        <>
+                          {addon}
+                          {aircraft.manufacturer && (
+                            <>
+                              <span aria-hidden="true"> · </span>
+                              <span className="sr-only"> </span>
+                            </>
+                          )}
+                        </>
+                      )}
+                      {aircraft.manufacturer}
+                    </span>{' '}
+                  </>
+                )}
                 <span className="block type-display text-primary">
                   {aircraft.model}
                   {aircraft.suffix && aircraft.suffix !== 'Combined' && aircraft.suffix}
@@ -90,6 +104,11 @@ const AircraftHeader: React.FC<AircraftHeaderProps> = ({
               {aircraft.suffix === 'Combined' && (
                 <span className="mt-2 type-caption font-medium px-2 py-0.5 border border-accent text-accent text-2xs">
                   COMBINED
+                </span>
+              )}
+              {local && (
+                <span className="shrink-0 mt-2 type-caption font-medium uppercase px-2 py-0.5 border border-accent text-accent text-2xs">
+                  Local checklist
                 </span>
               )}
             </div>
