@@ -11,7 +11,7 @@
               "label": "Parking Brake",
               "action": "Set",
               "id": "parking-brake",
-              "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
+              "info": "Below the PFD. Prevents the aircraft from rolling during prep.",
               "tier": "quick"
             },
             {
@@ -244,7 +244,7 @@
               "label": "Parking Brake",
               "action": "Released",
               "id": "parking-brake",
-              "info": "Below the PFD and the pilot-side touchscreen controller. Release before taxi; the click spot is just right of the handle.",
+              "info": "Below the PFD. Release before taxi; the click spot is just right of the handle.",
               "tier": "quick"
             },
             {
@@ -710,7 +710,7 @@
               "label": "Parking Brake",
               "action": "Set",
               "id": "parking-brake-shutdown",
-              "info": "Center Pedestal. Set after the idle cooldown is complete.",
+              "info": "Below the PFD. Set after the idle cooldown is complete.",
               "tier": "quick"
             },
             {
