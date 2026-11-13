@@ -5,28 +5,10 @@
         {
           "items": [
             {
-              "action": "OFF",
+              "action": "Check Both On",
               "id": "master-switch-bat-alt-1-alt-2",
-              "label": "Master switch (BAT, ALT 1, ALT 2)",
-              "tier": "full"
-            },
-            {
-              "action": "Per panel switches",
-              "id": "ecu-swap-test",
-              "info": "Limited fidelity in Asobo default — observe ECU annunciators only.",
-              "label": "ECU swap test",
-              "tier": "full"
-            },
-            {
-              "action": "Check",
-              "id": "annunciators",
-              "label": "Annunciators",
-              "tier": "full"
-            },
-            {
-              "action": "Check",
-              "id": "fuel-quantity",
-              "label": "Fuel quantity",
+              "label": "Alternators",
+              "info": "Instrument Panel.",
               "tier": "full"
             }
           ],
@@ -66,12 +48,6 @@
               "info": "Center Pedestal. Prevents the aircraft from rolling during prep."
             },
             {
-              "action": "ON",
-              "id": "master-elect",
-              "label": "Master ELECT",
-              "tier": "quick"
-            },
-            {
               "action": "OFF",
               "id": "eng-master-l-r",
               "info": "Instrument Panel. Both engine master switches must be off before electrical power-up.",
@@ -80,8 +56,20 @@
             },
             {
               "action": "ON",
-              "id": "beacon",
-              "label": "Beacon",
+              "id": "master-elect",
+              "label": "Master ELECT",
+              "tier": "quick"
+            },
+            {
+              "action": "Check",
+              "id": "annunciators",
+              "label": "Annunciators",
+              "tier": "full"
+            },
+            {
+              "action": "Check",
+              "id": "fuel-quantity",
+              "label": "Fuel quantity",
               "tier": "full"
             },
             {
@@ -96,6 +84,13 @@
               "id": "fuel-selector",
               "label": "Fuel selector",
               "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "beacon",
+              "label": "Strobes",
+              "info": "Instrument Panel, STROBE switch. The anti-collision lights are the strobes on both wingtips.",
+              "tier": "normal"
             }
           ],
           "title": "Cockpit Setup"
@@ -115,9 +110,16 @@
               "tier": "full"
             },
             {
-              "action": "WAIT for ON, then OFF before engaging starter",
+              "action": "On",
+              "id": "engine-master-l",
+              "info": "Instrument Panel.",
+              "label": "Engine Master L",
+              "tier": "quick"
+            },
+            {
+              "action": "Wait Until Off",
               "id": "glow-annunciator",
-              "info": "Critical — DA62 diesel requires glow plug pre-heat. Attempting to start before GLOW extinguishes will fail. Apply to BOTH engines.",
+              "info": "PFD alert area. L ENGINE GLOW shows only when the engine is cold. Press START after it goes out.",
               "label": "GLOW annunciator",
               "tier": "quick"
             },
@@ -131,12 +133,6 @@
               "action": "CONFIRM (RPM steady, no warnings)",
               "id": "idle-stabilize",
               "label": "Idle stabilize",
-              "tier": "quick"
-            },
-            {
-              "action": "ON",
-              "id": "generator-l",
-              "label": "Generator L",
               "tier": "quick"
             },
             {
@@ -199,6 +195,13 @@
               "tier": "quick"
             },
             {
+              "action": "Release",
+              "id": "parking-brake",
+              "info": "Small center console under the instrument panel. Lever up releases the brake.",
+              "label": "Parking Brake",
+              "tier": "quick"
+            },
+            {
               "action": "TEST",
               "id": "brakes",
               "label": "Brakes",
@@ -234,15 +237,31 @@
               "tier": "full"
             },
             {
-              "action": "Bring up to 70%",
-              "id": "power-lever",
-              "label": "Power lever",
+              "action": "Cycle",
+              "id": "voter-switches",
+              "info": "Instrument Panel. Power levers IDLE, propeller RPM below 1000 and fuel pumps OFF first. Set ECU A, AUTO, ECU B, then AUTO. The engine keeps running without a change each time; a slight shake may occur.",
+              "label": "VOTER Switches",
               "tier": "full"
             },
             {
-              "action": "Each engine, max 50 RPM drop",
-              "id": "ecu-a-ecu-b-test",
-              "label": "ECU A / ECU B test",
+              "action": "Press & Hold",
+              "id": "ecu-test",
+              "info": "Instrument Panel. Engine and gearbox oil temperatures in the green range and parking brake set first. Hold the button: the ECU A/B FAIL lights come on, propeller RPM rises above 1800 and drops twice, then twice more on the other ECU channel. Release when both FAIL lights go out. Releasing early or moving the power lever aborts the test.",
+              "label": "ECU TEST",
+              "tier": "full"
+            },
+            {
+              "action": "Release",
+              "id": "parking-brake-2",
+              "info": "Small center console under the instrument panel. Lever up releases the brake.",
+              "label": "Parking Brake",
+              "tier": "full"
+            },
+            {
+              "action": "Max 10 Sec",
+              "id": "power-check",
+              "info": "Center Pedestal. Power levers MAX for 10 seconds; the engines produce maximum thrust, so hold the brakes firmly. RPM stabilizes at 2250 to 2300 and LOAD at 89% to 100%. Then power levers IDLE.",
+              "label": "Power Check",
               "tier": "full"
             },
             {
@@ -262,13 +281,6 @@
               "id": "anti-ice-pitot-heat",
               "label": "Anti-ice / pitot heat",
               "tier": "full"
-            },
-            {
-              "action": "TEST",
-              "id": "ecu-test",
-              "info": "Instrument Panel. VOTER switches cycle A → AUTO → B → AUTO for each engine while pressing the ECU Test buttons. Verify L/R ECU A/B Fail annunciations light and extinguish, and propellers cycle during the test.",
-              "label": "ECU TEST",
-              "tier": "full"
             }
           ],
           "title": "Engine Check"
@@ -281,6 +293,13 @@
       "groups": [
         {
           "items": [
+            {
+              "action": "Closed & Locked",
+              "id": "doors",
+              "info": "Passenger door and LH and RH pilot doors closed and locked, front baggage doors closed. No DOOR OPEN warning.",
+              "label": "Doors",
+              "tier": "normal"
+            },
             {
               "action": "ON",
               "id": "strobes",
@@ -308,15 +327,15 @@
             {
               "action": "ON",
               "id": "fuel-pumps-boost",
-              "info": "Instrument Panel. Both boost pumps ON for takeoff.",
-              "label": "Fuel pumps (boost)",
-              "tier": "full"
+              "info": "Instrument Panel. LH and RH fuel pumps ON for takeoff.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
             },
             {
               "action": "ALT",
               "id": "transponder",
               "label": "Transponder",
-              "tier": "full"
+              "tier": "quick"
             },
             {
               "action": "COMPLETE",
@@ -348,15 +367,17 @@
               "tier": "full"
             },
             {
-              "action": "VR ~75 KIAS",
+              "action": "Min 76 KIAS",
               "id": "rotate",
+              "info": "Flaps T/O, up to 1999 kg (4407 lb). Above 1999 kg: min 78 KIAS.",
               "label": "Rotate",
               "tier": "quick"
             },
             {
-              "action": "Vy = 95 KIAS",
+              "action": "Min 83 KIAS",
               "id": "climb-speed",
-              "label": "Climb speed",
+              "label": "Initial Climb",
+              "info": "Flaps T/O, up to 1999 kg (4407 lb). Above 1999 kg: min 86 KIAS. Best rate of climb with flaps UP: 87 KIAS (89 above 1999 kg).",
               "tier": "quick"
             },
             {
@@ -383,8 +404,16 @@
         {
           "items": [
             {
-              "action": "92% (max continuous)",
+              "action": "Off",
+              "id": "fuel-pumps",
+              "info": "Instrument Panel.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
+            },
+            {
+              "action": "Up to 95%",
               "id": "power",
+              "info": "Center Pedestal. 95% is maximum continuous power.",
               "label": "Power",
               "tier": "quick"
             },
@@ -393,6 +422,13 @@
               "id": "climb-airspeed",
               "label": "Climb airspeed",
               "tier": "quick"
+            },
+            {
+              "action": "As Required",
+              "id": "autopilot",
+              "info": "Mode controller on the MFD (GFC 700).",
+              "label": "Autopilot",
+              "tier": "normal"
             },
             {
               "action": "Green",
@@ -406,8 +442,9 @@
         {
           "items": [
             {
-              "action": "60–92% (per performance chart)",
+              "action": "Up to 95%",
               "id": "power-2",
+              "info": "Center Pedestal. Recommended cruise power is 75%.",
               "label": "Power",
               "tier": "quick"
             },
@@ -451,7 +488,7 @@
               "id": "power",
               "info": "Center Pedestal. Reduce power gradually. The AE330 is a liquid-cooled diesel — no shock cooling concern, but smooth power management extends engine life.",
               "label": "Power",
-              "tier": "full"
+              "tier": "normal"
             }
           ],
           "title": "Descent Setup"
@@ -477,27 +514,43 @@
               "tier": "quick"
             },
             {
-              "action": "Below 188 KIAS",
+              "action": "On",
+              "id": "fuel-pumps",
+              "info": "Instrument Panel.",
+              "label": "Fuel Pumps",
+              "tier": "quick"
+            },
+            {
+              "action": "Below 205 KIAS",
               "id": "gear-down",
               "label": "Gear DOWN",
               "tier": "quick"
             },
             {
-              "action": "Below 134 KIAS",
+              "action": "Check Released",
+              "id": "parking-brake",
+              "info": "Small center console under the instrument panel. Lever up is released.",
+              "label": "Parking Brake",
+              "tier": "full"
+            },
+            {
+              "action": "Below 136 KIAS",
               "id": "flaps-app",
-              "label": "Flaps APP",
+              "label": "Flaps T/O",
+              "info": "Instrument Panel, flap selector switch. The positions are UP, T/O and LDG.",
               "tier": "quick"
             },
             {
-              "action": "Below 117 KIAS",
+              "action": "Below 119 KIAS",
               "id": "flaps-ldg",
               "label": "Flaps LDG",
               "tier": "quick"
             },
             {
-              "action": "~80 KIAS",
+              "action": "Min 84 KIAS",
               "id": "vref",
-              "label": "Vref",
+              "label": "Final Approach Speed",
+              "info": "Flaps LDG, up to 1999 kg (4407 lb). Above 1999 kg: min 89 KIAS.",
               "tier": "quick"
             },
             {
@@ -552,6 +605,13 @@
               "id": "transponder",
               "label": "Transponder",
               "tier": "full"
+            },
+            {
+              "action": "Off",
+              "id": "fuel-pumps",
+              "info": "Instrument Panel.",
+              "label": "Fuel Pumps",
+              "tier": "normal"
             }
           ],
           "title": "After Landing Flow"
@@ -590,16 +650,18 @@
               "tier": "quick"
             },
             {
-              "action": "OFF",
-              "id": "elect-master",
-              "label": "ELECT MASTER",
-              "tier": "quick"
+              "action": "Off",
+              "id": "beacon",
+              "label": "Strobes",
+              "tier": "normal",
+              "info": "Instrument Panel, STROBE switch."
             },
             {
-              "action": "OFF when props stop",
-              "id": "beacon",
-              "label": "Beacon",
-              "tier": "full"
+              "action": "OFF",
+              "id": "elect-master",
+              "info": "Left side of the instrument panel. Before switching OFF, wait until the G1000 engine readouts show a red or yellow X. This lets engine and flight data save to memory.",
+              "label": "ELECT MASTER",
+              "tier": "quick"
             }
           ],
           "title": "Shutdown & Secure"
