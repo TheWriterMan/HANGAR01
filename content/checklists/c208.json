@@ -82,7 +82,7 @@
             {
               "action": "ON",
               "id": "fuel-shutoff-knob",
-              "info": "Lower Right Panel. Push in to open the valve, allowing fuel to flow from the tanks to the engine.",
+              "info": "Lower Pedestal. Push in to open the valve, allowing fuel to flow from the tanks to the engine.",
               "label": "Fuel Shutoff Knob",
               "tier": "quick"
             },
@@ -101,7 +101,7 @@
             {
               "action": "ON",
               "id": "battery-switch",
-              "info": "Left Panel. Disconnects battery power to save charge while completing the exterior walkaround.",
+              "info": "Left Panel. Powers the aircraft for the fuel quantity and flap checks that follow.",
               "label": "Battery Switch",
               "tier": "quick"
             },
@@ -250,7 +250,7 @@
             {
               "action": "ON",
               "id": "fuel-shutoff-knob",
-              "info": "Lower Right Panel. Push in. Ensures the firewall shutoff valve is open.",
+              "info": "Lower Pedestal. Push in. Ensures the firewall shutoff valve is open.",
               "label": "Fuel Shutoff Knob",
               "tier": "normal"
             },
@@ -310,14 +310,14 @@
             {
               "action": "START",
               "id": "starter-switch",
-              "info": "Left Panel. Disengages the starter motor once the engine is running smoothly.",
+              "info": "Left Panel. The IGNITION ON light should illuminate and oil pressure should start rising. Wait for Ng to stabilize above 12% before moving the fuel condition lever.",
               "label": "Starter Switch",
               "tier": "quick"
             },
             {
               "action": "LOW IDLE",
               "id": "fuel-condition-lever",
-              "info": "Center Pedestal. Introduce fuel at Ng 12%. Monitor ITT closely to ensure it does not exceed 1090°C.",
+              "info": "Center Pedestal. Introduce fuel at Ng 12%. Monitor ITT closely: 1090°C is the limit, and only for 2 seconds at most.",
               "label": "Fuel Condition Lever",
               "tier": "quick"
             },
@@ -359,6 +359,13 @@
               "id": "fuel-boost-switch-2",
               "info": "Left Panel. Returns the boost switch to normal, deactivating the auxiliary pump. AUX FUEL PUMP ON light should extinguish.",
               "label": "Fuel Boost Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "nav-lights",
+              "info": "Left Panel.",
+              "label": "Nav Lights",
               "tier": "normal"
             }
           ],
@@ -517,7 +524,7 @@
             {
               "action": "FULLY ON",
               "id": "fuel-shutoff-knob",
-              "info": "Lower Right Panel. Double check that it is fully pushed in.",
+              "info": "Lower Pedestal. Double check that it is fully pushed in.",
               "label": "Fuel Shutoff Knob",
               "tier": "normal"
             }
@@ -543,14 +550,21 @@
             {
               "action": "TEST",
               "id": "overspeed-governor",
-              "info": "Center Pedestal. Advance power lever further until RPM stops increasing. Verify RPM stabilizes at 1750 ±60 RPM, then retard. The overspeed governor should prevent the propeller from exceeding this limit.",
+              "info": "Center Pedestal. Set the power lever for 1800 RPM, then press and hold the overspeed governor test button. Propeller RPM should drop to 1750 ±60 RPM. Return the power lever to idle. At 1800 RPM the sim's static thrust can overpower the brakes. The test can also be run in flight, at RPM very close to 1750, because RPM drops very quickly when the button is pressed.",
               "label": "Overspeed Governor",
+              "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "standby-alternator",
+              "info": "Left Panel. Backs up the starter-generator. It takes part of the load when the generator load passes a preset value and the engine is above idle.",
+              "label": "Standby Alternator",
               "tier": "full"
             },
             {
               "action": "TEST",
               "id": "standby-power-check",
-              "info": "Left Panel. Move generator switch to OFF — STBY ELEC PWR ON light should illuminate and bus volts should read approximately 1V below generator voltage. Restore generator to ON and verify STBY ELEC PWR ON light extinguishes.",
+              "info": "Left Panel. With the volt/amp meter on ALT, the standby alternator should show zero amps. With the generator carrying 30-60 amps, move the generator switch to TRIP: the standby alternator load should turn positive. Then move the generator switch to RESET.",
               "label": "Standby Power",
               "tier": "full"
             },
@@ -597,7 +611,7 @@
             {
               "action": "SET FOR T/O",
               "id": "flaps",
-              "info": "Center Console. Normally set to 20 degrees to provide maximum lift for a short ground roll.",
+              "info": "Center Console. 10 degrees for a normal takeoff, 20 degrees for a short field.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -628,6 +642,13 @@
               "info": "Left Panel. Further increases visibility to other aircraft during the takeoff roll.",
               "label": "Landing Lights",
               "tier": "normal"
+            },
+            {
+              "action": "RELEASE",
+              "id": "parking-brake-2",
+              "info": "Lower Left Panel. Releases the brake set for the run-up before takeoff power is applied.",
+              "label": "Parking Brake",
+              "tier": "normal"
             }
           ],
           "title": "Lineup"
@@ -641,21 +662,21 @@
         {
           "items": [
             {
-              "action": "1900 RPM",
+              "action": "SET T/O TORQUE",
               "id": "power-lever",
-              "info": "Center Pedestal. Smoothly advance. Torque increases roughly 10% from 0 to 80 KIAS due to ram air effect.",
+              "info": "Center Pedestal. Advance smoothly to takeoff torque: 1865 ft-lb maximum, ITT 805°C maximum. Torque rises as the aircraft accelerates and can pass the redline, so keep watching it during the roll.",
               "label": "Power Lever",
               "tier": "quick"
             },
             {
-              "action": "70-75 KIAS",
+              "action": "65 KIAS",
               "id": "rotate",
               "info": "Control Column. Pull back gently to lift the nose wheel off the runway.",
               "label": "Rotate",
               "tier": "quick"
             },
             {
-              "action": "88-92 KIAS",
+              "action": "85-95 KIAS",
               "id": "climb-speed",
               "info": "Instrument Panel. Initial climb out speed for obstacle clearance; depends on weight.",
               "label": "Climb Speed",
@@ -826,18 +847,18 @@
               "tier": "normal"
             },
             {
-              "action": "1900 RPM",
+              "action": "1600-1900 RPM",
               "id": "prop-rpm-lever",
-              "info": "Center Pedestal. Advance smoothly to provide maximum aerodynamic braking and responsiveness.",
+              "info": "Center Pedestal. Any setting in the 1600-1900 RPM green range.",
               "label": "Prop RPM Lever",
               "tier": "normal"
             },
             {
-              "action": "140-160 KIAS",
-              "id": "descent-speed",
-              "info": "Instrument Panel. Maintain 140 KIAS above 16,000 ft, and up to 160 KIAS below 16,000 ft.",
-              "label": "Descent Speed",
-              "tier": "normal"
+              "action": "REDUCE",
+              "id": "power-lever",
+              "info": "Center Pedestal. Pull back to start the descent.",
+              "label": "Power Lever",
+              "tier": "quick"
             },
             {
               "action": "SET QNH",
@@ -886,6 +907,13 @@
               "tier": "full"
             },
             {
+              "action": "HIGH IDLE",
+              "id": "fuel-condition-lever",
+              "info": "Center Pedestal. Should still be in HIGH IDLE from lineup, so the engine responds faster to power lever movements.",
+              "label": "Fuel Condition Lever",
+              "tier": "full"
+            },
+            {
               "action": "MAX",
               "id": "prop-rpm-lever",
               "info": "Center Pedestal. Final check that the propeller is fully forward for maximum thrust or drag.",
@@ -898,23 +926,23 @@
         {
           "items": [
             {
-              "action": "BELOW 150 KIAS",
+              "action": "BELOW 125 KIAS",
               "id": "flaps-10",
-              "info": "Center Console. First stage of drag configuration for the approach.",
+              "info": "Center Console. First stage of drag configuration for the approach. The sim limits every flap setting to 125 KIAS; the real aircraft allows 175 KIAS up to 10 degrees.",
               "label": "Flaps 10°",
               "tier": "quick"
             },
             {
               "action": "BELOW 125 KIAS",
               "id": "flaps-20",
-              "info": "Center Console. Further slows the aircraft and improves forward visibility over the nose.",
+              "info": "Center Console. Further slows the aircraft and improves forward visibility over the nose. The sim limits every flap setting to 125 KIAS; the real aircraft allows 150 KIAS from 10 to 20 degrees.",
               "label": "Flaps 20°",
               "tier": "quick"
             },
             {
-              "action": "BELOW 100 KIAS",
+              "action": "BELOW 125 KIAS",
               "id": "flaps-full",
-              "info": "Center Console. Final landing configuration. Target 80-90 KIAS on base and final legs.",
+              "info": "Center Console. Final landing configuration. 125 KIAS is the limit from 20 to 30 degrees in both the sim and the real aircraft. Fly 75-85 KIAS on final.",
               "label": "Flaps Full",
               "tier": "quick"
             }
@@ -923,6 +951,13 @@
         },
         {
           "items": [
+            {
+              "action": "DISCONNECT",
+              "id": "autopilot",
+              "info": "Control Column. Press the yoke disconnect button. The AP annunciator flashes for five seconds and a tone sounds.",
+              "label": "Autopilot",
+              "tier": "normal"
+            },
             {
               "action": "VERIFY FULL",
               "id": "flaps",
@@ -938,9 +973,9 @@
               "tier": "normal"
             },
             {
-              "action": "VREF 71-78 KIAS",
+              "action": "75-85 KIAS",
               "id": "speed",
-              "info": "Instrument Panel. Final approach speed over the runway threshold, which depends on the aircraft's landing weight.",
+              "info": "Instrument Panel. Normal final approach speed with full flaps. For a short-field landing, 78 KIAS at 8,500 lb.",
               "label": "Speed",
               "tier": "quick"
             },
@@ -957,6 +992,31 @@
       ],
       "id": "approach",
       "title": "Approach"
+    },
+    {
+      "groups": [
+        {
+          "items": [
+            {
+              "action": "BETA",
+              "id": "power-lever",
+              "info": "Center Pedestal. Pull back past idle into beta after touchdown. Return to idle before 25 knots.",
+              "label": "Power Lever",
+              "tier": "normal"
+            },
+            {
+              "action": "AS REQUIRED",
+              "id": "brakes",
+              "info": "Rudder Pedals. Toe brakes.",
+              "label": "Brakes",
+              "tier": "full"
+            }
+          ],
+          "title": "Landing"
+        }
+      ],
+      "id": "landing",
+      "title": "Landing"
     },
     {
       "groups": [
@@ -1038,6 +1098,27 @@
             },
             {
               "action": "OFF",
+              "id": "avionics-1-2",
+              "info": "Left Panel. Protects delicate radios and displays from voltage spikes when the battery is turned off.",
+              "label": "Avionics 1 & 2",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
+              "id": "standby-alternator",
+              "info": "Left Panel.",
+              "label": "Standby Alternator",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "fuel-boost-switch",
+              "info": "Left Panel. Secures the auxiliary fuel pump.",
+              "label": "Fuel Boost Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "OFF",
               "id": "bleed-air-vent-ac",
               "info": "Various Panels. Removes all environmental electrical and bleed loads prior to engine shutdown.",
               "label": "Bleed Air/Vent/AC",
@@ -1073,24 +1154,17 @@
             },
             {
               "action": "OFF",
-              "id": "fuel-boost-switch",
-              "info": "Left Panel. Secures the auxiliary fuel pump.",
-              "label": "Fuel Boost Switch",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
-              "id": "avionics-1-2",
-              "info": "Left Panel. Protects delicate radios and displays from voltage spikes when the battery is turned off.",
-              "label": "Avionics 1 & 2",
-              "tier": "normal"
-            },
-            {
-              "action": "OFF",
               "id": "battery-switch",
               "info": "Left Panel. Completely depowers the aircraft.",
               "label": "Battery Switch",
               "tier": "quick"
+            },
+            {
+              "action": "BOTH OFF",
+              "id": "fuel-selectors",
+              "info": "Overhead Panel. Shuts off fuel from both wing tanks.",
+              "label": "Fuel Selectors",
+              "tier": "full"
             }
           ],
           "title": "Shutdown"
