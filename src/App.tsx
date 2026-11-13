@@ -20,10 +20,17 @@ const AircraftsPage = lazyRoute(() => import('./pages/Aircrafts/AircraftsPage'))
 const ChangelogPage = lazyRoute(() => import('./pages/Changelog/ChangelogPage'));
 const AboutPage = lazyRoute(() => import('./pages/About/AboutPage'));
 const PrivacyPage = lazyRoute(() => import('./pages/Privacy/PrivacyPage'));
+const HangarPage = lazyRoute(() => import('./pages/Hangar/HangarPage'));
+const LocalChecklistPage = lazyRoute(() => import('./pages/Hangar/LocalChecklistPage'));
 /** Remount the checklist per aircraft so no state carries over between slugs. */
 const KeyedChecklistPage: React.FC = () => {
   const { id } = useParams();
   return <ChecklistPage key={id} />;
+};
+/** Same for My Hangar's checklists, keyed by their local id. */
+const KeyedLocalChecklistPage: React.FC = () => {
+  const { id } = useParams();
+  return <LocalChecklistPage key={id} />;
 };
 
 interface AppRoute {
@@ -43,6 +50,9 @@ const ROUTES: AppRoute[] = [
   { path: '/privacy', element: <PrivacyPage />, page: PrivacyPage },
   { path: '/aircraft/:id', element: <KeyedChecklistPage />, page: ChecklistPage },
   { path: '/news/:id', element: <BlogPostPage />, page: BlogPostPage },
+  // My Hangar: the visitor's own checklists, in their browser. Noindex, not in the sitemap.
+  { path: '/hangar', element: <HangarPage />, page: HangarPage },
+  { path: '/hangar/:id', element: <KeyedLocalChecklistPage />, page: LocalChecklistPage },
   { path: '*', element: <NotFoundPage /> },
 ];
 

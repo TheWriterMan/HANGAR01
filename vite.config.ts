@@ -35,6 +35,23 @@ function serveContentDir(): Plugin {
   };
 }
 
+/**
+ * `vite preview` stand-in for vercel.json's rewrite: a My Hangar checklist
+ * (/hangar/:id) is served the prerendered shell, as on Vercel.
+ */
+function hangarPreviewRewrite(): Plugin {
+  return {
+    name: 'hangar-preview-rewrite',
+    configurePreviewServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        if (req.url && /^\/hangar\/[^/.?]+\/?(?:\?.*)?$/.test(req.url))
+          req.url = '/hangar/local.html';
+        next();
+      });
+    },
+  };
+}
+
 /** Vendor chunks change less often than app code, so they stay cached across deploys. */
 const VENDOR_CHUNKS: Record<string, string> = {
   'framer-motion': 'vendor-motion',
@@ -48,7 +65,7 @@ const VENDOR_CHUNKS: Record<string, string> = {
 };
 
 export default defineConfig(({ isSsrBuild }) => ({
-  plugins: [react(), serveContentDir()],
+  plugins: [react(), serveContentDir(), hangarPreviewRewrite()],
   // Draft posts show on Vercel preview builds (the dev branch), never in production.
   define: { __SHOW_DRAFTS__: JSON.stringify(process.env.VERCEL_ENV === 'preview') },
   resolve: {

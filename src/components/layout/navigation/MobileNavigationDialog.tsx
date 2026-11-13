@@ -1,4 +1,4 @@
-import { Mail, X } from 'lucide-react';
+import { ChevronRight, ListChecks, Mail, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import type { FC, RefObject } from 'react';
 import { Link } from 'react-router-dom';
@@ -84,6 +84,19 @@ const MobileNavigationDialog: FC<MobileNavigationDialogProps> = ({
               }
             />
           ))}
+          <Link
+            to="/hangar"
+            onClick={onDismiss}
+            className="flex w-full items-center justify-between border-b border-border px-4 py-3 transition-colors duration-fast hover:bg-surface/50"
+          >
+            <span className="flex items-center gap-2.5">
+              <span className="text-muted">
+                <ListChecks size={14} aria-hidden="true" />
+              </span>
+              <span className="text-sm font-medium uppercase text-muted">My Hangar</span>
+            </span>
+            <ChevronRight size={14} aria-hidden="true" className="text-muted" />
+          </Link>
         </nav>
 
         <div className="flex shrink-0 items-center gap-3 border-t border-border bg-base p-4">

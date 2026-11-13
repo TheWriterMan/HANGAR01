@@ -42,7 +42,7 @@ const Header: FC<HeaderProps> = ({ isDemo = false }) => {
     return () => observer.disconnect();
   }, [isDemo, shellRef]);
 
-  const isChecklistPage = /^\/aircraft\/[^/]+$/.test(location.pathname);
+  const isChecklistPage = /^\/(?:aircraft|hangar)\/[^/]+$/.test(location.pathname);
   const HeaderBar = isDemo ? 'div' : 'header';
 
   return (

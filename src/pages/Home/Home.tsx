@@ -3,6 +3,7 @@ import HomeHero from './HomeHero';
 import BlogPreviewGrid from './BlogPreviewGrid';
 import FAQSection from './FAQSection';
 import FeaturedAircraftSection from './FeaturedAircraftSection';
+import MyHangarSection from './MyHangarSection';
 import SEO, { BASE_URL, LOGO_URL, SITE_NAME } from '../../components/seo/SEO';
 import { getHomePageData } from '../../services/aircraft';
 import { getAllPosts } from '../../utils/posts';
@@ -41,6 +42,7 @@ const Home: React.FC = () => {
 
       <div className="container-page py-12 md:py-16">
         <FeaturedAircraftSection newAircraft={newAircraft} popular={popular} />
+        <MyHangarSection />
         <BlogPreviewGrid posts={posts} />
       </div>
 

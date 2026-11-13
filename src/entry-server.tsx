@@ -33,11 +33,19 @@ export async function render(url: string, checklist: Aircraft | null = null): Pr
   return html;
 }
 
+/**
+ * The page a My Hangar checklist (/hangar/:id) is served from: its loading state, which is also
+ * the first render at any id. vercel.json and the preview server rewrite /hangar/:id to it.
+ */
+export const LOCAL_CHECKLIST_SHELL = '/hangar/local';
+
 /** Every public route. Drafts are only in the bundle on dev previews, and stay out of the sitemap and feed. */
 export function getRoutes() {
   return {
     baseUrl: BASE_URL,
     pages: ['/', '/aircraft', '/news', '/contact', '/changelog', '/about', '/privacy'],
+    /** Prerendered so they load with a 200, but noindex and never in the sitemap (My Hangar). */
+    noindexPages: ['/hangar', LOCAL_CHECKLIST_SHELL],
     aircraft: getAircraftList().map((ac) => ({
       slug: ac.slug,
       status: ac.status,

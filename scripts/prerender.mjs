@@ -152,6 +152,12 @@ for (const { slug, status } of routes.posts) {
   count++;
 }
 
+// My Hangar: rendered so Vercel serves them, but noindex and never in the sitemap.
+for (const route of routes.noindexPages) {
+  write(routeFile(route), await renderPage(route));
+  count++;
+}
+
 // Vercel serves 404.html with a 404 status for any path without a file.
 write('404.html', await renderPage('/404', null, ' data-not-found'));
 count++;

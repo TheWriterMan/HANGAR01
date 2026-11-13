@@ -1,4 +1,5 @@
 import type { FC, KeyboardEvent, MutableRefObject, PointerEvent } from 'react';
+import { NavLink } from 'react-router-dom';
 import DesktopMegaPanel from './DesktopMegaPanel';
 import { navigationCategories } from './menuData';
 
@@ -60,6 +61,18 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
           </button>
         );
       })}
+      <NavLink
+        to="/hangar"
+        onFocus={() => onChange(null)}
+        onPointerEnter={() => onChange(null)}
+        className={({ isActive }) =>
+          `relative flex items-center px-3 py-1.5 text-xs font-medium uppercase transition-colors duration-fast ${
+            isActive ? 'text-primary' : 'text-muted hover:text-primary'
+          }`
+        }
+      >
+        My Hangar
+      </NavLink>
       {activeCategory && <DesktopMegaPanel category={activeCategory} />}
     </nav>
   );

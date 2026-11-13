@@ -71,7 +71,13 @@ Tokens, type, layout and rules: [DESIGN.md](../DESIGN.md).
 - **Mode**: Per-aircraft toggle — `quick`, `normal`, `full`. Persisted to `localStorage` (`HANGAR01_mode_<slug>`).
 - **Completion**: Item ticks persisted to `localStorage` under stable ids (`<phaseId>/<itemId>`), so editing a checklist can only drop a tick, never move it. Survives mode switches. Key format, the legacy positional format and its migration are documented in `src/utils/progress.ts`.
 - All storage access goes through `src/utils/storage.ts`, which never throws.
-- **Filter pipeline**: `filterChecklist()` drops items not visible in the current mode, then drops empty groups, then drops phases with fewer than 4 items.
+- **Filter pipeline**: `filterChecklist()` drops items not visible in the current mode, then drops empty groups, then drops phases with fewer than 4 items (My Hangar checklists keep small phases).
+
+### My Hangar (`/hangar`)
+
+- Visitors import their own checklist from a CSV; it stays in their browser. `src/utils/checklistCsv.ts` converts rows to the same `ChecklistPhase` tree (Papa Parse, loaded with `import()` on the import screen only), and `src/utils/localChecklists.ts` keeps it in IndexedDB (`hangar01` / `local-checklists`), falling back to memory without IndexedDB.
+- `/hangar/:id` renders the local checklist with `ChecklistView`'s `local` variant: noindex, no Report, About or related sections, no checklist events (page views send `/hangar/local`). Ticks use the v2 progress key with the local id as the slug.
+- Both routes are prerendered noindex and kept out of the sitemap. `/hangar/:id` has no file per id, so `vercel.json` (and the preview server, in `vite.config.ts`) rewrite it to the prerendered loading shell `/hangar/local`.
 
 ### Usage counts
 
