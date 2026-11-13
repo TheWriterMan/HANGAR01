@@ -26,7 +26,7 @@
             {
               "action": "OFF",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls navigation, strobe, and landing lights.",
+              "info": "Upper Panel. Controls navigation, strobe, and landing lights.",
               "label": "Exterior Lights",
               "tier": "normal"
             },
@@ -80,21 +80,21 @@
             {
               "action": "OFF",
               "id": "air-conditioning",
-              "info": "Left Pilot Console. Controls the cabin cooling and climate system.",
+              "info": "A/C panel, left of the left control wheel. Controls the cabin cooling and climate system.",
               "label": "Air Conditioning",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "normal"
             },
@@ -115,7 +115,7 @@
             {
               "action": "OFF",
               "id": "bleed",
-              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "info": "PRESSURIZATION panel, right of the left control wheel. Taps hot air from the engine for cabin pressurization and heating.",
               "label": "Bleed",
               "tier": "normal"
             }
@@ -353,7 +353,7 @@
             {
               "action": "TEST",
               "id": "fuel-sel-shift-button",
-              "info": "Left Pilot Console. Press the Fuel Sel Shift button to verify it cycles the automatic fuel selector between tanks. Confirms the auto-switching mechanism works before flight.",
+              "info": "Upper Panel, FUEL panel. Press the SHIFT button to verify it cycles the automatic fuel selector between tanks. Confirms the auto-switching mechanism works before flight.",
               "label": "Fuel Sel Shift Button",
               "tier": "full"
             },
@@ -381,7 +381,7 @@
             {
               "action": "AUTO",
               "id": "bleed",
-              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "info": "PRESSURIZATION panel, right of the left control wheel. Taps hot air from the engine for cabin pressurization and heating.",
               "label": "Bleed",
               "tier": "normal"
             }
@@ -427,14 +427,14 @@
             {
               "action": "TEST",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "ON",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "normal"
             }
@@ -513,7 +513,7 @@
             {
               "action": "ON",
               "id": "landing-lights",
-              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "info": "Upper Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -527,7 +527,7 @@
             {
               "action": "ON",
               "id": "strobes",
-              "info": "Overhead Panel. Bright flashing lights that make the aircraft highly visible to other traffic.",
+              "info": "Upper Panel. Bright flashing lights that make the aircraft highly visible to other traffic.",
               "label": "Strobes",
               "tier": "normal"
             },
@@ -555,21 +555,21 @@
             {
               "action": "AS REQUIRED",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "ON",
               "id": "pitot-l-r-stall-htr",
-              "info": "Left Pilot Console. Heats the pitot tubes and stall warning vane to prevent ice blockage.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Heats the pitot tubes and stall warning vane to prevent ice blockage.",
               "label": "Pitot L/R & Stall Htr",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "full"
             }
@@ -595,7 +595,7 @@
             {
               "action": "AUTO",
               "id": "bleed",
-              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "info": "PRESSURIZATION panel, right of the left control wheel. Taps hot air from the engine for cabin pressurization and heating.",
               "label": "Bleed",
               "tier": "normal"
             },
@@ -762,14 +762,14 @@
             {
               "action": "AS REQUIRED",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "full"
             }
@@ -823,14 +823,14 @@
             {
               "action": "AS REQUIRED",
               "id": "de-ice-systems-2",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "AS REQUIRED",
               "id": "landing-lights",
-              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "info": "Upper Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
               "label": "Landing Lights",
               "tier": "full"
             },
@@ -890,21 +890,21 @@
             {
               "action": "AS REQUIRED",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "full"
             },
             {
               "action": "OFF",
               "id": "landing-lights",
-              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "info": "Upper Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -963,14 +963,14 @@
             {
               "action": "AS REQUIRED",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "full"
             }
@@ -1030,14 +1030,14 @@
             {
               "action": "AS REQUIRED",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "full"
             },
             {
               "action": "ON",
               "id": "landing-lights",
-              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "info": "Upper Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
               "label": "Landing Lights",
               "tier": "normal"
             }
@@ -1049,7 +1049,7 @@
             {
               "action": "ON",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "normal"
             },
@@ -1127,28 +1127,28 @@
             {
               "action": "OFF",
               "id": "landing-lights",
-              "info": "Overhead Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
+              "info": "Upper Panel. Bright forward-facing lights for takeoff, landing, and enhanced visibility.",
               "label": "Landing Lights",
               "tier": "normal"
             },
             {
               "action": "ON",
               "id": "taxi-light",
-              "info": "Overhead Panel. Provides forward illumination for ground taxiing.",
+              "info": "Upper Panel. Provides forward illumination for ground taxiing.",
               "label": "Taxi Light",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "de-ice-systems",
-              "info": "Left Pilot Console. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Provides anti-ice and de-ice protection for the airframe, windshield, and propeller.",
               "label": "De-Ice Systems",
               "tier": "normal"
             },
             {
               "action": "ON",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "normal"
             },
@@ -1167,9 +1167,9 @@
               "tier": "normal"
             },
             {
-              "action": "GND",
+              "action": "ALT",
               "id": "transponder",
-              "info": "GTC. Sends aircraft identification and altitude data to Air Traffic Control.",
+              "info": "GTC, Transponder screen. Leave in ALT. The G3000 switches the transponder to its ground state by itself after landing, shown as a white ALT.",
               "label": "Transponder",
               "tier": "normal"
             },
@@ -1201,7 +1201,7 @@
             {
               "action": "OFF",
               "id": "exterior-lights",
-              "info": "Overhead Panel. Controls navigation, strobe, and landing lights.",
+              "info": "Upper Panel. Controls navigation, strobe, and landing lights.",
               "label": "Exterior Lights",
               "tier": "normal"
             },
@@ -1229,14 +1229,14 @@
             {
               "action": "OFF",
               "id": "air-conditioning",
-              "info": "Left Pilot Console. Controls the cabin cooling and climate system.",
+              "info": "A/C panel, left of the left control wheel. Controls the cabin cooling and climate system.",
               "label": "Air Conditioning",
               "tier": "normal"
             },
             {
               "action": "OFF",
               "id": "bleed",
-              "info": "Left Pilot Console. Taps hot air from the engine for cabin pressurization and heating.",
+              "info": "PRESSURIZATION panel, right of the left control wheel. Taps hot air from the engine for cabin pressurization and heating.",
               "label": "Bleed",
               "tier": "normal"
             }
@@ -1262,14 +1262,14 @@
             {
               "action": "CUTOFF",
               "id": "throttle-2",
-              "info": "Center Pedestal. Controls engine power, reverse thrust, and propeller feathering.",
+              "info": "Center Pedestal. Shuts down the engine. Raise the throttle and pull it back past the idle gate to reach CUT OFF.",
               "label": "Throttle",
               "tier": "quick"
             },
             {
               "action": "OFF",
               "id": "inertial-separator",
-              "info": "Left Pilot Console. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
+              "info": "DE ICE SYSTEM panel, lower left instrument panel. Deploys a bypass that prevents ice or foreign debris from entering the engine intake.",
               "label": "Inertial Separator",
               "tier": "normal"
             },
