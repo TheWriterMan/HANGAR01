@@ -28,7 +28,7 @@
             {
               "action": "CUTOFF",
               "id": "mixture",
-              "info": "Lower center instrument panel. Pulling fully out starves the engine of fuel — normal shutdown method.",
+              "info": "Lower center instrument panel. Pulled fully out to idle cutoff, so no fuel reaches the engine until the start.",
               "label": "Mixture",
               "tier": "quick"
             },
@@ -70,7 +70,7 @@
               "id": "bat-alt-master",
               "info": "Lower left switch panel. Connects the battery and alternator to the main buses.",
               "label": "Bat & Alt Master",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "CHECK",
@@ -182,7 +182,7 @@
             {
               "action": "OFF",
               "id": "bat-alt-master",
-              "info": "Lower left switch panel. The battery half provides initial power, while the alternator half allows the engine to charge the system once running.",
+              "info": "Lower left switch panel. Stays off until the standby battery has been tested and armed.",
               "label": "Bat & Alt Master",
               "tier": "full"
             },
@@ -217,7 +217,7 @@
             {
               "action": "OPEN 1/4 INCH",
               "id": "throttle",
-              "info": "Lower center instrument panel. A stable idle speed keeps the engine running smoothly and prevents spark plug fouling.",
+              "info": "Lower center instrument panel. Opened slightly from idle for the start.",
               "label": "Throttle",
               "tier": "quick"
             },
@@ -364,7 +364,7 @@
             {
               "action": "AS REQUIRED",
               "id": "throttle",
-              "info": "Lower center instrument panel. Adjusting power as needed to maintain taxi speed or altitude.",
+              "info": "Lower center instrument panel. Adjusting power as needed to hold a slow taxi speed.",
               "label": "Throttle",
               "tier": "normal"
             },
@@ -374,13 +374,6 @@
               "info": "Lower left switch panel. One rocker switch with BUS 1 and BUS 2 halves. Both halves on after the engine is running. Powers radios, GPS, and secondary instruments.",
               "label": "Avionics (Bus 1 & 2)",
               "tier": "quick"
-            },
-            {
-              "action": "SET",
-              "id": "radios",
-              "info": "Main instrument panel. Tuning communication and navigation frequencies in advance reduces pilot workload.",
-              "label": "Radios",
-              "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
@@ -416,33 +409,12 @@
               "info": "Lower left switch panel. Melts ice off the pitot tube to ensure accurate airspeed readings.",
               "label": "Pitot Heat",
               "tier": "full"
-            },
-            {
-              "action": "SET FOR T/O",
-              "id": "elevator-trim",
-              "info": "Center pedestal. Set to takeoff index.",
-              "label": "Elevator Trim",
-              "tier": "normal"
-            },
-            {
-              "action": "FREE",
-              "id": "flight-controls",
-              "info": "Yoke and pedals. Moving the yoke in a box pattern and pressing the rudder pedals fully verifies nothing is jamming the control cables.",
-              "label": "Flight Controls",
-              "tier": "normal"
             }
           ],
           "title": "After Start Flow"
         },
         {
           "items": [
-            {
-              "action": "SET QNH",
-              "id": "altimeters",
-              "info": "Main instrument panel. Setting the local barometric pressure provides the correct altitude above mean sea level.",
-              "label": "Altimeters",
-              "tier": "normal"
-            },
             {
               "action": "PRESELECT",
               "id": "autopilot",
@@ -552,7 +524,7 @@
             {
               "action": "CHECK",
               "id": "vacuum-gauge",
-              "info": "Main instrument panel. Ensures the vacuum pump is providing enough suction to spin the gyroscopic instruments like the attitude indicator.",
+              "info": "Main instrument panel, on the engine indication page. The engine-driven vacuum pump drives the standby attitude indicator. The pointer should be in the green arc.",
               "label": "Vacuum Gauge",
               "tier": "full"
             },
@@ -578,11 +550,25 @@
               "tier": "normal"
             },
             {
-              "action": "IDLE",
+              "action": "CHECK IDLE",
               "id": "throttle-2",
-              "info": "Lower center instrument panel. Pulled completely back for minimum engine power.",
+              "info": "Lower center instrument panel. Pulled back to idle to confirm the engine keeps running smoothly.",
               "label": "Throttle",
               "tier": "normal"
+            },
+            {
+              "action": "1000 RPM OR LESS",
+              "id": "throttle-3",
+              "info": "Lower center instrument panel. Set after the idle check.",
+              "label": "Throttle",
+              "tier": "normal"
+            },
+            {
+              "action": "ADJUST",
+              "id": "throttle-friction-lock",
+              "info": "Lower center instrument panel. Keeps the throttle from creeping once it is set.",
+              "label": "Throttle Friction Lock",
+              "tier": "full"
             }
           ],
           "title": "Engine Runup"
@@ -636,7 +622,7 @@
               "id": "elevator-trim",
               "info": "Center pedestal. Set to takeoff index.",
               "label": "Elevator Trim",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "UP–10°",
@@ -646,18 +632,18 @@
               "tier": "quick"
             },
             {
+              "action": "CLOSED AND LOCKED",
+              "id": "cabin-windows",
+              "info": "Cabin doors.",
+              "label": "Cabin Windows",
+              "tier": "normal"
+            },
+            {
               "action": "AS REQUIRED",
               "id": "pitot-heat",
               "info": "Lower left switch panel. Melts ice off the pitot tube to ensure accurate airspeed readings.",
               "label": "Pitot Heat",
               "tier": "full"
-            },
-            {
-              "action": "FULL RICH",
-              "id": "mixture-2",
-              "info": "Lower center instrument panel. Full rich for sea level ops.",
-              "label": "Mixture",
-              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -699,7 +685,7 @@
               "id": "parking-brake-2",
               "info": "Lower left subpanel. Released before takeoff power is applied.",
               "label": "Parking Brake",
-              "tier": "quick"
+              "tier": "normal"
             }
           ],
           "title": "Lineup"
@@ -759,17 +745,10 @@
               "tier": "quick"
             },
             {
-              "action": "LEAN",
+              "action": "RICH",
               "id": "mixture",
-              "info": "Lower center instrument panel. Above 3000 ft pressure altitude, lean for maximum RPM. Below that, keep it rich.",
+              "info": "Lower center instrument panel. Above 3000 ft pressure altitude, lean for maximum RPM.",
               "label": "Mixture",
-              "tier": "normal"
-            },
-            {
-              "action": "UP",
-              "id": "flaps",
-              "info": "Lower right of the center panel. Retract — removes drag.",
-              "label": "Flaps",
               "tier": "normal"
             },
             {
@@ -785,13 +764,6 @@
               "info": "Lower left switch panel. Often left on for visibility to other aircraft in busy airspace.",
               "label": "Landing Lights",
               "tier": "full"
-            },
-            {
-              "action": "SET STD",
-              "id": "altimeters",
-              "info": "Main instrument panel. At transition altitude, standard pressure (29.92 inHg or 1013 hPa) is set so all aircraft reference the same pressure level.",
-              "label": "Altimeters",
-              "tier": "normal"
             }
           ],
           "title": "Initial Climb"
@@ -923,23 +895,23 @@
               "tier": "quick"
             },
             {
-              "action": "100 KIAS",
+              "action": "10°",
               "id": "flaps-10",
-              "info": "Lower right of the center panel. The first notch of flaps allows for a slower, more stable approach speed.",
-              "label": "Flaps 10",
+              "info": "Lower right of the center panel. Flaps up to 10° only below 110 KIAS.",
+              "label": "Flaps",
               "tier": "quick"
             },
             {
-              "action": "80 KIAS",
+              "action": "20°",
               "id": "flaps-20",
-              "info": "Lower right of the center panel. Adds more drag and lift as the aircraft nears the runway.",
-              "label": "Flaps 20",
+              "info": "Lower right of the center panel. Flaps beyond 10° only below 85 KIAS.",
+              "label": "Flaps",
               "tier": "quick"
             },
             {
               "action": "FULL",
               "id": "flaps",
-              "info": "Lower right of the center panel. Maximum flaps provide the steepest descent angle without increasing airspeed.",
+              "info": "Lower right of the center panel. Below 85 KIAS. Maximum flaps give the steepest descent angle without increasing airspeed.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -953,7 +925,7 @@
             {
               "action": "OFF",
               "id": "autopilot",
-              "info": "Main instrument panel. Manually flying the approach usually begins before reaching minimums, unless performing an autoland (not typically done in a 172).",
+              "info": "Main instrument panel. Off before landing. The approach and landing are flown by hand.",
               "label": "Autopilot",
               "tier": "normal"
             },
@@ -997,9 +969,9 @@
               "tier": "quick"
             },
             {
-              "action": "20 DEG",
+              "action": "20°",
               "id": "flaps",
-              "info": "Lower right of the center panel. Retract — removes drag.",
+              "info": "Lower right of the center panel. Retracted from full to 20° to reduce drag.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -1168,9 +1140,9 @@
             {
               "action": "OFF",
               "id": "stby-battery",
-              "info": "Lower left switch panel. Turned off last to secure the electrical system.",
+              "info": "Lower left switch panel. Turned off after the master switch, so the standby battery no longer powers the essential bus and the PFD.",
               "label": "STBY Battery",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "LEFT OR RIGHT",
