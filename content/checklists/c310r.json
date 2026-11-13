@@ -12,7 +12,7 @@
               "action": "Set",
               "id": "parking-brake",
               "info": "Center Pedestal. Prevents the aircraft from rolling during prep.",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "label": "All Switches",
@@ -37,9 +37,9 @@
             },
             {
               "label": "Trim Tabs",
-              "action": "Neutral",
+              "action": "Set for Takeoff",
               "id": "trim-tabs",
-              "info": "Center pedestal. Elevator, rudder, and aileron trim all set to neutral before start.",
+              "info": "Center pedestal. Elevator, rudder, and aileron trim set for takeoff. The elevator trim indicator has a takeoff template to set it against.",
               "tier": "full"
             },
             {
@@ -58,21 +58,21 @@
               "label": "Battery",
               "action": "On",
               "id": "battery",
-              "info": "Left panel. ON.",
+              "info": "Lower switch panel, center switch. ON.",
               "tier": "quick"
             },
             {
               "label": "Alternators",
               "action": "On",
               "id": "alternators",
-              "info": "Left panel. Arms both alternators to charge the battery once engines are running.",
+              "info": "Lower switch panel, either side of the battery switch. Arms both alternators to charge the battery once engines are running.",
               "tier": "quick"
             },
             {
               "label": "Fuel Gauges",
               "action": "Check",
               "id": "fuel-gauges",
-              "info": "Main panel. Verify operation and quantity. Fill main tanks to 100% before using aux tanks.",
+              "info": "Main panel. Verify operation and quantity. Burn 90 minutes of fuel from the mains before selecting the aux tanks: the engines return fuel to the mains, and it is vented overboard if they are full.",
               "tier": "normal"
             },
             {
@@ -104,14 +104,14 @@
               "label": "Avionics Master",
               "action": "Off",
               "id": "avionics-master-off",
-              "info": "Center panel. Kept off during start to protect sensitive avionics from voltage spikes.",
+              "info": "Left side panel. Kept off during start to protect sensitive avionics from voltage spikes.",
               "tier": "normal"
             },
             {
               "label": "Aux Fuel Pumps",
               "action": "Off",
               "id": "aux-fuel-pumps-prestart",
-              "info": "Center pedestal. Verify both aux fuel pumps off before start.",
+              "info": "Lower switch panel. Verify both aux fuel pumps off before start.",
               "tier": "normal"
             },
             {
@@ -158,36 +158,22 @@
               "label": "Magnetos",
               "action": "On",
               "id": "magnetos",
-              "info": "Left panel. Both switches to BOTH for dual ignition on each engine.",
+              "info": "Lower switch panel. All four magneto switches up (ON), two for each engine.",
               "tier": "quick"
             },
             {
               "label": "Left Engine",
               "action": "Start",
               "id": "left-engine-start",
-              "info": "Left panel. Select LEFT primer, hold starter button until engine fires, then set aux fuel pump to LOW.",
+              "info": "Lower switch panel. Select LEFT primer, hold the left starter button until the engine fires, then set its aux fuel pump to LOW. Set 800-1000 RPM and check at least 10 PSI oil pressure within 30 seconds, or shut it down, before starting the right engine.",
               "tier": "quick"
             },
             {
               "label": "Right Engine",
               "action": "Start",
               "id": "right-engine-start",
-              "info": "Left panel. Select RIGHT primer, hold starter button until engine fires, then set aux fuel pump to LOW.",
+              "info": "Lower switch panel. Select RIGHT primer, hold the right starter button until the engine fires, then set its aux fuel pump to LOW. Set 800-1000 RPM and check at least 10 PSI oil pressure within 30 seconds, or shut it down.",
               "tier": "quick"
-            },
-            {
-              "label": "Throttles",
-              "action": "800-1000 RPM",
-              "id": "throttles-idle",
-              "info": "Center pedestal. Set both to idle range and let oil pressure stabilize.",
-              "tier": "quick"
-            },
-            {
-              "label": "Oil Pressure",
-              "action": "Check",
-              "id": "oil-pressure",
-              "info": "Main panel. Must show minimum 10 PSI within 30 seconds of start or shut down immediately.",
-              "tier": "normal"
             }
           ]
         },
@@ -198,7 +184,7 @@
               "label": "Avionics Master",
               "action": "On",
               "id": "avionics-master-on",
-              "info": "Center panel. Power up radios and GPS once voltage is stable.",
+              "info": "Left side panel. Power up radios and GPS once at least one alternator is online.",
               "tier": "quick"
             },
             {
@@ -241,18 +227,11 @@
               "tier": "normal"
             },
             {
-              "label": "Mixture",
-              "action": "Lean",
-              "id": "mixture-lean-taxi",
-              "info": "Center pedestal. Leaning during taxi prevents spark plug fouling from over-rich ground operations.",
-              "tier": "normal"
-            },
-            {
               "label": "Parking Brake",
               "action": "Release",
               "id": "parking-brake-release",
               "info": "Center pedestal. Release and begin taxi, checking brakes and steering.",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "label": "Flight Controls",
@@ -305,7 +284,7 @@
               "label": "Magnetos",
               "action": "Check",
               "id": "magnetos-check",
-              "info": "Left panel. Max 150 RPM drop per mag, max 50 RPM difference between L and R.",
+              "info": "Lower switch panel. Max 150 RPM drop per mag, max 50 RPM difference between L and R.",
               "tier": "full"
             },
             {
@@ -333,7 +312,14 @@
               "label": "Alternators",
               "action": "Check",
               "id": "alternators-runup",
-              "info": "Left panel. Amp meter selector to each alternator position. Verify positive load, confirming each alternator is charging the bus.",
+              "info": "Lower center panel. Turn the ammeter selector to each alternator position. Verify positive load, confirming each alternator is charging the bus.",
+              "tier": "full"
+            },
+            {
+              "label": "Parking Brake",
+              "action": "Release",
+              "id": "parking-brake-release-2",
+              "info": "Center Pedestal. Release once the run-up is complete.",
               "tier": "full"
             }
           ]
@@ -366,7 +352,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Low",
               "id": "aux-fuel-pumps-low",
-              "info": "Center pedestal. Aux pumps ON for takeoff.",
+              "info": "Lower switch panel. Aux pumps ON for takeoff.",
               "tier": "quick"
             },
             {
@@ -387,7 +373,7 @@
               "label": "Anti-Ice",
               "action": "As Required",
               "id": "anti-ice-lineup",
-              "info": "Left panel. Activate engine and prop anti-ice if flying into visible moisture near freezing temperatures.",
+              "info": "Left side panel. Surface and propeller de-ice switches, for flight where icing is possible. There is no engine anti-ice.",
               "tier": "full"
             },
             {
@@ -438,9 +424,9 @@
             },
             {
               "label": "Rotate",
-              "action": "At Vr",
+              "action": "83 KIAS",
               "id": "rotate",
-              "info": "Vr varies by weight: 71-82 KIAS (flaps up) or 65-72 KIAS (flaps 15). Lift off at V50 = Vr + 10.",
+              "info": "Yoke. Raise the nosewheel at 83 KIAS. Vmca 80 KIAS. Lift-off 92 KIAS at 5,500 lb. Flaps 15: rotate at 70, lift off at 82.",
               "tier": "quick"
             },
             {
@@ -465,7 +451,7 @@
               "label": "Climb Power",
               "action": "Set",
               "id": "climb-power",
-              "info": "Center pedestal. At ~500 ft AGL, set 2500 RPM then 24.5 inHG. Reduce props first, then manifold pressure.",
+              "info": "Center pedestal. At ~500 ft AGL, throttles to 24.5 inHg, then props to 2500 RPM. Throttles first avoids high manifold pressure at low RPM.",
               "tier": "quick"
             },
             {
@@ -484,9 +470,23 @@
             },
             {
               "label": "Flaps",
-              "action": "Verify Up",
+              "action": "Up",
               "id": "flaps-verify-up",
-              "info": "Center console. Confirm flaps fully retracted for clean climb configuration.",
+              "info": "Center console. Retract if set to 15° for takeoff.",
+              "tier": "normal"
+            },
+            {
+              "label": "Aux Fuel Pumps",
+              "action": "Off",
+              "id": "aux-fuel-pumps",
+              "info": "Lower switch panel. LOW again above 12,000 ft.",
+              "tier": "normal"
+            },
+            {
+              "label": "Autopilot",
+              "action": "Engage",
+              "id": "autopilot",
+              "info": "Upper center panel (KAP140). Select HDG or NAV for lateral guidance and ALT or vertical speed for pitch.",
               "tier": "normal"
             },
             {
@@ -526,7 +526,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Low",
               "id": "aux-pumps-high-alt",
-              "info": "Center pedestal. Activate above 12,000 ft to compensate for reduced atmospheric pressure on fuel flow.",
+              "info": "Lower switch panel. Activate above 12,000 ft to compensate for reduced atmospheric pressure on fuel flow.",
               "tier": "normal"
             },
             {
@@ -563,23 +563,23 @@
             },
             {
               "label": "Cowl Flaps",
-              "action": "As Required",
+              "action": "Open",
               "id": "cowl-flaps-cruise",
-              "info": "Center pedestal. Close (pull out) once CHT is stable in the green. Open if temps climb.",
+              "info": "Center pedestal. Pushed in = fully open. They stay open in normal operation.",
               "tier": "normal"
             },
             {
               "label": "Fuel Selectors",
               "action": "Monitor",
               "id": "fuel-selectors-cruise",
-              "info": "Center pedestal. Use mains until ~32 gal (~60%) remains in each, then switch to aux tanks one engine at a time with several minutes between switches.",
+              "info": "Center pedestal. Stay on the main tanks for the first 90 minutes. Before turning a selector, set that engine's aux pump to LOW.",
               "tier": "normal"
             },
             {
               "label": "Aux Fuel Pumps",
               "action": "As Required",
               "id": "aux-pumps-cruise",
-              "info": "Center pedestal. LOW during tank switching. Otherwise off unless fuel flow fluctuates.",
+              "info": "Lower switch panel. LOW during tank switching. Otherwise off unless fuel flow fluctuates.",
               "tier": "full"
             }
           ]
@@ -597,7 +597,7 @@
               "label": "Cowl Flaps",
               "action": "As Required",
               "id": "cowl-flaps-descent",
-              "info": "Center pedestal. Open enough to maintain engine temps in the green during reduced power.",
+              "info": "Center pedestal. Leave open. Close (pull out) only in a rapid descent, to prevent shock cooling.",
               "tier": "normal"
             },
             {
@@ -605,6 +605,13 @@
               "action": "Set",
               "id": "power-descent",
               "info": "Center pedestal. Reduce gradually. Target ~1000 fpm above 10,000 ft, ~500 fpm below.",
+              "tier": "normal"
+            },
+            {
+              "label": "Mixtures",
+              "action": "Enrich",
+              "id": "mixtures",
+              "info": "Center pedestal. Move the mixture levers forward as you descend. Denser air needs more fuel to run smoothly.",
               "tier": "normal"
             },
             {
@@ -637,7 +644,7 @@
               "label": "Aux Fuel Pumps",
               "action": "Low",
               "id": "aux-pumps-descent",
-              "info": "Center pedestal. Aux pumps ON for approach.",
+              "info": "Lower switch panel. Aux pumps ON for approach.",
               "tier": "normal"
             }
           ]
@@ -656,6 +663,13 @@
               "action": "On",
               "id": "landing-lights-approach",
               "info": "Left panel. Extend and illuminate for traffic visibility in the terminal area.",
+              "tier": "normal"
+            },
+            {
+              "label": "Autopilot",
+              "action": "APR Armed",
+              "id": "autopilot",
+              "info": "Upper center panel (KAP140). Arms the approach mode. The HSI and autopilot always follow NAV1, so tune the approach on NAV1.",
               "tier": "normal"
             },
             {
@@ -716,7 +730,7 @@
               "label": "Speed",
               "action": "Vref",
               "id": "speed-vref",
-              "info": "Vref varies by landing weight: 82-93 KIAS. Stabilize on final approach speed.",
+              "info": "Airspeed indicator. Minimum multi-engine approach speed is 93 KIAS at 5,400 lb. Stabilize on final approach speed.",
               "tier": "quick"
             }
           ]
@@ -730,6 +744,13 @@
         {
           "title": "Landing",
           "items": [
+            {
+              "label": "Autopilot",
+              "action": "Disconnect",
+              "id": "autopilot",
+              "info": "Left yoke. Press the autopilot disconnect button before landing.",
+              "tier": "normal"
+            },
             {
               "label": "Landing Gear",
               "action": "3 Green",
@@ -813,14 +834,14 @@
               "label": "Aux Fuel Pumps",
               "action": "Off",
               "id": "aux-pumps-off",
-              "info": "Center pedestal. No longer needed with engines about to stop.",
+              "info": "Lower switch panel. No longer needed with engines about to stop.",
               "tier": "normal"
             },
             {
               "label": "Avionics Master",
               "action": "Off",
               "id": "avionics-off",
-              "info": "Center panel. Power down radios and GPS before cutting battery.",
+              "info": "Left side panel. Power down radios and GPS before cutting battery.",
               "tier": "normal"
             },
             {
@@ -841,14 +862,14 @@
               "label": "Magnetos",
               "action": "Off",
               "id": "magnetos-off",
-              "info": "Left panel. Both switches to OFF after props stop turning.",
+              "info": "Lower switch panel. All four switches OFF after the engines stop, or flip the gang bar down to turn them all off at once.",
               "tier": "quick"
             },
             {
               "label": "Battery & Alternators",
               "action": "Off",
               "id": "battery-alternators-off",
-              "info": "Left panel. Master battery and both alternator switches off.",
+              "info": "Lower switch panel. Battery and both alternator switches off, or flip the gang bar above them down.",
               "tier": "quick"
             }
           ]
