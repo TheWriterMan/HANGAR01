@@ -14,9 +14,9 @@
             {
               "action": "DOWN",
               "id": "gear",
-              "info": "Main Panel. Lowers the landing gear.",
+              "info": "Main Panel. Check the gear lever is down.",
               "label": "Gear",
-              "tier": "normal"
+              "tier": "full"
             },
             {
               "action": "IDLE",
@@ -40,10 +40,10 @@
               "tier": "full"
             },
             {
-              "action": "NORM",
+              "action": "OFF",
               "id": "eng-mode",
-              "info": "Pedestal. Ignition selector set to NORM. The A or B positions are only used during engine start.",
-              "label": "ENG Mode",
+              "info": "Overhead Panel. Ignition selector at OFF. A or B is used only for engine start, CONT RELIGHT for heavy rain, icing or turbulence.",
+              "label": "Ignition",
               "tier": "full"
             },
             {
@@ -56,7 +56,7 @@
             {
               "action": "OFF",
               "id": "weather-radar",
-              "info": "Pedestal. Switch to ON (1 or 2) to verify the test pattern on the ND, then return to OFF.",
+              "info": "Pedestal. Keep the radar off during cockpit preparation. It is tested later in the flow.",
               "label": "Weather Radar",
               "tier": "full"
             }
@@ -66,16 +66,16 @@
         {
           "items": [
             {
-              "action": "ON",
+              "action": "AUTO",
               "id": "batteries",
-              "info": "Overhead Panel. Switch all three batteries (BAT 1, 2, 3) to ON. White lines through the switches indicate they are active.",
+              "info": "Overhead Panel. Set the battery switches to AUTO. All BAT OFF lights should go out.",
               "label": "Batteries",
               "tier": "quick"
             },
             {
               "action": "ON",
               "id": "external-power",
-              "info": "Overhead Panel. Disconnect once the APU is supplying electrical power. Skip this step if no GPU is connected.",
+              "info": "Overhead Panel. If a GPU is connected, the EXT PWR AVAIL light is on. Press the switch: AVAIL goes out and ON lights. Skip this step if no GPU is connected.",
               "label": "External Power",
               "tier": "normal"
             },
@@ -127,10 +127,17 @@
               "tier": "quick"
             },
             {
+              "action": "ON",
+              "id": "apu-generator",
+              "info": "Overhead Panel. Switch on once the APU AVAIL light comes on, so the APU powers the aircraft.",
+              "label": "APU Generator",
+              "tier": "quick"
+            },
+            {
               "action": "NAV",
               "id": "adirs-selectors",
               "info": "Overhead Panel. Move all three selectors to NAV to begin alignment. The FROM/TO must be entered in the MCDU for the alignment to complete.",
-              "label": "ADIRS Selectors",
+              "label": "IRS Mode Selectors",
               "tier": "quick"
             },
             {
@@ -181,10 +188,24 @@
               "tier": "normal"
             },
             {
-              "action": "AUTO",
+              "action": "ON",
               "id": "seat-belts",
-              "info": "Overhead Panel. Set the No Smoking selector to AUTO; the seatbelt sign will follow this selector's logic.",
-              "label": "Seatbelt Sign",
+              "info": "Overhead Panel. Turns on the seat belt signs in the cabin.",
+              "label": "Seat Belts",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "no-smoking",
+              "info": "Overhead Panel. Set the No Smoking switch to AUTO.",
+              "label": "No Smoking",
+              "tier": "normal"
+            },
+            {
+              "action": "AUTO",
+              "id": "hyd-edps",
+              "info": "Overhead Panel. Set the engine pump switches on the HYD PWR panel to AUTO. The amber HYD PUMPS LO PR lights stay on until the engines are running.",
+              "label": "Hyd EDPs",
               "tier": "normal"
             },
             {
@@ -256,14 +277,14 @@
             {
               "action": "ON",
               "id": "yaw-damper",
-              "info": "Glareshield. Engage both Yaw Damper levers to provide stability augmentation.",
+              "info": "Glareshield. Engage both Yaw Damper levers. Don't engage them until the IRS ALIGN lights are out.",
               "label": "Yaw Damper",
               "tier": "quick"
             },
             {
               "action": "SET",
               "id": "takeoff-performance",
-              "info": "EFB. Enter mass and balance data to run the takeoff calculation. Standard configuration uses Flaps 15/0.",
+              "info": "EFB. Enter mass and balance data to run the takeoff calculation.",
               "label": "Takeoff Performance",
               "tier": "normal"
             }
@@ -418,7 +439,7 @@
             {
               "action": "TEST",
               "id": "weather-radar-2",
-              "info": "Pedestal. Switch to ON (1 or 2) to verify the test pattern on the ND, then return to OFF.",
+              "info": "Pedestal. Select TEST and check the test display on the ND, then return to WX mode.",
               "label": "Weather Radar",
               "tier": "full"
             },
@@ -522,10 +543,10 @@
               "tier": "full"
             },
             {
-              "action": "START",
+              "action": "A OR B",
               "id": "eng-mode",
-              "info": "Pedestal. Move the ignition selector to A or B. CONT RELIGHT is only used for turbulence, icing, or heavy precipitation.",
-              "label": "ENG Mode",
+              "info": "Overhead Panel. Select A or B. The ARM lights come on and the pack valve flow bars go out.",
+              "label": "Ignition",
               "tier": "quick"
             },
             {
@@ -545,7 +566,7 @@
             {
               "action": "START",
               "id": "engine-1-start",
-              "info": "Overhead Panel. Press START 1. The switch will display OPEN.",
+              "info": "Overhead Panel. Wait until engine 2 passes 45% N2 and its blue OPEN light goes out, then press START 1. The switch will display OPEN.",
               "label": "Engine 1 Start",
               "tier": "quick"
             },
@@ -575,10 +596,10 @@
         {
           "items": [
             {
-              "action": "NORM",
+              "action": "OFF",
               "id": "eng-mode",
-              "info": "Pedestal. Return the ignition selector to NORM after both engines have stabilized.",
-              "label": "ENG Mode",
+              "info": "Overhead Panel. Set the ignition selector to OFF once both engines are running. Leave it on in heavy rain or on a contaminated taxiway.",
+              "label": "Ignition",
               "tier": "normal"
             },
             {
@@ -612,7 +633,7 @@
             {
               "action": "SET",
               "id": "flaps",
-              "info": "Pedestal. Set the flaps for takeoff. Standard configuration is Flaps 15/15.",
+              "info": "Pedestal. Set the slats and flaps to the position from the takeoff performance calculation.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -654,7 +675,7 @@
               "id": "parking-brake",
               "info": "Pedestal. Release the parking brake to commence taxi.",
               "label": "Parking Brake",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "TAXI",
@@ -778,9 +799,9 @@
               "tier": "full"
             },
             {
-              "action": "AS REQUIRED",
+              "action": "OFF",
               "id": "brake-fans",
-              "info": "Overhead Panel. Turn on if brake temperatures are high from a long taxi.",
+              "info": "Overhead Panel. Delay the takeoff if brake temperature is above 150°C with the fans on, or above 300°C with them off.",
               "label": "Brake Fans",
               "tier": "full"
             },
@@ -796,7 +817,7 @@
               "id": "transponder",
               "info": "Pedestal. Switch TCAS to TA/RA for traffic alerting during flight.",
               "label": "Transponder",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -833,7 +854,7 @@
             {
               "action": "SET",
               "id": "throttles",
-              "info": "Pedestal. Stabilize engines at 40% N1, release brakes, and advance levers or press TO/GA on the glareshield.",
+              "info": "Pedestal. Advance to at least 40% N1 and let the engines stabilise, then advance to the takeoff position, release the brakes and trigger the go-levers. In the sim, the ATC COMM button triggers the go-levers.",
               "label": "Throttles",
               "tier": "quick"
             },
@@ -865,11 +886,11 @@
               "tier": "quick"
             },
             {
-              "action": "ON",
+              "action": "VERIFY",
               "id": "autothrust",
-              "info": "Glareshield. Verify or engage autothrust shortly after the autopilot is active.",
+              "info": "Glareshield. The ATS levers stay engaged from cockpit preparation. Check they are still on.",
               "label": "Autothrust",
-              "tier": "quick"
+              "tier": "full"
             }
           ],
           "title": "Takeoff Roll"
@@ -899,7 +920,7 @@
             {
               "action": "UP",
               "id": "flaps",
-              "info": "Pedestal. Retract flaps to 1 above F-speed, and to 0 above S-speed.",
+              "info": "Pedestal. Select flaps 0 at F speed, then slats 0 at S speed.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -1073,7 +1094,7 @@
             {
               "action": "SET",
               "id": "minimums",
-              "info": "Glareshield. Dial the decision height or baro minimums for the approach. Set 200 feet if no specific minimum is published.",
+              "info": "Glareshield. Set a DH on the FCU only for CAT II and CAT III ILS approaches. For approaches with an MDA, set DH to -5 so it is deselected, and enter the MDA on the MCDU approach page.",
               "label": "Minimums",
               "tier": "normal"
             },
@@ -1082,13 +1103,6 @@
               "id": "autobrake",
               "info": "Main Panel. Select LO or MED autobrake depending on runway length and conditions.",
               "label": "Autobrake",
-              "tier": "normal"
-            },
-            {
-              "action": "SET",
-              "id": "altitude-selector",
-              "info": "Glareshield. Dial down to the cleared altitude or initial approach fix altitude and pull the knob to arm the descent.",
-              "label": "Altitude Selector",
               "tier": "normal"
             },
             {
@@ -1110,6 +1124,13 @@
         {
           "items": [
             {
+              "action": "SET & PULL",
+              "id": "altitude-selector",
+              "info": "Glareshield. Turn the FCU ALT knob to the cleared altitude and pull it to start the descent. The FMA should show P.THR and P.DES armed.",
+              "label": "Altitude Selector",
+              "tier": "quick"
+            },
+            {
               "action": "INITIATE",
               "id": "descent",
               "info": "Glareshield. Verify automatic descent in PROFILE mode, or manually select LVL CH if required by ATC.",
@@ -1119,8 +1140,8 @@
             {
               "action": "AS REQUIRED",
               "id": "eng-mode",
-              "info": "Pedestal. Move to CONT RELIGHT if descending through icing, turbulence, or heavy precipitation.",
-              "label": "ENG Mode",
+              "info": "Overhead Panel. Move to CONT RELIGHT if descending through icing, turbulence, or heavy precipitation.",
+              "label": "Ignition",
               "tier": "full"
             },
             {
@@ -1148,7 +1169,7 @@
               "action": "ON",
               "id": "taxi-lights",
               "info": "Overhead Panel. Turn on runway turn-off lights for increased visibility below 10,000 feet.",
-              "label": "Taxi Lights",
+              "label": "Runway Turnoff Lights",
               "tier": "normal"
             },
             {
@@ -1191,16 +1212,9 @@
               "tier": "normal"
             },
             {
-              "action": "LVL CH",
-              "id": "altitude-mode",
-              "info": "Glareshield. Select LVL CH about 3,000 feet above the runway to capture the localizer first, then intercept the glideslope from below.",
-              "label": "Altitude Mode",
-              "tier": "normal"
-            },
-            {
               "action": "ARM",
               "id": "approach-mode",
-              "info": "Glareshield. Press the LAND button on the FCU to arm LOC and GS capture prior to the final approach fix.",
+              "info": "Glareshield. Press the LAND button on the FCU to arm LOC and G/S capture. The heading must be within 30° of the localizer course and the aircraft on or below the glideslope.",
               "label": "Approach Mode",
               "tier": "quick"
             },
@@ -1224,17 +1238,17 @@
         {
           "items": [
             {
-              "action": "FLAPS 1",
+              "action": "15/0",
               "id": "flap-lever",
-              "info": "Pedestal. Select Flaps 15/0 when airspeed drops to the green dot marker.",
-              "label": "Flap Lever",
+              "info": "Pedestal. Select slats 15 no later than 3 nm before the final approach fix, below 245 kt. Then slow to S speed.",
+              "label": "Flaps",
               "tier": "normal"
             },
             {
-              "action": "FLAPS 2",
+              "action": "15/15",
               "id": "flaps-2",
               "info": "Pedestal. Intermediate flap extension to 15/15 — increases lift and begins slowing the aircraft for approach.",
-              "label": "Flaps 2",
+              "label": "Flaps",
               "tier": "quick"
             },
             {
@@ -1259,14 +1273,14 @@
               "tier": "normal"
             },
             {
-              "action": "FLAPS 3",
+              "action": "15/20",
               "id": "flaps-3",
               "info": "Pedestal. Further extension to 15/20 — more drag and lift for a stabilized final approach.",
-              "label": "Flaps 3",
+              "label": "Flaps",
               "tier": "normal"
             },
             {
-              "action": "FLAPS FULL",
+              "action": "30/40",
               "id": "flaps-full",
               "info": "Pedestal. Select Flaps 30/40 to establish the final landing configuration.",
               "label": "Flaps",
@@ -1298,6 +1312,13 @@
               "tier": "normal"
             },
             {
+              "action": "DISCONNECT",
+              "id": "autopilot",
+              "info": "Yoke. Disconnect before the flare for a manual landing, along with autothrust. Required after a non-precision approach and recommended in visual conditions. Only an ILS autoland keeps it engaged.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
               "action": "IDLE",
               "id": "thrust-levers",
               "info": "Pedestal. Retard thrust levers to idle when the auto-callout sounds at roughly 30 feet.",
@@ -1310,13 +1331,6 @@
               "info": "Pedestal. Pull the reverser levers to apply reverse thrust, reducing to idle reverse as you decelerate through 80 knots.",
               "label": "Reverse",
               "tier": "quick"
-            },
-            {
-              "action": "OFF",
-              "id": "autopilot",
-              "info": "Yoke. Disconnect the autopilot after rollout or prior to minimums for a manual landing.",
-              "label": "Autopilot",
-              "tier": "normal"
             },
             {
               "action": "VERIFY",
@@ -1391,10 +1405,10 @@
         {
           "items": [
             {
-              "action": "NORM",
+              "action": "OFF",
               "id": "eng-mode",
-              "info": "Pedestal. Return the ignition selector to NORM.",
-              "label": "ENG Mode",
+              "info": "Overhead Panel. Set the ignition selector to OFF.",
+              "label": "Ignition",
               "tier": "normal"
             },
             {
@@ -1403,6 +1417,13 @@
               "info": "Overhead Panel. Turn off wing anti-ice, keeping engine anti-ice on only if ground icing conditions persist.",
               "label": "Anti-Ice",
               "tier": "full"
+            },
+            {
+              "action": "ON",
+              "id": "apu-master",
+              "info": "Overhead Panel. Powers the APU controller before the start.",
+              "label": "APU Master",
+              "tier": "normal"
             },
             {
               "action": "START",
@@ -1444,6 +1465,13 @@
         {
           "items": [
             {
+              "action": "OFF",
+              "id": "taxi-lights",
+              "info": "Overhead Panel. Turn the nose light off before turning onto the parking stand.",
+              "label": "Taxi Lights",
+              "tier": "normal"
+            },
+            {
               "action": "SET",
               "id": "parking-brake",
               "info": "Pedestal. Set the parking brake upon reaching the final parking position.",
@@ -1477,13 +1505,6 @@
               "info": "Main Panel. Stop the elapsed timer to record final block time.",
               "label": "Clock",
               "tier": "full"
-            },
-            {
-              "action": "OFF",
-              "id": "taxi-lights",
-              "info": "Overhead Panel. Turn off taxi lights as the aircraft is parked.",
-              "label": "Taxi Lights",
-              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -1611,7 +1632,7 @@
               "action": "OFF",
               "id": "adirs-selectors",
               "info": "Overhead Panel. Turn off all three IRS selectors to power down the navigation systems.",
-              "label": "ADIRS Selectors",
+              "label": "IRS Mode Selectors",
               "tier": "normal"
             },
             {
