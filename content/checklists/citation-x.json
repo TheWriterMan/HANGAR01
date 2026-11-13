@@ -7,7 +7,7 @@
             {
               "action": "Set",
               "id": "parking-brake",
-              "info": "Pedestal, parking brake handle. Pull to set, then check the parking brake indication on EICAS.",
+              "info": "Aft pedestal, parking brake handle. Pull up to set. Once EICAS has power, a cyan PARK BRAKE ON message confirms it.",
               "label": "Parking Brake",
               "tier": "quick"
             },
@@ -56,14 +56,14 @@
             {
               "action": "Align Then NAV",
               "id": "irs",
-              "info": "Pedestal, IRS controls. Set both to ALIGN, then NAV. Align time can be set in the FFX EFB.",
+              "info": "IRS controls. Set both to ALIGN, then NAV. Align time can be set in the FFX EFB.",
               "label": "IRS",
               "tier": "quick"
             },
             {
               "action": "Start",
               "id": "apu",
-              "info": "Right wall, APU switches. Starter Disengage NORMAL, APU Master ON, hold APU Test and check the APU warning lights (APU panel and right main panel), APU Generator ON, APU Bleed OFF, check at least 22 V DC, then Start switch to START. Wait for 101% RPM and check APU amps below 300 on the right main panel gauge.",
+              "info": "APU control panel, forward of the right circuit breaker panel. Check LH Fuel Boost NORM. Starter Disengage NORMAL, APU Master ON, push APU Test and check the APU warning lights, APU Generator ON, APU Bleed OFF, check at least 22 V DC. Hold the Start switch up to START until the APU RELAY ENGAGED light comes on; this can take up to 5 seconds, and the switch springs back to NORM. RELAY ENGAGED goes out before READY TO LOAD comes on. Then Load Shed NORM, and check APU amps below 300 on the right meter panel.",
               "label": "APU",
               "tier": "quick"
             },
@@ -322,11 +322,11 @@
               "tier": "full"
             },
             {
-              "action": "Norm",
+              "action": "Set Field Elev",
               "id": "pressurization",
-              "info": "Main panel. Leave all switches in NORM for fully automatic pressurization. Manual mode needs cabin altitude set for cruise and landing.",
+              "info": "Main panel. Set the landing field elevation and leave the switches in NORM. NORM schedules the cabin automatically and uses the landing field elevation for the descent. ALT SEL needs the target cabin altitude set by hand. MANUAL means working the outflow valves by hand, for when the automatic mode fails.",
               "label": "Pressurization",
-              "tier": "full"
+              "tier": "normal"
             }
           ],
           "title": "After Start Flow"
@@ -342,7 +342,7 @@
             {
               "action": "On",
               "id": "taxi-light",
-              "info": "Pedestal. Max taxi speed 20 to 30 kts, 5 kts in turns.",
+              "info": "Pedestal.",
               "label": "Taxi Lights",
               "tier": "normal"
             },
@@ -387,7 +387,7 @@
               "tier": "full"
             },
             {
-              "action": "Armed / As Required",
+              "action": "Arm",
               "id": "ats",
               "info": "Main panel, ATS button. Push to arm it on the ground (amber light on the button). N1 TO then engages when you press TO/GA. ATS can be enabled or disabled in the FFX EFB options.",
               "label": "ATS",
@@ -486,9 +486,9 @@
         {
           "items": [
             {
-              "action": "40% N1",
-              "id": "thrust-levers",
-              "info": "Pedestal. Hold the brakes and set 40% N1.",
+              "action": "TO/MC",
+              "id": "thrust-levers-to",
+              "info": "Pedestal. Hold the brakes and advance to the TO/MC detent. The FADEC mode indicator shows a green T/O. TO/MC thrust is limited to 5 minutes.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
@@ -496,14 +496,8 @@
               "action": "Release",
               "id": "brakes",
               "label": "Brakes",
-              "tier": "quick"
-            },
-            {
-              "action": "TO/MC",
-              "id": "thrust-levers-to",
-              "info": "Pedestal. Advance to the TO/MC detent. TO/MC thrust is limited to 5 minutes.",
-              "label": "Thrust Levers",
-              "tier": "quick"
+              "tier": "quick",
+              "info": "Toe brakes. Release once TO/MC is set. On a rolling takeoff they can be released before setting thrust, but the runway needed is longer."
             },
             {
               "action": "At VR",
@@ -533,7 +527,7 @@
             {
               "action": "Set",
               "id": "fgcp-modes",
-              "info": "FGCP. At acceleration altitude, 1,000 ft AGL. LNAV for a GPS flight plan, VNAV + FLC for the climb.",
+              "info": "FGCP. LNAV for a GPS flight plan, VNAV + FLC for the climb.",
               "label": "FGCP Modes",
               "tier": "normal"
             },
@@ -554,7 +548,7 @@
             {
               "action": "CLB",
               "id": "thrust-levers",
-              "info": "Pedestal. CLB detent once flaps are up. 250 KIAS below 10,000 ft.",
+              "info": "Pedestal. CLB detent once flaps are up. The FMS default limit is 250 kts below 10,000 ft.",
               "label": "Thrust Levers",
               "tier": "quick"
             },
@@ -575,9 +569,9 @@
             {
               "action": "Off",
               "id": "apu-climb",
-              "info": "Right wall, APU switches. Shut down before FL310: APU Bleed OFF, Start switch STOP, APU Master OFF.",
+              "info": "APU control panel, forward of the right circuit breaker panel. Shut down before climbing above FL310: Start switch STOP, APU Bleed OFF, check READY TO LOAD off, APU Master OFF.",
               "label": "APU",
-              "tier": "quick"
+              "tier": "normal"
             }
           ],
           "title": "Initial Climb"
@@ -585,16 +579,16 @@
         {
           "items": [
             {
-              "action": "Off",
+              "action": "As Desired",
               "id": "exterior-lights-climb",
-              "info": "Pedestal. At 10,000 ft.",
+              "info": "Pedestal. Passing FL180.",
               "label": "Landing Lights",
               "tier": "normal"
             },
             {
               "action": "As Required",
               "id": "cabin-signs-climb",
-              "info": "At 10,000 ft.",
+              "info": "Passenger advisory lights.",
               "label": "Passenger Signs",
               "tier": "full"
             },
@@ -606,7 +600,7 @@
               "tier": "normal"
             }
           ],
-          "title": "Passing 10,000 ft"
+          "title": "Climb"
         }
       ],
       "id": "after-takeoff-climb",
@@ -671,7 +665,7 @@
             {
               "action": "Set",
               "id": "landing-data",
-              "info": "FMS. Latest 50 NM before TOD. Confirm runway and weather, set NAV > Approach and PERF > Landing. VREF and VAPP can also be set with the MFD softkeys.",
+              "info": "FMS. Confirm runway and weather, set NAV > Approach and PERF > Landing. VREF and VAPP can also be set with the MFD softkeys.",
               "label": "Landing Data",
               "tier": "normal"
             },
@@ -689,11 +683,11 @@
               "tier": "normal"
             },
             {
-              "action": "As Required",
+              "action": "Set Landing Elev",
               "id": "pressurization-desc",
-              "info": "Main panel. Leave all switches in NORM for fully automatic pressurization.",
+              "info": "Main panel. Check the landing field elevation is set for the destination. In ALT SEL, set the cabin altitude to the field elevation.",
               "label": "Pressurization",
-              "tier": "full"
+              "tier": "normal"
             },
             {
               "action": "Complete",
@@ -704,7 +698,7 @@
             {
               "action": "Initiate",
               "id": "descent",
-              "info": "At TOD. In VNAV the AP should switch to VPATH at TOD. Manage speed with the thrust levers, 0.80 / 300 / 250.",
+              "info": "At TOD. In VNAV the AP should switch to VPATH at TOD. Manage speed with the thrust levers. The FMS default limit is 250 kts below 10,000 ft.",
               "label": "Descent",
               "tier": "normal"
             },
@@ -747,15 +741,16 @@
               "tier": "normal"
             },
             {
-              "action": "Seat Belts",
+              "action": "Pass Safety",
               "id": "passenger-signs",
               "label": "Passenger Signs",
-              "tier": "normal"
+              "tier": "normal",
+              "info": "Passenger advisory lights."
             },
             {
               "action": "On",
               "id": "exterior-lights-appr",
-              "info": "Pedestal. At 10,000 ft.",
+              "info": "Pedestal. Passing FL180 on the descent.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -774,9 +769,16 @@
               "tier": "normal"
             },
             {
+              "label": "Pressurization",
+              "action": "Zero Diff",
+              "id": "pressurization-appr",
+              "info": "Main panel. The cabin should reach zero differential pressure at touchdown.",
+              "tier": "full"
+            },
+            {
               "action": "As Required",
               "id": "apu-appr",
-              "info": "Right wall, APU switches. The APU can run in flight up to 31,000 ft.",
+              "info": "APU control panel, forward of the right circuit breaker panel. The APU can run in flight up to 31,000 ft.",
               "label": "APU",
               "tier": "full"
             }
@@ -788,7 +790,7 @@
             {
               "action": "Flaps 15",
               "id": "flaps-appr",
-              "info": "Pedestal. At 12 to 15 NM out, slow to 150 to 160 KIAS and select flaps 15 at 170 KIAS. Max 210 KIAS.",
+              "info": "Pedestal. After the initial approach fix or near the airport, slow below 210 KIAS and select flaps 15. Keep at least VREF + 20 KIAS with flaps 15.",
               "label": "Flaps",
               "tier": "quick"
             },
@@ -802,16 +804,23 @@
             {
               "action": "Down",
               "id": "gear-appr",
-              "info": "Main panel, landing gear handle. Latest 1,500 ft AGL on the glideslope. Check 3 green. Max 210 KIAS.",
+              "info": "Main panel, landing gear handle. Approaching the final approach fix, or one dot from glideslope intercept on an ILS. Max 210 KIAS. Check 3 green.",
               "label": "Gear",
               "tier": "quick"
             },
             {
               "action": "Full",
               "id": "flaps-landing",
-              "info": "Pedestal. Max 180 KIAS. Hold at least VREF + 10 KIAS. Be stable by 1,000 ft (IMC) or 500 ft (VMC).",
+              "info": "Pedestal. Below 180 KIAS, as the final descent begins. Then hold VREF to VREF + 10 KIAS.",
               "label": "Flaps",
               "tier": "quick"
+            },
+            {
+              "label": "Speed Brakes",
+              "action": "Retracted",
+              "id": "speed-brakes-appr",
+              "info": "Pedestal. Zero %, handle full forward.",
+              "tier": "full"
             },
             {
               "action": "Check",
@@ -845,9 +854,9 @@
               "tier": "quick"
             },
             {
-              "action": "5° Pitch",
+              "action": "Slight",
               "id": "flare",
-              "info": "At 10 ft.",
+              "info": "Touch down on the main wheels.",
               "label": "Flare",
               "tier": "quick"
             },
@@ -856,6 +865,13 @@
               "id": "speed-brakes-ldg",
               "info": "Pedestal. At touchdown.",
               "label": "Speed Brakes",
+              "tier": "quick"
+            },
+            {
+              "label": "Brakes",
+              "action": "Apply",
+              "id": "brakes",
+              "info": "Toe brakes. After the nosewheel is on the runway. Hold forward elevator pressure to keep it there.",
               "tier": "quick"
             },
             {
@@ -881,13 +897,6 @@
               "id": "exterior-lights-al",
               "info": "Pedestal. After vacating the runway.",
               "label": "Landing Lights",
-              "tier": "normal"
-            },
-            {
-              "action": "On",
-              "id": "taxi-lights",
-              "info": "Pedestal. Max taxi speed 20 to 30 kts, 5 kts in turns.",
-              "label": "Taxi Lights",
               "tier": "normal"
             },
             {
@@ -1044,7 +1053,7 @@
             {
               "action": "Off",
               "id": "apu-shut",
-              "info": "Right wall, APU switches. APU Bleed OFF, Start switch STOP, APU Master OFF. Can stay running at the gate if desired.",
+              "info": "APU control panel, forward of the right circuit breaker panel. Start switch STOP, APU Bleed OFF, check READY TO LOAD off, APU Master OFF. Can stay running at the gate if desired.",
               "label": "APU",
               "tier": "quick"
             },
