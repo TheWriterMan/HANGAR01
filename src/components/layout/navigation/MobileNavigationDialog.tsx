@@ -56,7 +56,7 @@ const MobileNavigationDialog: FC<MobileNavigationDialogProps> = ({
     >
       <div className="flex h-full flex-col animate-menu-in">
         <div className="flex h-12 shrink-0 items-center justify-between border-b border-border px-4">
-          <Link to="/" aria-label="HANGAR01 — home" className="flex items-center gap-2.5">
+          <Link to="/" aria-label="HANGAR_01 — home" className="flex items-center gap-2.5">
             <Logo className="h-5 w-5 text-primary" />
             <span className="text-lg font-bold text-primary">
               HANGAR<span className="text-accent">_01</span>

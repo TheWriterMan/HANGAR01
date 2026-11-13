@@ -11,7 +11,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AircraftSummary } from '../../types';
 import { aircraftImageSrcSet, aircraftImageUrl } from '../../utils/images';
-import { formatAircraftName, formatModelName } from '../../utils/aircraft';
+import { formatModelName } from '../../utils/aircraft';
 import CardBadge from './CardBadge';
 
 interface AircraftCardProps {
@@ -41,7 +41,6 @@ const AircraftCard: React.FC<AircraftCardProps> = ({
   return (
     <Link
       to={`/aircraft/${aircraft.slug}`}
-      aria-label={`${formatAircraftName(aircraft)} checklist`}
       className="group block border border-border hover:border-accent/40 transition-colors duration-base overflow-hidden"
     >
       <div className="relative aspect-[3/2] overflow-hidden bg-surface">
@@ -51,7 +50,7 @@ const AircraftCard: React.FC<AircraftCardProps> = ({
           sizes={sizes}
           width={960}
           height={640}
-          alt={formatAircraftName(aircraft)}
+          alt=""
           loading="lazy"
           decoding="async"
           className="w-full h-full object-cover transition-transform duration-base group-hover:scale-[1.02]"

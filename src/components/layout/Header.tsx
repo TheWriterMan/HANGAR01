@@ -62,7 +62,7 @@ const Header: FC<HeaderProps> = ({ isDemo = false }) => {
         <div className="flex items-center gap-6">
           <Link
             to="/"
-            aria-label="HANGAR01 — home"
+            aria-label="HANGAR_01 — home"
             onFocus={() => closeDesktop()}
             onPointerEnter={() => closeDesktop()}
             className="flex items-center gap-2.5 transition-colors duration-fast hover:text-accent"
