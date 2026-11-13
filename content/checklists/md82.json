@@ -47,6 +47,20 @@
               "tier": "quick"
             },
             {
+              "action": "On",
+              "id": "yaw-damper",
+              "info": "Overhead Panel. Damps out dutch roll, the wallowing yaw-roll oscillation swept-wing jets are prone to. Set and forget.",
+              "label": "Yaw Damper",
+              "tier": "full"
+            },
+            {
+              "action": "Arm",
+              "id": "anti-skid",
+              "info": "Overhead Panel. OFF / ARM / TEST switch. Armed before pushback.",
+              "label": "Anti-Skid",
+              "tier": "normal"
+            },
+            {
               "action": "Arm",
               "id": "emergency-lights",
               "info": "Overhead Panel. EMER LIGHT NOT ARMED goes out.",
@@ -135,14 +149,14 @@
             {
               "action": "Test",
               "id": "autoland-test",
-              "info": "Glareshield. Set both VHF NAV radios to an ILS frequency (for example 109.50). Push the AUTOLAND button. NO AUTOLAND flashes and the FMA reads AUTO LND PRE FLT TEST.",
+              "info": "Glareshield. Set both VHF NAV radios to an ILS frequency (for example 109.50). Push the AUTOLAND button. NO AUTOLAND flashes and the FMA reads AUTO LND PRE FLT TEST. After about 50 seconds the FMA goes blank (or back to its previous display) and NO AUTOLAND goes out, which means the test passed.",
               "label": "Autoland Test",
               "tier": "full"
             },
             {
               "action": "Set",
               "id": "fgcp-speed",
-              "info": "Glareshield. SPD/MACH readout to 250 KIAS, or as the SID requires.",
+              "info": "Glareshield. SPD/MACH readout to V2+10 (for example 158 kts with V2 at 148).",
               "label": "FGCP Speed",
               "tier": "normal"
             },
@@ -243,17 +257,24 @@
             },
             {
               "action": "Set",
+              "id": "flap-to-selector",
+              "info": "Center Pedestal. Dial the takeoff flap angle (for example 11). The trim readout updates from it.",
+              "label": "Flap T.O. Selector",
+              "tier": "quick"
+            },
+            {
+              "action": "Set",
               "id": "stabilizer-trim",
               "info": "Center Pedestal. Set the takeoff condition trim readouts, then set stabilizer trim.",
               "label": "Stabilizer Trim",
               "tier": "quick"
             },
             {
-              "action": "Set",
-              "id": "flap-to-selector",
-              "info": "Center Pedestal. Set when required.",
-              "label": "Flap T.O. Selector",
-              "tier": "full"
+              "action": "Open",
+              "id": "pneumatic-x-feed",
+              "info": "Center Pedestal. Both levers up. Routes APU air to both engine starters.",
+              "label": "Pneumatic X-Feed",
+              "tier": "quick"
             },
             {
               "action": "Off",
@@ -273,7 +294,8 @@
               "action": "SYS A or B",
               "id": "eng-ignition",
               "label": "ENG Ignition",
-              "tier": "normal"
+              "tier": "quick",
+              "info": "Overhead Panel."
             },
             {
               "action": "On",
@@ -481,13 +503,6 @@
               "tier": "normal"
             },
             {
-              "action": "Arm",
-              "id": "autothrottle",
-              "info": "Glareshield. AUTO THROT switch.",
-              "label": "Autothrottle",
-              "tier": "quick"
-            },
-            {
               "action": "On",
               "id": "wing-ldg-lights",
               "info": "Glareshield.",
@@ -522,8 +537,15 @@
             {
               "action": "1.4 EPR",
               "id": "throttle-set",
-              "info": "Set 1.4 EPR, then press TOGA. Check the autothrottle advances the levers and T.O. thrust is set.",
+              "info": "Center Pedestal. Press TOGA, then hold the brakes and set 1.4 EPR.",
               "label": "Throttles",
+              "tier": "quick"
+            },
+            {
+              "action": "On",
+              "id": "autothrottle",
+              "info": "Glareshield. AUTO THROT switch, once the engines are stable at 1.4 EPR. The levers then move to takeoff thrust on their own.",
+              "label": "Autothrottle",
               "tier": "quick"
             },
             {
@@ -648,6 +670,25 @@
             }
           ],
           "title": "Climb"
+        },
+        {
+          "items": [
+            {
+              "action": "Retract",
+              "id": "wing-ldg-lights",
+              "info": "Overhead Panel.",
+              "label": "Wing LDG Lights",
+              "tier": "normal"
+            },
+            {
+              "action": "Off",
+              "id": "nose-lights",
+              "info": "Overhead Panel.",
+              "label": "Nose Lights",
+              "tier": "normal"
+            }
+          ],
+          "title": "Passing 10,000 ft"
         }
       ],
       "id": "after-takeoff-climb",
@@ -851,6 +892,13 @@
               "tier": "normal"
             },
             {
+              "action": "Arm",
+              "id": "approach-mode",
+              "info": "Glareshield. VOR/LOC, then ILS once the localizer is tracked.",
+              "label": "Approach Mode",
+              "tier": "quick"
+            },
+            {
               "action": "Both",
               "id": "eng-ignition-app",
               "label": "ENG Ignition",
@@ -922,6 +970,20 @@
               "info": "Fully configured and stable on LOC and GS by 3 NM. At 3 NM the FMA shows SPD | AUT G/A | AUT LND | AUT LND.",
               "label": "Final Approach",
               "tier": "quick"
+            },
+            {
+              "action": "Disconnect",
+              "id": "autopilot",
+              "info": "Glareshield. By minimums unless autoland is armed.",
+              "label": "Autopilot",
+              "tier": "quick"
+            },
+            {
+              "action": "Off",
+              "id": "autothrottle",
+              "info": "Glareshield. AUTO THROT switch, together with the autopilot, for a manual landing.",
+              "label": "Autothrottle",
+              "tier": "normal"
             },
             {
               "action": "Idle",
