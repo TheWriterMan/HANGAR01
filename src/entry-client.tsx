@@ -7,10 +7,13 @@ import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import App, { preloadRoute } from './App';
 import { InitialChecklistContext, readEmbeddedChecklist } from './services/initialChecklist';
-import { applyCountSwitch } from './utils/events';
+import { applyCountSwitch, maskLocalChecklistUrl } from './utils/events';
 
-inject();
-injectSpeedInsights();
+// A My Hangar checklist's address carries the visitor's own id: send /hangar/local instead.
+inject({ beforeSend: (event) => ({ ...event, url: maskLocalChecklistUrl(event.url) }) });
+injectSpeedInsights({
+  beforeSend: (event) => ({ ...event, url: maskLocalChecklistUrl(event.url) }),
+});
 // ?count=off stops this browser's usage events, ?count=on starts them again.
 applyCountSwitch();
 

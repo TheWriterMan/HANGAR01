@@ -72,7 +72,23 @@ function referrerHost(): string {
 }
 
 /** A My Hangar checklist's address carries the visitor's own id, so it is sent as /hangar/local. */
-const publicPath = (path: string) => path.replace(/^\/hangar\/[^/]+$/, '/hangar/local');
+const publicPath = (path: string) => path.replace(/^\/hangar\/[^/]+\/?$/, '/hangar/local');
+
+/**
+ * The same for a full address, for Vercel Analytics and Speed Insights (their
+ * `beforeSend`). Anything that isn't a URL passes through unchanged.
+ */
+export function maskLocalChecklistUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    const masked = publicPath(parsed.pathname);
+    if (masked === parsed.pathname) return url;
+    parsed.pathname = masked;
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
 
 /** The JSON the collector receives. Exported for the tests. */
 export function eventBody<N extends keyof UsageEvents>(

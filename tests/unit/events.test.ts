@@ -1,5 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { applyCountSwitch, countingEnabled, track } from '../../src/utils/events';
+import {
+  applyCountSwitch,
+  countingEnabled,
+  maskLocalChecklistUrl,
+  track,
+} from '../../src/utils/events';
 
 // ─── A minimal browser: localStorage, location, navigator, document ─────────
 
@@ -92,5 +97,25 @@ describe('usage events', () => {
       throw new Error('blocked');
     });
     expect(() => track('page_view', {})).not.toThrow();
+  });
+});
+
+describe('maskLocalChecklistUrl (Vercel Analytics and Speed Insights)', () => {
+  it("replaces a My Hangar checklist's id and leaves every other address alone", () => {
+    expect(
+      maskLocalChecklistUrl(
+        'https://www.hangar01.space/hangar/0f8e7c1a-2b3d-4e5f-8a9b-0c1d2e3f4a5b',
+      ),
+    ).toBe('https://www.hangar01.space/hangar/local');
+    expect(maskLocalChecklistUrl('https://www.hangar01.space/hangar/abc/?x=1')).toBe(
+      'https://www.hangar01.space/hangar/local?x=1',
+    );
+    expect(maskLocalChecklistUrl('https://www.hangar01.space/hangar')).toBe(
+      'https://www.hangar01.space/hangar',
+    );
+    expect(maskLocalChecklistUrl('https://www.hangar01.space/aircraft/a320')).toBe(
+      'https://www.hangar01.space/aircraft/a320',
+    );
+    expect(maskLocalChecklistUrl('not a url')).toBe('not a url');
   });
 });
