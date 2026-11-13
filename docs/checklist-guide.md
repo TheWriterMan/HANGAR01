@@ -156,7 +156,7 @@ Common phases and their IDs:
 
 ### Merge thin phases
 
-The frontend hides any phase that drops below `PHASE_MIN_ITEMS` (currently 4) items _after tier filtering_ — see `src/utils/checklist.ts`. A phase padded with filler to look complete simply vanishes in Quick/Normal mode, so padding buys nothing. When a split produces a phase too thin to stand on its own, merge it into a neighbor:
+The frontend hides a phase only when no item in it is visible in the current mode (`PHASE_MIN_ITEMS` is 1 in `src/utils/checklist.ts`; until 13 Nov 2026 it was 4, which hid essential Quick items on 27 aircraft). A phase with one or two items in Quick still shows, but reads thin, and padding it with filler is never the answer. When a split produces a phase too thin to stand on its own, merge it into a neighbor:
 
 - Engine Start absorbs Before Start → first group "Pre-Start Flow"
 - Before Takeoff absorbs Taxi → first group "Taxi Flow", then "Lineup"

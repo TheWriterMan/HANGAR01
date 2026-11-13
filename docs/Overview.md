@@ -71,7 +71,7 @@ Tokens, type, layout and rules: [DESIGN.md](../DESIGN.md).
 - **Mode**: Per-aircraft toggle — `quick`, `normal`, `full`. Persisted to `localStorage` (`HANGAR01_mode_<slug>`).
 - **Completion**: Item ticks persisted to `localStorage` under stable ids (`<phaseId>/<itemId>`), so editing a checklist can only drop a tick, never move it. Survives mode switches. Key format, the legacy positional format and its migration are documented in `src/utils/progress.ts`.
 - All storage access goes through `src/utils/storage.ts`, which never throws.
-- **Filter pipeline**: `filterChecklist()` drops items not visible in the current mode, then drops empty groups, then drops phases with fewer than 4 items (My Hangar checklists keep small phases).
+- **Filter pipeline**: `filterChecklist()` drops items not visible in the current mode, then drops empty groups, then drops phases left with no items.
 
 ### My Hangar (`/hangar`)
 

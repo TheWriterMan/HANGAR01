@@ -1,8 +1,13 @@
 import { ChecklistItem, ChecklistPhase } from '../types';
 import type { ChecklistMode } from '../components/ui/ModeToggle';
 
-/** Phases with fewer than this many items (after filtering) get hidden. */
-export const PHASE_MIN_ITEMS = 4;
+/**
+ * Phases with fewer than this many items (after filtering) get hidden. It was 4, which hid 198 items marked
+ * essential in Quick and 40 in Normal across 27 aircraft (whole shutdowns, the takeoff flaps, the parking brake
+ * release), so Quick no longer ran from cold and dark to shutdown as the checklist guide requires. Now only
+ * empty phases are hidden (PRA-355, 13 Nov 2026).
+ */
+export const PHASE_MIN_ITEMS = 1;
 
 export const MODE_DESCRIPTIONS: Record<ChecklistMode, string> = {
   quick: 'Minimum items to fly the sim. Skips real-world airmanship and extended procedures.',
