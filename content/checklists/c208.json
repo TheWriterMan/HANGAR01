@@ -33,9 +33,9 @@
               "tier": "normal"
             },
             {
-              "action": "NORMAL",
+              "action": "OFF",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Protects the engine from ingesting ice or debris when bypassed, but normal mode provides full power.",
+              "info": "Lower Left Panel. Turning it on protects the engine from ice and debris but raises ITT, so it stays off unless needed.",
               "label": "Inertial Separator",
               "tier": "normal"
             },
@@ -44,7 +44,7 @@
               "id": "fuel-selectors",
               "info": "Overhead Panel. Ensures the engine will draw fuel from both wing tanks evenly.",
               "label": "Fuel Selectors",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -80,11 +80,11 @@
               "tier": "normal"
             },
             {
-              "action": "ON",
+              "action": "PUSHED IN",
               "id": "fuel-shutoff-knob",
-              "info": "Lower Pedestal. Push in to open the valve, allowing fuel to flow from the tanks to the engine.",
-              "label": "Fuel Shutoff Knob",
-              "tier": "quick"
+              "info": "Push in to let fuel reach the engine. It is a separate control from the firewall valve, and both must be in.",
+              "label": "Fuel Cutoff",
+              "tier": "normal"
             },
             {
               "action": "OFF",
@@ -103,7 +103,7 @@
               "id": "battery-switch",
               "info": "Left Panel. Powers the aircraft for the fuel quantity and flap checks that follow.",
               "label": "Battery Switch",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "CHECK",
@@ -115,7 +115,7 @@
             {
               "action": "CHECK",
               "id": "fuel-balance",
-              "info": "Instrument Panel. Ensures fuel weight is evenly distributed between the wings, with a maximum 200 lbs difference.",
+              "info": "Instrument Panel. The fuel senders are sensitive to lateral G-force and to how level the aircraft sits, so an apparent imbalance can be false. Check fuel levels when any discrepancy shows.",
               "label": "Fuel Balance",
               "tier": "normal"
             },
@@ -129,7 +129,7 @@
             {
               "action": "TEST",
               "id": "pitot-stall-heat",
-              "info": "Left Panel. ON for 30 seconds, then OFF. Confirms the heating elements work to prevent icing in flight.",
+              "info": "Left Panel. Turn on, then off. Confirms the heating elements work to prevent icing in flight.",
               "label": "Pitot/Stall Heat",
               "tier": "full"
             },
@@ -220,6 +220,13 @@
               "tier": "quick"
             },
             {
+              "action": "FLT-PUSH",
+              "id": "cabin-mixing-air",
+              "info": "Push the CABIN HEAT MIXING AIR valve in before starting and keep it in for flight. Left out, it can overheat the cabin vent, which disables bleed air heating. GND-PULL is only for extra heat on the ground below 85% Ng.",
+              "label": "Cabin Mixing Air",
+              "tier": "normal"
+            },
+            {
               "action": "NORMAL",
               "id": "emergency-power-lever",
               "info": "Center Pedestal. Must be stowed in normal to prevent uncommanded engine surges.",
@@ -248,11 +255,18 @@
               "tier": "quick"
             },
             {
-              "action": "ON",
+              "action": "PUSHED IN",
               "id": "fuel-shutoff-knob",
-              "info": "Lower Pedestal. Push in. Ensures the firewall shutoff valve is open.",
-              "label": "Fuel Shutoff Knob",
-              "tier": "normal"
+              "info": "Push in to let fuel reach the engine. It is a separate control from the firewall valve, and both must be in.",
+              "label": "Fuel Cutoff",
+              "tier": "quick"
+            },
+            {
+              "action": "PUSHED IN",
+              "id": "firewall-valve",
+              "info": "Pull handle on the lower throttle quadrant. Pulled out, it closes the firewall valve and cuts the engine off from fuel. A warning tone sounds when the engine has no fuel supply.",
+              "label": "Firewall Valve",
+              "tier": "quick"
             },
             {
               "action": "ON",
@@ -267,6 +281,27 @@
               "info": "Center Console. Retracts flaps to the normal position for engine start and taxi.",
               "label": "Flaps",
               "tier": "normal"
+            },
+            {
+              "action": "1850 PSI",
+              "id": "oxygen-pressure",
+              "info": "Overhead Panel. Recessed gauge. The cylinder is normally serviced to 1,850 PSI and depletes with use and altitude.",
+              "label": "Oxygen Pressure",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "annunciators",
+              "info": "Confirms every annunciator lamp works.",
+              "label": "Annunciators",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "fire-detector",
+              "info": "Red test button next to the annunciator panel. The fire siren sounds and the red ENGINE FIRE annunciator lights.",
+              "label": "Fire Detector",
+              "tier": "full"
             }
           ],
           "title": "Engine Levers"
@@ -322,6 +357,13 @@
               "tier": "quick"
             },
             {
+              "action": "90-140 LB/HR",
+              "id": "fuel-flow",
+              "info": "Confirms fuel is reaching the engine.",
+              "label": "Fuel Flow",
+              "tier": "full"
+            },
+            {
               "action": "VERIFY",
               "id": "ng-stable-52",
               "info": "Instrument Panel. Confirms the engine has accelerated to a self-sustaining idle speed.",
@@ -334,6 +376,13 @@
               "info": "Left Panel. Disengages the starter motor once the engine is running smoothly.",
               "label": "Starter Switch",
               "tier": "quick"
+            },
+            {
+              "action": "EXTINGUISHED",
+              "id": "starter-engaged",
+              "info": "Confirms the starter has disengaged.",
+              "label": "Starter Engaged Annun",
+              "tier": "full"
             }
           ],
           "title": "Engine Start"
@@ -355,10 +404,31 @@
               "tier": "normal"
             },
             {
-              "action": "NORM",
+              "action": "NEGATIVE",
+              "id": "battery-charging",
+              "info": "Read on the volt/amp meter.",
+              "label": "Battery Charging Current",
+              "tier": "full"
+            },
+            {
+              "action": "CHECK",
+              "id": "suction",
+              "info": "Green range is 4.5-5.5 inHg up to 15,000 ft.",
+              "label": "Suction",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
               "id": "fuel-boost-switch-2",
-              "info": "Left Panel. Returns the boost switch to normal, deactivating the auxiliary pump. AUX FUEL PUMP ON light should extinguish.",
+              "info": "Left Panel. Turns the auxiliary fuel boost pump off once the engine is running. The fuel boost pump annunciator should extinguish.",
               "label": "Fuel Boost Switch",
+              "tier": "normal"
+            },
+            {
+              "action": "SLAVED & ALIGNED",
+              "id": "remote-compass",
+              "info": "Set the remote compass controller mode switch to SLAVE. The synchroscope should show a white line centered between the + and - marks. The copilot DG is not driven by the remote compass and must be set by hand.",
+              "label": "Remote Compass",
               "tier": "normal"
             },
             {
@@ -424,7 +494,7 @@
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Set to BYPASS on loose surfaces or icing conditions to prevent engine damage.",
+              "info": "Lower Left Panel. Set to ON on loose surfaces or icing conditions to prevent engine damage.",
               "label": "Inertial Separator",
               "tier": "full"
             }
@@ -457,9 +527,16 @@
             {
               "action": "CHECK",
               "id": "flight-instruments",
-              "info": "Instrument Panel. Verify airspeed, attitude, and heading indicators respond correctly. Use LOW IDLE and Beta Range for taxi speed control.",
+              "info": "Instrument Panel. Verify airspeed, attitude, and heading indicators respond correctly.",
               "label": "Flight Instruments",
               "tier": "normal"
+            },
+            {
+              "action": "ALIGNED",
+              "id": "remote-compass",
+              "info": "Confirm the synchroscope line is centered and the HSI heading agrees with the magnetic compass.",
+              "label": "Remote Compass",
+              "tier": "full"
             }
           ],
           "title": "Taxi Flow"
@@ -510,7 +587,7 @@
             {
               "action": "CHECK",
               "id": "fuel-balance",
-              "info": "Instrument Panel. Ensures tanks are balanced with a maximum 200 lbs difference to prevent rolling tendencies.",
+              "info": "Instrument Panel. The fuel senders are sensitive to lateral G-force and to how level the aircraft sits, so an apparent imbalance can be false. Check fuel levels when any discrepancy shows.",
               "label": "Fuel Balance",
               "tier": "normal"
             },
@@ -522,10 +599,10 @@
               "tier": "normal"
             },
             {
-              "action": "FULLY ON",
+              "action": "PUSHED IN",
               "id": "fuel-shutoff-knob",
-              "info": "Lower Pedestal. Double check that it is fully pushed in.",
-              "label": "Fuel Shutoff Knob",
+              "info": "Confirms it is fully pushed in before takeoff.",
+              "label": "Fuel Cutoff",
               "tier": "normal"
             }
           ],
@@ -534,6 +611,13 @@
         {
           "items": [
             {
+              "action": "NORM",
+              "id": "fuel-boost-norm",
+              "info": "Left Panel. Sets the boost pump to its normal position for flight.",
+              "label": "Fuel Boost Switch",
+              "tier": "normal"
+            },
+            {
               "action": "400 FT-LB",
               "id": "runup-power",
               "info": "Center Pedestal. Advance the power lever smoothly to approximately 400 ft-lb torque. Hold at this power for the Inertial Separator check.",
@@ -541,9 +625,9 @@
               "tier": "full"
             },
             {
-              "action": "BYPASS → NORMAL",
+              "action": "ON → OFF",
               "id": "inertial-separator-check",
-              "info": "Lower Left Panel. Move to BYPASS and check for a slight torque drop indicating airflow is redirecting. Return to NORMAL. If no response, the system may not be functioning.",
+              "info": "Lower Left Panel. With the power lever at 400 ft-lb, set the inertial separator ON and check that ITT increases. Then set it OFF.",
               "label": "Inertial Separator",
               "tier": "full"
             },
@@ -552,6 +636,41 @@
               "id": "overspeed-governor",
               "info": "Center Pedestal. Set the power lever for 1800 RPM, then press and hold the overspeed governor test button. Propeller RPM should drop to 1750 ±60 RPM. Return the power lever to idle. At 1800 RPM the sim's static thrust can overpower the brakes. The test can also be run in flight, at RPM very close to 1750, because RPM drops very quickly when the button is pressed.",
               "label": "Overspeed Governor",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "pitot-heat-test",
+              "info": "Turn on and check that generator load increases, then turn off.",
+              "label": "Pitot Heat",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "windshield-anti-ice-test",
+              "info": "Turn on and check that generator load increases, then turn off.",
+              "label": "Windshield Anti-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "prop-deice-test",
+              "info": "Turn on and check 20-24 amps on the propeller ammeter, then turn off.",
+              "label": "Propeller De-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "airframe-deice-test",
+              "info": "Turn on and watch the airframe de-ice annunciator cycle, then turn off.",
+              "label": "Airframe De-Ice",
+              "tier": "full"
+            },
+            {
+              "action": "TEST",
+              "id": "autopilot-test",
+              "info": "Set the heading bug 30 degrees left, engage heading mode and watch the yoke move. Repeat with the bug 30 degrees right, then test the disconnect and set the autopilot for climb.",
+              "label": "Autopilot",
               "tier": "full"
             },
             {
@@ -597,7 +716,7 @@
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Set to BYPASS for icing conditions or FOD-prone runways.",
+              "info": "Lower Left Panel. Set to ON for icing conditions or FOD-prone runways.",
               "label": "Inertial Separator",
               "tier": "full"
             },
@@ -614,6 +733,13 @@
               "info": "Center Console. 10 degrees for a normal takeoff, 20 degrees for a short field.",
               "label": "Flaps",
               "tier": "quick"
+            },
+            {
+              "action": "FLT-PUSH",
+              "id": "cabin-mixing-air",
+              "info": "Confirm the CABIN HEAT MIXING AIR valve is pushed in for flight.",
+              "label": "Cabin Mixing Air",
+              "tier": "full"
             },
             {
               "action": "HIGH IDLE",
@@ -676,23 +802,9 @@
               "tier": "quick"
             },
             {
-              "action": "85-95 KIAS",
-              "id": "climb-speed",
-              "info": "Instrument Panel. Initial climb out speed for obstacle clearance; depends on weight.",
-              "label": "Climb Speed",
-              "tier": "quick"
-            },
-            {
-              "action": "ABOVE 85 KIAS",
-              "id": "flaps-10",
-              "info": "Center Console. Retract one notch of flaps once clear of obstacles and accelerating.",
-              "label": "Flaps 10°",
-              "tier": "quick"
-            },
-            {
               "action": "UP ABOVE 95 KIAS",
               "id": "flaps",
-              "info": "Center Console. Fully retract flaps and accelerate to the 110-120 KIAS cruise climb speed.",
+              "info": "Center Console. Fully retract the flaps at 95 KIAS.",
               "label": "Flaps",
               "tier": "quick"
             }
@@ -724,14 +836,14 @@
             {
               "action": "AS REQUIRED",
               "id": "landing-lights",
-              "info": "Left Panel. Generally left ON below 10,000 ft to aid in collision avoidance.",
+              "info": "Left Panel.",
               "label": "Landing Lights",
               "tier": "full"
             },
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Typically returned to NORMAL once clear of icing or dirty air to restore engine power.",
+              "info": "Lower Left Panel. Turn it off once clear of icing or dirty air. It raises ITT while on.",
               "label": "Inertial Separator",
               "tier": "full"
             },
@@ -748,23 +860,23 @@
         {
           "items": [
             {
-              "action": "MAX CLIMB TQ",
+              "action": "1865 FT-LB",
               "id": "power",
-              "info": "Center Pedestal. Adjust the power lever to maintain the maximum allowable climb torque without exceeding limits.",
+              "info": "Center Pedestal. Max performance climb: 1865 ft-lb with ITT below 765°C. Enroute climb: 1865 ft-lb with ITT below 740°C.",
               "label": "Power",
               "tier": "quick"
             },
             {
               "action": "1600-1900 RPM",
               "id": "prop-rpm-lever",
-              "info": "Center Pedestal. Max performance climb uses 1900 RPM, while 1600 RPM reduces cabin noise.",
+              "info": "Center Pedestal. 1900 RPM for a max performance climb, 1600-1900 RPM for an enroute climb.",
               "label": "Prop RPM Lever",
               "tier": "normal"
             },
             {
-              "action": "110-120 KIAS",
+              "action": "104 KIAS",
               "id": "climb-speed",
-              "info": "Instrument Panel. Normal cruise climb speed, used up to 12,000 ft for better engine cooling and forward visibility.",
+              "info": "Instrument Panel. Best rate of climb speed (Vy). Best angle of climb speed (Vx) is 72 KIAS.",
               "label": "Climb Speed",
               "tier": "quick"
             },
@@ -789,14 +901,14 @@
             {
               "action": "SET",
               "id": "cruise-power",
-              "info": "Center Pedestal. Adjust torque and RPM for cruise. Do not exceed ITT, Ng, or TQ limits; optimum cruise is usually 10,000-20,000 ft.",
+              "info": "Center Pedestal. Set prop 1600-1900 RPM and torque for cruise. Do not exceed ITT, Ng, or torque limits; cruise ITT limit is 740°C.",
               "label": "Cruise Power",
               "tier": "normal"
             },
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Set to BYPASS if entering clouds with temperatures near freezing.",
+              "info": "Lower Left Panel. Set to ON if entering clouds with temperatures near freezing.",
               "label": "Inertial Separator",
               "tier": "full"
             },
@@ -810,7 +922,7 @@
             {
               "action": "CHECK",
               "id": "fuel-balance",
-              "info": "Instrument Panel. Continue monitoring to ensure a maximum 200 lbs difference between tanks.",
+              "info": "Instrument Panel. The fuel senders are sensitive to lateral G-force and to how level the aircraft sits, so an apparent imbalance can be false. Check fuel levels when any discrepancy shows.",
               "label": "Fuel Balance",
               "tier": "normal"
             }
@@ -828,7 +940,7 @@
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Set to BYPASS for icing conditions or when descending through precipitation.",
+              "info": "Lower Left Panel. Set to ON for icing conditions or when descending through precipitation.",
               "label": "Inertial Separator",
               "tier": "full"
             },
@@ -842,7 +954,7 @@
             {
               "action": "AS REQUIRED",
               "id": "landing-lights",
-              "info": "Left Panel. Turn ON when descending below 10,000 ft to increase visibility.",
+              "info": "Left Panel.",
               "label": "Landing Lights",
               "tier": "normal"
             },
@@ -859,6 +971,13 @@
               "info": "Center Pedestal. Pull back to start the descent.",
               "label": "Power Lever",
               "tier": "quick"
+            },
+            {
+              "action": "ON",
+              "id": "signs",
+              "info": "Cabin signs on for the descent.",
+              "label": "No Smoking/Seatbelt",
+              "tier": "normal"
             },
             {
               "action": "SET QNH",
@@ -879,6 +998,13 @@
         {
           "items": [
             {
+              "action": "SECURE",
+              "id": "seats-belts",
+              "info": "Cabin.",
+              "label": "Seats & Seatbelts",
+              "tier": "full"
+            },
+            {
               "action": "ON",
               "id": "landing-lights",
               "info": "Left Panel. Ensures the aircraft is highly visible to the control tower and other traffic.",
@@ -888,7 +1014,7 @@
             {
               "action": "AS REQUIRED",
               "id": "inertial-separator",
-              "info": "Lower Left Panel. Keep in BYPASS for icing conditions or if the runway is unpaved.",
+              "info": "Lower Left Panel. Keep ON for icing conditions or if the runway is unpaved.",
               "label": "Inertial Separator",
               "tier": "full"
             },
@@ -902,7 +1028,7 @@
             {
               "action": "CHECK",
               "id": "fuel-balance",
-              "info": "Instrument Panel. Ensures wing tanks are still within the maximum 200 lbs difference.",
+              "info": "Instrument Panel. The fuel senders are sensitive to lateral G-force and to how level the aircraft sits, so an apparent imbalance can be false. Check fuel levels when any discrepancy shows.",
               "label": "Fuel Balance",
               "tier": "full"
             },
@@ -942,7 +1068,7 @@
             {
               "action": "BELOW 125 KIAS",
               "id": "flaps-full",
-              "info": "Center Console. Final landing configuration. 125 KIAS is the limit from 20 to 30 degrees in both the sim and the real aircraft. Fly 75-85 KIAS on final.",
+              "info": "Center Console. Final landing configuration. 125 KIAS is the limit from 20 to 30 degrees in both the sim and the real aircraft.",
               "label": "Flaps Full",
               "tier": "quick"
             }
@@ -971,13 +1097,6 @@
               "info": "Center Pedestal. Final check that the propeller is fully forward for maximum thrust or drag.",
               "label": "Prop RPM Lever",
               "tier": "normal"
-            },
-            {
-              "action": "75-85 KIAS",
-              "id": "speed",
-              "info": "Instrument Panel. Normal final approach speed with full flaps. For a short-field landing, 78 KIAS at 8,500 lb.",
-              "label": "Speed",
-              "tier": "quick"
             },
             {
               "action": "IDLE",
@@ -1164,6 +1283,20 @@
               "id": "fuel-selectors",
               "info": "Overhead Panel. Shuts off fuel from both wing tanks.",
               "label": "Fuel Selectors",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "oxygen",
+              "info": "Shuts off the oxygen supply.",
+              "label": "Oxygen",
+              "tier": "full"
+            },
+            {
+              "action": "OFF",
+              "id": "inertial-separator",
+              "info": "Left off for the next start.",
+              "label": "Inertial Separator",
               "tier": "full"
             }
           ],
