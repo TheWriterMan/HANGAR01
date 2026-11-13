@@ -229,7 +229,7 @@
               "tier": "normal"
             },
             {
-              "action": "1-5 Strokes",
+              "action": "As Required",
               "id": "primer",
               "info": "Cold engine (below 40°F): 3-5 strokes, more if extremely cold. Warm engine (above 40°F): do not prime, set the magnetos to BOTH and engage the starter straight away.",
               "label": "Primer",
@@ -426,7 +426,7 @@
             {
               "action": "CHECK",
               "id": "brakes",
-              "info": "Left rudder pedals. Check braking and steering. Max taxi speed 20-30 kts, 5 kts in turns. Strobes on when crossing a runway.",
+              "info": "Left rudder pedals. Check braking and steering. Strobes on when crossing a runway.",
               "label": "Brakes",
               "tier": "normal"
             }
@@ -472,7 +472,7 @@
               "action": "2000 RPM",
               "id": "throttle-runup",
               "label": "Throttle",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "CHECK",
@@ -500,7 +500,7 @@
               "id": "magneto-check",
               "info": "Ignition L, BOTH, R, BOTH. Max 125 RPM drop, max 50 RPM difference.",
               "label": "Magneto Check",
-              "tier": "quick"
+              "tier": "normal"
             },
             {
               "action": "PERFORM",
@@ -565,7 +565,7 @@
               "id": "elevator-trim",
               "info": "Takeoff position, neutral.",
               "label": "Elevator Trim",
-              "tier": "normal"
+              "tier": "quick"
             },
             {
               "action": "NEUTRAL",
